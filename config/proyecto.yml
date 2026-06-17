@@ -1,0 +1,24 @@
+proyecto:
+  nombre: "Gallinero modular 2000"
+  pais: "Chile"
+  region: null
+  comuna: null
+  propietario: null
+  responsable_tecnico: null
+
+capacidades:
+  actual_estimada: 300
+  etapa_1: 500
+  etapa_2: 1000
+  etapa_3: 2000
+
+estado:
+  fase_actual: "P0"
+  fase_nombre: "Diagnostico real"
+  autorizado_avanzar_p1: false
+
+convenciones:
+  moneda: "CLP"
+  unidades: "sistema metrico"
+  formato_fecha: "YYYY-MM-DD"
+  separador_decimal: "."

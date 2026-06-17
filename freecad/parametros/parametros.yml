@@ -1,0 +1,23 @@
+modelo:
+  estado: preliminar
+  unidad: mm
+
+capacidad:
+  gallinas: null
+
+galpon:
+  largo: null
+  ancho: null
+  altura_lateral: null
+  altura_cumbrera: null
+  separacion_pilares: null
+
+estructura:
+  perfil_pilares: null
+  perfil_vigas: null
+  perfil_costaneras: null
+
+cubierta:
+  material: null
+  espesor: null
+  pendiente_porcentaje: null

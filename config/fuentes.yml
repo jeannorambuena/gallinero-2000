@@ -1,0 +1,18 @@
+prioridad:
+  - nivel: 1
+    tipo: dato-real
+  - nivel: 2
+    tipo: fuente-oficial
+  - nivel: 3
+    tipo: referencia-tecnica
+  - nivel: 4
+    tipo: precio-comprobado
+  - nivel: 5
+    tipo: estimacion
+
+reglas:
+  exigir_fuente: true
+  exigir_fecha: true
+  exigir_unidad: true
+  separar_estimaciones: true
+  conservar_originales: true
