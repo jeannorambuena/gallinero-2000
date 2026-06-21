@@ -1,0 +1,210 @@
+{
+  "proyecto": "Gallinero Nacho",
+  "fase": "P0 — Diagnóstico real",
+  "estado": "preliminar",
+  "indicadores": [
+    {
+      "indicador": "ingreso_mensual_estimado",
+      "valor": 736667,
+      "unidad": "CLP/mes",
+      "formula": "dato estimado desde módulo comercial",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "estimado",
+      "observacion": "ingreso mensual estimado P0"
+    },
+    {
+      "indicador": "alimento_mensual",
+      "valor": 284900,
+      "unidad": "CLP/mes",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "declarado",
+      "observacion": "costo conocido mensual"
+    },
+    {
+      "indicador": "agua_mensual",
+      "valor": 6000,
+      "unidad": "CLP/mes",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "declarado",
+      "observacion": "costo conocido mensual"
+    },
+    {
+      "indicador": "vitaminas_mensual",
+      "valor": 20000,
+      "unidad": "CLP/mes",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "declarado",
+      "observacion": "costo conocido mensual"
+    },
+    {
+      "indicador": "envases_mensual",
+      "valor": 14000,
+      "unidad": "CLP/mes",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "declarado",
+      "observacion": "costo conocido mensual"
+    },
+    {
+      "indicador": "combustible_mensual",
+      "valor": 200000,
+      "unidad": "CLP/mes",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "declarado",
+      "observacion": "costo conocido mensual"
+    },
+    {
+      "indicador": "cama_viruta_mensual",
+      "valor": 5000,
+      "unidad": "CLP/mes",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "declarado",
+      "observacion": "costo conocido mensual"
+    },
+    {
+      "indicador": "medicamentos_mensual",
+      "valor": 5000,
+      "unidad": "CLP/mes",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "declarado",
+      "observacion": "costo conocido mensual"
+    },
+    {
+      "indicador": "horas_trabajo_dia",
+      "valor": 1.5,
+      "unidad": "horas/día",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "declarado",
+      "observacion": "dato base para mano de obra referencial"
+    },
+    {
+      "indicador": "dias_trabajo_semana",
+      "valor": 7,
+      "unidad": "días/semana",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "declarado",
+      "observacion": "dato base para mano de obra referencial"
+    },
+    {
+      "indicador": "valor_hora_referencia",
+      "valor": 4000,
+      "unidad": "CLP/hora",
+      "formula": "dato de referencia",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "referencia",
+      "observacion": "valor usado solo como referencia"
+    },
+    {
+      "indicador": "pollonas_nuevas",
+      "valor": 500,
+      "unidad": "aves",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "declarado",
+      "observacion": "dato base para CAPEX conocido"
+    },
+    {
+      "indicador": "precio_pollona",
+      "valor": 8500,
+      "unidad": "CLP/pollona",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "declarado",
+      "observacion": "dato base para CAPEX conocido"
+    },
+    {
+      "indicador": "costos_conocidos_mensuales",
+      "valor": 534900,
+      "unidad": "CLP/mes",
+      "formula": "284900 + 6000 + 20000 + 14000 + 200000 + 5000 + 5000",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "declarado",
+      "observacion": "suma de costos conocidos mensuales"
+    },
+    {
+      "indicador": "margen_preliminar_sin_mano_obra",
+      "valor": 201767,
+      "unidad": "CLP/mes",
+      "formula": "ingreso_mensual_estimado - costos_conocidos_mensuales",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "preliminar",
+      "observacion": "valor monetario redondeado a entero"
+    },
+    {
+      "indicador": "horas_trabajo_mes",
+      "valor": 45.5,
+      "unidad": "horas/mes",
+      "formula": "1.5 * 7 * 52 / 12",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "referencia",
+      "observacion": "horas mensuales referenciales"
+    },
+    {
+      "indicador": "mano_obra_valorizada_mensual",
+      "valor": 182000,
+      "unidad": "CLP/mes",
+      "formula": "horas_trabajo_mes * valor_hora_referencia",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "referencia",
+      "observacion": "valor monetario referencial redondeado a entero"
+    },
+    {
+      "indicador": "margen_preliminar_con_mano_obra",
+      "valor": 19767,
+      "unidad": "CLP/mes",
+      "formula": "margen_preliminar_sin_mano_obra - mano_obra_valorizada_mensual",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "preliminar",
+      "observacion": "valor monetario redondeado a entero"
+    },
+    {
+      "indicador": "capex_conocido_pollonas",
+      "valor": 4250000,
+      "unidad": "CLP",
+      "formula": "500 * 8500",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "conocido",
+      "observacion": "CAPEX conocido solo por compra de pollonas"
+    }
+  ],
+  "resumen": {
+    "ingreso_mensual_estimado": "$736.667",
+    "costos_conocidos_mensuales": "$534.900",
+    "margen_preliminar_sin_mano_obra": "$201.767",
+    "mano_obra_valorizada_mensual_referencial": "aproximadamente $182.000",
+    "margen_preliminar_con_mano_obra": "aproximadamente $19.767",
+    "capex_conocido_pollonas": "$4.250.000",
+    "semaforo_financiero_preliminar": "amarillo"
+  },
+  "indicadores_bloqueados": [
+    {
+      "indicador": "ROI",
+      "estado": "pendiente",
+      "observacion": "no calcular en finanzas preliminares básicas"
+    },
+    {
+      "indicador": "VAN",
+      "estado": "pendiente",
+      "observacion": "no calcular en finanzas preliminares básicas"
+    },
+    {
+      "indicador": "TIR",
+      "estado": "pendiente",
+      "observacion": "no calcular en finanzas preliminares básicas"
+    },
+    {
+      "indicador": "Payback",
+      "estado": "pendiente",
+      "observacion": "no calcular en finanzas preliminares básicas"
+    }
+  ],
+  "nota": "finanzas preliminares; no reemplaza flujo de caja completo ni evaluación financiera definitiva"
+}
