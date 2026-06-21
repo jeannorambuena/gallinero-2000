@@ -11,6 +11,8 @@ Este dashboard resume el avance del P0, los indicadores productivos, comerciales
 - `dashboard/data/indicadores-comerciales.json`
 - `dashboard/data/finanzas-preliminares.json`
 - `dashboard/data/semaforo-decision.json`
+- `dashboard/data/alertas-p0.json`
+- `dashboard/data/datos-faltantes.json`
 
 ## Abrir localmente
 

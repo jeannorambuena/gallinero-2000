@@ -1,0 +1,88 @@
+{
+  "proyecto": "Gallinero Nacho",
+  "fase": "P0 — Diagnóstico real",
+  "estado": "preliminar",
+  "alertas": [
+    {
+      "id": "A01",
+      "titulo": "Brecha comercial alta para 648 aves",
+      "severidad": "alta",
+      "dimension": "comercial",
+      "descripcion": "La venta actual es de 28 bandejas/semana y la operación proyectada para 648 aves requiere 135 bandejas/semana.",
+      "estado": "abierta"
+    },
+    {
+      "id": "A02",
+      "titulo": "Margen financiero muy ajustado al valorizar mano de obra",
+      "severidad": "alta",
+      "dimension": "financiera",
+      "descripcion": "El margen preliminar baja desde $201.767 sin mano de obra a aproximadamente $19.767/mes al valorizar mano de obra referencial.",
+      "estado": "abierta"
+    },
+    {
+      "id": "A03",
+      "titulo": "CAPEX total pendiente",
+      "severidad": "pendiente",
+      "dimension": "financiera",
+      "descripcion": "Solo está identificado el CAPEX conocido de pollonas por $4.250.000; falta infraestructura, agua, energía, transporte y equipamiento.",
+      "estado": "pendiente"
+    },
+    {
+      "id": "A04",
+      "titulo": "Camino/logística riesgosa para construcción y operación",
+      "severidad": "alta",
+      "dimension": "logistica",
+      "descripcion": "El acceso rural en cerro, camino de tierra, pendiente e invierno barroso complican transporte, construcción y operación.",
+      "estado": "abierta"
+    },
+    {
+      "id": "A05",
+      "titulo": "Agua con solución conceptual, no dimensionada",
+      "severidad": "media",
+      "dimension": "agua",
+      "descripcion": "Existe una solución conceptual con estanque de 1.000 L y bomba, pero falta dimensionamiento y cotización.",
+      "estado": "abierta"
+    },
+    {
+      "id": "A06",
+      "titulo": "Energía solar pendiente de dimensionamiento",
+      "severidad": "media",
+      "dimension": "energia",
+      "descripcion": "Se requiere sistema solar para luces y cámara; faltan watts, voltaje, batería, controlador, inversor, autonomía y costo.",
+      "estado": "abierta"
+    },
+    {
+      "id": "A07",
+      "titulo": "Humedad/condensación/calor requieren corrección",
+      "severidad": "alta",
+      "dimension": "sanitaria",
+      "descripcion": "Hay humedad, condensación/goteo, bebederos que botan agua, olor, calor en verano y gallinas jadeando.",
+      "estado": "abierta"
+    },
+    {
+      "id": "A08",
+      "titulo": "Legal/contable pendiente",
+      "severidad": "pendiente",
+      "dimension": "legal_contable",
+      "descripcion": "Falta revisar formalización, permisos, registro de ingresos, gastos, impuestos y trazabilidad si el proyecto escala.",
+      "estado": "pendiente"
+    },
+    {
+      "id": "A09",
+      "titulo": "Bodega actual insuficiente para escalar",
+      "severidad": "media",
+      "dimension": "constructiva",
+      "descripcion": "La bodega actual de 2 x 3 m parece insuficiente para una operación ampliada y requiere definición constructiva.",
+      "estado": "abierta"
+    },
+    {
+      "id": "A10",
+      "titulo": "No comprar 500 pollonas sin validar mercado y costos",
+      "severidad": "alta",
+      "dimension": "decision",
+      "descripcion": "La compra de 500 pollonas debe quedar bloqueada hasta validar mercado, costos completos y condiciones operativas.",
+      "estado": "bloqueante"
+    }
+  ],
+  "nota": "Alertas críticas preliminares P0. No autorizan inversión ni compra de 500 pollonas."
+}

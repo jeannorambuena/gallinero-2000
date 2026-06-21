@@ -1,9 +1,11 @@
 const DATA_FILES = {
-  estado: '../data/estado-proyecto.json',
-  productivos: '../data/indicadores-productivos.json',
-  comerciales: '../data/indicadores-comerciales.json',
-  finanzas: '../data/finanzas-preliminares.json',
-  semaforo: '../data/semaforo-decision.json'
+  estado: '/data/estado-proyecto.json',
+  productivos: '/data/indicadores-productivos.json',
+  comerciales: '/data/indicadores-comerciales.json',
+  finanzas: '/data/finanzas-preliminares.json',
+  semaforo: '/data/semaforo-decision.json',
+  alertas: '/data/alertas-p0.json',
+  datosFaltantes: '/data/datos-faltantes.json'
 };
 
 const DIMENSION_ORDER = [
@@ -78,20 +80,95 @@ function badgeClass(estado) {
   return 'badge-pendiente';
 }
 
+function severityClass(severidad) {
+  if (severidad === 'alta') return 'severity-alta';
+  if (severidad === 'media') return 'severity-media';
+  return 'severity-pendiente';
+}
+
 async function loadJson(path) {
   const response = await fetch(path);
   if (!response.ok) throw new Error(`No se pudo cargar ${path}`);
   return response.json();
 }
 
+function renderAlertas(alertasData) {
+  const container = document.getElementById('alertas-p0');
+  container.innerHTML = '';
+
+  (alertasData.alertas || []).forEach((alerta) => {
+    const item = document.createElement('article');
+    item.className = `alert-card ${severityClass(alerta.severidad)}`;
+
+    const meta = document.createElement('div');
+    meta.className = 'alert-meta';
+
+    const id = document.createElement('span');
+    id.textContent = alerta.id;
+
+    const severity = document.createElement('span');
+    severity.className = 'alert-severity';
+    severity.textContent = alerta.severidad;
+
+    meta.append(id, severity);
+
+    const title = document.createElement('h3');
+    title.textContent = alerta.titulo;
+
+    const description = document.createElement('p');
+    description.textContent = alerta.descripcion;
+
+    const footer = document.createElement('p');
+    footer.className = 'alert-footer';
+    footer.textContent = `${alerta.dimension} · ${alerta.estado}`;
+
+    item.append(meta, title, description, footer);
+    container.appendChild(item);
+  });
+}
+
+function renderDatosFaltantes(datosData) {
+  const container = document.getElementById('datos-faltantes');
+  container.innerHTML = '';
+
+  (datosData.grupos || []).forEach((grupo) => {
+    const item = document.createElement('article');
+    item.className = `missing-group priority-${grupo.prioridad}`;
+
+    const header = document.createElement('div');
+    header.className = 'missing-header';
+
+    const title = document.createElement('h3');
+    title.textContent = grupo.grupo;
+
+    const priority = document.createElement('span');
+    priority.className = 'missing-priority';
+    priority.textContent = grupo.prioridad;
+
+    header.append(title, priority);
+
+    const list = document.createElement('ul');
+    (grupo.items || []).forEach((dato) => {
+      const li = document.createElement('li');
+      li.textContent = dato;
+      list.appendChild(li);
+    });
+
+    item.append(header, list);
+    container.appendChild(item);
+  });
+}
+
 async function init() {
   try {
-    const [estado, productivos, comerciales, finanzas, semaforo] = await Promise.all([
+    const [estado, productivos, comerciales, finanzas, semaforo, alertas, datosFaltantes] = await Promise.all([
       loadJson(DATA_FILES.estado),
       loadJson(DATA_FILES.productivos),
       loadJson(DATA_FILES.comerciales),
       loadJson(DATA_FILES.finanzas),
-      loadJson(DATA_FILES.semaforo)
+      loadJson(DATA_FILES.semaforo),
+      loadJson(DATA_FILES.alertas),
+      loadJson(DATA_FILES.datosFaltantes)
     ]);
 
     const prod = indexIndicators(productivos);
@@ -155,6 +232,9 @@ async function init() {
       item.append(label, badge);
       semaforoContainer.appendChild(item);
     });
+
+    renderAlertas(alertas);
+    renderDatosFaltantes(datosFaltantes);
 
     const condiciones = document.getElementById('condiciones-avanzar');
     condiciones.innerHTML = '';
