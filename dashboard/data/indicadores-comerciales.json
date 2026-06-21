@@ -1,0 +1,188 @@
+{
+  "proyecto": "Gallinero Nacho",
+  "fase": "P0 — Diagnóstico real",
+  "estado": "preliminar",
+  "indicadores": [
+    {
+      "indicador": "venta_actual_bandejas_semana",
+      "valor": 28,
+      "unidad": "bandejas/semana",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "dato base confirmado"
+    },
+    {
+      "indicador": "bandejas_segunda_semana",
+      "valor": 6,
+      "unidad": "bandejas/semana",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "dato base confirmado"
+    },
+    {
+      "indicador": "precio_bandeja_segunda",
+      "valor": 5000,
+      "unidad": "CLP/bandeja",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "dato base confirmado"
+    },
+    {
+      "indicador": "bandejas_primera_semana",
+      "valor": 14,
+      "unidad": "bandejas/semana",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "dato base confirmado"
+    },
+    {
+      "indicador": "precio_bandeja_primera",
+      "valor": 6000,
+      "unidad": "CLP/bandeja",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "dato base confirmado"
+    },
+    {
+      "indicador": "bandejas_extra_semana",
+      "valor": 8,
+      "unidad": "bandejas/semana",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "dato base confirmado"
+    },
+    {
+      "indicador": "precio_bandeja_extra",
+      "valor": 7000,
+      "unidad": "CLP/bandeja",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "dato base confirmado"
+    },
+    {
+      "indicador": "huevos_por_bandeja",
+      "valor": 30,
+      "unidad": "huevos/bandeja",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "dato base confirmado"
+    },
+    {
+      "indicador": "bandejas_semana_proyectadas_648_aves",
+      "valor": 135,
+      "unidad": "bandejas/semana",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "estimado",
+      "observacion": "proyección 648 aves declarada"
+    },
+    {
+      "indicador": "capacidad_adicional_declarada_bandejas_semana",
+      "valor": 8,
+      "unidad": "bandejas/semana",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "dato base confirmado"
+    },
+    {
+      "indicador": "ingreso_semanal_actual",
+      "valor": 170000,
+      "unidad": "CLP/semana",
+      "formula": "6*5000 + 14*6000 + 8*7000",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "valor monetario redondeado a entero"
+    },
+    {
+      "indicador": "ingreso_mensual_estimado",
+      "valor": 736667,
+      "unidad": "CLP/mes",
+      "formula": "ingreso_semanal_actual * 52 / 12",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "estimado",
+      "observacion": "valor monetario redondeado a entero"
+    },
+    {
+      "indicador": "huevos_vendidos_semana",
+      "valor": 840,
+      "unidad": "huevos/semana",
+      "formula": "28 * 30",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "cálculo desde venta actual y huevos por bandeja"
+    },
+    {
+      "indicador": "precio_promedio_por_bandeja",
+      "valor": 6071,
+      "unidad": "CLP/bandeja",
+      "formula": "ingreso_semanal_actual / 28",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "valor monetario redondeado a entero"
+    },
+    {
+      "indicador": "precio_promedio_por_huevo",
+      "valor": 202,
+      "unidad": "CLP/huevo",
+      "formula": "ingreso_semanal_actual / huevos_vendidos_semana",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "valor monetario redondeado a entero"
+    },
+    {
+      "indicador": "brecha_bandejas_semana_para_648",
+      "valor": 107,
+      "unidad": "bandejas/semana",
+      "formula": "135 - 28",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "riesgo_comercial",
+      "observacion": "brecha comercial preliminar"
+    },
+    {
+      "indicador": "venta_potencial_actual_con_adicional",
+      "valor": 36,
+      "unidad": "bandejas/semana",
+      "formula": "28 + 8",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "estimado",
+      "observacion": "considera capacidad adicional declarada"
+    },
+    {
+      "indicador": "brecha_restante_con_adicional",
+      "valor": 99,
+      "unidad": "bandejas/semana",
+      "formula": "135 - 36",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "riesgo_comercial",
+      "observacion": "brecha comercial preliminar con capacidad adicional"
+    },
+    {
+      "indicador": "crecimiento_requerido_veces",
+      "valor": 4.82,
+      "unidad": "veces",
+      "formula": "135 / 28",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "riesgo_comercial",
+      "observacion": "crecimiento requerido redondeado a 2 decimales"
+    }
+  ],
+  "resumen": {
+    "venta_actual": "28 bandejas/semana",
+    "ingreso_semanal_actual": "$170.000",
+    "ingreso_mensual_estimado": "$736.667 aproximadamente",
+    "venta_proyectada_requerida_648_aves": "135 bandejas/semana",
+    "brecha_actual": "107 bandejas/semana",
+    "brecha_considerando_8_bandejas_adicionales": "99 bandejas/semana",
+    "semaforo_comercial_preliminar": "amarillo_rojo"
+  },
+  "nota": "indicadores comerciales preliminares; no validan mercado futuro por sí solos"
+}

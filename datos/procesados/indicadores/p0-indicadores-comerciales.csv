@@ -1,0 +1,20 @@
+indicador,valor,unidad,formula,fuente,estado,observacion
+venta_actual_bandejas_semana,28,bandejas/semana,dato declarado,dato declarado por Nacho / cálculo P0,confirmado,dato base confirmado
+bandejas_segunda_semana,6,bandejas/semana,dato declarado,dato declarado por Nacho / cálculo P0,confirmado,dato base confirmado
+precio_bandeja_segunda,5000,CLP/bandeja,dato declarado,dato declarado por Nacho / cálculo P0,confirmado,dato base confirmado
+bandejas_primera_semana,14,bandejas/semana,dato declarado,dato declarado por Nacho / cálculo P0,confirmado,dato base confirmado
+precio_bandeja_primera,6000,CLP/bandeja,dato declarado,dato declarado por Nacho / cálculo P0,confirmado,dato base confirmado
+bandejas_extra_semana,8,bandejas/semana,dato declarado,dato declarado por Nacho / cálculo P0,confirmado,dato base confirmado
+precio_bandeja_extra,7000,CLP/bandeja,dato declarado,dato declarado por Nacho / cálculo P0,confirmado,dato base confirmado
+huevos_por_bandeja,30,huevos/bandeja,dato declarado,dato declarado por Nacho / cálculo P0,confirmado,dato base confirmado
+bandejas_semana_proyectadas_648_aves,135,bandejas/semana,dato declarado,dato declarado por Nacho / cálculo P0,estimado,proyección 648 aves declarada
+capacidad_adicional_declarada_bandejas_semana,8,bandejas/semana,dato declarado,dato declarado por Nacho / cálculo P0,confirmado,dato base confirmado
+ingreso_semanal_actual,170000,CLP/semana,6*5000 + 14*6000 + 8*7000,dato declarado por Nacho / cálculo P0,confirmado,valor monetario redondeado a entero
+ingreso_mensual_estimado,736667,CLP/mes,ingreso_semanal_actual * 52 / 12,dato declarado por Nacho / cálculo P0,estimado,valor monetario redondeado a entero
+huevos_vendidos_semana,840,huevos/semana,28 * 30,dato declarado por Nacho / cálculo P0,confirmado,cálculo desde venta actual y huevos por bandeja
+precio_promedio_por_bandeja,6071,CLP/bandeja,ingreso_semanal_actual / 28,dato declarado por Nacho / cálculo P0,confirmado,valor monetario redondeado a entero
+precio_promedio_por_huevo,202,CLP/huevo,ingreso_semanal_actual / huevos_vendidos_semana,dato declarado por Nacho / cálculo P0,confirmado,valor monetario redondeado a entero
+brecha_bandejas_semana_para_648,107,bandejas/semana,135 - 28,dato declarado por Nacho / cálculo P0,riesgo_comercial,brecha comercial preliminar
+venta_potencial_actual_con_adicional,36,bandejas/semana,28 + 8,dato declarado por Nacho / cálculo P0,estimado,considera capacidad adicional declarada
+brecha_restante_con_adicional,99,bandejas/semana,135 - 36,dato declarado por Nacho / cálculo P0,riesgo_comercial,brecha comercial preliminar con capacidad adicional
+crecimiento_requerido_veces,4.82,veces,135 / 28,dato declarado por Nacho / cálculo P0,riesgo_comercial,crecimiento requerido redondeado a 2 decimales
