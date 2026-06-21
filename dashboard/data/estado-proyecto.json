@@ -1,0 +1,17 @@
+{
+  "proyecto": "Gallinero Nacho",
+  "fase_actual": "P0 — Diagnóstico real",
+  "avance_p0_estimado": 80,
+  "p1_preliminar_habilitado": false,
+  "p1_definitivo_habilitado": false,
+  "semaforo_general": "amarillo",
+  "estado_datos_reales": "disponibles, pendientes de consolidar en repo",
+  "estado_dashboard": "base inicial",
+  "advertencia": "decisión final no disponible todavía",
+  "proximos_pasos": [
+    "consolidar P0",
+    "crear indicadores preliminares",
+    "crear semáforo por dimensión",
+    "preparar P1 preliminar"
+  ]
+}
