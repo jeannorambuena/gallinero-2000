@@ -1,0 +1,63 @@
+{
+  "proyecto": "Gallinero Nacho",
+  "fase": "P0 — Diagnóstico real",
+  "estado": "preliminar",
+  "constructivo": {
+    "estado": "pendiente/amarillo",
+    "datos_conocidos": [
+      "galpón actual: 9 x 3 m = 27 m2",
+      "bodega actual: 2 x 3 m = 6 m2",
+      "terreno inmediato disponible: 19 x 7 m = 133 m2",
+      "terreno total: 10.000 m2",
+      "diseño deseado más adelante: estándar intermedio con techo zinc, laterales zinc abajo y malla arriba, piso tierra con cama de viruta y bodega aparte ampliada"
+    ],
+    "riesgos": [
+      "bodega actual insuficiente para escalar",
+      "todavía no existe diseño constructivo definitivo",
+      "todavía no existe cubicación de materiales",
+      "todavía no existe cotización actual de materiales",
+      "sin resolver ventilación, sombra, drenaje y humedad, el escalamiento puede aumentar riesgos sanitarios"
+    ],
+    "datos_faltantes": [
+      "croquis del terreno inmediato",
+      "ubicación propuesta de galpón ampliado",
+      "ubicación y tamaño de bodega ampliada",
+      "medidas objetivo de ampliación o nuevo galpón",
+      "orientación, ventilación, sombra y drenaje",
+      "cubicación de materiales",
+      "cotización actualizada",
+      "mano de obra y tiempos de construcción"
+    ],
+    "condicion_para_avanzar": "Definir alternativa constructiva preliminar, croquis, tamaño de galpón/bodega, ventilación, drenaje, listado de materiales y cotizaciones iniciales antes de P1 preliminar."
+  },
+  "logistico": {
+    "estado": "amarillo_rojo",
+    "datos_conocidos": [
+      "camino rural de tierra",
+      "ubicación en cerro",
+      "hay subidas y bajadas",
+      "camión grande complicado",
+      "camioneta sí entra",
+      "en invierno el camino se pone malo/barroso"
+    ],
+    "riesgos": [
+      "transporte de materiales puede requerir transbordo o viajes menores",
+      "invierno puede retrasar construcción y abastecimiento",
+      "transporte de 500 pollonas requiere planificación de descarga y bioseguridad",
+      "falta definir descarga, acopio y transporte interno",
+      "costos logísticos adicionales pueden afectar la evaluación financiera"
+    ],
+    "datos_faltantes": [
+      "punto exacto de descarga",
+      "capacidad real de acceso para camión mediano o grande",
+      "distancia desde descarga hasta galpón/bodega",
+      "zona de acopio",
+      "plan de transporte de pollonas",
+      "plan de transporte de materiales",
+      "restricciones por lluvia o barro",
+      "costos logísticos adicionales"
+    ],
+    "condicion_para_avanzar": "Validar acceso, descarga, acopio, transporte interno, transporte de pollonas/materiales y restricciones de invierno antes de P1 preliminar."
+  },
+  "advertencia": "No se puede cerrar P0 ni iniciar P1 definitivo sin resolver riesgos constructivos y logísticos críticos."
+}

@@ -6,7 +6,8 @@ const DATA_FILES = {
   semaforo: '/data/semaforo-decision.json',
   alertas: '/data/alertas-p0.json',
   datosFaltantes: '/data/datos-faltantes.json',
-  subproyectos: '/data/subproyectos-criticos.json'
+  subproyectos: '/data/subproyectos-criticos.json',
+  logisticaConstruccion: '/data/logistica-construccion.json'
 };
 
 const DIMENSION_ORDER = [
@@ -77,6 +78,7 @@ function renderList(containerId, rows) {
 function badgeClass(estado) {
   if (estado === 'verde') return 'badge-verde';
   if (estado === 'amarillo_rojo') return 'badge-amarillo-rojo';
+  if (estado === 'pendiente/amarillo') return 'badge-amarillo';
   if (estado === 'amarillo') return 'badge-amarillo';
   return 'badge-pendiente';
 }
@@ -160,6 +162,57 @@ function renderDatosFaltantes(datosData) {
   });
 }
 
+function renderBlockCard(container, label, bloque, className = 'subproject-card') {
+  const card = document.createElement('article');
+  card.className = className;
+
+  const header = document.createElement('div');
+  header.className = 'subproject-header';
+
+  const title = document.createElement('h3');
+  title.textContent = label;
+
+  const badge = document.createElement('span');
+  badge.className = `badge ${badgeClass(bloque.estado)}`;
+  badge.textContent = bloque.estado;
+
+  header.append(title, badge);
+
+  const knownTitle = document.createElement('h4');
+  knownTitle.textContent = 'Datos conocidos principales';
+  const knownList = document.createElement('ul');
+  (bloque.datos_conocidos || []).slice(0, 5).forEach((dato) => {
+    const li = document.createElement('li');
+    li.textContent = dato;
+    knownList.appendChild(li);
+  });
+
+  const risksTitle = document.createElement('h4');
+  risksTitle.textContent = 'Riesgos principales';
+  const risksList = document.createElement('ul');
+  (bloque.riesgos || []).slice(0, 5).forEach((riesgo) => {
+    const li = document.createElement('li');
+    li.textContent = riesgo;
+    risksList.appendChild(li);
+  });
+
+  const missingTitle = document.createElement('h4');
+  missingTitle.textContent = 'Faltantes principales';
+  const missingList = document.createElement('ul');
+  (bloque.datos_faltantes || []).slice(0, 6).forEach((dato) => {
+    const li = document.createElement('li');
+    li.textContent = dato;
+    missingList.appendChild(li);
+  });
+
+  const condition = document.createElement('p');
+  condition.className = 'subproject-condition';
+  condition.textContent = bloque.condicion_para_avanzar;
+
+  card.append(header, knownTitle, knownList, risksTitle, risksList, missingTitle, missingList, condition);
+  container.appendChild(card);
+}
+
 function renderSubproyectos(subproyectosData) {
   const container = document.getElementById('subproyectos-criticos');
   container.innerHTML = '';
@@ -170,53 +223,25 @@ function renderSubproyectos(subproyectosData) {
   };
 
   Object.entries(subproyectosData.subproyectos || {}).forEach(([key, subproyecto]) => {
-    const card = document.createElement('article');
-    card.className = 'subproject-card';
-
-    const header = document.createElement('div');
-    header.className = 'subproject-header';
-
-    const title = document.createElement('h3');
-    title.textContent = labels[key] || key;
-
-    const badge = document.createElement('span');
-    badge.className = `badge ${badgeClass(subproyecto.estado)}`;
-    badge.textContent = subproyecto.estado;
-
-    header.append(title, badge);
-
-    const knownTitle = document.createElement('h4');
-    knownTitle.textContent = 'Datos conocidos principales';
-    const knownList = document.createElement('ul');
-    (subproyecto.datos_conocidos || []).slice(0, 5).forEach((dato) => {
-      const li = document.createElement('li');
-      li.textContent = dato;
-      knownList.appendChild(li);
-    });
-
-    const missingTitle = document.createElement('h4');
-    missingTitle.textContent = 'Faltantes principales';
-    const missingList = document.createElement('ul');
-    (subproyecto.datos_faltantes || []).slice(0, 6).forEach((dato) => {
-      const li = document.createElement('li');
-      li.textContent = dato;
-      missingList.appendChild(li);
-    });
-
-    const condition = document.createElement('p');
-    condition.className = 'subproject-condition';
-    condition.textContent = subproyecto.condicion_para_avanzar;
-
-    card.append(header, knownTitle, knownList, missingTitle, missingList, condition);
-    container.appendChild(card);
+    renderBlockCard(container, labels[key] || key, subproyecto);
   });
 
   text('subproyectos-advertencia', subproyectosData.advertencia || 'Los subproyectos críticos no habilitan compra todavía.');
 }
 
+function renderLogisticaConstruccion(logisticaData) {
+  const container = document.getElementById('logistica-construccion');
+  container.innerHTML = '';
+
+  renderBlockCard(container, 'Construcción', logisticaData.constructivo, 'logistics-card');
+  renderBlockCard(container, 'Logística', logisticaData.logistico, 'logistics-card');
+
+  text('logistica-advertencia', logisticaData.advertencia || 'No se puede cerrar P0 ni iniciar P1 definitivo sin resolver este bloque.');
+}
+
 async function init() {
   try {
-    const [estado, productivos, comerciales, finanzas, semaforo, alertas, datosFaltantes, subproyectos] = await Promise.all([
+    const [estado, productivos, comerciales, finanzas, semaforo, alertas, datosFaltantes, subproyectos, logisticaConstruccion] = await Promise.all([
       loadJson(DATA_FILES.estado),
       loadJson(DATA_FILES.productivos),
       loadJson(DATA_FILES.comerciales),
@@ -224,7 +249,8 @@ async function init() {
       loadJson(DATA_FILES.semaforo),
       loadJson(DATA_FILES.alertas),
       loadJson(DATA_FILES.datosFaltantes),
-      loadJson(DATA_FILES.subproyectos)
+      loadJson(DATA_FILES.subproyectos),
+      loadJson(DATA_FILES.logisticaConstruccion)
     ]);
 
     const prod = indexIndicators(productivos);
@@ -292,6 +318,7 @@ async function init() {
     renderAlertas(alertas);
     renderDatosFaltantes(datosFaltantes);
     renderSubproyectos(subproyectos);
+    renderLogisticaConstruccion(logisticaConstruccion);
 
     const condiciones = document.getElementById('condiciones-avanzar');
     condiciones.innerHTML = '';
