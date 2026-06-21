@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Este dashboard resume el avance del P0, los indicadores productivos, comerciales, financieros preliminares y el semáforo de decisión del proyecto Gallinero Nacho.
+Este dashboard resume el avance del P0, los indicadores productivos, comerciales, financieros preliminares, subproyectos críticos de agua y energía, y el semáforo de decisión del proyecto Gallinero Nacho.
 
 ## Módulos actuales
 
@@ -13,6 +13,7 @@ Este dashboard resume el avance del P0, los indicadores productivos, comerciales
 - `dashboard/data/semaforo-decision.json`
 - `dashboard/data/alertas-p0.json`
 - `dashboard/data/datos-faltantes.json`
+- `dashboard/data/subproyectos-criticos.json`
 
 ## Abrir localmente
 
@@ -43,6 +44,8 @@ http://127.0.0.1:8080/public/
 - Comercial: amarillo_rojo
 - Financiero: amarillo
 - Constructivo: pendiente
+- Agua: amarillo
+- Energía solar: amarillo
 - Legal/contable: pendiente
 
 ## Advertencia

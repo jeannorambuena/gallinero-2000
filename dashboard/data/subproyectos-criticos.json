@@ -1,0 +1,67 @@
+{
+  "proyecto": "Gallinero Nacho",
+  "fase": "P0 — Diagnóstico real",
+  "estado": "preliminar",
+  "subproyectos": {
+    "agua": {
+      "estado": "amarillo",
+      "datos_conocidos": [
+        "consumo actual: 34 L/día para 148 gallinas",
+        "consumo actual por ave: 0.23 L/ave/día",
+        "operación proyectada: 648 aves",
+        "agua proyectada: 150–200 L/día",
+        "solución conceptual: estanque de 1.000 L en parte alta + bomba"
+      ],
+      "datos_faltantes": [
+        "caudal disponible",
+        "presión requerida",
+        "autonomía real",
+        "ubicación definitiva del estanque",
+        "bomba",
+        "filtros",
+        "fittings",
+        "líneas",
+        "niples",
+        "respaldo",
+        "costo completo"
+      ],
+      "riesgos": [
+        "sin agua dimensionada no se debe avanzar a compra de pollonas",
+        "fallas de agua afectan bienestar, producción y mortalidad",
+        "bebederos o líneas mal resueltos pueden aumentar humedad"
+      ],
+      "condicion_para_avanzar": "Dimensionar caudal, presión, autonomía, ubicación, bomba, filtros, fittings, líneas, niples, respaldo y costo antes de habilitar P1 preliminar."
+    },
+    "energia_solar": {
+      "estado": "amarillo",
+      "datos_conocidos": [
+        "20 luces interiores",
+        "2 luces exteriores",
+        "1 cámara funcionando todo el día",
+        "batería para noche",
+        "respaldo deseado de 2 días",
+        "iluminación artificial requerida 5 horas diarias"
+      ],
+      "datos_faltantes": [
+        "watts por luz",
+        "consumo de cámara",
+        "voltaje del sistema",
+        "definir 12V/24V/220V",
+        "paneles",
+        "controlador",
+        "batería",
+        "inversor",
+        "protecciones",
+        "autonomía real",
+        "costo completo"
+      ],
+      "riesgos": [
+        "sin energía dimensionada no se puede cerrar P0 ni habilitar P1 definitivo",
+        "sistema subdimensionado puede dejar sin luz o cámara durante la noche",
+        "respaldo de 2 días puede aumentar batería y costo"
+      ],
+      "condicion_para_avanzar": "Levantar cargas, definir voltaje, dimensionar paneles, controlador, batería, inversor si corresponde, protecciones, autonomía y costo antes de P1 preliminar."
+    }
+  },
+  "advertencia": "Los subproyectos críticos de agua y energía solar no habilitan compra de 500 pollonas todavía."
+}
