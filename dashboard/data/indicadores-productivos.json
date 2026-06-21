@@ -1,0 +1,134 @@
+{
+  "proyecto": "Gallinero Nacho",
+  "fase": "P0 — Diagnóstico real",
+  "estado": "confirmado",
+  "indicadores": [
+    {
+      "indicador": "gallinas_iniciales",
+      "valor": 150,
+      "unidad": "aves",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "dato base confirmado"
+    },
+    {
+      "indicador": "gallinas_actuales",
+      "valor": 148,
+      "unidad": "aves",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "dato base confirmado"
+    },
+    {
+      "indicador": "muertes",
+      "valor": 2,
+      "unidad": "aves",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "dato base confirmado"
+    },
+    {
+      "indicador": "produccion_promedio_huevos_dia",
+      "valor": 132,
+      "unidad": "huevos/día",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "dato base confirmado"
+    },
+    {
+      "indicador": "produccion_minima_huevos_dia",
+      "valor": 120,
+      "unidad": "huevos/día",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "dato base confirmado"
+    },
+    {
+      "indicador": "produccion_maxima_huevos_dia",
+      "valor": 142,
+      "unidad": "huevos/día",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "dato base confirmado"
+    },
+    {
+      "indicador": "superficie_gallinero_m2",
+      "valor": 27,
+      "unidad": "m2",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "dato base confirmado"
+    },
+    {
+      "indicador": "consumo_agua_litros_dia",
+      "valor": 34,
+      "unidad": "litros/día",
+      "formula": "dato declarado",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "dato base confirmado"
+    },
+    {
+      "indicador": "postura_promedio_porcentaje",
+      "valor": 89.2,
+      "unidad": "%",
+      "formula": "132 / 148 * 100",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "porcentaje redondeado a 1 decimal"
+    },
+    {
+      "indicador": "postura_minima_porcentaje",
+      "valor": 81.1,
+      "unidad": "%",
+      "formula": "120 / 148 * 100",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "porcentaje redondeado a 1 decimal"
+    },
+    {
+      "indicador": "postura_maxima_porcentaje",
+      "valor": 95.9,
+      "unidad": "%",
+      "formula": "142 / 148 * 100",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "porcentaje redondeado a 1 decimal"
+    },
+    {
+      "indicador": "mortalidad_acumulada_porcentaje",
+      "valor": 1.3,
+      "unidad": "%",
+      "formula": "2 / 150 * 100",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "porcentaje redondeado a 1 decimal"
+    },
+    {
+      "indicador": "densidad_actual_aves_m2",
+      "valor": 5.48,
+      "unidad": "aves/m2",
+      "formula": "148 / 27",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "valor redondeado a 2 decimales"
+    },
+    {
+      "indicador": "agua_litros_ave_dia",
+      "valor": 0.23,
+      "unidad": "litros/ave/día",
+      "formula": "34 / 148",
+      "fuente": "dato declarado por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "valor redondeado a 2 decimales"
+    }
+  ],
+  "nota": "indicadores productivos preliminares, no cierran P0 por sí solos"
+}
