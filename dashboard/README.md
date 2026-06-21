@@ -12,6 +12,20 @@ Este dashboard resume el avance del P0, los indicadores productivos, comerciales
 - `dashboard/data/finanzas-preliminares.json`
 - `dashboard/data/semaforo-decision.json`
 
+## Abrir localmente
+
+Desde la raíz del repositorio:
+
+```bash
+python3 -m http.server 8080 --bind 127.0.0.1 --directory dashboard
+```
+
+Luego abrir:
+
+```text
+http://127.0.0.1:8080/public/
+```
+
 ## Estado actual
 
 - Fase: P0 — Diagnóstico real

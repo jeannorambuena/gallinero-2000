@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard P0 — Gallinero Nacho</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Proyecto Gallinero Nacho</p>
+          <h1>Dashboard P0 — Diagnóstico real</h1>
+          <p class="hero-text">Vista preliminar del estado productivo, comercial, financiero y de decisión del proyecto.</p>
+        </div>
+        <div class="hero-status" aria-label="Estado general del proyecto">
+          <span class="badge badge-amarillo" id="semaforo-general">Semáforo general: —</span>
+          <strong id="avance-p0">Avance P0: —</strong>
+        </div>
+      </header>
+
+      <section class="notice" role="note">
+        Dashboard preliminar P0. No autoriza inversión, diseño definitivo ni compra de 500 pollonas.
+      </section>
+
+      <section class="grid cards" aria-labelledby="tarjetas-principales-title">
+        <h2 id="tarjetas-principales-title" class="section-title">Tarjetas principales</h2>
+        <div class="card metric-card">
+          <span>Fase actual</span>
+          <strong id="fase-actual">—</strong>
+        </div>
+        <div class="card metric-card">
+          <span>Avance P0</span>
+          <strong id="card-avance-p0">—</strong>
+        </div>
+        <div class="card metric-card">
+          <span>P1 preliminar</span>
+          <strong id="p1-preliminar">—</strong>
+        </div>
+        <div class="card metric-card">
+          <span>P1 definitivo</span>
+          <strong id="p1-definitivo">—</strong>
+        </div>
+        <div class="card metric-card">
+          <span>Compra 500 pollonas</span>
+          <strong id="compra-pollonas">—</strong>
+        </div>
+        <div class="card metric-card">
+          <span>Decisión final</span>
+          <strong id="decision-final">—</strong>
+        </div>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="card panel">
+          <div class="panel-header">
+            <h2>Indicadores productivos</h2>
+            <span class="badge badge-verde">confirmados</span>
+          </div>
+          <dl class="data-list" id="indicadores-productivos"></dl>
+        </article>
+
+        <article class="card panel">
+          <div class="panel-header">
+            <h2>Indicadores comerciales</h2>
+            <span class="badge badge-amarillo-rojo">preliminares</span>
+          </div>
+          <dl class="data-list" id="indicadores-comerciales"></dl>
+        </article>
+
+        <article class="card panel">
+          <div class="panel-header">
+            <h2>Finanzas preliminares</h2>
+            <span class="badge badge-amarillo">preliminar</span>
+          </div>
+          <dl class="data-list" id="finanzas-preliminares"></dl>
+          <div class="blocked">
+            <h3>Indicadores pendientes</h3>
+            <p id="indicadores-bloqueados">—</p>
+          </div>
+        </article>
+
+        <article class="card panel">
+          <div class="panel-header">
+            <h2>Semáforo por dimensión</h2>
+            <span class="badge badge-amarillo">P0</span>
+          </div>
+          <div class="semaforo-grid" id="semaforo-dimensiones"></div>
+        </article>
+      </section>
+
+      <section class="card panel full-width">
+        <h2>Condiciones para avanzar</h2>
+        <ol class="conditions" id="condiciones-avanzar"></ol>
+      </section>
+
+      <footer class="footer">
+        <span>Fuente: JSON del dashboard P0.</span>
+        <span id="estado-carga">Cargando datos…</span>
+      </footer>
+    </main>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
