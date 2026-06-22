@@ -1,4 +1,5 @@
 const DATA_FILES = {
+  resumenEjecutivo: '/data/resumen-ejecutivo-p0.json',
   estado: '/data/estado-proyecto.json',
   productivos: '/data/indicadores-productivos.json',
   comerciales: '/data/indicadores-comerciales.json',
@@ -109,6 +110,28 @@ async function loadJson(path) {
   const response = await fetch(path);
   if (!response.ok) throw new Error(`No se pudo cargar ${path}`);
   return response.json();
+}
+
+function renderResumenEjecutivo(resumenData) {
+  const badge = document.getElementById('resumen-ejecutivo-estado');
+  if (badge) {
+    badge.className = `badge ${badgeClass(resumenData.estado_general)}`;
+    badge.textContent = `Estado general: ${resumenData.estado_general}`;
+  }
+
+  renderList('resumen-ejecutivo-decision', [
+    ['Avance P0', `${resumenData.avance_p0_estimado}%`],
+    ['P1 preliminar', resumenData.decision_actual?.p1_preliminar || '—'],
+    ['P1 definitivo', resumenData.decision_actual?.p1_definitivo || '—'],
+    ['Compra 500 pollonas', resumenData.decision_actual?.compra_500_pollonas || '—'],
+    ['Construcción', resumenData.decision_actual?.construccion || '—'],
+    ['Inversión mayor', resumenData.decision_actual?.inversion_mayor || '—']
+  ]);
+
+  renderUl('resumen-puntos-favorables', resumenData.puntos_favorables, 7);
+  renderUl('resumen-riesgos-principales', resumenData.riesgos_principales, 8);
+  renderUl('resumen-acciones-recomendadas', resumenData.acciones_recomendadas, 7);
+  text('resumen-ejecutivo-conclusion', resumenData.conclusion || 'Resumen ejecutivo no disponible.');
 }
 
 function renderAlertas(alertasData) {
@@ -374,7 +397,8 @@ function renderCriteriosP1(criteriosData) {
 
 async function init() {
   try {
-    const [estado, productivos, comerciales, finanzas, semaforo, alertas, datosFaltantes, subproyectos, logisticaConstruccion, validacionComercial, legalContable, capex, flujoCaja, criteriosP1] = await Promise.all([
+    const [resumenEjecutivo, estado, productivos, comerciales, finanzas, semaforo, alertas, datosFaltantes, subproyectos, logisticaConstruccion, validacionComercial, legalContable, capex, flujoCaja, criteriosP1] = await Promise.all([
+      loadJson(DATA_FILES.resumenEjecutivo),
       loadJson(DATA_FILES.estado),
       loadJson(DATA_FILES.productivos),
       loadJson(DATA_FILES.comerciales),
@@ -453,6 +477,7 @@ async function init() {
       semaforoContainer.appendChild(item);
     });
 
+    renderResumenEjecutivo(resumenEjecutivo);
     renderAlertas(alertas);
     renderDatosFaltantes(datosFaltantes);
     renderSubproyectos(subproyectos);
