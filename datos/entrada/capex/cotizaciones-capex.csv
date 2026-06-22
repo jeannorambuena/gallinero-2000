@@ -1,0 +1,12 @@
+categoria,item,proveedor,fecha,cantidad,unidad,precio_unitario_clp,total_clp,estado,observacion
+pollonas,500 pollonas,,,,,,,pendiente,confirmar precio y condiciones
+galpon,estructura,,,,,,,pendiente,
+galpon,zinc,,,,,,,pendiente,
+galpon,malla,,,,,,,pendiente,
+bodega,ampliacion bodega,,,,,,,pendiente,
+agua,estanque/bomba/lineas,,,,,,,pendiente,
+solar,sistema solar,,,,,,,pendiente,
+equipamiento,comederos/bebederos/nidales,,,,,,,pendiente,
+logistica,transporte pollonas/materiales,,,,,,,pendiente,
+mano_obra,construccion,,,,,,,pendiente,
+contingencia,imprevistos,,,,,,,pendiente,

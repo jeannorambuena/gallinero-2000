@@ -1,0 +1,8 @@
+carga,cantidad,watts_unitarios,horas_dia,wh_dia,estado,observacion
+luz_interior,20,,,,pendiente,
+luz_exterior,2,,,,pendiente,
+camara,1,,24,,pendiente,
+bateria,,,,,pendiente,
+paneles,,,,,pendiente,
+controlador,,,,,pendiente,
+inversor,,,,,pendiente,si corresponde

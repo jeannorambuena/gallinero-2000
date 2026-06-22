@@ -1,0 +1,97 @@
+{
+  "proyecto": "Gallinero Nacho",
+  "fase_actual": "P0 — Diagnóstico real",
+  "estado_desbloqueo": "en levantamiento",
+  "objetivo": "Transformar los pendientes del MVP P0 en instrumentos concretos para levantar evidencia mínima antes de decidir si corresponde habilitar P1 preliminar.",
+  "tareas_por_dimension": [
+    {
+      "dimension": "comercial",
+      "estado": "pendiente",
+      "tarea": "validar clientes actuales, clientes potenciales, canales y bandejas comprometidas"
+    },
+    {
+      "dimension": "terreno",
+      "estado": "pendiente",
+      "tarea": "levantar croquis del terreno inmediato 19 x 7 m"
+    },
+    {
+      "dimension": "agua",
+      "estado": "pendiente",
+      "tarea": "dimensionar consumo, autonomía, presión, bomba, líneas y respaldo"
+    },
+    {
+      "dimension": "energia",
+      "estado": "pendiente",
+      "tarea": "dimensionar cargas solares, batería, paneles, controlador, inversor y protecciones"
+    },
+    {
+      "dimension": "capex",
+      "estado": "pendiente",
+      "tarea": "levantar cotizaciones por categoría"
+    },
+    {
+      "dimension": "flujo",
+      "estado": "pendiente",
+      "tarea": "preparar flujo proyectado preliminar para 648 aves"
+    },
+    {
+      "dimension": "logistica",
+      "estado": "pendiente",
+      "tarea": "validar acceso, descarga, acopio, transporte e invierno"
+    },
+    {
+      "dimension": "legal_contable",
+      "estado": "pendiente",
+      "tarea": "revisar formalización, registros, boletas/facturas, impuestos, trazabilidad y permisos"
+    },
+    {
+      "dimension": "decision",
+      "estado": "pendiente",
+      "tarea": "definir criterios sugeridos de detener, pausar o rediseñar"
+    }
+  ],
+  "documentos_creados": [
+    "docs/01-p0-diagnostico/plan-desbloqueo-p1-preliminar.md",
+    "docs/01-p0-diagnostico/plan-validacion-comercial-operativo.md",
+    "docs/01-p0-diagnostico/plantilla-croquis-terreno.md",
+    "docs/01-p0-diagnostico/plantilla-dimensionamiento-agua.md",
+    "docs/01-p0-diagnostico/plantilla-dimensionamiento-solar.md",
+    "docs/01-p0-diagnostico/plantilla-capex-cotizaciones.md",
+    "docs/01-p0-diagnostico/plantilla-flujo-proyectado-648.md",
+    "docs/01-p0-diagnostico/criterios-no-avance.md",
+    "docs/01-p0-diagnostico/bitacora-levantamiento-datos.md"
+  ],
+  "plantillas_csv": [
+    "datos/entrada/validacion-comercial/clientes-actuales.csv",
+    "datos/entrada/validacion-comercial/clientes-potenciales.csv",
+    "datos/entrada/validacion-comercial/canales-venta.csv",
+    "datos/entrada/terreno/croquis-mediciones.csv",
+    "datos/entrada/agua/dimensionamiento-agua.csv",
+    "datos/entrada/energia/dimensionamiento-solar.csv",
+    "datos/entrada/capex/cotizaciones-capex.csv",
+    "datos/entrada/flujo/flujo-proyectado-648.csv",
+    "datos/entrada/legal-contable/checklist-legal-contable.csv",
+    "datos/entrada/logistica/checklist-logistica.csv"
+  ],
+  "criterios_para_habilitar_p1_preliminar": [
+    "validación comercial inicial con bandejas comprometidas por canal",
+    "croquis del terreno 19 x 7 m",
+    "dimensionamiento preliminar de agua",
+    "dimensionamiento preliminar de energía solar",
+    "evaluación logística de acceso, descarga y acopio",
+    "CAPEX preliminar por categorías con cotizaciones",
+    "flujo de caja proyectado para 648 aves",
+    "revisión legal/contable preliminar",
+    "criterios de no avance definidos"
+  ],
+  "decisiones_bloqueadas": [
+    "P1 preliminar no habilitado",
+    "P1 definitivo bloqueado",
+    "compra de 500 pollonas bloqueada",
+    "construcción no autorizada",
+    "inversión mayor no autorizada",
+    "VAN/TIR/ROI/Payback bloqueados"
+  ],
+  "proximo_paso_recomendado": "Completar primero validación comercial, croquis del terreno y dimensionamientos de agua/energía antes de evaluar P1 preliminar.",
+  "conclusion": "El paquete de desbloqueo P1 preliminar deja instrumentos de levantamiento. No autoriza avance, compra, construcción ni inversión."
+}

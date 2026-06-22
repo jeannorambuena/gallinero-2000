@@ -23,6 +23,35 @@ El proyecto tiene una buena base productiva, pero el salto a 648 aves todavía n
 
 P1 preliminar solo podrá evaluarse después de cerrar brechas críticas: mercado, croquis, CAPEX completo, flujo proyectado, agua, energía, logística y legal/contable.
 
+## Paquete de desbloqueo P1 preliminar
+
+El paquete de desbloqueo P1 preliminar transforma los pendientes del MVP P0 en instrumentos de levantamiento. No habilita P1, no autoriza compra de 500 pollonas, no autoriza construcción ni inversión mayor.
+
+Documentos principales:
+
+- `docs/01-p0-diagnostico/plan-desbloqueo-p1-preliminar.md`
+- `docs/01-p0-diagnostico/plan-validacion-comercial-operativo.md`
+- `docs/01-p0-diagnostico/plantilla-croquis-terreno.md`
+- `docs/01-p0-diagnostico/plantilla-dimensionamiento-agua.md`
+- `docs/01-p0-diagnostico/plantilla-dimensionamiento-solar.md`
+- `docs/01-p0-diagnostico/plantilla-capex-cotizaciones.md`
+- `docs/01-p0-diagnostico/plantilla-flujo-proyectado-648.md`
+- `docs/01-p0-diagnostico/criterios-no-avance.md`
+- `docs/01-p0-diagnostico/bitacora-levantamiento-datos.md`
+
+Plantillas CSV:
+
+- `datos/entrada/validacion-comercial/clientes-actuales.csv`
+- `datos/entrada/validacion-comercial/clientes-potenciales.csv`
+- `datos/entrada/validacion-comercial/canales-venta.csv`
+- `datos/entrada/terreno/croquis-mediciones.csv`
+- `datos/entrada/agua/dimensionamiento-agua.csv`
+- `datos/entrada/energia/dimensionamiento-solar.csv`
+- `datos/entrada/capex/cotizaciones-capex.csv`
+- `datos/entrada/flujo/flujo-proyectado-648.csv`
+- `datos/entrada/legal-contable/checklist-legal-contable.csv`
+- `datos/entrada/logistica/checklist-logistica.csv`
+
 ## Dashboard P0
 
 Desde la raíz del repositorio:

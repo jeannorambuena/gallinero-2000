@@ -1,0 +1,10 @@
+concepto,valor,unidad,estado,observacion
+consumo_actual,34,L/dia,conocido,para 148 gallinas
+gallinas_actuales,148,aves,conocido,
+gallinas_proyectadas,648,aves,escenario,
+consumo_proyectado_min,150,L/dia,estimado,
+consumo_proyectado_max,200,L/dia,estimado,
+estanque_conceptual,1000,L,conceptual,
+caudal_disponible,,L/min,pendiente,
+presion_disponible,,bar,pendiente,
+bomba,,modelo,pendiente,

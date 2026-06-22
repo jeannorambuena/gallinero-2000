@@ -15,6 +15,10 @@ SPECS = {
         "required": ["proyecto", "fase", "estado_general", "avance_p0_estimado", "decision_actual", "conclusion"],
         "non_empty_lists": ["puntos_favorables", "riesgos_principales", "decisiones_bloqueadas", "faltantes_para_p1_preliminar", "acciones_recomendadas"],
     },
+    "dashboard/data/desbloqueo-p1-preliminar.json": {
+        "required": ["proyecto", "fase_actual", "estado_desbloqueo", "objetivo", "proximo_paso_recomendado", "conclusion"],
+        "non_empty_lists": ["tareas_por_dimension", "documentos_creados", "plantillas_csv", "criterios_para_habilitar_p1_preliminar", "decisiones_bloqueadas"],
+    },
     "dashboard/data/estado-proyecto.json": {
         "required_any": [("fase", "fase_actual")],
         "required": ["proyecto", "avance_p0_estimado", "semaforo_general"],

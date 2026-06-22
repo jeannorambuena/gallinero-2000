@@ -13,7 +13,8 @@ const DATA_FILES = {
   legalContable: '/data/legal-contable.json',
   capex: '/data/capex-preliminar.json',
   flujoCaja: '/data/flujo-caja-preliminar.json',
-  criteriosP1: '/data/criterios-p1.json'
+  criteriosP1: '/data/criterios-p1.json',
+  desbloqueoP1: '/data/desbloqueo-p1-preliminar.json'
 };
 
 const DIMENSION_ORDER = [
@@ -359,6 +360,31 @@ function renderFlujoCaja(flujoData) {
   text('flujo-conclusion', flujoData.conclusion || 'No autoriza inversión todavía.');
 }
 
+function renderDesbloqueoP1(desbloqueoData) {
+  const badge = document.getElementById('desbloqueo-p1-estado');
+  if (badge) {
+    badge.className = `badge ${badgeClass(desbloqueoData.estado_desbloqueo)}`;
+    badge.textContent = desbloqueoData.estado_desbloqueo;
+  }
+
+  text('desbloqueo-p1-objetivo', desbloqueoData.objetivo || '—');
+  renderUl(
+    'desbloqueo-tareas',
+    (desbloqueoData.tareas_por_dimension || []).map((item) => `${item.dimension}: ${item.tarea} (${item.estado})`),
+    12
+  );
+  renderUl(
+    'desbloqueo-instrumentos',
+    [
+      ...(desbloqueoData.documentos_creados || []).map((item) => `doc: ${item}`),
+      ...(desbloqueoData.plantillas_csv || []).map((item) => `csv: ${item}`)
+    ],
+    12
+  );
+  renderUl('desbloqueo-decisiones', desbloqueoData.decisiones_bloqueadas, 8);
+  text('desbloqueo-proximo-paso', desbloqueoData.proximo_paso_recomendado || desbloqueoData.conclusion || 'Pendiente.');
+}
+
 function renderCriteriosP1(criteriosData) {
   const badge = document.getElementById('criterios-p1-estado');
   if (badge) {
@@ -401,7 +427,7 @@ function renderCriteriosP1(criteriosData) {
 
 async function init() {
   try {
-    const [resumenEjecutivo, estado, productivos, comerciales, finanzas, semaforo, alertas, datosFaltantes, subproyectos, logisticaConstruccion, validacionComercial, legalContable, capex, flujoCaja, criteriosP1] = await Promise.all([
+    const [resumenEjecutivo, estado, productivos, comerciales, finanzas, semaforo, alertas, datosFaltantes, subproyectos, logisticaConstruccion, validacionComercial, legalContable, capex, flujoCaja, criteriosP1, desbloqueoP1] = await Promise.all([
       loadJson(DATA_FILES.resumenEjecutivo),
       loadJson(DATA_FILES.estado),
       loadJson(DATA_FILES.productivos),
@@ -416,7 +442,8 @@ async function init() {
       loadJson(DATA_FILES.legalContable),
       loadJson(DATA_FILES.capex),
       loadJson(DATA_FILES.flujoCaja),
-      loadJson(DATA_FILES.criteriosP1)
+      loadJson(DATA_FILES.criteriosP1),
+      loadJson(DATA_FILES.desbloqueoP1)
     ]);
 
     const prod = indexIndicators(productivos);
@@ -490,6 +517,7 @@ async function init() {
     renderLegalContable(legalContable);
     renderCapex(capex);
     renderFlujoCaja(flujoCaja);
+    renderDesbloqueoP1(desbloqueoP1);
     renderCriteriosP1(criteriosP1);
 
     const condiciones = document.getElementById('condiciones-avanzar');

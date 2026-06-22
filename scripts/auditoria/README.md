@@ -1,6 +1,6 @@
 # Auditoría P0
 
-Scripts de control de calidad para validar la estructura mínima del dashboard P0, los CSV procesados y la coherencia de indicadores críticos del Proyecto Gallinero Nacho.
+Scripts de control de calidad para validar la estructura mínima del dashboard P0, los CSV procesados, las plantillas de entrada para desbloqueo P1 preliminar y la coherencia de indicadores críticos del Proyecto Gallinero Nacho.
 
 Usan solo Python estándar. No requieren pandas, numpy ni dependencias externas.
 
@@ -18,7 +18,7 @@ python3 scripts/auditoria/validar_json_dashboard.py
 
 ### `validar_csv_indicadores.py`
 
-Valida que existan y sean CSV legibles los archivos procesados de indicadores P0. Revisa encabezado, filas y que no estén vacíos.
+Valida que existan y sean CSV legibles los archivos procesados de indicadores P0 y las plantillas de entrada del paquete de desbloqueo P1 preliminar. Revisa encabezado, filas y que no estén vacíos.
 
 ```bash
 python3 scripts/auditoria/validar_csv_indicadores.py

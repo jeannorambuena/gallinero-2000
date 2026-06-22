@@ -9,6 +9,8 @@ Este dashboard resume el avance del P0, el resumen ejecutivo P0, los indicadores
 - Checklist MVP P0: `docs/01-p0-diagnostico/mvp-p0-checklist.md`
 - Cierre preliminar P0: `docs/01-p0-diagnostico/cierre-preliminar-p0.md`
 - Resumen ejecutivo P0: `docs/01-p0-diagnostico/resumen-ejecutivo-p0.md`
+- Plan de desbloqueo P1 preliminar: `docs/01-p0-diagnostico/plan-desbloqueo-p1-preliminar.md`
+- Plantillas de levantamiento: `docs/01-p0-diagnostico/plantilla-*.md`
 
 ## Módulos actuales
 
@@ -29,6 +31,20 @@ Este dashboard resume el avance del P0, el resumen ejecutivo P0, los indicadores
 - `dashboard/data/flujo-caja-preliminar.json`
 - `datos/procesados/indicadores/p0-flujo-caja-preliminar.csv`
 - `dashboard/data/criterios-p1.json`
+- `dashboard/data/desbloqueo-p1-preliminar.json`
+
+## Plantillas CSV de entrada
+
+- `datos/entrada/validacion-comercial/clientes-actuales.csv`
+- `datos/entrada/validacion-comercial/clientes-potenciales.csv`
+- `datos/entrada/validacion-comercial/canales-venta.csv`
+- `datos/entrada/terreno/croquis-mediciones.csv`
+- `datos/entrada/agua/dimensionamiento-agua.csv`
+- `datos/entrada/energia/dimensionamiento-solar.csv`
+- `datos/entrada/capex/cotizaciones-capex.csv`
+- `datos/entrada/flujo/flujo-proyectado-648.csv`
+- `datos/entrada/legal-contable/checklist-legal-contable.csv`
+- `datos/entrada/logistica/checklist-logistica.csv`
 
 ## Dashboard visual
 

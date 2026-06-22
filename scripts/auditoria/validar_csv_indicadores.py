@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Valida existencia y lectura básica de CSV de indicadores P0."""
+"""Valida existencia y lectura básica de CSV de indicadores P0 y plantillas de entrada."""
 
 from __future__ import annotations
 
@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path.cwd()
 
-CSV_FILES = [
+CSV_INDICADORES = [
     "datos/procesados/indicadores/p0-indicadores-productivos.csv",
     "datos/procesados/indicadores/p0-indicadores-comerciales.csv",
     "datos/procesados/indicadores/p0-indicadores-financieros-basicos.csv",
@@ -17,8 +17,21 @@ CSV_FILES = [
     "datos/procesados/indicadores/p0-flujo-caja-preliminar.csv",
 ]
 
+CSV_ENTRADA = [
+    "datos/entrada/validacion-comercial/clientes-actuales.csv",
+    "datos/entrada/validacion-comercial/clientes-potenciales.csv",
+    "datos/entrada/validacion-comercial/canales-venta.csv",
+    "datos/entrada/terreno/croquis-mediciones.csv",
+    "datos/entrada/agua/dimensionamiento-agua.csv",
+    "datos/entrada/energia/dimensionamiento-solar.csv",
+    "datos/entrada/capex/cotizaciones-capex.csv",
+    "datos/entrada/flujo/flujo-proyectado-648.csv",
+    "datos/entrada/legal-contable/checklist-legal-contable.csv",
+    "datos/entrada/logistica/checklist-logistica.csv",
+]
 
-def validate_csv(rel_path: str) -> list[str]:
+
+def validate_csv(rel_path: str, require_rows: bool = True) -> list[str]:
     errors: list[str] = []
     path = ROOT / rel_path
 
@@ -40,24 +53,32 @@ def validate_csv(rel_path: str) -> list[str]:
     except UnicodeDecodeError as exc:
         return [f"encoding inválido en {rel_path}: {exc}"]
 
-    if not rows:
+    if require_rows and not rows:
         errors.append(f"sin filas de datos: {rel_path}")
 
     return errors
 
 
 def main() -> int:
-    errors: list[str] = []
-    for rel_path in CSV_FILES:
-        errors.extend(validate_csv(rel_path))
+    indicator_errors: list[str] = []
+    input_errors: list[str] = []
 
-    if errors:
-        print("ERROR CSV indicadores")
-        for error in errors:
-            print(f"- {error}")
+    for rel_path in CSV_INDICADORES:
+        indicator_errors.extend(validate_csv(rel_path, require_rows=True))
+
+    for rel_path in CSV_ENTRADA:
+        input_errors.extend(validate_csv(rel_path, require_rows=True))
+
+    if indicator_errors or input_errors:
+        print("ERROR CSV indicadores/entrada")
+        for error in indicator_errors:
+            print(f"- indicadores: {error}")
+        for error in input_errors:
+            print(f"- entrada: {error}")
         return 1
 
-    print(f"OK CSV indicadores: {len(CSV_FILES)} archivos válidos")
+    print(f"OK CSV indicadores: {len(CSV_INDICADORES)} archivos válidos")
+    print(f"OK CSV entrada: {len(CSV_ENTRADA)} archivos válidos")
     return 0
 
 
