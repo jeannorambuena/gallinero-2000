@@ -24,26 +24,28 @@ Este dashboard resume el avance del P0, el resumen ejecutivo P0, los indicadores
 - `datos/procesados/indicadores/p0-flujo-caja-preliminar.csv`
 - `dashboard/data/criterios-p1.json`
 
+## Dashboard visual
+
+Dashboard visual básico mejorado, sin dependencias externas. Usa HTML, CSS y JavaScript puro.
+
+Desde la raíz del repositorio:
+
+```bash
+python3 -m http.server 8081 --bind 127.0.0.1 --directory dashboard
+```
+
+Luego abrir:
+
+```text
+http://127.0.0.1:8081/public/
+```
+
 ## Auditoría de datos
 
 Desde la raíz del repositorio:
 
 ```bash
 python3 scripts/auditoria/validar_todo_p0.py
-```
-
-## Abrir localmente
-
-Desde la raíz del repositorio:
-
-```bash
-python3 -m http.server 8080 --bind 127.0.0.1 --directory dashboard
-```
-
-Luego abrir:
-
-```text
-http://127.0.0.1:8080/public/
 ```
 
 ## Estado actual

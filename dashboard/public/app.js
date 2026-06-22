@@ -93,11 +93,15 @@ function renderUl(containerId, items, limit = items?.length ?? 0) {
 }
 
 function badgeClass(estado) {
-  if (estado === 'verde') return 'badge-verde';
-  if (estado === 'amarillo_rojo') return 'badge-amarillo-rojo';
-  if (estado === 'pendiente/amarillo') return 'badge-amarillo';
-  if (estado === 'amarillo') return 'badge-amarillo';
+  if (estado === 'verde' || estado === 'cumplido') return 'badge-verde';
+  if (estado === 'amarillo_rojo' || estado === 'bloqueante') return 'badge-amarillo-rojo';
+  if (estado === 'pendiente/amarillo' || estado === 'amarillo' || estado === 'parcial') return 'badge-amarillo';
   return 'badge-pendiente';
+}
+
+function stateClass(estado) {
+  if (!estado) return 'state-pendiente';
+  return `state-${String(estado).replace('/', '-').replace('_', '-')}`;
 }
 
 function severityClass(severidad) {
@@ -372,7 +376,7 @@ function renderCriteriosP1(criteriosData) {
   container.innerHTML = '';
   (criteriosData.criterios_minimos || []).forEach((criterio) => {
     const item = document.createElement('article');
-    item.className = 'diagnostic-block';
+    item.className = `diagnostic-block ${stateClass(criterio.estado)}`;
 
     const title = document.createElement('h3');
     title.textContent = `${criterio.id} · ${criterio.dimension} · ${criterio.estado}`;
