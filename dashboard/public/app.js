@@ -7,7 +7,9 @@ const DATA_FILES = {
   alertas: '/data/alertas-p0.json',
   datosFaltantes: '/data/datos-faltantes.json',
   subproyectos: '/data/subproyectos-criticos.json',
-  logisticaConstruccion: '/data/logistica-construccion.json'
+  logisticaConstruccion: '/data/logistica-construccion.json',
+  validacionComercial: '/data/validacion-comercial.json',
+  legalContable: '/data/legal-contable.json'
 };
 
 const DIMENSION_ORDER = [
@@ -72,6 +74,17 @@ function renderList(containerId, rows) {
 
     wrapper.append(term, description);
     container.appendChild(wrapper);
+  });
+}
+
+function renderUl(containerId, items, limit = items?.length ?? 0) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+
+  (items || []).slice(0, limit).forEach((text) => {
+    const li = document.createElement('li');
+    li.textContent = text;
+    container.appendChild(li);
   });
 }
 
@@ -239,9 +252,40 @@ function renderLogisticaConstruccion(logisticaData) {
   text('logistica-advertencia', logisticaData.advertencia || 'No se puede cerrar P0 ni iniciar P1 definitivo sin resolver este bloque.');
 }
 
+function renderValidacionComercial(comercialData) {
+  const badge = document.getElementById('validacion-comercial-estado');
+  if (badge) {
+    badge.className = `badge ${badgeClass(comercialData.estado)}`;
+    badge.textContent = comercialData.estado;
+  }
+
+  renderList('validacion-comercial-metricas', [
+    ['Venta actual', `${comercialData.venta_actual_bandejas_semana} bandejas/semana`],
+    ['Venta requerida', `${comercialData.venta_requerida_648_bandejas_semana} bandejas/semana`],
+    ['Brecha', `${comercialData.brecha_bandejas_semana} bandejas/semana`],
+    ['Crecimiento requerido', `${comercialData.crecimiento_requerido_veces} veces`]
+  ]);
+
+  renderUl('canales-actuales', comercialData.canales_actuales);
+  renderUl('canales-potenciales', comercialData.canales_potenciales);
+  text('validacion-comercial-conclusion', comercialData.conclusion || 'No comprar sin validar mercado.');
+}
+
+function renderLegalContable(legalData) {
+  const badge = document.getElementById('legal-contable-estado');
+  if (badge) {
+    badge.className = `badge ${badgeClass(legalData.estado)}`;
+    badge.textContent = legalData.estado;
+  }
+
+  renderUl('legal-temas', legalData.temas_a_revisar, 8);
+  renderUl('legal-riesgos', legalData.riesgos, 6);
+  text('legal-contable-advertencia', legalData.advertencia || 'No reemplaza revisión profesional.');
+}
+
 async function init() {
   try {
-    const [estado, productivos, comerciales, finanzas, semaforo, alertas, datosFaltantes, subproyectos, logisticaConstruccion] = await Promise.all([
+    const [estado, productivos, comerciales, finanzas, semaforo, alertas, datosFaltantes, subproyectos, logisticaConstruccion, validacionComercial, legalContable] = await Promise.all([
       loadJson(DATA_FILES.estado),
       loadJson(DATA_FILES.productivos),
       loadJson(DATA_FILES.comerciales),
@@ -250,7 +294,9 @@ async function init() {
       loadJson(DATA_FILES.alertas),
       loadJson(DATA_FILES.datosFaltantes),
       loadJson(DATA_FILES.subproyectos),
-      loadJson(DATA_FILES.logisticaConstruccion)
+      loadJson(DATA_FILES.logisticaConstruccion),
+      loadJson(DATA_FILES.validacionComercial),
+      loadJson(DATA_FILES.legalContable)
     ]);
 
     const prod = indexIndicators(productivos);
@@ -319,6 +365,8 @@ async function init() {
     renderDatosFaltantes(datosFaltantes);
     renderSubproyectos(subproyectos);
     renderLogisticaConstruccion(logisticaConstruccion);
+    renderValidacionComercial(validacionComercial);
+    renderLegalContable(legalContable);
 
     const condiciones = document.getElementById('condiciones-avanzar');
     condiciones.innerHTML = '';

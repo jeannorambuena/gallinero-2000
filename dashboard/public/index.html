@@ -126,6 +126,41 @@
         <p class="subproject-warning" id="logistica-advertencia">No se puede cerrar P0 ni iniciar P1 definitivo sin resolver este bloque.</p>
       </section>
 
+      <section class="dashboard-grid critical-grid" aria-label="Validación comercial y legal contable P0">
+        <article class="card panel">
+          <div class="panel-header">
+            <h2>Validación comercial</h2>
+            <span class="badge badge-amarillo-rojo" id="validacion-comercial-estado">—</span>
+          </div>
+          <dl class="data-list" id="validacion-comercial-metricas"></dl>
+          <div class="diagnostic-block">
+            <h3>Canales actuales</h3>
+            <ul id="canales-actuales"></ul>
+          </div>
+          <div class="diagnostic-block">
+            <h3>Canales potenciales</h3>
+            <ul id="canales-potenciales"></ul>
+          </div>
+          <p class="subproject-warning" id="validacion-comercial-conclusion">No comprar sin validar mercado.</p>
+        </article>
+
+        <article class="card panel">
+          <div class="panel-header">
+            <h2>Legal / Contable</h2>
+            <span class="badge badge-pendiente" id="legal-contable-estado">—</span>
+          </div>
+          <div class="diagnostic-block">
+            <h3>Temas a revisar</h3>
+            <ul id="legal-temas"></ul>
+          </div>
+          <div class="diagnostic-block">
+            <h3>Riesgos principales</h3>
+            <ul id="legal-riesgos"></ul>
+          </div>
+          <p class="subproject-warning" id="legal-contable-advertencia">No reemplaza revisión profesional.</p>
+        </article>
+      </section>
+
       <section class="card panel full-width">
         <h2>Condiciones para avanzar</h2>
         <ol class="conditions" id="condiciones-avanzar"></ol>

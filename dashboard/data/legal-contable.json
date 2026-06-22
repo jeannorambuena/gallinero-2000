@@ -1,0 +1,45 @@
+{
+  "proyecto": "Gallinero Nacho",
+  "fase": "P0 — Diagnóstico real",
+  "estado": "pendiente",
+  "temas_a_revisar": [
+    "venta informal vs venta formal",
+    "respaldo de ingresos",
+    "respaldo de gastos",
+    "boletas/facturas si vende a negocios",
+    "impuestos",
+    "trazabilidad",
+    "permisos o exigencias aplicables si escala",
+    "registro de inventario, alimento, mortalidad y ventas",
+    "separación de gastos personales y del negocio",
+    "impacto de vender a terceros o comercios"
+  ],
+  "riesgos": [
+    "escalar sin revisar formalización",
+    "no contar con registro ordenado de ingresos y gastos",
+    "vender a almacenes, minimarket o feria sin claridad documental",
+    "no considerar impuestos o exigencias aplicables",
+    "falta de trazabilidad de producción, ventas, alimento y mortalidad",
+    "mezclar gastos personales con gastos del negocio"
+  ],
+  "datos_faltantes": [
+    "forma actual de registro de ventas",
+    "forma actual de registro de gastos",
+    "figura formal aplicable si escala",
+    "requisitos de almacenes/minimarket",
+    "requisitos para vender en feria",
+    "obligaciones tributarias según volumen y canal",
+    "requisitos sanitarios o comerciales aplicables",
+    "sistema mínimo de trazabilidad"
+  ],
+  "criterios_para_avanzar": [
+    "definir cómo se registrarán ingresos y gastos",
+    "revisar con contador la forma de operación si escala",
+    "revisar requisitos para vender a negocios o feria",
+    "identificar documentación mínima para ventas formales",
+    "definir trazabilidad básica de producción, mortalidad, alimento, inventario y ventas",
+    "separar gastos personales y del negocio",
+    "levantar permisos o exigencias aplicables antes de comprometer inversión"
+  ],
+  "advertencia": "Diagnóstico preliminar P0. No reemplaza revisión de contador, asesor legal o autoridad competente."
+}
