@@ -10,7 +10,8 @@ const DATA_FILES = {
   logisticaConstruccion: '/data/logistica-construccion.json',
   validacionComercial: '/data/validacion-comercial.json',
   legalContable: '/data/legal-contable.json',
-  capex: '/data/capex-preliminar.json'
+  capex: '/data/capex-preliminar.json',
+  flujoCaja: '/data/flujo-caja-preliminar.json'
 };
 
 const DIMENSION_ORDER = [
@@ -306,9 +307,33 @@ function renderCapex(capexData) {
   text('capex-conclusion', capexData.conclusion || 'No comprar ni invertir sin CAPEX completo.');
 }
 
+function renderFlujoCaja(flujoData) {
+  const badge = document.getElementById('flujo-estado');
+  if (badge) {
+    badge.className = `badge ${badgeClass(flujoData.estado)}`;
+    badge.textContent = flujoData.estado;
+  }
+
+  renderList('flujo-resumen', [
+    ['Ingreso mensual actual', formatClp(flujoData.ingresos_actuales?.ingreso_mensual_estimado_clp ?? 0)],
+    ['Costos conocidos', formatClp(flujoData.costos_actuales?.total_costos_conocidos_clp ?? 0)],
+    ['Margen sin mano de obra', formatClp(flujoData.margenes_actuales?.margen_sin_mano_obra_clp ?? 0)],
+    ['Mano de obra referencial', formatClp(flujoData.mano_obra_referencial?.monto_clp ?? 0)],
+    ['Margen con mano de obra', formatClp(flujoData.margenes_actuales?.margen_con_mano_obra_clp ?? 0)],
+    ['CAPEX conocido', formatClp(flujoData.capex?.capex_conocido_pollonas_clp ?? 0)]
+  ]);
+
+  renderUl(
+    'flujo-indicadores-bloqueados',
+    (flujoData.indicadores_bloqueados || []).map((item) => `${item.indicador}: ${item.estado}`)
+  );
+  renderUl('flujo-riesgos', flujoData.riesgos, 6);
+  text('flujo-conclusion', flujoData.conclusion || 'No autoriza inversión todavía.');
+}
+
 async function init() {
   try {
-    const [estado, productivos, comerciales, finanzas, semaforo, alertas, datosFaltantes, subproyectos, logisticaConstruccion, validacionComercial, legalContable, capex] = await Promise.all([
+    const [estado, productivos, comerciales, finanzas, semaforo, alertas, datosFaltantes, subproyectos, logisticaConstruccion, validacionComercial, legalContable, capex, flujoCaja] = await Promise.all([
       loadJson(DATA_FILES.estado),
       loadJson(DATA_FILES.productivos),
       loadJson(DATA_FILES.comerciales),
@@ -320,7 +345,8 @@ async function init() {
       loadJson(DATA_FILES.logisticaConstruccion),
       loadJson(DATA_FILES.validacionComercial),
       loadJson(DATA_FILES.legalContable),
-      loadJson(DATA_FILES.capex)
+      loadJson(DATA_FILES.capex),
+      loadJson(DATA_FILES.flujoCaja)
     ]);
 
     const prod = indexIndicators(productivos);
@@ -392,6 +418,7 @@ async function init() {
     renderValidacionComercial(validacionComercial);
     renderLegalContable(legalContable);
     renderCapex(capex);
+    renderFlujoCaja(flujoCaja);
 
     const condiciones = document.getElementById('condiciones-avanzar');
     condiciones.innerHTML = '';

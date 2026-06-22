@@ -1,0 +1,129 @@
+{
+  "proyecto": "Gallinero Nacho",
+  "fase": "P0 — Diagnóstico real",
+  "estado": "amarillo",
+  "ingresos_actuales": {
+    "venta_actual_bandejas_semana": 28,
+    "ingreso_semanal_actual_clp": 170000,
+    "ingreso_mensual_estimado_clp": 736667,
+    "estado": "estimado"
+  },
+  "costos_actuales": {
+    "estado": "conocido",
+    "items": [
+      {
+        "concepto": "alimento",
+        "monto_clp": 284900,
+        "observacion": "22 sacos/mes a $12.950"
+      },
+      {
+        "concepto": "agua",
+        "monto_clp": 6000,
+        "observacion": "operación actual"
+      },
+      {
+        "concepto": "vitaminas",
+        "monto_clp": 20000,
+        "observacion": "operación actual"
+      },
+      {
+        "concepto": "envases/bandejas",
+        "monto_clp": 14000,
+        "observacion": "operación actual"
+      },
+      {
+        "concepto": "combustible",
+        "monto_clp": 200000,
+        "observacion": "operación actual"
+      },
+      {
+        "concepto": "cama/viruta",
+        "monto_clp": 5000,
+        "observacion": "operación actual"
+      },
+      {
+        "concepto": "medicamentos",
+        "monto_clp": 5000,
+        "observacion": "operación actual"
+      }
+    ],
+    "total_costos_conocidos_clp": 534900
+  },
+  "mano_obra_referencial": {
+    "horas_mes": 45.5,
+    "valor_hora_clp": 4000,
+    "monto_clp": 182000,
+    "estado": "estimado"
+  },
+  "margenes_actuales": {
+    "margen_sin_mano_obra_clp": 201767,
+    "margen_con_mano_obra_clp": 19767,
+    "estado": "estimado"
+  },
+  "capex": {
+    "capex_conocido_pollonas_clp": 4250000,
+    "capex_total": "pendiente"
+  },
+  "escenario_648": {
+    "venta_requerida_bandejas_semana": 135,
+    "brecha_comercial_bandejas_semana": 107,
+    "crecimiento_requerido_veces": 4.82,
+    "estado": "incompleto",
+    "motivo": "falta validar mercado, costos proyectados, CAPEX total, mano de obra, alimento proyectado, logística y formalización",
+    "margen_proyectado_definitivo": null
+  },
+  "datos_faltantes": [
+    "CAPEX total completo",
+    "costo proyectado de alimento para 648 aves",
+    "costo proyectado de agua",
+    "costo proyectado de energía",
+    "costo proyectado de envases",
+    "costo proyectado de medicamentos cama y contingencias",
+    "mano de obra requerida al escalar",
+    "costos logísticos adicionales",
+    "condiciones de formalización impuestos y venta formal",
+    "precio de venta por canal y volumen",
+    "demanda validada para 130–135 bandejas/semana"
+  ],
+  "riesgos": [
+    "margen actual queda muy estrecho al valorizar mano de obra",
+    "CAPEX total todavía no está disponible",
+    "brecha comercial puede impedir capturar ingresos proyectados",
+    "costos de alimento transporte construcción energía o agua podrían subir",
+    "vender más barato por volumen puede reducir margen",
+    "formalización e impuestos pueden cambiar resultado neto",
+    "invertir sin flujo completo puede llevar a una decisión incompleta"
+  ],
+  "criterios_para_avanzar": [
+    "consolidar CAPEX total preliminar",
+    "validar mercado para 130–135 bandejas/semana",
+    "proyectar costos de operación para 648 aves",
+    "estimar mano de obra real al escalar",
+    "incorporar logística formalización e impuestos si aplican",
+    "preparar flujo mensual proyectado",
+    "mantener bloqueados VAN TIR ROI y Payback hasta tener flujo completo"
+  ],
+  "indicadores_bloqueados": [
+    {
+      "indicador": "VAN",
+      "estado": "bloqueado",
+      "motivo": "requiere flujo completo"
+    },
+    {
+      "indicador": "TIR",
+      "estado": "bloqueado",
+      "motivo": "requiere flujo completo"
+    },
+    {
+      "indicador": "ROI",
+      "estado": "bloqueado",
+      "motivo": "requiere CAPEX total y flujo completo"
+    },
+    {
+      "indicador": "Payback",
+      "estado": "bloqueado",
+      "motivo": "requiere CAPEX total y flujo completo"
+    }
+  ],
+  "conclusion": "No calcular VAN/TIR/ROI/Payback ni autorizar inversión hasta completar CAPEX y flujo proyectado. El margen actual es positivo, pero muy ajustado con mano de obra y sin CAPEX total disponible."
+}

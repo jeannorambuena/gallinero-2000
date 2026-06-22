@@ -1,0 +1,19 @@
+concepto,tipo,monto_clp,estado,observacion
+ingreso mensual actual,ingreso,736667,estimado,basado en $170.000 semanal
+alimento,costo,284900,conocido,22 sacos/mes a $12.950
+agua,costo,6000,conocido,operación actual
+vitaminas,costo,20000,conocido,operación actual
+envases/bandejas,costo,14000,conocido,operación actual
+combustible,costo,200000,conocido,operación actual
+cama/viruta,costo,5000,conocido,operación actual
+medicamentos,costo,5000,conocido,operación actual
+costos conocidos mensuales,subtotal,534900,conocido,suma costos conocidos
+margen sin mano de obra,margen,201767,estimado,ingreso menos costos conocidos
+mano de obra referencial,costo,182000,estimado,45.5 horas mes a $4.000
+margen con mano de obra,margen,19767,estimado,margen menos mano de obra referencial
+CAPEX conocido pollonas,capex,4250000,conocido,500 pollonas a $8.500
+CAPEX total,capex,,pendiente,falta galpón/bodega/agua/energía/equipamiento/logística
+VAN,indicador,,bloqueado,requiere flujo completo
+TIR,indicador,,bloqueado,requiere flujo completo
+ROI,indicador,,bloqueado,requiere CAPEX total y flujo completo
+Payback,indicador,,bloqueado,requiere CAPEX total y flujo completo
