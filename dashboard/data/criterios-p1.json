@@ -1,0 +1,125 @@
+{
+  "proyecto": "Gallinero Nacho",
+  "fase_actual": "P0 — Diagnóstico real",
+  "estado_p1_preliminar": "no habilitado",
+  "estado_p1_definitivo": "bloqueado",
+  "compra_pollonas": "bloqueada",
+  "criterios_minimos": [
+    {
+      "id": "P1-01",
+      "criterio": "validación comercial inicial con clientes/canales y estimación de bandejas comprometidas",
+      "dimension": "comercial",
+      "estado": "bloqueante",
+      "evidencia": "venta actual 28 bandejas/semana; requerida 135; brecha 107; crecimiento requerido 4.82 veces",
+      "accion_requerida": "listar clientes, estimar bandejas por canal y validar preventas o compromisos"
+    },
+    {
+      "id": "P1-02",
+      "criterio": "revisión legal/contable preliminar",
+      "dimension": "legal_contable",
+      "estado": "pendiente",
+      "evidencia": "formalización, impuestos, trazabilidad y venta a comercios siguen pendientes",
+      "accion_requerida": "revisar con contador, asesor legal o autoridad competente antes de escalar"
+    },
+    {
+      "id": "P1-03",
+      "criterio": "croquis del terreno 19 x 7 m",
+      "dimension": "terreno_croquis",
+      "estado": "pendiente",
+      "evidencia": "existe terreno inmediato disponible de 133 m2, pero falta croquis operativo",
+      "accion_requerida": "dibujar croquis con galpón actual, bodega, acceso, drenaje, zonas de barro y posible ampliación"
+    },
+    {
+      "id": "P1-04",
+      "criterio": "alternativa constructiva preliminar",
+      "dimension": "constructivo",
+      "estado": "parcial",
+      "evidencia": "hay intención de estándar intermedio, pero no diseño ni cubicación",
+      "accion_requerida": "definir alternativa preliminar de galpón, bodega, ventilación, sombra y drenaje"
+    },
+    {
+      "id": "P1-05",
+      "criterio": "dimensionamiento preliminar de agua",
+      "dimension": "agua",
+      "estado": "parcial",
+      "evidencia": "consumo actual 34 L/día; proyección 150–200 L/día; solución conceptual estanque 1.000 L + bomba",
+      "accion_requerida": "dimensionar caudal, presión, autonomía, bomba, filtros, líneas, niples, respaldo y costo"
+    },
+    {
+      "id": "P1-06",
+      "criterio": "dimensionamiento preliminar de energía solar",
+      "dimension": "energia",
+      "estado": "parcial",
+      "evidencia": "hay cargas declaradas: 20 luces interiores, 2 exteriores, cámara 24/7 y respaldo deseado de 2 días",
+      "accion_requerida": "definir watts, voltaje, paneles, batería, controlador, inversor si corresponde, protecciones y costo"
+    },
+    {
+      "id": "P1-07",
+      "criterio": "evaluación logística de acceso, descarga y acopio",
+      "dimension": "logistica",
+      "estado": "bloqueante",
+      "evidencia": "camino rural de tierra, cerro, camión grande complicado e invierno barroso",
+      "accion_requerida": "validar acceso, punto de descarga, acopio, transporte interno, transporte de pollonas/materiales y restricciones climáticas"
+    },
+    {
+      "id": "P1-08",
+      "criterio": "CAPEX preliminar por categorías",
+      "dimension": "capex",
+      "estado": "parcial",
+      "evidencia": "solo está conocido CAPEX de pollonas por $4.250.000; CAPEX total pendiente",
+      "accion_requerida": "completar CAPEX por galpón, bodega, agua, energía, equipamiento, logística, mano de obra e imprevistos"
+    },
+    {
+      "id": "P1-09",
+      "criterio": "flujo de caja preliminar proyectado",
+      "dimension": "flujo_caja",
+      "estado": "parcial",
+      "evidencia": "flujo actual existe; escenario 648 está incompleto; VAN/TIR/ROI/Payback bloqueados",
+      "accion_requerida": "proyectar ingresos, costos, mano de obra, logística, formalización y CAPEX total para 648 aves"
+    },
+    {
+      "id": "P1-10",
+      "criterio": "criterios de no avance definidos",
+      "dimension": "decision",
+      "estado": "pendiente",
+      "evidencia": "todavía no existen umbrales explícitos para pausar, descartar o rediseñar",
+      "accion_requerida": "definir mínimos comerciales, financieros, constructivos, logísticos y sanitarios para avanzar o detener"
+    },
+    {
+      "id": "P1-11",
+      "criterio": "base productiva actual suficiente para seguir evaluando",
+      "dimension": "productivo",
+      "estado": "parcial",
+      "evidencia": "postura promedio 89.2% y mortalidad 1.3%, pero hay humedad, calor y bebederos por corregir",
+      "accion_requerida": "mantener indicadores productivos y resolver condiciones sanitarias antes de escalar"
+    }
+  ],
+  "bloqueos_p1_definitivo": [
+    "P0 no cerrado",
+    "mercado para 130–135 bandejas/semana no validado",
+    "CAPEX total pendiente",
+    "flujo de caja proyectado incompleto",
+    "diseño constructivo no definido",
+    "agua y energía sin dimensionamiento suficiente",
+    "logística rural e invierno no resueltos",
+    "legal/contable pendiente",
+    "VAN/TIR/ROI/Payback bloqueados"
+  ],
+  "bloqueos_compra_pollonas": [
+    "brecha comercial actual de 107 bandejas/semana",
+    "venta adicional declarada todavía insuficiente",
+    "CAPEX total no disponible",
+    "flujo de caja proyectado incompleto",
+    "galpón, bodega, agua, energía y logística sin cierre técnico",
+    "revisión legal/contable pendiente",
+    "criterios de no avance no definidos"
+  ],
+  "decision_actual": {
+    "p1_preliminar": false,
+    "p1_definitivo": false,
+    "compra_500_pollonas": false,
+    "construccion": false,
+    "inversion_mayor": false
+  },
+  "conclusion": "P1 preliminar no está habilitado. P1 definitivo y compra de 500 pollonas siguen bloqueados hasta cerrar brechas comerciales, legales, constructivas, logísticas, de agua, energía, CAPEX y flujo proyectado."
+}

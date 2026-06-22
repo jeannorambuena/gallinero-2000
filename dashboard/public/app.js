@@ -11,7 +11,8 @@ const DATA_FILES = {
   validacionComercial: '/data/validacion-comercial.json',
   legalContable: '/data/legal-contable.json',
   capex: '/data/capex-preliminar.json',
-  flujoCaja: '/data/flujo-caja-preliminar.json'
+  flujoCaja: '/data/flujo-caja-preliminar.json',
+  criteriosP1: '/data/criterios-p1.json'
 };
 
 const DIMENSION_ORDER = [
@@ -331,9 +332,49 @@ function renderFlujoCaja(flujoData) {
   text('flujo-conclusion', flujoData.conclusion || 'No autoriza inversión todavía.');
 }
 
+function renderCriteriosP1(criteriosData) {
+  const badge = document.getElementById('criterios-p1-estado');
+  if (badge) {
+    badge.className = 'badge badge-pendiente';
+    badge.textContent = criteriosData.estado_p1_preliminar;
+  }
+
+  renderList('criterios-p1-resumen', [
+    ['P1 preliminar', criteriosData.estado_p1_preliminar],
+    ['P1 definitivo', criteriosData.estado_p1_definitivo],
+    ['Compra pollonas', criteriosData.compra_pollonas]
+  ]);
+
+  const container = document.getElementById('criterios-p1-checklist');
+  container.innerHTML = '';
+  (criteriosData.criterios_minimos || []).forEach((criterio) => {
+    const item = document.createElement('article');
+    item.className = 'diagnostic-block';
+
+    const title = document.createElement('h3');
+    title.textContent = `${criterio.id} · ${criterio.dimension} · ${criterio.estado}`;
+
+    const description = document.createElement('p');
+    description.textContent = criterio.criterio;
+
+    const evidence = document.createElement('p');
+    evidence.textContent = `Evidencia: ${criterio.evidencia}`;
+
+    const action = document.createElement('p');
+    action.textContent = `Acción requerida: ${criterio.accion_requerida}`;
+
+    item.append(title, description, evidence, action);
+    container.appendChild(item);
+  });
+
+  renderUl('bloqueos-p1-definitivo', criteriosData.bloqueos_p1_definitivo, 9);
+  renderUl('bloqueos-compra-pollonas', criteriosData.bloqueos_compra_pollonas, 7);
+  text('criterios-p1-conclusion', criteriosData.conclusion || 'P1 preliminar no habilitado.');
+}
+
 async function init() {
   try {
-    const [estado, productivos, comerciales, finanzas, semaforo, alertas, datosFaltantes, subproyectos, logisticaConstruccion, validacionComercial, legalContable, capex, flujoCaja] = await Promise.all([
+    const [estado, productivos, comerciales, finanzas, semaforo, alertas, datosFaltantes, subproyectos, logisticaConstruccion, validacionComercial, legalContable, capex, flujoCaja, criteriosP1] = await Promise.all([
       loadJson(DATA_FILES.estado),
       loadJson(DATA_FILES.productivos),
       loadJson(DATA_FILES.comerciales),
@@ -346,7 +387,8 @@ async function init() {
       loadJson(DATA_FILES.validacionComercial),
       loadJson(DATA_FILES.legalContable),
       loadJson(DATA_FILES.capex),
-      loadJson(DATA_FILES.flujoCaja)
+      loadJson(DATA_FILES.flujoCaja),
+      loadJson(DATA_FILES.criteriosP1)
     ]);
 
     const prod = indexIndicators(productivos);
@@ -419,6 +461,7 @@ async function init() {
     renderLegalContable(legalContable);
     renderCapex(capex);
     renderFlujoCaja(flujoCaja);
+    renderCriteriosP1(criteriosP1);
 
     const condiciones = document.getElementById('condiciones-avanzar');
     condiciones.innerHTML = '';
