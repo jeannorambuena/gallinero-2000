@@ -1,68 +1,83 @@
-# Gallinero modular para 2.000 gallinas ponedoras
+# Gallinero Nacho — Diagnóstico P0
 
-Repositorio técnico y evolutivo para diagnosticar, diseñar, presupuestar, construir y evaluar un gallinero modular escalable en Chile.
+Repositorio técnico y evolutivo para diagnosticar, diseñar, presupuestar, construir y evaluar un gallinero modular escalable.
 
-## Escalamiento previsto
+## Estado actual del proyecto
 
-1. Situación actual: aproximadamente 300 gallinas.
-2. Etapa inicial: capacidad para 500 gallinas.
-3. Segunda etapa: capacidad total para 1.000 gallinas.
-4. Etapa final: capacidad total para 2.000 gallinas.
+- Rama P0: `p0/consolidacion-diagnostico-nacho`.
+- Fase actual: P0 — Diagnóstico real.
+- Estado general: amarillo.
+- P0: avanzado preliminarmente.
+- MVP P0: funcional.
+- Dashboard: funcional y visualmente reorganizado.
+- Auditoría automática: creada.
+- P1 preliminar: no habilitado.
+- P1 definitivo: bloqueado.
+- Compra de 500 pollonas: bloqueada.
+- Construcción: no autorizada.
+- Inversión mayor: no autorizada.
 
-## Estado del proyecto
+## Decisión actual
 
-| Fase | Estado | Objetivo |
-|---|---|---|
-| P0 | En preparación | Diagnóstico real de la operación actual |
-| P1 | Pendiente | Diseño del módulo para 500 gallinas |
-| P2 | Pendiente | Presupuesto y planificación definitiva |
-| P3 | Pendiente | Construcción y habilitación |
-| P4 | Pendiente | Operación piloto y evaluación |
-| P5 | Pendiente | Ampliación a 1.000 gallinas |
-| P6 | Pendiente | Ampliación a 2.000 gallinas |
+El proyecto tiene una buena base productiva, pero el salto a 648 aves todavía no está validado. No se autoriza compra de 500 pollonas, construcción ni inversión mayor.
 
-## Prioridad actual
+P1 preliminar solo podrá evaluarse después de cerrar brechas críticas: mercado, croquis, CAPEX completo, flujo proyectado, agua, energía, logística y legal/contable.
 
-Completar el P0 antes de diseñar o presupuestar definitivamente.
+## Dashboard P0
 
-Se necesitan datos verificables de aves, producción, consumo, gastos, ventas, mortalidad, sanidad, infraestructura existente, terreno, agua, electricidad y problemas operacionales.
+Desde la raíz del repositorio:
 
-## Jerarquía de información
+```bash
+python3 -m http.server 8081 --bind 127.0.0.1 --directory dashboard
+```
 
-1. Dato real: medición, factura, boleta, registro o declaración directa.
-2. Fuente oficial: normativa o documento de autoridad competente.
-3. Referencia técnica: manual, estudio o proyecto comparable.
-4. Precio comprobado: cotización con proveedor y fecha.
-5. Estimación: supuesto calculado pendiente de validación.
+Abrir:
 
-Una estimación nunca debe presentarse como dato real.
+```text
+http://127.0.0.1:8081/public/
+```
 
-## Reglas
+## Auditoría P0
 
-- No inventar precios, medidas, consumos o rendimientos.
-- No sobrescribir datos originales.
-- Registrar fuente, fecha, unidad y nivel de confiabilidad.
-- Mantener separados datos reales, referencias, precios y resultados calculados.
-- No avanzar de fase sin cerrar sus entregables mínimos.
-- Registrar cambios importantes con Git.
-- Mantener actualizados `README.md`, `ROADMAP.md` y `CHANGELOG.md`.
-- Exigir revisión humana para decisiones estructurales, sanitarias, veterinarias, eléctricas, económicas o normativas.
+Desde la raíz del repositorio:
+
+```bash
+python3 scripts/auditoria/validar_todo_p0.py
+```
+
+Resultado esperado:
+
+- JSON dashboard: OK.
+- CSV indicadores: OK.
+- Indicadores P0: OK.
+- Resultado general: OK.
+
+## Documentos principales P0
+
+- `docs/01-p0-diagnostico/resumen-ejecutivo-p0.md`
+- `docs/01-p0-diagnostico/mvp-p0-checklist.md`
+- `docs/01-p0-diagnostico/cierre-preliminar-p0.md`
+- `docs/01-p0-diagnostico/diagnostico.md`
+- `docs/01-p0-diagnostico/criterios-habilitacion-p1.md`
+
+## Reglas de trabajo
+
+- No cambiar el estado general a verde sin cierre formal de P0.
+- No modificar P1 sin instrucción explícita.
+- No autorizar compra de 500 pollonas.
+- No autorizar construcción.
+- No autorizar inversión mayor.
+- No calcular VAN, TIR, ROI ni Payback hasta tener CAPEX completo y flujo proyectado.
+- No hacer commit sin confirmación explícita.
 
 ## Estructura
 
 ```text
 gallinero-2000/
 ├── README.md
-├── ROADMAP.md
-├── CHANGELOG.md
-├── config/
+├── dashboard/
 ├── docs/
 ├── datos/
-│   ├── reales/
-│   ├── referencias/
-│   ├── precios/
-│   └── procesados/
-├── freecad/
 ├── scripts/
 ├── presupuestos/
 ├── normativa/
@@ -72,12 +87,14 @@ gallinero-2000/
 └── tests/
 ```
 
-## Próximas acciones
+## Próximos pasos recomendados
 
-1. Completar `templates/formularios/levantamiento-p0.md`.
-2. Registrar producción y consumo reales.
-3. Incorporar el proyecto anterior en papel.
-4. Medir gallinero actual y terreno futuro.
-5. Incorporar fotografías, boletas y registros.
-6. Calcular indicadores del P0.
-7. Emitir diagnóstico y decisión de avance a P1.
+1. Validar mercado real para 130–135 bandejas/semana.
+2. Crear croquis del terreno 19 x 7 m.
+3. Dimensionar agua.
+4. Dimensionar energía solar.
+5. Completar CAPEX con cotizaciones.
+6. Preparar flujo proyectado para 648 aves.
+7. Revisar legal/contable con apoyo externo.
+8. Definir criterios cuantificados de no avance.
+9. Re-evaluar si corresponde habilitar P1 preliminar.

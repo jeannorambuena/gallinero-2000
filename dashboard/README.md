@@ -4,6 +4,12 @@
 
 Este dashboard resume el avance del P0, el resumen ejecutivo P0, los indicadores productivos, comerciales, financieros preliminares, CAPEX preliminar, flujo de caja preliminar, criterios de habilitación P1 preliminar, subproyectos críticos de agua y energía, diagnóstico logístico/constructivo, validación comercial, revisión legal/contable preliminar y el semáforo de decisión del proyecto Gallinero Nacho.
 
+## Referencias de cierre P0
+
+- Checklist MVP P0: `docs/01-p0-diagnostico/mvp-p0-checklist.md`
+- Cierre preliminar P0: `docs/01-p0-diagnostico/cierre-preliminar-p0.md`
+- Resumen ejecutivo P0: `docs/01-p0-diagnostico/resumen-ejecutivo-p0.md`
+
 ## Módulos actuales
 
 - `dashboard/data/resumen-ejecutivo-p0.json`
@@ -53,6 +59,7 @@ python3 scripts/auditoria/validar_todo_p0.py
 - Fase: P0 — Diagnóstico real
 - Avance P0 estimado: 80%
 - Semáforo general: amarillo
+- MVP P0: funcional
 - P1 preliminar: no habilitado todavía
 - P1 definitivo: bloqueado
 - Compra de 500 pollonas: bloqueada
@@ -75,14 +82,16 @@ python3 scripts/auditoria/validar_todo_p0.py
 
 ## Advertencia
 
-El dashboard es preliminar. Sirve para orientar decisiones, pero no autoriza inversión, diseño definitivo ni compra de 500 pollonas.
+El dashboard es preliminar. Sirve para orientar decisiones, pero no autoriza inversión, diseño definitivo, construcción ni compra de 500 pollonas.
 
-## Próximos módulos posibles
+## Próximos pasos posibles
 
-- consolidación documental P0
-- subproyecto agua
-- subproyecto solar
-- riesgos constructivos
-- riesgos legales y contables
-- flujo de caja proyectado completo
-- P1 preliminar
+- validación comercial real
+- croquis del terreno 19 x 7 m
+- dimensionamiento real de agua
+- dimensionamiento real de energía
+- CAPEX completo con cotizaciones
+- flujo proyectado 648 aves
+- revisión legal/contable externa
+- criterios de no avance cuantificados
+- eventual P1 preliminar
