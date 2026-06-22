@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Este dashboard resume el avance del P0, los indicadores productivos, comerciales, financieros preliminares, subproyectos críticos de agua y energía, diagnóstico logístico/constructivo, validación comercial, revisión legal/contable preliminar y el semáforo de decisión del proyecto Gallinero Nacho.
+Este dashboard resume el avance del P0, los indicadores productivos, comerciales, financieros preliminares, CAPEX preliminar, subproyectos críticos de agua y energía, diagnóstico logístico/constructivo, validación comercial, revisión legal/contable preliminar y el semáforo de decisión del proyecto Gallinero Nacho.
 
 ## Módulos actuales
 
@@ -17,6 +17,8 @@ Este dashboard resume el avance del P0, los indicadores productivos, comerciales
 - `dashboard/data/logistica-construccion.json`
 - `dashboard/data/validacion-comercial.json`
 - `dashboard/data/legal-contable.json`
+- `dashboard/data/capex-preliminar.json`
+- `datos/procesados/indicadores/p0-capex-preliminar.csv`
 
 ## Abrir localmente
 
@@ -46,6 +48,7 @@ http://127.0.0.1:8080/public/
 - Productivo: verde
 - Comercial: amarillo_rojo
 - Financiero: amarillo
+- CAPEX preliminar: pendiente/amarillo
 - Constructivo: pendiente/amarillo
 - Logístico: amarillo_rojo
 - Agua: amarillo

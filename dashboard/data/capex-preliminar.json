@@ -1,0 +1,116 @@
+{
+  "proyecto": "Gallinero Nacho",
+  "fase": "P0 — Diagnóstico real",
+  "estado": "pendiente/amarillo",
+  "capex_conocido": {
+    "pollonas": {
+      "cantidad": 500,
+      "precio_unitario_clp": 8500,
+      "monto_clp": 4250000,
+      "estado": "conocido"
+    },
+    "monto_total_conocido_clp": 4250000
+  },
+  "capex_pendiente": {
+    "monto_total_pendiente": null,
+    "estado": "pendiente",
+    "categorias_pendientes": [
+      "galpón o ampliación",
+      "bodega ampliada",
+      "estructura",
+      "zinc",
+      "malla",
+      "piso/cama/viruta inicial",
+      "bebederos",
+      "comederos",
+      "nidales",
+      "estanque de agua",
+      "bomba",
+      "filtros",
+      "fittings",
+      "líneas de agua",
+      "sistema solar",
+      "luces",
+      "cámara",
+      "batería",
+      "controlador",
+      "inversor si corresponde",
+      "cableado y protecciones",
+      "transporte de pollonas",
+      "transporte de materiales",
+      "acopio",
+      "mano de obra constructiva",
+      "imprevistos"
+    ]
+  },
+  "categorias": [
+    {
+      "categoria": "pollonas",
+      "estado": "conocido",
+      "items": ["500 pollonas"],
+      "monto_conocido_clp": 4250000
+    },
+    {
+      "categoria": "galpón",
+      "estado": "pendiente",
+      "items": ["galpón o ampliación", "estructura", "zinc", "malla", "piso/cama/viruta inicial"]
+    },
+    {
+      "categoria": "bodega",
+      "estado": "pendiente",
+      "items": ["bodega ampliada"]
+    },
+    {
+      "categoria": "agua",
+      "estado": "pendiente",
+      "items": ["estanque de agua", "bomba", "filtros", "fittings", "líneas de agua"]
+    },
+    {
+      "categoria": "energía",
+      "estado": "pendiente",
+      "items": ["sistema solar", "luces", "cámara", "batería", "controlador", "inversor si corresponde", "cableado y protecciones"]
+    },
+    {
+      "categoria": "equipamiento",
+      "estado": "pendiente",
+      "items": ["bebederos", "comederos", "nidales"]
+    },
+    {
+      "categoria": "logística",
+      "estado": "pendiente",
+      "items": ["transporte de pollonas", "transporte de materiales", "acopio"]
+    },
+    {
+      "categoria": "construcción",
+      "estado": "pendiente",
+      "items": ["mano de obra constructiva"]
+    },
+    {
+      "categoria": "contingencia",
+      "estado": "pendiente",
+      "items": ["imprevistos"]
+    }
+  ],
+  "riesgos": [
+    "subestimar la inversión total real",
+    "comprar pollonas sin infraestructura agua energía o mercado validados",
+    "quedar sin capital para completar galpón bodega equipamiento o logística",
+    "afectar el margen financiero por costos no considerados",
+    "generar atrasos por falta de materiales transporte o mano de obra",
+    "tomar decisiones con evaluación incompleta"
+  ],
+  "criterios_para_avanzar": [
+    "tener diseño o alternativa constructiva preliminar",
+    "contar con cubicación inicial de galpón y bodega",
+    "cotizar materiales principales",
+    "dimensionar y cotizar sistema de agua",
+    "dimensionar y cotizar sistema solar",
+    "cotizar equipamiento productivo",
+    "cotizar transporte de pollonas y materiales",
+    "estimar mano de obra constructiva",
+    "definir porcentaje de imprevistos",
+    "consolidar CAPEX total preliminar antes de decidir inversión"
+  ],
+  "conclusion": "CAPEX total aún no disponible. No se autoriza compra de 500 pollonas ni inversión mayor hasta completar inversión pendiente y cotizaciones.",
+  "advertencia": "CAPEX preliminar P0. No es presupuesto definitivo ni autorización de inversión."
+}

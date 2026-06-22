@@ -9,7 +9,8 @@ const DATA_FILES = {
   subproyectos: '/data/subproyectos-criticos.json',
   logisticaConstruccion: '/data/logistica-construccion.json',
   validacionComercial: '/data/validacion-comercial.json',
-  legalContable: '/data/legal-contable.json'
+  legalContable: '/data/legal-contable.json',
+  capex: '/data/capex-preliminar.json'
 };
 
 const DIMENSION_ORDER = [
@@ -283,9 +284,31 @@ function renderLegalContable(legalData) {
   text('legal-contable-advertencia', legalData.advertencia || 'No reemplaza revisión profesional.');
 }
 
+function renderCapex(capexData) {
+  const badge = document.getElementById('capex-estado');
+  if (badge) {
+    badge.className = `badge ${badgeClass(capexData.estado)}`;
+    badge.textContent = capexData.estado;
+  }
+
+  const montoPollonas = capexData.capex_conocido?.pollonas?.monto_clp ?? 0;
+  const montoTotalConocido = capexData.capex_conocido?.monto_total_conocido_clp ?? 0;
+  const montoPendiente = capexData.capex_pendiente?.monto_total_pendiente;
+
+  renderList('capex-resumen', [
+    ['CAPEX conocido pollonas', formatClp(montoPollonas)],
+    ['CAPEX total conocido', formatClp(montoTotalConocido)],
+    ['CAPEX total pendiente', montoPendiente === null || montoPendiente === undefined ? 'pendiente' : formatClp(montoPendiente)]
+  ]);
+
+  renderUl('capex-categorias-pendientes', capexData.capex_pendiente?.categorias_pendientes, 10);
+  renderUl('capex-riesgos', capexData.riesgos, 6);
+  text('capex-conclusion', capexData.conclusion || 'No comprar ni invertir sin CAPEX completo.');
+}
+
 async function init() {
   try {
-    const [estado, productivos, comerciales, finanzas, semaforo, alertas, datosFaltantes, subproyectos, logisticaConstruccion, validacionComercial, legalContable] = await Promise.all([
+    const [estado, productivos, comerciales, finanzas, semaforo, alertas, datosFaltantes, subproyectos, logisticaConstruccion, validacionComercial, legalContable, capex] = await Promise.all([
       loadJson(DATA_FILES.estado),
       loadJson(DATA_FILES.productivos),
       loadJson(DATA_FILES.comerciales),
@@ -296,7 +319,8 @@ async function init() {
       loadJson(DATA_FILES.subproyectos),
       loadJson(DATA_FILES.logisticaConstruccion),
       loadJson(DATA_FILES.validacionComercial),
-      loadJson(DATA_FILES.legalContable)
+      loadJson(DATA_FILES.legalContable),
+      loadJson(DATA_FILES.capex)
     ]);
 
     const prod = indexIndicators(productivos);
@@ -367,6 +391,7 @@ async function init() {
     renderLogisticaConstruccion(logisticaConstruccion);
     renderValidacionComercial(validacionComercial);
     renderLegalContable(legalContable);
+    renderCapex(capex);
 
     const condiciones = document.getElementById('condiciones-avanzar');
     condiciones.innerHTML = '';

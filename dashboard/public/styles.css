@@ -440,12 +440,26 @@ h3 {
   font-weight: 850;
 }
 
+.capex-summary {
+  margin-bottom: 16px;
+}
+
+.capex-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
 .diagnostic-block {
   margin-top: 16px;
   padding: 14px;
   border: 1px solid #edf0ea;
   border-radius: 16px;
   background: var(--surface-soft);
+}
+
+.capex-grid .diagnostic-block {
+  margin-top: 0;
 }
 
 .diagnostic-block h3 {
@@ -520,7 +534,8 @@ h3 {
   .grid.cards,
   .semaforo-grid,
   .subproject-grid,
-  .logistics-grid {
+  .logistics-grid,
+  .capex-grid {
     grid-template-columns: 1fr;
   }
 

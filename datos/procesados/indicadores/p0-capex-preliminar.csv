@@ -1,0 +1,13 @@
+categoria,item,estado,monto_clp,observacion
+pollonas,500 pollonas,conocido,4250000,precio unitario 8500
+galpon,estructura,pendiente,,sin diseño/cubicación
+galpon,zinc,pendiente,,sin cubicación
+galpon,malla,pendiente,,sin cubicación
+bodega,ampliación bodega,pendiente,,bodega actual insuficiente
+agua,estanque,pendiente,,falta cotización
+agua,bomba/filtros/fittings/líneas,pendiente,,falta dimensionamiento
+energia,sistema solar,pendiente,,falta dimensionamiento
+equipamiento,comederos/bebederos/nidales,pendiente,,falta cantidad final
+logistica,transporte pollonas/materiales,pendiente,,falta cotización
+construccion,mano de obra,pendiente,,falta alcance
+contingencia,imprevistos,pendiente,,definir porcentaje
