@@ -3,370 +3,153 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Dashboard P0 — Gallinero Nacho</title>
+    <title>Dashboard V2 — Gallinero Nacho</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <main class="page-shell">
-      <header class="hero">
-        <div>
-          <p class="eyebrow">Proyecto Gallinero Nacho</p>
-          <h1>Dashboard P0 — Diagnóstico real</h1>
-          <p class="hero-text">Vista preliminar para leer estado, riesgos, finanzas y criterios de avance sin autorizar inversión.</p>
-          <div class="scenario-strip" aria-label="Escenarios de escala">
-            <span>Nuevo escenario base: <strong id="escenario-base-hero">500 aves</strong></span>
-            <span>Escenario anterior: <strong id="escenario-anterior-hero">648 aves · referencia histórica</strong></span>
-          </div>
-        </div>
-        <div class="hero-status" aria-label="Estado general del proyecto">
-          <span class="badge badge-amarillo" id="semaforo-general">Semáforo general: —</span>
-          <strong id="avance-p0">Avance P0: —</strong>
-        </div>
-      </header>
-
-      <nav class="section-nav" aria-label="Índice del dashboard">
-        <a href="#replanteo-escala">Replanteo 500</a>
-        <a href="#decision-inversion">Decisión inversión</a>
-        <a href="#galpones-escala">Galpones</a>
-        <a href="#resumen-ejecutivo">Resumen ejecutivo</a>
-        <a href="#estado-general">Estado general</a>
-        <a href="#indicadores">Indicadores</a>
-        <a href="#riesgos-alertas">Riesgos y alertas</a>
-        <a href="#subproyectos">Subproyectos críticos</a>
-        <a href="#comercial-legal">Comercial / legal</a>
-        <a href="#finanzas-capex-flujo">Finanzas / CAPEX / flujo</a>
-        <a href="#desbloqueo-p1">Desbloqueo P1</a>
-        <a href="#habilitacion-p1">Habilitación P1</a>
+    <header class="topbar">
+      <div class="brand-block">
+        <p class="eyebrow">Gallinero Nacho</p>
+        <h1>Diagnóstico P0 y decisión preliminar de inversión</h1>
+      </div>
+      <div class="topbar-badges" aria-label="Estado ejecutivo">
+        <span class="chip chip-neutral">Escenario base: <strong id="header-escenario">500 aves</strong></span>
+        <span class="chip chip-yellow">Estado: <strong id="header-estado">amarillo</strong></span>
+        <span class="chip chip-red">Decisión: <strong>no invertir todavía</strong></span>
+      </div>
+      <nav class="topnav" aria-label="Navegación principal">
+        <a href="#resumen">Resumen</a>
+        <a href="#operacion">Operación actual</a>
+        <a href="#escala">Escala</a>
+        <a href="#riesgos">Riesgos</a>
+        <a href="#decision">Decisión</a>
+        <a href="#bloqueos">Bloqueos</a>
       </nav>
+    </header>
 
-      <section class="notice" role="note">
-        Dashboard preliminar P0. Base vigente: 500 aves totales. 648 aves queda como referencia histórica. No autoriza compra, construcción ni inversión mayor.
-      </section>
-
-      <section class="card panel full-width section-block" id="replanteo-escala">
-        <div class="panel-header">
-          <div>
-            <p class="section-kicker">Cambio de escala</p>
-            <h2>Replanteo: base 500 aves</h2>
-          </div>
-          <span class="badge badge-amarillo">P0 amarillo</span>
-        </div>
-        <dl class="data-list compact-list" id="replanteo-resumen"></dl>
-        <p class="subproject-warning" id="replanteo-conclusion">500 aves es la base vigente. 648 queda como referencia histórica.</p>
-      </section>
-
-      <section class="section-block" id="decision-inversion">
-        <div class="section-heading">
-          <p class="section-kicker">Semáforo de inversión</p>
-          <h2>Decisión de inversión</h2>
-        </div>
-        <div class="dashboard-grid three-columns" id="matriz-inversion-cards"></div>
-        <p class="subproject-warning" id="matriz-inversion-conclusion">En amarillo solo se invierte en desbloqueo.</p>
-      </section>
-
-      <section class="section-block" id="galpones-escala">
-        <div class="section-heading">
-          <p class="section-kicker">Estimación paramétrica</p>
-          <h2>Costo de galpón por escala</h2>
-        </div>
-        <div class="dashboard-grid three-columns" id="galpones-cards"></div>
-        <p class="subproject-warning" id="galpones-conclusion">Costos pendientes de cotización.</p>
-      </section>
-
-      <section class="card panel full-width section-block" id="resumen-ejecutivo">
-        <div class="panel-header">
-          <div>
-            <p class="section-kicker">Lectura rápida</p>
-            <h2>Resumen ejecutivo P0</h2>
-          </div>
-          <span class="badge badge-amarillo" id="resumen-ejecutivo-estado">—</span>
-        </div>
-        <dl class="data-list compact-list" id="resumen-ejecutivo-decision"></dl>
-        <div class="content-grid two-columns">
-          <div class="diagnostic-block">
-            <h3>Puntos favorables</h3>
-            <ul id="resumen-puntos-favorables"></ul>
-          </div>
-          <div class="diagnostic-block">
-            <h3>Riesgos principales</h3>
-            <ul id="resumen-riesgos-principales"></ul>
+    <main class="shell">
+      <section class="hero-section" id="resumen" aria-labelledby="hero-title">
+        <div class="hero-copy card executive-card">
+          <div class="section-label">Dashboard V2 · lectura ejecutiva</div>
+          <h2 id="hero-title">Estado actual: <span class="state-word yellow">AMARILLO</span></h2>
+          <p>
+            El proyecto tiene una base productiva interesante, pero todavía no cuenta con evidencia suficiente
+            para comprar aves, construir o comprometer inversión mayor.
+          </p>
+          <div class="meaning-box">
+            <strong>¿Qué significa esto?</strong>
+            <span>Amarillo = solo inversión menor/controlada para levantar datos y desbloquear decisiones. No autoriza compra masiva ni construcción.</span>
           </div>
         </div>
-        <div class="diagnostic-block">
-          <h3>Acciones recomendadas</h3>
-          <ul id="resumen-acciones-recomendadas"></ul>
-        </div>
-        <p class="subproject-warning" id="resumen-ejecutivo-conclusion">Resumen ejecutivo pendiente.</p>
-      </section>
 
-      <section class="section-block" id="estado-general">
-        <div class="section-heading">
-          <p class="section-kicker">Control de decisión</p>
-          <h2>Estado general y semáforo</h2>
-        </div>
-
-        <div class="grid cards" aria-labelledby="tarjetas-principales-title">
-          <h3 id="tarjetas-principales-title" class="sr-only">Tarjetas principales</h3>
-          <div class="card metric-card">
-            <span>Fase actual</span>
-            <strong id="fase-actual">—</strong>
-          </div>
-          <div class="card metric-card">
-            <span>Avance P0</span>
-            <strong id="card-avance-p0">—</strong>
-          </div>
-          <div class="card metric-card state-pendiente">
+        <div class="decision-grid" aria-label="Decisiones ejecutivas">
+          <article class="decision-card warning">
+            <span>Estado general</span>
+            <strong id="estado-general">amarillo</strong>
+          </article>
+          <article class="decision-card blocked">
             <span>P1 preliminar</span>
-            <strong id="p1-preliminar">—</strong>
-          </div>
-          <div class="card metric-card state-bloqueado">
-            <span>P1 definitivo</span>
-            <strong id="p1-definitivo">—</strong>
-          </div>
-          <div class="card metric-card state-bloqueado">
-            <span>Compra aves</span>
-            <strong id="compra-pollonas">—</strong>
-          </div>
-          <div class="card metric-card state-pendiente">
-            <span>Decisión final</span>
-            <strong id="decision-final">—</strong>
-          </div>
+            <strong id="p1-preliminar">no habilitado</strong>
+          </article>
+          <article class="decision-card blocked">
+            <span>Compra de aves</span>
+            <strong id="compra-aves">bloqueada</strong>
+          </article>
+          <article class="decision-card blocked">
+            <span>Construcción</span>
+            <strong id="construccion">no autorizada</strong>
+          </article>
+          <article class="decision-card blocked">
+            <span>Inversión mayor</span>
+            <strong id="inversion-mayor">no autorizada</strong>
+          </article>
         </div>
+      </section>
+
+      <section class="section" id="operacion" aria-labelledby="operacion-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Ficha rápida</p>
+            <h2 id="operacion-title">Operación actual</h2>
+          </div>
+          <span class="status-pill ok">base productiva confirmada</span>
+        </div>
+        <div class="metric-grid compact" id="operacion-metricas"></div>
+      </section>
+
+      <section class="section split-layout" id="escala" aria-labelledby="escala-title">
+        <article class="card panel scenario-panel">
+          <div class="section-kicker">Escenario vigente</div>
+          <h2 id="escala-title">Escenario base 500 aves</h2>
+          <div class="scenario-highlight">
+            <span>Base actual de decisión</span>
+            <strong>500 aves totales</strong>
+          </div>
+          <div class="metric-grid scenario" id="escenario-500-metricas"></div>
+          <div class="alert-callout">
+            Aunque el escenario de 500 aves mejora frente al antiguo 648, aún no está comercialmente validado.
+          </div>
+          <p class="small-note">Escenario anterior/referencial: 648 aves. Se conserva solo como trazabilidad histórica.</p>
+        </article>
 
         <article class="card panel">
-          <div class="panel-header">
-            <h3>Semáforo por dimensión</h3>
-            <span class="badge badge-amarillo">P0</span>
-          </div>
-          <div class="semaforo-grid" id="semaforo-dimensiones"></div>
+          <div class="section-kicker">Comparativo simple</div>
+          <h2>Escalas posibles</h2>
+          <p class="muted">1000 y 2000 aves son solo comparativos futuros; no implican decisión de construcción.</p>
+          <div class="scale-grid" id="comparativo-escalas"></div>
         </article>
       </section>
 
-      <section class="section-block" id="indicadores">
+      <section class="section" id="decision" aria-labelledby="decision-title">
         <div class="section-heading">
-          <p class="section-kicker">Datos base</p>
-          <h2>Indicadores productivos, comerciales y financieros</h2>
-        </div>
-        <div class="dashboard-grid three-columns">
-          <article class="card panel">
-            <div class="panel-header">
-              <h3>Productivos</h3>
-              <span class="badge badge-verde">confirmados</span>
-            </div>
-            <dl class="data-list" id="indicadores-productivos"></dl>
-          </article>
-
-          <article class="card panel">
-            <div class="panel-header">
-              <h3>Comerciales</h3>
-              <span class="badge badge-amarillo-rojo">preliminares</span>
-            </div>
-            <dl class="data-list" id="indicadores-comerciales"></dl>
-          </article>
-
-          <article class="card panel">
-            <div class="panel-header">
-              <h3>Finanzas preliminares</h3>
-              <span class="badge badge-amarillo">preliminar</span>
-            </div>
-            <dl class="data-list" id="finanzas-preliminares"></dl>
-            <div class="blocked">
-              <h4>Indicadores pendientes</h4>
-              <p id="indicadores-bloqueados">—</p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section-block" id="riesgos-alertas">
-        <div class="section-heading">
-          <p class="section-kicker">P0 abierto</p>
-          <h2>Riesgos, alertas y datos faltantes</h2>
-        </div>
-        <div class="dashboard-grid critical-grid" aria-label="Alertas y datos faltantes P0">
-          <article class="card panel">
-            <div class="panel-header">
-              <h3>Alertas P0</h3>
-              <span class="badge badge-amarillo-rojo">críticas</span>
-            </div>
-            <div class="alert-list" id="alertas-p0"></div>
-          </article>
-
-          <article class="card panel">
-            <div class="panel-header">
-              <h3>Datos faltantes críticos</h3>
-              <span class="badge badge-pendiente">P0 abierto</span>
-            </div>
-            <div class="missing-list" id="datos-faltantes"></div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section-block" id="subproyectos">
-        <div class="section-heading">
-          <p class="section-kicker">Validación técnica</p>
-          <h2>Agua, energía, logística y construcción</h2>
-        </div>
-        <article class="card panel full-width">
-          <div class="panel-header">
-            <h3>Subproyectos críticos</h3>
-            <span class="badge badge-amarillo">agua y energía</span>
-          </div>
-          <div class="subproject-grid" id="subproyectos-criticos"></div>
-          <p class="subproject-warning" id="subproyectos-advertencia">No habilitan compra todavía.</p>
-        </article>
-
-        <article class="card panel full-width">
-          <div class="panel-header">
-            <h3>Logística y construcción</h3>
-            <span class="badge badge-amarillo-rojo">riesgos P0</span>
-          </div>
-          <div class="logistics-grid" id="logistica-construccion"></div>
-          <p class="subproject-warning" id="logistica-advertencia">No se puede cerrar P0 ni iniciar P1 definitivo sin resolver este bloque.</p>
-        </article>
-      </section>
-
-      <section class="section-block" id="comercial-legal">
-        <div class="section-heading">
-          <p class="section-kicker">Mercado y formalización</p>
-          <h2>Validación comercial y legal/contable</h2>
-        </div>
-        <div class="dashboard-grid critical-grid" aria-label="Validación comercial y legal contable P0">
-          <article class="card panel">
-            <div class="panel-header">
-              <h3>Validación comercial</h3>
-              <span class="badge badge-amarillo-rojo" id="validacion-comercial-estado">—</span>
-            </div>
-            <dl class="data-list" id="validacion-comercial-metricas"></dl>
-            <div class="diagnostic-block">
-              <h4>Canales actuales</h4>
-              <ul id="canales-actuales"></ul>
-            </div>
-            <div class="diagnostic-block">
-              <h4>Canales potenciales</h4>
-              <ul id="canales-potenciales"></ul>
-            </div>
-            <p class="subproject-warning" id="validacion-comercial-conclusion">No comprar sin validar mercado.</p>
-          </article>
-
-          <article class="card panel">
-            <div class="panel-header">
-              <h3>Legal / Contable</h3>
-              <span class="badge badge-pendiente" id="legal-contable-estado">—</span>
-            </div>
-            <div class="diagnostic-block">
-              <h4>Temas a revisar</h4>
-              <ul id="legal-temas"></ul>
-            </div>
-            <div class="diagnostic-block">
-              <h4>Riesgos principales</h4>
-              <ul id="legal-riesgos"></ul>
-            </div>
-            <p class="subproject-warning" id="legal-contable-advertencia">No reemplaza revisión profesional.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section-block" id="finanzas-capex-flujo">
-        <div class="section-heading">
-          <p class="section-kicker">Inversión y caja</p>
-          <h2>Finanzas, CAPEX y flujo de caja</h2>
-        </div>
-        <div class="dashboard-grid">
-          <article class="card panel">
-            <div class="panel-header">
-              <h3>CAPEX preliminar</h3>
-              <span class="badge badge-amarillo" id="capex-estado">—</span>
-            </div>
-            <dl class="data-list compact-list" id="capex-resumen"></dl>
-            <div class="diagnostic-block">
-              <h4>Categorías pendientes principales</h4>
-              <ul id="capex-categorias-pendientes"></ul>
-            </div>
-            <div class="diagnostic-block">
-              <h4>Riesgos</h4>
-              <ul id="capex-riesgos"></ul>
-            </div>
-            <p class="subproject-warning" id="capex-conclusion">No comprar ni invertir sin CAPEX completo.</p>
-          </article>
-
-          <article class="card panel">
-            <div class="panel-header">
-              <h3>Flujo de caja preliminar</h3>
-              <span class="badge badge-amarillo" id="flujo-estado">—</span>
-            </div>
-            <dl class="data-list compact-list" id="flujo-resumen"></dl>
-            <div class="diagnostic-block">
-              <h4>Indicadores bloqueados</h4>
-              <ul id="flujo-indicadores-bloqueados"></ul>
-            </div>
-            <div class="diagnostic-block">
-              <h4>Riesgos financieros</h4>
-              <ul id="flujo-riesgos"></ul>
-            </div>
-            <p class="subproject-warning" id="flujo-conclusion">No autoriza inversión todavía.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="card panel full-width section-block" id="desbloqueo-p1">
-        <div class="panel-header">
           <div>
-            <p class="section-kicker">Levantamiento de evidencia</p>
-            <h2>Plan de desbloqueo P1 preliminar</h2>
+            <p class="section-kicker">Regla de inversión</p>
+            <h2 id="decision-title">Semáforo de inversión</h2>
           </div>
-          <span class="badge badge-pendiente" id="desbloqueo-p1-estado">—</span>
+          <span class="status-pill warning">Estado actual: AMARILLO</span>
         </div>
-        <p id="desbloqueo-p1-objetivo">—</p>
-        <div class="content-grid two-columns">
-          <div class="diagnostic-block">
-            <h3>Tareas por dimensión</h3>
-            <ul id="desbloqueo-tareas"></ul>
-          </div>
-          <div class="diagnostic-block">
-            <h3>Documentos y plantillas</h3>
-            <ul id="desbloqueo-instrumentos"></ul>
-          </div>
-        </div>
-        <div class="diagnostic-block">
-          <h3>Decisiones bloqueadas</h3>
-          <ul id="desbloqueo-decisiones"></ul>
-        </div>
-        <p class="subproject-warning" id="desbloqueo-proximo-paso">Pendiente.</p>
+        <div class="traffic-grid" id="semaforo-inversion"></div>
       </section>
 
-      <section class="card panel full-width section-block" id="habilitacion-p1">
-        <div class="panel-header">
+      <section class="section split-layout" id="bloqueos" aria-labelledby="bloqueos-title">
+        <article class="card panel">
+          <div class="section-kicker">Lo que frena el avance</div>
+          <h2 id="bloqueos-title">Bloqueadores principales</h2>
+          <div class="blocker-list" id="bloqueadores"></div>
+        </article>
+
+        <article class="card panel action-panel">
+          <div class="action-column positive">
+            <div class="section-kicker">Permitido ahora</div>
+            <h2>Qué sí se puede hacer</h2>
+            <ul id="acciones-permitidas"></ul>
+          </div>
+          <div class="action-column negative">
+            <div class="section-kicker">Bloqueado</div>
+            <h2>Qué NO se debe hacer todavía</h2>
+            <ul id="acciones-bloqueadas"></ul>
+          </div>
+        </article>
+      </section>
+
+      <section class="section" id="riesgos" aria-labelledby="riesgos-title">
+        <div class="section-heading">
           <div>
-            <p class="section-kicker">Decisión de avance</p>
-            <h2>Habilitación P1 preliminar</h2>
+            <p class="section-kicker">Riesgos clave</p>
+            <h2 id="riesgos-title">Lectura por dimensión</h2>
           </div>
-          <span class="badge badge-pendiente" id="criterios-p1-estado">—</span>
+          <span class="status-pill neutral">resumen P0</span>
         </div>
-        <dl class="data-list compact-list" id="criterios-p1-resumen"></dl>
-        <div class="checklist" id="criterios-p1-checklist"></div>
-        <div class="capex-grid">
-          <div class="diagnostic-block">
-            <h3>Bloqueos P1 definitivo</h3>
-            <ul id="bloqueos-p1-definitivo"></ul>
-          </div>
-          <div class="diagnostic-block">
-            <h3>Bloqueos compra pollonas</h3>
-            <ul id="bloqueos-compra-pollonas"></ul>
-          </div>
-        </div>
-        <p class="subproject-warning" id="criterios-p1-conclusion">P1 preliminar no habilitado.</p>
+        <div class="risk-grid" id="riesgos-clave"></div>
       </section>
 
-      <section class="card panel full-width section-block">
-        <h2>Condiciones para avanzar</h2>
-        <ol class="conditions" id="condiciones-avanzar"></ol>
+      <section class="section final-summary" aria-labelledby="cierre-title">
+        <article class="card panel conclusion-card">
+          <div class="section-kicker">Conclusión ejecutiva</div>
+          <h2 id="cierre-title">Decisión actual</h2>
+          <p id="conclusion-ejecutiva">P0 amarillo. No se autoriza compra, construcción ni inversión mayor.</p>
+        </article>
       </section>
-
-      <footer class="footer">
-        <span>Fuente: JSON del dashboard P0.</span>
-        <span id="estado-carga">Cargando datos…</span>
-      </footer>
     </main>
 
     <script src="./app.js" defer></script>

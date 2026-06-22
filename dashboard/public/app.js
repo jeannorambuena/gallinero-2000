@@ -1,117 +1,315 @@
 const DATA_FILES = {
-  resumenEjecutivo: '/data/resumen-ejecutivo-p0.json',
+  resumen: '/data/resumen-ejecutivo-p0.json',
   estado: '/data/estado-proyecto.json',
   productivos: '/data/indicadores-productivos.json',
   comerciales: '/data/indicadores-comerciales.json',
-  finanzas: '/data/finanzas-preliminares.json',
-  semaforo: '/data/semaforo-decision.json',
-  alertas: '/data/alertas-p0.json',
-  datosFaltantes: '/data/datos-faltantes.json',
-  subproyectos: '/data/subproyectos-criticos.json',
-  logisticaConstruccion: '/data/logistica-construccion.json',
   validacionComercial: '/data/validacion-comercial.json',
-  legalContable: '/data/legal-contable.json',
-  capex: '/data/capex-preliminar.json',
   flujoCaja: '/data/flujo-caja-preliminar.json',
+  semaforo: '/data/semaforo-decision.json',
   criteriosP1: '/data/criterios-p1.json',
-  desbloqueoP1: '/data/desbloqueo-p1-preliminar.json',
-  replanteoEscala: '/data/replanteo-escala.json',
-  matrizInversion: '/data/matriz-decision-inversion.json',
-  estimacionGalpones: '/data/estimacion-galpones.json'
+  galpones: '/data/estimacion-galpones.json',
+  alertas: '/data/alertas-p0.json'
 };
 
-const DIMENSION_ORDER = [
-  'productiva',
-  'comercial',
-  'financiera',
-  'constructiva',
-  'logistica',
-  'agua',
-  'energia',
-  'sanitaria',
-  'legal',
-  'contable',
-  'escalabilidad'
+const FALLBACKS = {
+  operacion: {
+    gallinas: 148,
+    huevosDia: 132,
+    bandejasSemana: 28,
+    postura: 89.2,
+    mortalidad: 1.3,
+    aguaDia: 34,
+    edad: 37,
+    raza: 'Hy-Line W80'
+  },
+  escenario500: {
+    aves: 500,
+    huevosDia: 446,
+    bandejasSemana: 104.1,
+    ventaActual: 28,
+    brecha: 76.1,
+    agua: '115.7–154.3 L/día',
+    superficie: 100,
+    costoGalpon: 'pendiente de cotización'
+  }
+};
+
+const RISK_COPY = {
+  comercial: 'La brecha de ventas sigue siendo alta.',
+  financiera: 'CAPEX y flujo siguen incompletos.',
+  logistica: 'Acceso rural e invierno afectan materiales y operación.',
+  sanitaria: 'Humedad, calor y manejo de agua aún requieren mejoras.',
+  agua: 'Falta dimensionamiento definitivo de caudal, presión y respaldo.',
+  energia: 'El sistema solar aún requiere cálculo y cotización.',
+  legal: 'Formalización, permisos y trazabilidad siguen pendientes.',
+  contable: 'Registro, impuestos y operación formal siguen pendientes.'
+};
+
+const TRAFFIC_RULES = [
+  {
+    color: 'rojo',
+    title: 'ROJO',
+    decision: 'No invertir',
+    detail: 'Corregir datos críticos antes de avanzar.',
+    active: false
+  },
+  {
+    color: 'amarillo',
+    title: 'AMARILLO',
+    decision: 'Solo desbloqueo menor/controlado',
+    detail: 'Cotizar, medir, validar mercado y levantar evidencia.',
+    active: true
+  },
+  {
+    color: 'verde',
+    title: 'VERDE',
+    decision: 'Inversión habilitable con evidencias completas',
+    detail: 'Solo con mercado, CAPEX, flujo y riesgos completos.',
+    active: false
+  }
 ];
 
-const DIMENSION_LABELS = {
-  productiva: 'Productiva',
-  comercial: 'Comercial',
-  financiera: 'Financiera',
-  constructiva: 'Constructiva',
-  logistica: 'Logística',
-  agua: 'Agua',
-  energia: 'Energía',
-  sanitaria: 'Sanitaria',
-  legal: 'Legal',
-  contable: 'Contable',
-  escalabilidad: 'Escalabilidad'
-};
+const BLOCKERS = [
+  'Mercado no validado para 104.1 bandejas/semana',
+  'CAPEX total pendiente',
+  'Flujo proyectado incompleto',
+  'Agua sin dimensionamiento definitivo',
+  'Energía solar sin dimensionamiento definitivo',
+  'Logística rural/invierno pendiente',
+  'Legal/contable pendiente',
+  'P1 preliminar no habilitado'
+];
 
-const estadoLabel = (value, enabledText = 'habilitado') => value ? enabledText : 'no habilitado';
-const autorizadoLabel = (value) => value ? 'autorizada' : 'no autorizada';
-const disponibleLabel = (value) => value ? 'disponible' : 'no disponible';
+const ALLOWED_ACTIONS = [
+  'Levantar cotizaciones',
+  'Validar clientes y canales',
+  'Medir agua y energía',
+  'Preparar croquis',
+  'Avanzar en CAPEX',
+  'Mejorar dashboard y trazabilidad'
+];
 
-const formatClp = (value) => `$${Number(value).toLocaleString('es-CL')}`;
-const text = (id, value) => {
-  const node = document.getElementById(id);
-  if (node) node.textContent = value;
-};
+const BLOCKED_ACTIONS = [
+  'No comprar 500 pollonas',
+  'No construir el galpón',
+  'No hacer inversión mayor',
+  'No asumir rentabilidad cerrada',
+  'No pasar a P1 preliminar como habilitado'
+];
 
-function indexIndicators(data) {
-  return Object.fromEntries((data.indicadores || []).map((item) => [item.indicador, item]));
+function $(id) {
+  return document.getElementById(id);
 }
 
-function indicatorValue(index, key) {
-  return index[key]?.valor ?? '—';
+function setText(id, value) {
+  const node = $(id);
+  if (node) node.textContent = value ?? 'pendiente';
 }
 
-function renderList(containerId, rows) {
-  const container = document.getElementById(containerId);
+function normalizeStatus(value) {
+  return String(value ?? 'pendiente').replaceAll('_', '-').replaceAll('/', '-').toLowerCase();
+}
+
+function findIndicator(data, key) {
+  const items = Array.isArray(data?.indicadores) ? data.indicadores : [];
+  return items.find((item) => item?.indicador === key)?.valor;
+}
+
+function formatValue(value, unit = '') {
+  if (value === undefined || value === null || value === '') return 'pendiente';
+  return `${value}${unit ? ` ${unit}` : ''}`;
+}
+
+function createMetric({ label, value, detail = '', tone = '' }) {
+  const article = document.createElement('article');
+  article.className = `metric-card ${tone}`.trim();
+  article.innerHTML = `
+    <span>${label}</span>
+    <strong>${value}</strong>
+    ${detail ? `<small>${detail}</small>` : ''}
+  `;
+  return article;
+}
+
+function renderMetrics(containerId, metrics) {
+  const container = $(containerId);
+  if (!container) return;
   container.innerHTML = '';
-
-  rows.forEach(([label, value]) => {
-    const wrapper = document.createElement('div');
-    wrapper.className = 'data-row';
-
-    const term = document.createElement('dt');
-    term.textContent = label;
-
-    const description = document.createElement('dd');
-    description.textContent = value;
-
-    wrapper.append(term, description);
-    container.appendChild(wrapper);
-  });
+  metrics.forEach((metric) => container.appendChild(createMetric(metric)));
 }
 
-function renderUl(containerId, items, limit = items?.length ?? 0) {
-  const container = document.getElementById(containerId);
+function renderList(containerId, items, className = '') {
+  const container = $(containerId);
+  if (!container) return;
   container.innerHTML = '';
-
-  (items || []).slice(0, limit).forEach((text) => {
+  items.forEach((item) => {
     const li = document.createElement('li');
-    li.textContent = text;
+    li.className = className;
+    li.textContent = item;
     container.appendChild(li);
   });
 }
 
-function badgeClass(estado) {
-  if (estado === 'verde' || estado === 'cumplido') return 'badge-verde';
-  if (estado === 'rojo' || estado === 'amarillo_rojo' || estado === 'bloqueante') return 'badge-amarillo-rojo';
-  if (estado === 'pendiente/amarillo' || estado === 'amarillo' || estado === 'parcial') return 'badge-amarillo';
-  return 'badge-pendiente';
+function renderDecisionState({ resumen, estado, criteriosP1, semaforo }) {
+  const escenarioBase = resumen?.escenario_base_actual?.aves ?? estado?.escenario_base_actual ?? 500;
+  const estadoGeneral = resumen?.estado_general ?? semaforo?.semaforo_general ?? estado?.semaforo_general ?? 'amarillo';
+  const decision = resumen?.decision_actual ?? {};
+  const criterioDecision = criteriosP1?.decision_actual ?? {};
+
+  setText('header-escenario', `${escenarioBase} aves`);
+  setText('header-estado', estadoGeneral);
+  setText('estado-general', estadoGeneral);
+  setText('p1-preliminar', decision.p1_preliminar ?? (criterioDecision.p1_preliminar === false ? 'no habilitado' : 'pendiente'));
+  setText('compra-aves', decision.compra_500_pollonas ?? (criterioDecision.compra_aves === false ? 'bloqueada' : 'pendiente'));
+  setText('construccion', decision.construccion ?? (criterioDecision.construccion === false ? 'no autorizada' : 'pendiente'));
+  setText('inversion-mayor', decision.inversion_mayor ?? (criterioDecision.inversion_mayor === false ? 'no autorizada' : 'pendiente'));
 }
 
-function stateClass(estado) {
-  if (!estado) return 'state-pendiente';
-  return `state-${String(estado).replace('/', '-').replace('_', '-')}`;
+function renderOperacion({ productivos, comerciales }) {
+  const current = FALLBACKS.operacion;
+  const metrics = [
+    { label: 'Gallinas actuales', value: findIndicator(productivos, 'gallinas_actuales') ?? current.gallinas, detail: 'aves' },
+    { label: 'Producción promedio', value: findIndicator(productivos, 'produccion_promedio_huevos_dia') ?? current.huevosDia, detail: 'huevos/día' },
+    { label: 'Venta actual', value: findIndicator(comerciales, 'venta_actual_bandejas_semana') ?? current.bandejasSemana, detail: 'bandejas/semana' },
+    { label: 'Postura promedio', value: findIndicator(productivos, 'postura_promedio_porcentaje') ?? current.postura, detail: '%' },
+    { label: 'Mortalidad acumulada', value: findIndicator(productivos, 'mortalidad_acumulada_porcentaje') ?? current.mortalidad, detail: '%' },
+    { label: 'Agua actual', value: findIndicator(productivos, 'consumo_agua_litros_dia') ?? current.aguaDia, detail: 'L/día' },
+    { label: 'Edad lote', value: current.edad, detail: 'semanas' },
+    { label: 'Raza', value: current.raza }
+  ];
+  renderMetrics('operacion-metricas', metrics);
 }
 
-function severityClass(severidad) {
-  if (severidad === 'alta') return 'severity-alta';
-  if (severidad === 'media') return 'severity-media';
-  return 'severity-pendiente';
+function renderEscenario500({ validacionComercial, comerciales, flujoCaja, galpones }) {
+  const escenario = validacionComercial?.escenario_500 ?? flujoCaja?.escenario_500 ?? {};
+  const galpon500 = (galpones?.escenarios || []).find((item) => Number(item?.aves) === 500) ?? {};
+  const base = FALLBACKS.escenario500;
+
+  const metrics = [
+    { label: 'Escenario base vigente', value: formatValue(escenario.aves ?? base.aves, 'aves totales'), tone: 'accent' },
+    { label: 'Producción estimada', value: formatValue(escenario.huevos_dia_estimados ?? base.huevosDia, 'huevos/día') },
+    { label: 'Bandejas estimadas', value: formatValue(escenario.bandejas_semana_estimadas ?? findIndicator(comerciales, 'bandejas_semana_estimadas_500_aves') ?? base.bandejasSemana, 'bandejas/semana') },
+    { label: 'Venta actual', value: formatValue(validacionComercial?.venta_actual_bandejas_semana ?? findIndicator(comerciales, 'venta_actual_bandejas_semana') ?? base.ventaActual, 'bandejas/semana') },
+    { label: 'Brecha comercial', value: formatValue(escenario.brecha_bandejas_semana ?? findIndicator(comerciales, 'brecha_bandejas_semana_para_500') ?? base.brecha, 'bandejas/semana'), tone: 'risk' },
+    { label: 'Agua estimada', value: base.agua },
+    { label: 'Superficie útil galpón', value: formatValue(galpon500.superficie_util_m2 ?? base.superficie, 'm2') },
+    { label: 'Costo estimado galpón', value: galpon500.costo_total === 'pendiente' ? base.costoGalpon : (galpon500.costo_total ?? base.costoGalpon), tone: 'pending' }
+  ];
+
+  renderMetrics('escenario-500-metricas', metrics);
+}
+
+function renderEscalas(galpones) {
+  const container = $('comparativo-escalas');
+  if (!container) return;
+  container.innerHTML = '';
+
+  const defaults = [
+    { aves: 500, superficie_util_m2: 100, estado: 'evaluándose' },
+    { aves: 1000, superficie_util_m2: 200, estado: 'comparativo futuro' },
+    { aves: 2000, superficie_util_m2: 400, estado: 'comparativo futuro' }
+  ];
+
+  const scenarios = defaults.map((fallback) => {
+    const source = (galpones?.escenarios || []).find((item) => Number(item?.aves) === fallback.aves) ?? {};
+    return { ...fallback, ...source };
+  });
+
+  scenarios.forEach((scenario) => {
+    const isBase = Number(scenario.aves) === 500;
+    const card = document.createElement('article');
+    card.className = `scale-card ${isBase ? 'base' : ''}`;
+    card.innerHTML = `
+      <div class="scale-head">
+        <strong>${scenario.aves} aves</strong>
+        <span>${isBase ? 'evaluándose' : 'comparativo futuro'}</span>
+      </div>
+      <dl>
+        <div><dt>Superficie útil</dt><dd>${scenario.superficie_util_m2} m2</dd></div>
+        <div><dt>Costo por m2</dt><dd>pendiente</dd></div>
+        <div><dt>Costo total galpón</dt><dd>pendiente</dd></div>
+      </dl>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function renderSemaforo() {
+  const container = $('semaforo-inversion');
+  if (!container) return;
+  container.innerHTML = '';
+
+  TRAFFIC_RULES.forEach((rule) => {
+    const card = document.createElement('article');
+    card.className = `traffic-card ${rule.color} ${rule.active ? 'active' : ''}`;
+    card.innerHTML = `
+      <span>${rule.title}</span>
+      <strong>${rule.decision}</strong>
+      <p>${rule.detail}</p>
+      ${rule.active ? '<em>Estado actual del proyecto</em>' : ''}
+    `;
+    container.appendChild(card);
+  });
+}
+
+function renderBlockers() {
+  const container = $('bloqueadores');
+  if (!container) return;
+  container.innerHTML = '';
+  BLOCKERS.forEach((blocker) => {
+    const item = document.createElement('div');
+    item.className = 'blocker-item';
+    item.innerHTML = `<span aria-hidden="true">!</span><strong>${blocker}</strong>`;
+    container.appendChild(item);
+  });
+}
+
+function renderActionLists() {
+  renderList('acciones-permitidas', ALLOWED_ACTIONS);
+  renderList('acciones-bloqueadas', BLOCKED_ACTIONS);
+}
+
+function renderRisks(semaforo) {
+  const container = $('riesgos-clave');
+  if (!container) return;
+  container.innerHTML = '';
+
+  const dimensions = semaforo?.dimensiones ?? {};
+  const orderedKeys = ['comercial', 'financiera', 'logistica', 'sanitaria', 'agua', 'energia', 'legal', 'contable'];
+
+  orderedKeys.forEach((key) => {
+    const estado = dimensions[key]?.estado ?? 'pendiente';
+    const card = document.createElement('article');
+    card.className = `risk-card state-${normalizeStatus(estado)}`;
+    card.innerHTML = `
+      <div class="risk-topline">
+        <strong>${labelForRisk(key)}</strong>
+        <span>${estado}</span>
+      </div>
+      <p>${RISK_COPY[key]}</p>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function labelForRisk(key) {
+  const labels = {
+    comercial: 'Comercial',
+    financiera: 'Financiero',
+    logistica: 'Logístico',
+    sanitaria: 'Sanitario',
+    agua: 'Agua',
+    energia: 'Energía',
+    legal: 'Legal',
+    contable: 'Contable'
+  };
+  return labels[key] ?? key;
+}
+
+function renderConclusion(resumen, semaforo) {
+  const fallback = 'P0 amarillo. No se autoriza compra, construcción ni inversión mayor.';
+  const conclusion = resumen?.conclusion || semaforo?.conclusion || fallback;
+  setText('conclusion-ejecutiva', conclusion);
 }
 
 async function loadJson(path) {
@@ -120,513 +318,31 @@ async function loadJson(path) {
   return response.json();
 }
 
-function renderReplanteoEscala(replanteoData) {
-  const base = replanteoData.escenario_base_actual?.aves ?? 500;
-  const anterior = replanteoData.escenario_anterior?.aves ?? 648;
-  text('escenario-base-hero', `${base} aves`);
-  text('escenario-anterior-hero', `${anterior} aves · referencia histórica`);
-  renderList('replanteo-resumen', [
-    ['Base vigente', `${base} aves totales`],
-    ['Escenario anterior', `${anterior} aves · histórico`],
-    ['Venta 500', replanteoData.resumen_impactos?.venta || '104.1 bandejas/semana estimadas'],
-    ['Agua 500', replanteoData.resumen_impactos?.agua || '115.7–154.3 L/día estimados'],
-    ['Galpón 500', replanteoData.resumen_impactos?.galpon || '100 m2 útiles referenciales'],
-    ['CAPEX/flujo', 'pendientes; no autorizan inversión']
-  ]);
-  text('replanteo-conclusion', replanteoData.conclusion || '500 aves es la base vigente.');
-}
-
-function renderMatrizInversion(matrizData) {
-  const container = document.getElementById('matriz-inversion-cards');
-  container.innerHTML = '';
-
-  (matrizData.colores || []).forEach((item) => {
-    const card = document.createElement('article');
-    card.className = `card panel decision-card decision-${item.color}`;
-
-    const header = document.createElement('div');
-    header.className = 'panel-header';
-
-    const title = document.createElement('h3');
-    title.textContent = item.color.toUpperCase();
-
-    const badge = document.createElement('span');
-    badge.className = `badge ${badgeClass(item.color)}`;
-    badge.textContent = item.decision;
-
-    header.append(title, badge);
-
-    const permite = document.createElement('p');
-    permite.innerHTML = `<strong>Permite:</strong> ${(item.permite || []).slice(0, 3).join(', ')}`;
-
-    const prohibe = document.createElement('p');
-    prohibe.innerHTML = `<strong>Prohíbe:</strong> ${(item.prohibe || []).slice(0, 3).join(', ')}`;
-
-    card.append(header, permite, prohibe);
-    container.appendChild(card);
-  });
-
-  text('matriz-inversion-conclusion', matrizData.conclusion || matrizData.decision_actual || 'En amarillo solo se invierte en desbloqueo.');
-}
-
-function renderEstimacionGalpones(galponesData) {
-  const container = document.getElementById('galpones-cards');
-  container.innerHTML = '';
-
-  (galponesData.escenarios || []).forEach((escenario) => {
-    const card = document.createElement('article');
-    card.className = 'card panel galpon-card';
-
-    const title = document.createElement('h3');
-    title.textContent = escenario.escenario;
-
-    const rows = document.createElement('dl');
-    rows.className = 'data-list compact-list';
-    const id = `galpon-${escenario.aves}`;
-    rows.id = id;
-
-    card.append(title, rows);
-    container.appendChild(card);
-
-    renderList(id, [
-      ['Aves', escenario.aves],
-      ['Superficie útil', `${escenario.superficie_util_m2} m2`],
-      ['Costo m2', escenario.costo_m2],
-      ['Costo total', escenario.costo_total],
-      ['Estado', escenario.estado]
-    ]);
-  });
-
-  text('galpones-conclusion', galponesData.conclusion || 'Costos pendientes de cotización.');
-}
-
-function renderResumenEjecutivo(resumenData) {
-  const badge = document.getElementById('resumen-ejecutivo-estado');
-  if (badge) {
-    badge.className = `badge ${badgeClass(resumenData.estado_general)}`;
-    badge.textContent = `Estado general: ${resumenData.estado_general}`;
-  }
-
-  renderList('resumen-ejecutivo-decision', [
-    ['Avance P0', `${resumenData.avance_p0_estimado}%`],
-    ['P1 preliminar', resumenData.decision_actual?.p1_preliminar || '—'],
-    ['P1 definitivo', resumenData.decision_actual?.p1_definitivo || '—'],
-    ['Compra aves', resumenData.decision_actual?.compra_500_pollonas || resumenData.decision_actual?.compra_aves || '—'],
-    ['Construcción', resumenData.decision_actual?.construccion || '—'],
-    ['Inversión mayor', resumenData.decision_actual?.inversion_mayor || '—']
-  ]);
-
-  renderUl('resumen-puntos-favorables', resumenData.puntos_favorables, 7);
-  renderUl('resumen-riesgos-principales', resumenData.riesgos_principales, 8);
-  renderUl('resumen-acciones-recomendadas', resumenData.acciones_recomendadas, 7);
-  text('resumen-ejecutivo-conclusion', resumenData.conclusion || 'Resumen ejecutivo no disponible.');
-}
-
-function renderAlertas(alertasData) {
-  const container = document.getElementById('alertas-p0');
-  container.innerHTML = '';
-
-  (alertasData.alertas || []).forEach((alerta) => {
-    const item = document.createElement('article');
-    item.className = `alert-card ${severityClass(alerta.severidad)}`;
-
-    const meta = document.createElement('div');
-    meta.className = 'alert-meta';
-
-    const id = document.createElement('span');
-    id.textContent = alerta.id;
-
-    const severity = document.createElement('span');
-    severity.className = 'alert-severity';
-    severity.textContent = alerta.severidad;
-
-    meta.append(id, severity);
-
-    const title = document.createElement('h3');
-    title.textContent = alerta.titulo;
-
-    const description = document.createElement('p');
-    description.textContent = alerta.descripcion;
-
-    const footer = document.createElement('p');
-    footer.className = 'alert-footer';
-    footer.textContent = `${alerta.dimension} · ${alerta.estado}`;
-
-    item.append(meta, title, description, footer);
-    container.appendChild(item);
-  });
-}
-
-function renderDatosFaltantes(datosData) {
-  const container = document.getElementById('datos-faltantes');
-  container.innerHTML = '';
-
-  (datosData.grupos || []).forEach((grupo) => {
-    const item = document.createElement('article');
-    item.className = `missing-group priority-${grupo.prioridad}`;
-
-    const header = document.createElement('div');
-    header.className = 'missing-header';
-
-    const title = document.createElement('h3');
-    title.textContent = grupo.grupo;
-
-    const priority = document.createElement('span');
-    priority.className = 'missing-priority';
-    priority.textContent = grupo.prioridad;
-
-    header.append(title, priority);
-
-    const list = document.createElement('ul');
-    (grupo.items || []).forEach((dato) => {
-      const li = document.createElement('li');
-      li.textContent = dato;
-      list.appendChild(li);
-    });
-
-    item.append(header, list);
-    container.appendChild(item);
-  });
-}
-
-function renderBlockCard(container, label, bloque, className = 'subproject-card') {
-  const card = document.createElement('article');
-  card.className = className;
-
-  const header = document.createElement('div');
-  header.className = 'subproject-header';
-
-  const title = document.createElement('h3');
-  title.textContent = label;
-
-  const badge = document.createElement('span');
-  badge.className = `badge ${badgeClass(bloque.estado)}`;
-  badge.textContent = bloque.estado;
-
-  header.append(title, badge);
-
-  const knownTitle = document.createElement('h4');
-  knownTitle.textContent = 'Datos conocidos principales';
-  const knownList = document.createElement('ul');
-  (bloque.datos_conocidos || []).slice(0, 5).forEach((dato) => {
-    const li = document.createElement('li');
-    li.textContent = dato;
-    knownList.appendChild(li);
-  });
-
-  const risksTitle = document.createElement('h4');
-  risksTitle.textContent = 'Riesgos principales';
-  const risksList = document.createElement('ul');
-  (bloque.riesgos || []).slice(0, 5).forEach((riesgo) => {
-    const li = document.createElement('li');
-    li.textContent = riesgo;
-    risksList.appendChild(li);
-  });
-
-  const missingTitle = document.createElement('h4');
-  missingTitle.textContent = 'Faltantes principales';
-  const missingList = document.createElement('ul');
-  (bloque.datos_faltantes || []).slice(0, 6).forEach((dato) => {
-    const li = document.createElement('li');
-    li.textContent = dato;
-    missingList.appendChild(li);
-  });
-
-  const condition = document.createElement('p');
-  condition.className = 'subproject-condition';
-  condition.textContent = bloque.condicion_para_avanzar;
-
-  card.append(header, knownTitle, knownList, risksTitle, risksList, missingTitle, missingList, condition);
-  container.appendChild(card);
-}
-
-function renderSubproyectos(subproyectosData) {
-  const container = document.getElementById('subproyectos-criticos');
-  container.innerHTML = '';
-
-  const labels = {
-    agua: 'Agua',
-    energia_solar: 'Energía solar'
-  };
-
-  Object.entries(subproyectosData.subproyectos || {}).forEach(([key, subproyecto]) => {
-    renderBlockCard(container, labels[key] || key, subproyecto);
-  });
-
-  text('subproyectos-advertencia', subproyectosData.advertencia || 'Los subproyectos críticos no habilitan compra todavía.');
-}
-
-function renderLogisticaConstruccion(logisticaData) {
-  const container = document.getElementById('logistica-construccion');
-  container.innerHTML = '';
-
-  renderBlockCard(container, 'Construcción', logisticaData.constructivo, 'logistics-card');
-  renderBlockCard(container, 'Logística', logisticaData.logistico, 'logistics-card');
-
-  text('logistica-advertencia', logisticaData.advertencia || 'No se puede cerrar P0 ni iniciar P1 definitivo sin resolver este bloque.');
-}
-
-function renderValidacionComercial(comercialData) {
-  const badge = document.getElementById('validacion-comercial-estado');
-  if (badge) {
-    badge.className = `badge ${badgeClass(comercialData.estado)}`;
-    badge.textContent = comercialData.estado;
-  }
-
-  renderList('validacion-comercial-metricas', [
-    ['Venta actual', `${comercialData.venta_actual_bandejas_semana} bandejas/semana`],
-    ['Venta requerida 500', `${comercialData.venta_requerida_500_bandejas_semana || comercialData.escenario_500?.bandejas_semana_estimadas} bandejas/semana`],
-    ['Brecha 500', `${comercialData.brecha_bandejas_semana} bandejas/semana`],
-    ['Crecimiento requerido', `${comercialData.crecimiento_requerido_veces} veces`]
-  ]);
-
-  renderUl('canales-actuales', comercialData.canales_actuales);
-  renderUl('canales-potenciales', comercialData.canales_potenciales);
-  text('validacion-comercial-conclusion', comercialData.conclusion || 'No comprar sin validar mercado.');
-}
-
-function renderLegalContable(legalData) {
-  const badge = document.getElementById('legal-contable-estado');
-  if (badge) {
-    badge.className = `badge ${badgeClass(legalData.estado)}`;
-    badge.textContent = legalData.estado;
-  }
-
-  renderUl('legal-temas', legalData.temas_a_revisar, 8);
-  renderUl('legal-riesgos', legalData.riesgos, 6);
-  text('legal-contable-advertencia', legalData.advertencia || 'No reemplaza revisión profesional.');
-}
-
-function renderCapex(capexData) {
-  const badge = document.getElementById('capex-estado');
-  if (badge) {
-    badge.className = `badge ${badgeClass(capexData.estado)}`;
-    badge.textContent = capexData.estado;
-  }
-
-  const montoPollonas = capexData.capex_conocido?.pollonas?.monto_clp ?? 0;
-  const montoTotalConocido = capexData.capex_conocido?.monto_total_conocido_clp ?? 0;
-  const montoPendiente = capexData.capex_pendiente?.monto_total_pendiente;
-
-  renderList('capex-resumen', [
-    ['Dato histórico pollonas', formatClp(montoPollonas)],
-    ['CAPEX total conocido', formatClp(montoTotalConocido)],
-    ['CAPEX total pendiente', montoPendiente === null || montoPendiente === undefined ? 'pendiente' : formatClp(montoPendiente)]
-  ]);
-
-  renderUl('capex-categorias-pendientes', capexData.capex_pendiente?.categorias_pendientes, 10);
-  renderUl('capex-riesgos', capexData.riesgos, 6);
-  text('capex-conclusion', capexData.conclusion || 'No comprar ni invertir sin CAPEX completo.');
-}
-
-function renderFlujoCaja(flujoData) {
-  const badge = document.getElementById('flujo-estado');
-  if (badge) {
-    badge.className = `badge ${badgeClass(flujoData.estado)}`;
-    badge.textContent = flujoData.estado;
-  }
-
-  renderList('flujo-resumen', [
-    ['Ingreso mensual actual', formatClp(flujoData.ingresos_actuales?.ingreso_mensual_estimado_clp ?? 0)],
-    ['Costos conocidos', formatClp(flujoData.costos_actuales?.total_costos_conocidos_clp ?? 0)],
-    ['Margen sin mano de obra', formatClp(flujoData.margenes_actuales?.margen_sin_mano_obra_clp ?? 0)],
-    ['Mano de obra referencial', formatClp(flujoData.mano_obra_referencial?.monto_clp ?? 0)],
-    ['Margen con mano de obra', formatClp(flujoData.margenes_actuales?.margen_con_mano_obra_clp ?? 0)],
-    ['Escenario base', flujoData.escenario_base || '500 aves totales'],
-    ['Brecha 500', `${flujoData.escenario_500?.brecha_bandejas_semana ?? '—'} bandejas/semana`],
-    ['CAPEX histórico', formatClp(flujoData.capex?.capex_conocido_pollonas_clp ?? 0)]
-  ]);
-
-  renderUl(
-    'flujo-indicadores-bloqueados',
-    (flujoData.indicadores_bloqueados || []).map((item) => `${item.indicador}: ${item.estado}`)
+async function loadData() {
+  const entries = await Promise.all(
+    Object.entries(DATA_FILES).map(async ([key, path]) => {
+      try {
+        return [key, await loadJson(path)];
+      } catch (error) {
+        console.warn(error);
+        return [key, null];
+      }
+    })
   );
-  renderUl('flujo-riesgos', flujoData.riesgos, 6);
-  text('flujo-conclusion', flujoData.conclusion || 'No autoriza inversión todavía.');
-}
-
-function renderDesbloqueoP1(desbloqueoData) {
-  const badge = document.getElementById('desbloqueo-p1-estado');
-  if (badge) {
-    badge.className = `badge ${badgeClass(desbloqueoData.estado_desbloqueo)}`;
-    badge.textContent = desbloqueoData.estado_desbloqueo;
-  }
-
-  text('desbloqueo-p1-objetivo', desbloqueoData.objetivo || '—');
-  renderUl(
-    'desbloqueo-tareas',
-    (desbloqueoData.tareas_por_dimension || []).map((item) => `${item.dimension}: ${item.tarea} (${item.estado})`),
-    12
-  );
-  renderUl(
-    'desbloqueo-instrumentos',
-    [
-      `${(desbloqueoData.documentos_creados || []).length} documentos de replanteo/decisión`,
-      `${(desbloqueoData.plantillas_csv || []).length} plantillas o CSV de levantamiento`,
-      `Base: ${desbloqueoData.escenario_base_actual || 500} aves`,
-      `Histórico: ${desbloqueoData.escenario_anterior_referencial || 648} aves`
-    ],
-    4
-  );
-  renderUl('desbloqueo-decisiones', desbloqueoData.decisiones_bloqueadas, 8);
-  text('desbloqueo-proximo-paso', desbloqueoData.proximo_paso_recomendado || desbloqueoData.conclusion || 'Pendiente.');
-}
-
-function renderCriteriosP1(criteriosData) {
-  const badge = document.getElementById('criterios-p1-estado');
-  if (badge) {
-    badge.className = 'badge badge-pendiente';
-    badge.textContent = criteriosData.estado_p1_preliminar;
-  }
-
-  renderList('criterios-p1-resumen', [
-    ['P1 preliminar', criteriosData.estado_p1_preliminar],
-    ['P1 definitivo', criteriosData.estado_p1_definitivo],
-    ['Compra pollonas', criteriosData.compra_pollonas]
-  ]);
-
-  const container = document.getElementById('criterios-p1-checklist');
-  container.innerHTML = '';
-  (criteriosData.criterios_minimos || []).forEach((criterio) => {
-    const item = document.createElement('article');
-    item.className = `diagnostic-block ${stateClass(criterio.estado)}`;
-
-    const title = document.createElement('h3');
-    title.textContent = `${criterio.id} · ${criterio.dimension} · ${criterio.estado}`;
-
-    const description = document.createElement('p');
-    description.textContent = criterio.criterio;
-
-    const evidence = document.createElement('p');
-    evidence.textContent = `Evidencia: ${criterio.evidencia}`;
-
-    const action = document.createElement('p');
-    action.textContent = `Acción requerida: ${criterio.accion_requerida}`;
-
-    item.append(title, description, evidence, action);
-    container.appendChild(item);
-  });
-
-  renderUl('bloqueos-p1-definitivo', criteriosData.bloqueos_p1_definitivo, 9);
-  renderUl('bloqueos-compra-pollonas', criteriosData.bloqueos_compra_pollonas, 7);
-  text('criterios-p1-conclusion', criteriosData.conclusion || 'P1 preliminar no habilitado.');
+  return Object.fromEntries(entries);
 }
 
 async function init() {
-  try {
-    const [resumenEjecutivo, estado, productivos, comerciales, finanzas, semaforo, alertas, datosFaltantes, subproyectos, logisticaConstruccion, validacionComercial, legalContable, capex, flujoCaja, criteriosP1, desbloqueoP1, replanteoEscala, matrizInversion, estimacionGalpones] = await Promise.all([
-      loadJson(DATA_FILES.resumenEjecutivo),
-      loadJson(DATA_FILES.estado),
-      loadJson(DATA_FILES.productivos),
-      loadJson(DATA_FILES.comerciales),
-      loadJson(DATA_FILES.finanzas),
-      loadJson(DATA_FILES.semaforo),
-      loadJson(DATA_FILES.alertas),
-      loadJson(DATA_FILES.datosFaltantes),
-      loadJson(DATA_FILES.subproyectos),
-      loadJson(DATA_FILES.logisticaConstruccion),
-      loadJson(DATA_FILES.validacionComercial),
-      loadJson(DATA_FILES.legalContable),
-      loadJson(DATA_FILES.capex),
-      loadJson(DATA_FILES.flujoCaja),
-      loadJson(DATA_FILES.criteriosP1),
-      loadJson(DATA_FILES.desbloqueoP1),
-      loadJson(DATA_FILES.replanteoEscala),
-      loadJson(DATA_FILES.matrizInversion),
-      loadJson(DATA_FILES.estimacionGalpones)
-    ]);
-
-    const prod = indexIndicators(productivos);
-    const com = indexIndicators(comerciales);
-    const fin = indexIndicators(finanzas);
-
-    text('semaforo-general', `Semáforo general: ${semaforo.semaforo_general || estado.semaforo_general}`);
-    text('avance-p0', `Avance P0: ${semaforo.avance_p0_estimado || estado.avance_p0_estimado}%`);
-    text('fase-actual', semaforo.fase || estado.fase_actual);
-    text('card-avance-p0', `${semaforo.avance_p0_estimado || estado.avance_p0_estimado}%`);
-    text('p1-preliminar', estadoLabel(semaforo.p1_preliminar_habilitado, 'habilitado'));
-    text('p1-definitivo', estadoLabel(semaforo.p1_definitivo_habilitado, 'habilitado'));
-    text('compra-pollonas', autorizadoLabel(semaforo.decisiones?.puede_comprar_aves ?? semaforo.decisiones?.puede_comprar_500_pollonas));
-    text('decision-final', disponibleLabel(semaforo.decisiones?.decision_final_disponible));
-
-    renderList('indicadores-productivos', [
-      ['Gallinas actuales', `${indicatorValue(prod, 'gallinas_actuales')}`],
-      ['Producción promedio', `${indicatorValue(prod, 'produccion_promedio_huevos_dia')} huevos/día`],
-      ['Postura promedio', `${indicatorValue(prod, 'postura_promedio_porcentaje')}%`],
-      ['Mortalidad acumulada', `${indicatorValue(prod, 'mortalidad_acumulada_porcentaje')}%`],
-      ['Densidad', `${indicatorValue(prod, 'densidad_actual_aves_m2')} aves/m2`],
-      ['Agua por ave/día', `${indicatorValue(prod, 'agua_litros_ave_dia')} L`]
-    ]);
-
-    renderList('indicadores-comerciales', [
-      ['Venta actual', `${indicatorValue(com, 'venta_actual_bandejas_semana')} bandejas/semana`],
-      ['Ingreso semanal', formatClp(indicatorValue(com, 'ingreso_semanal_actual'))],
-      ['Ingreso mensual estimado', formatClp(indicatorValue(com, 'ingreso_mensual_estimado'))],
-      ['Venta requerida 500 aves', `${validacionComercial.venta_requerida_500_bandejas_semana || 104.1} bandejas/semana`],
-      ['Brecha 500', `${validacionComercial.brecha_bandejas_semana || 76.1} bandejas/semana`],
-      ['Crecimiento requerido 500', `${validacionComercial.crecimiento_requerido_veces || 3.72} veces`]
-    ]);
-
-    renderList('finanzas-preliminares', [
-      ['Costos conocidos mensuales', formatClp(indicatorValue(fin, 'costos_conocidos_mensuales'))],
-      ['Margen sin mano de obra', formatClp(indicatorValue(fin, 'margen_preliminar_sin_mano_obra'))],
-      ['Mano de obra valorizada', formatClp(indicatorValue(fin, 'mano_obra_valorizada_mensual'))],
-      ['Margen con mano de obra', formatClp(indicatorValue(fin, 'margen_preliminar_con_mano_obra'))],
-      ['CAPEX conocido pollonas', formatClp(indicatorValue(fin, 'capex_conocido_pollonas'))]
-    ]);
-
-    const bloqueados = (finanzas.indicadores_bloqueados || []).map((item) => item.indicador).join(', ');
-    text('indicadores-bloqueados', bloqueados ? `${bloqueados}: pendientes` : 'ROI, VAN, TIR y Payback: pendientes');
-
-    const semaforoContainer = document.getElementById('semaforo-dimensiones');
-    semaforoContainer.innerHTML = '';
-    DIMENSION_ORDER.forEach((key) => {
-      const dimension = semaforo.dimensiones?.[key];
-      if (!dimension) return;
-
-      const item = document.createElement('div');
-      item.className = 'dimension';
-
-      const label = document.createElement('strong');
-      label.textContent = DIMENSION_LABELS[key] || key;
-
-      const badge = document.createElement('span');
-      badge.className = `badge ${badgeClass(dimension.estado)}`;
-      badge.textContent = dimension.estado;
-
-      item.append(label, badge);
-      semaforoContainer.appendChild(item);
-    });
-
-    renderReplanteoEscala(replanteoEscala);
-    renderMatrizInversion(matrizInversion);
-    renderEstimacionGalpones(estimacionGalpones);
-    renderResumenEjecutivo(resumenEjecutivo);
-    renderAlertas(alertas);
-    renderDatosFaltantes(datosFaltantes);
-    renderSubproyectos(subproyectos);
-    renderLogisticaConstruccion(logisticaConstruccion);
-    renderValidacionComercial(validacionComercial);
-    renderLegalContable(legalContable);
-    renderCapex(capex);
-    renderFlujoCaja(flujoCaja);
-    renderDesbloqueoP1(desbloqueoP1);
-    renderCriteriosP1(criteriosP1);
-
-    const condiciones = document.getElementById('condiciones-avanzar');
-    condiciones.innerHTML = '';
-    (semaforo.condiciones_para_avanzar || []).forEach((condition) => {
-      const item = document.createElement('li');
-      item.textContent = condition;
-      condiciones.appendChild(item);
-    });
-
-    text('estado-carga', 'Datos cargados desde JSON locales.');
-  } catch (error) {
-    console.error(error);
-    text('estado-carga', 'Error al cargar datos del dashboard.');
-    document.getElementById('estado-carga')?.classList.add('error');
-  }
+  const data = await loadData();
+  renderDecisionState(data);
+  renderOperacion(data);
+  renderEscenario500(data);
+  renderEscalas(data.galpones);
+  renderSemaforo();
+  renderBlockers();
+  renderActionLists();
+  renderRisks(data.semaforo);
+  renderConclusion(data.resumen, data.semaforo);
 }
 
-init();
+document.addEventListener('DOMContentLoaded', init);
