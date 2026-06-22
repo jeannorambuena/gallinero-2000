@@ -23,6 +23,14 @@ Este dashboard resume el avance del P0, los indicadores productivos, comerciales
 - `datos/procesados/indicadores/p0-flujo-caja-preliminar.csv`
 - `dashboard/data/criterios-p1.json`
 
+## Auditoría de datos
+
+Desde la raíz del repositorio:
+
+```bash
+python3 scripts/auditoria/validar_todo_p0.py
+```
+
 ## Abrir localmente
 
 Desde la raíz del repositorio:
