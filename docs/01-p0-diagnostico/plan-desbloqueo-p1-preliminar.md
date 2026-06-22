@@ -1,71 +1,38 @@
-# Plan de desbloqueo P1 preliminar — Proyecto Gallinero Nacho
+# Plan de desbloqueo P1 preliminar — base 500 aves totales
 
 ## Propósito
 
-Convertir los pendientes del MVP P0 en tareas concretas de levantamiento de información para decidir, más adelante, si corresponde habilitar una P1 preliminar.
+Transformar pendientes P0 en evidencia mínima para decidir si corresponde habilitar P1 preliminar sobre el nuevo escenario base de **500 aves totales**.
 
-Este plan no autoriza compra de 500 pollonas, construcción ni inversión mayor.
+El escenario 648 queda como referencia histórica. Este plan no autoriza compra de pollonas, construcción ni inversión mayor.
 
 ## Estado actual
 
-- Fase actual: P0 — Diagnóstico real.
+- Fase: P0 — Diagnóstico real.
 - Estado general: amarillo.
-- MVP P0: funcional y cerrado preliminarmente.
+- Nuevo escenario base: 500 aves totales.
+- Escenario anterior: 648 aves, referencia histórica.
 - P1 preliminar: no habilitado.
 - P1 definitivo: bloqueado.
-- Compra de 500 pollonas: bloqueada.
+- Compra de pollonas: bloqueada.
 - Construcción: no autorizada.
 - Inversión mayor: no autorizada.
 
-## Qué significa desbloquear P1 preliminar
+## Tareas prioritarias para desbloqueo
 
-Desbloquear P1 preliminar significa contar con evidencia mínima suficiente para iniciar diseño exploratorio, cotizaciones, comparación técnica y validación de alternativas.
-
-P1 preliminar no es una etapa de ejecución. Es una etapa de análisis más detallado.
-
-## Qué NO autoriza P1 preliminar
-
-P1 preliminar NO autoriza:
-
-- comprar 500 pollonas;
-- construir;
-- comprometer inversión mayor;
-- cerrar presupuesto definitivo;
-- calcular VAN, TIR, ROI o Payback definitivo;
-- cambiar el semáforo general a verde.
-
-## Tareas agrupadas por dimensión
-
-| Dimensión | Tarea | Responsable sugerido | Evidencia esperada |
-|---|---|---|---|
-| Comercial | Validar clientes y canales | Nacho / Jean | Listado de clientes, bandejas comprometidas y precios por canal |
-| Terreno | Levantar croquis 19 x 7 m | Nacho / Jean | Croquis con medidas, acceso, pendientes, barro y acopio |
-| Agua | Dimensionar solución preliminar | Técnico / Jean | Caudal, presión, estanque, bomba, líneas, respaldo y cotización |
-| Energía | Dimensionar solar preliminar | Técnico eléctrico / Jean | Cargas, Wh/día, batería, paneles, controlador, protecciones y cotización |
-| Construcción | Definir alternativa preliminar | Maestro / técnico / Jean | Alternativa de galpón/bodega, materiales y cubicación inicial |
-| Logística | Validar acceso y descarga | Nacho / proveedor transporte | Evidencia de acceso, punto de descarga, acopio y restricciones de invierno |
-| CAPEX | Levantar cotizaciones | Jean / proveedores | Cotizaciones con proveedor, fecha, cantidad, unidad y precio |
-| Flujo | Preparar flujo 648 aves | Jean | Flujo mensual preliminar con ingresos, costos y CAPEX |
-| Legal/contable | Revisar formalización | Contador / asesor | Respuestas sobre venta formal, impuestos, trazabilidad y permisos |
-| Decisión | Definir no avance | Jean / Nacho | Criterios sugeridos de detener, pausar o rediseñar |
-
-## Orden recomendado de ejecución
-
-1. Validación comercial inicial.
-2. Croquis de terreno y logística de acceso.
-3. Dimensionamiento preliminar de agua.
-4. Dimensionamiento preliminar de energía solar.
-5. Alternativa constructiva preliminar.
-6. Cotizaciones CAPEX por categoría.
-7. Flujo proyectado 648 aves.
-8. Revisión legal/contable.
-9. Criterios de no avance.
-10. Revisión de habilitación P1 preliminar.
-
-## Criterios de cierre
-
-El paquete de desbloqueo se considera listo cuando existen evidencias mínimas en las planillas y documentos asociados, sin vacíos críticos para evaluar P1 preliminar.
+| Dimensión | Tarea | Evidencia esperada |
+|---|---|---|
+| Comercial | Validar brecha 76.1 bandejas/semana para 500 aves | clientes/canales/precios/compromisos |
+| Terreno | Croquis 19 x 7 m | medidas, acceso, pendiente, barro, acopio |
+| Agua | Dimensionar 115.7–154.3 L/día aprox. | caudal, presión, estanque, bomba, respaldo |
+| Energía | Dimensionar luces/cámara/respaldo | watts, Wh/día, batería, paneles, protecciones |
+| Construcción | Estimar galpón 100 m2 útiles para 500 aves | alternativa y cotizaciones |
+| Logística | Validar camino rural, descarga e invierno | evidencia de acceso y plan de acopio |
+| CAPEX | Completar categorías | cotizaciones reales, no supuestos |
+| Flujo | Preparar flujo 500 aves | ingresos/costos/CAPEX completos |
+| Legal/contable | Revisar formalización | boletas/facturas, impuestos, permisos |
+| Decisión | Aplicar matriz por semáforo | rojo/amarillo/verde documentado |
 
 ## Conclusión
 
-P1 preliminar solo se habilita si se completa evidencia mínima. P1 preliminar NO autoriza compra, construcción ni inversión mayor. La compra de 500 pollonas sigue bloqueada.
+P1 preliminar solo podrá evaluarse si se completa evidencia mínima para 500 aves. En amarillo solo se permite inversión menor de desbloqueo.

@@ -5,7 +5,7 @@ Listado agrupado de información pendiente para cerrar P0 y preparar, si corresp
 ## Comerciales
 
 - Clientes actuales por tipo y recurrencia.
-- Capacidad real de vender 130–135 bandejas/semana.
+- Capacidad real de vender 104.1 bandejas/semana para el escenario base vigente de 500 aves.
 - Canales de venta disponibles.
 - Precio sostenible por bandeja según volumen.
 - Riesgo de sobreoferta o venta informal no escalable.
@@ -14,7 +14,7 @@ Listado agrupado de información pendiente para cerrar P0 y preparar, si corresp
 
 - CAPEX total del proyecto ampliado.
 - Costos completos de galpón, bodega, agua, energía, transporte y equipamiento.
-- Costos variables con 648 aves.
+- Costos variables con 500 aves.
 - Flujo de caja proyectado.
 - Sensibilidad por precio, mortalidad, postura y alimento.
 
@@ -31,7 +31,7 @@ Listado agrupado de información pendiente para cerrar P0 y preparar, si corresp
 - Caudal disponible.
 - Presión requerida.
 - Ubicación de estanque.
-- Autonomía real para 648 aves.
+- Autonomía real para 500 aves.
 - Bomba, fittings, líneas y bebederos.
 - Cotización completa.
 
@@ -77,7 +77,7 @@ Listado agrupado de información pendiente para cerrar P0 y preparar, si corresp
 
 ## Decisión de escalamiento
 
-- Confirmar si el objetivo real es 648, 1.000 o 2.000 aves.
+- Confirmar 500 aves como escenario base vigente y evaluar 1.000 o 2.000 aves solo como comparativos futuros; 648 aves queda como histórico/referencial.
 - Definir si se avanza por etapas o en una ampliación mayor.
 - Definir condición mínima para habilitar P1 preliminar.
 - Definir criterios de no avance.

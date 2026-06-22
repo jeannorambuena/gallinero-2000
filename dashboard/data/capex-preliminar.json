@@ -2,115 +2,52 @@
   "proyecto": "Gallinero Nacho",
   "fase": "P0 — Diagnóstico real",
   "estado": "pendiente/amarillo",
+  "escenario_base": "500 aves totales",
   "capex_conocido": {
     "pollonas": {
-      "cantidad": 500,
+      "cantidad_anterior": 500,
       "precio_unitario_clp": 8500,
       "monto_clp": 4250000,
-      "estado": "conocido"
+      "nota": "antecedente histórico de precio; no implica compra automática de 500 aves adicionales"
     },
     "monto_total_conocido_clp": 4250000
   },
   "capex_pendiente": {
-    "monto_total_pendiente": null,
-    "estado": "pendiente",
+    "monto_total_pendiente": "pendiente",
+    "estrategia_compra_reposicion": "pendiente",
     "categorias_pendientes": [
-      "galpón o ampliación",
-      "bodega ampliada",
-      "estructura",
-      "zinc",
-      "malla",
-      "piso/cama/viruta inicial",
-      "bebederos",
-      "comederos",
-      "nidales",
-      "estanque de agua",
-      "bomba",
-      "filtros",
-      "fittings",
-      "líneas de agua",
-      "sistema solar",
-      "luces",
-      "cámara",
-      "batería",
-      "controlador",
-      "inversor si corresponde",
-      "cableado y protecciones",
-      "transporte de pollonas",
-      "transporte de materiales",
-      "acopio",
-      "mano de obra constructiva",
+      "pollonas/reposición según estrategia",
+      "galpón 500",
+      "bodega/apoyo",
+      "agua",
+      "energía solar",
+      "equipamiento",
+      "logística",
+      "mano de obra",
       "imprevistos"
     ]
   },
   "categorias": [
-    {
-      "categoria": "pollonas",
-      "estado": "conocido",
-      "items": ["500 pollonas"],
-      "monto_conocido_clp": 4250000
-    },
-    {
-      "categoria": "galpón",
-      "estado": "pendiente",
-      "items": ["galpón o ampliación", "estructura", "zinc", "malla", "piso/cama/viruta inicial"]
-    },
-    {
-      "categoria": "bodega",
-      "estado": "pendiente",
-      "items": ["bodega ampliada"]
-    },
-    {
-      "categoria": "agua",
-      "estado": "pendiente",
-      "items": ["estanque de agua", "bomba", "filtros", "fittings", "líneas de agua"]
-    },
-    {
-      "categoria": "energía",
-      "estado": "pendiente",
-      "items": ["sistema solar", "luces", "cámara", "batería", "controlador", "inversor si corresponde", "cableado y protecciones"]
-    },
-    {
-      "categoria": "equipamiento",
-      "estado": "pendiente",
-      "items": ["bebederos", "comederos", "nidales"]
-    },
-    {
-      "categoria": "logística",
-      "estado": "pendiente",
-      "items": ["transporte de pollonas", "transporte de materiales", "acopio"]
-    },
-    {
-      "categoria": "construcción",
-      "estado": "pendiente",
-      "items": ["mano de obra constructiva"]
-    },
-    {
-      "categoria": "contingencia",
-      "estado": "pendiente",
-      "items": ["imprevistos"]
-    }
+    "pollonas/reposición",
+    "galpón",
+    "bodega/apoyo",
+    "agua",
+    "energía",
+    "equipamiento",
+    "logística",
+    "mano de obra",
+    "imprevistos"
   ],
   "riesgos": [
-    "subestimar la inversión total real",
-    "comprar pollonas sin infraestructura agua energía o mercado validados",
-    "quedar sin capital para completar galpón bodega equipamiento o logística",
-    "afectar el margen financiero por costos no considerados",
-    "generar atrasos por falta de materiales transporte o mano de obra",
-    "tomar decisiones con evaluación incompleta"
+    "confundir 500 aves totales con comprar 500 adicionales",
+    "galpón sin costo m2 real",
+    "CAPEX total incompleto"
   ],
   "criterios_para_avanzar": [
-    "tener diseño o alternativa constructiva preliminar",
-    "contar con cubicación inicial de galpón y bodega",
-    "cotizar materiales principales",
-    "dimensionar y cotizar sistema de agua",
-    "dimensionar y cotizar sistema solar",
-    "cotizar equipamiento productivo",
-    "cotizar transporte de pollonas y materiales",
-    "estimar mano de obra constructiva",
-    "definir porcentaje de imprevistos",
-    "consolidar CAPEX total preliminar antes de decidir inversión"
+    "definir estrategia para llegar a 500 aves",
+    "cotizar galpón y sistemas críticos",
+    "separar costos por categoría",
+    "validar flujo 500"
   ],
-  "conclusion": "CAPEX total aún no disponible. No se autoriza compra de 500 pollonas ni inversión mayor hasta completar inversión pendiente y cotizaciones.",
-  "advertencia": "CAPEX preliminar P0. No es presupuesto definitivo ni autorización de inversión."
+  "conclusion": "CAPEX total para 500 aves sigue pendiente. No autoriza compra ni inversión mayor."
 }

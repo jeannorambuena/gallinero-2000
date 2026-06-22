@@ -14,7 +14,10 @@ const DATA_FILES = {
   capex: '/data/capex-preliminar.json',
   flujoCaja: '/data/flujo-caja-preliminar.json',
   criteriosP1: '/data/criterios-p1.json',
-  desbloqueoP1: '/data/desbloqueo-p1-preliminar.json'
+  desbloqueoP1: '/data/desbloqueo-p1-preliminar.json',
+  replanteoEscala: '/data/replanteo-escala.json',
+  matrizInversion: '/data/matriz-decision-inversion.json',
+  estimacionGalpones: '/data/estimacion-galpones.json'
 };
 
 const DIMENSION_ORDER = [
@@ -95,7 +98,7 @@ function renderUl(containerId, items, limit = items?.length ?? 0) {
 
 function badgeClass(estado) {
   if (estado === 'verde' || estado === 'cumplido') return 'badge-verde';
-  if (estado === 'amarillo_rojo' || estado === 'bloqueante') return 'badge-amarillo-rojo';
+  if (estado === 'rojo' || estado === 'amarillo_rojo' || estado === 'bloqueante') return 'badge-amarillo-rojo';
   if (estado === 'pendiente/amarillo' || estado === 'amarillo' || estado === 'parcial') return 'badge-amarillo';
   return 'badge-pendiente';
 }
@@ -117,6 +120,86 @@ async function loadJson(path) {
   return response.json();
 }
 
+function renderReplanteoEscala(replanteoData) {
+  const base = replanteoData.escenario_base_actual?.aves ?? 500;
+  const anterior = replanteoData.escenario_anterior?.aves ?? 648;
+  text('escenario-base-hero', `${base} aves`);
+  text('escenario-anterior-hero', `${anterior} aves · referencia histórica`);
+  renderList('replanteo-resumen', [
+    ['Base vigente', `${base} aves totales`],
+    ['Escenario anterior', `${anterior} aves · histórico`],
+    ['Venta 500', replanteoData.resumen_impactos?.venta || '104.1 bandejas/semana estimadas'],
+    ['Agua 500', replanteoData.resumen_impactos?.agua || '115.7–154.3 L/día estimados'],
+    ['Galpón 500', replanteoData.resumen_impactos?.galpon || '100 m2 útiles referenciales'],
+    ['CAPEX/flujo', 'pendientes; no autorizan inversión']
+  ]);
+  text('replanteo-conclusion', replanteoData.conclusion || '500 aves es la base vigente.');
+}
+
+function renderMatrizInversion(matrizData) {
+  const container = document.getElementById('matriz-inversion-cards');
+  container.innerHTML = '';
+
+  (matrizData.colores || []).forEach((item) => {
+    const card = document.createElement('article');
+    card.className = `card panel decision-card decision-${item.color}`;
+
+    const header = document.createElement('div');
+    header.className = 'panel-header';
+
+    const title = document.createElement('h3');
+    title.textContent = item.color.toUpperCase();
+
+    const badge = document.createElement('span');
+    badge.className = `badge ${badgeClass(item.color)}`;
+    badge.textContent = item.decision;
+
+    header.append(title, badge);
+
+    const permite = document.createElement('p');
+    permite.innerHTML = `<strong>Permite:</strong> ${(item.permite || []).slice(0, 3).join(', ')}`;
+
+    const prohibe = document.createElement('p');
+    prohibe.innerHTML = `<strong>Prohíbe:</strong> ${(item.prohibe || []).slice(0, 3).join(', ')}`;
+
+    card.append(header, permite, prohibe);
+    container.appendChild(card);
+  });
+
+  text('matriz-inversion-conclusion', matrizData.conclusion || matrizData.decision_actual || 'En amarillo solo se invierte en desbloqueo.');
+}
+
+function renderEstimacionGalpones(galponesData) {
+  const container = document.getElementById('galpones-cards');
+  container.innerHTML = '';
+
+  (galponesData.escenarios || []).forEach((escenario) => {
+    const card = document.createElement('article');
+    card.className = 'card panel galpon-card';
+
+    const title = document.createElement('h3');
+    title.textContent = escenario.escenario;
+
+    const rows = document.createElement('dl');
+    rows.className = 'data-list compact-list';
+    const id = `galpon-${escenario.aves}`;
+    rows.id = id;
+
+    card.append(title, rows);
+    container.appendChild(card);
+
+    renderList(id, [
+      ['Aves', escenario.aves],
+      ['Superficie útil', `${escenario.superficie_util_m2} m2`],
+      ['Costo m2', escenario.costo_m2],
+      ['Costo total', escenario.costo_total],
+      ['Estado', escenario.estado]
+    ]);
+  });
+
+  text('galpones-conclusion', galponesData.conclusion || 'Costos pendientes de cotización.');
+}
+
 function renderResumenEjecutivo(resumenData) {
   const badge = document.getElementById('resumen-ejecutivo-estado');
   if (badge) {
@@ -128,7 +211,7 @@ function renderResumenEjecutivo(resumenData) {
     ['Avance P0', `${resumenData.avance_p0_estimado}%`],
     ['P1 preliminar', resumenData.decision_actual?.p1_preliminar || '—'],
     ['P1 definitivo', resumenData.decision_actual?.p1_definitivo || '—'],
-    ['Compra 500 pollonas', resumenData.decision_actual?.compra_500_pollonas || '—'],
+    ['Compra aves', resumenData.decision_actual?.compra_500_pollonas || resumenData.decision_actual?.compra_aves || '—'],
     ['Construcción', resumenData.decision_actual?.construccion || '—'],
     ['Inversión mayor', resumenData.decision_actual?.inversion_mayor || '—']
   ]);
@@ -292,8 +375,8 @@ function renderValidacionComercial(comercialData) {
 
   renderList('validacion-comercial-metricas', [
     ['Venta actual', `${comercialData.venta_actual_bandejas_semana} bandejas/semana`],
-    ['Venta requerida', `${comercialData.venta_requerida_648_bandejas_semana} bandejas/semana`],
-    ['Brecha', `${comercialData.brecha_bandejas_semana} bandejas/semana`],
+    ['Venta requerida 500', `${comercialData.venta_requerida_500_bandejas_semana || comercialData.escenario_500?.bandejas_semana_estimadas} bandejas/semana`],
+    ['Brecha 500', `${comercialData.brecha_bandejas_semana} bandejas/semana`],
     ['Crecimiento requerido', `${comercialData.crecimiento_requerido_veces} veces`]
   ]);
 
@@ -326,7 +409,7 @@ function renderCapex(capexData) {
   const montoPendiente = capexData.capex_pendiente?.monto_total_pendiente;
 
   renderList('capex-resumen', [
-    ['CAPEX conocido pollonas', formatClp(montoPollonas)],
+    ['Dato histórico pollonas', formatClp(montoPollonas)],
     ['CAPEX total conocido', formatClp(montoTotalConocido)],
     ['CAPEX total pendiente', montoPendiente === null || montoPendiente === undefined ? 'pendiente' : formatClp(montoPendiente)]
   ]);
@@ -349,7 +432,9 @@ function renderFlujoCaja(flujoData) {
     ['Margen sin mano de obra', formatClp(flujoData.margenes_actuales?.margen_sin_mano_obra_clp ?? 0)],
     ['Mano de obra referencial', formatClp(flujoData.mano_obra_referencial?.monto_clp ?? 0)],
     ['Margen con mano de obra', formatClp(flujoData.margenes_actuales?.margen_con_mano_obra_clp ?? 0)],
-    ['CAPEX conocido', formatClp(flujoData.capex?.capex_conocido_pollonas_clp ?? 0)]
+    ['Escenario base', flujoData.escenario_base || '500 aves totales'],
+    ['Brecha 500', `${flujoData.escenario_500?.brecha_bandejas_semana ?? '—'} bandejas/semana`],
+    ['CAPEX histórico', formatClp(flujoData.capex?.capex_conocido_pollonas_clp ?? 0)]
   ]);
 
   renderUl(
@@ -376,10 +461,12 @@ function renderDesbloqueoP1(desbloqueoData) {
   renderUl(
     'desbloqueo-instrumentos',
     [
-      ...(desbloqueoData.documentos_creados || []).map((item) => `doc: ${item}`),
-      ...(desbloqueoData.plantillas_csv || []).map((item) => `csv: ${item}`)
+      `${(desbloqueoData.documentos_creados || []).length} documentos de replanteo/decisión`,
+      `${(desbloqueoData.plantillas_csv || []).length} plantillas o CSV de levantamiento`,
+      `Base: ${desbloqueoData.escenario_base_actual || 500} aves`,
+      `Histórico: ${desbloqueoData.escenario_anterior_referencial || 648} aves`
     ],
-    12
+    4
   );
   renderUl('desbloqueo-decisiones', desbloqueoData.decisiones_bloqueadas, 8);
   text('desbloqueo-proximo-paso', desbloqueoData.proximo_paso_recomendado || desbloqueoData.conclusion || 'Pendiente.');
@@ -427,7 +514,7 @@ function renderCriteriosP1(criteriosData) {
 
 async function init() {
   try {
-    const [resumenEjecutivo, estado, productivos, comerciales, finanzas, semaforo, alertas, datosFaltantes, subproyectos, logisticaConstruccion, validacionComercial, legalContable, capex, flujoCaja, criteriosP1, desbloqueoP1] = await Promise.all([
+    const [resumenEjecutivo, estado, productivos, comerciales, finanzas, semaforo, alertas, datosFaltantes, subproyectos, logisticaConstruccion, validacionComercial, legalContable, capex, flujoCaja, criteriosP1, desbloqueoP1, replanteoEscala, matrizInversion, estimacionGalpones] = await Promise.all([
       loadJson(DATA_FILES.resumenEjecutivo),
       loadJson(DATA_FILES.estado),
       loadJson(DATA_FILES.productivos),
@@ -443,7 +530,10 @@ async function init() {
       loadJson(DATA_FILES.capex),
       loadJson(DATA_FILES.flujoCaja),
       loadJson(DATA_FILES.criteriosP1),
-      loadJson(DATA_FILES.desbloqueoP1)
+      loadJson(DATA_FILES.desbloqueoP1),
+      loadJson(DATA_FILES.replanteoEscala),
+      loadJson(DATA_FILES.matrizInversion),
+      loadJson(DATA_FILES.estimacionGalpones)
     ]);
 
     const prod = indexIndicators(productivos);
@@ -456,7 +546,7 @@ async function init() {
     text('card-avance-p0', `${semaforo.avance_p0_estimado || estado.avance_p0_estimado}%`);
     text('p1-preliminar', estadoLabel(semaforo.p1_preliminar_habilitado, 'habilitado'));
     text('p1-definitivo', estadoLabel(semaforo.p1_definitivo_habilitado, 'habilitado'));
-    text('compra-pollonas', autorizadoLabel(semaforo.decisiones?.puede_comprar_500_pollonas));
+    text('compra-pollonas', autorizadoLabel(semaforo.decisiones?.puede_comprar_aves ?? semaforo.decisiones?.puede_comprar_500_pollonas));
     text('decision-final', disponibleLabel(semaforo.decisiones?.decision_final_disponible));
 
     renderList('indicadores-productivos', [
@@ -472,9 +562,9 @@ async function init() {
       ['Venta actual', `${indicatorValue(com, 'venta_actual_bandejas_semana')} bandejas/semana`],
       ['Ingreso semanal', formatClp(indicatorValue(com, 'ingreso_semanal_actual'))],
       ['Ingreso mensual estimado', formatClp(indicatorValue(com, 'ingreso_mensual_estimado'))],
-      ['Venta requerida para 648 aves', `${indicatorValue(com, 'bandejas_semana_proyectadas_648_aves')} bandejas/semana`],
-      ['Brecha actual', `${indicatorValue(com, 'brecha_bandejas_semana_para_648')} bandejas/semana`],
-      ['Crecimiento requerido', `${indicatorValue(com, 'crecimiento_requerido_veces')} veces`]
+      ['Venta requerida 500 aves', `${validacionComercial.venta_requerida_500_bandejas_semana || 104.1} bandejas/semana`],
+      ['Brecha 500', `${validacionComercial.brecha_bandejas_semana || 76.1} bandejas/semana`],
+      ['Crecimiento requerido 500', `${validacionComercial.crecimiento_requerido_veces || 3.72} veces`]
     ]);
 
     renderList('finanzas-preliminares', [
@@ -508,6 +598,9 @@ async function init() {
       semaforoContainer.appendChild(item);
     });
 
+    renderReplanteoEscala(replanteoEscala);
+    renderMatrizInversion(matrizInversion);
+    renderEstimacionGalpones(estimacionGalpones);
     renderResumenEjecutivo(resumenEjecutivo);
     renderAlertas(alertas);
     renderDatosFaltantes(datosFaltantes);

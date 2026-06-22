@@ -19,6 +19,18 @@ SPECS = {
         "required": ["proyecto", "fase_actual", "estado_desbloqueo", "objetivo", "proximo_paso_recomendado", "conclusion"],
         "non_empty_lists": ["tareas_por_dimension", "documentos_creados", "plantillas_csv", "criterios_para_habilitar_p1_preliminar", "decisiones_bloqueadas"],
     },
+    "dashboard/data/replanteo-escala.json": {
+        "required": ["proyecto", "fase", "escenario_anterior", "escenario_base_actual", "regla_decision_inversion", "resumen_impactos", "conclusion"],
+        "non_empty_lists": ["escenarios_comparativos"],
+    },
+    "dashboard/data/matriz-decision-inversion.json": {
+        "required": ["proyecto", "regla_general", "decision_actual", "inversion_mayor_autorizada", "compra_aves_autorizada", "conclusion"],
+        "non_empty_lists": ["colores"],
+    },
+    "dashboard/data/estimacion-galpones.json": {
+        "required": ["proyecto", "supuestos", "densidad_ref_aves_m2", "conclusion"],
+        "non_empty_lists": ["escenarios", "categorias_pendientes"],
+    },
     "dashboard/data/estado-proyecto.json": {
         "required_any": [("fase", "fase_actual")],
         "required": ["proyecto", "avance_p0_estimado", "semaforo_general"],
@@ -67,7 +79,7 @@ SPECS = {
         "non_empty_lists": ["categorias", "riesgos", "criterios_para_avanzar"],
     },
     "dashboard/data/flujo-caja-preliminar.json": {
-        "required": ["proyecto", "fase", "estado", "ingresos_actuales", "costos_actuales", "mano_obra_referencial", "margenes_actuales", "escenario_648", "conclusion"],
+        "required": ["proyecto", "fase", "estado", "ingresos_actuales", "costos_actuales", "mano_obra_referencial", "margenes_actuales", "escenario_500", "escenario_648", "conclusion"],
         "non_empty_lists": ["datos_faltantes", "riesgos", "criterios_para_avanzar", "indicadores_bloqueados"],
     },
     "dashboard/data/criterios-p1.json": {

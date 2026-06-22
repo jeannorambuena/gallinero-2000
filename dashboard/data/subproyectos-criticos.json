@@ -8,9 +8,10 @@
       "datos_conocidos": [
         "consumo actual: 34 L/día para 148 gallinas",
         "consumo actual por ave: 0.23 L/ave/día",
-        "operación proyectada: 648 aves",
-        "agua proyectada: 150–200 L/día",
-        "solución conceptual: estanque de 1.000 L en parte alta + bomba"
+        "escenario base vigente: 500 aves",
+        "agua estimada para 500 aves: 115.7–154.3 L/día",
+        "escenario anterior/referencial: 648 aves, 150–200 L/día histórico",
+        "solución conceptual: estanque de 1.000 L en parte alta + bomba, no definitiva"
       ],
       "datos_faltantes": [
         "caudal disponible",
@@ -30,7 +31,7 @@
         "fallas de agua afectan bienestar, producción y mortalidad",
         "bebederos o líneas mal resueltos pueden aumentar humedad"
       ],
-      "condicion_para_avanzar": "Dimensionar caudal, presión, autonomía, ubicación, bomba, filtros, fittings, líneas, niples, respaldo y costo antes de habilitar P1 preliminar."
+      "condicion_para_avanzar": "Dimensionar caudal, presión, autonomía, ubicación, bomba, filtros, fittings, líneas, niples, respaldo y costo para 500 aves antes de habilitar P1 preliminar."
     },
     "energia_solar": {
       "estado": "amarillo",

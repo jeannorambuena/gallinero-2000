@@ -2,16 +2,21 @@
   "proyecto": "Gallinero Nacho",
   "fase_actual": "P0 — Diagnóstico real",
   "avance_p0_estimado": 80,
+  "semaforo_general": "amarillo",
+  "escenario_base_actual": 500,
+  "escenario_anterior_referencial": 648,
   "p1_preliminar_habilitado": false,
   "p1_definitivo_habilitado": false,
-  "semaforo_general": "amarillo",
-  "estado_datos_reales": "disponibles, pendientes de consolidar en repo",
-  "estado_dashboard": "base inicial",
-  "advertencia": "decisión final no disponible todavía",
+  "compra_pollonas_autorizada": false,
+  "compra_aves_autorizada": false,
+  "construccion_autorizada": false,
+  "inversion_mayor_autorizada": false,
   "proximos_pasos": [
-    "consolidar P0",
-    "crear indicadores preliminares",
-    "crear semáforo por dimensión",
-    "preparar P1 preliminar"
-  ]
+    "validar brecha comercial 76.1 bandejas/semana",
+    "cotizar galpón 500",
+    "dimensionar agua/energía",
+    "completar CAPEX y flujo 500",
+    "resolver logística y legal/contable"
+  ],
+  "decision_actual": "P0 amarillo; P1 preliminar no habilitado; solo inversión menor de desbloqueo."
 }

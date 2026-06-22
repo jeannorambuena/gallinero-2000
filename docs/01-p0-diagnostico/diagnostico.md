@@ -13,8 +13,9 @@ P0 sigue abierto. La información disponible orienta la decisión, pero todavía
 - Muertes acumuladas: 2
 - Línea genética: Hy-Line W-80
 - Edad actual: 37 semanas
-- Compra potencial evaluada: 500 pollonas nuevas
-- Total operativo potencial evaluado: 648 aves
+- Escenario base vigente: 500 aves totales
+- Escenario anterior/referencial: 648 aves (148 aves actuales + hipótesis anterior de 500 pollonas nuevas)
+- Compra de aves: no autorizada en P0
 
 ## Producción
 
@@ -29,14 +30,16 @@ La dimensión productiva se lee preliminarmente como favorable, aunque debe mant
 
 ## Comercialización
 
-La venta actual es de **28 bandejas/semana**. Para una operación proyectada de **648 aves**, se estima una venta requerida de **135 bandejas/semana**.
+La venta actual es de **28 bandejas/semana**. Para el **escenario base vigente de 500 aves totales**, se estima una venta requerida de **104.1 bandejas/semana**.
 
 Esto genera una brecha comercial relevante:
 
 - Venta actual: 28 bandejas/semana
-- Venta requerida para 648 aves: 135 bandejas/semana
-- Brecha comercial: 107 bandejas/semana
-- Crecimiento requerido: 4.82 veces
+- Venta estimada para 500 aves: 104.1 bandejas/semana
+- Brecha estimada para 500 aves: 76.1 bandejas/semana
+- Crecimiento requerido estimado: 3.72 veces
+
+El escenario de 648 aves queda solo como referencia histórica/anterior del P0 original, no como meta vigente.
 
 La validación comercial es una condición crítica antes de avanzar a inversión o compra de pollonas.
 
@@ -80,8 +83,9 @@ La logística debe evaluarse antes de cotizar o planificar construcción y trans
 ### Agua
 
 - Consumo actual: 34 L/día
-- Proyección 648 aves: 150–200 L/día
-- Solución conceptual: estanque 1.000 L + bomba
+- Escenario base vigente 500 aves: 115.7–154.3 L/día estimado proporcional
+- Escenario anterior/referencial 648 aves: 150–200 L/día histórico
+- Solución conceptual: estanque 1.000 L + bomba, no definitivo
 
 Falta dimensionar caudal, presión, autonomía, ubicación, materiales y costo.
 
@@ -116,7 +120,7 @@ Estos factores deben corregirse o mitigarse antes de escalar, porque afectan bie
 
 ## Conclusión P0 preliminar
 
-El proyecto tiene una base productiva atractiva, pero el salto a 648 aves todavía no está validado. La principal tensión está en la brecha comercial, el margen financiero ajustado al valorizar mano de obra, el CAPEX total pendiente y los riesgos logísticos, constructivos, sanitarios, de agua y energía.
+El proyecto tiene una base productiva atractiva, pero el salto vigente a **500 aves totales** todavía no está validado. La principal tensión está en la brecha comercial, el margen financiero ajustado al valorizar mano de obra, el CAPEX total pendiente y los riesgos logísticos, constructivos, sanitarios, de agua y energía. El escenario de **648 aves** queda como antecedente histórico/referencial, no como objetivo central vigente.
 
 **Estado:** amarillo, P0 abierto.
 

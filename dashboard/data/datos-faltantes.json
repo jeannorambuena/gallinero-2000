@@ -7,7 +7,7 @@
       "grupo": "comerciales",
       "prioridad": "alta",
       "items": [
-        "validar capacidad real de vender 130–135 bandejas/semana",
+        "validar capacidad real de vender 104.1 bandejas/semana para 500 aves",
         "identificar clientes y recurrencia de compra",
         "definir canales de venta escalables",
         "validar precio sostenible por bandeja según volumen"
@@ -19,7 +19,8 @@
       "items": [
         "calcular CAPEX total del proyecto ampliado",
         "levantar costos completos de infraestructura, agua, energía, transporte y equipamiento",
-        "preparar flujo de caja proyectado",
+        "levantar costos variables para 500 aves",
+        "preparar flujo de caja proyectado para 500 aves",
         "evaluar sensibilidad por precio, postura, mortalidad y alimento"
       ]
     },
@@ -37,7 +38,7 @@
       "grupo": "agua",
       "prioridad": "media",
       "items": [
-        "dimensionar consumo para 648 aves",
+        "dimensionar consumo para 500 aves",
         "definir estanque, bomba, presión y autonomía",
         "definir ubicación del estanque",
         "cotizar solución completa"
@@ -97,7 +98,7 @@
       "grupo": "decisión de escalamiento",
       "prioridad": "alta",
       "items": [
-        "confirmar si el objetivo es 648, 1.000 o 2.000 aves",
+        "confirmar 500 aves como escenario base vigente y evaluar 1.000 o 2.000 aves solo como comparativos futuros; 648 aves queda como histórico/referencial",
         "definir avance por etapas o ampliación mayor",
         "definir condición mínima para habilitar P1 preliminar",
         "definir criterios de no avance"

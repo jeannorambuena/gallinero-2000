@@ -1,0 +1,4 @@
+escenario,aves,densidad_ref_aves_m2,superficie_util_m2,costo_m2_bajo,costo_m2_medio,costo_m2_alto,costo_total_bajo,costo_total_medio,costo_total_alto,estado,observacion
+500_aves,500,5,100.0,,,,,,,requiere cotizacion,costos pendientes; no hay precio m2 real
+1000_aves,1000,5,200.0,,,,,,,requiere cotizacion,costos pendientes; no hay precio m2 real
+2000_aves,2000,5,400.0,,,,,,,requiere cotizacion,costos pendientes; no hay precio m2 real

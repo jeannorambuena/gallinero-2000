@@ -17,9 +17,9 @@ Comprender el estado real de la operación actual del Proyecto Gallinero Nacho y
 
 El proyecto evalúa:
 
-- compra potencial de 500 pollonas nuevas;
-- operación inicial proyectada de 648 aves totales;
-- posible escalamiento futuro a 1.000 y 2.000 aves, aún no decidido.
+- escenario base vigente de 500 aves totales;
+- posible escalamiento futuro a 1.000 y 2.000 aves, aún no decidido;
+- 648 aves queda como antecedente histórico/referencial del P0 original.
 
 ## Estado actual
 

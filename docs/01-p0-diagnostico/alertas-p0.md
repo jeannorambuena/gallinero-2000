@@ -4,7 +4,7 @@ Estas alertas resumen los riesgos críticos detectados durante el diagnóstico P
 
 ## Alertas críticas
 
-1. **Brecha comercial alta para 648 aves.** La venta actual es de 28 bandejas/semana y la operación proyectada requiere 135 bandejas/semana.
+1. **Brecha comercial alta para 500 aves.** La venta actual es de 28 bandejas/semana; el objetivo estimado para 500 aves es 104.1 bandejas/semana, con brecha estimada de 76.1 bandejas/semana.
 2. **Margen financiero muy ajustado al valorizar mano de obra.** El margen preliminar baja desde $201.767 a aproximadamente $19.767/mes.
 3. **CAPEX total pendiente.** Solo está identificado el CAPEX de pollonas por $4.250.000; falta infraestructura, agua, energía, transporte y equipamiento.
 4. **Camino/logística riesgosa para construcción y operación.** El acceso rural en cerro, camino de tierra, pendiente e invierno barroso complican transporte y construcción.

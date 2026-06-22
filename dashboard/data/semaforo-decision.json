@@ -1,74 +1,62 @@
 {
   "proyecto": "Gallinero Nacho",
   "fase": "P0 — Diagnóstico real",
-  "estado": "preliminar",
+  "estado": "amarillo",
   "semaforo_general": "amarillo",
   "avance_p0_estimado": 80,
   "p1_preliminar_habilitado": false,
   "p1_definitivo_habilitado": false,
+  "escenario_base_actual": 500,
   "dimensiones": {
     "productiva": {
-      "estado": "verde",
-      "razon": "postura promedio alta, mortalidad baja, producción actual estable.",
-      "evidencia": "postura promedio 89.2%, mortalidad 1.3%."
+      "estado": "verde"
     },
     "comercial": {
-      "estado": "amarillo_rojo",
-      "razon": "la venta actual es 28 bandejas/semana y la proyección para 648 aves exige 135 bandejas/semana.",
-      "evidencia": "brecha actual 107 bandejas/semana, crecimiento requerido 4.82 veces."
+      "estado": "amarillo_rojo"
     },
     "financiera": {
-      "estado": "amarillo",
-      "razon": "existe margen preliminar positivo, pero queda muy ajustado al valorizar mano de obra y falta CAPEX completo.",
-      "evidencia": "margen sin mano de obra $201.767, margen con mano de obra $19.767, CAPEX conocido solo pollonas $4.250.000."
+      "estado": "amarillo"
     },
     "constructiva": {
-      "estado": "pendiente",
-      "razon": "todavía no existe diseño constructivo ni cubicación de materiales."
+      "estado": "pendiente/amarillo"
     },
     "logistica": {
-      "estado": "amarillo_rojo",
-      "razon": "acceso rural en cerro, camino de tierra, camión grande complicado, invierno barroso."
+      "estado": "amarillo_rojo"
     },
     "agua": {
-      "estado": "amarillo",
-      "razon": "existe solución conceptual con estanque 1.000 L y bomba, pero falta dimensionamiento y cotización."
+      "estado": "pendiente/amarillo"
     },
     "energia": {
-      "estado": "amarillo",
-      "razon": "se requiere sistema solar para luces y cámara, pero faltan watts, voltaje, batería e inversor."
+      "estado": "pendiente/amarillo"
     },
     "sanitaria": {
-      "estado": "amarillo",
-      "razon": "hay humedad, condensación, goteo y calor; se requiere corregir ventilación, cama y bebederos."
+      "estado": "amarillo"
     },
     "legal": {
-      "estado": "pendiente",
-      "razon": "falta revisar condiciones de formalización, permisos y venta formal si escala."
+      "estado": "pendiente"
     },
     "contable": {
-      "estado": "pendiente",
-      "razon": "falta definir forma de operación, registro de ingresos, gastos, impuestos y trazabilidad."
+      "estado": "pendiente"
     },
     "escalabilidad": {
-      "estado": "amarillo",
-      "razon": "hay espacio y objetivo de crecimiento, pero 1.000 y 2.000 aves requieren validación comercial, financiera, constructiva y sanitaria."
+      "estado": "amarillo"
     }
   },
   "decisiones": {
-    "puede_iniciar_p1_preliminar": false,
-    "puede_iniciar_p1_definitivo": false,
     "puede_comprar_500_pollonas": false,
+    "puede_comprar_aves": false,
+    "puede_construir": false,
+    "inversion_mayor_autorizada": false,
     "decision_final_disponible": false
   },
   "condiciones_para_avanzar": [
-    "validar mercado para 130–135 bandejas/semana",
-    "cotizar galpón y equipamiento",
-    "cotizar transporte de pollonas",
-    "dimensionar agua",
-    "dimensionar energía solar",
-    "revisar legal y contable",
-    "preparar flujo de caja proyectado"
+    "validar mercado 500",
+    "completar CAPEX 500",
+    "preparar flujo 500",
+    "dimensionar agua y energía",
+    "resolver logística",
+    "revisar legal/contable",
+    "alcanzar condiciones verdes antes de inversión mayor"
   ],
-  "nota": "Semáforo preliminar P0. Sirve para orientar decisión, pero no autoriza todavía inversión ni compra de 500 pollonas."
+  "conclusion": "Estado amarillo: solo inversión menor de desbloqueo."
 }

@@ -1,8 +1,21 @@
-# Plantilla flujo proyectado 648 aves — P0
+# Plantilla flujo proyectado 500 aves — reemplaza foco 648
+
+## Nota histórica
+
+Este archivo mantiene el nombre original para preservar trazabilidad del paquete anterior, pero desde el replanteo el flujo base debe trabajarse sobre **500 aves totales**. El escenario 648 queda como referencia histórica.
 
 ## Objetivo
 
-Construir un flujo mensual preliminar para el escenario de 648 aves, sin calcular VAN, TIR, ROI ni Payback hasta tener datos completos.
+Construir un flujo mensual preliminar para el escenario base de 500 aves, sin calcular VAN, TIR, ROI ni Payback.
+
+## Datos base
+
+- Operación actual: 148 aves.
+- Nuevo escenario base: 500 aves totales.
+- Escenario anterior/referencial: 648 aves.
+- Venta actual: 28 bandejas/semana.
+- Venta estimada para 500 aves: 104.1 bandejas/semana.
+- Brecha estimada: 76.1 bandejas/semana.
 
 ## Ingresos
 
@@ -34,13 +47,3 @@ Construir un flujo mensual preliminar para el escenario de 648 aves, sin calcula
 - Separar datos conocidos, cotizados, estimados y pendientes.
 - No calcular VAN/TIR/ROI/Payback hasta tener flujo completo.
 - No usar flujo incompleto para autorizar inversión.
-
-## Fórmula base mensual
-
-```text
-ingresos_mensuales - costos_mensuales = margen_operacional_preliminar
-```
-
-## Evidencia esperada
-
-Planilla mensual, supuestos explícitos, fuentes de precio/costo y estado de cada dato.

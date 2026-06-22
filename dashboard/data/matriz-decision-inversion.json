@@ -1,0 +1,58 @@
+{
+  "proyecto": "Gallinero Nacho",
+  "regla_general": "Si cualquier dimensión crítica está en rojo, no se invierte. En amarillo solo se permite inversión menor de desbloqueo. En verde se puede evaluar inversión bajo presupuesto aprobado.",
+  "colores": [
+    {
+      "color": "rojo",
+      "decision": "no invertir",
+      "permite": [
+        "diagnóstico",
+        "corrección de datos",
+        "levantamiento mínimo"
+      ],
+      "prohibe": [
+        "compra",
+        "construcción",
+        "inversión mayor",
+        "ejecución"
+      ]
+    },
+    {
+      "color": "amarillo",
+      "decision": "invertir solo en desbloqueo",
+      "permite": [
+        "cotizaciones",
+        "visitas técnicas",
+        "croquis",
+        "mediciones",
+        "prototipo de bajo costo",
+        "correcciones sanitarias menores",
+        "validación comercial",
+        "asesoría legal/contable",
+        "dimensionamiento agua/energía"
+      ],
+      "prohibe": [
+        "compra masiva de aves",
+        "construcción mayor",
+        "inversión mayor"
+      ]
+    },
+    {
+      "color": "verde",
+      "decision": "inversión habilitable con evidencias completas",
+      "permite": [
+        "evaluar inversión operativa",
+        "evaluar compra",
+        "evaluar construcción"
+      ],
+      "prohibe": [
+        "ejecución sin CAPEX, flujo, mercado y riesgos completos"
+      ]
+    }
+  ],
+  "decision_actual": "amarillo: inversión menor de desbloqueo solamente",
+  "inversion_mayor_autorizada": false,
+  "compra_aves_autorizada": false,
+  "construccion_autorizada": false,
+  "conclusion": "No hay evidencia suficiente para verde. Compra, construcción e inversión mayor siguen bloqueadas."
+}

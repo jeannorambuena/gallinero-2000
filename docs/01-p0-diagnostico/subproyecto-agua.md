@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Definir la base mínima del sistema de agua necesario para una operación proyectada de 648 aves, sin cerrar todavía diseño ni presupuesto definitivo.
+Definir la base mínima del sistema de agua necesario para el escenario base vigente de 500 aves totales, sin cerrar todavía diseño ni presupuesto definitivo.
 
 El subproyecto busca aclarar consumo, autonomía, presión, distribución, respaldo y costos antes de habilitar una etapa P1 preliminar.
 
@@ -11,16 +11,19 @@ El subproyecto busca aclarar consumo, autonomía, presión, distribución, respa
 - Consumo actual: 34 L/día
 - Gallinas actuales: 148
 - Consumo actual por ave: 0.23 L/ave/día
-- Operación proyectada: 648 aves
-- Agua proyectada para 648 aves: 150–200 L/día
-- Solución conceptual: estanque de 1.000 L en parte alta + bomba
+- Escenario base vigente: 500 aves totales
+- Agua estimada para 500 aves: 115.7–154.3 L/día por proporcionalidad referencial
+- Escenario anterior/referencial: 648 aves, 150–200 L/día histórico
+- Solución conceptual: estanque de 1.000 L en parte alta + bomba, no definitivo
 - Estado actual del subproyecto: amarillo
 
 ## Cálculo preliminar
 
 Con la operación actual, el consumo declarado equivale a aproximadamente **0.23 L/ave/día**.
 
-Para una operación de **648 aves**, el rango preliminar de consumo esperado se mantiene entre **150 y 200 L/día**. Un estanque de **1.000 L** podría entregar una autonomía conceptual aproximada de **5 a 6,7 días**, antes de considerar pérdidas, limpieza, calor, presión real, respaldo o demanda adicional.
+Para el escenario base vigente de **500 aves**, el rango preliminar de consumo esperado se estima en **115.7–154.3 L/día**. Un estanque de **1.000 L** podría entregar una autonomía conceptual aproximada de **6.5 a 8.6 días**, antes de considerar pérdidas, limpieza, calor, presión real, respaldo o demanda adicional.
+
+El escenario anterior/referencial de **648 aves** queda como antecedente histórico proporcional de **150–200 L/día**, no como base operativa vigente.
 
 Este cálculo es solo preliminar y no reemplaza el dimensionamiento hidráulico.
 
@@ -59,7 +62,7 @@ Todavía no existe definición cerrada de bomba, filtros, fittings, líneas, nip
 
 ## Criterios mínimos para pasar a P1 preliminar
 
-- Confirmar rango de consumo para 648 aves.
+- Confirmar rango de consumo para 500 aves.
 - Definir ubicación y altura del estanque.
 - Definir si el sistema operará por gravedad, bomba o mixto.
 - Dimensionar bomba, líneas, filtros y bebederos.

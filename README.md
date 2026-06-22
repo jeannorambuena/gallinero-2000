@@ -1,56 +1,73 @@
-# Gallinero Nacho — Diagnóstico P0
+# Gallinero modular para 2.000 gallinas ponedoras
 
-Repositorio técnico y evolutivo para diagnosticar, diseñar, presupuestar, construir y evaluar un gallinero modular escalable.
+Repositorio técnico y evolutivo para diagnosticar, diseñar, presupuestar, construir y evaluar un gallinero modular escalable en Chile.
 
-## Estado actual del proyecto
+## Estado vigente del proyecto
 
-- Rama P0: `p0/consolidacion-diagnostico-nacho`.
 - Fase actual: P0 — Diagnóstico real.
 - Estado general: amarillo.
-- P0: avanzado preliminarmente.
-- MVP P0: funcional.
-- Dashboard: funcional y visualmente reorganizado.
-- Auditoría automática: creada.
+- Nuevo escenario base: **500 aves totales**.
+- Escenario anterior: **648 aves**, conservado como referencia histórica.
 - P1 preliminar: no habilitado.
 - P1 definitivo: bloqueado.
-- Compra de 500 pollonas: bloqueada.
+- Compra de aves/pollonas: bloqueada.
 - Construcción: no autorizada.
 - Inversión mayor: no autorizada.
 
-## Decisión actual
+## Replanteo de escala
 
-El proyecto tiene una buena base productiva, pero el salto a 648 aves todavía no está validado. No se autoriza compra de 500 pollonas, construcción ni inversión mayor.
+Desde el replanteo P0, la decisión ya no se trabaja sobre el escenario anterior/referencial de 648 aves como objetivo central. El nuevo objetivo base es operar **500 aves totales**.
 
-P1 preliminar solo podrá evaluarse después de cerrar brechas críticas: mercado, croquis, CAPEX completo, flujo proyectado, agua, energía, logística y legal/contable.
+El escenario anterior de 648 aves correspondía a 148 aves actuales + hipótesis de 500 pollonas adicionales. Ese historial no se borra; queda documentado como referencia.
 
-## Paquete de desbloqueo P1 preliminar
+## Matriz de inversión por semáforo
 
-El paquete de desbloqueo P1 preliminar transforma los pendientes del MVP P0 en instrumentos de levantamiento. No habilita P1, no autoriza compra de 500 pollonas, no autoriza construcción ni inversión mayor.
+| Color | Decisión |
+|---|---|
+| ROJO | No invertir. Solo diagnóstico, corrección de datos o levantamiento mínimo. |
+| AMARILLO | Inversión menor y controlada solo para desbloqueo: cotizaciones, mediciones, visitas técnicas, correcciones menores, validación comercial, asesoría legal/contable y dimensionamiento agua/energía. |
+| VERDE | Se puede evaluar inversión operativa o construcción solo con mercado, CAPEX, flujo y riesgos completos, bajo presupuesto aprobado. |
 
-Documentos principales:
+El estado actual no es verde. No se autoriza compra ni construcción.
 
+## Escalamiento previsto
+
+1. Operación actual: 148 aves.
+2. Escenario base vigente: 500 aves totales.
+3. Escenario comparativo futuro: 1.000 aves.
+4. Escenario comparativo futuro: 2.000 aves.
+
+## Brecha comercial base 500
+
+Con postura referencial actual de 89,2%:
+
+- Producción estimada 500 aves: 446 huevos/día.
+- Bandejas estimadas 500 aves: 104,1 bandejas/semana.
+- Venta actual: 28 bandejas/semana.
+- Brecha estimada: 76,1 bandejas/semana.
+
+Esta estimación es preliminar y no garantiza mercado.
+
+## Galpones 500 / 1000 / 2000
+
+Estimación paramétrica preliminar con densidad referencial de 5 aves/m2:
+
+| Escenario | Superficie útil referencial | Costo |
+|---|---:|---|
+| 500 aves | 100 m2 | pendiente de cotización |
+| 1000 aves | 200 m2 | pendiente de cotización |
+| 2000 aves | 400 m2 | pendiente de cotización |
+
+No hay costo m2 real todavía. No es presupuesto definitivo ni diseño constructivo.
+
+## Documentos P0 principales
+
+- `docs/01-p0-diagnostico/replanteo-escala-500-aves.md`
+- `docs/01-p0-diagnostico/matriz-decision-inversion.md`
+- `docs/01-p0-diagnostico/estimacion-galpones-500-1000-2000.md`
+- `docs/01-p0-diagnostico/criterios-semaforo-inversion.md`
+- `docs/01-p0-diagnostico/escenarios-escalamiento.md`
 - `docs/01-p0-diagnostico/plan-desbloqueo-p1-preliminar.md`
-- `docs/01-p0-diagnostico/plan-validacion-comercial-operativo.md`
-- `docs/01-p0-diagnostico/plantilla-croquis-terreno.md`
-- `docs/01-p0-diagnostico/plantilla-dimensionamiento-agua.md`
-- `docs/01-p0-diagnostico/plantilla-dimensionamiento-solar.md`
-- `docs/01-p0-diagnostico/plantilla-capex-cotizaciones.md`
-- `docs/01-p0-diagnostico/plantilla-flujo-proyectado-648.md`
-- `docs/01-p0-diagnostico/criterios-no-avance.md`
-- `docs/01-p0-diagnostico/bitacora-levantamiento-datos.md`
-
-Plantillas CSV:
-
-- `datos/entrada/validacion-comercial/clientes-actuales.csv`
-- `datos/entrada/validacion-comercial/clientes-potenciales.csv`
-- `datos/entrada/validacion-comercial/canales-venta.csv`
-- `datos/entrada/terreno/croquis-mediciones.csv`
-- `datos/entrada/agua/dimensionamiento-agua.csv`
-- `datos/entrada/energia/dimensionamiento-solar.csv`
-- `datos/entrada/capex/cotizaciones-capex.csv`
-- `datos/entrada/flujo/flujo-proyectado-648.csv`
-- `datos/entrada/legal-contable/checklist-legal-contable.csv`
-- `datos/entrada/logistica/checklist-logistica.csv`
 
 ## Dashboard P0
 
@@ -68,62 +85,12 @@ http://127.0.0.1:8081/public/
 
 ## Auditoría P0
 
-Desde la raíz del repositorio:
+Comando recomendado:
 
 ```bash
 python3 scripts/auditoria/validar_todo_p0.py
 ```
 
-Resultado esperado:
+## Restricción vigente
 
-- JSON dashboard: OK.
-- CSV indicadores: OK.
-- Indicadores P0: OK.
-- Resultado general: OK.
-
-## Documentos principales P0
-
-- `docs/01-p0-diagnostico/resumen-ejecutivo-p0.md`
-- `docs/01-p0-diagnostico/mvp-p0-checklist.md`
-- `docs/01-p0-diagnostico/cierre-preliminar-p0.md`
-- `docs/01-p0-diagnostico/diagnostico.md`
-- `docs/01-p0-diagnostico/criterios-habilitacion-p1.md`
-
-## Reglas de trabajo
-
-- No cambiar el estado general a verde sin cierre formal de P0.
-- No modificar P1 sin instrucción explícita.
-- No autorizar compra de 500 pollonas.
-- No autorizar construcción.
-- No autorizar inversión mayor.
-- No calcular VAN, TIR, ROI ni Payback hasta tener CAPEX completo y flujo proyectado.
-- No hacer commit sin confirmación explícita.
-
-## Estructura
-
-```text
-gallinero-2000/
-├── README.md
-├── dashboard/
-├── docs/
-├── datos/
-├── scripts/
-├── presupuestos/
-├── normativa/
-├── openclaw/
-├── skills/
-├── templates/
-└── tests/
-```
-
-## Próximos pasos recomendados
-
-1. Validar mercado real para 130–135 bandejas/semana.
-2. Crear croquis del terreno 19 x 7 m.
-3. Dimensionar agua.
-4. Dimensionar energía solar.
-5. Completar CAPEX con cotizaciones.
-6. Preparar flujo proyectado para 648 aves.
-7. Revisar legal/contable con apoyo externo.
-8. Definir criterios cuantificados de no avance.
-9. Re-evaluar si corresponde habilitar P1 preliminar.
+No se calcula VAN, TIR, ROI ni Payback definitivo. No se autoriza compra de pollonas, construcción ni inversión mayor mientras el semáforo no esté verde con evidencia completa.

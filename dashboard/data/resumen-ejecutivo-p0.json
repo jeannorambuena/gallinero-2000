@@ -3,6 +3,14 @@
   "fase": "P0 — Diagnóstico real",
   "estado_general": "amarillo",
   "avance_p0_estimado": 80,
+  "escenario_base_actual": {
+    "aves": 500,
+    "descripcion": "nuevo objetivo base de operación total"
+  },
+  "escenario_anterior": {
+    "aves": 648,
+    "estado": "referencia histórica"
+  },
   "decision_actual": {
     "p1_preliminar": "no habilitado",
     "p1_definitivo": "bloqueado",
@@ -16,22 +24,22 @@
     "producción promedio de 132 huevos/día",
     "postura promedio de 89.2%",
     "mortalidad acumulada baja de 1.3%",
-    "flujo actual preliminar disponible",
-    "validación automática P0 creada con resultado esperado OK"
+    "nuevo escenario base 500 aves reduce salto inicial",
+    "matriz de decisión por semáforo creada"
   ],
   "riesgos_principales": [
-    "venta actual de 28 bandejas/semana versus 135 requeridas para 648 aves",
-    "brecha comercial de 107 bandejas/semana y crecimiento requerido de 4.82 veces",
+    "venta actual de 28 bandejas/semana versus 104.1 estimadas para 500 aves",
+    "brecha comercial estimada de 76.1 bandejas/semana",
     "margen con mano de obra muy ajustado: $19.767/mes",
-    "CAPEX total pendiente; solo se conoce CAPEX de pollonas por $4.250.000",
-    "flujo proyectado para 648 aves incompleto; VAN/TIR/ROI/Payback bloqueados",
-    "agua y energía solar con solución conceptual o cargas declaradas, pero sin dimensionamiento",
-    "falta croquis, diseño, cubicación y cotización constructiva",
-    "camino rural de tierra, cerro, pendiente, camión grande complicado e invierno barroso",
-    "legal/contable pendiente: formalización, registros, boletas/facturas, impuestos, trazabilidad y permisos"
+    "CAPEX total para 500 aves pendiente",
+    "flujo proyectado 500 incompleto; VAN/TIR/ROI/Payback bloqueados",
+    "agua y energía sin dimensionamiento completo",
+    "galpón 500/1000/2000 sin costo m2 real",
+    "logística rural con pendiente, barro e invierno complejo",
+    "legal/contable pendiente"
   ],
   "decisiones_bloqueadas": [
-    "compra de 500 pollonas",
+    "compra de pollonas",
     "P1 preliminar",
     "P1 definitivo",
     "construcción",
@@ -39,25 +47,25 @@
     "VAN, TIR, ROI y Payback definitivo"
   ],
   "faltantes_para_p1_preliminar": [
-    "validar mercado y canales para acercarse a 130–135 bandejas/semana",
-    "crear croquis del terreno inmediato 19 x 7 m",
-    "definir alternativa constructiva preliminar",
-    "dimensionar agua",
+    "validar mercado para 104.1 bandejas/semana",
+    "croquis del terreno inmediato 19 x 7 m",
+    "dimensionar agua para 500 aves",
     "dimensionar energía solar",
-    "evaluar logística de acceso, descarga y acopio",
-    "completar CAPEX preliminar por categorías",
-    "preparar flujo de caja proyectado",
+    "completar CAPEX 500",
+    "preparar flujo 500",
+    "cotizar galpón 500",
+    "resolver logística",
     "revisar legal/contable",
-    "definir criterios de no avance"
+    "aplicar matriz de semáforo"
   ],
   "acciones_recomendadas": [
-    "validar clientes y canales reales para aumentar ventas",
-    "dibujar croquis del terreno y zonas de acceso/acopio",
-    "cotizar o dimensionar agua y energía solar",
+    "validar clientes y canales reales para brecha 76.1 bandejas/semana",
+    "cotizar galpón con costo m2 real",
+    "dimensionar agua y energía",
     "levantar CAPEX completo por categorías",
-    "preparar flujo proyectado para 648 aves",
-    "revisar formalización, impuestos, trazabilidad y venta a comercios",
-    "ejecutar auditoría: python3 scripts/auditoria/validar_todo_p0.py"
+    "preparar flujo proyectado para 500 aves",
+    "revisar formalización y venta a comercios",
+    "ejecutar auditoría P0"
   ],
-  "conclusion": "El proyecto tiene buena base productiva. El salto a 648 aves no está validado todavía. La compra de 500 pollonas sigue bloqueada. P1 preliminar aún no está habilitado. El foco siguiente debe ser validar mercado, croquis, CAPEX completo, flujo proyectado, agua, energía, logística y legal/contable."
+  "conclusion": "El proyecto se replantea a 500 aves totales como base. El escenario 648 queda histórico. Estado general amarillo: solo inversión menor de desbloqueo; compra, construcción e inversión mayor siguen bloqueadas."
 }

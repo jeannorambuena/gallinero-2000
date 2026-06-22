@@ -13,6 +13,10 @@
           <p class="eyebrow">Proyecto Gallinero Nacho</p>
           <h1>Dashboard P0 — Diagnóstico real</h1>
           <p class="hero-text">Vista preliminar para leer estado, riesgos, finanzas y criterios de avance sin autorizar inversión.</p>
+          <div class="scenario-strip" aria-label="Escenarios de escala">
+            <span>Nuevo escenario base: <strong id="escenario-base-hero">500 aves</strong></span>
+            <span>Escenario anterior: <strong id="escenario-anterior-hero">648 aves · referencia histórica</strong></span>
+          </div>
         </div>
         <div class="hero-status" aria-label="Estado general del proyecto">
           <span class="badge badge-amarillo" id="semaforo-general">Semáforo general: —</span>
@@ -21,6 +25,9 @@
       </header>
 
       <nav class="section-nav" aria-label="Índice del dashboard">
+        <a href="#replanteo-escala">Replanteo 500</a>
+        <a href="#decision-inversion">Decisión inversión</a>
+        <a href="#galpones-escala">Galpones</a>
         <a href="#resumen-ejecutivo">Resumen ejecutivo</a>
         <a href="#estado-general">Estado general</a>
         <a href="#indicadores">Indicadores</a>
@@ -33,7 +40,37 @@
       </nav>
 
       <section class="notice" role="note">
-        Dashboard preliminar P0. No autoriza inversión, diseño definitivo ni compra de 500 pollonas.
+        Dashboard preliminar P0. Base vigente: 500 aves totales. 648 aves queda como referencia histórica. No autoriza compra, construcción ni inversión mayor.
+      </section>
+
+      <section class="card panel full-width section-block" id="replanteo-escala">
+        <div class="panel-header">
+          <div>
+            <p class="section-kicker">Cambio de escala</p>
+            <h2>Replanteo: base 500 aves</h2>
+          </div>
+          <span class="badge badge-amarillo">P0 amarillo</span>
+        </div>
+        <dl class="data-list compact-list" id="replanteo-resumen"></dl>
+        <p class="subproject-warning" id="replanteo-conclusion">500 aves es la base vigente. 648 queda como referencia histórica.</p>
+      </section>
+
+      <section class="section-block" id="decision-inversion">
+        <div class="section-heading">
+          <p class="section-kicker">Semáforo de inversión</p>
+          <h2>Decisión de inversión</h2>
+        </div>
+        <div class="dashboard-grid three-columns" id="matriz-inversion-cards"></div>
+        <p class="subproject-warning" id="matriz-inversion-conclusion">En amarillo solo se invierte en desbloqueo.</p>
+      </section>
+
+      <section class="section-block" id="galpones-escala">
+        <div class="section-heading">
+          <p class="section-kicker">Estimación paramétrica</p>
+          <h2>Costo de galpón por escala</h2>
+        </div>
+        <div class="dashboard-grid three-columns" id="galpones-cards"></div>
+        <p class="subproject-warning" id="galpones-conclusion">Costos pendientes de cotización.</p>
       </section>
 
       <section class="card panel full-width section-block" id="resumen-ejecutivo">
@@ -87,7 +124,7 @@
             <strong id="p1-definitivo">—</strong>
           </div>
           <div class="card metric-card state-bloqueado">
-            <span>Compra 500 pollonas</span>
+            <span>Compra aves</span>
             <strong id="compra-pollonas">—</strong>
           </div>
           <div class="card metric-card state-pendiente">

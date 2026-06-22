@@ -22,13 +22,21 @@ Identificar los riesgos, datos faltantes y decisiones constructivas mínimas que
 ## Riesgos constructivos
 
 - La bodega actual de 6 m2 es insuficiente para escalar.
-- El galpón actual de 27 m2 no representa por sí solo la solución para 648 aves.
+- El galpón actual de 27 m2 no representa por sí solo la solución para el escenario base vigente de 500 aves.
 - Falta definir orientación, ventilación, sombra, drenaje y manejo de humedad.
 - Falta resolver condiciones para verano, especialmente calor y ventilación.
 - Falta definir ubicación de bodega ampliada y zonas de acopio.
 - Sin cubicación no se puede estimar costo real de materiales.
 - Sin diseño constructivo no se puede validar si el terreno inmediato de 133 m2 alcanza de forma funcional.
 - Un diseño insuficiente puede aumentar humedad, olor, estrés térmico y problemas sanitarios.
+
+## Superficie útil preliminar
+
+- Escenario base vigente 500 aves: 100 m2 útiles a densidad referencial de 5 aves/m2.
+- Escenarios comparativos futuros: 1.000 y 2.000 aves, todavía no decididos.
+- Escenario anterior/referencial: 648 aves queda como histórico del P0 original.
+
+Estas superficies son referenciales; no cierran diseño, cubicación ni presupuesto.
 
 ## Datos faltantes
 
@@ -47,7 +55,7 @@ Identificar los riesgos, datos faltantes y decisiones constructivas mínimas que
 ## Decisiones pendientes
 
 - Si se amplía el galpón actual o se construye uno nuevo.
-- Tamaño objetivo para 648 aves.
+- Tamaño objetivo para 500 aves totales.
 - Tamaño y ubicación de bodega ampliada.
 - Estándar constructivo final.
 - Nivel de inversión aceptable antes de pasar a P1.

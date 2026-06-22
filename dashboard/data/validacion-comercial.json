@@ -2,53 +2,55 @@
   "proyecto": "Gallinero Nacho",
   "fase": "P0 — Diagnóstico real",
   "estado": "amarillo_rojo",
+  "escenario_base": "500 aves totales",
   "venta_actual_bandejas_semana": 28,
+  "venta_requerida_500_bandejas_semana": 104.1,
   "venta_requerida_648_bandejas_semana": 135,
-  "brecha_bandejas_semana": 107,
-  "crecimiento_requerido_veces": 4.82,
-  "venta_potencial_actual_con_adicional": 36,
-  "brecha_restante_con_adicional": 99,
+  "brecha_bandejas_semana": 76.1,
+  "brecha_bandejas_semana_648_historica": 107,
+  "crecimiento_requerido_veces": 3.72,
+  "escenario_500": {
+    "aves": 500,
+    "postura_referencia": 89.2,
+    "huevos_dia_estimados": 446,
+    "bandejas_semana_estimadas": 104.1,
+    "brecha_bandejas_semana": 76.1,
+    "estado": "pendiente de validación"
+  },
+  "escenario_648": {
+    "aves": 648,
+    "estado": "histórico/referencial"
+  },
   "canales_actuales": [
-    "vecinos",
-    "compañeros de trabajo",
-    "amigos",
-    "pago contado",
-    "transferencia"
+    "venta actual no desagregada por canal",
+    "28 bandejas/semana como base"
   ],
   "canales_potenciales": [
-    "nuevos clientes antes de comprar 500 pollonas",
+    "vecinos",
+    "trabajo",
+    "amigos",
     "almacenes/minimarket",
     "feria",
     "reparto semanal",
-    "contactos por cantidad",
-    "venta más barata por volumen"
+    "contactos por cantidad"
   ],
   "riesgos": [
-    "la venta debe crecer 4.82 veces para llegar a 135 bandejas/semana",
-    "la venta adicional esperada de 8 bandejas/semana deja una brecha restante de 99 bandejas/semana",
-    "vender a negocios puede exigir formalización, continuidad y respaldo documental",
-    "diciembre, enero y febrero podrían tener baja de precio",
-    "vender más barato por volumen puede reducir margen",
-    "comprar pollonas antes de validar demanda puede generar sobreproducción"
+    "brecha 76.1 bandejas/semana sin validar",
+    "precios por canal pendientes",
+    "formalización para comercios pendiente"
   ],
   "plan_validacion": [
     "listar clientes actuales",
-    "listar clientes potenciales",
-    "separar canales: vecinos, trabajo, almacenes/minimarket, feria, reparto",
-    "estimar bandejas semanales por canal",
-    "validar precios por volumen",
-    "identificar meses de baja",
-    "probar preventa o compromisos antes de comprar",
-    "definir mínimo de bandejas comprometidas para avanzar"
+    "contactar clientes potenciales",
+    "separar interés de compromiso",
+    "validar precio por canal",
+    "registrar requerimiento de boleta/factura"
   ],
   "criterios_para_avanzar": [
-    "tener listado de clientes actuales y potenciales",
-    "estimar venta semanal por canal",
-    "validar demanda real cercana a 130–135 bandejas/semana",
-    "validar precio mínimo aceptable por volumen",
-    "medir impacto de meses de baja de precio",
-    "obtener preventas, compromisos o señales concretas de demanda",
-    "definir umbral mínimo de bandejas comprometidas antes de invertir"
+    "compromisos fuertes por canal",
+    "precio mínimo validado",
+    "frecuencia de compra definida",
+    "brecha reducida con evidencia"
   ],
-  "conclusion": "No comprar 500 pollonas sin validar venta suficiente. La brecha comercial sigue siendo alta incluso considerando 8 bandejas adicionales por semana."
+  "conclusion": "La base 500 requiere validar unas 104.1 bandejas/semana; faltan 76.1 bandejas/semana sobre la venta actual. No comprar sin validar mercado."
 }

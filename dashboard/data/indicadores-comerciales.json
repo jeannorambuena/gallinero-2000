@@ -76,13 +76,31 @@
       "observacion": "dato base confirmado"
     },
     {
+      "indicador": "bandejas_semana_estimadas_500_aves",
+      "valor": 104.1,
+      "unidad": "bandejas/semana",
+      "formula": "estimación proporcional para escenario base 500 aves",
+      "fuente": "replanteo P0 base 500 aves",
+      "estado": "estimado",
+      "observacion": "indicador principal vigente para escenario base 500 aves"
+    },
+    {
+      "indicador": "brecha_bandejas_semana_para_500",
+      "valor": 76.1,
+      "unidad": "bandejas/semana",
+      "formula": "104.1 - 28",
+      "fuente": "replanteo P0 base 500 aves",
+      "estado": "riesgo_comercial",
+      "observacion": "brecha principal vigente para escenario base 500 aves"
+    },
+    {
       "indicador": "bandejas_semana_proyectadas_648_aves",
       "valor": 135,
       "unidad": "bandejas/semana",
       "formula": "dato declarado",
       "fuente": "dato declarado por Nacho / cálculo P0",
-      "estado": "estimado",
-      "observacion": "proyección 648 aves declarada"
+      "estado": "historico/referencial",
+      "observacion": "proyección 648 aves histórica/referencial, no vigente"
     },
     {
       "indicador": "capacidad_adicional_declarada_bandejas_semana",
@@ -144,8 +162,8 @@
       "unidad": "bandejas/semana",
       "formula": "135 - 28",
       "fuente": "dato declarado por Nacho / cálculo P0",
-      "estado": "riesgo_comercial",
-      "observacion": "brecha comercial preliminar"
+      "estado": "historico/referencial",
+      "observacion": "brecha 648 aves histórica/referencial, no vigente"
     },
     {
       "indicador": "venta_potencial_actual_con_adicional",
@@ -158,31 +176,33 @@
     },
     {
       "indicador": "brecha_restante_con_adicional",
-      "valor": 99,
+      "valor": 68.1,
       "unidad": "bandejas/semana",
-      "formula": "135 - 36",
+      "formula": "104.1 - 36",
       "fuente": "dato declarado por Nacho / cálculo P0",
       "estado": "riesgo_comercial",
-      "observacion": "brecha comercial preliminar con capacidad adicional"
+      "observacion": "brecha comercial preliminar con capacidad adicional para escenario base 500 aves"
     },
     {
       "indicador": "crecimiento_requerido_veces",
-      "valor": 4.82,
+      "valor": 3.72,
       "unidad": "veces",
-      "formula": "135 / 28",
+      "formula": "104.1 / 28",
       "fuente": "dato declarado por Nacho / cálculo P0",
       "estado": "riesgo_comercial",
-      "observacion": "crecimiento requerido redondeado a 2 decimales"
+      "observacion": "crecimiento requerido redondeado a 2 decimales para escenario base 500 aves"
     }
   ],
   "resumen": {
     "venta_actual": "28 bandejas/semana",
     "ingreso_semanal_actual": "$170.000",
     "ingreso_mensual_estimado": "$736.667 aproximadamente",
-    "venta_proyectada_requerida_648_aves": "135 bandejas/semana",
-    "brecha_actual": "107 bandejas/semana",
     "brecha_considerando_8_bandejas_adicionales": "99 bandejas/semana",
-    "semaforo_comercial_preliminar": "amarillo_rojo"
+    "semaforo_comercial_preliminar": "amarillo_rojo",
+    "venta_estimada_requerida_500_aves": "104.1 bandejas/semana",
+    "brecha_actual_500_aves": "76.1 bandejas/semana",
+    "venta_proyectada_requerida_648_aves_historica": "135 bandejas/semana (histórica/referencial)",
+    "brecha_648_aves_historica": "107 bandejas/semana (histórica/referencial)"
   },
-  "nota": "indicadores comerciales preliminares; no validan mercado futuro por sí solos"
+  "nota": "indicadores comerciales preliminares; escenario base vigente 500 aves; 648 aves queda histórico/referencial"
 }

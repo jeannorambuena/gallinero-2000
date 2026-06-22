@@ -1,0 +1,4 @@
+color,decision,inversion_permitida,inversion_prohibida,condicion,observacion
+rojo,no invertir,"diagnostico, correccion de datos, levantamiento minimo","compra, construccion, inversion mayor, ejecucion","detener, pausar o redisenar","si una dimension critica esta roja, no se invierte"
+amarillo,invertir solo en desbloqueo,"cotizaciones, visitas tecnicas, croquis, mediciones, prototipo bajo costo, correcciones menores, validacion comercial, asesoria legal/contable, dimensionamiento agua/energia","compra masiva de aves, construccion mayor, inversion mayor",controlar monto y objetivo,estado actual general
+verde,inversion habilitable bajo presupuesto aprobado,"evaluar inversion operativa, compra o construccion",ejecucion sin evidencia completa ni presupuesto aprobado,"mercado, CAPEX, flujo, agua, energia, logistica y legal/contable completos",no alcanzado

@@ -5,11 +5,12 @@
   "alertas": [
     {
       "id": "A01",
-      "titulo": "Brecha comercial alta para 648 aves",
+      "titulo": "Brecha comercial alta para 500 aves",
       "severidad": "alta",
       "dimension": "comercial",
-      "descripcion": "La venta actual es de 28 bandejas/semana y la operación proyectada para 648 aves requiere 135 bandejas/semana.",
-      "estado": "abierta"
+      "descripcion": "La venta actual es de 28 bandejas/semana; el objetivo estimado para 500 aves es 104.1 bandejas/semana, con brecha estimada de 76.1 bandejas/semana.",
+      "estado": "abierta",
+      "referencia_historica": "El escenario anterior/referencial de 648 aves requería 135 bandejas/semana y una brecha de 107 bandejas/semana; no es meta vigente."
     },
     {
       "id": "A02",

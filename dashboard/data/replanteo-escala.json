@@ -1,0 +1,27 @@
+{
+  "proyecto": "Gallinero Nacho",
+  "fase": "P0 — Diagnóstico real",
+  "escenario_anterior": {
+    "aves": 648,
+    "estado": "referencia histórica",
+    "descripcion": "148 aves actuales + hipótesis anterior de 500 pollonas adicionales"
+  },
+  "escenario_base_actual": {
+    "aves": 500,
+    "descripcion": "nuevo objetivo base de 500 aves totales"
+  },
+  "escenarios_comparativos": [
+    500,
+    1000,
+    2000
+  ],
+  "regla_decision_inversion": "rojo=no invertir; amarillo=solo desbloqueo; verde=inversión habilitable con evidencias completas y presupuesto aprobado",
+  "resumen_impactos": {
+    "venta": "500 aves estiman 104.1 bandejas/semana; brecha frente a venta actual 76.1 bandejas/semana",
+    "agua": "500 aves estiman 115.7–154.3 L/día por proporcionalidad referencial",
+    "galpon": "500 aves requieren 100 m2 útiles referenciales a 5 aves/m2",
+    "capex": "CAPEX total pendiente; dato 500 x $8.500 queda histórico/estratégico",
+    "flujo": "flujo 500 pendiente; VAN/TIR/ROI/Payback bloqueados"
+  },
+  "conclusion": "Desde ahora la decisión se trabaja sobre 500 aves totales. El escenario 648 queda como referencia histórica. No se autoriza compra, construcción ni inversión mayor."
+}

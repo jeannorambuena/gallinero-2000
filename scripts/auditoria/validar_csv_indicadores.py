@@ -15,6 +15,9 @@ CSV_INDICADORES = [
     "datos/procesados/indicadores/p0-indicadores-financieros-basicos.csv",
     "datos/procesados/indicadores/p0-capex-preliminar.csv",
     "datos/procesados/indicadores/p0-flujo-caja-preliminar.csv",
+    "datos/procesados/indicadores/p0-escenarios-escalamiento.csv",
+    "datos/procesados/indicadores/p0-estimacion-galpones.csv",
+    "datos/procesados/indicadores/p0-matriz-decision-inversion.csv",
 ]
 
 CSV_ENTRADA = [
@@ -26,6 +29,7 @@ CSV_ENTRADA = [
     "datos/entrada/energia/dimensionamiento-solar.csv",
     "datos/entrada/capex/cotizaciones-capex.csv",
     "datos/entrada/flujo/flujo-proyectado-648.csv",
+    "datos/entrada/flujo/flujo-proyectado-500.csv",
     "datos/entrada/legal-contable/checklist-legal-contable.csv",
     "datos/entrada/logistica/checklist-logistica.csv",
 ]

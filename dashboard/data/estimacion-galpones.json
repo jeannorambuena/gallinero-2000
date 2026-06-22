@@ -1,0 +1,48 @@
+{
+  "proyecto": "Gallinero Nacho",
+  "supuestos": {
+    "tipo": "estimación paramétrica preliminar",
+    "advertencia": "no es presupuesto definitivo ni diseño constructivo",
+    "formula": "costo_total_galpon = superficie_m2 * costo_m2_estimado"
+  },
+  "densidad_ref_aves_m2": 5,
+  "escenarios": [
+    {
+      "escenario": "500 aves",
+      "aves": 500,
+      "superficie_util_m2": 100,
+      "costo_m2": "pendiente",
+      "costo_total": "pendiente",
+      "estado": "requiere cotización"
+    },
+    {
+      "escenario": "1000 aves",
+      "aves": 1000,
+      "superficie_util_m2": 200,
+      "costo_m2": "pendiente",
+      "costo_total": "pendiente",
+      "estado": "requiere cotización"
+    },
+    {
+      "escenario": "2000 aves",
+      "aves": 2000,
+      "superficie_util_m2": 400,
+      "costo_m2": "pendiente",
+      "costo_total": "pendiente",
+      "estado": "requiere cotización"
+    }
+  ],
+  "categorias_pendientes": [
+    "estructura",
+    "cubierta",
+    "malla/cierre",
+    "piso/cama/drenaje",
+    "ventilación/sombra",
+    "puertas/accesos",
+    "equipamiento",
+    "mano de obra",
+    "transporte",
+    "imprevistos"
+  ],
+  "conclusion": "Los costos por m2 y totales siguen pendientes hasta completar cotizaciones CAPEX reales."
+}

@@ -1,6 +1,6 @@
 # Auditoría P0
 
-Scripts de control de calidad para validar la estructura mínima del dashboard P0, los CSV procesados, las plantillas de entrada para desbloqueo P1 preliminar y la coherencia de indicadores críticos del Proyecto Gallinero Nacho.
+Scripts de control de calidad para validar la estructura mínima del dashboard P0, los CSV procesados, las plantillas de entrada y la coherencia crítica del replanteo a 500 aves.
 
 Usan solo Python estándar. No requieren pandas, numpy ni dependencias externas.
 
@@ -8,9 +8,12 @@ Usan solo Python estándar. No requieren pandas, numpy ni dependencias externas.
 
 ### `validar_json_dashboard.py`
 
-Valida que existan y sean JSON válidos los archivos de `dashboard/data/` usados por el dashboard P0. También revisa campos mínimos y listas principales no vacías.
+Valida JSON locales del dashboard, incluyendo:
 
-Ejecutar desde la raíz de la repo:
+- `dashboard/data/replanteo-escala.json`
+- `dashboard/data/matriz-decision-inversion.json`
+- `dashboard/data/estimacion-galpones.json`
+- datos ejecutivos, CAPEX, flujo, validación comercial, semáforo y criterios P1.
 
 ```bash
 python3 scripts/auditoria/validar_json_dashboard.py
@@ -18,7 +21,7 @@ python3 scripts/auditoria/validar_json_dashboard.py
 
 ### `validar_csv_indicadores.py`
 
-Valida que existan y sean CSV legibles los archivos procesados de indicadores P0 y las plantillas de entrada del paquete de desbloqueo P1 preliminar. Revisa encabezado, filas y que no estén vacíos.
+Valida CSV procesados y plantillas de entrada, incluyendo escenarios, estimación de galpones, matriz de inversión y flujo 500.
 
 ```bash
 python3 scripts/auditoria/validar_csv_indicadores.py
@@ -26,15 +29,21 @@ python3 scripts/auditoria/validar_csv_indicadores.py
 
 ### `validar_indicadores_p0.py`
 
-Valida coherencia básica de indicadores críticos productivos, comerciales, financieros, CAPEX y criterios P1.
+Valida coherencia básica:
+
+- escenario base actual = 500 aves;
+- 648 aves = referencia histórica;
+- P1 preliminar no habilitado;
+- compra de aves no autorizada;
+- inversión mayor no autorizada;
+- galpones 500/1000/2000 presentes;
+- costo m2 y costo total de galpón pendientes.
 
 ```bash
 python3 scripts/auditoria/validar_indicadores_p0.py
 ```
 
 ### `validar_todo_p0.py`
-
-Ejecuta todas las validaciones anteriores y entrega resumen general.
 
 Comando recomendado:
 

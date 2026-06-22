@@ -34,6 +34,37 @@ def value(index: dict[str, dict[str, Any]], key: str) -> Any:
     return index[key].get("valor")
 
 
+def flatten_strings(value: Any) -> list[str]:
+    if isinstance(value, str):
+        return [value]
+    if isinstance(value, dict):
+        strings: list[str] = []
+        for nested in value.values():
+            strings.extend(flatten_strings(nested))
+        return strings
+    if isinstance(value, list):
+        strings = []
+        for nested in value:
+            strings.extend(flatten_strings(nested))
+        return strings
+    return []
+
+
+def is_648_reference_allowed(text: str) -> bool:
+    lowered = text.lower()
+    allowed_markers = (
+        "histórico",
+        "histórica",
+        "historico",
+        "historica",
+        "referencial",
+        "anterior",
+        "escenario anterior",
+        "trazabilidad",
+    )
+    return "648 aves" not in lowered or any(marker in lowered for marker in allowed_markers)
+
+
 def assert_equal(errors: list[str], label: str, actual: Any, expected: Any) -> None:
     if actual != expected:
         errors.append(f"{label}: esperado {expected!r}, encontrado {actual!r}")
@@ -54,33 +85,58 @@ def main() -> int:
 
     try:
         productivos = index_indicators(load_json("dashboard/data/indicadores-productivos.json"))
-        comerciales = index_indicators(load_json("dashboard/data/indicadores-comerciales.json"))
+        comerciales_data = load_json("dashboard/data/indicadores-comerciales.json")
+        comerciales = index_indicators(comerciales_data)
         flujo = load_json("dashboard/data/flujo-caja-preliminar.json")
         capex = load_json("dashboard/data/capex-preliminar.json")
         criterios = load_json("dashboard/data/criterios-p1.json")
+        replanteo = load_json("dashboard/data/replanteo-escala.json")
+        matriz = load_json("dashboard/data/matriz-decision-inversion.json")
+        galpones = load_json("dashboard/data/estimacion-galpones.json")
+        validacion = load_json("dashboard/data/validacion-comercial.json")
+        estado = load_json("dashboard/data/estado-proyecto.json")
+        alertas = load_json("dashboard/data/alertas-p0.json")
+        datos_faltantes = load_json("dashboard/data/datos-faltantes.json")
+        subproyectos = load_json("dashboard/data/subproyectos-criticos.json")
     except Exception as exc:  # noqa: BLE001 - auditoría debe capturar y reportar claro
         print("ERROR Indicadores P0")
         print(f"- no se pudieron cargar datos: {exc}")
         return 1
 
     try:
-        # Productivo
+        # Productivo actual
         assert_equal(errors, "gallinas actuales", value(productivos, "gallinas_actuales"), 148)
         assert_equal(errors, "producción promedio", value(productivos, "produccion_promedio_huevos_dia"), 132)
         assert_close(errors, "postura promedio", value(productivos, "postura_promedio_porcentaje"), 89.2, 0.05)
 
-        # Comercial
-        assert_equal(errors, "venta actual", value(comerciales, "venta_actual_bandejas_semana"), 28)
-        assert_equal(errors, "venta requerida 648", value(comerciales, "bandejas_semana_proyectadas_648_aves"), 135)
-        assert_equal(errors, "brecha comercial", value(comerciales, "brecha_bandejas_semana_para_648"), 107)
-        assert_close(errors, "crecimiento requerido", value(comerciales, "crecimiento_requerido_veces"), 4.82, 0.01)
+        # Replanteo base 500
+        assert_equal(errors, "replanteo.escenario_base_actual", replanteo.get("escenario_base_actual", {}).get("aves"), 500)
+        assert_equal(errors, "replanteo.escenario_anterior", replanteo.get("escenario_anterior", {}).get("aves"), 648)
+        assert_equal(errors, "estado.escenario_base_actual", estado.get("escenario_base_actual"), 500)
+        assert_equal(errors, "criterios.escenario_base_actual", criterios.get("escenario_base_actual"), 500)
 
-        # Finanzas / flujo
+        # Comercial base 500
+        assert_equal(errors, "venta actual", validacion.get("venta_actual_bandejas_semana"), 28)
+        assert_equal(errors, "indicador venta actual", value(comerciales, "venta_actual_bandejas_semana"), 28)
+        assert_close(errors, "venta requerida 500", validacion.get("venta_requerida_500_bandejas_semana"), 104.1, 0.05)
+        assert_close(errors, "indicador venta requerida 500", value(comerciales, "bandejas_semana_estimadas_500_aves"), 104.1, 0.05)
+        assert_close(errors, "brecha comercial 500", validacion.get("brecha_bandejas_semana"), 76.1, 0.05)
+        assert_close(errors, "indicador brecha comercial 500", value(comerciales, "brecha_bandejas_semana_para_500"), 76.1, 0.05)
+        assert_equal(
+            errors,
+            "indicador 648 histórico/referencial",
+            comerciales.get("bandejas_semana_proyectadas_648_aves", {}).get("estado"),
+            "historico/referencial",
+        )
+
+        # Finanzas / flujo actual y base 500
         assert_equal(errors, "ingreso mensual actual", flujo.get("ingresos_actuales", {}).get("ingreso_mensual_estimado_clp"), 736667)
         assert_equal(errors, "costos conocidos", flujo.get("costos_actuales", {}).get("total_costos_conocidos_clp"), 534900)
         assert_equal(errors, "margen sin mano de obra", flujo.get("margenes_actuales", {}).get("margen_sin_mano_obra_clp"), 201767)
         assert_equal(errors, "mano de obra referencial", flujo.get("mano_obra_referencial", {}).get("monto_clp"), 182000)
         assert_equal(errors, "margen con mano de obra", flujo.get("margenes_actuales", {}).get("margen_con_mano_obra_clp"), 19767)
+        assert_equal(errors, "flujo escenario 500", flujo.get("escenario_500", {}).get("aves"), 500)
+        assert_equal(errors, "flujo escenario 648 histórico", flujo.get("escenario_648", {}).get("aves"), 648)
 
         # CAPEX
         assert_equal(errors, "CAPEX conocido pollonas", capex.get("capex_conocido", {}).get("pollonas", {}).get("monto_clp"), 4250000)
@@ -88,11 +144,46 @@ def main() -> int:
         if capex_total not in (None, "pendiente"):
             errors.append(f"CAPEX total pendiente: esperado None o 'pendiente', encontrado {capex_total!r}")
 
-        # Criterios P1
+        # Criterios P1 / inversión
         assert_equal(errors, "estado_p1_preliminar", criterios.get("estado_p1_preliminar"), "no habilitado")
+        assert_equal(errors, "estado.p1_preliminar_habilitado", estado.get("p1_preliminar_habilitado"), False)
+        assert_equal(errors, "decision_actual.p1_preliminar", criterios.get("decision_actual", {}).get("p1_preliminar"), False)
         assert_equal(errors, "estado_p1_definitivo", criterios.get("estado_p1_definitivo"), "bloqueado")
         assert_equal(errors, "compra_pollonas", criterios.get("compra_pollonas"), "bloqueada")
-        assert_equal(errors, "decision_actual.compra_500_pollonas", criterios.get("decision_actual", {}).get("compra_500_pollonas"), False)
+        assert_equal(errors, "decision_actual.compra_aves", criterios.get("decision_actual", {}).get("compra_aves"), False)
+        assert_equal(errors, "decision_actual.construccion", criterios.get("decision_actual", {}).get("construccion"), False)
+        assert_equal(errors, "decision_actual.inversion_mayor", criterios.get("decision_actual", {}).get("inversion_mayor"), False)
+        assert_equal(errors, "matriz.compra_aves_autorizada", matriz.get("compra_aves_autorizada"), False)
+        assert_equal(errors, "matriz.construccion_autorizada", matriz.get("construccion_autorizada"), False)
+        assert_equal(errors, "matriz.inversion_mayor_autorizada", matriz.get("inversion_mayor_autorizada"), False)
+        assert_equal(errors, "estado.compra_aves_autorizada", estado.get("compra_aves_autorizada"), False)
+        assert_equal(errors, "estado.construccion_autorizada", estado.get("construccion_autorizada"), False)
+        assert_equal(errors, "estado.inversion_mayor_autorizada", estado.get("inversion_mayor_autorizada"), False)
+
+        # Galpones
+        escenarios = galpones.get("escenarios", [])
+        aves_galpon = {item.get("aves") for item in escenarios if isinstance(item, dict)}
+        if aves_galpon != {500, 1000, 2000}:
+            errors.append(f"estimación galpones: esperado {{500, 1000, 2000}}, encontrado {aves_galpon!r}")
+        for item in escenarios:
+            if item.get("costo_total") != "pendiente":
+                errors.append(f"galpón {item.get('aves')}: costo_total debe seguir pendiente")
+            if item.get("costo_m2") != "pendiente":
+                errors.append(f"galpón {item.get('aves')}: costo_m2 debe seguir pendiente")
+
+        # Dashboard crítico: 648 aves solo puede quedar como histórico/referencial/anterior/trazabilidad.
+        critical_dashboard = {
+            "dashboard/data/alertas-p0.json": alertas,
+            "dashboard/data/datos-faltantes.json": datos_faltantes,
+            "dashboard/data/subproyectos-criticos.json": subproyectos,
+            "dashboard/data/indicadores-comerciales.json": comerciales_data,
+            "dashboard/data/validacion-comercial.json": validacion,
+            "dashboard/data/replanteo-escala.json": replanteo,
+        }
+        for rel_path, payload in critical_dashboard.items():
+            for entry in flatten_strings(payload):
+                if not is_648_reference_allowed(entry):
+                    errors.append(f"{rel_path}: referencia 648 aves sin marca histórica/referencial: {entry!r}")
     except Exception as exc:  # noqa: BLE001
         errors.append(str(exc))
 

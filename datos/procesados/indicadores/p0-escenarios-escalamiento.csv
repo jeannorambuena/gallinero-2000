@@ -1,0 +1,5 @@
+escenario,aves,postura_referencia,huevos_dia_estimados,bandejas_semana_estimadas,superficie_util_m2_ref_5avesm2,agua_min_l_dia,agua_max_l_dia,estado_validacion,observacion
+actual,148,89.2%,132.0,30.8,29.6,34.3,45.7,actual/parcial,operación actual validada parcialmente
+base_500,500,89.2%,446.0,104.1,100.0,115.7,154.3,pendiente,nuevo escenario base; requiere validación comercial/CAPEX/flujo
+futuro_1000,1000,89.2%,892.0,208.1,200.0,231.5,308.6,pendiente,comparativo futuro; no habilitado
+futuro_2000,2000,89.2%,1784.0,416.3,400.0,463.0,617.3,pendiente,comparativo futuro; no habilitado

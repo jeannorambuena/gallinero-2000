@@ -8,9 +8,10 @@ Guiar el levantamiento de datos para dimensionar agua en forma preliminar, sin c
 
 - Consumo actual: 34 L/día.
 - Gallinas actuales: 148.
-- Operación proyectada: 648 aves.
-- Proyección preliminar: 150–200 L/día.
-- Solución conceptual: estanque 1.000 L + bomba.
+- Escenario base vigente: 500 aves totales.
+- Agua estimada para 500 aves: 115.7–154.3 L/día por proporcionalidad referencial.
+- Escenario anterior/referencial: 648 aves, 150–200 L/día histórico.
+- Solución conceptual: estanque 1.000 L + bomba, no definitivo.
 
 ## Datos a levantar
 

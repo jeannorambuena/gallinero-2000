@@ -7,9 +7,10 @@ Transformar la brecha comercial en un plan de levantamiento concreto, sin invent
 ## Datos de partida
 
 - Venta actual: 28 bandejas/semana.
-- Venta objetivo para 648 aves: 135 bandejas/semana.
-- Brecha: 107 bandejas/semana.
-- Crecimiento requerido: 4.82 veces.
+- Objetivo estimado para 500 aves: 104.1 bandejas/semana.
+- Brecha estimada para 500 aves: 76.1 bandejas/semana.
+- Crecimiento requerido estimado: 3.72 veces.
+- Nota histórica/referencial: el escenario anterior de 648 aves requería 135 bandejas/semana y una brecha de 107 bandejas/semana; no es la meta vigente.
 
 ## Canales a validar
 
@@ -63,7 +64,7 @@ Antes de comprar pollonas, probar preventa o compromisos escritos/registrados po
 
 ## Criterios de no avance comercial
 
-- No aparece demanda suficiente para acercarse a 130–135 bandejas/semana.
+- No aparece demanda suficiente para acercarse a 104.1 bandejas/semana en el escenario base vigente de 500 aves.
 - Los precios por volumen destruyen el margen.
 - Los canales requieren formalización que no está resuelta.
 - La venta depende de interés informal sin compromiso fuerte.
