@@ -4,6 +4,8 @@ const DATA_FILES = {
   productivos: '/data/indicadores-productivos.json',
   comerciales: '/data/indicadores-comerciales.json',
   validacionComercial: '/data/validacion-comercial.json',
+  logisticaConstruccion: '/data/logistica-construccion.json',
+  referenciasMercado: '/data/referencias_mercado.json',
   flujoCaja: '/data/flujo-caja-preliminar.json',
   semaforo: '/data/semaforo-decision.json',
   criteriosP1: '/data/criterios-p1.json',
@@ -35,7 +37,7 @@ const FALLBACKS = {
 };
 
 const RISK_COPY = {
-  comercial: 'La brecha de ventas sigue siendo alta.',
+  comercial: 'Nacho debe validar clientes, cantidades, precios, frecuencia, pago y boleta/factura.',
   financiera: 'CAPEX y flujo siguen incompletos.',
   logistica: 'Acceso rural e invierno afectan materiales y operación.',
   sanitaria: 'Humedad, calor y manejo de agua aún requieren mejoras.',
@@ -70,7 +72,9 @@ const TRAFFIC_RULES = [
 ];
 
 const BLOCKERS = [
+  'Amarillo no significa no viable; significa información crítica pendiente',
   'Mercado no validado para 104.1 bandejas/semana',
+  'Faltan cerca de 76.1 bandejas/semana adicionales validadas',
   'CAPEX total pendiente',
   'Flujo proyectado incompleto',
   'Agua sin dimensionamiento definitivo',
@@ -82,7 +86,8 @@ const BLOCKERS = [
 
 const ALLOWED_ACTIONS = [
   'Levantar cotizaciones',
-  'Validar clientes y canales',
+  'Línea comercial: Nacho valida ventas, clientes y canales',
+  'Línea constructiva: Jean cotiza y diseña galpón como estudio técnico',
   'Medir agua y energía',
   'Preparar croquis',
   'Avanzar en CAPEX',
@@ -96,6 +101,8 @@ const BLOCKED_ACTIONS = [
   'No asumir rentabilidad cerrada',
   'No pasar a P1 preliminar como habilitado'
 ];
+
+const MARKET_REFERENCE_FALLBACK = 'Referencia externa de precios de mercado: abril-mayo 2026, datos anonimizados. No es evidencia de ventas, compras ni clientes de Nacho.';
 
 function $(id) {
   return document.getElementById(id);
@@ -234,6 +241,71 @@ function renderEscalas(galpones) {
   });
 }
 
+function renderWorkstreams({ resumen, validacionComercial, logisticaConstruccion }) {
+  const container = $('lineas-trabajo');
+  if (!container) return;
+  container.innerHTML = '';
+
+  const workstreams = resumen?.lineas_paralelas ?? [
+    {
+      linea: 'comercial',
+      responsable: validacionComercial?.responsable ?? 'Nacho',
+      objetivo: 'validar ventas, clientes y canales suficientes para el escenario 500 aves',
+      evidencia_requerida: validacionComercial?.datos_que_debe_levantar_nacho ?? []
+    },
+    {
+      linea: 'constructiva',
+      responsable: logisticaConstruccion?.constructivo?.responsable_estudio ?? 'Jean',
+      objetivo: 'cotizar y diseñar técnicamente el galpón como estudio constructivo',
+      evidencia_requerida: logisticaConstruccion?.constructivo?.datos_faltantes ?? [],
+      advertencia: logisticaConstruccion?.constructivo?.advertencia_autorizacion
+    }
+  ];
+
+  workstreams.forEach((stream) => {
+    const card = document.createElement('article');
+    card.className = 'workstream-card';
+    const evidence = (stream.evidencia_requerida ?? []).slice(0, 6).map((item) => `<li>${item}</li>`).join('');
+    card.innerHTML = `
+      <div class="section-kicker">Línea ${stream.linea}</div>
+      <h3>${stream.responsable}</h3>
+      <p>${stream.objetivo}</p>
+      ${evidence ? `<ul>${evidence}</ul>` : ''}
+      ${stream.advertencia ? `<div class="alert-callout compact">${stream.advertencia}</div>` : ''}
+    `;
+    container.appendChild(card);
+  });
+
+  const greenCriteria = $('criterio-verde');
+  if (greenCriteria) {
+    greenCriteria.textContent = 'El proyecto solo podría pasar a verde si se validan con evidencia suficiente la línea comercial y la línea constructiva.';
+  }
+}
+
+function renderMarketReferences(referenciasMercado) {
+  const summary = $('referencia-mercado-resumen');
+  const container = $('referencias-mercado');
+  if (summary) summary.textContent = referenciasMercado?.advertencia_publica ?? MARKET_REFERENCE_FALLBACK;
+  if (!container) return;
+  container.innerHTML = '';
+
+  const references = referenciasMercado?.referencias ?? [];
+  references.forEach((reference) => {
+    const card = document.createElement('article');
+    card.className = 'market-card';
+    const products = (reference.productos ?? []).map((item) => `
+      <li><strong>${item.producto}</strong>: ${item.cantidad_cajas} cajas · $${Number(item.precio_neto_unitario_aprox_clp).toLocaleString('es-CL')} neto unitario aprox.</li>
+    `).join('');
+    card.innerHTML = `
+      <span>${reference.periodo}</span>
+      <strong>${reference.proveedor}</strong>
+      <ul>${products}</ul>
+      <small>Total IVA incluido: $${Number(reference.total_factura_iva_incluido_clp).toLocaleString('es-CL')}</small>
+    `;
+    container.appendChild(card);
+  });
+}
+
 function renderSemaforo() {
   const container = $('semaforo-inversion');
   if (!container) return;
@@ -338,6 +410,8 @@ async function init() {
   renderOperacion(data);
   renderEscenario500(data);
   renderEscalas(data.galpones);
+  renderWorkstreams(data);
+  renderMarketReferences(data.referenciasMercado);
   renderSemaforo();
   renderBlockers();
   renderActionLists();

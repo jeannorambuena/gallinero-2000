@@ -70,6 +70,10 @@ SPECS = {
         "required": ["proyecto", "fase", "estado", "conclusion"],
         "non_empty_lists": ["canales_actuales", "canales_potenciales", "riesgos", "plan_validacion", "criterios_para_avanzar"],
     },
+    "dashboard/data/referencias_mercado.json": {
+        "required": ["proyecto", "tipo", "uso", "no_es_evidencia_de_ventas_nacho", "periodo", "fuente", "privacidad", "advertencia_publica"],
+        "non_empty_lists": ["referencias", "productos"],
+    },
     "dashboard/data/legal-contable.json": {
         "required": ["proyecto", "fase", "estado", "advertencia"],
         "non_empty_lists": ["temas_a_revisar", "riesgos", "datos_faltantes", "criterios_para_avanzar"],

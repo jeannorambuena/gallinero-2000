@@ -1,0 +1,59 @@
+{
+  "proyecto": "Gallinero Nacho",
+  "tipo": "referencia externa de mercado",
+  "uso": "benchmark de precios",
+  "no_es_evidencia_de_ventas_nacho": true,
+  "no_es_evidencia_de_compras_nacho": true,
+  "no_es_evidencia_de_clientes_nacho": true,
+  "periodo": "abril-mayo 2026",
+  "fuente": "facturas externas anonimizadas",
+  "privacidad": {
+    "publicar_rut": false,
+    "publicar_direcciones": false,
+    "publicar_folios_factura": false,
+    "publicar_nombres_completos": false,
+    "publicar_datos_tributarios_sensibles": false,
+    "nota": "Usar solo datos resumidos y anonimizados en el dashboard público."
+  },
+  "referencias": [
+    {
+      "periodo": "abril 2026",
+      "proveedor": "proveedor avícola externo 1",
+      "total_factura_iva_incluido_clp": 1116000,
+      "productos": [
+        {
+          "producto": "Huevos Extra Blanco",
+          "cantidad_cajas": 10,
+          "precio_neto_unitario_aprox_clp": 33277
+        },
+        {
+          "producto": "Huevos Primera Blanco",
+          "cantidad_cajas": 20,
+          "precio_neto_unitario_aprox_clp": 30252
+        }
+      ]
+    },
+    {
+      "periodo": "mayo 2026",
+      "proveedor": "proveedor avícola externo 2",
+      "total_factura_iva_incluido_clp": 1237500,
+      "productos": [
+        {
+          "producto": "Huevos Extra Blanco",
+          "cantidad_cajas": 25,
+          "precio_neto_unitario_aprox_clp": 26471
+        },
+        {
+          "producto": "Huevos Primera Blanco",
+          "cantidad_cajas": 15,
+          "precio_neto_unitario_aprox_clp": 25210
+        }
+      ]
+    }
+  ],
+  "productos": [
+    "Huevos Extra Blanco",
+    "Huevos Primera Blanco"
+  ],
+  "advertencia_publica": "Referencias externas de mercado, abril-mayo 2026, con datos anonimizados. No corresponden a Nacho."
+}

@@ -397,6 +397,12 @@ a {
   line-height: 1.45;
 }
 
+.alert-callout.compact {
+  margin-top: 12px;
+  padding: 12px 13px;
+  font-size: 0.9rem;
+}
+
 .small-note,
 .muted {
   color: var(--muted);
@@ -469,6 +475,76 @@ a {
 
 .scale-card dd {
   font-weight: 900;
+}
+
+.workstream-grid,
+.market-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.workstream-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.workstream-card,
+.market-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: #f8fafc;
+  padding: 16px;
+}
+
+.workstream-card h3 {
+  margin: 6px 0 8px;
+  font-size: 1.35rem;
+  letter-spacing: -0.04em;
+}
+
+.workstream-card p,
+.market-card small {
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.workstream-card ul,
+.market-card ul {
+  margin: 12px 0 0;
+  padding-left: 19px;
+}
+
+.workstream-card li,
+.market-card li {
+  margin: 7px 0;
+  line-height: 1.35;
+}
+
+.market-panel {
+  border-color: #cbd5e1;
+}
+
+.market-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.market-card span {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.market-card strong {
+  display: block;
+  margin-top: 8px;
+}
+
+.market-card small {
+  display: block;
+  margin-top: 10px;
+  font-weight: 800;
 }
 
 .traffic-grid {
@@ -719,6 +795,8 @@ a {
   .metric-grid.scenario,
   .traffic-grid,
   .risk-grid,
+  .workstream-grid,
+  .market-grid,
   .action-panel {
     grid-template-columns: 1fr;
   }

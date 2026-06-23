@@ -12,11 +12,18 @@
   "construccion_autorizada": false,
   "inversion_mayor_autorizada": false,
   "proximos_pasos": [
-    "validar brecha comercial 76.1 bandejas/semana",
-    "cotizar galpón 500",
+    "validar brecha comercial 76.1 bandejas/semana antes del objetivo tentativo enero 2027",
+    "Nacho: levantar clientes, cantidades, precios, frecuencia, forma de pago y boleta/factura",
+    "Jean: cotizar/diseñar galpón 500 como estudio técnico sin construir",
+    "crear más adelante repo separado galpon-nacho para roadmap constructivo",
     "dimensionar agua/energía",
     "completar CAPEX y flujo 500",
     "resolver logística y legal/contable"
   ],
-  "decision_actual": "P0 amarillo; P1 preliminar no habilitado; solo inversión menor de desbloqueo."
+  "decision_actual": "P0 amarillo; no rechazo. P1 preliminar no habilitado; solo inversión menor de desbloqueo.",
+  "interpretacion_semaforo": "Amarillo no significa no viable; significa información crítica pendiente para decidir con seguridad.",
+  "lineas_de_trabajo": [
+    "Línea comercial: Nacho valida ventas, clientes, precios, frecuencia, forma de pago y boleta/factura.",
+    "Línea constructiva: Jean cotiza y diseña el galpón como estudio técnico, sin autorización de construcción."
+  ]
 }

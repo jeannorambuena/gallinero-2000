@@ -42,15 +42,34 @@
   "plan_validacion": [
     "listar clientes actuales",
     "contactar clientes potenciales",
+    "registrar cantidades semanales por cliente",
     "separar interés de compromiso",
     "validar precio por canal",
+    "registrar frecuencia de compra",
+    "registrar forma de pago",
     "registrar requerimiento de boleta/factura"
   ],
   "criterios_para_avanzar": [
     "compromisos fuertes por canal",
     "precio mínimo validado",
     "frecuencia de compra definida",
-    "brecha reducida con evidencia"
+    "forma de pago clara",
+    "necesidad de boleta/factura identificada",
+    "brecha de 76.1 bandejas/semana reducida con evidencia"
   ],
-  "conclusion": "La base 500 requiere validar unas 104.1 bandejas/semana; faltan 76.1 bandejas/semana sobre la venta actual. No comprar sin validar mercado."
+  "conclusion": "La base 500 requiere validar unas 104.1 bandejas/semana; faltan cerca de 76.1 bandejas/semana sobre la venta actual. El bloqueo comercial sigue siendo el más importante. No comprar sin validar mercado.",
+  "urgencia_comercial": {
+    "objetivo_tentativo": "enero 2027",
+    "fecha_contexto": "junio 2026",
+    "mensaje": "El canal de ventas debe validarse pronto porque faltan pocos meses para el objetivo tentativo."
+  },
+  "responsable": "Nacho",
+  "datos_que_debe_levantar_nacho": [
+    "clientes actuales y potenciales",
+    "cantidades comprometibles por cliente",
+    "precios por producto/canal",
+    "frecuencia de compra",
+    "forma de pago",
+    "necesidad de boleta o factura"
+  ]
 }

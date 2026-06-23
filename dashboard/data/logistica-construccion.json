@@ -24,11 +24,36 @@
       "ubicación y tamaño de bodega ampliada",
       "medidas objetivo de ampliación o nuevo galpón",
       "orientación, ventilación, sombra y drenaje",
+      "diseño preliminar del galpón",
       "cubicación de materiales",
-      "cotización actualizada",
+      "cotización actualizada por partida",
+      "transporte",
       "mano de obra y tiempos de construcción"
     ],
-    "condicion_para_avanzar": "Definir alternativa constructiva preliminar, croquis, tamaño de galpón/bodega, ventilación, drenaje, listado de materiales y cotizaciones iniciales antes de P1 preliminar."
+    "condicion_para_avanzar": "Definir alternativa constructiva preliminar, croquis, tamaño de galpón/bodega, ventilación, drenaje, cubicación, listado de materiales, transporte, mano de obra y cotizaciones iniciales antes de P1 preliminar. Esto no autoriza construir.",
+    "responsable_estudio": "Jean",
+    "rol_jean": "Jean queda encargado de apoyar la línea de construcción del galpón levantando datos reales de diseño, cubicación, materiales, costos por partida, transporte y mano de obra.",
+    "advertencia_autorizacion": "La línea constructiva puede avanzar como estudio técnico, pero no debe interpretarse como autorización para construir.",
+    "repo_futuro_recomendado": {
+      "nombre": "galpon-nacho",
+      "estado": "no crear todavía; dejar como roadmap técnico constructivo",
+      "alcance": [
+        "diseño del galpón",
+        "planos en FreeCAD",
+        "cubicación",
+        "perfiles",
+        "techumbre",
+        "suelo",
+        "cerramientos",
+        "comederos",
+        "bebederos",
+        "sistema de agua",
+        "transporte",
+        "mano de obra",
+        "costos por partida",
+        "alternativas para 500 aves y ampliación futura"
+      ]
+    }
   },
   "logistico": {
     "estado": "amarillo_rojo",
@@ -59,5 +84,5 @@
     ],
     "condicion_para_avanzar": "Validar acceso, descarga, acopio, transporte interno, transporte de pollonas/materiales y restricciones de invierno antes de P1 preliminar."
   },
-  "advertencia": "No se puede cerrar P0 ni iniciar P1 definitivo sin resolver riesgos constructivos y logísticos críticos."
+  "advertencia": "No se puede cerrar P0 ni iniciar P1 definitivo sin resolver riesgos constructivos y logísticos críticos. La construcción no está autorizada."
 }

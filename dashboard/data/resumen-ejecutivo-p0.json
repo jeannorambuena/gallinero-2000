@@ -28,8 +28,9 @@
     "matriz de decisión por semáforo creada"
   ],
   "riesgos_principales": [
+    "amarillo no significa no viable; significa información crítica pendiente",
     "venta actual de 28 bandejas/semana versus 104.1 estimadas para 500 aves",
-    "brecha comercial estimada de 76.1 bandejas/semana",
+    "brecha comercial estimada de 76.1 bandejas/semana por validar pronto antes del objetivo tentativo enero 2027",
     "margen con mano de obra muy ajustado: $19.767/mes",
     "CAPEX total para 500 aves pendiente",
     "flujo proyectado 500 incompleto; VAN/TIR/ROI/Payback bloqueados",
@@ -48,24 +49,75 @@
   ],
   "faltantes_para_p1_preliminar": [
     "validar mercado para 104.1 bandejas/semana",
+    "levantar cerca de 76.1 bandejas/semana adicionales con evidencia comercial",
+    "identificar clientes, cantidades, precios, frecuencia, forma de pago y boleta/factura",
     "croquis del terreno inmediato 19 x 7 m",
     "dimensionar agua para 500 aves",
     "dimensionar energía solar",
     "completar CAPEX 500",
     "preparar flujo 500",
-    "cotizar galpón 500",
+    "cotizar y diseñar galpón 500 como estudio técnico",
     "resolver logística",
     "revisar legal/contable",
     "aplicar matriz de semáforo"
   ],
   "acciones_recomendadas": [
-    "validar clientes y canales reales para brecha 76.1 bandejas/semana",
-    "cotizar galpón con costo m2 real",
+    "Nacho debe validar clientes y canales reales para brecha 76.1 bandejas/semana",
+    "Jean debe cotizar/diseñar el galpón como línea constructiva separada, sin autorización de construcción",
     "dimensionar agua y energía",
     "levantar CAPEX completo por categorías",
     "preparar flujo proyectado para 500 aves",
     "revisar formalización y venta a comercios",
+    "usar facturas externas solo como referencia anonimizada de precios de mercado",
     "ejecutar auditoría P0"
   ],
-  "conclusion": "El proyecto se replantea a 500 aves totales como base. El escenario 648 queda histórico. Estado general amarillo: solo inversión menor de desbloqueo; compra, construcción e inversión mayor siguen bloqueadas."
+  "conclusion": "El proyecto se mantiene en amarillo: no está rechazado, pero aún falta evidencia crítica. Deben avanzar en paralelo la línea comercial de Nacho y la línea constructiva de Jean. La compra de aves, la construcción y la inversión mayor siguen bloqueadas.",
+  "interpretacion_estado_amarillo": "Amarillo no significa rechazo ni que el proyecto no sea viable; significa que falta información crítica para decidir con seguridad antes de comprar aves, construir o comprometer inversión mayor.",
+  "lineas_paralelas": [
+    {
+      "linea": "comercial",
+      "responsable": "Nacho",
+      "objetivo": "validar ventas, clientes y canales suficientes para el escenario 500 aves",
+      "evidencia_requerida": [
+        "clientes identificados",
+        "cantidades por cliente",
+        "precios por canal",
+        "frecuencia de compra",
+        "forma de pago",
+        "necesidad de boleta o factura"
+      ]
+    },
+    {
+      "linea": "constructiva",
+      "responsable": "Jean",
+      "objetivo": "cotizar y diseñar técnicamente el galpón como estudio constructivo",
+      "evidencia_requerida": [
+        "diseño preliminar",
+        "cubicación",
+        "materiales",
+        "costos por partida",
+        "transporte",
+        "mano de obra"
+      ],
+      "advertencia": "Esta línea puede avanzar como estudio técnico, pero no autoriza construcción."
+    }
+  ],
+  "repo_futuro_recomendado": {
+    "nombre": "galpon-nacho",
+    "estado": "roadmap técnico; no creado",
+    "proposito": "separar diseño, planos, cubicación y costos constructivos del galpón respecto del diagnóstico comercial/financiero del gallinero"
+  },
+  "referencias_mercado": {
+    "periodo": "abril-mayo 2026",
+    "uso": "benchmark externo de precios de mercado",
+    "advertencia": "Facturas externas anonimizadas; no son evidencia de ventas, compras ni clientes de Nacho."
+  },
+  "criterios_para_pasar_a_verde": [
+    "validación comercial documentada para cubrir aproximadamente 104.1 bandejas/semana",
+    "brecha de 76.1 bandejas/semana cubierta con clientes/canales verificables",
+    "precios, frecuencia de compra, forma de pago y boleta/factura definidos",
+    "diseño/cubicación/cotización de galpón suficientemente respaldados",
+    "CAPEX, flujo, agua, energía, logística y legal/contable cerrados con evidencia suficiente",
+    "compra de aves, construcción e inversión mayor aprobadas explícitamente después de validar ambas líneas"
+  ]
 }
