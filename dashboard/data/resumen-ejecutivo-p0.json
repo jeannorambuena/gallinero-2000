@@ -16,7 +16,7 @@
     "p1_definitivo": "bloqueado",
     "compra_500_pollonas": "bloqueada",
     "construccion": "no autorizada",
-    "inversion_mayor": "no autorizada"
+    "inversion_mayor": "bloqueada"
   },
   "puntos_favorables": [
     "buena base productiva actual",
@@ -66,7 +66,7 @@
   ],
   "acciones_recomendadas": [
     "Nacho debe validar clientes y canales reales para brecha 76.1 bandejas/semana",
-    "Jean debe usar la cotización formal V8 como base constructiva referencial trazable, sin autorización de construcción",
+    "Jean debe validar la cotización formal V8 y ajustar su aplicabilidad al escenario 500 aves, sin autorizar construcción.",
     "dimensionar agua y energía",
     "levantar CAPEX completo por categorías faltantes",
     "preparar flujo proyectado para 500 aves",
@@ -94,7 +94,7 @@
     {
       "linea": "constructiva",
       "responsable": "Jean",
-      "objetivo": "usar la cotización formal V8 como referencia constructiva trazable y validar su aplicabilidad al escenario 500 aves",
+      "objetivo": "validar la cotización formal V8 y ajustar su aplicabilidad al escenario 500 aves, sin autorizar construcción",
       "evidencia_requerida": [
         "cotización formal V8",
         "total general $5.547.765",
@@ -104,7 +104,7 @@
         "transporte/logística",
         "validación profesional si se ejecuta"
       ],
-      "advertencia": "Esta línea reduce parcialmente el bloqueo constructivo, pero no autoriza construcción."
+      "advertencia": "La cotización formal V8 es referencia trazable; no autoriza construcción."
     }
   ],
   "repo_futuro_recomendado": {

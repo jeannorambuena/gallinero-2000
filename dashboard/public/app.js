@@ -32,7 +32,13 @@ const FALLBACKS = {
     brecha: 76.1,
     agua: '115.7–154.3 L/día',
     superficie: 100,
-    costoGalpon: '$5.547.765 ref. 72 m2'
+    costoM2Galpon: 77052,
+    costoGalponEscenario: 7705200,
+    referenciaV8: {
+      superficie_m2: 72,
+      total_general_clp: 5547765,
+      costo_m2_aprox_clp: 77052
+    }
   }
 };
 
@@ -87,7 +93,7 @@ const BLOCKERS = [
 const ALLOWED_ACTIONS = [
   'Levantar cotizaciones',
   'Línea comercial: Nacho valida ventas, clientes y canales',
-  'Línea constructiva: Jean usa cotización formal V8 como estudio técnico trazable',
+  'Línea constructiva: Jean debe validar la cotización formal V8 y ajustar su aplicabilidad al escenario 500 aves, sin autorizar construcción.',
   'Medir agua y energía',
   'Preparar croquis',
   'Avanzar en CAPEX',
@@ -168,14 +174,28 @@ function renderDecisionState({ resumen, estado, criteriosP1, semaforo }) {
   const estadoGeneral = resumen?.estado_general ?? semaforo?.semaforo_general ?? estado?.semaforo_general ?? 'amarillo';
   const decision = resumen?.decision_actual ?? {};
   const criterioDecision = criteriosP1?.decision_actual ?? {};
+  const semaforoDecision = semaforo?.decisiones ?? {};
+
+  const p1Preliminar = decision.p1_preliminar
+    ?? (criterioDecision.p1_preliminar === false || estado?.p1_preliminar_habilitado === false || semaforo?.p1_preliminar_habilitado === false ? 'no habilitado' : 'pendiente');
+  const compraAves = decision.compra_aves
+    ?? decision.compra_500_pollonas
+    ?? (criterioDecision.compra_aves === false || estado?.compra_aves_autorizada === false || semaforoDecision.puede_comprar_aves === false ? 'bloqueada' : 'pendiente');
+  const construccion = decision.construccion
+    ?? (criterioDecision.construccion === false || estado?.construccion_autorizada === false || semaforoDecision.puede_construir === false ? 'no autorizada' : 'pendiente');
+  const inversionMayor = criterioDecision.inversion_mayor === false || estado?.inversion_mayor_autorizada === false || semaforoDecision.inversion_mayor_autorizada === false
+    ? 'bloqueada'
+    : (decision.inversion_mayor ?? 'pendiente');
+  const decisionFinal = semaforoDecision.decision_final_disponible === false ? 'no disponible' : 'pendiente';
 
   setText('header-escenario', `${escenarioBase} aves`);
   setText('header-estado', estadoGeneral);
   setText('estado-general', estadoGeneral);
-  setText('p1-preliminar', decision.p1_preliminar ?? (criterioDecision.p1_preliminar === false ? 'no habilitado' : 'pendiente'));
-  setText('compra-aves', decision.compra_500_pollonas ?? (criterioDecision.compra_aves === false ? 'bloqueada' : 'pendiente'));
-  setText('construccion', decision.construccion ?? (criterioDecision.construccion === false ? 'no autorizada' : 'pendiente'));
-  setText('inversion-mayor', decision.inversion_mayor ?? (criterioDecision.inversion_mayor === false ? 'no autorizada' : 'pendiente'));
+  setText('p1-preliminar', p1Preliminar);
+  setText('compra-aves', compraAves);
+  setText('construccion', construccion);
+  setText('inversion-mayor', inversionMayor);
+  setText('decision-final', decisionFinal);
 }
 
 function renderOperacion({ productivos, comerciales }) {
@@ -197,6 +217,7 @@ function renderEscenario500({ validacionComercial, comerciales, flujoCaja, galpo
   const escenario = validacionComercial?.escenario_500 ?? flujoCaja?.escenario_500 ?? {};
   const galpon500 = (galpones?.escenarios || []).find((item) => Number(item?.aves) === 500) ?? {};
   const base = FALLBACKS.escenario500;
+  const referenciaV8 = galpones?.capex_referencial_formal ?? base.referenciaV8;
 
   const metrics = [
     { label: 'Escenario base vigente', value: formatValue(escenario.aves ?? base.aves, 'aves totales'), tone: 'accent' },
@@ -205,8 +226,8 @@ function renderEscenario500({ validacionComercial, comerciales, flujoCaja, galpo
     { label: 'Venta actual', value: formatValue(validacionComercial?.venta_actual_bandejas_semana ?? findIndicator(comerciales, 'venta_actual_bandejas_semana') ?? base.ventaActual, 'bandejas/semana') },
     { label: 'Brecha comercial', value: formatValue(escenario.brecha_bandejas_semana ?? findIndicator(comerciales, 'brecha_bandejas_semana_para_500') ?? base.brecha, 'bandejas/semana'), tone: 'risk' },
     { label: 'Agua estimada', value: base.agua },
-    { label: 'Superficie útil galpón', value: formatValue(galpon500.superficie_util_m2 ?? base.superficie, 'm2') },
-    { label: 'Costo estimado galpón', value: galpon500.costo_total === 'pendiente' ? base.costoGalpon : formatCurrency(galpon500.costo_total ?? base.costoGalpon), detail: galpon500.fuente_costo_m2 ?? 'referencial formal V8', tone: 'pending' }
+    { label: 'Referencia V8 real', value: formatCurrency(referenciaV8.total_general_proyecto_clp ?? referenciaV8.total_general_clp), detail: `${referenciaV8.superficie_m2} m² · ${formatCurrency(referenciaV8.costo_m2_aprox_clp)}/m²`, tone: 'pending' },
+    { label: 'Escenario 500 extrapolado', value: formatCurrency(galpon500.costo_total ?? base.costoGalponEscenario), detail: `${galpon500.superficie_util_m2 ?? base.superficie} m² · ${formatCurrency(galpon500.costo_m2 ?? base.costoM2Galpon)}/m²`, tone: 'pending' }
   ];
 
   renderMetrics('escenario-500-metricas', metrics);
@@ -218,9 +239,9 @@ function renderEscalas(galpones) {
   container.innerHTML = '';
 
   const defaults = [
-    { aves: 500, superficie_util_m2: 100, estado: 'evaluándose' },
-    { aves: 1000, superficie_util_m2: 200, estado: 'comparativo futuro' },
-    { aves: 2000, superficie_util_m2: 400, estado: 'comparativo futuro' }
+    { aves: 500, superficie_util_m2: 100, costo_m2: 77052, costo_total: 7705200, estado: 'referencial formal extrapolado; requiere ajuste a diseño final 500' },
+    { aves: 1000, superficie_util_m2: 200, costo_m2: 77052, costo_total: 15410400, estado: 'comparativo referencial; no habilita inversión' },
+    { aves: 2000, superficie_util_m2: 400, costo_m2: 77052, costo_total: 30820800, estado: 'comparativo referencial; no habilita inversión' }
   ];
 
   const scenarios = defaults.map((fallback) => {
@@ -263,7 +284,7 @@ function renderWorkstreams({ resumen, validacionComercial, logisticaConstruccion
     {
       linea: 'constructiva',
       responsable: logisticaConstruccion?.constructivo?.responsable_estudio ?? 'Jean',
-      objetivo: 'cotizar y diseñar técnicamente el galpón como estudio constructivo',
+      objetivo: 'validar la cotización formal V8 y ajustar su aplicabilidad al escenario 500 aves, sin autorizar construcción',
       evidencia_requerida: logisticaConstruccion?.constructivo?.datos_faltantes ?? [],
       advertencia: logisticaConstruccion?.constructivo?.advertencia_autorizacion
     }

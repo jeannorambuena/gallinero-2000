@@ -14,7 +14,7 @@
   "proximos_pasos": [
     "validar brecha comercial 76.1 bandejas/semana antes del objetivo tentativo enero 2027",
     "Nacho: levantar clientes, cantidades, precios, frecuencia, forma de pago y boleta/factura",
-    "Jean: usar cotización formal V8 del galpón como referencia constructiva trazable, sin construir",
+    "Jean debe validar la cotización formal V8 y ajustar su aplicabilidad al escenario 500 aves, sin autorizar construcción.",
     "dimensionar agua/energía",
     "completar CAPEX de equipamiento, logística, capital de trabajo e imprevistos",
     "recalcular escenarios 500, 1000 y 2000 aves con CAPEX, OPEX, EBITDA, flujo de caja, payback y punto de equilibrio",
@@ -24,7 +24,7 @@
   "interpretacion_semaforo": "Amarillo no significa no viable; significa información crítica pendiente para decidir con seguridad.",
   "lineas_de_trabajo": [
     "Línea comercial: Nacho valida ventas, clientes, precios, frecuencia, forma de pago y boleta/factura.",
-    "Línea constructiva: Jean integra cotización formal V8 como estudio técnico trazable, sin autorización de construcción.",
+    "Línea constructiva: Jean debe validar la cotización formal V8 y ajustar su aplicabilidad al escenario 500 aves, sin autorizar construcción.",
     "Línea financiera: recalcular escenarios 500/1000/2000 con CAPEX/OPEX/EBITDA/flujo/payback/punto de equilibrio."
   ],
   "capex_galpon_referencial": {
