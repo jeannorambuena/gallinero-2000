@@ -173,6 +173,51 @@
       "fuente": "dato declarado por Nacho / cálculo P0",
       "estado": "conocido",
       "observacion": "CAPEX conocido solo por compra de pollonas"
+    },
+    {
+      "indicador": "capex_referencial_galpon_total",
+      "valor": 5547765,
+      "unidad": "CLP",
+      "formula": "cotización formal V8",
+      "fuente": "galpon-nacho@b100ae0",
+      "estado": "referencial formal",
+      "observacion": "galpón metálico simple 12 x 6 m = 72 m²; no autoriza construcción"
+    },
+    {
+      "indicador": "capex_referencial_galpon_materiales",
+      "valor": 4347765,
+      "unidad": "CLP",
+      "formula": "cotización formal V8",
+      "fuente": "galpon-nacho@b100ae0",
+      "estado": "referencial formal",
+      "observacion": "total materiales referenciales"
+    },
+    {
+      "indicador": "capex_referencial_galpon_mano_obra",
+      "valor": 1200000,
+      "unidad": "CLP",
+      "formula": "20 días x 60.000 CLP/día",
+      "fuente": "galpon-nacho@b100ae0",
+      "estado": "referencial formal",
+      "observacion": "mano de obra especializada"
+    },
+    {
+      "indicador": "capex_referencial_galpon_costo_m2",
+      "valor": 77052,
+      "unidad": "CLP/m²",
+      "formula": "5.547.765 / 72",
+      "fuente": "galpon-nacho@b100ae0",
+      "estado": "referencial formal",
+      "observacion": "costo por m² aproximado"
+    },
+    {
+      "indicador": "capex_identificado_referencial_pollonas_mas_galpon",
+      "valor": 9797765,
+      "unidad": "CLP",
+      "formula": "4.250.000 + 5.547.765",
+      "fuente": "P0 + galpon-nacho@b100ae0",
+      "estado": "referencial parcial",
+      "observacion": "no equivale a CAPEX total del proyecto 500"
     }
   ],
   "resumen": {
@@ -182,7 +227,11 @@
     "mano_obra_valorizada_mensual_referencial": "aproximadamente $182.000",
     "margen_preliminar_con_mano_obra": "aproximadamente $19.767",
     "capex_conocido_pollonas": "$4.250.000",
-    "semaforo_financiero_preliminar": "amarillo"
+    "semaforo_financiero_preliminar": "amarillo",
+    "capex_referencial_galpon": "$5.547.765",
+    "costo_m2_referencial_galpon": "$77.052/m²",
+    "capex_identificado_referencial_pollonas_mas_galpon": "$9.797.765",
+    "advertencia_capex": "CAPEX total del proyecto 500 aún incompleto; faltan agua, energía, equipamiento, logística, capital de trabajo y flujo operativo."
   },
   "indicadores_bloqueados": [
     {
@@ -204,7 +253,25 @@
       "indicador": "Payback",
       "estado": "pendiente",
       "observacion": "no calcular en finanzas preliminares básicas"
+    },
+    {
+      "indicador": "EBITDA",
+      "estado": "pendiente",
+      "observacion": "requiere CAPEX/OPEX y flujo por escenario"
+    },
+    {
+      "indicador": "Punto de equilibrio",
+      "estado": "pendiente",
+      "observacion": "requiere CAPEX/OPEX y flujo por escenario"
     }
   ],
-  "nota": "finanzas preliminares; no reemplaza flujo de caja completo ni evaluación financiera definitiva"
+  "nota": "finanzas preliminares; integra CAPEX referencial formal del galpón V8, pero no reemplaza flujo de caja completo ni evaluación financiera definitiva",
+  "referencia_capex_galpon": {
+    "fuente": "galpon-nacho@b100ae0",
+    "documento": "cotización formal V8",
+    "total_general_clp": 5547765,
+    "superficie_m2": 72,
+    "costo_m2_aprox_clp": 77052,
+    "advertencia": "referencial; no autoriza construcción"
+  }
 }

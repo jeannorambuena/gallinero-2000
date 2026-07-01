@@ -18,7 +18,7 @@
       "estado": "amarillo"
     },
     "constructiva": {
-      "estado": "pendiente/amarillo"
+      "estado": "amarillo/parcial"
     },
     "logistica": {
       "estado": "amarillo_rojo"
@@ -51,12 +51,21 @@
   },
   "condiciones_para_avanzar": [
     "validar mercado 500",
-    "completar CAPEX 500",
+    "completar CAPEX 500 más allá del galpón",
     "preparar flujo 500",
     "dimensionar agua y energía",
     "resolver logística",
     "revisar legal/contable",
+    "recalcular 500/1000/2000 con CAPEX/OPEX/EBITDA/flujo/payback/punto de equilibrio",
     "alcanzar condiciones verdes antes de inversión mayor"
   ],
-  "conclusion": "Estado amarillo: solo inversión menor de desbloqueo."
+  "conclusion": "Estado amarillo: CAPEX referencial formal del galpón disponible, pero no hay evidencia suficiente para verde. Solo inversión menor de desbloqueo.",
+  "referencia_capex_galpon": {
+    "fuente": "galpon-nacho@b100ae0",
+    "documento": "cotización formal V8",
+    "total_general_clp": 5547765,
+    "superficie_m2": 72,
+    "costo_m2_aprox_clp": 77052,
+    "advertencia": "referencial; no autoriza construcción"
+  }
 }

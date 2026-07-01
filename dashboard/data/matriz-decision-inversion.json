@@ -29,7 +29,9 @@
         "correcciones sanitarias menores",
         "validación comercial",
         "asesoría legal/contable",
-        "dimensionamiento agua/energía"
+        "dimensionamiento agua/energía",
+        "integración de cotización formal del galpón",
+        "recalculo financiero de escenarios 500/1000/2000"
       ],
       "prohibe": [
         "compra masiva de aves",
@@ -50,9 +52,17 @@
       ]
     }
   ],
-  "decision_actual": "amarillo: inversión menor de desbloqueo solamente",
+  "decision_actual": "amarillo: inversión menor de desbloqueo solamente; CAPEX referencial formal del galpón disponible para análisis",
   "inversion_mayor_autorizada": false,
   "compra_aves_autorizada": false,
   "construccion_autorizada": false,
-  "conclusion": "No hay evidencia suficiente para verde. Compra, construcción e inversión mayor siguen bloqueadas."
+  "conclusion": "No hay evidencia suficiente para verde. El galpón cuenta con CAPEX referencial formal, pero compra, construcción e inversión mayor siguen bloqueadas.",
+  "referencia_capex_galpon": {
+    "fuente": "galpon-nacho@b100ae0",
+    "documento": "cotización formal V8",
+    "total_general_clp": 5547765,
+    "superficie_m2": 72,
+    "costo_m2_aprox_clp": 77052,
+    "advertencia": "referencial; no autoriza construcción"
+  }
 }

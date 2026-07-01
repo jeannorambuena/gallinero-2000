@@ -17,10 +17,11 @@
       "grupo": "financieros",
       "prioridad": "alta",
       "items": [
-        "calcular CAPEX total del proyecto ampliado",
-        "levantar costos completos de infraestructura, agua, energía, transporte y equipamiento",
+        "calcular CAPEX total del proyecto ampliado incorporando el galpón V8 como referencia formal",
+        "levantar costos completos de agua, energía, transporte, equipamiento, logística, capital de trabajo e imprevistos",
         "levantar costos variables para 500 aves",
         "preparar flujo de caja proyectado para 500 aves",
+        "recalcular escenarios 500, 1000 y 2000 aves con CAPEX, OPEX, EBITDA, payback y punto de equilibrio",
         "evaluar sensibilidad por precio, postura, mortalidad y alimento"
       ]
     },
@@ -28,10 +29,12 @@
       "grupo": "constructivos",
       "prioridad": "alta",
       "items": [
-        "definir diseño constructivo del galpón ampliado",
-        "cubicar materiales",
+        "validar si la solución V8 de 72 m² aplica al escenario 500 aves o requiere ajuste",
+        "definir diseño constructivo final del galpón ampliado",
         "definir bodega y almacenamiento",
-        "resolver ventilación, sombra, orientación y drenaje"
+        "resolver ventilación, sombra, orientación y drenaje",
+        "validar transporte/acopio de materiales y restricciones de acceso",
+        "validar necesidad de cálculo estructural firmado antes de ejecutar"
       ]
     },
     {
@@ -105,5 +108,13 @@
       ]
     }
   ],
-  "nota": "Datos faltantes críticos para cerrar P0 y preparar una eventual etapa P1 preliminar."
+  "nota": "Datos faltantes críticos para cerrar P0: el galpón ya tiene CAPEX referencial formal, pero el CAPEX total, flujo operativo y validación comercial siguen incompletos.",
+  "referencia_capex_galpon": {
+    "fuente": "galpon-nacho@b100ae0",
+    "documento": "cotización formal V8",
+    "total_general_clp": 5547765,
+    "superficie_m2": 72,
+    "costo_m2_aprox_clp": 77052,
+    "advertencia": "referencial; no autoriza construcción"
+  }
 }

@@ -19,9 +19,9 @@
       "id": "P1-02",
       "criterio": "CAPEX 500 completo",
       "dimension": "capex",
-      "estado": "pendiente",
-      "evidencia": "costo total 500 pendiente; galpón sin costo m2",
-      "accion_requerida": "cotizar por categorías"
+      "estado": "parcial",
+      "evidencia": "CAPEX referencial formal de galpón disponible: $5.547.765 para 72 m² ($77.052/m²) desde galpon-nacho@b100ae0; CAPEX total 500 aún incompleto.",
+      "accion_requerida": "completar agua, energía, equipamiento, logística, capital de trabajo y flujo operativo"
     },
     {
       "id": "P1-03",
@@ -51,9 +51,9 @@
       "id": "P1-06",
       "criterio": "galpón 500 viable",
       "dimension": "constructivo",
-      "estado": "pendiente",
-      "evidencia": "100 m2 útiles referenciales, costo pendiente",
-      "accion_requerida": "croquis, alternativa y cotización"
+      "estado": "parcial",
+      "evidencia": "cotización formal V8 disponible para galpón metálico simple 12 x 6 m = 72 m², sin radier ni instalaciones",
+      "accion_requerida": "validar si el diseño/costo es aplicable a 500 aves y recalcular escenarios 500/1000/2000"
     },
     {
       "id": "P1-07",
@@ -83,10 +83,10 @@
   "bloqueos_p1_definitivo": [
     "P1 preliminar no habilitado",
     "mercado 500 no validado",
-    "CAPEX total pendiente",
+    "CAPEX total del proyecto 500 incompleto",
     "flujo 500 incompleto",
-    "galpón sin costo real",
-    "agua/energía sin dimensionamiento",
+    "galpón con CAPEX referencial formal disponible, pero construcción no autorizada",
+    "agua/energía sin dimensionamiento y cotización completa",
     "logística no resuelta",
     "legal/contable pendiente",
     "VAN/TIR/ROI/Payback bloqueados"
@@ -94,9 +94,9 @@
   "bloqueos_compra_pollonas": [
     "estrategia para llegar a 500 aves no definida",
     "brecha comercial 76.1 bandejas/semana",
-    "CAPEX total no disponible",
+    "CAPEX total del proyecto no disponible",
     "flujo 500 incompleto",
-    "galpón/agua/energía/logística sin cierre",
+    "agua/energía/equipamiento/logística sin cierre",
     "legal/contable pendiente"
   ],
   "decision_actual": {
@@ -107,5 +107,13 @@
     "construccion": false,
     "inversion_mayor": false
   },
-  "conclusion": "P1 preliminar no está habilitado. El foco decisional es 500 aves totales; compra, construcción e inversión mayor siguen bloqueadas."
+  "conclusion": "P1 preliminar no está habilitado. El CAPEX referencial formal del galpón reduce parcialmente el bloqueo constructivo, pero compra, construcción e inversión mayor siguen bloqueadas.",
+  "referencia_capex_galpon": {
+    "fuente": "galpon-nacho@b100ae0",
+    "documento": "cotización formal V8",
+    "total_general_clp": 5547765,
+    "superficie_m2": 72,
+    "costo_m2_aprox_clp": 77052,
+    "advertencia": "referencial; no autoriza construcción"
+  }
 }

@@ -22,11 +22,19 @@
     },
     {
       "id": "A03",
-      "titulo": "CAPEX total pendiente",
-      "severidad": "pendiente",
+      "titulo": "CAPEX total parcialmente identificado; faltantes críticos",
+      "severidad": "alta",
       "dimension": "financiera",
-      "descripcion": "Solo está identificado el CAPEX conocido de pollonas por $4.250.000; falta infraestructura, agua, energía, transporte y equipamiento.",
-      "estado": "pendiente"
+      "descripcion": "Existe CAPEX referencial formal de galpón por $5.547.765 ($77.052/m²) desde galpon-nacho@b100ae0, además del antecedente de pollonas por $4.250.000. Faltan agua, energía, equipamiento, logística, capital de trabajo y flujo operativo.",
+      "estado": "abierta",
+      "referencia_capex_galpon": {
+        "fuente": "galpon-nacho@b100ae0",
+        "documento": "cotización formal V8",
+        "total_general_clp": 5547765,
+        "superficie_m2": 72,
+        "costo_m2_aprox_clp": 77052,
+        "advertencia": "referencial; no autoriza construcción"
+      }
     },
     {
       "id": "A04",
@@ -83,7 +91,23 @@
       "dimension": "decision",
       "descripcion": "La compra de 500 pollonas debe quedar bloqueada hasta validar mercado, costos completos y condiciones operativas.",
       "estado": "bloqueante"
+    },
+    {
+      "id": "A11",
+      "titulo": "Cotización de galpón no autoriza construcción",
+      "severidad": "alta",
+      "dimension": "decision",
+      "descripcion": "La cotización formal V8 reduce parcialmente el bloqueo constructivo, pero no autoriza construcción ni inversión mayor hasta cerrar evaluación financiera, comercial y logística.",
+      "estado": "bloqueante",
+      "referencia_capex_galpon": {
+        "fuente": "galpon-nacho@b100ae0",
+        "documento": "cotización formal V8",
+        "total_general_clp": 5547765,
+        "superficie_m2": 72,
+        "costo_m2_aprox_clp": 77052,
+        "advertencia": "referencial; no autoriza construcción"
+      }
     }
   ],
-  "nota": "Alertas críticas preliminares P0. No autorizan inversión ni compra de 500 pollonas."
+  "nota": "Alertas críticas preliminares P0. Incorporan CAPEX referencial formal del galpón, pero no autorizan inversión, construcción ni compra de 500 pollonas."
 }

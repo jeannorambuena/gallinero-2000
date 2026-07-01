@@ -14,16 +14,25 @@
   "proximos_pasos": [
     "validar brecha comercial 76.1 bandejas/semana antes del objetivo tentativo enero 2027",
     "Nacho: levantar clientes, cantidades, precios, frecuencia, forma de pago y boleta/factura",
-    "Jean: cotizar/diseñar galpón 500 como estudio técnico sin construir",
-    "crear más adelante repo separado galpon-nacho para roadmap constructivo",
+    "Jean: usar cotización formal V8 del galpón como referencia constructiva trazable, sin construir",
     "dimensionar agua/energía",
-    "completar CAPEX y flujo 500",
+    "completar CAPEX de equipamiento, logística, capital de trabajo e imprevistos",
+    "recalcular escenarios 500, 1000 y 2000 aves con CAPEX, OPEX, EBITDA, flujo de caja, payback y punto de equilibrio",
     "resolver logística y legal/contable"
   ],
-  "decision_actual": "P0 amarillo; no rechazo. P1 preliminar no habilitado; solo inversión menor de desbloqueo.",
+  "decision_actual": "P0 amarillo; no rechazo. CAPEX referencial formal del galpón disponible, pero P1 preliminar no habilitado; solo inversión menor de desbloqueo.",
   "interpretacion_semaforo": "Amarillo no significa no viable; significa información crítica pendiente para decidir con seguridad.",
   "lineas_de_trabajo": [
     "Línea comercial: Nacho valida ventas, clientes, precios, frecuencia, forma de pago y boleta/factura.",
-    "Línea constructiva: Jean cotiza y diseña el galpón como estudio técnico, sin autorización de construcción."
-  ]
+    "Línea constructiva: Jean integra cotización formal V8 como estudio técnico trazable, sin autorización de construcción.",
+    "Línea financiera: recalcular escenarios 500/1000/2000 con CAPEX/OPEX/EBITDA/flujo/payback/punto de equilibrio."
+  ],
+  "capex_galpon_referencial": {
+    "fuente": "galpon-nacho@b100ae0",
+    "documento": "cotización formal V8",
+    "total_general_clp": 5547765,
+    "superficie_m2": 72,
+    "costo_m2_aprox_clp": 77052,
+    "advertencia": "referencial; no autoriza construcción"
+  }
 }

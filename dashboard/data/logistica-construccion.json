@@ -3,40 +3,43 @@
   "fase": "P0 — Diagnóstico real",
   "estado": "preliminar",
   "constructivo": {
-    "estado": "pendiente/amarillo",
+    "estado": "parcial/amarillo",
     "datos_conocidos": [
       "galpón actual: 9 x 3 m = 27 m2",
       "bodega actual: 2 x 3 m = 6 m2",
       "terreno inmediato disponible: 19 x 7 m = 133 m2",
       "terreno total: 10.000 m2",
-      "diseño deseado más adelante: estándar intermedio con techo zinc, laterales zinc abajo y malla arriba, piso tierra con cama de viruta y bodega aparte ampliada"
+      "diseño deseado más adelante: estándar intermedio con techo zinc, laterales zinc abajo y malla arriba, piso tierra con cama de viruta y bodega aparte ampliada",
+      "cotización formal V8 disponible: galpón metálico simple 12 x 6 m = 72 m²",
+      "total materiales referenciales: $4.347.765",
+      "mano de obra especializada: $1.200.000 (20 días x $60.000/día)",
+      "total general referencial: $5.547.765; costo/m² aprox. $77.052",
+      "alcance excluye radier, instalaciones, electricidad, agua, aislación y cálculo estructural firmado"
     ],
     "riesgos": [
       "bodega actual insuficiente para escalar",
-      "todavía no existe diseño constructivo definitivo",
-      "todavía no existe cubicación de materiales",
-      "todavía no existe cotización actual de materiales",
+      "la cotización V8 no equivale a autorización de construcción",
+      "falta validar si 72 m² sirve para 500 aves o requiere ampliación/ajuste",
+      "transporte y logística rural pueden modificar costos reales",
       "sin resolver ventilación, sombra, drenaje y humedad, el escalamiento puede aumentar riesgos sanitarios"
     ],
     "datos_faltantes": [
       "croquis del terreno inmediato",
       "ubicación propuesta de galpón ampliado",
       "ubicación y tamaño de bodega ampliada",
-      "medidas objetivo de ampliación o nuevo galpón",
+      "validación de superficie objetivo para 500 aves",
       "orientación, ventilación, sombra y drenaje",
-      "diseño preliminar del galpón",
-      "cubicación de materiales",
-      "cotización actualizada por partida",
-      "transporte",
-      "mano de obra y tiempos de construcción"
+      "ajuste del diseño V8 si cambia escala o alcance",
+      "transporte y acopio de materiales",
+      "validación estructural/profesional si se ejecuta"
     ],
-    "condicion_para_avanzar": "Definir alternativa constructiva preliminar, croquis, tamaño de galpón/bodega, ventilación, drenaje, cubicación, listado de materiales, transporte, mano de obra y cotizaciones iniciales antes de P1 preliminar. Esto no autoriza construir.",
+    "condicion_para_avanzar": "Usar V8 como base referencial formal, validar aplicabilidad a 500 aves, completar logística/transporte, agua, energía, equipamiento y evaluación financiera antes de P1 preliminar. Esto no autoriza construir.",
     "responsable_estudio": "Jean",
     "rol_jean": "Jean queda encargado de apoyar la línea de construcción del galpón levantando datos reales de diseño, cubicación, materiales, costos por partida, transporte y mano de obra.",
     "advertencia_autorizacion": "La línea constructiva puede avanzar como estudio técnico, pero no debe interpretarse como autorización para construir.",
     "repo_futuro_recomendado": {
       "nombre": "galpon-nacho",
-      "estado": "no crear todavía; dejar como roadmap técnico constructivo",
+      "estado": "creado; fuente técnica de cotización formal V8",
       "alcance": [
         "diseño del galpón",
         "planos en FreeCAD",
@@ -53,6 +56,14 @@
         "costos por partida",
         "alternativas para 500 aves y ampliación futura"
       ]
+    },
+    "referencia_capex_galpon": {
+      "fuente": "galpon-nacho@b100ae0",
+      "documento": "cotización formal V8",
+      "total_general_clp": 5547765,
+      "superficie_m2": 72,
+      "costo_m2_aprox_clp": 77052,
+      "advertencia": "referencial; no autoriza construcción"
     }
   },
   "logistico": {
@@ -84,5 +95,5 @@
     ],
     "condicion_para_avanzar": "Validar acceso, descarga, acopio, transporte interno, transporte de pollonas/materiales y restricciones de invierno antes de P1 preliminar."
   },
-  "advertencia": "No se puede cerrar P0 ni iniciar P1 definitivo sin resolver riesgos constructivos y logísticos críticos. La construcción no está autorizada."
+  "advertencia": "No se puede iniciar P1 definitivo sin resolver riesgos comerciales, financieros, constructivos y logísticos críticos. La construcción no está autorizada."
 }

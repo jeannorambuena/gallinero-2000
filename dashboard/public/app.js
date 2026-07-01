@@ -32,13 +32,13 @@ const FALLBACKS = {
     brecha: 76.1,
     agua: '115.7–154.3 L/día',
     superficie: 100,
-    costoGalpon: 'pendiente de cotización'
+    costoGalpon: '$5.547.765 ref. 72 m2'
   }
 };
 
 const RISK_COPY = {
   comercial: 'Nacho debe validar clientes, cantidades, precios, frecuencia, pago y boleta/factura.',
-  financiera: 'CAPEX y flujo siguen incompletos.',
+  financiera: 'CAPEX referencial del galpón disponible; CAPEX total y flujo siguen incompletos.',
   logistica: 'Acceso rural e invierno afectan materiales y operación.',
   sanitaria: 'Humedad, calor y manejo de agua aún requieren mejoras.',
   agua: 'Falta dimensionamiento definitivo de caudal, presión y respaldo.',
@@ -75,7 +75,7 @@ const BLOCKERS = [
   'Amarillo no significa no viable; significa información crítica pendiente',
   'Mercado no validado para 104.1 bandejas/semana',
   'Faltan cerca de 76.1 bandejas/semana adicionales validadas',
-  'CAPEX total pendiente',
+  'CAPEX referencial del galpón disponible, pero CAPEX total del proyecto sigue incompleto',
   'Flujo proyectado incompleto',
   'Agua sin dimensionamiento definitivo',
   'Energía solar sin dimensionamiento definitivo',
@@ -87,7 +87,7 @@ const BLOCKERS = [
 const ALLOWED_ACTIONS = [
   'Levantar cotizaciones',
   'Línea comercial: Nacho valida ventas, clientes y canales',
-  'Línea constructiva: Jean cotiza y diseña galpón como estudio técnico',
+  'Línea constructiva: Jean usa cotización formal V8 como estudio técnico trazable',
   'Medir agua y energía',
   'Preparar croquis',
   'Avanzar en CAPEX',
@@ -125,6 +125,12 @@ function findIndicator(data, key) {
 function formatValue(value, unit = '') {
   if (value === undefined || value === null || value === '') return 'pendiente';
   return `${value}${unit ? ` ${unit}` : ''}`;
+}
+
+function formatCurrency(value) {
+  if (value === undefined || value === null || value === '' || value === 'pendiente') return 'pendiente';
+  if (Number.isNaN(Number(value))) return String(value);
+  return `$${Number(value).toLocaleString('es-CL')}`;
 }
 
 function createMetric({ label, value, detail = '', tone = '' }) {
@@ -200,7 +206,7 @@ function renderEscenario500({ validacionComercial, comerciales, flujoCaja, galpo
     { label: 'Brecha comercial', value: formatValue(escenario.brecha_bandejas_semana ?? findIndicator(comerciales, 'brecha_bandejas_semana_para_500') ?? base.brecha, 'bandejas/semana'), tone: 'risk' },
     { label: 'Agua estimada', value: base.agua },
     { label: 'Superficie útil galpón', value: formatValue(galpon500.superficie_util_m2 ?? base.superficie, 'm2') },
-    { label: 'Costo estimado galpón', value: galpon500.costo_total === 'pendiente' ? base.costoGalpon : (galpon500.costo_total ?? base.costoGalpon), tone: 'pending' }
+    { label: 'Costo estimado galpón', value: galpon500.costo_total === 'pendiente' ? base.costoGalpon : formatCurrency(galpon500.costo_total ?? base.costoGalpon), detail: galpon500.fuente_costo_m2 ?? 'referencial formal V8', tone: 'pending' }
   ];
 
   renderMetrics('escenario-500-metricas', metrics);
@@ -233,9 +239,10 @@ function renderEscalas(galpones) {
       </div>
       <dl>
         <div><dt>Superficie útil</dt><dd>${scenario.superficie_util_m2} m2</dd></div>
-        <div><dt>Costo por m2</dt><dd>pendiente</dd></div>
-        <div><dt>Costo total galpón</dt><dd>pendiente</dd></div>
+        <div><dt>Costo por m2</dt><dd>${formatCurrency(scenario.costo_m2)}</dd></div>
+        <div><dt>Costo total galpón</dt><dd>${formatCurrency(scenario.costo_total)}</dd></div>
       </dl>
+      <small>${scenario.estado ?? 'referencial; no autoriza inversión'}</small>
     `;
     container.appendChild(card);
   });

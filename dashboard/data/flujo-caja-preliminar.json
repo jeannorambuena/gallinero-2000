@@ -31,26 +31,35 @@
   },
   "capex": {
     "capex_conocido_pollonas_clp": 4250000,
-    "nota": "dato histórico 500 x $8.500; estrategia de compra para 500 totales pendiente"
+    "nota": "Pollonas es dato histórico; galpón es referencia formal 72 m². El CAPEX total 500 sigue incompleto.",
+    "capex_referencial_galpon_clp": 5547765,
+    "capex_referencial_galpon_costo_m2_clp": 77052,
+    "capex_identificado_referencial_pollonas_mas_galpon_clp": 9797765,
+    "fuente_galpon": "galpon-nacho@b100ae0 cotización formal V8"
   },
   "datos_faltantes": [
     "ingresos por canal 500",
     "costos alimento 500",
     "costos agua/energía",
-    "mano de obra real",
-    "CAPEX total 500",
-    "logística",
+    "equipamiento interior avícola",
+    "logística/transporte/acopio",
+    "capital de trabajo",
+    "CAPEX total 500 completo",
+    "OPEX por escala",
     "formalización"
   ],
   "riesgos": [
     "flujo incompleto no autoriza inversión",
     "margen actual con mano de obra muy bajo",
-    "mercado 500 no validado"
+    "mercado 500 no validado",
+    "usar cotización del galpón como si fuera CAPEX total del proyecto"
   ],
   "criterios_para_avanzar": [
     "flujo mensual completo",
     "CAPEX completo",
+    "OPEX por escala completo",
     "mercado validado",
+    "EBITDA, payback y punto de equilibrio calculados",
     "riesgos críticos resueltos"
   ],
   "indicadores_bloqueados": [
@@ -69,7 +78,39 @@
     {
       "indicador": "Payback",
       "estado": "bloqueado"
+    },
+    {
+      "indicador": "EBITDA",
+      "estado": "bloqueado"
+    },
+    {
+      "indicador": "Punto de equilibrio",
+      "estado": "bloqueado"
     }
   ],
-  "conclusion": "El flujo base 500 sigue pendiente. No autoriza inversión, compra ni construcción."
+  "conclusion": "El flujo base 500 sigue pendiente. Ya existe CAPEX referencial formal del galpón, pero falta completar CAPEX total, OPEX, EBITDA, payback y punto de equilibrio. No autoriza inversión, compra ni construcción.",
+  "referencia_capex_galpon": {
+    "fuente": "galpon-nacho@b100ae0",
+    "documento": "cotización formal V8",
+    "total_general_clp": 5547765,
+    "superficie_m2": 72,
+    "costo_m2_aprox_clp": 77052,
+    "advertencia": "referencial; no autoriza construcción"
+  },
+  "preparacion_escenarios": {
+    "escenarios": [
+      500,
+      1000,
+      2000
+    ],
+    "indicadores_requeridos": [
+      "CAPEX",
+      "OPEX",
+      "EBITDA",
+      "flujo de caja",
+      "payback",
+      "punto de equilibrio"
+    ],
+    "estado": "preparado con CAPEX referencial de galpón; faltan costos operativos, comerciales y capital de trabajo"
+  }
 }

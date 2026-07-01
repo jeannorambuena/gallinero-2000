@@ -1,7 +1,7 @@
 {
   "proyecto": "Gallinero Nacho",
   "fase": "P0 — Diagnóstico real",
-  "estado": "pendiente/amarillo",
+  "estado": "parcial/amarillo",
   "escenario_base": "500 aves totales",
   "capex_conocido": {
     "pollonas": {
@@ -10,20 +10,39 @@
       "monto_clp": 4250000,
       "nota": "antecedente histórico de precio; no implica compra automática de 500 aves adicionales"
     },
-    "monto_total_conocido_clp": 4250000
+    "monto_total_conocido_clp": 4250000,
+    "galpon_referencial_formal": {
+      "proyecto_fuente": "galpon-nacho",
+      "commit_fuente": "b100ae0",
+      "archivo_fuente": "reports/cotizaciones_formales/cotizacion_formal_nexus_a_ignacio_moraga_galpon_nacho_V8.md",
+      "documento": "Cotización referencial formal galpón Nacho V8 / COT-GN-V8-001",
+      "fecha_documento": "2026-06-30",
+      "superficie_m2": 72,
+      "dimensiones": "12 x 6 m",
+      "total_materiales_referenciales_clp": 4347765,
+      "mano_obra_especializada_clp": 1200000,
+      "mano_obra_criterio": "20 días x $60.000/día",
+      "total_general_proyecto_clp": 5547765,
+      "costo_m2_aprox_clp": 77052,
+      "alcance": "Galpón metálico simple sin radier, sin instalaciones, sin electricidad, sin agua, sin aislación y sin cálculo estructural firmado.",
+      "advertencia": "Cotización referencial formal; no constituye autorización automática de construcción."
+    },
+    "monto_total_identificado_referencial_clp": 9797765,
+    "nota_integracion": "Suma pollonas históricas + galpón referencial 72 m²; no equivale a CAPEX total cerrado para 500 aves."
   },
   "capex_pendiente": {
     "monto_total_pendiente": "pendiente",
     "estrategia_compra_reposicion": "pendiente",
     "categorias_pendientes": [
-      "pollonas/reposición según estrategia",
-      "galpón 500",
+      "estrategia de compra/reposición de aves para llegar a 500 totales",
+      "ajuste de galpón a escala y diseño final 500/1000/2000 si aplica",
       "bodega/apoyo",
       "agua",
       "energía solar",
-      "equipamiento",
-      "logística",
-      "mano de obra",
+      "equipamiento interior avícola",
+      "logística/transporte/acopio",
+      "capital de trabajo",
+      "flujo operativo",
       "imprevistos"
     ]
   },
@@ -40,14 +59,32 @@
   ],
   "riesgos": [
     "confundir 500 aves totales con comprar 500 adicionales",
-    "galpón sin costo m2 real",
-    "CAPEX total incompleto"
+    "usar el CAPEX referencial del galpón como autorización de construcción",
+    "CAPEX total del proyecto 500 aún incompleto por agua, energía, equipamiento, logística, capital de trabajo y flujo operativo",
+    "extrapolar costo/m2 de 72 m² a 500/1000/2000 aves sin validar diseño, transporte ni alcance final"
   ],
   "criterios_para_avanzar": [
     "definir estrategia para llegar a 500 aves",
-    "cotizar galpón y sistemas críticos",
-    "separar costos por categoría",
-    "validar flujo 500"
+    "usar cotización formal V8 como base referencial trazable del galpón",
+    "completar CAPEX de agua, energía, equipamiento, logística, capital de trabajo e imprevistos",
+    "preparar escenarios 500, 1000 y 2000 aves con CAPEX, OPEX, EBITDA, flujo de caja, payback y punto de equilibrio",
+    "validar flujo 500 antes de autorizar compra, construcción o inversión mayor"
   ],
-  "conclusion": "CAPEX total para 500 aves sigue pendiente. No autoriza compra ni inversión mayor."
+  "conclusion": "CAPEX referencial formal del galpón disponible ($5.547.765; $77.052/m²), pero el CAPEX total del proyecto 500 sigue incompleto. No autoriza compra, construcción ni inversión mayor.",
+  "referencia_capex_galpon": {
+    "proyecto_fuente": "galpon-nacho",
+    "commit_fuente": "b100ae0",
+    "archivo_fuente": "reports/cotizaciones_formales/cotizacion_formal_nexus_a_ignacio_moraga_galpon_nacho_V8.md",
+    "documento": "Cotización referencial formal galpón Nacho V8 / COT-GN-V8-001",
+    "fecha_documento": "2026-06-30",
+    "superficie_m2": 72,
+    "dimensiones": "12 x 6 m",
+    "total_materiales_referenciales_clp": 4347765,
+    "mano_obra_especializada_clp": 1200000,
+    "mano_obra_criterio": "20 días x $60.000/día",
+    "total_general_proyecto_clp": 5547765,
+    "costo_m2_aprox_clp": 77052,
+    "alcance": "Galpón metálico simple sin radier, sin instalaciones, sin electricidad, sin agua, sin aislación y sin cálculo estructural firmado.",
+    "advertencia": "Cotización referencial formal; no constituye autorización automática de construcción."
+  }
 }
