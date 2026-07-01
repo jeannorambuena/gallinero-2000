@@ -1,17 +1,19 @@
+const DATA_BASE = new URL('../data/', window.location.href);
+
 const DATA_FILES = {
-  resumen: '/data/resumen-ejecutivo-p0.json',
-  estado: '/data/estado-proyecto.json',
-  productivos: '/data/indicadores-productivos.json',
-  comerciales: '/data/indicadores-comerciales.json',
-  validacionComercial: '/data/validacion-comercial.json',
-  logisticaConstruccion: '/data/logistica-construccion.json',
-  referenciasMercado: '/data/referencias_mercado.json',
-  finanzas: '/data/finanzas-preliminares.json',
-  flujoCaja: '/data/flujo-caja-preliminar.json',
-  semaforo: '/data/semaforo-decision.json',
-  criteriosP1: '/data/criterios-p1.json',
-  galpones: '/data/estimacion-galpones.json',
-  alertas: '/data/alertas-p0.json'
+  resumen: new URL('resumen-ejecutivo-p0.json', DATA_BASE).href,
+  estado: new URL('estado-proyecto.json', DATA_BASE).href,
+  productivos: new URL('indicadores-productivos.json', DATA_BASE).href,
+  comerciales: new URL('indicadores-comerciales.json', DATA_BASE).href,
+  validacionComercial: new URL('validacion-comercial.json', DATA_BASE).href,
+  logisticaConstruccion: new URL('logistica-construccion.json', DATA_BASE).href,
+  referenciasMercado: new URL('referencias_mercado.json', DATA_BASE).href,
+  finanzas: new URL('finanzas-preliminares.json', DATA_BASE).href,
+  flujoCaja: new URL('flujo-caja-preliminar.json', DATA_BASE).href,
+  semaforo: new URL('semaforo-decision.json', DATA_BASE).href,
+  criteriosP1: new URL('criterios-p1.json', DATA_BASE).href,
+  galpones: new URL('estimacion-galpones.json', DATA_BASE).href,
+  alertas: new URL('alertas-p0.json', DATA_BASE).href
 };
 
 const FALLBACKS = {
