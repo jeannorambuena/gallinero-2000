@@ -1,7 +1,7 @@
 {
   "proyecto": "Gallinero Nacho",
   "fase": "P0 — Diagnóstico real",
-  "estado": "preliminar",
+  "estado": "parcial; falta distribución por categoría",
   "indicadores": [
     {
       "indicador": "venta_actual_bandejas_semana",
@@ -14,57 +14,57 @@
     },
     {
       "indicador": "bandejas_segunda_semana",
-      "valor": 6,
+      "valor": null,
       "unidad": "bandejas/semana",
-      "formula": "dato declarado",
-      "fuente": "dato declarado por Nacho / cálculo P0",
-      "estado": "confirmado",
-      "observacion": "dato base confirmado"
+      "formula": "pendiente",
+      "fuente": "pendiente de levantar con Nacho",
+      "estado": "pendiente",
+      "observacion": "falta distribución semanal de las 28 bandejas por categoría"
     },
     {
       "indicador": "precio_bandeja_segunda",
       "valor": 5000,
       "unidad": "CLP/bandeja",
       "formula": "dato declarado",
-      "fuente": "dato declarado por Nacho / cálculo P0",
+      "fuente": "dato entregado por Nacho / P0",
       "estado": "confirmado",
-      "observacion": "dato base confirmado"
+      "observacion": "precio por categoría confirmado; no permite calcular promedio sin distribución"
     },
     {
       "indicador": "bandejas_primera_semana",
-      "valor": 14,
+      "valor": null,
       "unidad": "bandejas/semana",
-      "formula": "dato declarado",
-      "fuente": "dato declarado por Nacho / cálculo P0",
-      "estado": "confirmado",
-      "observacion": "dato base confirmado"
+      "formula": "pendiente",
+      "fuente": "pendiente de levantar con Nacho",
+      "estado": "pendiente",
+      "observacion": "falta distribución semanal de las 28 bandejas por categoría"
     },
     {
       "indicador": "precio_bandeja_primera",
       "valor": 6000,
       "unidad": "CLP/bandeja",
       "formula": "dato declarado",
-      "fuente": "dato declarado por Nacho / cálculo P0",
+      "fuente": "dato entregado por Nacho / P0",
       "estado": "confirmado",
-      "observacion": "dato base confirmado"
+      "observacion": "precio por categoría confirmado; no permite calcular promedio sin distribución"
     },
     {
       "indicador": "bandejas_extra_semana",
-      "valor": 8,
+      "valor": null,
       "unidad": "bandejas/semana",
-      "formula": "dato declarado",
-      "fuente": "dato declarado por Nacho / cálculo P0",
-      "estado": "confirmado",
-      "observacion": "dato base confirmado"
+      "formula": "pendiente",
+      "fuente": "pendiente de levantar con Nacho",
+      "estado": "pendiente",
+      "observacion": "falta distribución semanal de las 28 bandejas por categoría"
     },
     {
       "indicador": "precio_bandeja_extra",
       "valor": 7000,
       "unidad": "CLP/bandeja",
       "formula": "dato declarado",
-      "fuente": "dato declarado por Nacho / cálculo P0",
+      "fuente": "dato entregado por Nacho / P0",
       "estado": "confirmado",
-      "observacion": "dato base confirmado"
+      "observacion": "precio por categoría confirmado; no permite calcular promedio sin distribución"
     },
     {
       "indicador": "huevos_por_bandeja",
@@ -113,21 +113,21 @@
     },
     {
       "indicador": "ingreso_semanal_actual",
-      "valor": 170000,
-      "unidad": "CLP/semana",
-      "formula": "6*5000 + 14*6000 + 8*7000",
-      "fuente": "dato declarado por Nacho / cálculo P0",
-      "estado": "confirmado",
-      "observacion": "valor monetario redondeado a entero"
+      "valor": null,
+      "unidad": "pendiente",
+      "formula": "pendiente por distribución de bandejas por categoría",
+      "fuente": "pendiente",
+      "estado": "pendiente",
+      "observacion": "no calcular hasta conocer cuántas bandejas semanales son segunda, primera y extra"
     },
     {
       "indicador": "ingreso_mensual_estimado",
-      "valor": 736667,
-      "unidad": "CLP/mes",
-      "formula": "ingreso_semanal_actual * 52 / 12",
-      "fuente": "dato declarado por Nacho / cálculo P0",
-      "estado": "estimado",
-      "observacion": "valor monetario redondeado a entero"
+      "valor": null,
+      "unidad": "pendiente",
+      "formula": "pendiente por distribución de bandejas por categoría",
+      "fuente": "pendiente",
+      "estado": "pendiente",
+      "observacion": "no calcular hasta conocer cuántas bandejas semanales son segunda, primera y extra"
     },
     {
       "indicador": "huevos_vendidos_semana",
@@ -140,21 +140,21 @@
     },
     {
       "indicador": "precio_promedio_por_bandeja",
-      "valor": 6071,
-      "unidad": "CLP/bandeja",
-      "formula": "ingreso_semanal_actual / 28",
-      "fuente": "dato declarado por Nacho / cálculo P0",
-      "estado": "confirmado",
-      "observacion": "valor monetario redondeado a entero"
+      "valor": null,
+      "unidad": "pendiente",
+      "formula": "pendiente por distribución de bandejas por categoría",
+      "fuente": "pendiente",
+      "estado": "pendiente",
+      "observacion": "no calcular hasta conocer cuántas bandejas semanales son segunda, primera y extra"
     },
     {
       "indicador": "precio_promedio_por_huevo",
-      "valor": 202,
-      "unidad": "CLP/huevo",
-      "formula": "ingreso_semanal_actual / huevos_vendidos_semana",
-      "fuente": "dato declarado por Nacho / cálculo P0",
-      "estado": "confirmado",
-      "observacion": "valor monetario redondeado a entero"
+      "valor": null,
+      "unidad": "pendiente",
+      "formula": "pendiente por distribución de bandejas por categoría",
+      "fuente": "pendiente",
+      "estado": "pendiente",
+      "observacion": "no calcular hasta conocer cuántas bandejas semanales son segunda, primera y extra"
     },
     {
       "indicador": "brecha_bandejas_semana_para_648",
@@ -191,18 +191,28 @@
       "fuente": "dato declarado por Nacho / cálculo P0",
       "estado": "riesgo_comercial",
       "observacion": "crecimiento requerido redondeado a 2 decimales para escenario base 500 aves"
+    },
+    {
+      "indicador": "produccion_semanal_bandejas_aprox",
+      "valor": 30.8,
+      "unidad": "bandejas/semana",
+      "formula": "132 x 7 / 30",
+      "fuente": "datos entregados por Nacho / cálculo P0",
+      "estado": "derivado",
+      "observacion": "producción semanal aproximada, no equivale a venta ni ingreso"
     }
   ],
   "resumen": {
-    "venta_actual": "28 bandejas/semana",
-    "ingreso_semanal_actual": "$170.000",
-    "ingreso_mensual_estimado": "$736.667 aproximadamente",
-    "brecha_considerando_8_bandejas_adicionales": "99 bandejas/semana",
+    "venta_actual": "28 bandejas/semana confirmadas",
+    "precios_confirmados": "segunda $5.000, primera $6.000, extra $7.000",
+    "distribucion_por_categoria": "Pendiente",
+    "precio_promedio_real": "Pendiente",
+    "ingreso_semanal_actual": "Pendiente",
+    "ingreso_mensual_estimado": "Pendiente",
     "semaforo_comercial_preliminar": "amarillo_rojo",
     "venta_estimada_requerida_500_aves": "104.1 bandejas/semana",
     "brecha_actual_500_aves": "76.1 bandejas/semana",
-    "venta_proyectada_requerida_648_aves_historica": "135 bandejas/semana (histórica/referencial)",
-    "brecha_648_aves_historica": "107 bandejas/semana (histórica/referencial)"
+    "nota": "No calcular precio promedio ni ingresos definitivos hasta levantar distribución semanal por categoría."
   },
-  "nota": "indicadores comerciales preliminares; escenario base vigente 500 aves; 648 aves queda histórico/referencial"
+  "nota": "Datos comerciales parciales: venta total y precios por categoría confirmados; falta distribución semanal por categoría para calcular precio promedio e ingresos reales."
 }

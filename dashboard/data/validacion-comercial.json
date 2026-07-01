@@ -1,7 +1,7 @@
 {
   "proyecto": "Gallinero Nacho",
   "fase": "P0 — Diagnóstico real",
-  "estado": "amarillo_rojo",
+  "estado": "parcial/amarillo_rojo",
   "escenario_base": "500 aves totales",
   "venta_actual_bandejas_semana": 28,
   "venta_requerida_500_bandejas_semana": 104.1,
@@ -35,19 +35,18 @@
     "contactos por cantidad"
   ],
   "riesgos": [
+    "falta distribución semanal de 28 bandejas por categoría",
+    "no calcular precio promedio real ni ingresos hasta completar distribución",
     "brecha 76.1 bandejas/semana sin validar",
-    "precios por canal pendientes",
     "formalización para comercios pendiente"
   ],
   "plan_validacion": [
-    "listar clientes actuales",
-    "contactar clientes potenciales",
+    "separar las 28 bandejas semanales actuales entre segunda, primera y extra",
+    "registrar ventas por categoría durante varias semanas",
+    "calcular precio promedio real solo con distribución confirmada",
+    "listar clientes actuales y potenciales",
     "registrar cantidades semanales por cliente",
-    "separar interés de compromiso",
-    "validar precio por canal",
-    "registrar frecuencia de compra",
-    "registrar forma de pago",
-    "registrar requerimiento de boleta/factura"
+    "validar precio por canal, frecuencia, forma de pago y boleta/factura"
   ],
   "criterios_para_avanzar": [
     "compromisos fuertes por canal",
@@ -57,7 +56,7 @@
     "necesidad de boleta/factura identificada",
     "brecha de 76.1 bandejas/semana reducida con evidencia"
   ],
-  "conclusion": "La base 500 requiere validar unas 104.1 bandejas/semana; faltan cerca de 76.1 bandejas/semana sobre la venta actual. El bloqueo comercial sigue siendo el más importante. No comprar sin validar mercado.",
+  "conclusion": "Comercial parcial: venta total y precios por categoría están confirmados, pero falta distribución semanal para calcular precio promedio e ingresos. La brecha 500 sigue bloqueando avance.",
   "urgencia_comercial": {
     "objetivo_tentativo": "enero 2027",
     "fecha_contexto": "junio 2026",
@@ -65,11 +64,24 @@
   },
   "responsable": "Nacho",
   "datos_que_debe_levantar_nacho": [
+    "distribución semanal de bandejas segunda/primera/extra",
     "clientes actuales y potenciales",
     "cantidades comprometibles por cliente",
     "precios por producto/canal",
     "frecuencia de compra",
     "forma de pago",
     "necesidad de boleta o factura"
-  ]
+  ],
+  "precios_por_categoria_clp": {
+    "segunda": 5000,
+    "primera": 6000,
+    "extra": 7000
+  },
+  "distribucion_semanal_por_categoria": {
+    "segunda": "Pendiente",
+    "primera": "Pendiente",
+    "extra": "Pendiente"
+  },
+  "precio_promedio_real_bandeja": "Pendiente",
+  "ingresos_actuales": "Pendiente"
 }

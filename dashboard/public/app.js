@@ -48,11 +48,12 @@ const FALLBACKS = {
 
 const RISK_COPY = {
   comercial: 'Nacho debe validar clientes, cantidades, precios, frecuencia, pago y boleta/factura.',
-  financiera: 'CAPEX referencial del galpón disponible; CAPEX total y flujo siguen incompletos.',
+  productiva: 'Base actual parcialmente confirmada y con alto avance: 148 gallinas, 132 huevos/día y postura aprox. 89,2%.',
+  financiera: 'OPEX parcial confirmado ($310.900/mes), pero ingresos, OPEX total, CAPEX total y flujo siguen incompletos.',
   logistica: 'Acceso rural e invierno afectan materiales y operación.',
   sanitaria: 'Humedad, calor y manejo de agua aún requieren mejoras.',
   agua: 'Falta dimensionamiento definitivo de caudal, presión y respaldo.',
-  energia: 'El sistema solar aún requiere cálculo y cotización.',
+  energia: 'Luz actual $0, pero el sistema no es estable; panel solar pendiente.',
   legal: 'Formalización, permisos y trazabilidad siguen pendientes.',
   contable: 'Registro, impuestos y operación formal siguen pendientes.'
 };
@@ -87,8 +88,10 @@ const BLOCKERS = [
   'Faltan cerca de 76.1 bandejas/semana adicionales validadas',
   'CAPEX referencial del galpón disponible, pero CAPEX total del proyecto sigue incompleto',
   'Flujo proyectado incompleto',
+  'Falta distribución semanal de bandejas por categoría para calcular precio promedio real',
+  'OPEX parcial confirmado no equivale a OPEX total',
   'Agua sin dimensionamiento definitivo',
-  'Energía solar sin dimensionamiento definitivo',
+  'Energía actual no estable; panel solar pendiente',
   'Logística rural/invierno pendiente',
   'Legal/contable pendiente',
   'P1 preliminar no habilitado'
@@ -223,17 +226,25 @@ function renderDecisionState({ resumen, estado, criteriosP1, semaforo }) {
   setText('decision-final', decisionFinal);
 }
 
-function renderOperacion({ productivos, comerciales }) {
+function renderOperacion({ productivos, comerciales, finanzas }) {
   const current = FALLBACKS.operacion;
   const metrics = [
     { label: 'Gallinas actuales', value: findIndicator(productivos, 'gallinas_actuales') ?? current.gallinas, detail: 'aves' },
     { label: 'Producción promedio', value: findIndicator(productivos, 'produccion_promedio_huevos_dia') ?? current.huevosDia, detail: 'huevos/día' },
+    { label: 'Rango junio', value: `${findIndicator(productivos, 'produccion_minima_huevos_dia') ?? 120}–${findIndicator(productivos, 'produccion_maxima_huevos_dia') ?? 142}`, detail: 'huevos/día' },
+    { label: 'Producción semanal', value: findIndicator(productivos, 'produccion_semanal_huevos_aprox') ?? 924, detail: 'huevos/semana' },
+    { label: 'Bandejas producidas aprox.', value: findIndicator(productivos, 'produccion_semanal_bandejas_aprox') ?? 30.8, detail: 'bandejas/semana' },
     { label: 'Venta actual', value: findIndicator(comerciales, 'venta_actual_bandejas_semana') ?? current.bandejasSemana, detail: 'bandejas/semana' },
+    { label: 'Precio promedio real', value: findIndicator(comerciales, 'precio_promedio_por_bandeja') ?? 'Pendiente', detail: 'falta distribución por categoría', tone: 'pending' },
+    { label: 'Precios categoría', value: '$5.000 / $6.000 / $7.000', detail: 'segunda · primera · extra' },
     { label: 'Postura promedio', value: findIndicator(productivos, 'postura_promedio_porcentaje') ?? current.postura, detail: '%' },
     { label: 'Mortalidad acumulada', value: findIndicator(productivos, 'mortalidad_acumulada_porcentaje') ?? current.mortalidad, detail: '%' },
+    { label: 'Alimento mensual', value: findIndicator(productivos, 'consumo_alimento_kg_mes') ?? 550, detail: 'kg/mes' },
+    { label: 'Alimento por gallina', value: findIndicator(productivos, 'alimento_gallina_g_dia') ?? 124, detail: 'g/gallina/día' },
+    { label: 'OPEX parcial', value: formatCurrency(findIndicator(finanzas, 'opex_parcial_confirmado') ?? 310900), detail: 'alimento + agua + vitaminas', tone: 'pending' },
     { label: 'Agua actual', value: findIndicator(productivos, 'consumo_agua_litros_dia') ?? current.aguaDia, detail: 'L/día' },
-    { label: 'Edad lote', value: current.edad, detail: 'semanas' },
-    { label: 'Raza', value: current.raza }
+    { label: 'Gallinero actual', value: '27 m²', detail: '9 x 3 x 2,3 m' },
+    { label: 'Terreno disponible', value: '133 m²', detail: '7 x 19 m' }
   ];
   renderMetrics('operacion-metricas', metrics);
 }
@@ -317,6 +328,27 @@ function renderFinancialIndicators({ finanzas, flujoCaja }) {
       <div class="indicator-status">${formatIndicatorState(indicator.estado)}</div>
       <p>${indicator.estado_analisis ?? 'Pendiente de análisis financiero.'}</p>
       <small>${indicator.formula ? `Fórmula: ${indicator.formula}` : 'Fórmula: pendiente'} · Fuente: ${indicator.fuente ?? 'pendiente'}</small>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function renderAlerts(alertas) {
+  const container = $('alertas-p0');
+  if (!container) return;
+  container.innerHTML = '';
+
+  const items = (alertas?.alertas ?? []).filter((alert) => ['A12', 'A13', 'A14', 'A15'].includes(alert.id));
+  items.forEach((alert) => {
+    const card = document.createElement('article');
+    card.className = `alert-card severity-${normalizeStatus(alert.severidad)}`;
+    card.innerHTML = `
+      <div class="alert-card-head">
+        <span>${alert.id} · ${alert.dimension}</span>
+        <strong>${alert.titulo}</strong>
+      </div>
+      <p>${alert.descripcion}</p>
+      <small>Estado: ${alert.estado}</small>
     `;
     container.appendChild(card);
   });
@@ -428,7 +460,7 @@ function renderRisks(semaforo) {
   container.innerHTML = '';
 
   const dimensions = semaforo?.dimensiones ?? {};
-  const orderedKeys = ['comercial', 'financiera', 'logistica', 'sanitaria', 'agua', 'energia', 'legal', 'contable'];
+  const orderedKeys = ['productiva', 'comercial', 'financiera', 'logistica', 'sanitaria', 'agua', 'energia', 'legal', 'contable'];
 
   orderedKeys.forEach((key) => {
     const estado = dimensions[key]?.estado ?? 'pendiente';
@@ -448,6 +480,7 @@ function renderRisks(semaforo) {
 function labelForRisk(key) {
   const labels = {
     comercial: 'Comercial',
+    productiva: 'Productivo',
     financiera: 'Financiero',
     logistica: 'Logístico',
     sanitaria: 'Sanitario',
@@ -492,6 +525,7 @@ async function init() {
   renderEscenario500(data);
   renderEscalas(data.galpones);
   renderFinancialIndicators(data);
+  renderAlerts(data.alertas);
   renderWorkstreams(data);
   renderMarketReferences(data.referenciasMercado);
   renderSemaforo();

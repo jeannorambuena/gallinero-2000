@@ -1,7 +1,7 @@
 {
   "proyecto": "Gallinero Nacho",
   "fase": "P0 — Diagnóstico real",
-  "estado": "pendiente/amarillo",
+  "estado": "pendiente/amarillo/parcial",
   "escenario_base": "500 aves totales",
   "escenario_500": {
     "aves": 500,
@@ -15,19 +15,50 @@
     "estado": "histórico/referencial"
   },
   "ingresos_actuales": {
-    "ingreso_semanal_actual_clp": 170000,
-    "ingreso_mensual_estimado_clp": 736667,
-    "venta_actual_bandejas_semana": 28
+    "venta_actual_bandejas_semana": 28,
+    "precios_por_categoria_clp": {
+      "segunda": 5000,
+      "primera": 6000,
+      "extra": 7000
+    },
+    "distribucion_semanal_por_categoria": {
+      "segunda": "Pendiente",
+      "primera": "Pendiente",
+      "extra": "Pendiente"
+    },
+    "precio_promedio_real_bandeja": "Pendiente",
+    "ingreso_semanal_actual_clp": "Pendiente",
+    "ingreso_mensual_estimado_clp": "Pendiente",
+    "nota": "No calcular ingresos hasta conocer distribución semanal por categoría."
   },
   "costos_actuales": {
-    "total_costos_conocidos_clp": 534900
+    "alimento_mensual_clp": 284900,
+    "agua_mensual_clp": 6000,
+    "vitaminas_mensual_clp": 20000,
+    "luz_mensual_actual_clp": 0,
+    "luz_mensual_actual_observacion": "costo actual $0, sistema no estable; panel solar pendiente",
+    "opex_parcial_confirmado_clp": 310900,
+    "opex_total_proyecto_clp": "Pendiente",
+    "faltantes_opex": [
+      "transporte/reparto",
+      "envases/bandejas",
+      "cama/viruta",
+      "medicamentos",
+      "energía estable/panel solar",
+      "mano de obra",
+      "mantenciones",
+      "sanitización",
+      "imprevistos"
+    ]
   },
   "mano_obra_referencial": {
-    "monto_clp": 182000
+    "monto_clp": "Pendiente",
+    "nota": "mano de obra no incluida en OPEX parcial confirmado"
   },
   "margenes_actuales": {
-    "margen_sin_mano_obra_clp": 201767,
-    "margen_con_mano_obra_clp": 19767
+    "margen_sin_mano_obra_clp": "Pendiente",
+    "margen_con_mano_obra_clp": "Pendiente",
+    "nota": "no calcular margen sin ingresos reales ni OPEX total"
   },
   "capex": {
     "capex_conocido_pollonas_clp": 4250000,
@@ -41,19 +72,29 @@
     "capex_referencial_galpon_costo_gallina_clp": 11096
   },
   "datos_faltantes": [
-    "ingresos por canal 500",
-    "costos alimento 500",
-    "costos agua/energía",
+    "distribución semanal de 28 bandejas por categoría",
+    "precio promedio real por bandeja",
+    "ingresos semanales y mensuales reales",
+    "transporte/reparto",
+    "envases/bandejas",
+    "cama/viruta",
+    "medicamentos",
+    "energía estable/panel solar",
+    "mano de obra",
+    "mantenciones",
+    "sanitización",
+    "imprevistos",
     "equipamiento interior avícola",
-    "logística/transporte/acopio",
     "capital de trabajo",
     "CAPEX total 500 completo",
-    "OPEX por escala",
-    "formalización"
+    "validación técnica final del módulo 500",
+    "formalización comercial"
   ],
   "riesgos": [
     "flujo incompleto no autoriza inversión",
-    "margen actual con mano de obra muy bajo",
+    "precios por categoría confirmados, pero distribución pendiente bloquea ingreso real",
+    "OPEX parcial confirmado no equivale a OPEX total",
+    "sistema eléctrico actual no estable; panel solar pendiente",
     "mercado 500 no validado",
     "usar cotización del galpón como si fuera CAPEX total del proyecto"
   ],
@@ -91,7 +132,7 @@
       "estado": "bloqueado"
     }
   ],
-  "conclusion": "El flujo base 500 sigue pendiente. El dashboard muestra todos los indicadores financieros; los que no tienen datos suficientes quedan como Pendiente y no autorizan inversión, compra ni construcción.",
+  "conclusion": "El flujo base 500 sigue bloqueado. Hay avance real en producción, precios por categoría y OPEX parcial ($310.900/mes), pero faltan distribución de ventas, ingresos reales, OPEX total, CAPEX total y energía estable. No autoriza compra, construcción ni inversión mayor.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",
@@ -204,28 +245,76 @@
       "escenario": "500 aves"
     },
     {
+      "nombre": "OPEX parcial confirmado",
+      "valor": 310900,
+      "unidad": "CLP/mes",
+      "estado": "parcial",
+      "descripcion_corta": "Suma confirmada de alimento, agua y vitaminas actuales.",
+      "estado_analisis": "Parcial confirmado: $284.900 alimento + $6.000 agua + $20.000 vitaminas. No es OPEX total del proyecto.",
+      "formula": "$284.900 + $6.000 + $20.000",
+      "fuente": "datos entregados por Nacho / cálculo P0",
+      "escenario": "operación actual",
+      "id": "opex_parcial_confirmado"
+    },
+    {
       "id": "opex_mensual_total",
       "nombre": "OPEX mensual total",
       "valor": null,
       "unidad": "CLP/mes",
       "estado": "pendiente",
       "descripcion_corta": "Costo mensual total de operar el gallinero.",
-      "estado_analisis": "Pendiente porque faltan costos completos de alimento, energía, agua, sanidad, mano de obra y reposición para 500 aves.",
-      "formula": "suma de costos operativos mensuales",
+      "estado_analisis": "Pendiente: el OPEX confirmado es parcial. Faltan transporte, envases, cama/viruta, medicamentos, energía estable, mano de obra, mantenciones, sanitización e imprevistos.",
+      "formula": "OPEX parcial + partidas pendientes",
       "fuente": "pendiente",
       "escenario": "500 aves"
     },
     {
       "id": "opex_alimento",
       "nombre": "OPEX alimento",
+      "valor": 284900,
+      "unidad": "CLP/mes",
+      "estado": "parcial",
+      "descripcion_corta": "Costo mensual confirmado de alimento actual.",
+      "estado_analisis": "Parcial confirmado: 22 sacos/mes x $12.950. No cubre OPEX total ni escala 500.",
+      "formula": "22 x $12.950",
+      "fuente": "datos entregados por Nacho / cálculo P0",
+      "escenario": "operación actual"
+    },
+    {
+      "nombre": "OPEX agua actual",
+      "valor": 6000,
+      "unidad": "CLP/mes",
+      "estado": "parcial",
+      "descripcion_corta": "Costo mensual aproximado confirmado de agua actual.",
+      "estado_analisis": "Parcial confirmado: agua mensual actual aproximada. Falta dimensionar agua para 500 aves.",
+      "formula": "dato declarado",
+      "fuente": "dato entregado por Nacho / P0",
+      "escenario": "operación actual",
+      "id": "opex_agua_actual"
+    },
+    {
+      "nombre": "OPEX vitaminas actual",
+      "valor": 20000,
+      "unidad": "CLP/mes",
+      "estado": "parcial",
+      "descripcion_corta": "Costo mensual confirmado de vitaminas actual.",
+      "estado_analisis": "Parcial confirmado: vitaminas mensuales actuales. Falta completar sanidad/medicamentos.",
+      "formula": "dato declarado",
+      "fuente": "dato entregado por Nacho / P0",
+      "escenario": "operación actual",
+      "id": "opex_vitaminas_actual"
+    },
+    {
+      "nombre": "Energía estable",
       "valor": null,
       "unidad": "CLP/mes",
       "estado": "pendiente",
-      "descripcion_corta": "Costo mensual de alimentación.",
-      "estado_analisis": "Pendiente para 500 aves porque falta consumo y precio actualizado por escala.",
-      "formula": "kg alimento/mes x precio/kg",
+      "descripcion_corta": "Sistema eléctrico estable para operación y monitoreo.",
+      "estado_analisis": "Pendiente: luz mensual actual $0, pero el sistema no es estable; panel solar urgente pendiente.",
+      "formula": "dimensionamiento solar + cotización",
       "fuente": "pendiente",
-      "escenario": "500 aves"
+      "escenario": "500 aves",
+      "id": "energia_estable"
     },
     {
       "id": "opex_mano_obra_operacion",
@@ -258,8 +347,8 @@
       "unidad": "CLP/mes",
       "estado": "pendiente",
       "descripcion_corta": "Ventas mensuales esperadas del escenario analizado.",
-      "estado_analisis": "Pendiente porque falta validar clientes, precios y volumen vendible de 500 aves.",
-      "formula": "bandejas vendidas/mes x precio promedio",
+      "estado_analisis": "Pendiente: existen precios por categoría, pero falta distribución semanal de las 28 bandejas entre segunda, primera y extra.",
+      "formula": "bandejas por categoría x precio x frecuencia mensual",
       "fuente": "pendiente",
       "escenario": "500 aves"
     },
@@ -270,8 +359,8 @@
       "unidad": "CLP/bandeja",
       "estado": "pendiente",
       "descripcion_corta": "Precio medio al que se vendería cada bandeja.",
-      "estado_analisis": "Pendiente porque falta validar precios por canal y forma de venta.",
-      "formula": "ingresos / bandejas vendidas",
+      "estado_analisis": "Pendiente: no calcular precio promedio real hasta conocer la distribución semanal de bandejas por categoría.",
+      "formula": "ingreso semanal real / 28 bandejas",
       "fuente": "pendiente",
       "escenario": "500 aves"
     },
@@ -294,7 +383,7 @@
       "unidad": "CLP/mes",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Diferencia entre ingresos y costos directos.",
-      "estado_analisis": "Bloqueado por datos: faltan ingresos proyectados y costos directos completos.",
+      "estado_analisis": "Bloqueado por datos: faltan ingresos reales por categoría, OPEX total y/o CAPEX total.",
       "formula": "ingresos - costos directos",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -306,7 +395,7 @@
       "unidad": "CLP/mes",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Resultado operacional antes de intereses, impuestos, depreciación y amortización.",
-      "estado_analisis": "Bloqueado por datos: no se puede calcular hasta tener ingresos y OPEX mensual completo.",
+      "estado_analisis": "Bloqueado por datos: faltan ingresos reales por categoría, OPEX total y/o CAPEX total.",
       "formula": "ingresos operacionales - costos operativos",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -318,7 +407,7 @@
       "unidad": "CLP/mes",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Caja neta mensual luego de ingresos, costos e inversiones/prorrateos definidos.",
-      "estado_analisis": "Bloqueado por datos: requiere ingresos, OPEX, CAPEX total y capital de trabajo.",
+      "estado_analisis": "Bloqueado por datos: faltan ingresos reales por categoría, OPEX total y/o CAPEX total.",
       "formula": "ingresos - egresos operativos - egresos de inversión según período",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -330,7 +419,7 @@
       "unidad": "CLP/año",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Caja neta acumulada anual del proyecto.",
-      "estado_analisis": "Bloqueado por datos: requiere flujo mensual completo o proyección anual.",
+      "estado_analisis": "Bloqueado por datos: faltan ingresos reales por categoría, OPEX total y/o CAPEX total.",
       "formula": "suma de flujos mensuales",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -342,7 +431,7 @@
       "unidad": "bandejas/mes",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Ventas mínimas necesarias para cubrir costos.",
-      "estado_analisis": "Bloqueado por datos: requiere costos fijos, costos variables y precio promedio por bandeja.",
+      "estado_analisis": "Bloqueado por datos: faltan ingresos reales por categoría, OPEX total y/o CAPEX total.",
       "formula": "costos fijos / margen unitario",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -354,7 +443,7 @@
       "unidad": "meses",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Tiempo necesario para recuperar la inversión.",
-      "estado_analisis": "Bloqueado por flujo: requiere inversión total y flujo neto mensual/anual.",
+      "estado_analisis": "Bloqueado: no calcular ROI, VAN, TIR ni Payback hasta completar ingresos, OPEX total y CAPEX total.",
       "formula": "inversión total / flujo neto periódico",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -366,7 +455,7 @@
       "unidad": "%",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Retorno porcentual sobre la inversión.",
-      "estado_analisis": "Bloqueado por datos: requiere utilidad o flujo neto y CAPEX total.",
+      "estado_analisis": "Bloqueado: no calcular ROI, VAN, TIR ni Payback hasta completar ingresos, OPEX total y CAPEX total.",
       "formula": "resultado neto / inversión total",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -378,7 +467,7 @@
       "unidad": "CLP",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Valor actual neto de los flujos futuros.",
-      "estado_analisis": "Bloqueado por flujo: requiere flujo de caja proyectado, tasa de descuento e inversión total.",
+      "estado_analisis": "Bloqueado: no calcular ROI, VAN, TIR ni Payback hasta completar ingresos, OPEX total y CAPEX total.",
       "formula": "suma de flujos descontados - inversión inicial",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -390,7 +479,7 @@
       "unidad": "%",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Tasa de retorno implícita del proyecto.",
-      "estado_analisis": "Bloqueado por flujo: requiere flujo de caja proyectado por períodos.",
+      "estado_analisis": "Bloqueado: no calcular ROI, VAN, TIR ni Payback hasta completar ingresos, OPEX total y CAPEX total.",
       "formula": "tasa que hace VAN = 0",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -414,7 +503,7 @@
       "unidad": "CLP/bandeja",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Costo estimado de producir cada bandeja.",
-      "estado_analisis": "Bloqueado por datos: requiere OPEX mensual completo y producción vendible mensual.",
+      "estado_analisis": "Bloqueado por datos: faltan ingresos reales por categoría, OPEX total y/o CAPEX total.",
       "formula": "OPEX mensual total / bandejas vendibles mensuales",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -424,7 +513,7 @@
     "capex_total_proyecto",
     "capital_trabajo_inicial",
     "opex_mensual_total",
-    "opex_alimento",
+    "energia_estable",
     "opex_mano_obra_operacion",
     "opex_agua_energia_sanidad",
     "ingresos_mensuales_proyectados",

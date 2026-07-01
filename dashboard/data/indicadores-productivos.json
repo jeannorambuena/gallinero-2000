@@ -1,14 +1,14 @@
 {
   "proyecto": "Gallinero Nacho",
   "fase": "P0 — Diagnóstico real",
-  "estado": "confirmado",
+  "estado": "parcialmente confirmado / alto avance",
   "indicadores": [
     {
       "indicador": "gallinas_iniciales",
       "valor": 150,
       "unidad": "aves",
       "formula": "dato declarado",
-      "fuente": "dato declarado por Nacho / cálculo P0",
+      "fuente": "datos entregados por Nacho / cálculo P0",
       "estado": "confirmado",
       "observacion": "dato base confirmado"
     },
@@ -17,7 +17,7 @@
       "valor": 148,
       "unidad": "aves",
       "formula": "dato declarado",
-      "fuente": "dato declarado por Nacho / cálculo P0",
+      "fuente": "datos entregados por Nacho / cálculo P0",
       "estado": "confirmado",
       "observacion": "dato base confirmado"
     },
@@ -26,45 +26,45 @@
       "valor": 2,
       "unidad": "aves",
       "formula": "dato declarado",
-      "fuente": "dato declarado por Nacho / cálculo P0",
+      "fuente": "datos entregados por Nacho / cálculo P0",
       "estado": "confirmado",
-      "observacion": "dato base confirmado"
+      "observacion": "mortalidad actual confirmada"
     },
     {
       "indicador": "produccion_promedio_huevos_dia",
       "valor": 132,
       "unidad": "huevos/día",
-      "formula": "dato declarado",
-      "fuente": "dato declarado por Nacho / cálculo P0",
+      "formula": "dato declarado junio 2026",
+      "fuente": "datos entregados por Nacho / cálculo P0",
       "estado": "confirmado",
-      "observacion": "dato base confirmado"
+      "observacion": "promedio diario confirmado para junio"
     },
     {
       "indicador": "produccion_minima_huevos_dia",
       "valor": 120,
       "unidad": "huevos/día",
-      "formula": "dato declarado",
-      "fuente": "dato declarado por Nacho / cálculo P0",
+      "formula": "dato declarado junio 2026",
+      "fuente": "datos entregados por Nacho / cálculo P0",
       "estado": "confirmado",
-      "observacion": "dato base confirmado"
+      "observacion": "día bajo confirmado"
     },
     {
       "indicador": "produccion_maxima_huevos_dia",
       "valor": 142,
       "unidad": "huevos/día",
-      "formula": "dato declarado",
-      "fuente": "dato declarado por Nacho / cálculo P0",
+      "formula": "dato declarado junio 2026",
+      "fuente": "datos entregados por Nacho / cálculo P0",
       "estado": "confirmado",
-      "observacion": "dato base confirmado"
+      "observacion": "día alto confirmado"
     },
     {
       "indicador": "superficie_gallinero_m2",
       "valor": 27,
       "unidad": "m2",
-      "formula": "dato declarado",
-      "fuente": "dato declarado por Nacho / cálculo P0",
-      "estado": "confirmado",
-      "observacion": "dato base confirmado"
+      "formula": "9 x 3",
+      "fuente": "datos entregados por Nacho / cálculo P0",
+      "estado": "derivado",
+      "observacion": "superficie actual calculada"
     },
     {
       "indicador": "consumo_agua_litros_dia",
@@ -80,9 +80,9 @@
       "valor": 89.2,
       "unidad": "%",
       "formula": "132 / 148 * 100",
-      "fuente": "dato declarado por Nacho / cálculo P0",
-      "estado": "confirmado",
-      "observacion": "porcentaje redondeado a 1 decimal"
+      "fuente": "datos entregados por Nacho / cálculo P0",
+      "estado": "derivado",
+      "observacion": "porcentaje aproximado redondeado a 1 decimal"
     },
     {
       "indicador": "postura_minima_porcentaje",
@@ -107,9 +107,9 @@
       "valor": 1.3,
       "unidad": "%",
       "formula": "2 / 150 * 100",
-      "fuente": "dato declarado por Nacho / cálculo P0",
-      "estado": "confirmado",
-      "observacion": "porcentaje redondeado a 1 decimal"
+      "fuente": "datos entregados por Nacho / cálculo P0",
+      "estado": "derivado",
+      "observacion": "porcentaje aproximado redondeado a 1 decimal"
     },
     {
       "indicador": "densidad_actual_aves_m2",
@@ -128,7 +128,124 @@
       "fuente": "dato declarado por Nacho / cálculo P0",
       "estado": "confirmado",
       "observacion": "valor redondeado a 2 decimales"
+    },
+    {
+      "indicador": "produccion_semanal_huevos_aprox",
+      "valor": 924,
+      "unidad": "huevos/semana",
+      "formula": "132 x 7",
+      "fuente": "datos entregados por Nacho / cálculo P0",
+      "estado": "derivado",
+      "observacion": "producción semanal aproximada desde promedio diario"
+    },
+    {
+      "indicador": "produccion_semanal_bandejas_aprox",
+      "valor": 30.8,
+      "unidad": "bandejas/semana",
+      "formula": "924 / 30",
+      "fuente": "datos entregados por Nacho / cálculo P0",
+      "estado": "derivado",
+      "observacion": "bandejas aproximadas producidas por semana"
+    },
+    {
+      "indicador": "consumo_alimento_sacos_mes",
+      "valor": 22,
+      "unidad": "sacos/mes",
+      "formula": "dato declarado",
+      "fuente": "datos entregados por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "consumo mensual confirmado"
+    },
+    {
+      "indicador": "peso_saco_alimento_kg",
+      "valor": 25,
+      "unidad": "kg/saco",
+      "formula": "dato declarado",
+      "fuente": "datos entregados por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "peso por saco confirmado"
+    },
+    {
+      "indicador": "consumo_alimento_kg_mes",
+      "valor": 550,
+      "unidad": "kg/mes",
+      "formula": "22 x 25",
+      "fuente": "datos entregados por Nacho / cálculo P0",
+      "estado": "derivado",
+      "observacion": "kilos mensuales calculados"
+    },
+    {
+      "indicador": "consumo_alimento_kg_dia",
+      "valor": 18.3,
+      "unidad": "kg/día",
+      "formula": "550 / 30",
+      "fuente": "datos entregados por Nacho / cálculo P0",
+      "estado": "derivado",
+      "observacion": "consumo diario aproximado"
+    },
+    {
+      "indicador": "alimento_gallina_g_dia",
+      "valor": 124,
+      "unidad": "g/gallina/día",
+      "formula": "550 kg / 30 días / 148 gallinas * 1000",
+      "fuente": "datos entregados por Nacho / cálculo P0",
+      "estado": "derivado",
+      "observacion": "consumo aproximado por gallina al día"
+    },
+    {
+      "indicador": "gallinero_actual_largo_m",
+      "valor": 9,
+      "unidad": "m",
+      "formula": "dato declarado",
+      "fuente": "datos entregados por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "dimensión actual"
+    },
+    {
+      "indicador": "gallinero_actual_ancho_m",
+      "valor": 3,
+      "unidad": "m",
+      "formula": "dato declarado",
+      "fuente": "datos entregados por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "dimensión actual"
+    },
+    {
+      "indicador": "gallinero_actual_alto_m",
+      "valor": 2.3,
+      "unidad": "m",
+      "formula": "dato declarado",
+      "fuente": "datos entregados por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "dimensión actual"
+    },
+    {
+      "indicador": "terreno_disponible_largo_m",
+      "valor": 19,
+      "unidad": "m",
+      "formula": "dato declarado",
+      "fuente": "datos entregados por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "terreno disponible nuevo"
+    },
+    {
+      "indicador": "terreno_disponible_ancho_m",
+      "valor": 7,
+      "unidad": "m",
+      "formula": "dato declarado",
+      "fuente": "datos entregados por Nacho / cálculo P0",
+      "estado": "confirmado",
+      "observacion": "terreno disponible nuevo"
+    },
+    {
+      "indicador": "superficie_terreno_disponible_m2",
+      "valor": 133,
+      "unidad": "m2",
+      "formula": "7 x 19",
+      "fuente": "datos entregados por Nacho / cálculo P0",
+      "estado": "derivado",
+      "observacion": "superficie disponible calculada"
     }
   ],
-  "nota": "indicadores productivos preliminares, no cierran P0 por sí solos"
+  "nota": "Indicadores productivos P0 parcialmente confirmados y con alto avance; no cierran decisión de inversión por sí solos."
 }

@@ -14,11 +14,11 @@
     },
     {
       "id": "A02",
-      "titulo": "Margen financiero muy ajustado al valorizar mano de obra",
+      "titulo": "Margen financiero no calculable todavía",
       "severidad": "alta",
       "dimension": "financiera",
-      "descripcion": "El margen preliminar baja desde $201.767 sin mano de obra a aproximadamente $19.767/mes al valorizar mano de obra referencial.",
-      "estado": "abierta"
+      "descripcion": "No se debe calcular margen financiero definitivo: falta distribución semanal por categoría para ingresos reales y falta OPEX total.",
+      "estado": "bloqueante"
     },
     {
       "id": "A03",
@@ -107,9 +107,41 @@
         "costo_m2_aprox_clp": 77052,
         "advertencia": "referencial; no autoriza construcción"
       }
+    },
+    {
+      "id": "A12",
+      "titulo": "Falta distribución semanal por categoría",
+      "severidad": "alta",
+      "dimension": "comercial",
+      "descripcion": "Falta distribución semanal de bandejas por categoría para calcular precio promedio real. Las 28 bandejas/semana están confirmadas, pero no su desglose entre segunda, primera y extra.",
+      "estado": "bloqueante"
+    },
+    {
+      "id": "A13",
+      "titulo": "OPEX mensual actual es parcial",
+      "severidad": "alta",
+      "dimension": "financiera",
+      "descripcion": "OPEX mensual actual es parcial: solo incluye alimento $284.900, agua $6.000 y vitaminas $20.000. Faltan transporte, envases, cama, medicamentos, energía estable, mano de obra e imprevistos.",
+      "estado": "abierta"
+    },
+    {
+      "id": "A14",
+      "titulo": "Sistema eléctrico actual no estable",
+      "severidad": "alta",
+      "dimension": "energia",
+      "descripcion": "Sistema eléctrico actual no es estable; el costo de luz actual es $0, pero panel solar está pendiente y es urgente para operación segura.",
+      "estado": "abierta"
+    },
+    {
+      "id": "A15",
+      "titulo": "No calcular indicadores financieros definitivos",
+      "severidad": "alta",
+      "dimension": "decision",
+      "descripcion": "No calcular ROI, VAN, TIR ni Payback hasta completar ingresos, OPEX total y CAPEX total.",
+      "estado": "bloqueante"
     }
   ],
-  "nota": "Alertas críticas preliminares P0. Incorporan CAPEX referencial formal del galpón, pero no autorizan inversión, construcción ni compra de 500 pollonas.",
+  "nota": "Alertas críticas P0 actualizadas con datos reales P40. El avance productivo y OPEX parcial no autorizan inversión, construcción ni compra de aves.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",

@@ -108,7 +108,7 @@
       ]
     }
   ],
-  "nota": "Datos faltantes críticos para cerrar P0: el galpón ya tiene CAPEX referencial formal, pero el CAPEX total, flujo operativo y validación comercial siguen incompletos.",
+  "nota": "Datos faltantes críticos P40: distribución semanal por categoría, ingresos reales, OPEX total, energía estable/panel solar, CAPEX total, validación técnica del módulo 500 y formalización comercial.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",

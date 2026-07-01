@@ -1,7 +1,7 @@
 {
   "proyecto": "Gallinero Nacho",
   "fase_actual": "P0 — Diagnóstico real",
-  "avance_p0_estimado": 80,
+  "avance_p0_estimado": 82,
   "semaforo_general": "amarillo",
   "escenario_base_actual": 500,
   "escenario_anterior_referencial": 648,
@@ -12,20 +12,23 @@
   "construccion_autorizada": false,
   "inversion_mayor_autorizada": false,
   "proximos_pasos": [
+    "Nacho: levantar distribución semanal de 28 bandejas por categoría (segunda, primera, extra)",
+    "calcular precio promedio e ingresos solo cuando exista distribución confirmada",
+    "completar OPEX total: transporte, envases, cama/viruta, medicamentos, energía estable, mano de obra, mantenciones, sanitización e imprevistos",
+    "dimensionar panel solar urgente para estabilizar energía",
     "validar brecha comercial 76.1 bandejas/semana antes del objetivo tentativo enero 2027",
-    "Nacho: levantar clientes, cantidades, precios, frecuencia, forma de pago y boleta/factura",
-    "Jean debe validar la cotización formal V8 y ajustar su aplicabilidad al escenario 500 aves, sin autorizar construcción.",
-    "dimensionar agua/energía",
     "completar CAPEX de equipamiento, logística, capital de trabajo e imprevistos",
-    "recalcular escenarios 500, 1000 y 2000 aves con CAPEX, OPEX, EBITDA, flujo de caja, payback y punto de equilibrio",
+    "validar técnicamente el módulo 500",
     "resolver logística y legal/contable"
   ],
-  "decision_actual": "P0 amarillo; no rechazo. CAPEX referencial formal del galpón disponible, pero P1 preliminar no habilitado; solo inversión menor de desbloqueo.",
+  "decision_actual": "P0 amarillo; no rechazo. Hay datos productivos y OPEX parcial confirmado, pero P1 preliminar no está habilitado; compra de aves, construcción e inversión mayor siguen bloqueadas.",
   "interpretacion_semaforo": "Amarillo no significa no viable; significa información crítica pendiente para decidir con seguridad.",
   "lineas_de_trabajo": [
-    "Línea comercial: Nacho valida ventas, clientes, precios, frecuencia, forma de pago y boleta/factura.",
-    "Línea constructiva: Jean debe validar la cotización formal V8 y ajustar su aplicabilidad al escenario 500 aves, sin autorizar construcción.",
-    "Línea financiera: recalcular escenarios 500/1000/2000 con CAPEX/OPEX/EBITDA/flujo/payback/punto de equilibrio."
+    "Línea productiva: datos actuales parcialmente confirmados / alto avance.",
+    "Línea comercial: falta distribución semanal por categoría para precio promedio e ingresos reales.",
+    "Línea financiera: OPEX parcial confirmado; faltan OPEX total, ingresos reales, CAPEX total y flujo.",
+    "Línea energía: sistema actual no estable; panel solar pendiente.",
+    "Línea constructiva: validar técnicamente módulo 500 sin autorizar construcción."
   ],
   "capex_galpon_referencial": {
     "cotizacion_comercial": "COT-GN-0035",

@@ -2,7 +2,7 @@
   "proyecto": "Gallinero Nacho",
   "fase": "P0 — Diagnóstico real",
   "estado_general": "amarillo",
-  "avance_p0_estimado": 80,
+  "avance_p0_estimado": 82,
   "escenario_base_actual": {
     "aves": 500,
     "descripcion": "nuevo objetivo base de operación total"
@@ -19,28 +19,28 @@
     "inversion_mayor": "bloqueada"
   },
   "puntos_favorables": [
-    "buena base productiva actual",
-    "148 gallinas actuales",
-    "producción promedio de 132 huevos/día",
-    "postura promedio de 89.2%",
-    "mortalidad acumulada baja de 1.3%",
-    "nuevo escenario base 500 aves reduce salto inicial",
-    "matriz de decisión por semáforo creada",
-    "CAPEX referencial formal del galpón disponible desde galpon-nacho@b100ae0",
-    "bloqueo constructivo principal parcialmente resuelto como referencia, no como autorización de obra",
-    "cotización formal final COT-GN-0035: $5.547.765 para 72 m² ($77.052/m² aprox.)",
-    "criterio financiero actualizado: 500 gallinas totales en 72 m², densidad aprox. 7 gallinas/m²"
+    "base productiva actual parcialmente confirmada y de alto avance",
+    "148 gallinas actuales sobre 150 iniciales",
+    "producción promedio junio de 132 huevos/día; rango 120 a 142 huevos/día",
+    "postura actual aproximada de 89,2%",
+    "mortalidad acumulada aproximada de 1,3%",
+    "venta actual confirmada de 28 bandejas/semana",
+    "precios por categoría confirmados: segunda $5.000, primera $6.000, extra $7.000",
+    "alimento confirmado: 22 sacos/mes de 25 kg; $284.900/mes",
+    "OPEX parcial confirmado de $310.900/mes (alimento + agua + vitaminas)",
+    "gallinero actual 9 x 3 x 2,3 m; 27 m²",
+    "terreno disponible nuevo 7 x 19 m; 133 m²",
+    "CAPEX referencial formal del galpón disponible: COT-GN-0035 por $5.547.765"
   ],
   "riesgos_principales": [
-    "amarillo no significa no viable; significa información crítica pendiente",
+    "falta distribución semanal de bandejas por categoría; no se puede calcular precio promedio real ni ingresos",
     "venta actual de 28 bandejas/semana versus 104.1 estimadas para 500 aves",
-    "brecha comercial estimada de 76.1 bandejas/semana por validar pronto antes del objetivo tentativo enero 2027",
-    "margen con mano de obra muy ajustado: $19.767/mes",
+    "brecha comercial estimada de 76.1 bandejas/semana por validar",
+    "OPEX mensual actual es parcial: faltan transporte, envases, cama, medicamentos, energía estable, mano de obra e imprevistos",
+    "sistema eléctrico actual no es estable; panel solar pendiente",
     "CAPEX total para 500 aves aún incompleto pese a contar con referencia formal del galpón",
     "flujo proyectado 500 incompleto; VAN/TIR/ROI/Payback bloqueados",
-    "agua, energía, equipamiento, logística, capital de trabajo y flujo operativo sin cierre",
-    "logística rural con pendiente, barro e invierno complejo",
-    "legal/contable pendiente",
+    "equipamiento interior, formalización comercial, capital de trabajo y validación técnica final del módulo 500 pendientes",
     "cotización V8 no autoriza compra de aves, construcción ni inversión mayor"
   ],
   "decisiones_bloqueadas": [
@@ -52,18 +52,16 @@
     "VAN, TIR, ROI y Payback definitivo"
   ],
   "faltantes_para_p1_preliminar": [
-    "validar mercado para 104.1 bandejas/semana",
-    "levantar cerca de 76.1 bandejas/semana adicionales con evidencia comercial",
-    "identificar clientes, cantidades, precios, frecuencia, forma de pago y boleta/factura",
-    "validar aplicabilidad del galpón V8 72 m² al escenario 500 aves",
-    "dimensionar agua para 500 aves",
-    "dimensionar energía solar",
-    "completar CAPEX 500 con equipamiento, logística, capital de trabajo e imprevistos",
-    "preparar flujo 500",
-    "calcular CAPEX/OPEX/EBITDA/flujo/payback/punto de equilibrio para 500/1000/2000 aves",
-    "resolver logística",
-    "revisar legal/contable",
-    "aplicar matriz de semáforo"
+    "levantar distribución semanal de las 28 bandejas por categoría: segunda, primera y extra",
+    "calcular precio promedio real solo cuando exista distribución por categoría",
+    "calcular ingresos reales semanales/mensuales solo con distribución confirmada",
+    "completar OPEX total: transporte, envases, cama/viruta, medicamentos, energía estable, mano de obra, mantenciones, sanitización e imprevistos",
+    "dimensionar y cotizar panel solar/energía estable",
+    "completar CAPEX 500 con equipamiento interior, logística, capital de trabajo e imprevistos",
+    "validar mercado para 104.1 bandejas/semana y brecha de 76.1 bandejas/semana",
+    "validar técnicamente el módulo 500",
+    "revisar formalización comercial/legal/contable",
+    "no calcular ROI, VAN, TIR ni Payback hasta completar ingresos, OPEX total y CAPEX total"
   ],
   "acciones_recomendadas": [
     "Nacho debe validar clientes y canales reales para brecha 76.1 bandejas/semana",
@@ -77,7 +75,7 @@
     "ejecutar auditoría P0",
     "Completar indicadores financieros pendientes sin ocultarlos: CAPEX total, OPEX, EBITDA, flujo, punto de equilibrio, Payback, ROI, VAN y TIR."
   ],
-  "conclusion": "El proyecto se mantiene en amarillo: el CAPEX referencial formal final del galpón ya está disponible para 500 gallinas en 72 m², pero el CAPEX total y la evaluación financiera/comercial siguen incompletos. Compra de aves, construcción e inversión mayor continúan bloqueadas.",
+  "conclusion": "El proyecto se mantiene en amarillo: hay avance P0 con datos productivos, precios por categoría y OPEX parcial confirmado, pero faltan distribución de ventas, ingresos reales, OPEX total, energía estable, CAPEX total y validación técnica/comercial. Compra de aves, construcción e inversión mayor continúan bloqueadas.",
   "interpretacion_estado_amarillo": "Amarillo no significa rechazo ni que el proyecto no sea viable; significa que falta información crítica para decidir con seguridad antes de comprar aves, construir o comprometer inversión mayor.",
   "lineas_paralelas": [
     {
@@ -148,8 +146,8 @@
     "advertencia": "Cotización formal final referencial; no constituye autorización automática de construcción."
   },
   "indicadores_financieros_normalizados": {
-    "estado": "creado",
-    "total_indicadores": 25,
+    "estado": "actualizado P40",
+    "total_indicadores": 29,
     "regla": "mostrar todos los indicadores; si falta dato suficiente, mostrar Pendiente"
   }
 }

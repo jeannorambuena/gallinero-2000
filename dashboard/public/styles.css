@@ -180,6 +180,7 @@ a {
 .decision-card,
 .metric-card,
 .scale-card,
+.alert-card,
 .traffic-card,
 .risk-card {
   border: 1px solid var(--border);
@@ -588,6 +589,57 @@ a {
   background: #f8fafc;
 }
 
+.alert-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.alert-card {
+  padding: 16px;
+  border-radius: var(--radius-lg);
+  background: #fff7ed;
+  border-color: #fed7aa;
+}
+
+.alert-card-head span {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.alert-card-head strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 1.05rem;
+  line-height: 1.15;
+}
+
+.alert-card p {
+  margin: 12px 0 0;
+  color: #475569;
+  font-size: 0.9rem;
+  line-height: 1.42;
+}
+
+.alert-card small {
+  display: inline-flex;
+  margin-top: 12px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--red);
+  font-weight: 900;
+}
+
+.alert-card.severity-alta {
+  border-color: #fca5a5;
+  background: linear-gradient(150deg, #fff1f2, #ffffff 78%);
+}
+
 .workstream-grid,
 .market-grid {
   display: grid;
@@ -877,7 +929,8 @@ a {
 
   .metric-grid.compact,
   .risk-grid,
-  .financial-grid {
+  .financial-grid,
+  .alert-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -905,9 +958,10 @@ a {
   .decision-grid,
   .metric-grid.compact,
   .metric-grid.scenario,
-  .traffic-grid,
+    .traffic-grid,
     .risk-grid,
     .financial-grid,
+    .alert-grid,
     .workstream-grid,
   .market-grid,
   .action-panel {

@@ -3,19 +3,19 @@
   "fase": "P0 — Diagnóstico real",
   "estado": "amarillo",
   "semaforo_general": "amarillo",
-  "avance_p0_estimado": 80,
+  "avance_p0_estimado": 82,
   "p1_preliminar_habilitado": false,
   "p1_definitivo_habilitado": false,
   "escenario_base_actual": 500,
   "dimensiones": {
     "productiva": {
-      "estado": "verde"
+      "estado": "parcial_alto"
     },
     "comercial": {
-      "estado": "amarillo_rojo"
+      "estado": "parcial"
     },
     "financiera": {
-      "estado": "amarillo"
+      "estado": "parcial"
     },
     "constructiva": {
       "estado": "amarillo/parcial"
@@ -50,16 +50,16 @@
     "decision_final_disponible": false
   },
   "condiciones_para_avanzar": [
+    "levantar distribución semanal por categoría para calcular precio promedio real e ingresos",
     "validar mercado 500",
-    "completar CAPEX 500 más allá del galpón",
-    "preparar flujo 500",
-    "dimensionar agua y energía",
-    "resolver logística",
-    "revisar legal/contable",
-    "recalcular 500/1000/2000 con CAPEX/OPEX/EBITDA/flujo/payback/punto de equilibrio",
+    "completar OPEX total y CAPEX total 500",
+    "dimensionar energía estable/panel solar",
+    "preparar flujo 500 sin inventar ROI/VAN/TIR/Payback",
+    "resolver logística, formalización comercial y legal/contable",
+    "validar técnicamente módulo 500",
     "alcanzar condiciones verdes antes de inversión mayor"
   ],
-  "conclusion": "Estado amarillo: CAPEX referencial formal del galpón disponible, pero no hay evidencia suficiente para verde. Solo inversión menor de desbloqueo.",
+  "conclusion": "Estado amarillo: existen avances productivos y OPEX parcial confirmado, pero faltan distribución comercial, ingresos reales, OPEX total, CAPEX total, energía estable y validación técnica. Decisión final no disponible.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",
