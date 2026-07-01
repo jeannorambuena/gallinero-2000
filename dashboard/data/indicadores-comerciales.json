@@ -1,7 +1,7 @@
 {
   "proyecto": "Gallinero Nacho",
   "fase": "P0 — Diagnóstico real",
-  "estado": "parcial; falta distribución por categoría",
+  "estado": "parcial; mercado actual confirmado, meta 100 aspiracional por validar",
   "indicadores": [
     {
       "indicador": "venta_actual_bandejas_semana",
@@ -200,6 +200,159 @@
       "fuente": "datos entregados por Nacho / cálculo P0",
       "estado": "derivado",
       "observacion": "producción semanal aproximada, no equivale a venta ni ingreso"
+    },
+    {
+      "indicador": "meta_comercial_bandejas_semana",
+      "valor": 100,
+      "unidad": "bandejas/semana",
+      "formula": "dato declarado como meta/aspiración comercial",
+      "fuente": "respuesta Jean/Nacho P41",
+      "estado": "aspiracional / requiere validación comercial",
+      "observacion": "meta comercial; no es venta segura, demanda comprometida ni contrato"
+    },
+    {
+      "indicador": "bandejas_comprometidas_semana",
+      "valor": null,
+      "unidad": "bandejas/semana",
+      "formula": "pendiente",
+      "fuente": "pendiente",
+      "estado": "no_confirmado",
+      "observacion": "no existen 100 bandejas comprometidas; falta respaldo de clientes"
+    },
+    {
+      "indicador": "pierde_ventas_por_falta_huevos",
+      "valor": "no",
+      "unidad": "sí/no",
+      "formula": "dato declarado",
+      "fuente": "respuesta Jean/Nacho P41",
+      "estado": "confirmado",
+      "observacion": "Nacho no pierde ventas actualmente por falta de huevos; para llegar a 100 debe desarrollar mercado y vender activamente"
+    },
+    {
+      "indicador": "canal_vecinos_actual",
+      "valor": "sí",
+      "unidad": "sí/no",
+      "formula": "dato declarado",
+      "fuente": "respuesta Jean/Nacho P41",
+      "estado": "confirmado",
+      "observacion": "canal actual directo/vecinal"
+    },
+    {
+      "indicador": "canal_reparto_domicilio_actual",
+      "valor": "sí",
+      "unidad": "sí/no",
+      "formula": "dato declarado",
+      "fuente": "respuesta Jean/Nacho P41",
+      "estado": "confirmado",
+      "observacion": "canal actual directo"
+    },
+    {
+      "indicador": "canal_familiares_actual",
+      "valor": "sí",
+      "unidad": "sí/no",
+      "formula": "dato declarado",
+      "fuente": "respuesta Jean/Nacho P41",
+      "estado": "confirmado",
+      "observacion": "canal actual familiar"
+    },
+    {
+      "indicador": "canal_almacenes_actual",
+      "valor": "no",
+      "unidad": "sí/no",
+      "formula": "dato declarado",
+      "fuente": "respuesta Jean/Nacho P41",
+      "estado": "confirmado",
+      "observacion": "no hay validación actual con almacenes"
+    },
+    {
+      "indicador": "canal_feria_actual",
+      "valor": "no",
+      "unidad": "sí/no",
+      "formula": "dato declarado",
+      "fuente": "respuesta Jean/Nacho P41",
+      "estado": "confirmado",
+      "observacion": "no hay validación actual en feria"
+    },
+    {
+      "indicador": "canal_restaurantes_actual",
+      "valor": "no",
+      "unidad": "sí/no",
+      "formula": "dato declarado",
+      "fuente": "respuesta Jean/Nacho P41",
+      "estado": "confirmado",
+      "observacion": "no hay validación actual con restaurantes"
+    },
+    {
+      "indicador": "pago_contado_actual",
+      "valor": "sí",
+      "unidad": "sí/no",
+      "formula": "dato declarado",
+      "fuente": "respuesta Jean/Nacho P41",
+      "estado": "confirmado",
+      "observacion": "cobranza actual al contado"
+    },
+    {
+      "indicador": "pago_transferencia_actual",
+      "valor": "sí",
+      "unidad": "sí/no",
+      "formula": "dato declarado",
+      "fuente": "respuesta Jean/Nacho P41",
+      "estado": "confirmado",
+      "observacion": "también recibe transferencias"
+    },
+    {
+      "indicador": "frecuencia_pago_actual",
+      "valor": "semanal",
+      "unidad": "frecuencia",
+      "formula": "dato declarado",
+      "fuente": "respuesta Jean/Nacho P41",
+      "estado": "confirmado",
+      "observacion": "frecuencia de pago actual"
+    },
+    {
+      "indicador": "pago_mensual_actual",
+      "valor": "no",
+      "unidad": "sí/no",
+      "formula": "dato declarado",
+      "fuente": "respuesta Jean/Nacho P41",
+      "estado": "confirmado",
+      "observacion": "no vende mensual"
+    },
+    {
+      "indicador": "venta_fiado_actual",
+      "valor": "no",
+      "unidad": "sí/no",
+      "formula": "dato declarado",
+      "fuente": "respuesta Jean/Nacho P41",
+      "estado": "confirmado",
+      "observacion": "riesgo de cobranza bajo en operación actual"
+    },
+    {
+      "indicador": "venta_informal_actual",
+      "valor": "sí",
+      "unidad": "sí/no",
+      "formula": "dato declarado",
+      "fuente": "respuesta Jean/Nacho P41",
+      "estado": "confirmado",
+      "observacion": "venta actual informal"
+    },
+    {
+      "indicador": "emite_boleta_actual",
+      "valor": "no",
+      "unidad": "sí/no",
+      "formula": "dato declarado",
+      "fuente": "respuesta Jean/Nacho P41",
+      "estado": "confirmado",
+      "observacion": "formalización pendiente para escalar"
+    },
+    {
+      "indicador": "emite_factura_actual",
+      "valor": "no",
+      "unidad": "sí/no",
+      "formula": "dato declarado",
+      "fuente": "respuesta Jean/Nacho P41",
+      "estado": "confirmado",
+      "observacion": "formalización pendiente para escalar"
     }
   ],
   "resumen": {
@@ -212,7 +365,47 @@
     "semaforo_comercial_preliminar": "amarillo_rojo",
     "venta_estimada_requerida_500_aves": "104.1 bandejas/semana",
     "brecha_actual_500_aves": "76.1 bandejas/semana",
-    "nota": "No calcular precio promedio ni ingresos definitivos hasta levantar distribución semanal por categoría."
+    "nota": "No calcular precio promedio ni ingresos definitivos hasta levantar distribución semanal por categoría.",
+    "meta_comercial_bandejas_semana": "100 bandejas/semana aspiracional; requiere validación comercial",
+    "bandejas_comprometidas_semana": "Pendiente / no confirmado",
+    "pierde_ventas_por_falta_huevos": "No",
+    "canales_actuales": "vecinos, reparto a domicilio y familiares; no almacenes, feria ni restaurantes",
+    "forma_pago_actual": "contado y transferencia; semanal; sin fiado",
+    "formalizacion_actual": "venta informal; sin boleta ni factura",
+    "nota_p41": "Las 100 bandejas son meta aspiracional, no venta comprometida."
   },
-  "nota": "Datos comerciales parciales: venta total y precios por categoría confirmados; falta distribución semanal por categoría para calcular precio promedio e ingresos reales."
+  "nota": "P41: venta actual 28 bandejas/semana; meta 100 bandejas/semana aspiracional por validar. No calcular precio promedio ni ingresos hasta levantar distribución por categoría.",
+  "canales_actuales": {
+    "vecinos": true,
+    "reparto_a_domicilio": true,
+    "familiares": true,
+    "almacenes": false,
+    "feria": false,
+    "restaurantes": false,
+    "estado": "confirmado",
+    "interpretacion": "mercado actual principalmente directo/informal/familiar/vecinal; no hay validación comercial fuerte con canales formales o grandes compradores"
+  },
+  "forma_pago_actual": {
+    "contado": true,
+    "transferencia": true,
+    "frecuencia": "semanal",
+    "mensual": false,
+    "fiado": false,
+    "estado": "confirmado",
+    "interpretacion": "riesgo de cobranza bajo en operación actual; no vende fiado"
+  },
+  "formalizacion_actual": {
+    "venta_informal": true,
+    "boleta": false,
+    "factura": false,
+    "estado": "confirmado",
+    "interpretacion": "para escalar a 500 aves se debe definir formalización comercial, tributaria y sanitaria si corresponde"
+  },
+  "meta_comercial": {
+    "meta_comercial_bandejas_semana": 100,
+    "estado": "aspiracional / requiere validación comercial",
+    "bandejas_comprometidas_semana": null,
+    "pierde_ventas_por_falta_huevos": false,
+    "advertencia": "100 bandejas/semana no es venta segura, demanda comprometida ni contrato"
+  }
 }

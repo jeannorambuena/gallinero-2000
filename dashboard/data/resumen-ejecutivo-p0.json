@@ -2,7 +2,7 @@
   "proyecto": "Gallinero Nacho",
   "fase": "P0 — Diagnóstico real",
   "estado_general": "amarillo",
-  "avance_p0_estimado": 82,
+  "avance_p0_estimado": 84,
   "escenario_base_actual": {
     "aves": 500,
     "descripcion": "nuevo objetivo base de operación total"
@@ -30,18 +30,25 @@
     "OPEX parcial confirmado de $310.900/mes (alimento + agua + vitaminas)",
     "gallinero actual 9 x 3 x 2,3 m; 27 m²",
     "terreno disponible nuevo 7 x 19 m; 133 m²",
-    "CAPEX referencial formal del galpón disponible: COT-GN-0035 por $5.547.765"
+    "CAPEX referencial formal del galpón disponible: COT-GN-0035 por $5.547.765",
+    "canales actuales confirmados: vecinos, reparto a domicilio y familiares",
+    "forma de pago actual favorable: contado/transferencia semanal, sin fiado",
+    "meta comercial aclarada: 100 bandejas/semana aspiracional por validar",
+    "costo parcial estimado: $78,5/huevo y $2.355/bandeja, no costo total real",
+    "estacionalidad confirmada: temporada buena octubre-abril y baja mayo-septiembre"
   ],
   "riesgos_principales": [
     "falta distribución semanal de bandejas por categoría; no se puede calcular precio promedio real ni ingresos",
-    "venta actual de 28 bandejas/semana versus 104.1 estimadas para 500 aves",
-    "brecha comercial estimada de 76.1 bandejas/semana por validar",
+    "meta 100 bandejas/semana es aspiracional; no hay venta comprometida ni contrato",
+    "canales actuales son principalmente directos/informales/familiares/vecinales; faltan canales formales o grandes compradores",
+    "venta actual informal; boleta/factura pendientes si escala",
+    "flujo futuro no debe modelarse plano: temporada buena octubre-abril y baja mayo-septiembre",
+    "costo parcial por huevo/bandeja no es costo total real",
     "OPEX mensual actual es parcial: faltan transporte, envases, cama, medicamentos, energía estable, mano de obra e imprevistos",
     "sistema eléctrico actual no es estable; panel solar pendiente",
     "CAPEX total para 500 aves aún incompleto pese a contar con referencia formal del galpón",
-    "flujo proyectado 500 incompleto; VAN/TIR/ROI/Payback bloqueados",
-    "equipamiento interior, formalización comercial, capital de trabajo y validación técnica final del módulo 500 pendientes",
-    "cotización V8 no autoriza compra de aves, construcción ni inversión mayor"
+    "flujo proyectado 500 incompleto; EBITDA/VAN/TIR/ROI/Payback bloqueados",
+    "equipamiento interior, formalización comercial, capital de trabajo y validación técnica final del módulo 500 pendientes"
   ],
   "decisiones_bloqueadas": [
     "compra de pollonas",
@@ -52,43 +59,44 @@
     "VAN, TIR, ROI y Payback definitivo"
   ],
   "faltantes_para_p1_preliminar": [
-    "levantar distribución semanal de las 28 bandejas por categoría: segunda, primera y extra",
-    "calcular precio promedio real solo cuando exista distribución por categoría",
-    "calcular ingresos reales semanales/mensuales solo con distribución confirmada",
-    "completar OPEX total: transporte, envases, cama/viruta, medicamentos, energía estable, mano de obra, mantenciones, sanitización e imprevistos",
-    "dimensionar y cotizar panel solar/energía estable",
+    "Distribución de las 28 bandejas/semana entre segunda, primera y extra.",
+    "Listado o respaldo de clientes necesarios para llegar a 100 bandejas/semana.",
+    "Precio promedio real por bandeja.",
+    "Estrategia concreta para vender 100 bandejas/semana.",
+    "Definir si seguirá venta informal o si formalizará con boleta/factura.",
+    "Costo de envases/bandejas: pendiente.",
+    "Costo de cama/viruta/paja/aserrín/material de piso: pendiente.",
+    "Costo de medicamentos, antiparasitarios, desinfectantes, cal, yodo, sanitización: pendiente.",
+    "Transporte/reparto: generalmente los clientes retiran los huevos; si Nacho lleva huevos existe costo de bencina. Falta cuantificar costo mensual real o frecuencia de reparto.",
+    "Energía estable/panel solar: pendiente de dimensionar y cotizar.",
+    "Mano de obra operacional: pendiente.",
+    "Mantenciones e imprevistos: pendiente.",
+    "modelar flujo estacional: octubre-abril bueno y mayo-septiembre bajo",
     "completar CAPEX 500 con equipamiento interior, logística, capital de trabajo e imprevistos",
-    "validar mercado para 104.1 bandejas/semana y brecha de 76.1 bandejas/semana",
     "validar técnicamente el módulo 500",
-    "revisar formalización comercial/legal/contable",
-    "no calcular ROI, VAN, TIR ni Payback hasta completar ingresos, OPEX total y CAPEX total"
+    "no calcular EBITDA, ROI, VAN, TIR ni Payback hasta completar ingresos, OPEX total y CAPEX total"
   ],
   "acciones_recomendadas": [
-    "Nacho debe validar clientes y canales reales para brecha 76.1 bandejas/semana",
-    "Jean debe validar la cotización formal V8 y ajustar su aplicabilidad al escenario 500 aves, sin autorizar construcción.",
-    "dimensionar agua y energía",
-    "levantar CAPEX completo por categorías faltantes",
-    "preparar flujo proyectado para 500 aves",
-    "recalcular escenarios 500, 1000 y 2000 aves con CAPEX, OPEX, EBITDA, flujo, payback y punto de equilibrio",
-    "revisar formalización y venta a comercios",
-    "usar facturas externas solo como referencia anonimizada de precios de mercado",
-    "ejecutar auditoría P0",
-    "Completar indicadores financieros pendientes sin ocultarlos: CAPEX total, OPEX, EBITDA, flujo, punto de equilibrio, Payback, ROI, VAN y TIR."
+    "Nacho debe levantar distribución semanal de las 28 bandejas por categoría",
+    "Nacho debe respaldar clientes/estrategia para meta aspiracional de 100 bandejas/semana",
+    "cuantificar transporte/reparto real y costos de envases, cama, medicamentos/sanidad, mano de obra, mantenciones e imprevistos",
+    "dimensionar energía estable/panel solar",
+    "definir formalización: venta informal versus boleta/factura si escala",
+    "preparar flujo estacional sin calcular EBITDA/ROI/VAN/TIR/Payback hasta tener datos completos"
   ],
-  "conclusion": "El proyecto se mantiene en amarillo: hay avance P0 con datos productivos, precios por categoría y OPEX parcial confirmado, pero faltan distribución de ventas, ingresos reales, OPEX total, energía estable, CAPEX total y validación técnica/comercial. Compra de aves, construcción e inversión mayor continúan bloqueadas.",
+  "conclusion": "P41 mejora la lectura comercial: existe mercado actual directo/informal y cobranza semanal sin fiado, pero la meta de 100 bandejas/semana es aspiracional y no venta comprometida. Ingresos, OPEX total, flujo, CAPEX total y formalización siguen pendientes; compra de aves, construcción e inversión mayor continúan bloqueadas.",
   "interpretacion_estado_amarillo": "Amarillo no significa rechazo ni que el proyecto no sea viable; significa que falta información crítica para decidir con seguridad antes de comprar aves, construir o comprometer inversión mayor.",
   "lineas_paralelas": [
     {
       "linea": "comercial",
       "responsable": "Nacho",
-      "objetivo": "validar ventas, clientes y canales suficientes para el escenario 500 aves",
+      "objetivo": "validar que la meta aspiracional de 100 bandejas/semana pueda sostenerse con clientes, canales, precios y formalización",
       "evidencia_requerida": [
-        "clientes identificados",
-        "cantidades por cliente",
-        "precios por canal",
-        "frecuencia de compra",
-        "forma de pago",
-        "necesidad de boleta o factura"
+        "Distribución de las 28 bandejas/semana entre segunda, primera y extra.",
+        "Listado o respaldo de clientes necesarios para llegar a 100 bandejas/semana.",
+        "Precio promedio real por bandeja.",
+        "Estrategia concreta para vender 100 bandejas/semana.",
+        "Definir si seguirá venta informal o si formalizará con boleta/factura."
       ]
     },
     {
@@ -146,8 +154,8 @@
     "advertencia": "Cotización formal final referencial; no constituye autorización automática de construcción."
   },
   "indicadores_financieros_normalizados": {
-    "estado": "actualizado P40",
-    "total_indicadores": 29,
+    "estado": "actualizado P41",
+    "total_indicadores": 31,
     "regla": "mostrar todos los indicadores; si falta dato suficiente, mostrar Pendiente"
   }
 }

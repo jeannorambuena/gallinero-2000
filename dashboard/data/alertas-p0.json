@@ -8,7 +8,7 @@
       "titulo": "Brecha comercial alta para 500 aves",
       "severidad": "alta",
       "dimension": "comercial",
-      "descripcion": "La venta actual es de 28 bandejas/semana; el objetivo estimado para 500 aves es 104.1 bandejas/semana, con brecha estimada de 76.1 bandejas/semana.",
+      "descripcion": "Venta actual confirmada: 28 bandejas/semana. Meta comercial aclarada: 100 bandejas/semana aspiracional por validar; escenario productivo 500 estima 104.1 bandejas/semana. No hay 100 bandejas comprometidas.",
       "estado": "abierta",
       "referencia_historica": "El escenario anterior/referencial de 648 aves requería 135 bandejas/semana y una brecha de 107 bandejas/semana; no es meta vigente."
     },
@@ -139,9 +139,41 @@
       "dimension": "decision",
       "descripcion": "No calcular ROI, VAN, TIR ni Payback hasta completar ingresos, OPEX total y CAPEX total.",
       "estado": "bloqueante"
+    },
+    {
+      "id": "A16",
+      "titulo": "Meta 100 bandejas es aspiracional",
+      "severidad": "alta",
+      "dimension": "comercial",
+      "descripcion": "La meta de 100 bandejas/semana requiere validación comercial; no es venta segura, demanda comprometida ni contrato. Nacho no pierde ventas actualmente por falta de huevos.",
+      "estado": "abierta"
+    },
+    {
+      "id": "A17",
+      "titulo": "Costo por huevo/bandeja es parcial",
+      "severidad": "alta",
+      "dimension": "financiera",
+      "descripcion": "Costo parcial estimado: $78,5/huevo y $2.355/bandeja usando solo alimento, agua y vitaminas. No es costo total real; faltan envases, cama, medicamentos, transporte, energía estable, mano de obra, mantenciones, sanitización e imprevistos.",
+      "estado": "abierta"
+    },
+    {
+      "id": "A18",
+      "titulo": "Flujo futuro debe ser estacional",
+      "severidad": "media",
+      "dimension": "financiera",
+      "descripcion": "No modelar flujo plano anual. Temporada buena: octubre a abril. Temporada baja: mayo a septiembre por invierno/frío y menor condición productiva/comercial.",
+      "estado": "abierta"
+    },
+    {
+      "id": "A19",
+      "titulo": "Formalización pendiente para escalar",
+      "severidad": "media",
+      "dimension": "legal/comercial",
+      "descripcion": "La venta actual es informal y sin boleta/factura. Para escalar a 500 aves se debe definir formalización comercial, tributaria y sanitaria si corresponde.",
+      "estado": "abierta"
     }
   ],
-  "nota": "Alertas críticas P0 actualizadas con datos reales P40. El avance productivo y OPEX parcial no autorizan inversión, construcción ni compra de aves.",
+  "nota": "Alertas críticas P41: meta 100 aspiracional, costo parcial no total, flujo estacional y formalización pendiente. No se habilita inversión.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",

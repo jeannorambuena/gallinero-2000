@@ -7,22 +7,35 @@
       "grupo": "comerciales",
       "prioridad": "alta",
       "items": [
-        "validar capacidad real de vender 104.1 bandejas/semana para 500 aves",
-        "identificar clientes y recurrencia de compra",
-        "definir canales de venta escalables",
-        "validar precio sostenible por bandeja según volumen"
+        "Distribución de las 28 bandejas/semana entre segunda, primera y extra.",
+        "Listado o respaldo de clientes necesarios para llegar a 100 bandejas/semana.",
+        "Precio promedio real por bandeja.",
+        "Estrategia concreta para vender 100 bandejas/semana.",
+        "Definir si seguirá venta informal o si formalizará con boleta/factura."
       ]
     },
     {
       "grupo": "financieros",
       "prioridad": "alta",
       "items": [
-        "calcular CAPEX total del proyecto ampliado incorporando el galpón V8 como referencia formal",
-        "levantar costos completos de agua, energía, transporte, equipamiento, logística, capital de trabajo e imprevistos",
-        "levantar costos variables para 500 aves",
-        "preparar flujo de caja proyectado para 500 aves",
-        "recalcular escenarios 500, 1000 y 2000 aves con CAPEX, OPEX, EBITDA, payback y punto de equilibrio",
-        "evaluar sensibilidad por precio, postura, mortalidad y alimento"
+        "No calcular ingreso mensual definitivo hasta levantar distribución por categoría.",
+        "No calcular EBITDA, Payback, ROI, VAN ni TIR hasta completar ingresos, OPEX total y CAPEX total.",
+        "Calcular CAPEX total del proyecto ampliado incorporando el galpón V8 como referencia formal.",
+        "Preparar flujo estacional: temporada buena octubre-abril y temporada baja mayo-septiembre.",
+        "Evaluar sensibilidad por precio, postura, mortalidad, alimento y estacionalidad."
+      ]
+    },
+    {
+      "grupo": "costos/OPEX",
+      "prioridad": "alta",
+      "items": [
+        "Costo de envases/bandejas: pendiente.",
+        "Costo de cama/viruta/paja/aserrín/material de piso: pendiente.",
+        "Costo de medicamentos, antiparasitarios, desinfectantes, cal, yodo, sanitización: pendiente.",
+        "Transporte/reparto: generalmente los clientes retiran los huevos; si Nacho lleva huevos existe costo de bencina. Falta cuantificar costo mensual real o frecuencia de reparto.",
+        "Energía estable/panel solar: pendiente de dimensionar y cotizar.",
+        "Mano de obra operacional: pendiente.",
+        "Mantenciones e imprevistos: pendiente."
       ]
     },
     {
@@ -61,10 +74,12 @@
       "grupo": "logística",
       "prioridad": "alta",
       "items": [
-        "validar acceso de camiones y vehículos con carga",
-        "evaluar restricciones por invierno y barro",
-        "cotizar transporte de 500 pollonas",
-        "definir plan de descarga y acopio"
+        "Cuantificar transporte/reparto mensual real o frecuencia de reparto.",
+        "Registrar que generalmente los clientes retiran los huevos.",
+        "Cuantificar bencina cuando Nacho lleva huevos.",
+        "Validar acceso de camiones y vehículos con carga.",
+        "Evaluar restricciones por invierno y barro.",
+        "Definir plan de descarga y acopio."
       ]
     },
     {
@@ -108,7 +123,7 @@
       ]
     }
   ],
-  "nota": "Datos faltantes críticos P40: distribución semanal por categoría, ingresos reales, OPEX total, energía estable/panel solar, CAPEX total, validación técnica del módulo 500 y formalización comercial.",
+  "nota": "Datos faltantes críticos P41: distribución por categoría, respaldo para meta 100 bandejas/semana, estrategia comercial, formalización, OPEX total, transporte/reparto, energía estable y flujo estacional.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",
@@ -118,5 +133,23 @@
     "densidad_500_aprox_aves_m2": 7,
     "costo_gallina_instalada_galpon_aprox_clp": 11096,
     "advertencia": "referencial; no autoriza construcción"
+  },
+  "pendientes_para_ignacio_p41": {
+    "comerciales": [
+      "Distribución de las 28 bandejas/semana entre segunda, primera y extra.",
+      "Listado o respaldo de clientes necesarios para llegar a 100 bandejas/semana.",
+      "Precio promedio real por bandeja.",
+      "Estrategia concreta para vender 100 bandejas/semana.",
+      "Definir si seguirá venta informal o si formalizará con boleta/factura."
+    ],
+    "costos_opex": [
+      "Costo de envases/bandejas: pendiente.",
+      "Costo de cama/viruta/paja/aserrín/material de piso: pendiente.",
+      "Costo de medicamentos, antiparasitarios, desinfectantes, cal, yodo, sanitización: pendiente.",
+      "Transporte/reparto: generalmente los clientes retiran los huevos; si Nacho lleva huevos existe costo de bencina. Falta cuantificar costo mensual real o frecuencia de reparto.",
+      "Energía estable/panel solar: pendiente de dimensionar y cotizar.",
+      "Mano de obra operacional: pendiente.",
+      "Mantenciones e imprevistos: pendiente."
+    ]
   }
 }

@@ -1,7 +1,7 @@
 {
   "proyecto": "Gallinero Nacho",
   "fase": "P0 — Diagnóstico real",
-  "estado": "parcial/amarillo_rojo",
+  "estado": "parcial; mercado actual directo confirmado y meta 100 aspiracional por validar",
   "escenario_base": "500 aves totales",
   "venta_actual_bandejas_semana": 28,
   "venta_requerida_500_bandejas_semana": 104.1,
@@ -22,41 +22,46 @@
     "estado": "histórico/referencial"
   },
   "canales_actuales": [
-    "venta actual no desagregada por canal",
-    "28 bandejas/semana como base"
+    "vecinos: sí",
+    "reparto a domicilio: sí",
+    "familiares: sí",
+    "almacenes: no",
+    "feria: no",
+    "restaurantes: no"
   ],
   "canales_potenciales": [
-    "vecinos",
-    "trabajo",
-    "amigos",
     "almacenes/minimarket",
     "feria",
-    "reparto semanal",
-    "contactos por cantidad"
+    "restaurantes",
+    "clientes por volumen",
+    "reparto semanal ampliado"
   ],
   "riesgos": [
+    "meta 100 bandejas/semana aspiracional; requiere desarrollar mercado y vender activamente",
+    "no hay 100 bandejas/semana comprometidas",
     "falta distribución semanal de 28 bandejas por categoría",
     "no calcular precio promedio real ni ingresos hasta completar distribución",
-    "brecha 76.1 bandejas/semana sin validar",
-    "formalización para comercios pendiente"
+    "venta actual informal; boleta/factura pendientes para escalar",
+    "canales formales o grandes compradores no validados"
   ],
   "plan_validacion": [
     "separar las 28 bandejas semanales actuales entre segunda, primera y extra",
-    "registrar ventas por categoría durante varias semanas",
+    "preparar listado/respaldo de clientes necesarios para llegar a 100 bandejas/semana",
+    "definir estrategia concreta para vender 100 bandejas/semana",
     "calcular precio promedio real solo con distribución confirmada",
-    "listar clientes actuales y potenciales",
-    "registrar cantidades semanales por cliente",
-    "validar precio por canal, frecuencia, forma de pago y boleta/factura"
+    "definir si seguirá venta informal o formalizará con boleta/factura",
+    "validar canales formales o compradores por volumen antes de escalar"
   ],
   "criterios_para_avanzar": [
-    "compromisos fuertes por canal",
-    "precio mínimo validado",
+    "distribución por categoría confirmada",
+    "clientes suficientes para 100 bandejas/semana respaldados",
+    "precios por canal y categoría validados",
     "frecuencia de compra definida",
-    "forma de pago clara",
-    "necesidad de boleta/factura identificada",
-    "brecha de 76.1 bandejas/semana reducida con evidencia"
+    "forma de pago clara y mantenida sin fiado o con política de cobranza",
+    "boleta/factura/formalización definida si escala",
+    "brecha hacia 100/104.1 bandejas reducida con evidencia"
   ],
-  "conclusion": "Comercial parcial: venta total y precios por categoría están confirmados, pero falta distribución semanal para calcular precio promedio e ingresos. La brecha 500 sigue bloqueando avance.",
+  "conclusion": "P41 confirma venta actual por canales directos/informales y pago semanal sin fiado. La meta de 100 bandejas/semana es aspiracional y requiere validación; no hay venta comprometida. Comercial sigue parcial.",
   "urgencia_comercial": {
     "objetivo_tentativo": "enero 2027",
     "fecha_contexto": "junio 2026",
@@ -64,13 +69,11 @@
   },
   "responsable": "Nacho",
   "datos_que_debe_levantar_nacho": [
-    "distribución semanal de bandejas segunda/primera/extra",
-    "clientes actuales y potenciales",
-    "cantidades comprometibles por cliente",
-    "precios por producto/canal",
-    "frecuencia de compra",
-    "forma de pago",
-    "necesidad de boleta o factura"
+    "Distribución de las 28 bandejas/semana entre segunda, primera y extra.",
+    "Listado o respaldo de clientes necesarios para llegar a 100 bandejas/semana.",
+    "Precio promedio real por bandeja.",
+    "Estrategia concreta para vender 100 bandejas/semana.",
+    "Definir si seguirá venta informal o si formalizará con boleta/factura."
   ],
   "precios_por_categoria_clp": {
     "segunda": 5000,
@@ -83,5 +86,36 @@
     "extra": "Pendiente"
   },
   "precio_promedio_real_bandeja": "Pendiente",
-  "ingresos_actuales": "Pendiente"
+  "ingresos_actuales": "Pendiente",
+  "meta_comercial_bandejas_semana": 100,
+  "meta_comercial_estado": "aspiracional / requiere validación comercial",
+  "bandejas_comprometidas_semana": null,
+  "pierde_ventas_por_falta_huevos": false,
+  "advertencia_meta_100": "100 bandejas/semana no es venta segura, demanda comprometida ni contrato",
+  "forma_pago_actual": {
+    "contado": true,
+    "transferencia": true,
+    "frecuencia": "semanal",
+    "mensual": false,
+    "fiado": false,
+    "estado": "confirmado",
+    "interpretacion": "riesgo de cobranza bajo en operación actual; no vende fiado"
+  },
+  "formalizacion_actual": {
+    "venta_informal": true,
+    "boleta": false,
+    "factura": false,
+    "estado": "confirmado",
+    "interpretacion": "para escalar a 500 aves se debe definir formalización comercial, tributaria y sanitaria si corresponde"
+  },
+  "canales_actuales_detalle": {
+    "vecinos": true,
+    "reparto_a_domicilio": true,
+    "familiares": true,
+    "almacenes": false,
+    "feria": false,
+    "restaurantes": false,
+    "estado": "confirmado",
+    "interpretacion": "mercado actual principalmente directo/informal/familiar/vecinal; no hay validación comercial fuerte con canales formales o grandes compradores"
+  }
 }

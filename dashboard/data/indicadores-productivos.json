@@ -245,7 +245,53 @@
       "fuente": "datos entregados por Nacho / cálculo P0",
       "estado": "derivado",
       "observacion": "superficie disponible calculada"
+    },
+    {
+      "indicador": "temporada_buena",
+      "valor": "octubre a abril",
+      "unidad": "meses",
+      "formula": "dato declarado",
+      "fuente": "respuesta Jean/Nacho P41",
+      "estado": "confirmado",
+      "observacion": "temporada productiva/comercial mejor"
+    },
+    {
+      "indicador": "temporada_baja",
+      "valor": "mayo a septiembre",
+      "unidad": "meses",
+      "formula": "dato declarado",
+      "fuente": "respuesta Jean/Nacho P41",
+      "estado": "confirmado",
+      "observacion": "invierno/frío; menor condición productiva/comercial"
     }
   ],
-  "nota": "Indicadores productivos P0 parcialmente confirmados y con alto avance; no cierran decisión de inversión por sí solos."
+  "nota": "Indicadores productivos P0 parcialmente confirmados y con alto avance; no cierran decisión de inversión por sí solos.",
+  "estacionalidad": {
+    "meses_buenos": [
+      "octubre",
+      "noviembre",
+      "diciembre",
+      "enero",
+      "febrero",
+      "marzo",
+      "abril"
+    ],
+    "meses_malos": [
+      "mayo",
+      "junio",
+      "julio",
+      "agosto",
+      "septiembre"
+    ],
+    "motivo": "invierno, frío, menor condición productiva/comercial",
+    "mejoras_posibles": [
+      "luz",
+      "calor",
+      "manejo de fotoperiodo/ciclo circadiano",
+      "alimento más calórico",
+      "buenas prácticas avícolas"
+    ],
+    "estado": "confirmado",
+    "advertencia_flujo": "el flujo futuro no debe modelarse plano todo el año; considerar temporada buena octubre-abril y temporada baja mayo-septiembre"
+  }
 }

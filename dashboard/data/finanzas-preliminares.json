@@ -272,6 +272,33 @@
       "fuente": "datos entregados por Nacho / cálculo P0",
       "estado": "parcial",
       "observacion": "solo alimento, agua y vitaminas; no es OPEX total"
+    },
+    {
+      "indicador": "produccion_mensual_huevos_estimada",
+      "valor": 3960,
+      "unidad": "huevos/mes",
+      "formula": "132 x 30",
+      "fuente": "datos P40/P41",
+      "estado": "derivado",
+      "observacion": "estimación simple desde promedio diario; base para costo parcial"
+    },
+    {
+      "indicador": "costo_parcial_huevo_producido",
+      "valor": 78.5,
+      "unidad": "CLP/huevo",
+      "formula": "310900 / 3960",
+      "fuente": "OPEX parcial confirmado / producción estimada P40/P41",
+      "estado": "parcial",
+      "observacion": "costo parcial; no incluye envases, cama, medicamentos, transporte, energía estable, mano de obra, mantenciones, sanitización ni imprevistos"
+    },
+    {
+      "indicador": "costo_parcial_bandeja_30_huevos",
+      "valor": 2355,
+      "unidad": "CLP/bandeja",
+      "formula": "78.5 x 30",
+      "fuente": "OPEX parcial confirmado / producción estimada P40/P41",
+      "estado": "parcial",
+      "observacion": "costo parcial por bandeja; no es costo total real"
     }
   ],
   "resumen": {
@@ -287,7 +314,10 @@
     "advertencia_opex": "OPEX parcial: faltan transporte, envases, cama/viruta, medicamentos, energía estable, mano de obra, mantenciones, sanitización e imprevistos.",
     "advertencia_ingresos": "No calcular ingresos ni precio promedio hasta tener distribución de bandejas por categoría.",
     "capex_referencial_galpon": "$5.547.765",
-    "capex_identificado_referencial_pollonas_mas_galpon": "$9.797.765"
+    "capex_identificado_referencial_pollonas_mas_galpon": "$9.797.765",
+    "costo_parcial_huevo_producido": "$78,5 aprox. (parcial)",
+    "costo_parcial_bandeja_30_huevos": "$2.355 aprox. (parcial)",
+    "advertencia_costo_parcial": "No es costo total real; faltan envases, cama/viruta, medicamentos/sanidad, transporte/reparto, energía estable, mano de obra, mantenciones, sanitización e imprevistos."
   },
   "indicadores_bloqueados": [
     {
@@ -336,7 +366,7 @@
       "observacion": "faltan flujos completos por período"
     }
   ],
-  "nota": "Finanzas P0 parciales: OPEX parcial confirmado ($310.900/mes) e ingresos pendientes por falta de distribución semanal por categoría. No calcular ROI, VAN, TIR ni Payback.",
+  "nota": "P41: se agrega costo parcial por huevo/bandeja usando solo OPEX parcial confirmado. Ingresos, EBITDA, ROI, VAN, TIR y Payback siguen bloqueados.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",
@@ -535,8 +565,8 @@
       "unidad": "CLP/mes",
       "estado": "pendiente",
       "descripcion_corta": "Ventas mensuales esperadas del escenario analizado.",
-      "estado_analisis": "Pendiente: existen precios por categoría, pero falta distribución semanal de las 28 bandejas entre segunda, primera y extra.",
-      "formula": "bandejas por categoría x precio x frecuencia mensual",
+      "estado_analisis": "Pendiente: no calcular ingresos mensuales definitivos hasta conocer distribución por categoría y precio promedio real.",
+      "formula": "bandejas por categoría x precio x frecuencia mensual; pendiente",
       "fuente": "pendiente",
       "escenario": "500 aves"
     },
@@ -547,8 +577,8 @@
       "unidad": "CLP/bandeja",
       "estado": "pendiente",
       "descripcion_corta": "Precio medio al que se vendería cada bandeja.",
-      "estado_analisis": "Pendiente: no calcular precio promedio real hasta conocer la distribución semanal de bandejas por categoría.",
-      "formula": "ingreso semanal real / 28 bandejas",
+      "estado_analisis": "Pendiente: falta distribución semanal de las 28 bandejas entre segunda, primera y extra; no calcular precio promedio real todavía.",
+      "formula": "ingreso semanal real / 28 bandejas; pendiente por distribución por categoría",
       "fuente": "pendiente",
       "escenario": "500 aves"
     },
@@ -571,7 +601,7 @@
       "unidad": "CLP/mes",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Diferencia entre ingresos y costos directos.",
-      "estado_analisis": "Bloqueado por datos: faltan ingresos reales por categoría, OPEX total y/o CAPEX total.",
+      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
       "formula": "ingresos - costos directos",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -583,7 +613,7 @@
       "unidad": "CLP/mes",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Resultado operacional antes de intereses, impuestos, depreciación y amortización.",
-      "estado_analisis": "Bloqueado por datos: faltan ingresos reales por categoría, OPEX total y/o CAPEX total.",
+      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
       "formula": "ingresos operacionales - costos operativos",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -595,7 +625,7 @@
       "unidad": "CLP/mes",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Caja neta mensual luego de ingresos, costos e inversiones/prorrateos definidos.",
-      "estado_analisis": "Bloqueado por datos: faltan ingresos reales por categoría, OPEX total y/o CAPEX total.",
+      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
       "formula": "ingresos - egresos operativos - egresos de inversión según período",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -607,7 +637,7 @@
       "unidad": "CLP/año",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Caja neta acumulada anual del proyecto.",
-      "estado_analisis": "Bloqueado por datos: faltan ingresos reales por categoría, OPEX total y/o CAPEX total.",
+      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
       "formula": "suma de flujos mensuales",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -619,7 +649,7 @@
       "unidad": "bandejas/mes",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Ventas mínimas necesarias para cubrir costos.",
-      "estado_analisis": "Bloqueado por datos: faltan ingresos reales por categoría, OPEX total y/o CAPEX total.",
+      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
       "formula": "costos fijos / margen unitario",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -631,7 +661,7 @@
       "unidad": "meses",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Tiempo necesario para recuperar la inversión.",
-      "estado_analisis": "Bloqueado: no calcular ROI, VAN, TIR ni Payback hasta completar ingresos, OPEX total y CAPEX total.",
+      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
       "formula": "inversión total / flujo neto periódico",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -643,7 +673,7 @@
       "unidad": "%",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Retorno porcentual sobre la inversión.",
-      "estado_analisis": "Bloqueado: no calcular ROI, VAN, TIR ni Payback hasta completar ingresos, OPEX total y CAPEX total.",
+      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
       "formula": "resultado neto / inversión total",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -655,7 +685,7 @@
       "unidad": "CLP",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Valor actual neto de los flujos futuros.",
-      "estado_analisis": "Bloqueado: no calcular ROI, VAN, TIR ni Payback hasta completar ingresos, OPEX total y CAPEX total.",
+      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
       "formula": "suma de flujos descontados - inversión inicial",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -667,7 +697,7 @@
       "unidad": "%",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Tasa de retorno implícita del proyecto.",
-      "estado_analisis": "Bloqueado: no calcular ROI, VAN, TIR ni Payback hasta completar ingresos, OPEX total y CAPEX total.",
+      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
       "formula": "tasa que hace VAN = 0",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -695,6 +725,30 @@
       "formula": "OPEX mensual total / bandejas vendibles mensuales",
       "fuente": "pendiente",
       "escenario": "500 aves"
+    },
+    {
+      "id": "costo_parcial_huevo_producido",
+      "nombre": "Costo parcial por huevo producido",
+      "valor": 78.5,
+      "unidad": "CLP/huevo",
+      "estado": "parcial",
+      "descripcion_corta": "Costo parcial usando solo alimento, agua y vitaminas.",
+      "estado_analisis": "Parcial: $310.900 / 3.960 huevos = $78,5 aprox. No es costo total real; faltan envases, cama, medicamentos, transporte, energía estable, mano de obra, mantenciones, sanitización e imprevistos.",
+      "formula": "$310.900 / 3.960 huevos",
+      "fuente": "OPEX parcial P40 + producción P41",
+      "escenario": "operación actual"
+    },
+    {
+      "id": "costo_parcial_bandeja_30_huevos",
+      "nombre": "Costo parcial por bandeja 30 huevos",
+      "valor": 2355,
+      "unidad": "CLP/bandeja",
+      "estado": "parcial",
+      "descripcion_corta": "Costo parcial por bandeja usando solo OPEX parcial confirmado.",
+      "estado_analisis": "Parcial: $78,5 x 30 = $2.355 aprox. No es costo total real.",
+      "formula": "$78,5 x 30",
+      "fuente": "OPEX parcial P40 + producción P41",
+      "escenario": "operación actual"
     }
   ],
   "estados_indicadores_financieros_permitidos": [

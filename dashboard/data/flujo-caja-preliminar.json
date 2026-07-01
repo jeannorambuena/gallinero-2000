@@ -29,7 +29,12 @@
     "precio_promedio_real_bandeja": "Pendiente",
     "ingreso_semanal_actual_clp": "Pendiente",
     "ingreso_mensual_estimado_clp": "Pendiente",
-    "nota": "No calcular ingresos hasta conocer distribución semanal por categoría."
+    "nota": "No calcular ingresos hasta conocer distribución semanal por categoría.",
+    "meta_comercial_bandejas_semana": 100,
+    "meta_comercial_estado": "aspiracional / requiere validación comercial",
+    "bandejas_comprometidas_semana": null,
+    "pierde_ventas_por_falta_huevos": false,
+    "advertencia_meta_100": "100 bandejas/semana no es venta segura, demanda comprometida ni contrato"
   },
   "costos_actuales": {
     "alimento_mensual_clp": 284900,
@@ -49,7 +54,11 @@
       "mantenciones",
       "sanitización",
       "imprevistos"
-    ]
+    ],
+    "produccion_mensual_huevos_estimada": 3960,
+    "costo_parcial_huevo_producido_clp": 78.5,
+    "costo_parcial_bandeja_30_huevos_clp": 2355,
+    "advertencia_costo_parcial": "Costo parcial: solo alimento, agua y vitaminas. No es costo total real."
   },
   "mano_obra_referencial": {
     "monto_clp": "Pendiente",
@@ -72,30 +81,30 @@
     "capex_referencial_galpon_costo_gallina_clp": 11096
   },
   "datos_faltantes": [
-    "distribución semanal de 28 bandejas por categoría",
-    "precio promedio real por bandeja",
-    "ingresos semanales y mensuales reales",
-    "transporte/reparto",
-    "envases/bandejas",
-    "cama/viruta",
-    "medicamentos",
-    "energía estable/panel solar",
-    "mano de obra",
-    "mantenciones",
-    "sanitización",
-    "imprevistos",
-    "equipamiento interior avícola",
-    "capital de trabajo",
-    "CAPEX total 500 completo",
-    "validación técnica final del módulo 500",
-    "formalización comercial"
+    "Distribución de las 28 bandejas/semana entre segunda, primera y extra.",
+    "Listado o respaldo de clientes necesarios para llegar a 100 bandejas/semana.",
+    "Precio promedio real por bandeja.",
+    "Estrategia concreta para vender 100 bandejas/semana.",
+    "Definir si seguirá venta informal o si formalizará con boleta/factura.",
+    "Costo de envases/bandejas: pendiente.",
+    "Costo de cama/viruta/paja/aserrín/material de piso: pendiente.",
+    "Costo de medicamentos, antiparasitarios, desinfectantes, cal, yodo, sanitización: pendiente.",
+    "Transporte/reparto: generalmente los clientes retiran los huevos; si Nacho lleva huevos existe costo de bencina. Falta cuantificar costo mensual real o frecuencia de reparto.",
+    "Energía estable/panel solar: pendiente de dimensionar y cotizar.",
+    "Mano de obra operacional: pendiente.",
+    "Mantenciones e imprevistos: pendiente.",
+    "Equipamiento interior avícola.",
+    "Capital de trabajo.",
+    "Validación técnica final del módulo 500."
   ],
   "riesgos": [
-    "flujo incompleto no autoriza inversión",
-    "precios por categoría confirmados, pero distribución pendiente bloquea ingreso real",
+    "meta 100 bandejas/semana es aspiracional y requiere validación comercial",
+    "no hay 100 bandejas/semana comprometidas",
+    "flujo futuro no debe modelarse plano: temporada buena octubre-abril y baja mayo-septiembre",
+    "precio promedio e ingresos siguen pendientes por distribución por categoría",
+    "costo parcial por huevo/bandeja no es costo total real",
     "OPEX parcial confirmado no equivale a OPEX total",
     "sistema eléctrico actual no estable; panel solar pendiente",
-    "mercado 500 no validado",
     "usar cotización del galpón como si fuera CAPEX total del proyecto"
   ],
   "criterios_para_avanzar": [
@@ -132,7 +141,7 @@
       "estado": "bloqueado"
     }
   ],
-  "conclusion": "El flujo base 500 sigue bloqueado. Hay avance real en producción, precios por categoría y OPEX parcial ($310.900/mes), pero faltan distribución de ventas, ingresos reales, OPEX total, CAPEX total y energía estable. No autoriza compra, construcción ni inversión mayor.",
+  "conclusion": "P41 confirma mercado actual directo/informal y meta aspiracional de 100 bandejas/semana, pero no hay venta comprometida. Precio promedio e ingresos siguen pendientes; el costo por huevo/bandeja es parcial. Flujo, EBITDA, Payback, ROI, VAN y TIR continúan bloqueados.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",
@@ -347,8 +356,8 @@
       "unidad": "CLP/mes",
       "estado": "pendiente",
       "descripcion_corta": "Ventas mensuales esperadas del escenario analizado.",
-      "estado_analisis": "Pendiente: existen precios por categoría, pero falta distribución semanal de las 28 bandejas entre segunda, primera y extra.",
-      "formula": "bandejas por categoría x precio x frecuencia mensual",
+      "estado_analisis": "Pendiente: no calcular ingresos mensuales definitivos hasta conocer distribución por categoría y precio promedio real.",
+      "formula": "bandejas por categoría x precio x frecuencia mensual; pendiente",
       "fuente": "pendiente",
       "escenario": "500 aves"
     },
@@ -359,8 +368,8 @@
       "unidad": "CLP/bandeja",
       "estado": "pendiente",
       "descripcion_corta": "Precio medio al que se vendería cada bandeja.",
-      "estado_analisis": "Pendiente: no calcular precio promedio real hasta conocer la distribución semanal de bandejas por categoría.",
-      "formula": "ingreso semanal real / 28 bandejas",
+      "estado_analisis": "Pendiente: falta distribución semanal de las 28 bandejas entre segunda, primera y extra; no calcular precio promedio real todavía.",
+      "formula": "ingreso semanal real / 28 bandejas; pendiente por distribución por categoría",
       "fuente": "pendiente",
       "escenario": "500 aves"
     },
@@ -383,7 +392,7 @@
       "unidad": "CLP/mes",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Diferencia entre ingresos y costos directos.",
-      "estado_analisis": "Bloqueado por datos: faltan ingresos reales por categoría, OPEX total y/o CAPEX total.",
+      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
       "formula": "ingresos - costos directos",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -395,7 +404,7 @@
       "unidad": "CLP/mes",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Resultado operacional antes de intereses, impuestos, depreciación y amortización.",
-      "estado_analisis": "Bloqueado por datos: faltan ingresos reales por categoría, OPEX total y/o CAPEX total.",
+      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
       "formula": "ingresos operacionales - costos operativos",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -407,7 +416,7 @@
       "unidad": "CLP/mes",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Caja neta mensual luego de ingresos, costos e inversiones/prorrateos definidos.",
-      "estado_analisis": "Bloqueado por datos: faltan ingresos reales por categoría, OPEX total y/o CAPEX total.",
+      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
       "formula": "ingresos - egresos operativos - egresos de inversión según período",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -419,7 +428,7 @@
       "unidad": "CLP/año",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Caja neta acumulada anual del proyecto.",
-      "estado_analisis": "Bloqueado por datos: faltan ingresos reales por categoría, OPEX total y/o CAPEX total.",
+      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
       "formula": "suma de flujos mensuales",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -431,7 +440,7 @@
       "unidad": "bandejas/mes",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Ventas mínimas necesarias para cubrir costos.",
-      "estado_analisis": "Bloqueado por datos: faltan ingresos reales por categoría, OPEX total y/o CAPEX total.",
+      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
       "formula": "costos fijos / margen unitario",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -443,7 +452,7 @@
       "unidad": "meses",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Tiempo necesario para recuperar la inversión.",
-      "estado_analisis": "Bloqueado: no calcular ROI, VAN, TIR ni Payback hasta completar ingresos, OPEX total y CAPEX total.",
+      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
       "formula": "inversión total / flujo neto periódico",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -455,7 +464,7 @@
       "unidad": "%",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Retorno porcentual sobre la inversión.",
-      "estado_analisis": "Bloqueado: no calcular ROI, VAN, TIR ni Payback hasta completar ingresos, OPEX total y CAPEX total.",
+      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
       "formula": "resultado neto / inversión total",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -467,7 +476,7 @@
       "unidad": "CLP",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Valor actual neto de los flujos futuros.",
-      "estado_analisis": "Bloqueado: no calcular ROI, VAN, TIR ni Payback hasta completar ingresos, OPEX total y CAPEX total.",
+      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
       "formula": "suma de flujos descontados - inversión inicial",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -479,7 +488,7 @@
       "unidad": "%",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Tasa de retorno implícita del proyecto.",
-      "estado_analisis": "Bloqueado: no calcular ROI, VAN, TIR ni Payback hasta completar ingresos, OPEX total y CAPEX total.",
+      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
       "formula": "tasa que hace VAN = 0",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -507,6 +516,30 @@
       "formula": "OPEX mensual total / bandejas vendibles mensuales",
       "fuente": "pendiente",
       "escenario": "500 aves"
+    },
+    {
+      "id": "costo_parcial_huevo_producido",
+      "nombre": "Costo parcial por huevo producido",
+      "valor": 78.5,
+      "unidad": "CLP/huevo",
+      "estado": "parcial",
+      "descripcion_corta": "Costo parcial usando solo alimento, agua y vitaminas.",
+      "estado_analisis": "Parcial: $310.900 / 3.960 huevos = $78,5 aprox. No es costo total real.",
+      "formula": "$310.900 / 3.960 huevos",
+      "fuente": "OPEX parcial P40 + producción P41",
+      "escenario": "operación actual"
+    },
+    {
+      "id": "costo_parcial_bandeja_30_huevos",
+      "nombre": "Costo parcial por bandeja 30 huevos",
+      "valor": 2355,
+      "unidad": "CLP/bandeja",
+      "estado": "parcial",
+      "descripcion_corta": "Costo parcial por bandeja usando solo OPEX parcial confirmado.",
+      "estado_analisis": "Parcial: $78,5 x 30 = $2.355 aprox. No es costo total real.",
+      "formula": "$78,5 x 30",
+      "fuente": "OPEX parcial P40 + producción P41",
+      "escenario": "operación actual"
     }
   ],
   "indicadores_financieros_pendientes": [
@@ -529,5 +562,65 @@
     "van",
     "tir",
     "costo_bandeja_producida"
-  ]
+  ],
+  "canales_actuales": {
+    "vecinos": true,
+    "reparto_a_domicilio": true,
+    "familiares": true,
+    "almacenes": false,
+    "feria": false,
+    "restaurantes": false,
+    "estado": "confirmado",
+    "interpretacion": "mercado actual principalmente directo/informal/familiar/vecinal; no hay validación comercial fuerte con canales formales o grandes compradores"
+  },
+  "forma_pago_actual": {
+    "contado": true,
+    "transferencia": true,
+    "frecuencia": "semanal",
+    "mensual": false,
+    "fiado": false,
+    "estado": "confirmado",
+    "interpretacion": "riesgo de cobranza bajo en operación actual; no vende fiado"
+  },
+  "formalizacion_actual": {
+    "venta_informal": true,
+    "boleta": false,
+    "factura": false,
+    "estado": "confirmado",
+    "interpretacion": "para escalar a 500 aves se debe definir formalización comercial, tributaria y sanitaria si corresponde"
+  },
+  "estacionalidad": {
+    "meses_buenos": [
+      "octubre",
+      "noviembre",
+      "diciembre",
+      "enero",
+      "febrero",
+      "marzo",
+      "abril"
+    ],
+    "meses_malos": [
+      "mayo",
+      "junio",
+      "julio",
+      "agosto",
+      "septiembre"
+    ],
+    "motivo": "invierno, frío, menor condición productiva/comercial",
+    "mejoras_posibles": [
+      "luz",
+      "calor",
+      "manejo de fotoperiodo/ciclo circadiano",
+      "alimento más calórico",
+      "buenas prácticas avícolas"
+    ],
+    "estado": "confirmado",
+    "advertencia_flujo": "el flujo futuro no debe modelarse plano todo el año; considerar temporada buena octubre-abril y temporada baja mayo-septiembre"
+  },
+  "transporte_reparto": {
+    "clientes_retiran_generalmente": true,
+    "si_nacho_lleva_huevos_hay_costo_bencina": true,
+    "costo_mensual_transporte_reparto": "Pendiente",
+    "estado": "parcial/pendiente"
+  }
 }

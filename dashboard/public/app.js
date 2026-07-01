@@ -47,9 +47,9 @@ const FALLBACKS = {
 };
 
 const RISK_COPY = {
-  comercial: 'Nacho debe validar clientes, cantidades, precios, frecuencia, pago y boleta/factura.',
+  comercial: 'Mercado actual directo/vecinal confirmado; meta 100 bandejas/semana es aspiracional y requiere validación.',
   productiva: 'Base actual parcialmente confirmada y con alto avance: 148 gallinas, 132 huevos/día y postura aprox. 89,2%.',
-  financiera: 'OPEX parcial confirmado ($310.900/mes), pero ingresos, OPEX total, CAPEX total y flujo siguen incompletos.',
+  financiera: 'OPEX parcial confirmado ($310.900/mes) y costo parcial visible; ingresos, OPEX total, CAPEX total y flujo siguen incompletos.',
   logistica: 'Acceso rural e invierno afectan materiales y operación.',
   sanitaria: 'Humedad, calor y manejo de agua aún requieren mejoras.',
   agua: 'Falta dimensionamiento definitivo de caudal, presión y respaldo.',
@@ -89,6 +89,7 @@ const BLOCKERS = [
   'CAPEX referencial del galpón disponible, pero CAPEX total del proyecto sigue incompleto',
   'Flujo proyectado incompleto',
   'Falta distribución semanal de bandejas por categoría para calcular precio promedio real',
+  'Meta 100 bandejas/semana es aspiracional, no venta comprometida',
   'OPEX parcial confirmado no equivale a OPEX total',
   'Agua sin dimensionamiento definitivo',
   'Energía actual no estable; panel solar pendiente',
@@ -260,6 +261,12 @@ function renderEscenario500({ validacionComercial, comerciales, flujoCaja, galpo
     { label: 'Producción estimada', value: formatValue(escenario.huevos_dia_estimados ?? base.huevosDia, 'huevos/día') },
     { label: 'Bandejas estimadas', value: formatValue(escenario.bandejas_semana_estimadas ?? findIndicator(comerciales, 'bandejas_semana_estimadas_500_aves') ?? base.bandejasSemana, 'bandejas/semana') },
     { label: 'Venta actual', value: formatValue(validacionComercial?.venta_actual_bandejas_semana ?? findIndicator(comerciales, 'venta_actual_bandejas_semana') ?? base.ventaActual, 'bandejas/semana') },
+    { label: 'Meta comercial', value: formatValue(validacionComercial?.meta_comercial_bandejas_semana ?? findIndicator(comerciales, 'meta_comercial_bandejas_semana') ?? 100, 'bandejas/semana'), detail: 'aspiracional · requiere validación', tone: 'pending' },
+    { label: 'Venta comprometida', value: 'Pendiente', detail: '100 no es contrato ni demanda segura', tone: 'risk' },
+    { label: 'Pierde ventas por falta de huevos', value: 'No', detail: 'debe desarrollar mercado activamente' },
+    { label: 'Canales actuales', value: 'Vecinos · reparto · familiares', detail: 'sin almacenes, feria ni restaurantes' },
+    { label: 'Pago actual', value: 'Contado / transferencia', detail: 'semanal · sin fiado' },
+    { label: 'Formalización', value: 'Informal', detail: 'sin boleta ni factura', tone: 'pending' },
     { label: 'Brecha comercial', value: formatValue(escenario.brecha_bandejas_semana ?? findIndicator(comerciales, 'brecha_bandejas_semana_para_500') ?? base.brecha, 'bandejas/semana'), tone: 'risk' },
     { label: 'Agua estimada', value: base.agua },
     { label: 'Galpón 500 base cotizado', value: formatCurrency(galpon500.costo_total ?? base.costoGalponEscenario), detail: `${galpon500.superficie_util_m2 ?? referenciaV8.superficie_m2 ?? base.superficie} m² · ${formatCurrency(galpon500.costo_m2 ?? referenciaV8.costo_m2_aprox_clp ?? base.costoM2Galpon)}/m²`, tone: 'pending' },
@@ -338,7 +345,7 @@ function renderAlerts(alertas) {
   if (!container) return;
   container.innerHTML = '';
 
-  const items = (alertas?.alertas ?? []).filter((alert) => ['A12', 'A13', 'A14', 'A15'].includes(alert.id));
+  const items = (alertas?.alertas ?? []).filter((alert) => ['A12', 'A13', 'A14', 'A15', 'A16', 'A17', 'A18', 'A19'].includes(alert.id));
   items.forEach((alert) => {
     const card = document.createElement('article');
     card.className = `alert-card severity-${normalizeStatus(alert.severidad)}`;

@@ -1,7 +1,7 @@
 {
   "proyecto": "Gallinero Nacho",
   "fase_actual": "P0 — Diagnóstico real",
-  "avance_p0_estimado": 82,
+  "avance_p0_estimado": 84,
   "semaforo_general": "amarillo",
   "escenario_base_actual": 500,
   "escenario_anterior_referencial": 648,
@@ -13,20 +13,21 @@
   "inversion_mayor_autorizada": false,
   "proximos_pasos": [
     "Nacho: levantar distribución semanal de 28 bandejas por categoría (segunda, primera, extra)",
+    "Nacho: respaldar clientes y estrategia para meta aspiracional de 100 bandejas/semana",
+    "confirmar que 100 bandejas/semana no es venta comprometida ni contrato",
     "calcular precio promedio e ingresos solo cuando exista distribución confirmada",
-    "completar OPEX total: transporte, envases, cama/viruta, medicamentos, energía estable, mano de obra, mantenciones, sanitización e imprevistos",
+    "completar OPEX total: envases, cama/viruta, medicamentos/sanidad, transporte, energía estable, mano de obra, mantenciones, sanitización e imprevistos",
     "dimensionar panel solar urgente para estabilizar energía",
-    "validar brecha comercial 76.1 bandejas/semana antes del objetivo tentativo enero 2027",
-    "completar CAPEX de equipamiento, logística, capital de trabajo e imprevistos",
-    "validar técnicamente el módulo 500",
-    "resolver logística y legal/contable"
+    "modelar flujo estacional octubre-abril / mayo-septiembre",
+    "definir formalización comercial si escala",
+    "completar CAPEX y validar técnicamente módulo 500"
   ],
-  "decision_actual": "P0 amarillo; no rechazo. Hay datos productivos y OPEX parcial confirmado, pero P1 preliminar no está habilitado; compra de aves, construcción e inversión mayor siguen bloqueadas.",
+  "decision_actual": "P0 amarillo; no rechazo. P41 confirma canales actuales y meta comercial aspiracional, pero P1 preliminar no está habilitado; compra de aves, construcción e inversión mayor siguen bloqueadas.",
   "interpretacion_semaforo": "Amarillo no significa no viable; significa información crítica pendiente para decidir con seguridad.",
   "lineas_de_trabajo": [
-    "Línea productiva: datos actuales parcialmente confirmados / alto avance.",
-    "Línea comercial: falta distribución semanal por categoría para precio promedio e ingresos reales.",
-    "Línea financiera: OPEX parcial confirmado; faltan OPEX total, ingresos reales, CAPEX total y flujo.",
+    "Línea comercial: mercado actual directo/informal confirmado; meta 100 aspiracional requiere validación.",
+    "Línea financiera: costo parcial por huevo/bandeja calculado; ingresos, OPEX total y flujo siguen pendientes.",
+    "Línea estacional: flujo futuro debe separar octubre-abril y mayo-septiembre.",
     "Línea energía: sistema actual no estable; panel solar pendiente.",
     "Línea constructiva: validar técnicamente módulo 500 sin autorizar construcción."
   ],
