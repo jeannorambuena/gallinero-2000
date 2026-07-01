@@ -179,7 +179,7 @@
       "valor": 5547765,
       "unidad": "CLP",
       "formula": "cotización formal V8",
-      "fuente": "galpon-nacho@b100ae0",
+      "fuente": "cotización formal final COT-GN-0035 / Galpón Nacho V8",
       "estado": "referencial formal",
       "observacion": "galpón metálico simple 12 x 6 m = 72 m²; no autoriza construcción"
     },
@@ -218,6 +218,15 @@
       "fuente": "P0 + galpon-nacho@b100ae0",
       "estado": "referencial parcial",
       "observacion": "no equivale a CAPEX total del proyecto 500"
+    },
+    {
+      "indicador": "costo_gallina_instalada_galpon",
+      "valor": 11096,
+      "unidad": "CLP/gallina",
+      "formula": "5.547.765 / 500",
+      "fuente": "cotización formal final COT-GN-0035",
+      "estado": "referencial formal",
+      "observacion": "solo galpón exterior; no incluye equipamiento interior avícola"
     }
   ],
   "resumen": {
@@ -231,7 +240,9 @@
     "capex_referencial_galpon": "$5.547.765",
     "costo_m2_referencial_galpon": "$77.052/m²",
     "capex_identificado_referencial_pollonas_mas_galpon": "$9.797.765",
-    "advertencia_capex": "CAPEX total del proyecto 500 aún incompleto; faltan agua, energía, equipamiento, logística, capital de trabajo y flujo operativo."
+    "advertencia_capex": "CAPEX total del proyecto 500 aún incompleto; faltan agua, energía, equipamiento, logística, capital de trabajo y flujo operativo.",
+    "densidad_galpon_500": "aprox. 7 gallinas/m²",
+    "costo_gallina_instalada_galpon": "$11.096 aprox."
   },
   "indicadores_bloqueados": [
     {
@@ -267,11 +278,13 @@
   ],
   "nota": "finanzas preliminares; integra CAPEX referencial formal del galpón V8, pero no reemplaza flujo de caja completo ni evaluación financiera definitiva",
   "referencia_capex_galpon": {
-    "fuente": "galpon-nacho@b100ae0",
-    "documento": "cotización formal V8",
-    "total_general_clp": 5547765,
+    "cotizacion_comercial": "COT-GN-0035",
+    "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",
+    "total_proyecto_clp": 5547765,
     "superficie_m2": 72,
     "costo_m2_aprox_clp": 77052,
+    "densidad_500_aprox_aves_m2": 7,
+    "costo_gallina_instalada_galpon_aprox_clp": 11096,
     "advertencia": "referencial; no autoriza construcción"
   }
 }

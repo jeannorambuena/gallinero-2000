@@ -32,7 +32,7 @@ Identificar los riesgos, datos faltantes y decisiones constructivas mínimas que
 
 ## Superficie útil preliminar
 
-- Escenario base vigente 500 aves: 100 m2 útiles a densidad referencial de 5 aves/m2.
+- Escenario base vigente 500 aves: 72 m² útiles según cotización COT-GN-0035, densidad aproximada 7 gallinas/m².
 - Escenarios comparativos futuros: 1.000 y 2.000 aves, todavía no decididos.
 - Escenario anterior/referencial: 648 aves queda como histórico del P0 original.
 

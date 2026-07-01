@@ -77,12 +77,12 @@ También debe contrastarse contra consumo actual de 34 L/día para 148 aves, equ
 Referencia preliminar de superficie útil cubierta:
 
 ```text
-superficie_util = aves / 5 aves_m2
+superficie_util = aves / 7 gallinas_m2_aprox
 ```
 
-- 500 aves: 100 m2 útiles.
-- 1000 aves: 200 m2 útiles.
-- 2000 aves: 400 m2 útiles.
+- 500 aves: 72 m² útiles según cotización COT-GN-0035.
+- 1000 aves: 144 m² útiles como proporcional referencial.
+- 2000 aves: 288 m² útiles como proporcional referencial.
 
 La superficie total debe considerar bodega, pasillos, apoyo operativo, ventilación y diseño. No es diseño constructivo definitivo.
 

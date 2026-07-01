@@ -95,5 +95,15 @@
     ],
     "condicion_para_avanzar": "Validar acceso, descarga, acopio, transporte interno, transporte de pollonas/materiales y restricciones de invierno antes de P1 preliminar."
   },
-  "advertencia": "No se puede iniciar P1 definitivo sin resolver riesgos comerciales, financieros, constructivos y logísticos críticos. La construcción no está autorizada."
+  "advertencia": "No se puede iniciar P1 definitivo sin resolver riesgos comerciales, financieros, constructivos y logísticos críticos. La construcción no está autorizada.",
+  "referencia_capex_galpon": {
+    "cotizacion_comercial": "COT-GN-0035",
+    "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",
+    "total_proyecto_clp": 5547765,
+    "superficie_m2": 72,
+    "costo_m2_aprox_clp": 77052,
+    "densidad_500_aprox_aves_m2": 7,
+    "costo_gallina_instalada_galpon_aprox_clp": 11096,
+    "advertencia": "referencial; no autoriza construcción"
+  }
 }

@@ -35,7 +35,10 @@
     "capex_referencial_galpon_clp": 5547765,
     "capex_referencial_galpon_costo_m2_clp": 77052,
     "capex_identificado_referencial_pollonas_mas_galpon_clp": 9797765,
-    "fuente_galpon": "galpon-nacho@b100ae0 cotización formal V8"
+    "fuente_galpon": "cotización formal final COT-GN-0035 / Galpón Nacho V8",
+    "capex_referencial_galpon_superficie_m2": 72,
+    "capex_referencial_galpon_densidad_aves_m2": 7,
+    "capex_referencial_galpon_costo_gallina_clp": 11096
   },
   "datos_faltantes": [
     "ingresos por canal 500",
@@ -88,13 +91,15 @@
       "estado": "bloqueado"
     }
   ],
-  "conclusion": "El flujo base 500 sigue pendiente. Ya existe CAPEX referencial formal del galpón, pero falta completar CAPEX total, OPEX, EBITDA, payback y punto de equilibrio. No autoriza inversión, compra ni construcción.",
+  "conclusion": "El flujo base 500 sigue pendiente. Ya existe CAPEX referencial formal final del galpón para 72 m² y 500 gallinas ($5.547.765), pero falta completar CAPEX total, OPEX, EBITDA, payback y punto de equilibrio. No autoriza inversión, compra ni construcción.",
   "referencia_capex_galpon": {
-    "fuente": "galpon-nacho@b100ae0",
-    "documento": "cotización formal V8",
-    "total_general_clp": 5547765,
+    "cotizacion_comercial": "COT-GN-0035",
+    "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",
+    "total_proyecto_clp": 5547765,
     "superficie_m2": 72,
     "costo_m2_aprox_clp": 77052,
+    "densidad_500_aprox_aves_m2": 7,
+    "costo_gallina_instalada_galpon_aprox_clp": 11096,
     "advertencia": "referencial; no autoriza construcción"
   },
   "preparacion_escenarios": {

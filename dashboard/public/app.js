@@ -31,9 +31,10 @@ const FALLBACKS = {
     ventaActual: 28,
     brecha: 76.1,
     agua: '115.7–154.3 L/día',
-    superficie: 100,
+    superficie: 72,
+    densidadGalpon: 7,
     costoM2Galpon: 77052,
-    costoGalponEscenario: 7705200,
+    costoGalponEscenario: 5547765,
     referenciaV8: {
       superficie_m2: 72,
       total_general_clp: 5547765,
@@ -226,8 +227,8 @@ function renderEscenario500({ validacionComercial, comerciales, flujoCaja, galpo
     { label: 'Venta actual', value: formatValue(validacionComercial?.venta_actual_bandejas_semana ?? findIndicator(comerciales, 'venta_actual_bandejas_semana') ?? base.ventaActual, 'bandejas/semana') },
     { label: 'Brecha comercial', value: formatValue(escenario.brecha_bandejas_semana ?? findIndicator(comerciales, 'brecha_bandejas_semana_para_500') ?? base.brecha, 'bandejas/semana'), tone: 'risk' },
     { label: 'Agua estimada', value: base.agua },
-    { label: 'Referencia V8 real', value: formatCurrency(referenciaV8.total_general_proyecto_clp ?? referenciaV8.total_general_clp), detail: `${referenciaV8.superficie_m2} m² · ${formatCurrency(referenciaV8.costo_m2_aprox_clp)}/m²`, tone: 'pending' },
-    { label: 'Escenario 500 extrapolado', value: formatCurrency(galpon500.costo_total ?? base.costoGalponEscenario), detail: `${galpon500.superficie_util_m2 ?? base.superficie} m² · ${formatCurrency(galpon500.costo_m2 ?? base.costoM2Galpon)}/m²`, tone: 'pending' }
+    { label: 'Galpón 500 base cotizado', value: formatCurrency(galpon500.costo_total ?? base.costoGalponEscenario), detail: `${galpon500.superficie_util_m2 ?? referenciaV8.superficie_m2 ?? base.superficie} m² · ${formatCurrency(galpon500.costo_m2 ?? referenciaV8.costo_m2_aprox_clp ?? base.costoM2Galpon)}/m²`, tone: 'pending' },
+    { label: 'Densidad galpón 500', value: `${galpon500.densidad_aprox_aves_m2 ?? base.densidadGalpon} gallinas/m² aprox.`, detail: '500 gallinas / 72 m²', tone: 'pending' }
   ];
 
   renderMetrics('escenario-500-metricas', metrics);
@@ -239,9 +240,9 @@ function renderEscalas(galpones) {
   container.innerHTML = '';
 
   const defaults = [
-    { aves: 500, superficie_util_m2: 100, costo_m2: 77052, costo_total: 7705200, estado: 'referencial formal extrapolado; requiere ajuste a diseño final 500' },
-    { aves: 1000, superficie_util_m2: 200, costo_m2: 77052, costo_total: 15410400, estado: 'comparativo referencial; no habilita inversión' },
-    { aves: 2000, superficie_util_m2: 400, costo_m2: 77052, costo_total: 30820800, estado: 'comparativo referencial; no habilita inversión' }
+    { aves: 500, superficie_util_m2: 72, costo_m2: 77052, costo_total: 5547765, estado: 'base financiero con cotización formal final COT-GN-0035; no autoriza construcción' },
+    { aves: 1000, superficie_util_m2: 144, costo_m2: 77052, costo_total: 11095530, estado: 'proporcional referencial; no habilita inversión' },
+    { aves: 2000, superficie_util_m2: 288, costo_m2: 77052, costo_total: 22191060, estado: 'proporcional referencial; no habilita inversión' }
   ];
 
   const scenarios = defaults.map((fallback) => {

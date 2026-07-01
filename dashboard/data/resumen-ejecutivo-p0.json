@@ -27,8 +27,9 @@
     "nuevo escenario base 500 aves reduce salto inicial",
     "matriz de decisión por semáforo creada",
     "CAPEX referencial formal del galpón disponible desde galpon-nacho@b100ae0",
-    "cotización formal V8: $5.547.765 para 72 m² ($77.052/m² aprox.)",
-    "bloqueo constructivo principal parcialmente resuelto como referencia, no como autorización de obra"
+    "bloqueo constructivo principal parcialmente resuelto como referencia, no como autorización de obra",
+    "cotización formal final COT-GN-0035: $5.547.765 para 72 m² ($77.052/m² aprox.)",
+    "criterio financiero actualizado: 500 gallinas totales en 72 m², densidad aprox. 7 gallinas/m²"
   ],
   "riesgos_principales": [
     "amarillo no significa no viable; significa información crítica pendiente",
@@ -75,7 +76,7 @@
     "usar facturas externas solo como referencia anonimizada de precios de mercado",
     "ejecutar auditoría P0"
   ],
-  "conclusion": "El proyecto se mantiene en amarillo: el CAPEX referencial formal del galpón ya está disponible, pero el CAPEX total y la evaluación financiera/comercial siguen incompletos. Compra de aves, construcción e inversión mayor continúan bloqueadas.",
+  "conclusion": "El proyecto se mantiene en amarillo: el CAPEX referencial formal final del galpón ya está disponible para 500 gallinas en 72 m², pero el CAPEX total y la evaluación financiera/comercial siguen incompletos. Compra de aves, construcción e inversión mayor continúan bloqueadas.",
   "interpretacion_estado_amarillo": "Amarillo no significa rechazo ni que el proyecto no sea viable; significa que falta información crítica para decidir con seguridad antes de comprar aves, construir o comprometer inversión mayor.",
   "lineas_paralelas": [
     {
@@ -126,19 +127,23 @@
     "compra de aves, construcción e inversión mayor aprobadas explícitamente después de validar ambas líneas"
   ],
   "referencia_capex_galpon": {
-    "proyecto_fuente": "galpon-nacho",
-    "commit_fuente": "b100ae0",
-    "archivo_fuente": "reports/cotizaciones_formales/cotizacion_formal_nexus_a_ignacio_moraga_galpon_nacho_V8.md",
-    "documento": "Cotización referencial formal galpón Nacho V8 / COT-GN-V8-001",
-    "fecha_documento": "2026-06-30",
+    "cotizacion_comercial": "COT-GN-0035",
+    "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",
+    "fecha": "2026-06-30",
+    "emisor": "Nexus Consultores",
+    "cliente": "Ignacio Moraga A.",
+    "proyecto": "Galpón metálico 12 x 6 m = 72 m²",
     "superficie_m2": 72,
     "dimensiones": "12 x 6 m",
-    "total_materiales_referenciales_clp": 4347765,
-    "mano_obra_especializada_clp": 1200000,
+    "materiales_clp": 4347765,
+    "mano_obra_clp": 1200000,
     "mano_obra_criterio": "20 días x $60.000/día",
-    "total_general_proyecto_clp": 5547765,
+    "total_proyecto_clp": 5547765,
     "costo_m2_aprox_clp": 77052,
-    "alcance": "Galpón metálico simple sin radier, sin instalaciones, sin electricidad, sin agua, sin aislación y sin cálculo estructural firmado.",
-    "advertencia": "Cotización referencial formal; no constituye autorización automática de construcción."
+    "densidad_500_aprox_aves_m2": 7,
+    "densidad_500_calculada_aves_m2": 6.94,
+    "costo_gallina_instalada_galpon_aprox_clp": 11096,
+    "alcance": "Galpón metálico simple sin radier, sin instalaciones eléctricas, sin agua, sin alcantarillado, sin cálculo estructural firmado, sin pintura completa de terminación, sin canaletas completas y sin equipamiento interior avícola.",
+    "advertencia": "Cotización formal final referencial; no constituye autorización automática de construcción."
   }
 }

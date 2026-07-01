@@ -1,41 +1,47 @@
 {
   "proyecto": "Gallinero Nacho",
   "supuestos": {
-    "tipo": "estimación paramétrica preliminar con referencia formal V8",
-    "advertencia": "La cotización V8 entrega un costo referencial formal para un galpón simple 12 x 6 m; extrapolar a otras escalas requiere validar diseño, transporte, equipamiento y alcance final.",
-    "formula": "costo_total_galpon_referencial = superficie_m2 * 77.052 CLP/m²"
+    "tipo": "estimación proporcional preliminar con cotización formal final COT-GN-0035",
+    "advertencia": "La cotización final COT-GN-0035 cubre un galpón simple 12 x 6 m = 72 m² para 500 gallinas totales. Los escenarios 1000/2000 son proporcionales referenciales y requieren validar diseño, transporte, equipamiento y alcance final.",
+    "formula": "costo_total_galpon_referencial = superficie_m2 * $77.052/m²; base 500 = 72 m² = $5.547.765"
   },
-  "densidad_ref_aves_m2": 5,
+  "densidad_ref_aves_m2": 7,
   "escenarios": [
     {
       "escenario": "500 aves",
       "aves": 500,
-      "superficie_util_m2": 100,
+      "superficie_util_m2": 72,
+      "densidad_aprox_aves_m2": 7,
       "costo_m2": 77052,
-      "costo_total": 7705200,
-      "estado": "referencial formal extrapolado; requiere ajuste a diseño final 500",
-      "fuente_costo_m2": "galpon-nacho@b100ae0 cotización formal V8",
-      "nota": "Base V8 es 72 m²; 100 m² se calcula solo para preparar evaluación financiera."
+      "costo_total": 5547765,
+      "costo_gallina_instalada_galpon_aprox_clp": 11096,
+      "estado": "base financiero con cotización formal final COT-GN-0035; no autoriza construcción",
+      "fuente_costo_m2": "cotización formal final COT-GN-0035 / Galpón Nacho V8",
+      "nota": "Base cotizada para 500 gallinas totales."
     },
     {
       "escenario": "1000 aves",
       "aves": 1000,
-      "superficie_util_m2": 200,
+      "superficie_util_m2": 144,
+      "densidad_aprox_aves_m2": 7,
       "costo_m2": 77052,
-      "costo_total": 15410400,
-      "estado": "comparativo referencial; no habilita inversión",
-      "fuente_costo_m2": "galpon-nacho@b100ae0 cotización formal V8",
-      "nota": "Escenario futuro para recalcular CAPEX/OPEX/EBITDA/flujo/payback/punto de equilibrio."
+      "costo_total": 11095530,
+      "costo_gallina_instalada_galpon_aprox_clp": 11096,
+      "estado": "proporcional referencial; no habilita inversión",
+      "fuente_costo_m2": "cotización formal final COT-GN-0035 / Galpón Nacho V8",
+      "nota": "Escenario proporcional referencial para evaluación financiera; no autoriza inversión."
     },
     {
       "escenario": "2000 aves",
       "aves": 2000,
-      "superficie_util_m2": 400,
+      "superficie_util_m2": 288,
+      "densidad_aprox_aves_m2": 7,
       "costo_m2": 77052,
-      "costo_total": 30820800,
-      "estado": "comparativo referencial; no habilita inversión",
-      "fuente_costo_m2": "galpon-nacho@b100ae0 cotización formal V8",
-      "nota": "Escenario futuro para recalcular CAPEX/OPEX/EBITDA/flujo/payback/punto de equilibrio."
+      "costo_total": 22191060,
+      "costo_gallina_instalada_galpon_aprox_clp": 11096,
+      "estado": "proporcional referencial; no habilita inversión",
+      "fuente_costo_m2": "cotización formal final COT-GN-0035 / Galpón Nacho V8",
+      "nota": "Escenario proporcional referencial para evaluación financiera; no autoriza inversión."
     }
   ],
   "categorias_pendientes": [
@@ -48,22 +54,26 @@
     "imprevistos",
     "validación estructural/profesional si se ejecuta"
   ],
-  "conclusion": "Existe costo/m² referencial formal del galpón ($77.052/m² desde V8). Los escenarios quedan preparados para evaluación financiera, pero siguen sujetos a CAPEX/OPEX completo y no autorizan construcción.",
+  "conclusion": "El escenario financiero 500 usa la cotización formal final COT-GN-0035: 72 m², $5.547.765 y densidad aproximada de 7 gallinas/m². Los escenarios 1000/2000 son proporcionales referenciales y no autorizan inversión.",
   "capex_referencial_formal": {
-    "proyecto_fuente": "galpon-nacho",
-    "commit_fuente": "b100ae0",
-    "archivo_fuente": "reports/cotizaciones_formales/cotizacion_formal_nexus_a_ignacio_moraga_galpon_nacho_V8.md",
-    "documento": "Cotización referencial formal galpón Nacho V8 / COT-GN-V8-001",
-    "fecha_documento": "2026-06-30",
+    "cotizacion_comercial": "COT-GN-0035",
+    "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",
+    "fecha": "2026-06-30",
+    "emisor": "Nexus Consultores",
+    "cliente": "Ignacio Moraga A.",
+    "proyecto": "Galpón metálico 12 x 6 m = 72 m²",
     "superficie_m2": 72,
     "dimensiones": "12 x 6 m",
-    "total_materiales_referenciales_clp": 4347765,
-    "mano_obra_especializada_clp": 1200000,
+    "materiales_clp": 4347765,
+    "mano_obra_clp": 1200000,
     "mano_obra_criterio": "20 días x $60.000/día",
-    "total_general_proyecto_clp": 5547765,
+    "total_proyecto_clp": 5547765,
     "costo_m2_aprox_clp": 77052,
-    "alcance": "Galpón metálico simple sin radier, sin instalaciones, sin electricidad, sin agua, sin aislación y sin cálculo estructural firmado.",
-    "advertencia": "Cotización referencial formal; no constituye autorización automática de construcción."
+    "densidad_500_aprox_aves_m2": 7,
+    "densidad_500_calculada_aves_m2": 6.94,
+    "costo_gallina_instalada_galpon_aprox_clp": 11096,
+    "alcance": "Galpón metálico simple sin radier, sin instalaciones eléctricas, sin agua, sin alcantarillado, sin cálculo estructural firmado, sin pintura completa de terminación, sin canaletas completas y sin equipamiento interior avícola.",
+    "advertencia": "Cotización formal final referencial; no constituye autorización automática de construcción."
   },
   "preparacion_proximo_paso": {
     "objetivo": "recalcular escenarios 500, 1000 y 2000 aves",
@@ -76,5 +86,7 @@
       "punto de equilibrio"
     ],
     "estado": "base de costo de galpón disponible; faltan insumos financieros y comerciales completos"
-  }
+  },
+  "densidad_calculada_500_aves_m2": 6.94,
+  "costo_gallina_instalada_galpon_aprox_clp": 11096
 }

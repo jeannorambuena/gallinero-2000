@@ -50,15 +50,15 @@ Esta estimación es preliminar y no garantiza mercado.
 
 ## Galpones 500 / 1000 / 2000
 
-Estimación paramétrica preliminar con densidad referencial de 5 aves/m2:
+Estimación financiera preliminar con cotización COT-GN-0035 y densidad aproximada de 7 gallinas/m²:
 
 | Escenario | Superficie útil referencial | Costo |
 |---|---:|---|
-| 500 aves | 100 m2 | pendiente de cotización |
-| 1000 aves | 200 m2 | pendiente de cotización |
-| 2000 aves | 400 m2 | pendiente de cotización |
+| 500 aves | 72 m² | $5.547.765 |
+| 1000 aves | 144 m² | $11.095.530 proporcional |
+| 2000 aves | 288 m² | $22.191.060 proporcional |
 
-No hay costo m2 real todavía. No es presupuesto definitivo ni diseño constructivo.
+Hay costo referencial formal para 500 aves. No es autorización de construcción ni diseño constructivo definitivo.
 
 ## Documentos P0 principales
 

@@ -26,7 +26,7 @@ El escenario 648 queda como referencia histórica. Este plan no autoriza compra 
 | Terreno | Croquis 19 x 7 m | medidas, acceso, pendiente, barro, acopio |
 | Agua | Dimensionar 115.7–154.3 L/día aprox. | caudal, presión, estanque, bomba, respaldo |
 | Energía | Dimensionar luces/cámara/respaldo | watts, Wh/día, batería, paneles, protecciones |
-| Construcción | Estimar galpón 100 m2 útiles para 500 aves | alternativa y cotizaciones |
+| Construcción | Validar cotización formal COT-GN-0035: galpón 72 m² para 500 aves | aplicabilidad, logística y restricciones antes de construir |
 | Logística | Validar camino rural, descarga e invierno | evidencia de acceso y plan de acopio |
 | CAPEX | Completar categorías | cotizaciones reales, no supuestos |
 | Flujo | Preparar flujo 500 aves | ingresos/costos/CAPEX completos |

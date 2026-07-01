@@ -109,5 +109,15 @@
       }
     }
   ],
-  "nota": "Alertas críticas preliminares P0. Incorporan CAPEX referencial formal del galpón, pero no autorizan inversión, construcción ni compra de 500 pollonas."
+  "nota": "Alertas críticas preliminares P0. Incorporan CAPEX referencial formal del galpón, pero no autorizan inversión, construcción ni compra de 500 pollonas.",
+  "referencia_capex_galpon": {
+    "cotizacion_comercial": "COT-GN-0035",
+    "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",
+    "total_proyecto_clp": 5547765,
+    "superficie_m2": 72,
+    "costo_m2_aprox_clp": 77052,
+    "densidad_500_aprox_aves_m2": 7,
+    "costo_gallina_instalada_galpon_aprox_clp": 11096,
+    "advertencia": "referencial; no autoriza construcción"
+  }
 }

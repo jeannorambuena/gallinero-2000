@@ -19,17 +19,19 @@
   "resumen_impactos": {
     "venta": "500 aves estiman 104.1 bandejas/semana; brecha frente a venta actual 76.1 bandejas/semana",
     "agua": "500 aves estiman 115.7–154.3 L/día por proporcionalidad referencial",
-    "galpon": "500 aves requieren 100 m² útiles referenciales; costo/m² disponible como referencia formal V8: $77.052/m² desde galpón 72 m²",
-    "capex": "CAPEX referencial formal del galpón disponible ($5.547.765); CAPEX total del proyecto sigue incompleto; dato 500 x $8.500 queda histórico/estratégico",
+    "galpon": "500 aves usan como base financiera el galpón cotizado 12 x 6 m = 72 m²; densidad aproximada 6,94 ≈ 7 gallinas/m²; CAPEX $5.547.765.",
+    "capex": "CAPEX referencial formal final del galpón disponible (COT-GN-0035: $5.547.765); CAPEX total del proyecto sigue incompleto; dato 500 x $8.500 queda histórico/estratégico.",
     "flujo": "flujo 500 pendiente; falta recalcular CAPEX/OPEX/EBITDA/Payback/punto de equilibrio; VAN/TIR/ROI bloqueados"
   },
   "conclusion": "Desde ahora la decisión se trabaja sobre 500 aves totales con CAPEX referencial formal de galpón incorporado. El escenario 648 queda como referencia histórica. No se autoriza compra, construcción ni inversión mayor.",
   "referencia_capex_galpon": {
-    "fuente": "galpon-nacho@b100ae0",
-    "documento": "cotización formal V8",
-    "total_general_clp": 5547765,
+    "cotizacion_comercial": "COT-GN-0035",
+    "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",
+    "total_proyecto_clp": 5547765,
     "superficie_m2": 72,
     "costo_m2_aprox_clp": 77052,
+    "densidad_500_aprox_aves_m2": 7,
+    "costo_gallina_instalada_galpon_aprox_clp": 11096,
     "advertencia": "referencial; no autoriza construcción"
   }
 }

@@ -12,7 +12,7 @@ Gallinero Nacho pasa a evaluar como escenario base **500 aves totales**. El esce
 - Venta actual: 28 bandejas/semana.
 - Objetivo base 500: 104.1 bandejas/semana estimadas.
 - Brecha base 500: 76.1 bandejas/semana.
-- Galpón base 500: 100 m2 útiles referenciales.
+- Galpón base 500: 72 m² cotizados, $5.547.765, densidad aproximada 7 gallinas/m².
 - Agua base 500: 115.7–154.3 L/día estimados.
 
 ## Decisión actual
