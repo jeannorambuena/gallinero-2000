@@ -6,6 +6,7 @@ const DATA_FILES = {
   validacionComercial: '/data/validacion-comercial.json',
   logisticaConstruccion: '/data/logistica-construccion.json',
   referenciasMercado: '/data/referencias_mercado.json',
+  finanzas: '/data/finanzas-preliminares.json',
   flujoCaja: '/data/flujo-caja-preliminar.json',
   semaforo: '/data/semaforo-decision.json',
   criteriosP1: '/data/criterios-p1.json',
@@ -140,6 +141,27 @@ function formatCurrency(value) {
   return `$${Number(value).toLocaleString('es-CL')}`;
 }
 
+function formatFinancialValue(indicator) {
+  const value = indicator?.valor;
+  if (value === undefined || value === null || value === '') return 'Pendiente';
+  const unit = indicator?.unidad ?? '';
+  if (unit.startsWith('CLP')) return formatCurrency(value);
+  if (unit === '%') return `${Number(value).toLocaleString('es-CL')}%`;
+  return `${Number(value).toLocaleString('es-CL')}${unit ? ` ${unit}` : ''}`;
+}
+
+function formatIndicatorState(state) {
+  const labels = {
+    cotizado_final_referencial: 'Cotizado final referencial',
+    referencial_proporcional: 'Referencial proporcional',
+    parcial: 'Parcial',
+    pendiente: 'Pendiente',
+    bloqueado_por_datos: 'Bloqueado por datos',
+    no_aplica_aun: 'No aplica aún'
+  };
+  return labels[state] ?? 'Pendiente';
+}
+
 function createMetric({ label, value, detail = '', tone = '' }) {
   const article = document.createElement('article');
   article.className = `metric-card ${tone}`.trim();
@@ -265,6 +287,34 @@ function renderEscalas(galpones) {
         <div><dt>Costo total galpón</dt><dd>${formatCurrency(scenario.costo_total)}</dd></div>
       </dl>
       <small>${scenario.estado ?? 'referencial; no autoriza inversión'}</small>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function renderFinancialIndicators({ finanzas, flujoCaja }) {
+  const container = $('indicadores-financieros');
+  if (!container) return;
+  container.innerHTML = '';
+
+  const indicators = finanzas?.catalogo_indicadores_financieros
+    ?? flujoCaja?.catalogo_indicadores_financieros
+    ?? [];
+
+  indicators.forEach((indicator) => {
+    const card = document.createElement('article');
+    card.className = `financial-card state-${normalizeStatus(indicator.estado)}`;
+    const helpText = indicator.descripcion_corta || indicator.formula || 'Indicador financiero del proyecto.';
+    card.innerHTML = `
+      <button class="indicator-help" type="button" title="${helpText}" aria-label="${helpText}">?</button>
+      <div class="financial-card-head">
+        <span>${indicator.escenario ?? '500 aves'}</span>
+        <strong>${indicator.nombre}</strong>
+      </div>
+      <div class="financial-value">${formatFinancialValue(indicator)}</div>
+      <div class="indicator-status">${formatIndicatorState(indicator.estado)}</div>
+      <p>${indicator.estado_analisis ?? 'Pendiente de análisis financiero.'}</p>
+      <small>${indicator.formula ? `Fórmula: ${indicator.formula}` : 'Fórmula: pendiente'} · Fuente: ${indicator.fuente ?? 'pendiente'}</small>
     `;
     container.appendChild(card);
   });
@@ -439,6 +489,7 @@ async function init() {
   renderOperacion(data);
   renderEscenario500(data);
   renderEscalas(data.galpones);
+  renderFinancialIndicators(data);
   renderWorkstreams(data);
   renderMarketReferences(data.referenciasMercado);
   renderSemaforo();

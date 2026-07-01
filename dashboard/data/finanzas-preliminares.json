@@ -246,34 +246,54 @@
   },
   "indicadores_bloqueados": [
     {
-      "indicador": "ROI",
-      "estado": "pendiente",
-      "observacion": "no calcular en finanzas preliminares básicas"
+      "indicador": "Margen bruto",
+      "estado": "bloqueado_por_datos",
+      "observacion": "Bloqueado por datos: faltan ingresos proyectados y costos directos completos."
     },
     {
-      "indicador": "VAN",
-      "estado": "pendiente",
-      "observacion": "no calcular en finanzas preliminares básicas"
+      "indicador": "EBITDA mensual",
+      "estado": "bloqueado_por_datos",
+      "observacion": "Bloqueado por datos: no se puede calcular hasta tener ingresos y OPEX mensual completo."
     },
     {
-      "indicador": "TIR",
-      "estado": "pendiente",
-      "observacion": "no calcular en finanzas preliminares básicas"
+      "indicador": "Flujo de caja mensual",
+      "estado": "bloqueado_por_datos",
+      "observacion": "Bloqueado por datos: requiere ingresos, OPEX, CAPEX total y capital de trabajo."
     },
     {
-      "indicador": "Payback",
-      "estado": "pendiente",
-      "observacion": "no calcular en finanzas preliminares básicas"
-    },
-    {
-      "indicador": "EBITDA",
-      "estado": "pendiente",
-      "observacion": "requiere CAPEX/OPEX y flujo por escenario"
+      "indicador": "Flujo de caja anual",
+      "estado": "bloqueado_por_datos",
+      "observacion": "Bloqueado por datos: requiere flujo mensual completo o proyección anual."
     },
     {
       "indicador": "Punto de equilibrio",
-      "estado": "pendiente",
-      "observacion": "requiere CAPEX/OPEX y flujo por escenario"
+      "estado": "bloqueado_por_datos",
+      "observacion": "Bloqueado por datos: requiere costos fijos, costos variables y precio promedio por bandeja."
+    },
+    {
+      "indicador": "Payback",
+      "estado": "bloqueado_por_datos",
+      "observacion": "Bloqueado por flujo: requiere inversión total y flujo neto mensual/anual."
+    },
+    {
+      "indicador": "ROI",
+      "estado": "bloqueado_por_datos",
+      "observacion": "Bloqueado por datos: requiere utilidad o flujo neto y CAPEX total."
+    },
+    {
+      "indicador": "VAN",
+      "estado": "bloqueado_por_datos",
+      "observacion": "Bloqueado por flujo: requiere flujo de caja proyectado, tasa de descuento e inversión total."
+    },
+    {
+      "indicador": "TIR",
+      "estado": "bloqueado_por_datos",
+      "observacion": "Bloqueado por flujo: requiere flujo de caja proyectado por períodos."
+    },
+    {
+      "indicador": "Costo por bandeja producida",
+      "estado": "bloqueado_por_datos",
+      "observacion": "Bloqueado por datos: requiere OPEX mensual completo y producción vendible mensual."
     }
   ],
   "nota": "finanzas preliminares; integra CAPEX referencial formal del galpón V8, pero no reemplaza flujo de caja completo ni evaluación financiera definitiva",
@@ -286,5 +306,316 @@
     "densidad_500_aprox_aves_m2": 7,
     "costo_gallina_instalada_galpon_aprox_clp": 11096,
     "advertencia": "referencial; no autoriza construcción"
-  }
+  },
+  "catalogo_indicadores_financieros": [
+    {
+      "id": "capex_galpon_500",
+      "nombre": "CAPEX galpón 500 aves",
+      "valor": 5547765,
+      "unidad": "CLP",
+      "estado": "cotizado_final_referencial",
+      "descripcion_corta": "Inversión referencial del galpón base para 500 gallinas.",
+      "estado_analisis": "Cotizado final referencial: corresponde a COT-GN-0035 para galpón 12 x 6 m = 72 m². No autoriza construcción.",
+      "formula": "cotización COT-GN-0035",
+      "fuente": "COT-GN-0035 / Galpón Nacho V8 / COT-GN-V8-001",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "capex_galpon_1000",
+      "nombre": "CAPEX galpón 1000 aves",
+      "valor": 11095530,
+      "unidad": "CLP",
+      "estado": "referencial_proporcional",
+      "descripcion_corta": "Inversión proporcional de galpón para 1000 gallinas.",
+      "estado_analisis": "Referencial proporcional: se escala desde el costo/m² de la cotización 500; requiere validar diseño real.",
+      "formula": "144 m² x $77.052/m²",
+      "fuente": "proporcional desde COT-GN-0035",
+      "escenario": "1000 aves"
+    },
+    {
+      "id": "capex_galpon_2000",
+      "nombre": "CAPEX galpón 2000 aves",
+      "valor": 22191060,
+      "unidad": "CLP",
+      "estado": "referencial_proporcional",
+      "descripcion_corta": "Inversión proporcional de galpón para 2000 gallinas.",
+      "estado_analisis": "Referencial proporcional: se escala desde el costo/m² de la cotización 500; requiere validar diseño real.",
+      "formula": "288 m² x $77.052/m²",
+      "fuente": "proporcional desde COT-GN-0035",
+      "escenario": "2000 aves"
+    },
+    {
+      "id": "capex_pollonas_reposicion",
+      "nombre": "CAPEX pollonas / reposición",
+      "valor": 4250000,
+      "unidad": "CLP",
+      "estado": "parcial",
+      "descripcion_corta": "Costo conocido histórico de pollonas o reposición.",
+      "estado_analisis": "Parcial: antecedente 500 x $8.500; no implica comprar 500 aves adicionales.",
+      "formula": "500 x $8.500",
+      "fuente": "dato declarado / cálculo P0",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "capex_total_conocido",
+      "nombre": "CAPEX total conocido",
+      "valor": 9797765,
+      "unidad": "CLP",
+      "estado": "parcial",
+      "descripcion_corta": "Suma de CAPEX actualmente identificado.",
+      "estado_analisis": "Parcial: suma galpón 500 cotizado y antecedente de pollonas; aún faltan partidas críticas.",
+      "formula": "$5.547.765 + $4.250.000",
+      "fuente": "COT-GN-0035 + dato P0",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "capex_total_proyecto",
+      "nombre": "CAPEX total proyecto",
+      "valor": null,
+      "unidad": "CLP",
+      "estado": "pendiente",
+      "descripcion_corta": "Inversión total necesaria para dejar operativo el proyecto.",
+      "estado_analisis": "Pendiente porque falta sumar agua, energía, equipamiento, logística, capital de trabajo, imprevistos y otros costos.",
+      "formula": "CAPEX conocido + partidas pendientes",
+      "fuente": "pendiente",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "capital_trabajo_inicial",
+      "nombre": "Capital de trabajo inicial",
+      "valor": null,
+      "unidad": "CLP",
+      "estado": "pendiente",
+      "descripcion_corta": "Caja inicial necesaria para operar antes de recuperar ventas.",
+      "estado_analisis": "Pendiente porque falta definir inventarios, alimento, caja operativa, reposición y plazo de cobro.",
+      "formula": "costos operativos iniciales + caja de seguridad",
+      "fuente": "pendiente",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "opex_mensual_total",
+      "nombre": "OPEX mensual total",
+      "valor": null,
+      "unidad": "CLP/mes",
+      "estado": "pendiente",
+      "descripcion_corta": "Costo mensual total de operar el gallinero.",
+      "estado_analisis": "Pendiente porque faltan costos completos de alimento, energía, agua, sanidad, mano de obra y reposición para 500 aves.",
+      "formula": "suma de costos operativos mensuales",
+      "fuente": "pendiente",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "opex_alimento",
+      "nombre": "OPEX alimento",
+      "valor": null,
+      "unidad": "CLP/mes",
+      "estado": "pendiente",
+      "descripcion_corta": "Costo mensual de alimentación.",
+      "estado_analisis": "Pendiente para 500 aves porque falta consumo y precio actualizado por escala.",
+      "formula": "kg alimento/mes x precio/kg",
+      "fuente": "pendiente",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "opex_mano_obra_operacion",
+      "nombre": "OPEX mano de obra / operación",
+      "valor": null,
+      "unidad": "CLP/mes",
+      "estado": "pendiente",
+      "descripcion_corta": "Costo mensual de trabajo operativo.",
+      "estado_analisis": "Pendiente: existe referencia actual de mano de obra, pero falta definir operación real para 500 aves.",
+      "formula": "horas operación/mes x valor hora",
+      "fuente": "pendiente",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "opex_agua_energia_sanidad",
+      "nombre": "OPEX agua / energía / sanidad",
+      "valor": null,
+      "unidad": "CLP/mes",
+      "estado": "pendiente",
+      "descripcion_corta": "Costos mensuales de servicios y sanidad.",
+      "estado_analisis": "Pendiente porque faltan dimensionamiento de agua, energía solar, sanidad y mantenciones.",
+      "formula": "agua + energía + vitaminas + medicamentos + sanitización",
+      "fuente": "pendiente",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "ingresos_mensuales_proyectados",
+      "nombre": "Ingresos mensuales proyectados",
+      "valor": null,
+      "unidad": "CLP/mes",
+      "estado": "pendiente",
+      "descripcion_corta": "Ventas mensuales esperadas del escenario analizado.",
+      "estado_analisis": "Pendiente porque falta validar clientes, precios y volumen vendible de 500 aves.",
+      "formula": "bandejas vendidas/mes x precio promedio",
+      "fuente": "pendiente",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "precio_promedio_bandeja",
+      "nombre": "Precio promedio por bandeja",
+      "valor": null,
+      "unidad": "CLP/bandeja",
+      "estado": "pendiente",
+      "descripcion_corta": "Precio medio al que se vendería cada bandeja.",
+      "estado_analisis": "Pendiente porque falta validar precios por canal y forma de venta.",
+      "formula": "ingresos / bandejas vendidas",
+      "fuente": "pendiente",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "produccion_vendible_mensual",
+      "nombre": "Producción vendible mensual",
+      "valor": null,
+      "unidad": "bandejas/mes",
+      "estado": "pendiente",
+      "descripcion_corta": "Cantidad mensual de bandejas que realmente podrían venderse.",
+      "estado_analisis": "Pendiente porque falta validar merma, autoconsumo, postura sostenida y mercado.",
+      "formula": "huevos vendibles/mes / 30",
+      "fuente": "pendiente",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "margen_bruto",
+      "nombre": "Margen bruto",
+      "valor": null,
+      "unidad": "CLP/mes",
+      "estado": "bloqueado_por_datos",
+      "descripcion_corta": "Diferencia entre ingresos y costos directos.",
+      "estado_analisis": "Bloqueado por datos: faltan ingresos proyectados y costos directos completos.",
+      "formula": "ingresos - costos directos",
+      "fuente": "pendiente",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "ebitda_mensual",
+      "nombre": "EBITDA mensual",
+      "valor": null,
+      "unidad": "CLP/mes",
+      "estado": "bloqueado_por_datos",
+      "descripcion_corta": "Resultado operacional antes de intereses, impuestos, depreciación y amortización.",
+      "estado_analisis": "Bloqueado por datos: no se puede calcular hasta tener ingresos y OPEX mensual completo.",
+      "formula": "ingresos operacionales - costos operativos",
+      "fuente": "pendiente",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "flujo_caja_mensual",
+      "nombre": "Flujo de caja mensual",
+      "valor": null,
+      "unidad": "CLP/mes",
+      "estado": "bloqueado_por_datos",
+      "descripcion_corta": "Caja neta mensual luego de ingresos, costos e inversiones/prorrateos definidos.",
+      "estado_analisis": "Bloqueado por datos: requiere ingresos, OPEX, CAPEX total y capital de trabajo.",
+      "formula": "ingresos - egresos operativos - egresos de inversión según período",
+      "fuente": "pendiente",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "flujo_caja_anual",
+      "nombre": "Flujo de caja anual",
+      "valor": null,
+      "unidad": "CLP/año",
+      "estado": "bloqueado_por_datos",
+      "descripcion_corta": "Caja neta acumulada anual del proyecto.",
+      "estado_analisis": "Bloqueado por datos: requiere flujo mensual completo o proyección anual.",
+      "formula": "suma de flujos mensuales",
+      "fuente": "pendiente",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "punto_equilibrio",
+      "nombre": "Punto de equilibrio",
+      "valor": null,
+      "unidad": "bandejas/mes",
+      "estado": "bloqueado_por_datos",
+      "descripcion_corta": "Ventas mínimas necesarias para cubrir costos.",
+      "estado_analisis": "Bloqueado por datos: requiere costos fijos, costos variables y precio promedio por bandeja.",
+      "formula": "costos fijos / margen unitario",
+      "fuente": "pendiente",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "payback",
+      "nombre": "Payback",
+      "valor": null,
+      "unidad": "meses",
+      "estado": "bloqueado_por_datos",
+      "descripcion_corta": "Tiempo necesario para recuperar la inversión.",
+      "estado_analisis": "Bloqueado por flujo: requiere inversión total y flujo neto mensual/anual.",
+      "formula": "inversión total / flujo neto periódico",
+      "fuente": "pendiente",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "roi",
+      "nombre": "ROI",
+      "valor": null,
+      "unidad": "%",
+      "estado": "bloqueado_por_datos",
+      "descripcion_corta": "Retorno porcentual sobre la inversión.",
+      "estado_analisis": "Bloqueado por datos: requiere utilidad o flujo neto y CAPEX total.",
+      "formula": "resultado neto / inversión total",
+      "fuente": "pendiente",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "van",
+      "nombre": "VAN",
+      "valor": null,
+      "unidad": "CLP",
+      "estado": "bloqueado_por_datos",
+      "descripcion_corta": "Valor actual neto de los flujos futuros.",
+      "estado_analisis": "Bloqueado por flujo: requiere flujo de caja proyectado, tasa de descuento e inversión total.",
+      "formula": "suma de flujos descontados - inversión inicial",
+      "fuente": "pendiente",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "tir",
+      "nombre": "TIR",
+      "valor": null,
+      "unidad": "%",
+      "estado": "bloqueado_por_datos",
+      "descripcion_corta": "Tasa de retorno implícita del proyecto.",
+      "estado_analisis": "Bloqueado por flujo: requiere flujo de caja proyectado por períodos.",
+      "formula": "tasa que hace VAN = 0",
+      "fuente": "pendiente",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "costo_gallina_instalada",
+      "nombre": "Costo por gallina instalada",
+      "valor": 11096,
+      "unidad": "CLP/gallina",
+      "estado": "cotizado_final_referencial",
+      "descripcion_corta": "Costo de galpón por cada gallina del escenario 500.",
+      "estado_analisis": "Cotizado final referencial: $5.547.765 dividido en 500 gallinas; solo considera galpón, no equipamiento interior.",
+      "formula": "$5.547.765 / 500",
+      "fuente": "COT-GN-0035",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "costo_bandeja_producida",
+      "nombre": "Costo por bandeja producida",
+      "valor": null,
+      "unidad": "CLP/bandeja",
+      "estado": "bloqueado_por_datos",
+      "descripcion_corta": "Costo estimado de producir cada bandeja.",
+      "estado_analisis": "Bloqueado por datos: requiere OPEX mensual completo y producción vendible mensual.",
+      "formula": "OPEX mensual total / bandejas vendibles mensuales",
+      "fuente": "pendiente",
+      "escenario": "500 aves"
+    }
+  ],
+  "estados_indicadores_financieros_permitidos": [
+    "cotizado_final_referencial",
+    "referencial_proporcional",
+    "parcial",
+    "pendiente",
+    "bloqueado_por_datos",
+    "no_aplica_aun"
+  ],
+  "resumen_catalogo_indicadores": "Catálogo financiero normalizado P39-A: todos los indicadores se muestran; valores sin dato suficiente quedan como Pendiente."
 }

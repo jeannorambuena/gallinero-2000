@@ -74,7 +74,8 @@
     "recalcular escenarios 500, 1000 y 2000 aves con CAPEX, OPEX, EBITDA, flujo, payback y punto de equilibrio",
     "revisar formalización y venta a comercios",
     "usar facturas externas solo como referencia anonimizada de precios de mercado",
-    "ejecutar auditoría P0"
+    "ejecutar auditoría P0",
+    "Completar indicadores financieros pendientes sin ocultarlos: CAPEX total, OPEX, EBITDA, flujo, punto de equilibrio, Payback, ROI, VAN y TIR."
   ],
   "conclusion": "El proyecto se mantiene en amarillo: el CAPEX referencial formal final del galpón ya está disponible para 500 gallinas en 72 m², pero el CAPEX total y la evaluación financiera/comercial siguen incompletos. Compra de aves, construcción e inversión mayor continúan bloqueadas.",
   "interpretacion_estado_amarillo": "Amarillo no significa rechazo ni que el proyecto no sea viable; significa que falta información crítica para decidir con seguridad antes de comprar aves, construir o comprometer inversión mayor.",
@@ -145,5 +146,10 @@
     "costo_gallina_instalada_galpon_aprox_clp": 11096,
     "alcance": "Galpón metálico simple sin radier, sin instalaciones eléctricas, sin agua, sin alcantarillado, sin cálculo estructural firmado, sin pintura completa de terminación, sin canaletas completas y sin equipamiento interior avícola.",
     "advertencia": "Cotización formal final referencial; no constituye autorización automática de construcción."
+  },
+  "indicadores_financieros_normalizados": {
+    "estado": "creado",
+    "total_indicadores": 25,
+    "regla": "mostrar todos los indicadores; si falta dato suficiente, mostrar Pendiente"
   }
 }

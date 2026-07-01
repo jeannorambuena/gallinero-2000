@@ -74,7 +74,7 @@
     "preparar escenarios 500, 1000 y 2000 aves con CAPEX, OPEX, EBITDA, flujo de caja, payback y punto de equilibrio",
     "validar flujo 500 antes de autorizar compra, construcción o inversión mayor"
   ],
-  "conclusion": "CAPEX referencial formal final del galpón disponible (COT-GN-0035: $5.547.765; 72 m²; $77.052/m²; $11.096 por gallina instalada aprox.), pero el CAPEX total del proyecto 500 sigue incompleto. No autoriza compra, construcción ni inversión mayor.",
+  "conclusion": "CAPEX referencial formal final del galpón disponible (COT-GN-0035: $5.547.765; 72 m²; $77.052/m²; $11.096 por gallina instalada aprox.), pero el CAPEX total del proyecto 500 sigue incompleto y se muestra como Pendiente. No autoriza compra, construcción ni inversión mayor.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",
@@ -94,5 +94,103 @@
     "costo_gallina_instalada_galpon_aprox_clp": 11096,
     "alcance": "Galpón metálico simple sin radier, sin instalaciones eléctricas, sin agua, sin alcantarillado, sin cálculo estructural firmado, sin pintura completa de terminación, sin canaletas completas y sin equipamiento interior avícola.",
     "advertencia": "Cotización formal final referencial; no constituye autorización automática de construcción."
-  }
+  },
+  "indicadores_financieros_capex": [
+    {
+      "id": "capex_galpon_500",
+      "nombre": "CAPEX galpón 500 aves",
+      "valor": 5547765,
+      "unidad": "CLP",
+      "estado": "cotizado_final_referencial",
+      "descripcion_corta": "Inversión referencial del galpón base para 500 gallinas.",
+      "estado_analisis": "Cotizado final referencial: corresponde a COT-GN-0035 para galpón 12 x 6 m = 72 m². No autoriza construcción.",
+      "formula": "cotización COT-GN-0035",
+      "fuente": "COT-GN-0035 / Galpón Nacho V8 / COT-GN-V8-001",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "capex_galpon_1000",
+      "nombre": "CAPEX galpón 1000 aves",
+      "valor": 11095530,
+      "unidad": "CLP",
+      "estado": "referencial_proporcional",
+      "descripcion_corta": "Inversión proporcional de galpón para 1000 gallinas.",
+      "estado_analisis": "Referencial proporcional: se escala desde el costo/m² de la cotización 500; requiere validar diseño real.",
+      "formula": "144 m² x $77.052/m²",
+      "fuente": "proporcional desde COT-GN-0035",
+      "escenario": "1000 aves"
+    },
+    {
+      "id": "capex_galpon_2000",
+      "nombre": "CAPEX galpón 2000 aves",
+      "valor": 22191060,
+      "unidad": "CLP",
+      "estado": "referencial_proporcional",
+      "descripcion_corta": "Inversión proporcional de galpón para 2000 gallinas.",
+      "estado_analisis": "Referencial proporcional: se escala desde el costo/m² de la cotización 500; requiere validar diseño real.",
+      "formula": "288 m² x $77.052/m²",
+      "fuente": "proporcional desde COT-GN-0035",
+      "escenario": "2000 aves"
+    },
+    {
+      "id": "capex_pollonas_reposicion",
+      "nombre": "CAPEX pollonas / reposición",
+      "valor": 4250000,
+      "unidad": "CLP",
+      "estado": "parcial",
+      "descripcion_corta": "Costo conocido histórico de pollonas o reposición.",
+      "estado_analisis": "Parcial: antecedente 500 x $8.500; no implica comprar 500 aves adicionales.",
+      "formula": "500 x $8.500",
+      "fuente": "dato declarado / cálculo P0",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "capex_total_conocido",
+      "nombre": "CAPEX total conocido",
+      "valor": 9797765,
+      "unidad": "CLP",
+      "estado": "parcial",
+      "descripcion_corta": "Suma de CAPEX actualmente identificado.",
+      "estado_analisis": "Parcial: suma galpón 500 cotizado y antecedente de pollonas; aún faltan partidas críticas.",
+      "formula": "$5.547.765 + $4.250.000",
+      "fuente": "COT-GN-0035 + dato P0",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "capex_total_proyecto",
+      "nombre": "CAPEX total proyecto",
+      "valor": null,
+      "unidad": "CLP",
+      "estado": "pendiente",
+      "descripcion_corta": "Inversión total necesaria para dejar operativo el proyecto.",
+      "estado_analisis": "Pendiente porque falta sumar agua, energía, equipamiento, logística, capital de trabajo, imprevistos y otros costos.",
+      "formula": "CAPEX conocido + partidas pendientes",
+      "fuente": "pendiente",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "capital_trabajo_inicial",
+      "nombre": "Capital de trabajo inicial",
+      "valor": null,
+      "unidad": "CLP",
+      "estado": "pendiente",
+      "descripcion_corta": "Caja inicial necesaria para operar antes de recuperar ventas.",
+      "estado_analisis": "Pendiente porque falta definir inventarios, alimento, caja operativa, reposición y plazo de cobro.",
+      "formula": "costos operativos iniciales + caja de seguridad",
+      "fuente": "pendiente",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "costo_gallina_instalada",
+      "nombre": "Costo por gallina instalada",
+      "valor": 11096,
+      "unidad": "CLP/gallina",
+      "estado": "cotizado_final_referencial",
+      "descripcion_corta": "Costo de galpón por cada gallina del escenario 500.",
+      "estado_analisis": "Cotizado final referencial: $5.547.765 dividido en 500 gallinas; solo considera galpón, no equipamiento interior.",
+      "formula": "$5.547.765 / 500",
+      "fuente": "COT-GN-0035",
+      "escenario": "500 aves"
+    }
+  ]
 }
