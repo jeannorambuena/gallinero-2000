@@ -5,12 +5,12 @@
   "indicadores": [
     {
       "indicador": "ingreso_mensual_estimado",
-      "valor": null,
+      "valor": 741000,
       "unidad": "pendiente",
-      "formula": "pendiente",
-      "fuente": "pendiente",
-      "estado": "pendiente",
-      "observacion": "bloqueado por falta de distribución comercial, OPEX total y/o mano de obra confirmada"
+      "formula": "171000 * 52 / 12",
+      "fuente": "respuesta Nacho P42 / cálculo P0",
+      "estado": "confirmado_calculado",
+      "observacion": "ingreso mensual actual calculado con mix 6/13/9"
     },
     {
       "indicador": "alimento_mensual",
@@ -41,39 +41,39 @@
     },
     {
       "indicador": "envases_mensual",
-      "valor": null,
+      "valor": 12740,
       "unidad": "pendiente",
-      "formula": "pendiente",
-      "fuente": "pendiente",
-      "estado": "pendiente",
-      "observacion": "dato no cerrado en P40; no incluir en OPEX confirmado"
+      "formula": "28 * 105 * 52 / 12",
+      "fuente": "respuesta Nacho P42 / cálculo P0",
+      "estado": "confirmado_calculado",
+      "observacion": "envases actuales aprox.; meta 100 equivale a $45.500/mes"
     },
     {
       "indicador": "combustible_mensual",
-      "valor": null,
+      "valor": 10000,
       "unidad": "pendiente",
-      "formula": "pendiente",
-      "fuente": "pendiente",
-      "estado": "pendiente",
-      "observacion": "dato no cerrado en P40; no incluir en OPEX confirmado"
+      "formula": "dato informado P42",
+      "fuente": "respuesta Nacho P42 / cálculo P0",
+      "estado": "confirmado_calculado",
+      "observacion": "6 repartos/mes; generalmente retiran"
     },
     {
       "indicador": "cama_viruta_mensual",
-      "valor": null,
+      "valor": 10000,
       "unidad": "pendiente",
-      "formula": "pendiente",
-      "fuente": "pendiente",
-      "estado": "pendiente",
-      "observacion": "dato no cerrado en P40; no incluir en OPEX confirmado"
+      "formula": "dato informado P42",
+      "fuente": "respuesta Nacho P42 / cálculo P0",
+      "estado": "confirmado_calculado",
+      "observacion": "usa viruta"
     },
     {
       "indicador": "medicamentos_mensual",
-      "valor": null,
+      "valor": 0,
       "unidad": "pendiente",
-      "formula": "pendiente",
-      "fuente": "pendiente",
-      "estado": "pendiente",
-      "observacion": "dato no cerrado en P40; no incluir en OPEX confirmado"
+      "formula": "dato informado P42",
+      "fuente": "respuesta Nacho P42 / cálculo P0",
+      "estado": "confirmado_calculado",
+      "observacion": "$0 adicional fuera de vitaminas; no elimina riesgo sanitario"
     },
     {
       "indicador": "horas_trabajo_dia",
@@ -103,40 +103,40 @@
       "observacion": "dato no cerrado en P40; no incluir en OPEX confirmado"
     },
     {
-      "indicador": "pollonas_nuevas",
-      "valor": 500,
+      "indicador": "pollonas_faltantes",
+      "valor": 352,
       "unidad": "aves",
-      "formula": "dato declarado",
-      "fuente": "dato declarado por Nacho / cálculo P0",
-      "estado": "declarado",
-      "observacion": "dato base para CAPEX conocido"
+      "formula": "500 - 148",
+      "fuente": "respuesta Nacho P42 / cálculo P0",
+      "estado": "confirmado_calculado",
+      "observacion": "pollonas/gallinas faltantes para completar objetivo 500 totales"
     },
     {
-      "indicador": "precio_pollona",
-      "valor": 8500,
+      "indicador": "precio_vigente_pollona",
+      "valor": 12000,
       "unidad": "CLP/pollona",
-      "formula": "dato declarado",
-      "fuente": "dato declarado por Nacho / cálculo P0",
-      "estado": "declarado",
-      "observacion": "dato base para CAPEX conocido"
+      "formula": "dato informado P42",
+      "fuente": "respuesta Nacho P42",
+      "estado": "confirmado",
+      "observacion": "precio vigente para nuevas compras; valor histórico unitario $8.500 queda solo como antecedente"
     },
     {
       "indicador": "costos_conocidos_mensuales",
-      "valor": 310900,
+      "valor": 343640,
       "unidad": "CLP/mes",
-      "formula": "alimento_mensual + agua_mensual + vitaminas_mensual",
-      "fuente": "datos entregados por Nacho / cálculo P0",
+      "formula": "284900 + 6000 + 20000 + 12740 + 10000 + 10000 + 0",
+      "fuente": "respuesta Nacho P42 / cálculo P0",
       "estado": "parcial",
-      "observacion": "OPEX parcial confirmado; no es OPEX total"
+      "observacion": "OPEX parcial conocido actualizado; no es OPEX total"
     },
     {
       "indicador": "margen_preliminar_sin_mano_obra",
-      "valor": null,
+      "valor": 397360,
       "unidad": "pendiente",
-      "formula": "pendiente",
-      "fuente": "pendiente",
-      "estado": "pendiente",
-      "observacion": "bloqueado por falta de distribución comercial, OPEX total y/o mano de obra confirmada"
+      "formula": "741000 - 343640",
+      "fuente": "respuesta Nacho P42 / cálculo P0",
+      "estado": "parcial",
+      "observacion": "margen parcial; no definitivo"
     },
     {
       "indicador": "horas_trabajo_mes",
@@ -149,30 +149,30 @@
     },
     {
       "indicador": "mano_obra_valorizada_mensual",
-      "valor": null,
+      "valor": 182000,
       "unidad": "pendiente",
-      "formula": "pendiente",
-      "fuente": "pendiente",
-      "estado": "pendiente",
-      "observacion": "bloqueado por falta de distribución comercial, OPEX total y/o mano de obra confirmada"
+      "formula": "45.5 * 4000",
+      "fuente": "respuesta Nacho P42 / cálculo P0",
+      "estado": "confirmado_calculado",
+      "observacion": "referencial; no cierra OPEX total"
     },
     {
       "indicador": "margen_preliminar_con_mano_obra",
-      "valor": null,
+      "valor": 215360,
       "unidad": "pendiente",
-      "formula": "pendiente",
-      "fuente": "pendiente",
-      "estado": "pendiente",
-      "observacion": "bloqueado por falta de distribución comercial, OPEX total y/o mano de obra confirmada"
+      "formula": "397360 - 182000",
+      "fuente": "respuesta Nacho P42 / cálculo P0",
+      "estado": "parcial",
+      "observacion": "margen parcial con mano de obra referencial; no definitivo"
     },
     {
       "indicador": "capex_conocido_pollonas",
-      "valor": 4250000,
+      "valor": 4224000,
       "unidad": "CLP",
-      "formula": "500 * 8500",
-      "fuente": "dato declarado por Nacho / cálculo P0",
-      "estado": "conocido",
-      "observacion": "CAPEX conocido solo por compra de pollonas"
+      "formula": "352 * 12000",
+      "fuente": "respuesta Nacho P42 / cálculo P0",
+      "estado": "confirmado_calculado",
+      "observacion": "CAPEX de pollonas faltantes para completar 500 gallinas totales"
     },
     {
       "indicador": "capex_referencial_galpon_total",
@@ -212,12 +212,12 @@
     },
     {
       "indicador": "capex_identificado_referencial_pollonas_mas_galpon",
-      "valor": 9797765,
+      "valor": 9771765,
       "unidad": "CLP",
-      "formula": "4.250.000 + 5.547.765",
-      "fuente": "P0 + galpon-nacho@b100ae0",
+      "formula": "4.224.000 + 5.547.765",
+      "fuente": "COT-GN-0035 + P42",
       "estado": "referencial parcial",
-      "observacion": "no equivale a CAPEX total del proyecto 500"
+      "observacion": "subtotal parcial conocido; no equivale a CAPEX total del proyecto 500"
     },
     {
       "indicador": "costo_gallina_instalada_galpon",
@@ -266,12 +266,12 @@
     },
     {
       "indicador": "opex_parcial_confirmado",
-      "valor": 310900,
+      "valor": 343640,
       "unidad": "CLP/mes",
-      "formula": "284900 + 6000 + 20000",
-      "fuente": "datos entregados por Nacho / cálculo P0",
+      "formula": "284900 + 6000 + 20000 + 12740 + 10000 + 10000 + 0",
+      "fuente": "respuesta Nacho P42 / cálculo P0",
       "estado": "parcial",
-      "observacion": "solo alimento, agua y vitaminas; no es OPEX total"
+      "observacion": "OPEX parcial conocido actualizado"
     },
     {
       "indicador": "produccion_mensual_huevos_estimada",
@@ -284,21 +284,48 @@
     },
     {
       "indicador": "costo_parcial_huevo_producido",
-      "valor": 78.5,
+      "valor": 86.8,
       "unidad": "CLP/huevo",
-      "formula": "310900 / 3960",
-      "fuente": "OPEX parcial confirmado / producción estimada P40/P41",
+      "formula": "343640 / 3960",
+      "fuente": "respuesta Nacho P42 / cálculo P0",
       "estado": "parcial",
-      "observacion": "costo parcial; no incluye envases, cama, medicamentos, transporte, energía estable, mano de obra, mantenciones, sanitización ni imprevistos"
+      "observacion": "costo parcial; no total"
     },
     {
       "indicador": "costo_parcial_bandeja_30_huevos",
-      "valor": 2355,
+      "valor": 2604,
       "unidad": "CLP/bandeja",
-      "formula": "78.5 x 30",
-      "fuente": "OPEX parcial confirmado / producción estimada P40/P41",
+      "formula": "86.8 x 30",
+      "fuente": "respuesta Nacho P42 / cálculo P0",
       "estado": "parcial",
-      "observacion": "costo parcial por bandeja; no es costo total real"
+      "observacion": "costo parcial; no total"
+    },
+    {
+      "indicador": "valor_historico_unitario_pollona",
+      "valor": 8500,
+      "unidad": "CLP/pollona",
+      "formula": "pagado 16/01/2026",
+      "fuente": "histórico Nacho",
+      "estado": "historico",
+      "observacion": "no usar como precio vigente para nuevas compras"
+    },
+    {
+      "indicador": "ingreso_semanal_actual",
+      "valor": 171000,
+      "unidad": "CLP/semana",
+      "formula": "6*5000 + 13*6000 + 9*7000",
+      "fuente": "precios repo + respuesta Nacho P42",
+      "estado": "confirmado_calculado",
+      "observacion": "mix 6/13/9"
+    },
+    {
+      "indicador": "subtotal_conocido_galpon_mas_pollonas",
+      "valor": 9771765,
+      "unidad": "CLP",
+      "formula": "5547765 + 4224000",
+      "fuente": "COT-GN-0035 + respuesta Nacho P42",
+      "estado": "parcial",
+      "observacion": "no es CAPEX total cerrado"
     }
   ],
   "resumen": {
@@ -311,29 +338,31 @@
     "luz_mensual_actual": "$0, sistema no estable",
     "opex_total_proyecto": "Pendiente",
     "semaforo_financiero_preliminar": "amarillo/parcial",
-    "advertencia_opex": "OPEX parcial: faltan transporte, envases, cama/viruta, medicamentos, energía estable, mano de obra, mantenciones, sanitización e imprevistos.",
-    "advertencia_ingresos": "No calcular ingresos ni precio promedio hasta tener distribución de bandejas por categoría.",
+    "advertencia_opex": "OPEX parcial conocido actualizado: faltan mano de obra operacional definitiva, mantenciones, sanitización, imprevistos y costos de escala.",
+    "advertencia_ingresos": "Ingreso actual calculado con mix 6/13/9; falta validar precio real por canal/cliente y compromisos para meta 100.",
     "capex_referencial_galpon": "$5.547.765",
-    "capex_identificado_referencial_pollonas_mas_galpon": "$9.797.765",
-    "costo_parcial_huevo_producido": "$78,5 aprox. (parcial)",
-    "costo_parcial_bandeja_30_huevos": "$2.355 aprox. (parcial)",
-    "advertencia_costo_parcial": "No es costo total real; faltan envases, cama/viruta, medicamentos/sanidad, transporte/reparto, energía estable, mano de obra, mantenciones, sanitización e imprevistos."
+    "capex_identificado_referencial_pollonas_mas_galpon": "$9.771.765",
+    "costo_parcial_huevo_producido": "$86,8 aprox. (parcial)",
+    "costo_parcial_bandeja_30_huevos": "$2.604 aprox. (parcial)",
+    "advertencia_costo_parcial": "No es costo total real; faltan mano de obra operacional definitiva, mantenciones, sanitización, imprevistos y costos de escala.",
+    "ingreso_semanal_actual_clp": 171000,
+    "ingreso_mensual_actual_clp": 741000,
+    "opex_parcial_conocido_actualizado_clp": 343640,
+    "pollonas_faltantes": 352,
+    "capex_pollonas_faltantes_clp": 4224000,
+    "subtotal_conocido_galpon_mas_pollonas_clp": 9771765,
+    "advertencia": "OPEX y CAPEX siguen parciales; no autoriza compra, construcción ni inversión mayor."
   },
   "indicadores_bloqueados": [
     {
-      "indicador": "Precio promedio real por bandeja",
+      "indicador": "Precio/venta por canal para meta 100",
       "estado": "pendiente",
-      "observacion": "falta distribución semanal de 28 bandejas por categoría"
-    },
-    {
-      "indicador": "Ingresos mensuales reales",
-      "estado": "pendiente",
-      "observacion": "no calcular hasta conocer distribución por categoría"
+      "observacion": "ingreso actual calculado; falta validar precio y compromisos reales por canal/cliente"
     },
     {
       "indicador": "OPEX mensual total",
       "estado": "pendiente",
-      "observacion": "solo hay OPEX parcial confirmado de $310.900/mes"
+      "observacion": "OPEX parcial conocido actualizado de $343.640/mes; falta OPEX total de escala"
     },
     {
       "indicador": "EBITDA mensual",
@@ -366,7 +395,7 @@
       "observacion": "faltan flujos completos por período"
     }
   ],
-  "nota": "P41: se agrega costo parcial por huevo/bandeja usando solo OPEX parcial confirmado. Ingresos, EBITDA, ROI, VAN, TIR y Payback siguen bloqueados.",
+  "nota": "P42: ingresos actuales calculados, OPEX parcial conocido actualizado y CAPEX de pollonas corregido a 352 faltantes. Indicadores definitivos siguen bloqueados.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",
@@ -416,25 +445,25 @@
     },
     {
       "id": "capex_pollonas_reposicion",
-      "nombre": "CAPEX pollonas / reposición",
-      "valor": 4250000,
+      "nombre": "CAPEX pollonas faltantes",
+      "valor": 4224000,
       "unidad": "CLP",
       "estado": "parcial",
-      "descripcion_corta": "Costo conocido histórico de pollonas o reposición.",
-      "estado_analisis": "Parcial: antecedente 500 x $8.500; no implica comprar 500 aves adicionales.",
-      "formula": "500 x $8.500",
-      "fuente": "dato declarado / cálculo P0",
-      "escenario": "500 aves"
+      "descripcion_corta": "Costo vigente para completar desde 148 hasta 500 gallinas.",
+      "estado_analisis": "Parcial conocido: 352 pollonas faltantes a precio vigente $12.000. El valor unitario histórico $8.500 queda solo como antecedente descartado para compras nuevas.",
+      "formula": "352 x $12.000",
+      "fuente": "respuesta Nacho P42 / cálculo P0",
+      "escenario": "500 aves totales"
     },
     {
       "id": "capex_total_conocido",
       "nombre": "CAPEX total conocido",
-      "valor": 9797765,
+      "valor": 9771765,
       "unidad": "CLP",
       "estado": "parcial",
-      "descripcion_corta": "Suma de CAPEX actualmente identificado.",
-      "estado_analisis": "Parcial: suma galpón 500 cotizado y antecedente de pollonas; aún faltan partidas críticas.",
-      "formula": "$5.547.765 + $4.250.000",
+      "descripcion_corta": "Subtotal conocido corregido: galpón + pollonas faltantes.",
+      "estado_analisis": "Subtotal parcial conocido; no es CAPEX total cerrado. Faltan equipamiento interior, agua/bomba, mallas, bodega, alimento inicial, logística, formalización y posibles costos sanitarios.",
+      "formula": "$5.547.765 + $4.224.000",
       "fuente": "COT-GN-0035 + dato P0",
       "escenario": "500 aves"
     },
@@ -464,12 +493,12 @@
     },
     {
       "nombre": "OPEX parcial confirmado",
-      "valor": 310900,
+      "valor": 343640,
       "unidad": "CLP/mes",
       "estado": "parcial",
-      "descripcion_corta": "Suma confirmada de alimento, agua y vitaminas actuales.",
-      "estado_analisis": "Parcial confirmado: $284.900 alimento + $6.000 agua + $20.000 vitaminas. No es OPEX total del proyecto.",
-      "formula": "$284.900 + $6.000 + $20.000",
+      "descripcion_corta": "OPEX parcial conocido actualizado.",
+      "estado_analisis": "Incluye alimento, agua, vitaminas, envases actuales, viruta, bencina/reparto y medicamentos adicionales informados en $0. No es OPEX total.",
+      "formula": "$284.900 + $6.000 + $20.000 + $12.740 + $10.000 + $10.000 + $0",
       "fuente": "datos entregados por Nacho / cálculo P0",
       "escenario": "operación actual",
       "id": "opex_parcial_confirmado"
@@ -481,7 +510,7 @@
       "unidad": "CLP/mes",
       "estado": "pendiente",
       "descripcion_corta": "Costo mensual total de operar el gallinero.",
-      "estado_analisis": "Pendiente: el OPEX confirmado es parcial. Faltan transporte, envases, cama/viruta, medicamentos, energía estable, mano de obra, mantenciones, sanitización e imprevistos.",
+      "estado_analisis": "Pendiente: el OPEX parcial conocido no cierra mano de obra, mantenciones, sanitización, imprevistos ni costos por escala 500.",
       "formula": "OPEX parcial + partidas pendientes",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -523,13 +552,13 @@
       "id": "opex_vitaminas_actual"
     },
     {
-      "nombre": "Energía estable",
-      "valor": null,
-      "unidad": "CLP/mes",
-      "estado": "pendiente",
-      "descripcion_corta": "Sistema eléctrico estable para operación y monitoreo.",
-      "estado_analisis": "Pendiente: luz mensual actual $0, pero el sistema no es estable; panel solar urgente pendiente.",
-      "formula": "dimensionamiento solar + cotización",
+      "nombre": "Energía / panel solar",
+      "valor": 300000,
+      "unidad": "CLP",
+      "estado": "parcial",
+      "descripcion_corta": "Panel solar comprado; falta validar solución completa.",
+      "estado_analisis": "Panel solar comprado por $300.000; falta dimensionamiento, instalación, autonomía, baterías/inversor si aplica y capacidad para bomba, luces y cámaras.",
+      "formula": "dato informado P42",
       "fuente": "pendiente",
       "escenario": "500 aves",
       "id": "energia_estable"
@@ -560,26 +589,26 @@
     },
     {
       "id": "ingresos_mensuales_proyectados",
-      "nombre": "Ingresos mensuales proyectados",
-      "valor": null,
+      "nombre": "Ingreso mensual actual calculado",
+      "valor": 741000,
       "unidad": "CLP/mes",
-      "estado": "pendiente",
-      "descripcion_corta": "Ventas mensuales esperadas del escenario analizado.",
-      "estado_analisis": "Pendiente: no calcular ingresos mensuales definitivos hasta conocer distribución por categoría y precio promedio real.",
-      "formula": "bandejas por categoría x precio x frecuencia mensual; pendiente",
-      "fuente": "pendiente",
+      "estado": "confirmado_calculado",
+      "descripcion_corta": "Ingreso actual con mix real de bandejas 6/13/9.",
+      "estado_analisis": "Calculado desde venta actual: segunda 6, primera 13, extra 9 bandejas/semana. No implica venta comprometida para meta 100.",
+      "formula": "$171.000 x 52 / 12",
+      "fuente": "precios repo + respuesta Nacho P42",
       "escenario": "500 aves"
     },
     {
       "id": "precio_promedio_bandeja",
       "nombre": "Precio promedio por bandeja",
-      "valor": null,
+      "valor": 6107,
       "unidad": "CLP/bandeja",
-      "estado": "pendiente",
-      "descripcion_corta": "Precio medio al que se vendería cada bandeja.",
-      "estado_analisis": "Pendiente: falta distribución semanal de las 28 bandejas entre segunda, primera y extra; no calcular precio promedio real todavía.",
-      "formula": "ingreso semanal real / 28 bandejas; pendiente por distribución por categoría",
-      "fuente": "pendiente",
+      "estado": "confirmado_calculado",
+      "descripcion_corta": "Precio promedio actual ponderado por mix 6/13/9.",
+      "estado_analisis": "Calculado con 6 segunda, 13 primera y 9 extra: $171.000 / 28 = $6.107 aprox.",
+      "formula": "$171.000 / 28",
+      "fuente": "precios repo + respuesta Nacho P42",
       "escenario": "500 aves"
     },
     {
@@ -597,12 +626,12 @@
     {
       "id": "margen_bruto",
       "nombre": "Margen bruto",
-      "valor": null,
+      "valor": 397360,
       "unidad": "CLP/mes",
-      "estado": "bloqueado_por_datos",
+      "estado": "parcial",
       "descripcion_corta": "Diferencia entre ingresos y costos directos.",
-      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
-      "formula": "ingresos - costos directos",
+      "estado_analisis": "Margen parcial antes de mano de obra, calculado con ingreso actual y OPEX parcial conocido actualizado. No es margen definitivo.",
+      "formula": "$741.000 - $343.640",
       "fuente": "pendiente",
       "escenario": "500 aves"
     },
@@ -729,24 +758,24 @@
     {
       "id": "costo_parcial_huevo_producido",
       "nombre": "Costo parcial por huevo producido",
-      "valor": 78.5,
+      "valor": 86.8,
       "unidad": "CLP/huevo",
       "estado": "parcial",
       "descripcion_corta": "Costo parcial usando solo alimento, agua y vitaminas.",
-      "estado_analisis": "Parcial: $310.900 / 3.960 huevos = $78,5 aprox. No es costo total real; faltan envases, cama, medicamentos, transporte, energía estable, mano de obra, mantenciones, sanitización e imprevistos.",
-      "formula": "$310.900 / 3.960 huevos",
+      "estado_analisis": "Costo parcial actualizado; no incluye OPEX total ni costos de escala.",
+      "formula": "$343.640 / 3.960 huevos",
       "fuente": "OPEX parcial P40 + producción P41",
       "escenario": "operación actual"
     },
     {
       "id": "costo_parcial_bandeja_30_huevos",
       "nombre": "Costo parcial por bandeja 30 huevos",
-      "valor": 2355,
+      "valor": 2604,
       "unidad": "CLP/bandeja",
       "estado": "parcial",
       "descripcion_corta": "Costo parcial por bandeja usando solo OPEX parcial confirmado.",
-      "estado_analisis": "Parcial: $78,5 x 30 = $2.355 aprox. No es costo total real.",
-      "formula": "$78,5 x 30",
+      "estado_analisis": "Costo parcial por bandeja actualizado; no es costo total real.",
+      "formula": "$86.8 x 30",
       "fuente": "OPEX parcial P40 + producción P41",
       "escenario": "operación actual"
     }

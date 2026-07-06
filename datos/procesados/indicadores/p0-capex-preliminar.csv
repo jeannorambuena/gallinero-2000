@@ -1,13 +1,13 @@
 categoria,item,estado,monto_clp,observacion
-pollonas,500 pollonas,conocido,4250000,precio unitario 8500
-galpon,estructura,pendiente,,sin diseño/cubicación
-galpon,zinc,pendiente,,sin cubicación
-galpon,malla,pendiente,,sin cubicación
-bodega,ampliación bodega,pendiente,,bodega actual insuficiente
-agua,estanque,pendiente,,falta cotización
-agua,bomba/filtros/fittings/líneas,pendiente,,falta dimensionamiento
-energia,sistema solar,pendiente,,falta dimensionamiento
-equipamiento,comederos/bebederos/nidales,pendiente,,falta cantidad final
-logistica,transporte pollonas/materiales,pendiente,,falta cotización
-construccion,mano de obra,pendiente,,falta alcance
-contingencia,imprevistos,pendiente,,definir porcentaje
+pollonas,352 pollonas faltantes,conocido,4224000,precio vigente unitario 12000; valor histórico unitario 8500 solo antecedente
+galpon,COT-GN-0035 12 x 6 m,cotizado_referencial,5547765,72 m2; materiales 4347765; mano de obra 1200000
+subtotal,galpon + pollonas faltantes,parcial,9771765,no es CAPEX total cerrado
+equipamiento,comederos,pendiente,,falta cotización
+equipamiento,bebederos,pendiente,,falta cotización
+equipamiento,nidos/ponederos,pendiente,,falta cotización
+agua,bomba/filtros/fittings/lineas,pendiente,,falta dimensionamiento
+energia,panel solar comprado,parcial,300000,falta validar dimensionamiento/instalación/autonomía
+bodega,ampliación bodega alimento,pendiente,,bodega actual requiere ampliación
+logistica,invierno/materiales/pollonas faltantes,pendiente,,falta costeo
+formalizacion,ruta tributaria/sanitaria,pendiente,,intención boleta/factura confirmada; costos pendientes
+capital_trabajo,alimento inicial e imprevistos,pendiente,,falta cálculo

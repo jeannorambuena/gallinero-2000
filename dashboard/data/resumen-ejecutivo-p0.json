@@ -2,7 +2,7 @@
   "proyecto": "Gallinero Nacho",
   "fase": "P0 — Diagnóstico real",
   "estado_general": "amarillo",
-  "avance_p0_estimado": 84,
+  "avance_p0_estimado": 88,
   "escenario_base_actual": {
     "aves": 500,
     "descripcion": "nuevo objetivo base de operación total"
@@ -35,20 +35,24 @@
     "forma de pago actual favorable: contado/transferencia semanal, sin fiado",
     "meta comercial aclarada: 100 bandejas/semana aspiracional por validar",
     "costo parcial estimado: $78,5/huevo y $2.355/bandeja, no costo total real",
-    "estacionalidad confirmada: temporada buena octubre-abril y baja mayo-septiembre"
+    "estacionalidad confirmada: temporada buena octubre-abril y baja mayo-septiembre",
+    "mix de venta actual confirmado: segunda 6, primera 13, extra 9 bandejas/semana",
+    "ingreso actual calculado: $171.000/semana y $741.000/mes",
+    "envases informados: $105 por bandeja",
+    "viruta informada: $10.000/mes",
+    "reparto informado: 6 veces/mes y $10.000 de bencina",
+    "panel solar comprado por $300.000",
+    "si escala a 500, intención confirmada de emitir boleta y factura"
   ],
   "riesgos_principales": [
-    "falta distribución semanal de bandejas por categoría; no se puede calcular precio promedio real ni ingresos",
-    "meta 100 bandejas/semana es aspiracional; no hay venta comprometida ni contrato",
-    "canales actuales son principalmente directos/informales/familiares/vecinales; faltan canales formales o grandes compradores",
-    "venta actual informal; boleta/factura pendientes si escala",
-    "flujo futuro no debe modelarse plano: temporada buena octubre-abril y baja mayo-septiembre",
-    "costo parcial por huevo/bandeja no es costo total real",
-    "OPEX mensual actual es parcial: faltan transporte, envases, cama, medicamentos, energía estable, mano de obra e imprevistos",
-    "sistema eléctrico actual no es estable; panel solar pendiente",
-    "CAPEX total para 500 aves aún incompleto pese a contar con referencia formal del galpón",
-    "flujo proyectado 500 incompleto; EBITDA/VAN/TIR/ROI/Payback bloqueados",
-    "equipamiento interior, formalización comercial, capital de trabajo y validación técnica final del módulo 500 pendientes"
+    "meta 100 bandejas/semana es plan comercial por validar; no hay venta comprometida ni contrato",
+    "precio promedio actual calculado no reemplaza validación de precio real por canal/cliente",
+    "OPEX parcial conocido actualizado no es OPEX total",
+    "CAPEX subtotal galpón + pollonas faltantes no es CAPEX total cerrado",
+    "panel solar comprado requiere dimensionamiento, instalación, autonomía y capacidad para bomba/luces/cámaras",
+    "faltan comederos, bebederos, ponederos, bomba, mallas interiores y ampliación bodega",
+    "formalización: intención de boleta/factura confirmada, pero ruta y costos siguen pendientes",
+    "flujo proyectado 500 incompleto; EBITDA/VAN/TIR/ROI/Payback bloqueados"
   ],
   "decisiones_bloqueadas": [
     "compra de pollonas",
@@ -59,32 +63,30 @@
     "VAN, TIR, ROI y Payback definitivo"
   ],
   "faltantes_para_p1_preliminar": [
-    "Distribución de las 28 bandejas/semana entre segunda, primera y extra.",
-    "Listado o respaldo de clientes necesarios para llegar a 100 bandejas/semana.",
-    "Precio promedio real por bandeja.",
-    "Estrategia concreta para vender 100 bandejas/semana.",
-    "Definir si seguirá venta informal o si formalizará con boleta/factura.",
-    "Costo de envases/bandejas: pendiente.",
-    "Costo de cama/viruta/paja/aserrín/material de piso: pendiente.",
-    "Costo de medicamentos, antiparasitarios, desinfectantes, cal, yodo, sanitización: pendiente.",
-    "Transporte/reparto: generalmente los clientes retiran los huevos; si Nacho lleva huevos existe costo de bencina. Falta cuantificar costo mensual real o frecuencia de reparto.",
-    "Energía estable/panel solar: pendiente de dimensionar y cotizar.",
-    "Mano de obra operacional: pendiente.",
-    "Mantenciones e imprevistos: pendiente.",
-    "modelar flujo estacional: octubre-abril bueno y mayo-septiembre bajo",
-    "completar CAPEX 500 con equipamiento interior, logística, capital de trabajo e imprevistos",
-    "validar técnicamente el módulo 500",
-    "no calcular EBITDA, ROI, VAN, TIR ni Payback hasta completar ingresos, OPEX total y CAPEX total"
+    "precio real confirmado por canal/cliente",
+    "compromisos reales de compra",
+    "costo comederos",
+    "costo bebederos",
+    "costo ponederos",
+    "costo bomba",
+    "costo mallas interiores",
+    "costo ampliación bodega",
+    "alimento inicial para escala",
+    "dimensionamiento real panel solar",
+    "agua/bomba",
+    "formalización tributaria/sanitaria",
+    "capital de trabajo",
+    "logística de invierno",
+    "OPEX total y CAPEX total cerrados"
   ],
   "acciones_recomendadas": [
-    "Nacho debe levantar distribución semanal de las 28 bandejas por categoría",
-    "Nacho debe respaldar clientes/estrategia para meta aspiracional de 100 bandejas/semana",
-    "cuantificar transporte/reparto real y costos de envases, cama, medicamentos/sanidad, mano de obra, mantenciones e imprevistos",
-    "dimensionar energía estable/panel solar",
-    "definir formalización: venta informal versus boleta/factura si escala",
-    "preparar flujo estacional sin calcular EBITDA/ROI/VAN/TIR/Payback hasta tener datos completos"
+    "validar compromisos reales para meta 100 por canal",
+    "cotizar equipamiento interior faltante",
+    "dimensionar panel solar comprado y sistema de agua/bomba",
+    "cerrar ruta tributaria/sanitaria de formalización",
+    "preparar flujo estacional sin calcular ROI/VAN/TIR/Payback definitivo hasta tener datos completos"
   ],
-  "conclusion": "P41 mejora la lectura comercial: existe mercado actual directo/informal y cobranza semanal sin fiado, pero la meta de 100 bandejas/semana es aspiracional y no venta comprometida. Ingresos, OPEX total, flujo, CAPEX total y formalización siguen pendientes; compra de aves, construcción e inversión mayor continúan bloqueadas.",
+  "conclusion": "P42 actualiza el dashboard con respuestas reales: mix 6/13/9, ingreso actual $171.000/semana, OPEX parcial $343.640/mes y pollonas faltantes 352 a precio vigente $12.000. El proyecto sigue amarillo: no se autoriza compra, construcción ni inversión mayor.",
   "interpretacion_estado_amarillo": "Amarillo no significa rechazo ni que el proyecto no sea viable; significa que falta información crítica para decidir con seguridad antes de comprar aves, construir o comprometer inversión mayor.",
   "lineas_paralelas": [
     {
@@ -92,11 +94,11 @@
       "responsable": "Nacho",
       "objetivo": "validar que la meta aspiracional de 100 bandejas/semana pueda sostenerse con clientes, canales, precios y formalización",
       "evidencia_requerida": [
-        "Distribución de las 28 bandejas/semana entre segunda, primera y extra.",
+        "Distribución confirmada: segunda 6, primera 13, extra 9 bandejas/semana.",
         "Listado o respaldo de clientes necesarios para llegar a 100 bandejas/semana.",
-        "Precio promedio real por bandeja.",
+        "Precio promedio calculado: $6.107 aprox.; falta validar precio real por canal/cliente para meta 100.",
         "Estrategia concreta para vender 100 bandejas/semana.",
-        "Definir si seguirá venta informal o si formalizará con boleta/factura."
+        "Formalización: intención confirmada si escala a 500 (boleta sí, factura sí); falta ruta/costo tributario-sanitario."
       ]
     },
     {

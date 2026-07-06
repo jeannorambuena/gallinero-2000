@@ -7,21 +7,19 @@
       "grupo": "comerciales",
       "prioridad": "alta",
       "items": [
-        "Distribución de las 28 bandejas/semana entre segunda, primera y extra.",
-        "Listado o respaldo de clientes necesarios para llegar a 100 bandejas/semana.",
-        "Precio promedio real por bandeja.",
-        "Estrategia concreta para vender 100 bandejas/semana.",
-        "Definir si seguirá venta informal o si formalizará con boleta/factura."
+        "Precio real confirmado por canal/cliente para meta 100.",
+        "Compromisos reales de compra por cliente y frecuencia.",
+        "Validar plan comercial: trabajo 20, vecinos 30, almacenes 30, Facebook 20 bandejas/semana.",
+        "Requisitos de boleta/factura por canal."
       ]
     },
     {
       "grupo": "financieros",
       "prioridad": "alta",
       "items": [
-        "No calcular ingreso mensual definitivo hasta levantar distribución por categoría.",
-        "No calcular EBITDA, Payback, ROI, VAN ni TIR hasta completar ingresos, OPEX total y CAPEX total.",
-        "Calcular CAPEX total del proyecto ampliado incorporando el galpón V8 como referencia formal.",
-        "Preparar flujo estacional: temporada buena octubre-abril y temporada baja mayo-septiembre.",
+        "No calcular EBITDA, Payback, ROI, VAN ni TIR hasta completar OPEX total y CAPEX total.",
+        "Completar CAPEX con equipamiento interior, agua/bomba, mallas, bodega, alimento inicial, logística, formalización y capital de trabajo.",
+        "Preparar flujo estacional: octubre-abril y mayo-septiembre.",
         "Evaluar sensibilidad por precio, postura, mortalidad, alimento y estacionalidad."
       ]
     },
@@ -29,101 +27,51 @@
       "grupo": "costos/OPEX",
       "prioridad": "alta",
       "items": [
-        "Costo de envases/bandejas: pendiente.",
-        "Costo de cama/viruta/paja/aserrín/material de piso: pendiente.",
-        "Costo de medicamentos, antiparasitarios, desinfectantes, cal, yodo, sanitización: pendiente.",
-        "Transporte/reparto: generalmente los clientes retiran los huevos; si Nacho lleva huevos existe costo de bencina. Falta cuantificar costo mensual real o frecuencia de reparto.",
-        "Energía estable/panel solar: pendiente de dimensionar y cotizar.",
-        "Mano de obra operacional: pendiente.",
-        "Mantenciones e imprevistos: pendiente."
+        "OPEX parcial conocido actualizado: alimento, agua, vitaminas, envases, viruta, bencina y medicamentos adicionales informados en $0.",
+        "Falta mano de obra operacional definitiva.",
+        "Faltan mantenciones, sanitización e imprevistos.",
+        "Faltan costos de escala 500 y costos tributarios/sanitarios si formaliza."
       ]
     },
     {
-      "grupo": "constructivos",
+      "grupo": "equipamiento 500 gallinas",
       "prioridad": "alta",
       "items": [
-        "validar si la solución V8 de 72 m² aplica al escenario 500 aves o requiere ajuste",
-        "definir diseño constructivo final del galpón ampliado",
-        "definir bodega y almacenamiento",
-        "resolver ventilación, sombra, orientación y drenaje",
-        "validar transporte/acopio de materiales y restricciones de acceso",
-        "validar necesidad de cálculo estructural firmado antes de ejecutar"
-      ]
-    },
-    {
-      "grupo": "agua",
-      "prioridad": "media",
-      "items": [
-        "dimensionar consumo para 500 aves",
-        "definir estanque, bomba, presión y autonomía",
-        "definir ubicación del estanque",
-        "cotizar solución completa"
+        "Tiene estanque de agua.",
+        "Tiene luz/panel solar comprado.",
+        "Tiene bodega alimento, pero requiere ampliación.",
+        "Faltan comederos, bebederos, nidos/ponederos, bomba de agua, mallas interiores y ampliación bodega alimento."
       ]
     },
     {
       "grupo": "energía",
       "prioridad": "media",
       "items": [
-        "levantar consumo de luces y cámara",
-        "definir watts, voltaje y autonomía",
-        "dimensionar batería, controlador, paneles e inversor",
-        "cotizar sistema solar"
-      ]
-    },
-    {
-      "grupo": "logística",
-      "prioridad": "alta",
-      "items": [
-        "Cuantificar transporte/reparto mensual real o frecuencia de reparto.",
-        "Registrar que generalmente los clientes retiran los huevos.",
-        "Cuantificar bencina cuando Nacho lleva huevos.",
-        "Validar acceso de camiones y vehículos con carga.",
-        "Evaluar restricciones por invierno y barro.",
-        "Definir plan de descarga y acopio."
-      ]
-    },
-    {
-      "grupo": "sanitarios",
-      "prioridad": "alta",
-      "items": [
-        "corregir humedad y condensación",
-        "corregir bebederos que botan agua",
-        "definir manejo de cama y olor",
-        "resolver ventilación y calor de verano"
+        "Panel solar comprado por $300.000.",
+        "Falta validar dimensionamiento, instalación, autonomía, baterías/inversor si aplica y capacidad para bomba, luces y cámaras."
       ]
     },
     {
       "grupo": "legales/contables",
       "prioridad": "media",
       "items": [
-        "revisar formalización si escala",
-        "identificar permisos o exigencias aplicables",
-        "definir registro de ingresos y gastos",
-        "revisar impuestos y trazabilidad"
+        "Intención confirmada de formalizar si escala a 500: boleta sí y factura sí.",
+        "Pendiente definir ruta y costos tributarios/sanitarios específicos.",
+        "Pendiente sistema mínimo de trazabilidad y registro."
       ]
     },
     {
-      "grupo": "terreno/croquis",
-      "prioridad": "media",
-      "items": [
-        "dibujar croquis del terreno inmediato 19 x 7 m",
-        "ubicar galpón actual, bodega y posible ampliación",
-        "marcar pendientes, drenajes, zonas de barro y acceso",
-        "definir zona de descarga"
-      ]
-    },
-    {
-      "grupo": "decisión de escalamiento",
+      "grupo": "logística",
       "prioridad": "alta",
       "items": [
-        "confirmar 500 aves como escenario base vigente y evaluar 1.000 o 2.000 aves solo como comparativos futuros; 648 aves queda como histórico/referencial",
-        "definir avance por etapas o ampliación mayor",
-        "definir condición mínima para habilitar P1 preliminar",
-        "definir criterios de no avance"
+        "Acceso invierno regular.",
+        "Logística de invierno pendiente.",
+        "Plan de descarga y acopio pendiente.",
+        "Costos logísticos para escala/obras pendientes."
       ]
     }
   ],
-  "nota": "Datos faltantes críticos P41: distribución por categoría, respaldo para meta 100 bandejas/semana, estrategia comercial, formalización, OPEX total, transporte/reparto, energía estable y flujo estacional.",
+  "nota": "P42 elimina como pendientes los datos ya respondidos por Nacho: mix bandejas, envases, viruta, reparto/bencina, panel solar comprado e intención de formalizar. Persisten pendientes críticos para P1 e inversión.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",
@@ -136,20 +84,38 @@
   },
   "pendientes_para_ignacio_p41": {
     "comerciales": [
-      "Distribución de las 28 bandejas/semana entre segunda, primera y extra.",
+      "Distribución confirmada: segunda 6, primera 13, extra 9 bandejas/semana.",
       "Listado o respaldo de clientes necesarios para llegar a 100 bandejas/semana.",
-      "Precio promedio real por bandeja.",
+      "Precio promedio calculado: $6.107 aprox.; falta validar precio real por canal/cliente para meta 100.",
       "Estrategia concreta para vender 100 bandejas/semana.",
-      "Definir si seguirá venta informal o si formalizará con boleta/factura."
+      "Formalización: intención confirmada si escala a 500 (boleta sí, factura sí); falta ruta/costo tributario-sanitario."
     ],
     "costos_opex": [
-      "Costo de envases/bandejas: pendiente.",
-      "Costo de cama/viruta/paja/aserrín/material de piso: pendiente.",
-      "Costo de medicamentos, antiparasitarios, desinfectantes, cal, yodo, sanitización: pendiente.",
-      "Transporte/reparto: generalmente los clientes retiran los huevos; si Nacho lleva huevos existe costo de bencina. Falta cuantificar costo mensual real o frecuencia de reparto.",
-      "Energía estable/panel solar: pendiente de dimensionar y cotizar.",
+      "Envases: $105 por bandeja; costo actual aprox. $12.740/mes y meta 100 aprox. $45.500/mes.",
+      "Cama/piso: usa viruta; costo actual informado $10.000/mes.",
+      "Medicamentos y limpieza adicional: $0 informado fuera de vitaminas; no elimina riesgo sanitario.",
+      "Reparto/bencina: 6 repartos al mes, $10.000/mes; generalmente los clientes retiran.",
+      "Panel solar comprado por $300.000; falta validar dimensionamiento, instalación, autonomía y capacidad para bomba/luces/cámaras.",
       "Mano de obra operacional: pendiente.",
       "Mantenciones e imprevistos: pendiente."
+    ]
+  },
+  "pendientes_para_ignacio_p42": {
+    "criticos": [
+      "precio real confirmado por canal/cliente",
+      "compromisos reales de compra",
+      "costo comederos",
+      "costo bebederos",
+      "costo ponederos",
+      "costo bomba",
+      "costo mallas interiores",
+      "costo ampliación bodega",
+      "alimento inicial para escala",
+      "dimensionamiento real panel solar",
+      "agua/bomba",
+      "formalización tributaria/sanitaria",
+      "capital de trabajo",
+      "logística de invierno"
     ]
   }
 }

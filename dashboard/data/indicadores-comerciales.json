@@ -1,7 +1,7 @@
 {
   "proyecto": "Gallinero Nacho",
   "fase": "P0 — Diagnóstico real",
-  "estado": "parcial; mercado actual confirmado, meta 100 aspiracional por validar",
+  "estado": "parcial; venta actual y mix 6/13/9 confirmados, meta 100 aspiracional por validar",
   "indicadores": [
     {
       "indicador": "venta_actual_bandejas_semana",
@@ -14,12 +14,12 @@
     },
     {
       "indicador": "bandejas_segunda_semana",
-      "valor": null,
+      "valor": 6,
       "unidad": "bandejas/semana",
-      "formula": "pendiente",
-      "fuente": "pendiente de levantar con Nacho",
-      "estado": "pendiente",
-      "observacion": "falta distribución semanal de las 28 bandejas por categoría"
+      "formula": "dato declarado P42",
+      "fuente": "respuesta Nacho P42",
+      "estado": "confirmado",
+      "observacion": "mix actual confirmado"
     },
     {
       "indicador": "precio_bandeja_segunda",
@@ -28,16 +28,16 @@
       "formula": "dato declarado",
       "fuente": "dato entregado por Nacho / P0",
       "estado": "confirmado",
-      "observacion": "precio por categoría confirmado; no permite calcular promedio sin distribución"
+      "observacion": "precio por categoría confirmado en repo"
     },
     {
       "indicador": "bandejas_primera_semana",
-      "valor": null,
+      "valor": 13,
       "unidad": "bandejas/semana",
-      "formula": "pendiente",
-      "fuente": "pendiente de levantar con Nacho",
-      "estado": "pendiente",
-      "observacion": "falta distribución semanal de las 28 bandejas por categoría"
+      "formula": "dato declarado P42",
+      "fuente": "respuesta Nacho P42",
+      "estado": "confirmado",
+      "observacion": "mix actual confirmado"
     },
     {
       "indicador": "precio_bandeja_primera",
@@ -46,16 +46,16 @@
       "formula": "dato declarado",
       "fuente": "dato entregado por Nacho / P0",
       "estado": "confirmado",
-      "observacion": "precio por categoría confirmado; no permite calcular promedio sin distribución"
+      "observacion": "precio por categoría confirmado en repo"
     },
     {
       "indicador": "bandejas_extra_semana",
-      "valor": null,
+      "valor": 9,
       "unidad": "bandejas/semana",
-      "formula": "pendiente",
-      "fuente": "pendiente de levantar con Nacho",
-      "estado": "pendiente",
-      "observacion": "falta distribución semanal de las 28 bandejas por categoría"
+      "formula": "dato declarado P42",
+      "fuente": "respuesta Nacho P42",
+      "estado": "confirmado",
+      "observacion": "mix actual confirmado"
     },
     {
       "indicador": "precio_bandeja_extra",
@@ -64,7 +64,7 @@
       "formula": "dato declarado",
       "fuente": "dato entregado por Nacho / P0",
       "estado": "confirmado",
-      "observacion": "precio por categoría confirmado; no permite calcular promedio sin distribución"
+      "observacion": "precio por categoría confirmado en repo"
     },
     {
       "indicador": "huevos_por_bandeja",
@@ -113,21 +113,21 @@
     },
     {
       "indicador": "ingreso_semanal_actual",
-      "valor": null,
-      "unidad": "pendiente",
-      "formula": "pendiente por distribución de bandejas por categoría",
-      "fuente": "pendiente",
-      "estado": "pendiente",
-      "observacion": "no calcular hasta conocer cuántas bandejas semanales son segunda, primera y extra"
+      "valor": 171000,
+      "unidad": "CLP/semana",
+      "formula": "6*5000 + 13*6000 + 9*7000",
+      "fuente": "precios repo + respuesta Nacho P42",
+      "estado": "confirmado_calculado",
+      "observacion": "valor monetario redondeado a entero"
     },
     {
       "indicador": "ingreso_mensual_estimado",
-      "valor": null,
-      "unidad": "pendiente",
-      "formula": "pendiente por distribución de bandejas por categoría",
-      "fuente": "pendiente",
-      "estado": "pendiente",
-      "observacion": "no calcular hasta conocer cuántas bandejas semanales son segunda, primera y extra"
+      "valor": 741000,
+      "unidad": "CLP/mes",
+      "formula": "171000 * 52 / 12",
+      "fuente": "precios repo + respuesta Nacho P42",
+      "estado": "estimado",
+      "observacion": "valor monetario redondeado a entero; conversión 52/12"
     },
     {
       "indicador": "huevos_vendidos_semana",
@@ -140,21 +140,21 @@
     },
     {
       "indicador": "precio_promedio_por_bandeja",
-      "valor": null,
-      "unidad": "pendiente",
-      "formula": "pendiente por distribución de bandejas por categoría",
-      "fuente": "pendiente",
-      "estado": "pendiente",
-      "observacion": "no calcular hasta conocer cuántas bandejas semanales son segunda, primera y extra"
+      "valor": 6107,
+      "unidad": "CLP/bandeja",
+      "formula": "171000 / 28",
+      "fuente": "precios repo + respuesta Nacho P42",
+      "estado": "confirmado_calculado",
+      "observacion": "precio promedio ponderado aprox."
     },
     {
       "indicador": "precio_promedio_por_huevo",
-      "valor": null,
-      "unidad": "pendiente",
-      "formula": "pendiente por distribución de bandejas por categoría",
-      "fuente": "pendiente",
-      "estado": "pendiente",
-      "observacion": "no calcular hasta conocer cuántas bandejas semanales son segunda, primera y extra"
+      "valor": 204,
+      "unidad": "CLP/huevo",
+      "formula": "171000 / 840",
+      "fuente": "precios repo + respuesta Nacho P42",
+      "estado": "confirmado_calculado",
+      "observacion": "valor monetario redondeado"
     },
     {
       "indicador": "brecha_bandejas_semana_para_648",
@@ -343,7 +343,7 @@
       "formula": "dato declarado",
       "fuente": "respuesta Jean/Nacho P41",
       "estado": "confirmado",
-      "observacion": "formalización pendiente para escalar"
+      "observacion": "intención de formalizar confirmada si escala; ruta y costos pendientes"
     },
     {
       "indicador": "emite_factura_actual",
@@ -352,27 +352,103 @@
       "formula": "dato declarado",
       "fuente": "respuesta Jean/Nacho P41",
       "estado": "confirmado",
-      "observacion": "formalización pendiente para escalar"
+      "observacion": "intención de formalizar confirmada si escala; ruta y costos pendientes"
+    },
+    {
+      "indicador": "ingreso_segunda_semana",
+      "valor": 30000,
+      "unidad": "CLP/semana",
+      "formula": "6 * 5000",
+      "fuente": "precios repo + respuesta Nacho P42",
+      "estado": "confirmado_calculado",
+      "observacion": "ingreso semanal por segunda"
+    },
+    {
+      "indicador": "ingreso_primera_semana",
+      "valor": 78000,
+      "unidad": "CLP/semana",
+      "formula": "13 * 6000",
+      "fuente": "precios repo + respuesta Nacho P42",
+      "estado": "confirmado_calculado",
+      "observacion": "ingreso semanal por primera"
+    },
+    {
+      "indicador": "ingreso_extra_semana",
+      "valor": 63000,
+      "unidad": "CLP/semana",
+      "formula": "9 * 7000",
+      "fuente": "precios repo + respuesta Nacho P42",
+      "estado": "confirmado_calculado",
+      "observacion": "ingreso semanal por extra"
+    },
+    {
+      "indicador": "meta_trabajo_bandejas_semana",
+      "valor": 20,
+      "unidad": "bandejas/semana",
+      "formula": "plan comercial por validar",
+      "fuente": "respuesta Nacho P42",
+      "estado": "plan_por_validar",
+      "observacion": "no es venta comprometida"
+    },
+    {
+      "indicador": "meta_vecinos_bandejas_semana",
+      "valor": 30,
+      "unidad": "bandejas/semana",
+      "formula": "plan comercial por validar",
+      "fuente": "respuesta Nacho P42",
+      "estado": "plan_por_validar",
+      "observacion": "no es venta comprometida"
+    },
+    {
+      "indicador": "meta_almacenes_bandejas_semana",
+      "valor": 30,
+      "unidad": "bandejas/semana",
+      "formula": "plan comercial por validar",
+      "fuente": "respuesta Nacho P42",
+      "estado": "plan_por_validar",
+      "observacion": "no es venta comprometida"
+    },
+    {
+      "indicador": "meta_facebook_bandejas_semana",
+      "valor": 20,
+      "unidad": "bandejas/semana",
+      "formula": "plan comercial por validar",
+      "fuente": "respuesta Nacho P42",
+      "estado": "plan_por_validar",
+      "observacion": "no es venta comprometida"
+    },
+    {
+      "indicador": "huevos_quebrados_semana",
+      "valor": 25,
+      "unidad": "huevos/semana",
+      "formula": "dato declarado P42",
+      "fuente": "respuesta Nacho P42",
+      "estado": "confirmado",
+      "observacion": "equivale a 0,83 bandejas/semana perdidas"
+    },
+    {
+      "indicador": "bandejas_perdidas_semana",
+      "valor": 0.83,
+      "unidad": "bandejas/semana",
+      "formula": "25 / 30",
+      "fuente": "respuesta Nacho P42",
+      "estado": "confirmado_calculado",
+      "observacion": "huevos chicos/no vendibles informados: 0"
     }
   ],
   "resumen": {
-    "venta_actual": "28 bandejas/semana confirmadas",
+    "venta_actual_bandejas_semana": 28,
+    "mix_actual": {
+      "segunda": 6,
+      "primera": 13,
+      "extra": 9
+    },
     "precios_confirmados": "segunda $5.000, primera $6.000, extra $7.000",
-    "distribucion_por_categoria": "Pendiente",
-    "precio_promedio_real": "Pendiente",
-    "ingreso_semanal_actual": "Pendiente",
-    "ingreso_mensual_estimado": "Pendiente",
-    "semaforo_comercial_preliminar": "amarillo_rojo",
-    "venta_estimada_requerida_500_aves": "104.1 bandejas/semana",
-    "brecha_actual_500_aves": "76.1 bandejas/semana",
-    "nota": "No calcular precio promedio ni ingresos definitivos hasta levantar distribución semanal por categoría.",
-    "meta_comercial_bandejas_semana": "100 bandejas/semana aspiracional; requiere validación comercial",
-    "bandejas_comprometidas_semana": "Pendiente / no confirmado",
-    "pierde_ventas_por_falta_huevos": "No",
-    "canales_actuales": "vecinos, reparto a domicilio y familiares; no almacenes, feria ni restaurantes",
-    "forma_pago_actual": "contado y transferencia; semanal; sin fiado",
-    "formalizacion_actual": "venta informal; sin boleta ni factura",
-    "nota_p41": "Las 100 bandejas son meta aspiracional, no venta comprometida."
+    "ingreso_semanal_actual_clp": 171000,
+    "ingreso_mensual_estimado_clp": 741000,
+    "precio_promedio_bandeja_aprox_clp": 6107,
+    "meta_comercial_bandejas_semana": 100,
+    "meta_comercial_estado": "plan comercial por validar; no venta comprometida"
   },
   "nota": "P41: venta actual 28 bandejas/semana; meta 100 bandejas/semana aspiracional por validar. No calcular precio promedio ni ingresos hasta levantar distribución por categoría.",
   "canales_actuales": {
@@ -395,17 +471,18 @@
     "interpretacion": "riesgo de cobranza bajo en operación actual; no vende fiado"
   },
   "formalizacion_actual": {
-    "venta_informal": true,
-    "boleta": false,
-    "factura": false,
-    "estado": "confirmado",
-    "interpretacion": "para escalar a 500 aves se debe definir formalización comercial, tributaria y sanitaria si corresponde"
+    "venta_informal_actual": true,
+    "si_escala_a_500_daria_boleta": true,
+    "si_escala_a_500_daria_factura": true,
+    "clientes_podrian_pedir_documento": true,
+    "estado": "intención confirmada; ruta/costos tributarios/sanitarios pendientes"
   },
   "meta_comercial": {
-    "meta_comercial_bandejas_semana": 100,
-    "estado": "aspiracional / requiere validación comercial",
-    "bandejas_comprometidas_semana": null,
-    "pierde_ventas_por_falta_huevos": false,
-    "advertencia": "100 bandejas/semana no es venta segura, demanda comprometida ni contrato"
+    "total_bandejas_semana": 100,
+    "trabajo": 20,
+    "vecinos": 30,
+    "almacenes": 30,
+    "facebook": 20,
+    "estado": "plan comercial por validar; no venta comprometida"
   }
 }

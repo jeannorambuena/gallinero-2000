@@ -1,7 +1,7 @@
 {
   "proyecto": "Gallinero Nacho",
   "fase": "P0 — Diagnóstico real",
-  "estado": "parcial; mercado actual directo confirmado y meta 100 aspiracional por validar",
+  "estado": "parcial; venta actual y mix confirmados, meta 100 como plan por validar",
   "escenario_base": "500 aves totales",
   "venta_actual_bandejas_semana": 28,
   "venta_requerida_500_bandejas_semana": 104.1,
@@ -37,20 +37,19 @@
     "reparto semanal ampliado"
   ],
   "riesgos": [
-    "meta 100 bandejas/semana aspiracional; requiere desarrollar mercado y vender activamente",
-    "no hay 100 bandejas/semana comprometidas",
-    "falta distribución semanal de 28 bandejas por categoría",
-    "no calcular precio promedio real ni ingresos hasta completar distribución",
-    "venta actual informal; boleta/factura pendientes para escalar",
-    "canales formales o grandes compradores no validados"
+    "meta 100 bandejas/semana es plan comercial por validar; no hay 100 bandejas comprometidas",
+    "faltan compromisos reales por cliente/canal para trabajo, vecinos, almacenes y Facebook",
+    "precio actual promedio calculado no reemplaza validación de precio real por canal/cliente para meta 100",
+    "canales formales o grandes compradores no validados",
+    "formalización: intención de boleta/factura confirmada si escala, pero ruta y costos siguen pendientes"
   ],
   "plan_validacion": [
-    "separar las 28 bandejas semanales actuales entre segunda, primera y extra",
-    "preparar listado/respaldo de clientes necesarios para llegar a 100 bandejas/semana",
-    "definir estrategia concreta para vender 100 bandejas/semana",
-    "calcular precio promedio real solo con distribución confirmada",
-    "definir si seguirá venta informal o formalizará con boleta/factura",
-    "validar canales formales o compradores por volumen antes de escalar"
+    "respaldar clientes y frecuencia para meta 100 bandejas/semana",
+    "validar 20 bandejas/semana en trabajo",
+    "validar 30 bandejas/semana en vecinos",
+    "validar 30 bandejas/semana en almacenes",
+    "validar 20 bandejas/semana vía Facebook",
+    "confirmar precios reales por canal/cliente y requisitos de boleta/factura"
   ],
   "criterios_para_avanzar": [
     "distribución por categoría confirmada",
@@ -61,7 +60,7 @@
     "boleta/factura/formalización definida si escala",
     "brecha hacia 100/104.1 bandejas reducida con evidencia"
   ],
-  "conclusion": "P41 confirma venta actual por canales directos/informales y pago semanal sin fiado. La meta de 100 bandejas/semana es aspiracional y requiere validación; no hay venta comprometida. Comercial sigue parcial.",
+  "conclusion": "P42 confirma el mix actual 6/13/9 y permite calcular ingreso semanal actual de $171.000 e ingreso mensual aproximado de $741.000. La meta de 100 bandejas/semana queda como plan comercial por validar, no como venta comprometida.",
   "urgencia_comercial": {
     "objetivo_tentativo": "enero 2027",
     "fecha_contexto": "junio 2026",
@@ -69,11 +68,10 @@
   },
   "responsable": "Nacho",
   "datos_que_debe_levantar_nacho": [
-    "Distribución de las 28 bandejas/semana entre segunda, primera y extra.",
-    "Listado o respaldo de clientes necesarios para llegar a 100 bandejas/semana.",
-    "Precio promedio real por bandeja.",
-    "Estrategia concreta para vender 100 bandejas/semana.",
-    "Definir si seguirá venta informal o si formalizará con boleta/factura."
+    "precio real confirmado por canal/cliente",
+    "compromisos reales de compra por cliente y frecuencia",
+    "condiciones de pago para meta 100",
+    "requisitos de boleta/factura por canal"
   ],
   "precios_por_categoria_clp": {
     "segunda": 5000,
@@ -81,12 +79,18 @@
     "extra": 7000
   },
   "distribucion_semanal_por_categoria": {
-    "segunda": "Pendiente",
-    "primera": "Pendiente",
-    "extra": "Pendiente"
+    "segunda": 6,
+    "primera": 13,
+    "extra": 9
   },
-  "precio_promedio_real_bandeja": "Pendiente",
-  "ingresos_actuales": "Pendiente",
+  "precio_promedio_real_bandeja": 6107,
+  "ingresos_actuales": {
+    "ingreso_segunda_clp_semana": 30000,
+    "ingreso_primera_clp_semana": 78000,
+    "ingreso_extra_clp_semana": 63000,
+    "ingreso_semanal_actual_clp": 171000,
+    "ingreso_mensual_estimado_clp": 741000
+  },
   "meta_comercial_bandejas_semana": 100,
   "meta_comercial_estado": "aspiracional / requiere validación comercial",
   "bandejas_comprometidas_semana": null,
@@ -117,5 +121,19 @@
     "restaurantes": false,
     "estado": "confirmado",
     "interpretacion": "mercado actual principalmente directo/informal/familiar/vecinal; no hay validación comercial fuerte con canales formales o grandes compradores"
+  },
+  "meta_comercial_plan_por_validar": {
+    "total": 100,
+    "trabajo": 20,
+    "vecinos": 30,
+    "almacenes": 30,
+    "facebook": 20,
+    "estado": "no comprometido"
+  },
+  "formalizacion_si_escala": {
+    "boleta": true,
+    "factura": true,
+    "clientes_podrian_pedir_documento": true,
+    "pendiente": "ruta y costos legales, tributarios y sanitarios específicos"
   }
 }

@@ -74,24 +74,26 @@
       "hay subidas y bajadas",
       "camión grande complicado",
       "camioneta sí entra",
-      "en invierno el camino se pone malo/barroso"
+      "en invierno el camino se pone malo/barroso",
+      "terreno 7 x 19 m = 133 m² completamente usable",
+      "entra vehículo con materiales",
+      "acceso invierno regular",
+      "orientación propuesta norte-sur",
+      "reparto actual: 6 veces/mes; bencina $10.000/mes; generalmente retiran"
     ],
     "riesgos": [
       "transporte de materiales puede requerir transbordo o viajes menores",
       "invierno puede retrasar construcción y abastecimiento",
-      "transporte de 500 pollonas requiere planificación de descarga y bioseguridad",
+      "transporte de pollonas faltantes requiere planificación de descarga y bioseguridad",
       "falta definir descarga, acopio y transporte interno",
       "costos logísticos adicionales pueden afectar la evaluación financiera"
     ],
     "datos_faltantes": [
-      "punto exacto de descarga",
-      "capacidad real de acceso para camión mediano o grande",
-      "distancia desde descarga hasta galpón/bodega",
-      "zona de acopio",
-      "plan de transporte de pollonas",
+      "logística de invierno",
+      "plan de descarga y acopio",
+      "costos logísticos adicionales",
       "plan de transporte de materiales",
-      "restricciones por lluvia o barro",
-      "costos logísticos adicionales"
+      "plan de transporte de pollonas faltantes"
     ],
     "condicion_para_avanzar": "Validar acceso, descarga, acopio, transporte interno, transporte de pollonas/materiales y restricciones de invierno antes de P1 preliminar."
   },
@@ -105,5 +107,30 @@
     "densidad_500_aprox_aves_m2": 7,
     "costo_gallina_instalada_galpon_aprox_clp": 11096,
     "advertencia": "referencial; no autoriza construcción"
+  },
+  "terreno_p42": {
+    "terreno_m2": 133,
+    "dimensiones": "7 x 19 m",
+    "completamente_usable": true,
+    "pendiente": false,
+    "se_inunda": false,
+    "entra_vehiculo_con_materiales": true,
+    "acceso_invierno": "regular",
+    "orientacion_galpon": "norte-sur"
+  },
+  "equipamiento_500_p42": {
+    "tiene": [
+      "estanque de agua",
+      "luz/panel solar comprado",
+      "bodega alimento (requiere ampliación)"
+    ],
+    "falta": [
+      "comederos",
+      "bebederos",
+      "nidos/ponederos",
+      "bomba de agua",
+      "mallas interiores",
+      "ampliación bodega alimento"
+    ]
   }
 }

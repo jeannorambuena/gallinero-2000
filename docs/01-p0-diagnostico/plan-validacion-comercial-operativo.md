@@ -4,41 +4,45 @@
 
 Transformar la brecha comercial en un plan de levantamiento concreto, sin inventar clientes ni compromisos.
 
-## Datos de partida
+## Datos de partida P42
 
-- Venta actual: 28 bandejas/semana.
-- Objetivo estimado para 500 aves: 104.1 bandejas/semana.
-- Brecha estimada para 500 aves: 76.1 bandejas/semana.
-- Crecimiento requerido estimado: 3.72 veces.
-- Nota histórica/referencial: el escenario anterior de 648 aves requería 135 bandejas/semana y una brecha de 107 bandejas/semana; no es la meta vigente.
+- Venta actual: **28 bandejas/semana**.
+- Mix actual: **6 segunda, 13 primera, 9 extra**.
+- Ingreso actual: **$171.000/semana**.
+- Ingreso mensual estimado: **$741.000**.
+- Precio promedio actual aproximado: **$6.107/bandeja**.
+- Objetivo estimado para 500 aves: **104,1 bandejas/semana**.
+- Brecha estimada para 500 aves: **76,1 bandejas/semana**.
 
-## Canales a validar
+## Meta comercial por validar
 
-- Vecinos.
-- Trabajo.
-- Amigos.
-- Almacenes/minimarket.
-- Feria.
-- Reparto semanal.
-- Contactos por cantidad.
+La meta declarada es **100 bandejas/semana**, distribuida como plan:
+
+- Trabajo: 20 bandejas/semana.
+- Vecinos: 30 bandejas/semana.
+- Almacenes: 30 bandejas/semana.
+- Facebook: 20 bandejas/semana.
+
+Esta meta no es venta comprometida, contrato ni demanda segura.
 
 ## Metodología para validar clientes
 
 1. Registrar clientes actuales.
-2. Registrar clientes potenciales.
-3. Separar por canal.
-4. Registrar contacto y forma de pago.
-5. Estimar bandejas por semana.
-6. Diferenciar interés de compromiso.
-7. Validar precio por volumen.
-8. Identificar meses de baja de precio.
+2. Registrar clientes potenciales por canal.
+3. Separar canal: trabajo, vecinos, almacenes, Facebook u otro.
+4. Registrar cantidad semanal, precio, frecuencia y forma de pago.
+5. Diferenciar interés de compromiso.
+6. Registrar si requiere boleta/factura.
+7. Validar precio real por canal/cliente.
+8. Identificar meses de baja de precio o demanda.
 
 ## Cómo contar bandejas comprometidas
 
 - Contar solo bandejas semanales explícitamente declaradas.
 - Separar volumen actual, estimado y comprometido.
 - No sumar interés genérico como venta validada.
-- Registrar si requiere boleta/factura.
+- Registrar condiciones de precio, frecuencia y pago.
+- Registrar si exige boleta o factura.
 
 ## Niveles de compromiso
 
@@ -48,27 +52,22 @@ Transformar la brecha comercial en un plan de levantamiento concreto, sin invent
 | Compromiso débil | Indica cantidad aproximada sin frecuencia clara | Cuenta solo como señal |
 | Compromiso fuerte | Indica cantidad, frecuencia, precio y forma de pago | Puede contar como validación preliminar |
 
-## Prueba de preventa
-
-Antes de comprar pollonas, probar preventa o compromisos escritos/registrados por canal. Registrar fecha, cliente, cantidad, precio y condición.
-
 ## Criterios mínimos sugeridos para avanzar
 
 - Clientes actuales ordenados.
 - Clientes potenciales listados.
-- Canales separados.
-- Bandejas semanales estimadas por canal.
-- Precio mínimo por canal.
+- Bandejas semanales por canal respaldadas.
+- Precio mínimo por canal validado.
 - Requerimiento de boleta/factura identificado.
 - Compromisos fuertes suficientes para reducir brecha.
 
 ## Criterios de no avance comercial
 
-- No aparece demanda suficiente para acercarse a 104.1 bandejas/semana en el escenario base vigente de 500 aves.
+- No aparece demanda suficiente para acercarse a 100–104 bandejas/semana.
 - Los precios por volumen destruyen el margen.
 - Los canales requieren formalización que no está resuelta.
 - La venta depende de interés informal sin compromiso fuerte.
 
 ## Conclusión
 
-La brecha comercial es bloqueante hasta validar demanda real. No se deben comprar 500 pollonas sin evidencia comercial suficiente.
+La brecha comercial sigue siendo bloqueante hasta validar demanda real. No se deben comprar aves ni comprometer inversión mayor sin evidencia comercial suficiente.

@@ -1,6 +1,6 @@
 canal,bandejas_semana_objetivo,bandejas_semana_validadas,precio_minimo,precio_objetivo,riesgo,estado,observacion
-vecinos,,,,,,pendiente,
-trabajo,,,,,,pendiente,
-almacenes/minimarket,,,,,,pendiente,
-feria,,,,,,pendiente,
-reparto,,,,,,pendiente,
+trabajo,20,,,,sin compromisos reales,plan_por_validar,no venta comprometida
+vecinos,30,,,,sin respaldo suficiente,plan_por_validar,no venta comprometida
+almacenes/minimarket,30,,,,requiere boleta/factura y logística,plan_por_validar,no venta comprometida
+facebook,20,,,,requiere captación y cobranza,plan_por_validar,no venta comprometida
+reparto actual,,,,,bajo,informado,6 repartos/mes; bencina $10.000; generalmente retiran

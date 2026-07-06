@@ -19,7 +19,7 @@ Identificar los riesgos y datos faltantes asociados al acceso, transporte, desca
 - El acceso puede limitar transporte de materiales de construcción.
 - El camión grande complicado puede aumentar costo, tiempos o transbordos.
 - En invierno el barro puede impedir o retrasar entregas.
-- El transporte de 500 pollonas requiere planificación cuidadosa de horario, descarga y bioseguridad.
+- El transporte de pollonas faltantes requiere planificación cuidadosa de horario, descarga y bioseguridad.
 - La falta de zona de descarga puede generar manipulación extra y pérdidas de tiempo.
 - El transporte interno desde el punto de descarga al galpón puede requerir mano de obra adicional.
 - El mal acceso puede afectar abastecimiento de alimento, viruta, materiales y retiro o entrega de productos.
@@ -32,7 +32,7 @@ Identificar los riesgos y datos faltantes asociados al acceso, transporte, desca
 - Pendientes y zonas críticas del camino.
 - Condición del camino en invierno.
 - Capacidad de acopio temporal de materiales.
-- Plan de transporte de 500 pollonas.
+- Plan de transporte de pollonas faltantes.
 - Plan de transporte de materiales.
 - Necesidad de transbordo camioneta/camión.
 - Costos logísticos adicionales.

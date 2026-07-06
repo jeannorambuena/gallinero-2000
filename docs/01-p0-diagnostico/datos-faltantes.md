@@ -1,83 +1,81 @@
 # Datos faltantes P0 — Proyecto Gallinero Nacho
 
-Listado agrupado de información pendiente para cerrar P0 y preparar, si corresponde, una etapa P1 preliminar.
+Listado actualizado P42 de información pendiente para cerrar P0 y preparar, si corresponde, una etapa P1 preliminar.
 
-## Comerciales
+## Datos ya respondidos por Nacho en P42
 
-- Clientes actuales por tipo y recurrencia.
-- Capacidad real de vender 104.1 bandejas/semana para el escenario base vigente de 500 aves.
-- Canales de venta disponibles.
-- Precio sostenible por bandeja según volumen.
-- Riesgo de sobreoferta o venta informal no escalable.
+- Mix actual de ventas: **6 segunda, 13 primera, 9 extra**.
+- Envases: **$105 por bandeja**.
+- Viruta: **$10.000/mes**.
+- Reparto/bencina: **6 repartos al mes**, **$10.000/mes**, generalmente retiran.
+- Medicamentos y limpieza adicional fuera de vitaminas: **$0 informado**.
+- Panel solar: comprado por **$300.000**.
+- Formalización si escala a 500: daría **boleta** y **factura**.
+- Terreno inmediato: **7 x 19 m = 133 m²**, usable, sin pendiente, no se inunda, entra vehículo con materiales, acceso invierno regular, orientación norte-sur.
 
-## Financieros
+## Comerciales pendientes
+
+- Precio real confirmado por canal/cliente.
+- Compromisos reales de compra.
+- Validar meta comercial de 100 bandejas/semana:
+  - trabajo: 20;
+  - vecinos: 30;
+  - almacenes: 30;
+  - Facebook: 20.
+- Requisitos de boleta/factura por canal.
+- Frecuencia y forma de pago para clientes nuevos.
+
+## Financieros pendientes
 
 - CAPEX total del proyecto ampliado.
-- Costos completos de galpón, bodega, agua, energía, transporte y equipamiento.
-- Costos variables con 500 aves.
-- Flujo de caja proyectado.
+- OPEX total de escala 500.
+- Flujo de caja estacional.
+- Capital de trabajo.
 - Sensibilidad por precio, mortalidad, postura y alimento.
+- EBITDA, Payback, ROI, VAN y TIR siguen bloqueados.
 
-## Constructivos
+## Equipamiento pendiente para 500 gallinas
 
-- Diseño constructivo del galpón ampliado.
-- Cubicación de materiales.
-- Definición de bodega y almacenamiento.
-- Manejo de ventilación, sombra, orientación y drenaje.
-- Cotizaciones comparables.
+Tiene:
 
-## Agua
+- Estanque de agua.
+- Luz/panel solar comprado.
+- Bodega de alimento, pero requiere ampliación.
 
-- Caudal disponible.
-- Presión requerida.
-- Ubicación de estanque.
-- Autonomía real para 500 aves.
-- Bomba, fittings, líneas y bebederos.
-- Cotización completa.
+Falta:
 
-## Energía
+- Comederos.
+- Bebederos.
+- Nidos/ponederos.
+- Bomba de agua.
+- Mallas interiores.
+- Ampliación de bodega de alimento.
 
-- Consumo de luces.
-- Consumo de cámara.
-- Voltaje de operación.
-- Potencia requerida.
-- Batería, controlador, paneles e inversor.
-- Autonomía requerida y cotización.
+## Agua y energía pendientes
 
-## Logística
+- Dimensionamiento real de agua y bomba.
+- Capacidad y autonomía del panel solar comprado.
+- Baterías/inversor si aplica.
+- Validar capacidad para bomba, luces y cámaras.
 
-- Acceso real de camiones y vehículos con carga.
-- Restricciones por invierno y barro.
-- Transporte de 500 pollonas.
-- Transporte de materiales de construcción.
+## Logística pendiente
+
+- Logística de invierno.
 - Plan de descarga y acopio.
+- Transporte de materiales.
+- Transporte de pollonas faltantes.
+- Costos logísticos adicionales.
 
-## Sanitarios
+## Legales/contables pendientes
 
-- Causa y corrección de humedad/condensación.
-- Corrección de bebederos que botan agua.
-- Manejo de cama y olor.
-- Estrategia para calor de verano.
-- Ventilación y bienestar animal.
-
-## Legales/contables
-
-- Forma de operación si escala.
-- Permisos o exigencias sanitarias/comerciales.
-- Registro de ingresos y gastos.
-- Impuestos aplicables.
-- Trazabilidad y venta formal.
-
-## Terreno/croquis
-
-- Croquis del terreno inmediato de 19 x 7 m.
-- Ubicación del galpón actual, bodega y ampliación.
-- Pendientes, drenajes y zonas de barro.
-- Acceso y zona de descarga.
+- Ruta tributaria y sanitaria específica.
+- Costos de formalización.
+- Permisos o exigencias aplicables.
+- Trazabilidad y registro mínimo.
 
 ## Decisión de escalamiento
 
-- Confirmar 500 aves como escenario base vigente y evaluar 1.000 o 2.000 aves solo como comparativos futuros; 648 aves queda como histórico/referencial.
-- Definir si se avanza por etapas o en una ampliación mayor.
+- Mantener 500 gallinas totales como escenario base vigente.
+- No usar compra masiva como supuesto principal.
 - Definir condición mínima para habilitar P1 preliminar.
-- Definir criterios de no avance.
+- Mantener bloqueadas compra, construcción e inversión mayor mientras falten datos críticos.

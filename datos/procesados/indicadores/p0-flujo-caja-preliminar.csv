@@ -1,18 +1,20 @@
 concepto,tipo,monto_clp,estado,observacion
-ingreso mensual actual,ingreso,736667,estimado,basado en $170.000 semanal
+ingreso semanal actual,ingreso,171000,confirmado_calculado,mix 6/13/9
+ingreso mensual actual,ingreso,741000,estimado,basado en $171.000 semanal x 52/12
 alimento,costo,284900,conocido,22 sacos/mes a $12.950
 agua,costo,6000,conocido,operación actual
 vitaminas,costo,20000,conocido,operación actual
-envases/bandejas,costo,14000,conocido,operación actual
-combustible,costo,200000,conocido,operación actual
-cama/viruta,costo,5000,conocido,operación actual
-medicamentos,costo,5000,conocido,operación actual
-costos conocidos mensuales,subtotal,534900,conocido,suma costos conocidos
-margen sin mano de obra,margen,201767,estimado,ingreso menos costos conocidos
-mano de obra referencial,costo,182000,estimado,45.5 horas mes a $4.000
-margen con mano de obra,margen,19767,estimado,margen menos mano de obra referencial
-CAPEX conocido pollonas,capex,4250000,conocido,500 pollonas a $8.500
-CAPEX total,capex,,pendiente,falta galpón/bodega/agua/energía/equipamiento/logística
+envases/bandejas,costo,12740,conocido,28 bandejas/semana x $105 x 52/12
+cama/viruta,costo,10000,conocido,usa viruta
+bencina/reparto,costo,10000,conocido,6 repartos/mes; generalmente retiran
+medicamentos adicionales,costo,0,informado,$0 fuera de vitaminas; no elimina riesgo sanitario
+OPEX parcial conocido actualizado,subtotal,343640,parcial,no es OPEX total
+margen parcial sin mano de obra,margen,397360,parcial,ingreso menos OPEX parcial conocido
+mano de obra referencial,costo,182000,referencial,45.5 horas mes a $4.000
+margen parcial con mano de obra,margen,215360,parcial,no definitivo
+CAPEX pollonas faltantes,capex,4224000,conocido,352 faltantes a $12.000 vigente
+Subtotal galpon mas pollonas faltantes,capex,9771765,parcial,no es CAPEX total cerrado
+CAPEX total,capex,,pendiente,faltan equipamiento/agua/bodega/logística/formalización/capital trabajo
 VAN,indicador,,bloqueado,requiere flujo completo
 TIR,indicador,,bloqueado,requiere flujo completo
 ROI,indicador,,bloqueado,requiere CAPEX total y flujo completo

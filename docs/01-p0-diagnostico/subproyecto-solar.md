@@ -81,4 +81,4 @@ El dimensionamiento deberá considerar, como mínimo:
 
 ## Estado
 
-**Amarillo.** Hay requerimientos declarados, pero falta dimensionamiento eléctrico y costo. El subproyecto no habilita compra de 500 pollonas todavía.
+**Amarillo.** Hay requerimientos declarados, pero falta dimensionamiento eléctrico y costo. El subproyecto no habilita compra de aves todavía.

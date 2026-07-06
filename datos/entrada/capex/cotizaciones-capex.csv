@@ -1,12 +1,11 @@
 categoria,item,proveedor,fecha,cantidad,unidad,precio_unitario_clp,total_clp,estado,observacion
-pollonas,500 pollonas,,,,,,,pendiente,confirmar precio y condiciones
-galpon,estructura,,,,,,,pendiente,
-galpon,zinc,,,,,,,pendiente,
-galpon,malla,,,,,,,pendiente,
-bodega,ampliacion bodega,,,,,,,pendiente,
-agua,estanque/bomba/lineas,,,,,,,pendiente,
-solar,sistema solar,,,,,,,pendiente,
-equipamiento,comederos/bebederos/nidales,,,,,,,pendiente,
-logistica,transporte pollonas/materiales,,,,,,,pendiente,
-mano_obra,construccion,,,,,,,pendiente,
-contingencia,imprevistos,,,,,,,pendiente,
+pollonas,pollonas faltantes para completar 500,,,352,aves,12000,4224000,precio vigente informado,valor histórico unitario 8500 solo antecedente
+galpon,COT-GN-0035 galpon 12 x 6 m,Nexus Consultores,2026-06-30,72,m2,77052,5547765,cotizado referencial,no autoriza construcción
+equipamiento,comederos,,,,,,,pendiente,cotizar
+equipamiento,bebederos,,,,,,,pendiente,cotizar
+equipamiento,nidos/ponederos,,,,,,,pendiente,cotizar
+agua,bomba/lineas,,,,,,,pendiente,dimensionar y cotizar
+energia,panel solar comprado,,,1,sistema,300000,300000,comprado; pendiente dimensionamiento,validar baterías/inversor/autonomía/capacidad
+bodega,ampliacion bodega alimento,,,,,,,pendiente,cotizar
+logistica,transporte materiales/pollonas faltantes,,,,,,,pendiente,incluye invierno
+formalizacion,ruta tributaria/sanitaria,,,,,,,pendiente,boleta/factura intención confirmada

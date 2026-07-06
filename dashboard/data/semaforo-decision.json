@@ -3,7 +3,7 @@
   "fase": "P0 — Diagnóstico real",
   "estado": "amarillo",
   "semaforo_general": "amarillo",
-  "avance_p0_estimado": 84,
+  "avance_p0_estimado": 88,
   "p1_preliminar_habilitado": false,
   "p1_definitivo_habilitado": false,
   "escenario_base_actual": 500,
@@ -17,7 +17,7 @@
     },
     "financiera": {
       "estado": "parcial",
-      "nota": "costo parcial por huevo/bandeja calculado; ingresos y OPEX total pendientes"
+      "nota": "ingresos actuales y OPEX parcial calculados; OPEX total y CAPEX total pendientes"
     },
     "constructiva": {
       "estado": "amarillo/parcial"
@@ -29,7 +29,7 @@
       "estado": "pendiente/amarillo"
     },
     "energia": {
-      "estado": "pendiente/amarillo"
+      "estado": "parcial/amarillo"
     },
     "sanitaria": {
       "estado": "amarillo"
@@ -52,17 +52,17 @@
     "decision_final_disponible": false
   },
   "condiciones_para_avanzar": [
-    "levantar distribución semanal por categoría para calcular precio promedio real e ingresos",
     "validar meta comercial de 100 bandejas/semana con clientes/respaldo; no tratarla como venta comprometida",
+    "confirmar precio real por canal/cliente y compromisos reales",
     "completar OPEX total y CAPEX total 500",
+    "cotizar equipamiento interior, bomba, mallas y ampliación bodega",
     "modelar flujo estacional: octubre-abril bueno y mayo-septiembre bajo",
-    "dimensionar energía estable/panel solar",
-    "preparar flujo 500 sin inventar EBITDA/ROI/VAN/TIR/Payback",
-    "resolver logística, formalización comercial y legal/contable",
+    "dimensionar/instalar panel solar comprado y sistema de agua/bomba",
+    "resolver logística, formalización comercial, legal/contable y sanitaria",
     "validar técnicamente módulo 500",
     "alcanzar condiciones verdes antes de inversión mayor"
   ],
-  "conclusion": "Estado amarillo: P41 confirma canales actuales y pago sin fiado, pero la meta 100 es aspiracional, no venta comprometida. Faltan distribución, ingresos, OPEX total, CAPEX total, energía estable y flujo estacional. Decisión final no disponible.",
+  "conclusion": "Estado amarillo: P42 corrige datos reales, pero la meta 100 sigue por validar y faltan OPEX total, CAPEX total, energía/agua dimensionada, equipamiento, formalización y flujo estacional. Decisión final no disponible.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",

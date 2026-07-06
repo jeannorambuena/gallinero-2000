@@ -72,4 +72,4 @@ Todavía no existe definición cerrada de bomba, filtros, fittings, líneas, nip
 
 ## Estado
 
-**Amarillo.** Hay una solución conceptual, pero falta dimensionamiento técnico y costo. El subproyecto no habilita compra de 500 pollonas todavía.
+**Amarillo.** Hay una solución conceptual, pero falta dimensionamiento técnico y costo. El subproyecto no habilita compra de aves todavía.

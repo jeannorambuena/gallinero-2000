@@ -1,185 +1,139 @@
 # Informe ejecutivo — Gallinero Nacho, escenario 500 aves
 
-Fecha de contexto: junio 2026  
-Objetivo tentativo: enero 2027  
-Estado actual: **amarillo**  
-Escenario base vigente: **500 aves totales**
+Fecha de contexto: julio 2026
+Estado actual: **amarillo**
+Escenario base vigente: **500 gallinas totales**
 
 ## 1. Lectura ejecutiva
 
 El proyecto Gallinero Nacho sigue siendo evaluable, pero aún no cuenta con evidencia suficiente para autorizar decisiones irreversibles o de alto monto.
 
-El estado **amarillo** no significa que el proyecto esté rechazado ni que no sea viable. Significa que falta información crítica para decidir con seguridad, especialmente en ventas, construcción, CAPEX, flujo, logística y formalización.
+P42 sincroniza el dashboard con respuestas reales de Nacho: mix de venta actual, envases, viruta, reparto, panel solar comprado, formalización esperada y corrección de pollonas faltantes.
 
 Mientras el proyecto siga amarillo:
 
 - la compra de aves sigue **bloqueada**;
 - la construcción sigue **no autorizada**;
 - la inversión mayor sigue **no autorizada**;
-- solo corresponde levantar datos, cotizar, validar mercado y mejorar la trazabilidad de decisión.
+- solo corresponde levantar datos, cotizar, validar mercado y mejorar trazabilidad de decisión.
 
-## 2. Por qué el proyecto está en amarillo
+## 2. Datos comerciales actuales
 
-El diagnóstico actual muestra una base productiva favorable, pero todavía existen brechas relevantes:
+- Venta actual: **28 bandejas/semana**.
+- Mix actual: **6 segunda, 13 primera, 9 extra**.
+- Precios usados desde el repo: segunda **$5.000**, primera **$6.000**, extra **$7.000**.
+- Ingreso semanal actual: **$171.000**.
+- Ingreso mensual estimado: **$741.000**.
+- Precio promedio actual: **$6.107/bandeja aprox.**
 
-- venta actual: **28 bandejas semanales**;
-- requerimiento estimado para 500 aves: **aprox. 104 bandejas semanales**;
-- brecha pendiente: **aprox. 76 bandejas adicionales por semana**;
-- CAPEX completo pendiente;
-- flujo proyectado para 500 aves incompleto;
-- agua, energía, logística, permisos y formalización aún sin cierre suficiente;
-- galpón sin diseño, cubicación ni cotización real por partida.
+Meta comercial declarada como plan por validar:
 
-La principal razón del amarillo es que el proyecto todavía no prueba, con evidencia suficiente, que podrá vender la producción adicional y construir/operar el nuevo estándar sin sobrecostos críticos.
+- Trabajo: 20 bandejas/semana.
+- Vecinos: 30 bandejas/semana.
+- Almacenes: 30 bandejas/semana.
+- Facebook: 20 bandejas/semana.
 
-## 3. Urgencia comercial hacia enero 2027
+Esta meta no es venta comprometida.
 
-Como el objetivo tentativo es enero de 2027 y el contexto actual es junio de 2026, el canal comercial debe validarse pronto.
+## 3. Por qué el proyecto sigue amarillo
 
-El bloqueo comercial sigue siendo el más importante:
+- El escenario 500 estima **104,1 bandejas/semana**; hoy vende **28**.
+- Falta validar cerca de **76,1 bandejas/semana** adicionales contra producción estimada.
+- La meta de 100 bandejas/semana aún no tiene compromisos reales.
+- OPEX total sigue incompleto.
+- CAPEX total sigue incompleto.
+- Falta dimensionar agua/bomba y panel solar comprado.
+- Falta cotizar equipamiento interior y ampliación de bodega.
+- Falta ruta tributaria/sanitaria de formalización.
+- Falta flujo estacional.
 
-- hoy se venden **28 bandejas/semana**;
-- para 500 aves se estiman **aprox. 104 bandejas/semana**;
-- falta validar cerca de **76 bandejas adicionales/semana**.
+## 4. OPEX parcial conocido actualizado
 
-Nacho debe levantar evidencia real sobre:
+- Alimento: **$284.900/mes**.
+- Agua: **$6.000/mes**.
+- Vitaminas: **$20.000/mes**.
+- Envases actuales: **$12.740/mes aprox.**
+- Viruta: **$10.000/mes**.
+- Bencina/reparto: **$10.000/mes**.
+- Medicamentos y limpieza adicional fuera de vitaminas: **$0 informado**.
 
-- clientes actuales y potenciales;
-- cantidades por cliente;
-- precios por canal;
-- frecuencia de compra;
-- forma de pago;
-- necesidad de boleta o factura.
+OPEX parcial conocido actualizado: **$343.640/mes**.
 
-Sin esta evidencia, no corresponde comprar aves ni comprometer inversión mayor.
+No es OPEX total. Que no informe gasto adicional en medicamentos no elimina el riesgo sanitario.
 
-## 4. Trabajo en paralelo
+## 5. Corrección de pollonas y CAPEX parcial
 
-El proyecto debe avanzar en dos líneas coordinadas, pero sin confundir estudio con autorización.
+- Gallinas actuales: **148**.
+- Objetivo operativo: **500 gallinas totales**.
+- Pollonas/gallinas faltantes: **352**.
+- Valor histórico unitario: **$8.500**.
+- Precio vigente unitario: **$12.000**.
+- CAPEX pollonas faltantes: **$4.224.000**.
+- Incremento por actualización de precio: **$1.232.000**.
 
-### 4.1 Línea comercial — Nacho
+Galpón COT-GN-0035:
 
-Nacho queda encargado de validar ventas, clientes y canales.
+- 12 x 6 m = **72 m²**.
+- Materiales: **$4.347.765**.
+- Mano de obra: **$1.200.000**.
+- Total: **$5.547.765**.
+- Costo aproximado: **$77.052/m²**.
 
-Debe transformar la demanda potencial en evidencia concreta: clientes identificados por categoría o código interno cuando corresponda, cantidades semanales, precios, frecuencia, forma de pago y requerimientos tributarios/comerciales.
+Subtotal conocido corregido:
 
-### 4.2 Línea constructiva — Jean
+- Galpón: **$5.547.765**.
+- Pollonas faltantes: **$4.224.000**.
+- Total parcial: **$9.771.765**.
 
-**Punto 7.2 — rol de Jean:** Jean queda encargado de apoyar la línea de construcción del galpón.
+Este subtotal no es CAPEX total cerrado.
 
-Su trabajo será levantar datos reales de:
+## 6. Equipamiento, terreno, energía y formalización
 
-- diseño;
-- cubicación;
-- materiales;
-- costos por partida;
-- transporte;
-- mano de obra.
+Terreno:
 
-Esta línea constructiva puede avanzar como **estudio técnico**, pero no debe interpretarse como autorización para construir.
+- 7 x 19 m = **133 m²**.
+- Usable, sin pendiente, no se inunda.
+- Entra vehículo con materiales.
+- Acceso invierno regular.
+- Orientación galpón norte-sur.
 
-## 5. Roadmap técnico constructivo: futuro repo `galpon-nacho`
+Equipamiento:
 
-Conviene crear más adelante un repositorio separado llamado `galpon-nacho` para ordenar la evaluación constructiva del galpón.
+- Tiene estanque de agua.
+- Tiene luz/panel solar comprado.
+- Tiene bodega de alimento, pero requiere ampliación.
+- Faltan comederos, bebederos, nidos/ponederos, bomba, mallas interiores y ampliación de bodega.
 
-Ese repo debería cubrir:
+Energía:
 
-- diseño del galpón;
-- planos en FreeCAD;
-- cubicación;
-- perfiles;
-- techumbre;
-- suelo;
-- cerramientos;
-- comederos;
-- bebederos;
-- sistema de agua;
-- transporte;
-- mano de obra;
-- costos por partida;
-- alternativas para 500 aves y ampliación futura.
+- Panel solar comprado por **$300.000**.
+- Falta validar dimensionamiento, instalación, autonomía, baterías/inversor si aplica y capacidad para bomba, luces y cámaras.
 
-Este repositorio **no se crea todavía**. Queda indicado como roadmap técnico constructivo separado del diagnóstico comercial y financiero del gallinero.
+Formalización:
 
-## 6. Referencias externas de precios de mercado
+- Si escala a 500, no seguiría informal.
+- Daría boleta: sí.
+- Daría factura: sí.
+- Clientes podrían pedir boleta/factura: sí.
+- Siguen pendientes ruta y costos tributarios/sanitarios.
 
-Se revisaron dos facturas externas del rubro huevos, correspondientes a abril y mayo de 2026.
+## 7. Pendientes críticos para P1
 
-Estas facturas:
+- Precio real confirmado por canal/cliente.
+- Compromisos reales de compra.
+- Costo comederos.
+- Costo bebederos.
+- Costo ponederos.
+- Costo bomba.
+- Costo mallas interiores.
+- Costo ampliación bodega.
+- Alimento inicial para escala.
+- Dimensionamiento real panel solar.
+- Agua/bomba.
+- Formalización tributaria/sanitaria.
+- Capital de trabajo.
+- Logística de invierno.
 
-- **no corresponden a Nacho**;
-- **no son evidencia de ventas de Nacho**;
-- **no son evidencia de compras de Nacho**;
-- **no son evidencia de clientes de Nacho**;
-- solo se usan como **benchmark externo de precios de mercado**.
+## 8. Conclusión
 
-Resumen anonimizado:
-
-- Abril 2026, proveedor avícola externo 1:
-  - Huevos Extra Blanco: 10 cajas, precio neto unitario aprox. **$33.277**;
-  - Huevos Primera Blanco: 20 cajas, precio neto unitario aprox. **$30.252**;
-  - total factura IVA incluido: **$1.116.000**.
-- Mayo 2026, proveedor avícola externo 2:
-  - Huevos Extra Blanco: 25 cajas, precio neto unitario aprox. **$26.471**;
-  - Huevos Primera Blanco: 15 cajas, precio neto unitario aprox. **$25.210**;
-  - total factura IVA incluido: **$1.237.500**.
-
-Regla de privacidad: no publicar RUT, direcciones, folios, nombres completos ni datos tributarios sensibles. En el dashboard público solo deben aparecer datos resumidos y anonimizados.
-
-## 7. Roadmap junio 2026 a enero 2027
-
-### Junio–julio 2026
-
-- Nacho lista clientes actuales y potenciales.
-- Nacho registra cantidades, precios, frecuencia y forma de pago.
-- Jean levanta requerimientos constructivos base del galpón.
-- Jean prepara listado preliminar de materiales y partidas.
-- Se consolidan referencias externas de precios solo como benchmark.
-
-### Agosto–septiembre 2026
-
-- Validar compromisos comerciales por canal.
-- Comparar precios reales de venta con costos proyectados.
-- Avanzar en diseño/cubicación/cotización del galpón.
-- Revisar transporte, acceso, invierno y mano de obra.
-- Actualizar CAPEX y flujo preliminar con datos reales.
-
-### Octubre–noviembre 2026
-
-- Cerrar brecha comercial con evidencia suficiente o ajustar escala.
-- Definir alternativa constructiva preliminar respaldada por costos.
-- Revisar agua, energía, logística, legal y contable.
-- Preparar decisión ejecutiva con semáforo actualizado.
-
-### Diciembre 2026–enero 2027
-
-- Decidir si el proyecto puede pasar a verde.
-- Autorizar o mantener bloqueada la compra de aves según evidencia.
-- Autorizar o mantener bloqueada la construcción según evidencia.
-- Evitar inversión mayor si cualquiera de las dos líneas principales sigue incompleta.
-
-## 8. Criterios para pasar de amarillo a verde
-
-El proyecto solo podría pasar a verde si ambas líneas se validan con evidencia suficiente.
-
-Criterios mínimos:
-
-- ventas validadas para aproximarse a **104 bandejas/semana**;
-- brecha de **aprox. 76 bandejas/semana** cubierta con clientes o canales verificables;
-- precios, frecuencia de compra, forma de pago y boleta/factura definidos;
-- diseño, cubicación, materiales, transporte y mano de obra del galpón respaldados por cotizaciones;
-- CAPEX completo;
-- flujo proyectado consistente;
-- agua, energía, logística, legal y contable suficientemente resueltos;
-- decisión explícita posterior para comprar aves, construir o invertir.
-
-## 9. Conclusión
-
-El proyecto sigue en **amarillo**. Amarillo no significa no viable; significa que aún falta evidencia crítica.
-
-La ruta correcta es avanzar en paralelo:
-
-- **Nacho** valida ventas, clientes y canales;
-- **Jean** cotiza y diseña el galpón como estudio técnico.
-
-La compra de aves, la construcción y la inversión mayor siguen bloqueadas hasta contar con evidencia suficiente y una autorización explícita posterior.
+El proyecto sigue en **amarillo**. P42 mejora la trazabilidad y corrige datos críticos, pero no desbloquea compra, construcción ni inversión mayor. La próxima decisión requiere evidencia comercial real, CAPEX total, OPEX total, energía/agua dimensionada, formalización y flujo estacional.

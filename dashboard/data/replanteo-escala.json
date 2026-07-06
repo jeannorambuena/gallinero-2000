@@ -4,7 +4,7 @@
   "escenario_anterior": {
     "aves": 648,
     "estado": "referencia histórica",
-    "descripcion": "148 aves actuales + hipótesis anterior de 500 pollonas adicionales"
+    "descripcion": "148 aves actuales + hipótesis anterior de 352 pollonas faltantes"
   },
   "escenario_base_actual": {
     "aves": 500,
@@ -20,10 +20,10 @@
     "venta": "500 aves estiman 104.1 bandejas/semana; brecha frente a venta actual 76.1 bandejas/semana",
     "agua": "500 aves estiman 115.7–154.3 L/día por proporcionalidad referencial",
     "galpon": "500 aves usan como base financiera el galpón cotizado 12 x 6 m = 72 m²; densidad aproximada 6,94 ≈ 7 gallinas/m²; CAPEX $5.547.765.",
-    "capex": "CAPEX referencial formal final del galpón disponible (COT-GN-0035: $5.547.765); CAPEX total del proyecto sigue incompleto; dato 500 x $8.500 queda histórico/estratégico.",
+    "capex": "CAPEX parcial corregido: galpón $5.547.765 + 352 pollonas faltantes a $12.000 = $9.771.765; no es CAPEX total cerrado.",
     "flujo": "flujo 500 pendiente; falta recalcular CAPEX/OPEX/EBITDA/Payback/punto de equilibrio; VAN/TIR/ROI bloqueados"
   },
-  "conclusion": "Desde ahora la decisión se trabaja sobre 500 aves totales con CAPEX referencial formal de galpón incorporado. El escenario 648 queda como referencia histórica. No se autoriza compra, construcción ni inversión mayor.",
+  "conclusion": "P42 mantiene 500 gallinas totales como base. Escenario principal: completar 352 faltantes desde 148 a 500; no comprar 500 pollonas como supuesto principal. P1, compra, construcción e inversión mayor siguen bloqueadas.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",

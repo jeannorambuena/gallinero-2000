@@ -1,13 +1,15 @@
 mes,concepto,tipo,monto_clp,estado,observacion
-1,ingresos,ingreso,,pendiente,por canal y 104.1 bandejas/semana estimadas
-1,alimento,costo,,pendiente,
-1,agua,costo,,pendiente,
-1,energia,costo,,pendiente,
-1,envases,costo,,pendiente,
-1,medicamentos,costo,,pendiente,
-1,viruta,costo,,pendiente,
-1,transporte,costo,,pendiente,
-1,mano_obra,costo,,pendiente,
-1,formalizacion,costo,,pendiente,si aplica
-1,capex,capex,,pendiente,base 500 aves
-1,imprevistos,costo,,pendiente,
+1,ingresos actuales,ingreso,741000,calculado,mix 6/13/9; meta 100 requiere validación
+1,alimento,costo,284900,conocido,operación actual
+1,agua,costo,6000,conocido,operación actual; agua/bomba escala pendiente
+1,energia/panel solar,costo,300000,comprado; dimensionamiento pendiente,validar instalación/autonomía/capacidad
+1,envases actuales,costo,12740,conocido,28 bandejas/semana x $105 x 52/12
+1,envases meta 100,costo,45500,estimado,100 bandejas/semana x $105 x 52/12
+1,medicamentos adicionales,costo,0,informado,fuera de vitaminas; no elimina riesgo sanitario
+1,viruta,costo,10000,conocido,cama/piso
+1,bencina/reparto,costo,10000,conocido,6 repartos/mes; generalmente retiran
+1,mano_obra,costo,,pendiente,operación escala 500
+1,formalizacion,costo,,ruta/costo pendiente,boleta/factura intención confirmada si escala
+1,capex pollonas faltantes,capex,4224000,conocido,352 x 12000
+1,subtotal galpon + pollonas,capex,9771765,parcial,no es CAPEX total cerrado
+1,imprevistos,costo,,pendiente,mantenciones/sanitización/contingencia

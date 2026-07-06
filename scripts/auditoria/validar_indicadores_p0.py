@@ -129,17 +129,31 @@ def main() -> int:
             "historico/referencial",
         )
 
-        # Finanzas / flujo actual y base 500
-        assert_equal(errors, "ingreso mensual actual", flujo.get("ingresos_actuales", {}).get("ingreso_mensual_estimado_clp"), 736667)
-        assert_equal(errors, "costos conocidos", flujo.get("costos_actuales", {}).get("total_costos_conocidos_clp"), 534900)
-        assert_equal(errors, "margen sin mano de obra", flujo.get("margenes_actuales", {}).get("margen_sin_mano_obra_clp"), 201767)
+        # Finanzas / flujo actual y base 500 — P42
+        distribucion = flujo.get("ingresos_actuales", {}).get("distribucion_semanal_por_categoria", {})
+        assert_equal(errors, "bandejas segunda", distribucion.get("segunda"), 6)
+        assert_equal(errors, "bandejas primera", distribucion.get("primera"), 13)
+        assert_equal(errors, "bandejas extra", distribucion.get("extra"), 9)
+        assert_equal(errors, "ingreso semanal actual", flujo.get("ingresos_actuales", {}).get("ingreso_semanal_actual_clp"), 171000)
+        assert_equal(errors, "ingreso mensual actual", flujo.get("ingresos_actuales", {}).get("ingreso_mensual_estimado_clp"), 741000)
+        assert_equal(errors, "precio promedio bandeja", flujo.get("ingresos_actuales", {}).get("precio_promedio_real_bandeja"), 6107)
+        assert_equal(errors, "costos conocidos", flujo.get("costos_actuales", {}).get("total_costos_conocidos_clp"), 343640)
+        assert_equal(errors, "envases actuales mes", flujo.get("costos_actuales", {}).get("envases_actual_mensual_aprox_clp"), 12740)
+        assert_equal(errors, "viruta mensual", flujo.get("costos_actuales", {}).get("cama_viruta_mensual_clp"), 10000)
+        assert_equal(errors, "bencina reparto mensual", flujo.get("costos_actuales", {}).get("bencina_reparto_mensual_clp"), 10000)
+        assert_equal(errors, "medicamentos adicionales", flujo.get("costos_actuales", {}).get("medicamentos_limpieza_adicional_mensual_clp"), 0)
+        assert_equal(errors, "margen sin mano de obra", flujo.get("margenes_actuales", {}).get("margen_sin_mano_obra_clp"), 397360)
         assert_equal(errors, "mano de obra referencial", flujo.get("mano_obra_referencial", {}).get("monto_clp"), 182000)
-        assert_equal(errors, "margen con mano de obra", flujo.get("margenes_actuales", {}).get("margen_con_mano_obra_clp"), 19767)
+        assert_equal(errors, "margen con mano de obra", flujo.get("margenes_actuales", {}).get("margen_con_mano_obra_clp"), 215360)
         assert_equal(errors, "flujo escenario 500", flujo.get("escenario_500", {}).get("aves"), 500)
         assert_equal(errors, "flujo escenario 648 histórico", flujo.get("escenario_648", {}).get("aves"), 648)
 
-        # CAPEX
-        assert_equal(errors, "CAPEX conocido pollonas", capex.get("capex_conocido", {}).get("pollonas", {}).get("monto_clp"), 4250000)
+        # CAPEX — P42
+        assert_equal(errors, "pollonas faltantes", capex.get("capex_conocido", {}).get("pollonas", {}).get("cantidad_faltante"), 352)
+        assert_equal(errors, "precio vigente pollona", capex.get("capex_conocido", {}).get("pollonas", {}).get("precio_vigente_unitario_clp"), 12000)
+        assert_equal(errors, "CAPEX pollonas faltantes", capex.get("capex_conocido", {}).get("pollonas", {}).get("monto_clp"), 4224000)
+        assert_equal(errors, "incremento CAPEX pollonas", capex.get("capex_conocido", {}).get("pollonas", {}).get("incremento_por_actualizacion_precio_clp"), 1232000)
+        assert_equal(errors, "subtotal galpón + pollonas", capex.get("capex_conocido", {}).get("monto_total_conocido_clp"), 9771765)
         capex_total = capex.get("capex_pendiente", {}).get("monto_total_pendiente")
         if capex_total not in (None, "pendiente"):
             errors.append(f"CAPEX total pendiente: esperado None o 'pendiente', encontrado {capex_total!r}")
@@ -160,16 +174,22 @@ def main() -> int:
         assert_equal(errors, "estado.construccion_autorizada", estado.get("construccion_autorizada"), False)
         assert_equal(errors, "estado.inversion_mayor_autorizada", estado.get("inversion_mayor_autorizada"), False)
 
-        # Galpones
+        # Galpones: COT-GN-0035 ya está integrada como base referencial formal; no autoriza construcción.
         escenarios = galpones.get("escenarios", [])
-        aves_galpon = {item.get("aves") for item in escenarios if isinstance(item, dict)}
+        escenarios_por_aves = {item.get("aves"): item for item in escenarios if isinstance(item, dict)}
+        aves_galpon = set(escenarios_por_aves)
         if aves_galpon != {500, 1000, 2000}:
             errors.append(f"estimación galpones: esperado {{500, 1000, 2000}}, encontrado {aves_galpon!r}")
-        for item in escenarios:
-            if item.get("costo_total") != "pendiente":
-                errors.append(f"galpón {item.get('aves')}: costo_total debe seguir pendiente")
-            if item.get("costo_m2") != "pendiente":
-                errors.append(f"galpón {item.get('aves')}: costo_m2 debe seguir pendiente")
+        assert_equal(errors, "galpón 500 superficie", escenarios_por_aves.get(500, {}).get("superficie_util_m2"), 72)
+        assert_equal(errors, "galpón 500 costo_m2", escenarios_por_aves.get(500, {}).get("costo_m2"), 77052)
+        assert_equal(errors, "galpón 500 costo_total", escenarios_por_aves.get(500, {}).get("costo_total"), 5547765)
+        assert_equal(errors, "galpón 1000 costo_total", escenarios_por_aves.get(1000, {}).get("costo_total"), 11095530)
+        assert_equal(errors, "galpón 2000 costo_total", escenarios_por_aves.get(2000, {}).get("costo_total"), 22191060)
+        if "no autoriza" not in str(escenarios_por_aves.get(500, {}).get("estado", "")).lower():
+            errors.append("galpón 500: debe mantener advertencia de no autorización de construcción")
+        advertencia_galpon = str(galpones.get("capex_referencial_formal", {}).get("advertencia", "")).lower()
+        if "autorización" not in advertencia_galpon or "no" not in advertencia_galpon:
+            errors.append("galpón COT-GN-0035: debe mantener advertencia de no autorización")
 
         # Dashboard crítico: 648 aves solo puede quedar como histórico/referencial/anterior/trazabilidad.
         critical_dashboard = {

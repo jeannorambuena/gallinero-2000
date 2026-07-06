@@ -14,10 +14,10 @@
     },
     {
       "id": "A02",
-      "titulo": "Margen financiero no calculable todavía",
+      "titulo": "Indicadores financieros definitivos bloqueados",
       "severidad": "alta",
       "dimension": "financiera",
-      "descripcion": "No se debe calcular margen financiero definitivo: falta distribución semanal por categoría para ingresos reales y falta OPEX total.",
+      "descripcion": "Ingreso actual y margen parcial pueden calcularse con P42, pero ROI, VAN, TIR, Payback y EBITDA definitivo siguen bloqueados por OPEX total, CAPEX total y flujo estacional incompletos.",
       "estado": "bloqueante"
     },
     {
@@ -25,7 +25,7 @@
       "titulo": "CAPEX total parcialmente identificado; faltantes críticos",
       "severidad": "alta",
       "dimension": "financiera",
-      "descripcion": "Existe CAPEX referencial formal de galpón por $5.547.765 ($77.052/m²) desde galpon-nacho@b100ae0, además del antecedente de pollonas por $4.250.000. Faltan agua, energía, equipamiento, logística, capital de trabajo y flujo operativo.",
+      "descripcion": "Existe CAPEX referencial formal de galpón por $5.547.765 y CAPEX de pollonas faltantes por $4.224.000. Subtotal conocido corregido: $9.771.765. Faltan equipamiento, agua/bomba, mallas, bodega, alimento inicial, logística, capital de trabajo, formalización y posibles costos sanitarios.",
       "estado": "abierta",
       "referencia_capex_galpon": {
         "fuente": "galpon-nacho@b100ae0",
@@ -54,10 +54,10 @@
     },
     {
       "id": "A06",
-      "titulo": "Energía solar pendiente de dimensionamiento",
+      "titulo": "Panel solar comprado, no dimensionado",
       "severidad": "media",
       "dimension": "energia",
-      "descripcion": "Se requiere sistema solar para luces y cámara; faltan watts, voltaje, batería, controlador, inversor, autonomía y costo.",
+      "descripcion": "Panel solar comprado por $300.000; falta validar dimensionamiento, instalación, autonomía, baterías/inversor si aplica y capacidad para bomba, luces y cámaras.",
       "estado": "abierta"
     },
     {
@@ -70,10 +70,10 @@
     },
     {
       "id": "A08",
-      "titulo": "Legal/contable pendiente",
+      "titulo": "Formalización con intención confirmada; ruta pendiente",
       "severidad": "pendiente",
       "dimension": "legal_contable",
-      "descripcion": "Falta revisar formalización, permisos, registro de ingresos, gastos, impuestos y trazabilidad si el proyecto escala.",
+      "descripcion": "Si escala a 500 gallinas, Nacho no seguiría informal y daría boleta/factura. Siguen pendientes costos, ruta tributaria/sanitaria, permisos y trazabilidad.",
       "estado": "pendiente"
     },
     {
@@ -89,7 +89,7 @@
       "titulo": "No comprar 500 pollonas sin validar mercado y costos",
       "severidad": "alta",
       "dimension": "decision",
-      "descripcion": "La compra de 500 pollonas debe quedar bloqueada hasta validar mercado, costos completos y condiciones operativas.",
+      "descripcion": "No comprar 500 pollonas: el escenario principal es completar 352 pollonas/gallinas faltantes desde 148 hasta 500, y solo después de validar mercado, costos completos y condiciones operativas.",
       "estado": "bloqueante"
     },
     {
@@ -110,10 +110,10 @@
     },
     {
       "id": "A12",
-      "titulo": "Falta distribución semanal por categoría",
+      "titulo": "Mix actual confirmado; meta 100 no validada",
       "severidad": "alta",
       "dimension": "comercial",
-      "descripcion": "Falta distribución semanal de bandejas por categoría para calcular precio promedio real. Las 28 bandejas/semana están confirmadas, pero no su desglose entre segunda, primera y extra.",
+      "descripcion": "Mix actual confirmado: segunda 6, primera 13, extra 9 bandejas/semana. Ingreso actual $171.000/semana. El bloqueo comercial pasa a validar compromisos reales para la meta de 100 bandejas/semana.",
       "estado": "bloqueante"
     },
     {
@@ -121,7 +121,7 @@
       "titulo": "OPEX mensual actual es parcial",
       "severidad": "alta",
       "dimension": "financiera",
-      "descripcion": "OPEX mensual actual es parcial: solo incluye alimento $284.900, agua $6.000 y vitaminas $20.000. Faltan transporte, envases, cama, medicamentos, energía estable, mano de obra e imprevistos.",
+      "descripcion": "OPEX parcial conocido actualizado: alimento $284.900, agua $6.000, vitaminas $20.000, envases $12.740, viruta $10.000, bencina $10.000 y medicamentos adicionales $0 informado. No es OPEX total; faltan mano de obra definitiva, mantenciones, sanitización, imprevistos y costos de escala.",
       "estado": "abierta"
     },
     {
@@ -129,7 +129,7 @@
       "titulo": "Sistema eléctrico actual no estable",
       "severidad": "alta",
       "dimension": "energia",
-      "descripcion": "Sistema eléctrico actual no es estable; el costo de luz actual es $0, pero panel solar está pendiente y es urgente para operación segura.",
+      "descripcion": "Panel solar comprado por $300.000, pero falta validar dimensionamiento, instalación, autonomía y capacidad para bomba, luces y cámaras.",
       "estado": "abierta"
     },
     {
@@ -153,7 +153,7 @@
       "titulo": "Costo por huevo/bandeja es parcial",
       "severidad": "alta",
       "dimension": "financiera",
-      "descripcion": "Costo parcial estimado: $78,5/huevo y $2.355/bandeja usando solo alimento, agua y vitaminas. No es costo total real; faltan envases, cama, medicamentos, transporte, energía estable, mano de obra, mantenciones, sanitización e imprevistos.",
+      "descripcion": "Costo parcial actualizado: $86,8/huevo y $2.604/bandeja aprox. usando OPEX parcial conocido. No es costo total real.",
       "estado": "abierta"
     },
     {
@@ -169,11 +169,11 @@
       "titulo": "Formalización pendiente para escalar",
       "severidad": "media",
       "dimension": "legal/comercial",
-      "descripcion": "La venta actual es informal y sin boleta/factura. Para escalar a 500 aves se debe definir formalización comercial, tributaria y sanitaria si corresponde.",
+      "descripcion": "Venta actual informal; si escala a 500, Nacho daría boleta y factura. Siguen pendientes ruta y costos tributarios/sanitarios.",
       "estado": "abierta"
     }
   ],
-  "nota": "Alertas críticas P41: meta 100 aspiracional, costo parcial no total, flujo estacional y formalización pendiente. No se habilita inversión.",
+  "nota": "Alertas críticas P42: mix e ingresos actuales corregidos, OPEX parcial actualizado y pollonas faltantes corregidas. No se habilita inversión.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",

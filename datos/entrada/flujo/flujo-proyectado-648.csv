@@ -1,13 +1,13 @@
 mes,concepto,tipo,monto_clp,estado,observacion
-1,ingresos,ingreso,,pendiente,por canal y bandejas
-1,alimento,costo,,pendiente,
-1,agua,costo,,pendiente,
-1,energia,costo,,pendiente,
-1,envases,costo,,pendiente,
-1,medicamentos,costo,,pendiente,
-1,viruta,costo,,pendiente,
-1,transporte,costo,,pendiente,
-1,mano_obra,costo,,pendiente,
-1,formalizacion,costo,,pendiente,si aplica
-1,capex,capex,,pendiente,
-1,imprevistos,costo,,pendiente,
+1,ingresos,ingreso,,historico/referencial,escenario 648 no vigente; no usar para decisión principal
+1,alimento,costo,284900,referencia actual,base actual informada; no extrapolar directo a 648
+1,agua,costo,6000,referencia actual,base actual informada; no extrapolar directo a 648
+1,energia/panel solar,costo,300000,comprado; dimensionamiento pendiente,panel solar comprado; falta validar capacidad/autonomía
+1,envases actuales,costo,12740,referencia actual,28 bandejas/semana x $105 x 52/12
+1,medicamentos adicionales,costo,0,informado,$0 fuera de vitaminas; no elimina riesgo sanitario
+1,viruta,costo,10000,referencia actual,base actual informada; no extrapolar directo a 648
+1,bencina/reparto,costo,10000,referencia actual,6 repartos/mes; generalmente retiran
+1,mano_obra,costo,,pendiente,operación a escala histórica/referencial
+1,formalizacion,costo,,ruta/costo pendiente,boleta/factura intención confirmada si escala
+1,capex,capex,,pendiente,escenario histórico/referencial no vigente
+1,imprevistos,costo,,pendiente,mantenciones/sanitización/contingencia

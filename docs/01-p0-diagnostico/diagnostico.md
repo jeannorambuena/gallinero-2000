@@ -4,7 +4,7 @@
 
 El Proyecto Gallinero Nacho se encuentra en fase **P0 — Diagnóstico real**, con avance preliminar estimado de **80%** y semáforo general **amarillo**. La operación actual muestra buenos indicadores productivos, pero todavía existen vacíos críticos comerciales, financieros, constructivos, logísticos, sanitarios, de agua, energía, legales y contables.
 
-P0 sigue abierto. La información disponible orienta la decisión, pero todavía no habilita P1 preliminar formal, P1 definitivo ni compra de 500 pollonas.
+P0 sigue abierto. La información disponible orienta la decisión, pero todavía no habilita P1 preliminar formal, P1 definitivo ni compra de aves.
 
 ## Operación actual
 
@@ -14,7 +14,7 @@ P0 sigue abierto. La información disponible orienta la decisión, pero todavía
 - Línea genética: Hy-Line W-80
 - Edad actual: 37 semanas
 - Escenario base vigente: 500 aves totales
-- Escenario anterior/referencial: 648 aves (148 aves actuales + hipótesis anterior de 500 pollonas nuevas)
+- Escenario anterior/referencial: 648 aves (148 aves actuales + hipótesis anterior de 352 pollonas faltantes)
 - Compra de aves: no autorizada en P0
 
 ## Producción
@@ -52,7 +52,7 @@ Los datos financieros disponibles son preliminares y no reemplazan un flujo de c
 - Margen sin mano de obra: $201.767
 - Mano de obra valorizada referencial: $182.000/mes
 - Margen con mano de obra: $19.767/mes
-- CAPEX conocido pollonas: $4.250.000
+- CAPEX pollonas faltantes: $4.224.000
 - CAPEX total: pendiente
 
 La lectura financiera es amarilla: existe margen positivo, pero queda muy ajustado al valorizar mano de obra y falta el costo completo de infraestructura, agua, energía, transporte y equipamiento.
