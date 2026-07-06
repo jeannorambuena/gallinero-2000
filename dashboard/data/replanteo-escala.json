@@ -21,7 +21,7 @@
     "agua": "500 aves estiman 115.7–154.3 L/día por proporcionalidad referencial",
     "galpon": "500 aves usan como base financiera el galpón cotizado 12 x 6 m = 72 m²; densidad aproximada 6,94 ≈ 7 gallinas/m²; CAPEX $5.547.765.",
     "capex": "CAPEX parcial corregido: galpón $5.547.765 + 352 pollonas faltantes a $12.000 = $9.771.765; no es CAPEX total cerrado.",
-    "flujo": "flujo 500 pendiente; falta recalcular CAPEX/OPEX/EBITDA/Payback/punto de equilibrio; VAN/TIR/ROI bloqueados"
+    "flujo": "flujo 500 preliminar P45-P47 disponible; ROI/VAN/TIR siguen pendientes por tasa, vida útil y calendario definitivo"
   },
   "conclusion": "P42 mantiene 500 gallinas totales como base. Escenario principal: completar 352 faltantes desde 148 a 500; no comprar 500 pollonas como supuesto principal. P1, compra, construcción e inversión mayor siguen bloqueadas.",
   "referencia_capex_galpon": {

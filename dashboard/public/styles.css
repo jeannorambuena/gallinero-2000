@@ -599,6 +599,52 @@ a {
   background: linear-gradient(150deg, var(--red-soft), #ffffff 76%);
 }
 
+.critical-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.critical-card {
+  padding: 18px;
+  border: 1px solid #f7d66b;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(150deg, var(--yellow-soft), #ffffff 78%);
+  box-shadow: var(--shadow-soft);
+}
+
+.critical-head span {
+  color: #92400e;
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.critical-head strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 1.25rem;
+  letter-spacing: -0.04em;
+}
+
+.critical-card ul {
+  margin: 14px 0 0;
+  padding-left: 18px;
+  color: #475569;
+  line-height: 1.45;
+  font-weight: 750;
+}
+
+.mini-stack {
+  margin-top: 12px;
+}
+
+.one-column {
+  grid-template-columns: 1fr;
+}
+
 .compact-heading {
   margin-top: 18px;
 }
@@ -950,6 +996,7 @@ a {
   .metric-grid.compact,
   .risk-grid,
   .financial-grid,
+  .critical-grid,
   .alert-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -978,11 +1025,12 @@ a {
   .decision-grid,
   .metric-grid.compact,
   .metric-grid.scenario,
-    .traffic-grid,
-    .risk-grid,
-    .financial-grid,
-    .alert-grid,
-    .workstream-grid,
+  .traffic-grid,
+  .risk-grid,
+  .financial-grid,
+  .critical-grid,
+  .alert-grid,
+  .workstream-grid,
   .market-grid,
   .action-panel {
     grid-template-columns: 1fr;

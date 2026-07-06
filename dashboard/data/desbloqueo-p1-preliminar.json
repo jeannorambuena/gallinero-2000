@@ -77,10 +77,10 @@
     "compra de aves bloqueada",
     "construcción no autorizada",
     "inversión mayor no autorizada",
-    "VAN/TIR/ROI/Payback bloqueados"
+    "ROI/VAN/TIR pendientes; payback simple preliminar disponible"
   ],
   "proximo_paso_recomendado": "Completar validación comercial 500, dimensionamiento agua/energía y evaluación financiera 500/1000/2000 usando el CAPEX referencial formal del galpón.",
-  "conclusion": "P43 mantiene P1 preliminar no habilitado: meta 100 se usa como escenario base, pero faltan CAPEX equipamiento avícola, OPEX total, capital de trabajo, formalización, logística y flujo.",
+  "conclusion": "P47 R1 mantiene P1 preliminar no habilitado: meta 100 se usa como escenario base; CAPEX/OPEX/flujo preliminares existen, pero faltan cotizaciones finales, capital de trabajo cubierto, formalización, logística y financiamiento.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",

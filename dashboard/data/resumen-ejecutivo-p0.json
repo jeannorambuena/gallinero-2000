@@ -1,6 +1,6 @@
 {
   "proyecto": "Gallinero Nacho",
-  "fase": "P0 — Diagnóstico real / P47",
+  "fase": "P0 — Diagnóstico real / P47 R1",
   "estado_general": "amarillo",
   "avance_p0_estimado": 90,
   "escenario_base_actual": {
@@ -95,7 +95,7 @@
     "valorizar formalización",
     "preparar flujo financiero preliminar sin ROI/VAN/TIR definitivos hasta cerrar datos"
   ],
-  "conclusion": "P47 mantiene estado AMARILLO: conviene avanzar solo por etapas y con control de riesgo. La alternativa base prudente es +150 pollonas; +352 no debe ejecutarse sin financiamiento cerrado, equipamiento, capital de trabajo y venta confirmada.",
+  "conclusion": "P47 R1 mantiene estado AMARILLO: la lectura principal recomienda avanzar solo por etapas, con +150 pollonas como base prudente y +100 como opción conservadora. +352 sigue bloqueada salvo financiamiento cerrado, capital de trabajo, equipamiento y ventas confirmadas.",
   "interpretacion_estado_amarillo": "Amarillo no significa rechazo ni que el proyecto no sea viable; significa que falta información crítica para decidir con seguridad antes de comprar aves, construir o comprometer inversión mayor.",
   "lineas_paralelas": [
     {
@@ -248,5 +248,6 @@
       "inversión mayor",
       "P1 definitivo"
     ]
-  }
+  },
+  "lectura_visual_r1": "Vista principal reordenada: decisión, base real, escenario 500, resumen financiero, alternativas, bloqueos y plan 6 meses. Detalle histórico queda en anexo técnico."
 }

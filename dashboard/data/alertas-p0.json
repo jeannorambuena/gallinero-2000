@@ -118,10 +118,10 @@
     },
     {
       "id": "A13",
-      "titulo": "OPEX mensual actual es parcial",
+      "titulo": "CAPEX y flujo preliminares ya existen; faltan cierres finales",
       "severidad": "alta",
       "dimension": "financiera",
-      "descripcion": "OPEX parcial conocido actualizado: alimento $284.900, agua $6.000, vitaminas $20.000, envases $12.740, viruta $10.000, bencina $10.000 y medicamentos adicionales $0 informado. No es OPEX total; faltan mano de obra definitiva, mantenciones, sanitización, imprevistos y costos de escala.",
+      "descripcion": "P45-P47 ya entregan CAPEX/OPEX/flujo, margen, payback simple y punto de equilibrio preliminares. Siguen pendientes ROI, VAN y TIR por falta de tasa, vida útil, calendario definitivo y cotizaciones finales.",
       "estado": "abierta"
     },
     {
@@ -134,11 +134,11 @@
     },
     {
       "id": "A15",
-      "titulo": "No calcular indicadores financieros definitivos",
+      "titulo": "CAPEX equipamiento referencial; falta cotización final",
       "severidad": "alta",
       "dimension": "decision",
-      "descripcion": "No calcular ROI, VAN, TIR ni Payback hasta completar ingresos, OPEX total y CAPEX total.",
-      "estado": "bloqueante"
+      "descripcion": "El equipamiento avícola ya tiene estimación referencial bajo/base/alto. El bloqueo actual es seleccionar productos y obtener cotizaciones formales finales antes de comprar.",
+      "estado": "abierta"
     },
     {
       "id": "A16",
@@ -174,11 +174,11 @@
     },
     {
       "id": "A20",
-      "titulo": "CAPEX equipamiento avícola pendiente",
+      "titulo": "Falta selección y cotización final de equipamiento",
       "severidad": "alta",
       "dimension": "financiera",
-      "descripcion": "Faltan cotizaciones de comederos, bebederos, nidos/ponederos, bomba, mallas interiores, bodega interna/ampliación e instalaciones internas. Bloquea CAPEX total.",
-      "estado": "bloqueante"
+      "descripcion": "Los requerimientos técnicos principales ya están definidos para 500 aves; falta convertirlos en selección final, proveedor, precio formal y calendario de compra.",
+      "estado": "abierta"
     },
     {
       "id": "A21",
@@ -237,7 +237,7 @@
       "estado": "bloqueante"
     }
   ],
-  "nota": "Alertas P45-P46: CAPEX/OPEX/flujo referenciales calculados; estado amarillo y decisiones mayores bloqueadas.",
+  "nota": "P47 R1: alertas agrupadas visualmente en comercial, financiero y operativo/legal; el detalle queda como anexo técnico.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",

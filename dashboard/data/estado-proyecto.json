@@ -20,7 +20,7 @@
     "validar legal/sanitario/tributario",
     "definir calendario de 6 meses"
   ],
-  "decision_actual": "P47 recomienda avanzar solo por etapas: +150 pollonas como base prudente, +100 si se prioriza máximo control, +200 solo con venta/caja confirmadas, +352 solo con financiamiento cerrado.",
+  "decision_actual": "Dashboard reordenado para lectura ejecutiva: AMARILLO, ruta por etapas, +150 pollonas como base prudente, +352 solo con financiamiento cerrado.",
   "interpretacion_semaforo": "Amarillo no significa no viable; significa información crítica pendiente para decidir con seguridad.",
   "lineas_de_trabajo": [
     "Línea comercial: venta actual directa confirmada con mix 6/13/9; meta 100 requiere validación.",
@@ -38,5 +38,5 @@
     "costo_gallina_instalada_galpon_aprox_clp": 11096,
     "advertencia": "referencial; no autoriza construcción"
   },
-  "fase": "P0 — Diagnóstico real / P47"
+  "fase": "P0 — Diagnóstico real / P47 R1"
 }

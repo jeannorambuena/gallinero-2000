@@ -67,4 +67,4 @@ Para cada canal registrar:
 
 ## Conclusión
 
-P43 considera **100 bandejas/semana** como escenario comercial base. El bloqueo principal ya no es cerrar volumen base, sino validar precios netos, cobranza y estabilidad por canal. La inversión sigue bloqueada por CAPEX equipamiento avícola, OPEX total, capital de trabajo, formalización, logística y flujo financiero completo.
+P43 considera **100 bandejas/semana** como escenario comercial base. El bloqueo principal ya no es cerrar volumen base, sino validar precios netos, cobranza y estabilidad por canal. La inversión sigue bloqueada por CAPEX equipamiento avícola referencial, OPEX preliminar, capital de trabajo, formalización, logística y flujo financiero final.

@@ -21,7 +21,7 @@
 | Energía | pendiente | faltan watts y dimensionamiento |
 | Galpón 500 | parcial | cotización COT-GN-0035: 72 m², $5.547.765; no autoriza construcción |
 | CAPEX 500 | pendiente | falta total por categorías |
-| Flujo 500 | pendiente | no permite VAN/TIR/ROI/Payback |
+| Flujo 500 | pendiente | permite payback preliminar; ROI/VAN/TIR siguen pendientes |
 | Legal/contable | pendiente | revisión externa requerida |
 | Matriz inversión | creada | amarillo = solo desbloqueo |
 

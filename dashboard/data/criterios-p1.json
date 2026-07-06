@@ -83,19 +83,19 @@
   "bloqueos_p1_definitivo": [
     "P1 preliminar no habilitado",
     "mercado 500 no validado",
-    "CAPEX total del proyecto 500 incompleto",
-    "flujo 500 incompleto",
+    "CAPEX total 500 referencial disponible; falta cotización final y financiamiento",
+    "flujo 500 preliminar disponible; falta cierre final para inversión",
     "galpón con CAPEX referencial formal disponible, pero construcción no autorizada",
     "agua/energía sin dimensionamiento y cotización completa",
     "logística no resuelta",
     "legal/contable pendiente",
-    "VAN/TIR/ROI/Payback bloqueados"
+    "ROI/VAN/TIR pendientes; payback simple preliminar disponible"
   ],
   "bloqueos_compra_pollonas": [
-    "CAPEX equipamiento avícola pendiente",
-    "CAPEX total del proyecto no disponible",
-    "OPEX total y capital de trabajo pendientes",
-    "flujo 500 incompleto",
+    "CAPEX equipamiento avícola referencial; falta cotización final",
+    "CAPEX total referencial disponible; falta cierre formal",
+    "OPEX preliminar disponible; falta capital de trabajo cubierto",
+    "flujo 500 preliminar disponible; falta cierre final para inversión",
     "agua/equipamiento/logística sin cierre",
     "legal/contable pendiente"
   ],

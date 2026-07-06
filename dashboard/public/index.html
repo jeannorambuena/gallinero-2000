@@ -10,7 +10,7 @@
     <header class="topbar">
       <div class="brand-block">
         <p class="eyebrow">Gallinero Nacho</p>
-        <h1>Diagnóstico P0 y decisión preliminar de inversión</h1>
+        <h1>Dashboard ejecutivo · decisión por etapas</h1>
       </div>
       <div class="topbar-badges" aria-label="Estado ejecutivo">
         <span class="chip chip-neutral">Escenario base: <strong id="header-escenario">500 aves</strong></span>
@@ -18,38 +18,28 @@
         <span class="chip chip-red">Decisión: <strong>no invertir todavía</strong></span>
       </div>
       <nav class="topnav" aria-label="Navegación principal">
-        <a href="#resumen">Resumen</a>
-        <a href="#operacion">Operación actual</a>
-        <a href="#escala">Escala</a>
-        <a href="#proporcional">Proporcional 500</a>
-        <a href="#capex-p45-p46">CAPEX 500</a>
-        <a href="#opex-p45-p46">OPEX 500</a>
-        <a href="#ingresos-p45-p46">Ingresos</a>
-        <a href="#flujo-p45-p46">Flujo</a>
-        <a href="#pollonas-p45-p46">Pollonas</a>
-        <a href="#decision-p47">P47 decisión</a>
-        <a href="#finanzas">Finanzas</a>
-        <a href="#alertas">Alertas</a>
-        <a href="#lineas">Líneas</a>
-        <a href="#mercado">Precios mercado</a>
-        <a href="#riesgos">Riesgos</a>
-        <a href="#decision">Decisión</a>
-        <a href="#bloqueos">Bloqueos</a>
+        <a href="#resumen">Decisión</a>
+        <a href="#operacion">Base actual</a>
+        <a href="#escala">500 aves</a>
+        <a href="#resumen-financiero">CAPEX/OPEX/flujo</a>
+        <a href="#alternativas-p47">Etapas</a>
+        <a href="#bloqueos-criticos">Bloqueos</a>
+        <a href="#plan-p47">Plan 6 meses</a>
+        <a href="#anexo-tecnico">Anexo técnico</a>
       </nav>
     </header>
 
     <main class="shell">
       <section class="hero-section" id="resumen" aria-labelledby="hero-title">
         <div class="hero-copy card executive-card">
-          <div class="section-label">Dashboard V2 · lectura ejecutiva</div>
+          <div class="section-label">Lectura ejecutiva P47 R1</div>
           <h2 id="hero-title">Estado actual: <span class="state-word yellow">AMARILLO</span></h2>
-          <p>
-            El proyecto tiene una base productiva interesante y ya cuenta con CAPEX referencial formal del galpón,
-            pero todavía no tiene evidencia suficiente para comprar aves, construir o comprometer inversión mayor.
+          <p id="p47-recomendacion-principal">
+            Conviene seguir avanzando solo por etapas: +150 pollonas como base prudente, +100 como opción conservadora y +352 solo con financiamiento cerrado.
           </p>
           <div class="meaning-box">
-            <strong>¿Qué significa esto?</strong>
-            <span>Amarillo no significa no viable; significa información crítica pendiente. Solo permite levantar datos y desbloquear decisiones, sin compra masiva ni construcción.</span>
+            <strong>Qué significa amarillo</strong>
+            <span>No significa inviable. Significa que faltan cotizaciones finales, financiamiento, capital de trabajo, validación comercial/legal y plan logístico antes de invertir.</span>
           </div>
         </div>
 
@@ -58,139 +48,170 @@
             <span>Estado general</span>
             <strong id="estado-general">amarillo</strong>
           </article>
-          <article class="decision-card blocked">
-            <span>P1 preliminar</span>
-            <strong id="p1-preliminar">no habilitado</strong>
+          <article class="decision-card warning">
+            <span>Recomendación base</span>
+            <strong>+150 pollonas</strong>
+          </article>
+          <article class="decision-card warning">
+            <span>Opción conservadora</span>
+            <strong>+100 pollonas</strong>
           </article>
           <article class="decision-card blocked">
-            <span>Compra de aves</span>
+            <span>352 de una vez</span>
+            <strong>solo con financiamiento cerrado</strong>
+          </article>
+          <article class="decision-card blocked">
+            <span>Compra / construcción</span>
             <strong id="compra-aves">bloqueada</strong>
-          </article>
-          <article class="decision-card blocked">
-            <span>Construcción</span>
-            <strong id="construccion">no autorizada</strong>
           </article>
           <article class="decision-card blocked">
             <span>Inversión mayor</span>
             <strong id="inversion-mayor">bloqueada</strong>
           </article>
-          <article class="decision-card blocked">
-            <span>Decisión final</span>
-            <strong id="decision-final">no disponible</strong>
-          </article>
+        </div>
+      </section>
+
+      <section class="section" id="decision-p47" aria-labelledby="decision-p47-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">A · Estado actual y decisión</p>
+            <h2 id="decision-p47-title">Decisión ejecutiva vigente</h2>
+          </div>
+          <span class="status-pill warning">AMARILLO · no aprueba inversión</span>
+        </div>
+        <div class="metric-grid scenario" id="p47-decision-metricas"></div>
+        <div class="alert-callout" id="p47-alternativa-recomendada">
+          +150 pollonas como base prudente; +100 si se prioriza máxima reducción de riesgo.
         </div>
       </section>
 
       <section class="section" id="operacion" aria-labelledby="operacion-title">
         <div class="section-heading">
           <div>
-            <p class="section-kicker">Ficha rápida</p>
-            <h2 id="operacion-title">Operación actual</h2>
+            <p class="section-kicker">B · Base real actual</p>
+            <h2 id="operacion-title">Operación actual resumida</h2>
           </div>
-          <span class="status-pill ok">base productiva confirmada</span>
+          <span class="status-pill ok">datos reales de operación</span>
         </div>
         <div class="metric-grid compact" id="operacion-metricas"></div>
       </section>
 
-      <section class="section split-layout" id="escala" aria-labelledby="escala-title">
-        <article class="card panel scenario-panel">
-          <div class="section-kicker">Escenario vigente</div>
-          <h2 id="escala-title">Escenario base 500 aves</h2>
-          <div class="scenario-highlight">
-            <span>Base actual de decisión</span>
-            <strong>500 aves totales</strong>
+      <section class="section" id="escala" aria-labelledby="escala-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">C · Escenario objetivo</p>
+            <h2 id="escala-title">Escenario 500 aves</h2>
           </div>
-          <div class="metric-grid scenario" id="escenario-500-metricas"></div>
-          <div class="alert-callout">
-            Aunque el escenario de 500 aves mejora frente al antiguo 648 y ya existe referencia formal de galpón,
-            aún no está comercial ni financieramente validado.
-          </div>
-          <p class="small-note">Escenario anterior/referencial: 648 aves. Se conserva solo como trazabilidad histórica.</p>
-        </article>
+          <span class="status-pill warning">objetivo, no autorización</span>
+        </div>
+        <div class="metric-grid scenario" id="escenario-500-metricas"></div>
+        <div class="alert-callout">
+          500 aves es el escenario base de análisis. No autoriza compra de pollonas, construcción ni inversión mayor.
+        </div>
+      </section>
 
-        <article class="card panel">
-          <div class="section-kicker">Comparativo simple</div>
-          <h2>Escalas posibles</h2>
-          <p class="muted">1000 y 2000 aves son solo comparativos futuros; no implican decisión de construcción.</p>
-          <div class="scale-grid" id="comparativo-escalas"></div>
-        </article>
+      <section class="section" id="resumen-financiero" aria-labelledby="resumen-financiero-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">D · CAPEX / OPEX / flujo</p>
+            <h2 id="resumen-financiero-title">Resumen financiero ejecutivo</h2>
+          </div>
+          <span class="status-pill warning">referencial P45-P47</span>
+        </div>
+        <div class="metric-grid scenario" id="resumen-financiero-metricas"></div>
+      </section>
+
+      <section class="section" id="alternativas-p47" aria-labelledby="alternativas-p47-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">E · Alternativas por etapas</p>
+            <h2 id="alternativas-p47-title">100 / 150 / 200 / 352 pollonas</h2>
+          </div>
+          <span class="status-pill warning">ruta recomendada: por etapas</span>
+        </div>
+        <div class="financial-grid compact-list" id="p47-alternativas-detalle"></div>
+      </section>
+
+      <section class="section" id="bloqueos-criticos" aria-labelledby="bloqueos-criticos-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">F · Bloqueos críticos</p>
+            <h2 id="bloqueos-criticos-title">Qué falta para pasar de AMARILLO a VERDE</h2>
+          </div>
+          <span class="status-pill warning">3 grupos</span>
+        </div>
+        <div class="critical-grid" id="bloqueos-criticos-grupos"></div>
+      </section>
+
+      <section class="section" id="plan-p47" aria-labelledby="plan-p47-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">G · Implementación</p>
+            <h2 id="plan-p47-title">Plan de 6 meses</h2>
+          </div>
+          <span class="status-pill neutral">controlado por hitos</span>
+        </div>
+        <div class="financial-grid compact-list" id="p47-plan-6m"></div>
+      </section>
+
+      <section class="section" id="anexo-tecnico" aria-labelledby="anexo-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Anexo técnico</p>
+            <h2 id="anexo-title">Detalle extendido y trazabilidad</h2>
+          </div>
+          <span class="status-pill neutral">baja prioridad ejecutiva</span>
+        </div>
+        <p class="muted">
+          Esta sección conserva trazabilidad técnica P42-P47. No debe leerse como recomendación nueva ni como autorización de inversión.
+        </p>
       </section>
 
       <section class="section" id="proporcional" aria-labelledby="proporcional-title">
         <div class="section-heading">
           <div>
-            <p class="section-kicker">Estimación P44</p>
+            <p class="section-kicker">Anexo · estimación P44</p>
             <h2 id="proporcional-title">Escenario proporcional 500 aves</h2>
           </div>
-          <span class="status-pill warning">preliminar · no es OPEX total</span>
+          <span class="status-pill warning">preliminar · no es OPEX total final</span>
         </div>
-        <p class="muted">
-          Estimación proporcional preliminar para dimensionar operación y cotizaciones. No desbloquea compra de aves,
-          construcción ni inversión mayor.
-        </p>
         <div class="metric-grid scenario" id="escenario-proporcional-metricas"></div>
-        <div class="alert-callout">
-          OPEX mínimo proporcional preliminar: incluye alimento, envases, viruta y bencina base. No equivale a OPEX total final porque falta sanidad de escala, mantenciones, mano de obra, mortalidad, reposición, agua definitiva e imprevistos.
-        </div>
       </section>
 
       <section class="section" id="capex-p45-p46" aria-labelledby="capex-p45-p46-title">
         <div class="section-heading">
           <div>
-            <p class="section-kicker">P45-P46</p>
+            <p class="section-kicker">Anexo · P45-P46</p>
             <h2 id="capex-p45-p46-title">CAPEX referencial 500 aves</h2>
           </div>
-          <span class="status-pill warning">referencial · no habilita inversión</span>
+          <span class="status-pill warning">requiere cotizaciones finales</span>
         </div>
-        <p class="muted">
-          El subtotal conocido de galpón + pollonas ya consume casi todo el máximo informado de $10.000.000; cualquier equipamiento, capital de trabajo o contingencia requiere financiamiento, aporte adicional o compra por etapas.
-        </p>
         <div class="metric-grid scenario" id="capex-referencial-metricas"></div>
         <div class="financial-grid compact-list" id="capex-equipamiento-detalle"></div>
       </section>
 
-      <section class="section" id="opex-p45-p46" aria-labelledby="opex-p45-p46-title">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">P45-P46</p>
-            <h2 id="opex-p45-p46-title">OPEX proyectado 500 aves</h2>
-          </div>
-          <span class="status-pill warning">preliminar</span>
-        </div>
-        <p class="muted">OPEX proyectado preliminar; falta validar sanidad de escala, mantenciones, reposición por mortalidad, costos tributarios/sanitarios efectivos y variaciones de alimento.</p>
-        <div class="metric-grid scenario" id="opex-proyectado-metricas"></div>
-      </section>
-
-      <section class="section" id="ingresos-p45-p46" aria-labelledby="ingresos-p45-p46-title">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">Meta comercial</p>
-            <h2 id="ingresos-p45-p46-title">Ingreso meta 100 bandejas</h2>
-          </div>
-          <span class="status-pill neutral">sensibilidades</span>
-        </div>
-        <div class="metric-grid scenario" id="ingresos-proyectados-metricas"></div>
-      </section>
-
-      <section class="section" id="flujo-p45-p46" aria-labelledby="flujo-p45-p46-title">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">Flujo preliminar</p>
-            <h2 id="flujo-p45-p46-title">Margen, payback y punto de equilibrio</h2>
-          </div>
-          <span class="status-pill warning">VAN/TIR no calculado</span>
-        </div>
-        <div class="metric-grid scenario" id="flujo-preliminar-metricas"></div>
-        <div class="financial-grid compact-list" id="flujo-payback-detalle"></div>
+      <section class="section split-layout" id="anexo-financiero" aria-labelledby="anexo-financiero-title">
+        <article class="card panel">
+          <div class="section-kicker">Anexo · OPEX e ingresos</div>
+          <h2 id="anexo-financiero-title">Sensibilidades P45-P46</h2>
+          <div class="metric-grid scenario" id="opex-proyectado-metricas"></div>
+          <div class="metric-grid scenario mini-stack" id="ingresos-proyectados-metricas"></div>
+        </article>
+        <article class="card panel">
+          <div class="section-kicker">Anexo · Flujo</div>
+          <h2>Payback y punto de equilibrio preliminar</h2>
+          <div class="metric-grid scenario" id="flujo-preliminar-metricas"></div>
+          <div class="financial-grid compact-list one-column" id="flujo-payback-detalle"></div>
+        </article>
       </section>
 
       <section class="section" id="pollonas-p45-p46" aria-labelledby="pollonas-p45-p46-title">
         <div class="section-heading">
           <div>
-            <p class="section-kicker">Estrategia de crecimiento</p>
-            <h2 id="pollonas-p45-p46-title">352 pollonas de una vez vs por etapas</h2>
+            <p class="section-kicker">Anexo · estrategia P45-P46</p>
+            <h2 id="pollonas-p45-p46-title">Lectura original de compra de pollonas</h2>
           </div>
-          <span class="status-pill warning">amarillo / alto riesgo sin financiamiento</span>
+          <span class="status-pill warning">reemplazada por P47 para decisión ejecutiva</span>
         </div>
         <div class="financial-grid compact-list" id="estrategia-pollonas-detalle"></div>
         <div class="alert-callout" id="estrategia-pollonas-recomendacion">
@@ -198,51 +219,30 @@
         </div>
       </section>
 
-      <section class="section" id="decision-p47" aria-labelledby="decision-p47-title">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">P47</p>
-            <h2 id="decision-p47-title">Decisión ejecutiva y plan por etapas</h2>
-          </div>
-          <span class="status-pill warning">AMARILLO · no aprueba inversión</span>
-        </div>
-        <article class="card panel scenario-panel">
-          <div class="section-kicker">Recomendación principal</div>
-          <p id="p47-recomendacion-principal" class="muted">
-            Mantener amarillo y avanzar solo por etapas.
-          </p>
-          <div class="alert-callout" id="p47-alternativa-recomendada">
-            +150 pollonas como base prudente; +100 si se prioriza máxima reducción de riesgo.
-          </div>
+      <section class="section split-layout" id="anexo-escalas" aria-labelledby="anexo-escalas-title">
+        <article class="card panel">
+          <div class="section-kicker">Anexo · comparativo futuro</div>
+          <h2 id="anexo-escalas-title">Escalas 500 / 1000 / 2000</h2>
+          <p class="muted">1000 y 2000 aves son comparativos futuros; no implican decisión de construcción.</p>
+          <div class="scale-grid" id="comparativo-escalas"></div>
         </article>
-        <div class="metric-grid scenario" id="p47-decision-metricas"></div>
-        <div class="section-heading compact-heading">
-          <div>
-            <p class="section-kicker">Alternativas</p>
-            <h3>100 / 150 / 200 / 352 pollonas</h3>
-          </div>
-        </div>
-        <div class="financial-grid compact-list" id="p47-alternativas-detalle"></div>
-        <div class="section-heading compact-heading">
-          <div>
-            <p class="section-kicker">Implementación</p>
-            <h3>Plan de 6 meses</h3>
-          </div>
-        </div>
-        <div class="financial-grid compact-list" id="p47-plan-6m"></div>
+        <article class="card panel scenario-panel">
+          <div class="section-kicker">Anexo · riesgos</div>
+          <h2>Lectura por dimensión</h2>
+          <div class="risk-grid" id="riesgos-clave"></div>
+        </article>
       </section>
 
       <section class="section" id="finanzas" aria-labelledby="finanzas-title">
         <div class="section-heading">
           <div>
-            <p class="section-kicker">Indicadores financieros</p>
-            <h2 id="finanzas-title">Catálogo financiero visible</h2>
+            <p class="section-kicker">Anexo · catálogo financiero extendido</p>
+            <h2 id="finanzas-title">Indicadores no principales</h2>
           </div>
-          <span class="status-pill warning">Pendientes visibles</span>
+          <span class="status-pill neutral">trazabilidad</span>
         </div>
         <p class="muted">
-          Todos los indicadores financieros se muestran aunque falten datos. Si el cálculo aún no está respaldado,
-          el valor aparece como “Pendiente” y el estado explica qué falta para cerrar el análisis.
+          Los indicadores avanzados ROI, VAN y TIR siguen pendientes. Margen, payback simple y punto de equilibrio preliminares ya están resumidos arriba.
         </p>
         <div class="financial-grid" id="indicadores-financieros"></div>
       </section>
@@ -250,33 +250,29 @@
       <section class="section" id="alertas" aria-labelledby="alertas-title">
         <div class="section-heading">
           <div>
-            <p class="section-kicker">Alertas P0</p>
-            <h2 id="alertas-title">Bloqueos actualizados con datos reales</h2>
+            <p class="section-kicker">Anexo · alertas detalladas</p>
+            <h2 id="alertas-title">Alertas y trazabilidad P0</h2>
           </div>
-          <span class="status-pill warning">Decisión bloqueada</span>
+          <span class="status-pill warning">detalle extendido</span>
         </div>
         <div class="alert-grid" id="alertas-p0"></div>
       </section>
 
-      <section class="section split-layout" id="lineas" aria-labelledby="lineas-title">
+      <section class="section split-layout" id="anexo-trabajo" aria-labelledby="lineas-title">
         <article class="card panel">
-          <div class="section-kicker">Trabajo en paralelo</div>
-          <h2 id="lineas-title">Dos líneas para desbloquear decisión</h2>
-          <p class="muted">
-            La ruta hacia enero 2027 debe separar validación comercial y estudio constructivo.
-            Ninguna de estas líneas autoriza por sí sola comprar aves, construir o invertir fuerte.
-          </p>
+          <div class="section-kicker">Anexo · líneas de trabajo</div>
+          <h2 id="lineas-title">Validación comercial y técnica</h2>
           <div class="workstream-grid" id="lineas-trabajo"></div>
         </article>
-
-        <article class="card panel scenario-panel">
-          <div class="section-kicker">Criterio de avance</div>
-          <h2>Condición para pasar a verde</h2>
-          <p id="criterio-verde" class="muted">
-            El proyecto solo podría pasar a verde si se validan con evidencia suficiente la línea comercial y la línea constructiva.
-          </p>
-          <div class="alert-callout">
-            Línea comercial: Nacho debe validar ventas. Línea constructiva: Jean debe validar la cotización formal V8 y ajustar su aplicabilidad al escenario 500 aves, sin autorizar construcción.
+        <article class="card panel">
+          <div class="section-kicker">Anexo · permitido / bloqueado</div>
+          <div class="action-column positive">
+            <h2>Qué sí se puede hacer</h2>
+            <ul id="acciones-permitidas"></ul>
+          </div>
+          <div class="action-column negative">
+            <h2>Qué NO se debe hacer todavía</h2>
+            <ul id="acciones-bloqueadas"></ul>
           </div>
         </article>
       </section>
@@ -284,7 +280,7 @@
       <section class="section" id="mercado" aria-labelledby="mercado-title">
         <div class="section-heading">
           <div>
-            <p class="section-kicker">Benchmark externo</p>
+            <p class="section-kicker">Anexo · benchmark externo</p>
             <h2 id="mercado-title">Referencia externa de precios de mercado</h2>
           </div>
           <span class="status-pill neutral">abril-mayo 2026 · anonimizado</span>
@@ -295,49 +291,6 @@
           </p>
           <div class="market-grid" id="referencias-mercado"></div>
         </article>
-      </section>
-
-      <section class="section" id="decision" aria-labelledby="decision-title">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">Regla de inversión</p>
-            <h2 id="decision-title">Semáforo de inversión</h2>
-          </div>
-          <span class="status-pill warning">Estado actual: AMARILLO</span>
-        </div>
-        <div class="traffic-grid" id="semaforo-inversion"></div>
-      </section>
-
-      <section class="section split-layout" id="bloqueos" aria-labelledby="bloqueos-title">
-        <article class="card panel">
-          <div class="section-kicker">Lo que frena el avance</div>
-          <h2 id="bloqueos-title">Bloqueadores principales</h2>
-          <div class="blocker-list" id="bloqueadores"></div>
-        </article>
-
-        <article class="card panel action-panel">
-          <div class="action-column positive">
-            <div class="section-kicker">Permitido ahora</div>
-            <h2>Qué sí se puede hacer</h2>
-            <ul id="acciones-permitidas"></ul>
-          </div>
-          <div class="action-column negative">
-            <div class="section-kicker">Bloqueado</div>
-            <h2>Qué NO se debe hacer todavía</h2>
-            <ul id="acciones-bloqueadas"></ul>
-          </div>
-        </article>
-      </section>
-
-      <section class="section" id="riesgos" aria-labelledby="riesgos-title">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">Riesgos clave</p>
-            <h2 id="riesgos-title">Lectura por dimensión</h2>
-          </div>
-          <span class="status-pill neutral">resumen P0</span>
-        </div>
-        <div class="risk-grid" id="riesgos-clave"></div>
       </section>
 
       <section class="section final-summary" aria-labelledby="cierre-title">

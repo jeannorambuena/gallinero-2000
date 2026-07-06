@@ -62,7 +62,7 @@ const FALLBACKS = {
 const RISK_COPY = {
   comercial: 'Meta 100 bandejas/semana usada como escenario comercial base; faltan precios netos, forma de pago y estabilidad por canal.',
   productiva: 'Base actual parcialmente confirmada y con alto avance: 148 gallinas, 132 huevos/día y postura aprox. 89,2%.',
-  financiera: 'Ingreso actual calculado ($171.000/semana; $741.000/mes) y OPEX parcial conocido actualizado ($343.640/mes); OPEX total, CAPEX total y flujo siguen incompletos.',
+  financiera: 'P45-P47 ya tienen CAPEX/OPEX/flujo preliminares. Siguen faltando cotizaciones finales, financiamiento y capital de trabajo para invertir.',
   logistica: 'Acceso rural e invierno afectan materiales y operación; reparto actual 6 veces/mes con $10.000 de bencina.',
   sanitaria: 'Humedad, calor y manejo de agua aún requieren mejoras; $0 informado en medicamentos adicionales no elimina riesgo sanitario.',
   agua: 'Falta dimensionamiento definitivo de caudal, presión, bomba y respaldo.',
@@ -96,11 +96,11 @@ const TRAFFIC_RULES = [
 ];
 
 const BLOCKERS = [
-  'Amarillo no significa no viable; significa información crítica pendiente',
-  'Faltan precios netos, forma de pago y estabilidad por canal para las 100 bandejas/semana',
+  'AMARILLO no significa inviable; significa evidencia crítica pendiente antes de invertir',
+  'Falta documentar compradores por canal, precios netos, forma de pago y estabilidad para sostener 100 bandejas/semana',
   'Diferencia técnica producción/meta: 4,1 bandejas/semana para merma, autoconsumo, stock o venta adicional',
-  'CAPEX referencial del galpón disponible, pero CAPEX total del proyecto sigue incompleto por equipamiento avícola',
-  'Flujo proyectado incompleto',
+  'CAPEX equipamiento avícola ya tiene estimación referencial; faltan selección y cotización final',
+  'Indicadores avanzados ROI, VAN y TIR siguen pendientes; margen, payback simple y punto de equilibrio preliminares ya existen',
   'Mix actual confirmado: segunda 6, primera 13, extra 9',
   'Meta 100 bandejas/semana usada como escenario comercial base',
   'OPEX parcial confirmado no equivale a OPEX total',
@@ -260,31 +260,24 @@ function renderDecisionState({ resumen, estado, criteriosP1, semaforo }) {
   setText('decision-final', decisionFinal);
 }
 
-function renderOperacion({ productivos, comerciales, finanzas }) {
+function renderOperacion({ productivos, comerciales, finanzas, flujoCaja }) {
   const current = FALLBACKS.operacion;
   const metrics = [
     { label: 'Gallinas actuales', value: findIndicator(productivos, 'gallinas_actuales') ?? current.gallinas, detail: 'aves' },
     { label: 'Producción promedio', value: findIndicator(productivos, 'produccion_promedio_huevos_dia') ?? current.huevosDia, detail: 'huevos/día' },
-    { label: 'Rango junio', value: `${findIndicator(productivos, 'produccion_minima_huevos_dia') ?? 120}–${findIndicator(productivos, 'produccion_maxima_huevos_dia') ?? 142}`, detail: 'huevos/día' },
-    { label: 'Producción semanal', value: findIndicator(productivos, 'produccion_semanal_huevos_aprox') ?? 924, detail: 'huevos/semana' },
     { label: 'Bandejas producidas aprox.', value: findIndicator(productivos, 'produccion_semanal_bandejas_aprox') ?? 30.8, detail: 'bandejas/semana' },
     { label: 'Venta actual', value: findIndicator(comerciales, 'venta_actual_bandejas_semana') ?? current.bandejasSemana, detail: 'bandejas/semana' },
     { label: 'Precio promedio actual', value: formatCurrency(findIndicator(comerciales, 'precio_promedio_por_bandeja') ?? 6107), detail: 'mix 6 segunda · 13 primera · 9 extra' },
-    { label: 'Precios categoría', value: '$5.000 / $6.000 / $7.000', detail: 'segunda · primera · extra' },
     { label: 'Ingreso actual', value: formatCurrency(findIndicator(comerciales, 'ingreso_semanal_actual') ?? 171000), detail: '$741.000/mes aprox.' },
-    { label: 'Postura promedio', value: findIndicator(productivos, 'postura_promedio_porcentaje') ?? current.postura, detail: '%' },
-    { label: 'Mortalidad acumulada', value: findIndicator(productivos, 'mortalidad_acumulada_porcentaje') ?? current.mortalidad, detail: '%' },
-    { label: 'Alimento mensual', value: findIndicator(productivos, 'consumo_alimento_kg_mes') ?? 550, detail: 'kg/mes' },
-    { label: 'Alimento por gallina', value: findIndicator(productivos, 'alimento_gallina_g_dia') ?? 124, detail: 'g/gallina/día' },
     { label: 'OPEX parcial', value: formatCurrency(findIndicator(finanzas, 'opex_parcial_confirmado') ?? 343640), detail: 'alimento + agua + vitaminas + envases + viruta + bencina', tone: 'pending' },
+    { label: 'Margen parcial sin MO', value: formatCurrency(flujoCaja?.margenes_actuales?.margen_sin_mano_obra_clp ?? 397360), detail: 'no equivale a margen final 500 aves', tone: 'pending' },
     { label: 'Agua actual', value: findIndicator(productivos, 'consumo_agua_litros_dia') ?? current.aguaDia, detail: 'L/día' },
-    { label: 'Gallinero actual', value: '27 m²', detail: '9 x 3 x 2,3 m' },
-    { label: 'Terreno disponible', value: '133 m²', detail: '7 x 19 m' }
+    { label: 'Infraestructura actual', value: '27 m²', detail: 'gallinero actual · terreno 133 m²' }
   ];
   renderMetrics('operacion-metricas', metrics);
 }
 
-function renderEscenario500({ validacionComercial, comerciales, flujoCaja, galpones, capexEquipamiento }) {
+function renderEscenario500({ validacionComercial, comerciales, flujoCaja, galpones, capexEquipamiento, ingresos500 }) {
   const escenario = validacionComercial?.escenario_500 ?? flujoCaja?.escenario_500 ?? {};
   const galpon500 = (galpones?.escenarios || []).find((item) => Number(item?.aves) === 500) ?? {};
   const base = FALLBACKS.escenario500;
@@ -292,24 +285,36 @@ function renderEscenario500({ validacionComercial, comerciales, flujoCaja, galpo
 
   const metrics = [
     { label: 'Escenario base vigente', value: formatValue(escenario.aves ?? base.aves, 'aves totales'), tone: 'accent' },
-    { label: 'Producción estimada', value: formatValue(escenario.huevos_dia_estimados ?? base.huevosDia, 'huevos/día') },
     { label: 'Bandejas estimadas', value: formatValue(escenario.bandejas_semana_estimadas ?? findIndicator(comerciales, 'bandejas_semana_estimadas_500_aves') ?? base.bandejasSemana, 'bandejas/semana') },
-    { label: 'Venta actual', value: formatValue(validacionComercial?.venta_actual_bandejas_semana ?? findIndicator(comerciales, 'venta_actual_bandejas_semana') ?? base.ventaActual, 'bandejas/semana') },
     { label: 'Meta comercial base', value: formatValue(validacionComercial?.meta_comercial_base_bandejas_semana ?? findIndicator(comerciales, 'meta_comercial_bandejas_semana') ?? 100, 'bandejas/semana'), detail: 'escenario base de análisis P43', tone: 'accent' },
-    { label: 'Validación por canal', value: 'Pendiente', detail: 'precios netos · cobranza · estabilidad', tone: 'pending' },
-    { label: 'Pierde ventas por falta de huevos', value: 'No', detail: 'debe desarrollar mercado activamente' },
-    { label: 'Canales actuales', value: 'Vecinos · reparto · familiares', detail: 'sin almacenes, feria ni restaurantes' },
-    { label: 'Pago actual', value: 'Contado / transferencia', detail: 'semanal · sin fiado' },
-    { label: 'Formalización', value: 'Boleta/factura si escala', detail: 'ruta y costos pendientes', tone: 'pending' },
+    { label: 'Ingreso meta mensual', value: formatCurrency(ingresos500?.sensibilidades?.base?.ingreso_mensual_clp ?? 2646367), detail: '100 bandejas/semana' },
     { label: 'Diferencia técnica', value: formatValue(escenario.diferencia_tecnica_bandejas_semana ?? escenario.brecha_bandejas_semana ?? findIndicator(comerciales, 'diferencia_tecnica_produccion_meta_bandejas_semana') ?? base.brecha, 'bandejas/semana'), detail: 'merma · autoconsumo · stock · venta adicional', tone: 'pending' },
     { label: 'Agua estimada', value: base.agua },
     { label: 'Galpón 500 base cotizado', value: formatCurrency(galpon500.costo_total ?? base.costoGalponEscenario), detail: `${galpon500.superficie_util_m2 ?? referenciaV8.superficie_m2 ?? base.superficie} m² · ${formatCurrency(galpon500.costo_m2 ?? referenciaV8.costo_m2_aprox_clp ?? base.costoM2Galpon)}/m²`, tone: 'pending' },
     { label: 'Densidad galpón 500', value: `${galpon500.densidad_aprox_aves_m2 ?? base.densidadGalpon} gallinas/m² aprox.`, detail: '500 gallinas / 72 m²', tone: 'pending' },
     { label: 'CAPEX equipamiento avícola', value: formatCurrency(capexEquipamiento?.resumen?.capex_equipamiento_base_clp) ?? 'Referencial', detail: 'escenario base P45-P46 · requiere cotización final', tone: 'risk' },
-    { label: 'Panel solar', value: formatCurrency(300000), detail: 'paquete completo informado · verificar operación', tone: 'pending' }
+    { label: 'Panel solar', value: formatCurrency(300000), detail: 'comprado · verificar operación', tone: 'pending' }
   ];
 
   renderMetrics('escenario-500-metricas', metrics);
+}
+
+function renderResumenFinancieroEjecutivo({ capexTotal500, opex500, flujo500, decisionP47 }) {
+  const capexBase = capexTotal500?.capex_total_referencial?.base ?? {};
+  const fullMoney = decisionP47?.respuestas_clave?.dinero_faltante_escenario_base ?? {};
+  const paybackBase = flujo500?.payback_simple?.base ?? {};
+  const pe = flujo500?.punto_equilibrio ?? {};
+  const metrics = [
+    { label: 'Galpón + pollonas', value: formatCurrency(capexTotal500?.capex_conocido?.subtotal_conocido_clp ?? 9771765), detail: 'CAPEX conocido' },
+    { label: 'CAPEX total base', value: formatCurrency(capexBase.capex_total_referencial_clp ?? 13343765), detail: 'galpón + pollonas + equipamiento base', tone: 'risk' },
+    { label: 'Capital trabajo mínimo', value: formatCurrency(decisionP47?.capital_trabajo?.minimo_1_mes_clp ?? 1686750), detail: '1 mes OPEX con mano de obra' },
+    { label: 'Déficit base con CT', value: formatCurrency(Math.abs(fullMoney.deficit_base_con_1_mes_ct_vs_10m_clp ?? -5030515)), detail: 'contra $10.000.000 disponibles', tone: 'risk' },
+    { label: 'OPEX con mano obra', value: formatCurrency(opex500?.subtotal_con_mano_obra_clp_mes ?? 1686750), detail: '$600.000 mano de obra incluida' },
+    { label: 'Margen mensual con MO', value: formatCurrency(flujo500?.margenes?.con_mano_obra_clp_mes ?? 959617), detail: 'preliminar 100 bandejas/semana', tone: 'accent' },
+    { label: 'Punto equilibrio con MO', value: `${pe.con_mano_obra_bandejas_semana ?? 63.7} bandejas/sem`, detail: `${pe.con_mano_obra_bandejas_mes ?? 276.2} bandejas/mes` },
+    { label: 'Payback base', value: `${paybackBase.payback_simple_sin_mano_obra_meses ?? 8.56} / ${paybackBase.payback_simple_con_mano_obra_meses ?? 13.91} meses`, detail: 'sin MO / con MO' }
+  ];
+  renderMetrics('resumen-financiero-metricas', metrics);
 }
 
 function renderEscenarioProporcional({ escenarioProporcional, requerimientosEquipamiento }) {
@@ -463,6 +468,41 @@ function renderDecisionP47({ decisionP47, alternativasP47, planP47 }) {
   })));
 }
 
+function renderCriticalBlockers() {
+  const groups = [
+    {
+      title: 'Comerciales',
+      status: 'pendiente',
+      items: ['Documentar compradores por canal', 'Confirmar venta mínima de 63,7 bandejas/semana con mano de obra', 'Validar estabilidad de 100 bandejas/semana al contado']
+    },
+    {
+      title: 'Financieros',
+      status: 'pendiente',
+      items: ['Cotizaciones finales de equipamiento, agua y energía', 'Cubrir déficit base con 1 mes CT: $5.030.515', 'Cubrir capital de trabajo mínimo: $1.686.750']
+    },
+    {
+      title: 'Operativos / legales',
+      status: 'pendiente',
+      items: ['Validar infraestructura actual para +100/+150', 'Cerrar permisos/formalización sanitaria y tributaria', 'Definir logística de invierno y calendario real']
+    }
+  ];
+  const container = $('bloqueos-criticos-grupos');
+  if (!container) return;
+  container.innerHTML = '';
+  groups.forEach((group) => {
+    const card = document.createElement('article');
+    card.className = 'critical-card';
+    card.innerHTML = `
+      <div class="critical-head">
+        <span>${group.status}</span>
+        <strong>${group.title}</strong>
+      </div>
+      <ul>${group.items.map((item) => `<li>${item}</li>`).join('')}</ul>
+    `;
+    container.appendChild(card);
+  });
+}
+
 function renderEscalas(galpones) {
   const container = $('comparativo-escalas');
   if (!container) return;
@@ -508,7 +548,12 @@ function renderFinancialIndicators({ finanzas, flujoCaja }) {
     ?? flujoCaja?.catalogo_indicadores_financieros
     ?? [];
 
-  indicators.forEach((indicator) => {
+  const extendedOnly = indicators.filter((indicator) => {
+    const name = String(indicator?.nombre ?? indicator?.indicador ?? '').toLowerCase();
+    return ['roi', 'van', 'tir', 'ebitda'].some((token) => name.includes(token));
+  });
+
+  extendedOnly.forEach((indicator) => {
     const card = document.createElement('article');
     card.className = `financial-card state-${normalizeStatus(indicator.estado)}`;
     const helpText = indicator.descripcion_corta || indicator.formula || 'Indicador financiero del proyecto.';
@@ -717,6 +762,7 @@ async function init() {
   renderDecisionState(data);
   renderOperacion(data);
   renderEscenario500(data);
+  renderResumenFinancieroEjecutivo(data);
   renderEscenarioProporcional(data);
   renderCapexP45P46(data);
   renderOpexP45P46(data);
@@ -724,6 +770,7 @@ async function init() {
   renderFlujoP45P46(data);
   renderEstrategiaPollonas(data);
   renderDecisionP47(data);
+  renderCriticalBlockers(data);
   renderEscalas(data.galpones);
   renderFinancialIndicators(data);
   renderAlerts(data.alertas);

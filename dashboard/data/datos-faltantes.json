@@ -1,6 +1,6 @@
 {
   "proyecto": "Gallinero Nacho",
-  "fase": "P0 — Diagnóstico real / P47",
+  "fase": "P0 — Diagnóstico real / P47 R1",
   "estado": "AMARILLO",
   "grupos": [
     {
@@ -43,7 +43,7 @@
       ]
     }
   ],
-  "nota": "P47 transforma P45-P46 en decisión ejecutiva por etapas; siguen faltando condiciones de verde antes de invertir.",
+  "nota": "Vista ejecutiva limpiada. Siguen faltando cotizaciones finales, financiamiento, capital de trabajo, validación comercial/legal, infraestructura actual y logística invierno antes de pasar a verde.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",

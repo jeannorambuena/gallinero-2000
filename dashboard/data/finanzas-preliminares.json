@@ -846,7 +846,7 @@
       "unidad": "CLP/mes",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Resultado operacional antes de intereses, impuestos, depreciación y amortización.",
-      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
+      "estado_analisis": "Anexo técnico: margen, payback simple y punto de equilibrio preliminares ya existen en P45-P47. ROI, VAN y TIR siguen pendientes por falta de tasa, vida útil, calendario definitivo, cotizaciones finales y validación comercial/legal.",
       "formula": "ingresos operacionales - costos operativos",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -858,7 +858,7 @@
       "unidad": "CLP/mes",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Caja neta mensual luego de ingresos, costos e inversiones/prorrateos definidos.",
-      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
+      "estado_analisis": "Anexo técnico: margen, payback simple y punto de equilibrio preliminares ya existen en P45-P47. ROI, VAN y TIR siguen pendientes por falta de tasa, vida útil, calendario definitivo, cotizaciones finales y validación comercial/legal.",
       "formula": "ingresos - egresos operativos - egresos de inversión según período",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -870,7 +870,7 @@
       "unidad": "CLP/año",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Caja neta acumulada anual del proyecto.",
-      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
+      "estado_analisis": "Anexo técnico: margen, payback simple y punto de equilibrio preliminares ya existen en P45-P47. ROI, VAN y TIR siguen pendientes por falta de tasa, vida útil, calendario definitivo, cotizaciones finales y validación comercial/legal.",
       "formula": "suma de flujos mensuales",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -882,7 +882,7 @@
       "unidad": "bandejas/mes",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Ventas mínimas necesarias para cubrir costos.",
-      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
+      "estado_analisis": "Anexo técnico: margen, payback simple y punto de equilibrio preliminares ya existen en P45-P47. ROI, VAN y TIR siguen pendientes por falta de tasa, vida útil, calendario definitivo, cotizaciones finales y validación comercial/legal.",
       "formula": "costos fijos / margen unitario",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -894,7 +894,7 @@
       "unidad": "meses",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Tiempo necesario para recuperar la inversión.",
-      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
+      "estado_analisis": "Anexo técnico: margen, payback simple y punto de equilibrio preliminares ya existen en P45-P47. ROI, VAN y TIR siguen pendientes por falta de tasa, vida útil, calendario definitivo, cotizaciones finales y validación comercial/legal.",
       "formula": "inversión total / flujo neto periódico",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -906,7 +906,7 @@
       "unidad": "%",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Retorno porcentual sobre la inversión.",
-      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
+      "estado_analisis": "Anexo técnico: margen, payback simple y punto de equilibrio preliminares ya existen en P45-P47. ROI, VAN y TIR siguen pendientes por falta de tasa, vida útil, calendario definitivo, cotizaciones finales y validación comercial/legal.",
       "formula": "resultado neto / inversión total",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -918,7 +918,7 @@
       "unidad": "CLP",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Valor actual neto de los flujos futuros.",
-      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
+      "estado_analisis": "Anexo técnico: margen, payback simple y punto de equilibrio preliminares ya existen en P45-P47. ROI, VAN y TIR siguen pendientes por falta de tasa, vida útil, calendario definitivo, cotizaciones finales y validación comercial/legal.",
       "formula": "suma de flujos descontados - inversión inicial",
       "fuente": "pendiente",
       "escenario": "500 aves"
@@ -930,7 +930,7 @@
       "unidad": "%",
       "estado": "bloqueado_por_datos",
       "descripcion_corta": "Tasa de retorno implícita del proyecto.",
-      "estado_analisis": "Bloqueado: faltan ingresos reales por categoría, OPEX total y CAPEX total. No calcular EBITDA, Payback, ROI, VAN ni TIR todavía.",
+      "estado_analisis": "Anexo técnico: margen, payback simple y punto de equilibrio preliminares ya existen en P45-P47. ROI, VAN y TIR siguen pendientes por falta de tasa, vida útil, calendario definitivo, cotizaciones finales y validación comercial/legal.",
       "formula": "tasa que hace VAN = 0",
       "fuente": "pendiente",
       "escenario": "500 aves"
