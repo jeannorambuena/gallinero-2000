@@ -102,6 +102,11 @@ def main() -> int:
         requerimientos_equipamiento = load_json("dashboard/data/requerimientos-equipamiento-avicola.json")
         finanzas_data = load_json("dashboard/data/finanzas-preliminares.json")
         finanzas = index_indicators(finanzas_data)
+        capex_total_500 = load_json("dashboard/data/capex-total-referencial-500.json")
+        opex_500 = load_json("dashboard/data/opex-proyectado-500.json")
+        ingresos_500 = load_json("dashboard/data/ingresos-proyectados-500.json")
+        flujo_500 = load_json("dashboard/data/flujo-financiero-preliminar-500.json")
+        estrategia_pollonas = load_json("dashboard/data/estrategia-compra-pollonas.json")
     except Exception as exc:  # noqa: BLE001 - auditoría debe capturar y reportar claro
         print("ERROR Indicadores P0")
         print(f"- no se pudieron cargar datos: {exc}")
@@ -150,7 +155,7 @@ def main() -> int:
         assert_equal(errors, "bencina reparto mensual", flujo.get("costos_actuales", {}).get("bencina_reparto_mensual_clp"), 10000)
         assert_equal(errors, "medicamentos adicionales", flujo.get("costos_actuales", {}).get("medicamentos_limpieza_adicional_mensual_clp"), 0)
         assert_equal(errors, "margen sin mano de obra", flujo.get("margenes_actuales", {}).get("margen_sin_mano_obra_clp"), 397360)
-        assert_equal(errors, "mano de obra referencial", flujo.get("mano_obra_referencial", {}).get("monto_clp"), 182000)
+        assert_equal(errors, "mano de obra referencial P45-P46", flujo.get("mano_obra_referencial", {}).get("monto_clp"), 600000)
         assert_equal(errors, "margen con mano de obra", flujo.get("margenes_actuales", {}).get("margen_con_mano_obra_clp"), 215360)
         assert_equal(errors, "flujo escenario 500", flujo.get("escenario_500", {}).get("aves"), 500)
         assert_equal(errors, "flujo escenario 648 histórico", flujo.get("escenario_648", {}).get("aves"), 648)
@@ -197,6 +202,25 @@ def main() -> int:
         capex_total = capex.get("capex_pendiente", {}).get("monto_total_pendiente")
         if capex_total not in (None, "pendiente"):
             errors.append(f"CAPEX total pendiente: esperado None o 'pendiente', encontrado {capex_total!r}")
+
+        # P45-P46: CAPEX/OPEX/flujo referencial 500
+        assert_equal(errors, "P45 CAPEX equipamiento bajo", capex_total_500.get("equipamiento_escenarios", {}).get("bajo", {}).get("total_clp"), 1723000)
+        assert_equal(errors, "P45 CAPEX equipamiento base", capex_total_500.get("equipamiento_escenarios", {}).get("base", {}).get("total_clp"), 3572000)
+        assert_equal(errors, "P45 CAPEX equipamiento alto", capex_total_500.get("equipamiento_escenarios", {}).get("alto", {}).get("total_clp"), 7010000)
+        assert_equal(errors, "P45 CAPEX total bajo", capex_total_500.get("capex_total_referencial", {}).get("bajo", {}).get("capex_total_referencial_clp"), 11494765)
+        assert_equal(errors, "P45 CAPEX total base", capex_total_500.get("capex_total_referencial", {}).get("base", {}).get("capex_total_referencial_clp"), 13343765)
+        assert_equal(errors, "P45 CAPEX total alto", capex_total_500.get("capex_total_referencial", {}).get("alto", {}).get("capex_total_referencial_clp"), 16781765)
+        assert_equal(errors, "P45 OPEX sin mano de obra", opex_500.get("subtotal_sin_mano_obra_clp_mes"), 1086750)
+        assert_equal(errors, "P45 OPEX con mano de obra", opex_500.get("subtotal_con_mano_obra_clp_mes"), 1686750)
+        assert_equal(errors, "P45 ingreso mensual base", ingresos_500.get("sensibilidades", {}).get("base", {}).get("ingreso_mensual_clp"), 2646367)
+        assert_equal(errors, "P45 margen sin mano de obra", flujo_500.get("margenes", {}).get("sin_mano_obra_clp_mes"), 1559617)
+        assert_equal(errors, "P45 margen con mano de obra", flujo_500.get("margenes", {}).get("con_mano_obra_clp_mes"), 959617)
+        assert_close(errors, "P45 punto equilibrio sin mano de obra semana", flujo_500.get("punto_equilibrio", {}).get("sin_mano_obra_bandejas_semana"), 41.1, 0.05)
+        assert_close(errors, "P45 punto equilibrio con mano de obra semana", flujo_500.get("punto_equilibrio", {}).get("con_mano_obra_bandejas_semana"), 63.7, 0.05)
+        assert_equal(errors, "P45 estrategia 352", estrategia_pollonas.get("estrategias", {}).get("comprar_352_de_una_vez", {}).get("capex_pollonas_clp"), 4224000)
+        assert_equal(errors, "P45 estrategia 100", estrategia_pollonas.get("estrategias", {}).get("100_primero", {}).get("capex_pollonas_clp"), 1200000)
+        if capex_total_500.get("capex_total_referencial", {}).get("base", {}).get("deficit_o_excedente_clp", 0) >= 0:
+            errors.append("P45 CAPEX base debe mostrar déficit frente a $10.000.000")
 
         # Criterios P1 / inversión
         assert_equal(errors, "estado_p1_preliminar", criterios.get("estado_p1_preliminar"), "no habilitado")

@@ -1,0 +1,50 @@
+{
+  "proyecto": "Gallinero Nacho",
+  "fase": "P45-P46",
+  "estado": "recomendacion_preliminar/amarillo",
+  "precio_pollona_clp": 12000,
+  "pollonas_faltantes": 352,
+  "estrategias": {
+    "comprar_352_de_una_vez": {
+      "pollonas": 352,
+      "capex_pollonas_clp": 4224000,
+      "semaforo": "amarillo/alto riesgo si falta financiamiento",
+      "ventajas": [
+        "llega más rápido a 500 aves",
+        "captura antes ingreso meta",
+        "simplifica planificación"
+      ],
+      "riesgos": [
+        "exige más capital inicial",
+        "aumenta presión comercial inmediata",
+        "requiere equipamiento completo desde el inicio",
+        "mayor riesgo sanitario/logístico/de venta",
+        "supera probablemente los $10 millones disponibles al agregar equipamiento y capital de trabajo"
+      ],
+      "lectura": "Puede ser viable solo si se asegura financiamiento suficiente para equipamiento, alimento inicial y contingencia, y si la venta de 100 bandejas está realmente confirmada al contado."
+    },
+    "100_primero": {
+      "pollonas": 100,
+      "capex_pollonas_clp": 1200000,
+      "semaforo": "menor riesgo financiero",
+      "lectura": "Permite validar mercado, operación y equipamiento proporcional con menor presión de caja; crecimiento más lento."
+    },
+    "150_primero": {
+      "pollonas": 150,
+      "capex_pollonas_clp": 1800000,
+      "semaforo": "riesgo intermedio",
+      "lectura": "Compromiso balanceado: más avance que 100, todavía bajo la compra total; exige plan de equipamiento por etapas."
+    },
+    "200_primero": {
+      "pollonas": 200,
+      "capex_pollonas_clp": 2400000,
+      "semaforo": "riesgo medio/alto",
+      "lectura": "Acelera crecimiento, pero aumenta OPEX, equipamiento y venta requerida; usar solo con compradores más confirmados."
+    }
+  },
+  "comparacion": {
+    "comprar_todas": "amarillo/alto riesgo si falta financiamiento; exige equipamiento completo, OPEX y capital de trabajo desde el inicio.",
+    "comprar_por_etapas": "menor riesgo financiero y comercial, crecimiento más lento, permite validar ventas y operación."
+  },
+  "recomendacion_preliminar": "No recomendar automáticamente comprar 352 de una vez: el CAPEX total base más capital de trabajo supera el máximo propio de $10 millones. Recomendación técnica preliminar: compra por etapas, idealmente 150 primero o 100 primero si la venta todavía no está confirmada por canal; comprar todas solo con financiamiento cerrado y venta de 100 bandejas realmente confirmada al contado."
+}

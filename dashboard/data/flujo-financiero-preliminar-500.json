@@ -1,0 +1,444 @@
+{
+  "proyecto": "Gallinero Nacho",
+  "fase": "P45-P46",
+  "estado": "preliminar_referencial/amarillo",
+  "base_calculo": {
+    "ingreso_mensual_base_clp": 2646367,
+    "opex_sin_mano_obra_clp_mes": 1086750,
+    "opex_con_mano_obra_clp_mes": 1686750,
+    "precio_promedio_clp_bandeja": 6107
+  },
+  "margenes": {
+    "sin_mano_obra_clp_mes": 1559617,
+    "con_mano_obra_clp_mes": 959617
+  },
+  "payback_simple": {
+    "bajo": {
+      "capex_total_referencial_clp": 11494765,
+      "margen_mensual_sin_mano_obra_clp": 1559617,
+      "payback_simple_sin_mano_obra_meses": 7.37,
+      "margen_mensual_con_mano_obra_clp": 959617,
+      "payback_simple_con_mano_obra_meses": 11.98
+    },
+    "base": {
+      "capex_total_referencial_clp": 13343765,
+      "margen_mensual_sin_mano_obra_clp": 1559617,
+      "payback_simple_sin_mano_obra_meses": 8.56,
+      "margen_mensual_con_mano_obra_clp": 959617,
+      "payback_simple_con_mano_obra_meses": 13.91
+    },
+    "alto": {
+      "capex_total_referencial_clp": 16781765,
+      "margen_mensual_sin_mano_obra_clp": 1559617,
+      "payback_simple_sin_mano_obra_meses": 10.76,
+      "margen_mensual_con_mano_obra_clp": 959617,
+      "payback_simple_con_mano_obra_meses": 17.49
+    }
+  },
+  "punto_equilibrio": {
+    "sin_mano_obra_bandejas_mes": 178.0,
+    "sin_mano_obra_bandejas_semana": 41.1,
+    "con_mano_obra_bandejas_mes": 276.2,
+    "con_mano_obra_bandejas_semana": 63.7
+  },
+  "flujo_12_meses": {
+    "bajo": [
+      {
+        "mes": 0,
+        "ingresos_clp": 0,
+        "opex_sin_mano_obra_clp": 0,
+        "opex_con_mano_obra_clp": 0,
+        "flujo_sin_mano_obra_clp": -11494765,
+        "flujo_con_mano_obra_clp": -11494765,
+        "acumulado_sin_mano_obra_clp": -11494765,
+        "acumulado_con_mano_obra_clp": -11494765
+      },
+      {
+        "mes": 1,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": -9935148,
+        "acumulado_con_mano_obra_clp": -10535148
+      },
+      {
+        "mes": 2,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": -8375531,
+        "acumulado_con_mano_obra_clp": -9575531
+      },
+      {
+        "mes": 3,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": -6815914,
+        "acumulado_con_mano_obra_clp": -8615914
+      },
+      {
+        "mes": 4,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": -5256297,
+        "acumulado_con_mano_obra_clp": -7656297
+      },
+      {
+        "mes": 5,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": -3696680,
+        "acumulado_con_mano_obra_clp": -6696680
+      },
+      {
+        "mes": 6,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": -2137063,
+        "acumulado_con_mano_obra_clp": -5737063
+      },
+      {
+        "mes": 7,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": -577446,
+        "acumulado_con_mano_obra_clp": -4777446
+      },
+      {
+        "mes": 8,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": 982171,
+        "acumulado_con_mano_obra_clp": -3817829
+      },
+      {
+        "mes": 9,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": 2541788,
+        "acumulado_con_mano_obra_clp": -2858212
+      },
+      {
+        "mes": 10,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": 4101405,
+        "acumulado_con_mano_obra_clp": -1898595
+      },
+      {
+        "mes": 11,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": 5661022,
+        "acumulado_con_mano_obra_clp": -938978
+      },
+      {
+        "mes": 12,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": 7220639,
+        "acumulado_con_mano_obra_clp": 20639
+      }
+    ],
+    "base": [
+      {
+        "mes": 0,
+        "ingresos_clp": 0,
+        "opex_sin_mano_obra_clp": 0,
+        "opex_con_mano_obra_clp": 0,
+        "flujo_sin_mano_obra_clp": -13343765,
+        "flujo_con_mano_obra_clp": -13343765,
+        "acumulado_sin_mano_obra_clp": -13343765,
+        "acumulado_con_mano_obra_clp": -13343765
+      },
+      {
+        "mes": 1,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": -11784148,
+        "acumulado_con_mano_obra_clp": -12384148
+      },
+      {
+        "mes": 2,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": -10224531,
+        "acumulado_con_mano_obra_clp": -11424531
+      },
+      {
+        "mes": 3,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": -8664914,
+        "acumulado_con_mano_obra_clp": -10464914
+      },
+      {
+        "mes": 4,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": -7105297,
+        "acumulado_con_mano_obra_clp": -9505297
+      },
+      {
+        "mes": 5,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": -5545680,
+        "acumulado_con_mano_obra_clp": -8545680
+      },
+      {
+        "mes": 6,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": -3986063,
+        "acumulado_con_mano_obra_clp": -7586063
+      },
+      {
+        "mes": 7,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": -2426446,
+        "acumulado_con_mano_obra_clp": -6626446
+      },
+      {
+        "mes": 8,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": -866829,
+        "acumulado_con_mano_obra_clp": -5666829
+      },
+      {
+        "mes": 9,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": 692788,
+        "acumulado_con_mano_obra_clp": -4707212
+      },
+      {
+        "mes": 10,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": 2252405,
+        "acumulado_con_mano_obra_clp": -3747595
+      },
+      {
+        "mes": 11,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": 3812022,
+        "acumulado_con_mano_obra_clp": -2787978
+      },
+      {
+        "mes": 12,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": 5371639,
+        "acumulado_con_mano_obra_clp": -1828361
+      }
+    ],
+    "alto": [
+      {
+        "mes": 0,
+        "ingresos_clp": 0,
+        "opex_sin_mano_obra_clp": 0,
+        "opex_con_mano_obra_clp": 0,
+        "flujo_sin_mano_obra_clp": -16781765,
+        "flujo_con_mano_obra_clp": -16781765,
+        "acumulado_sin_mano_obra_clp": -16781765,
+        "acumulado_con_mano_obra_clp": -16781765
+      },
+      {
+        "mes": 1,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": -15222148,
+        "acumulado_con_mano_obra_clp": -15822148
+      },
+      {
+        "mes": 2,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": -13662531,
+        "acumulado_con_mano_obra_clp": -14862531
+      },
+      {
+        "mes": 3,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": -12102914,
+        "acumulado_con_mano_obra_clp": -13902914
+      },
+      {
+        "mes": 4,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": -10543297,
+        "acumulado_con_mano_obra_clp": -12943297
+      },
+      {
+        "mes": 5,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": -8983680,
+        "acumulado_con_mano_obra_clp": -11983680
+      },
+      {
+        "mes": 6,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": -7424063,
+        "acumulado_con_mano_obra_clp": -11024063
+      },
+      {
+        "mes": 7,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": -5864446,
+        "acumulado_con_mano_obra_clp": -10064446
+      },
+      {
+        "mes": 8,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": -4304829,
+        "acumulado_con_mano_obra_clp": -9104829
+      },
+      {
+        "mes": 9,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": -2745212,
+        "acumulado_con_mano_obra_clp": -8145212
+      },
+      {
+        "mes": 10,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": -1185595,
+        "acumulado_con_mano_obra_clp": -7185595
+      },
+      {
+        "mes": 11,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": 374022,
+        "acumulado_con_mano_obra_clp": -6225978
+      },
+      {
+        "mes": 12,
+        "ingresos_clp": 2646367,
+        "opex_sin_mano_obra_clp": 1086750,
+        "opex_con_mano_obra_clp": 1686750,
+        "flujo_sin_mano_obra_clp": 1559617,
+        "flujo_con_mano_obra_clp": 959617,
+        "acumulado_sin_mano_obra_clp": 1933639,
+        "acumulado_con_mano_obra_clp": -5266361
+      }
+    ]
+  },
+  "van_tir": "no calculado por falta de tasa, vida útil y calendario definitivo",
+  "advertencia": "Flujo mensual preliminar referencial; no declara decisión final verde."
+}

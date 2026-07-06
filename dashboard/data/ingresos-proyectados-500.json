@@ -1,0 +1,49 @@
+{
+  "proyecto": "Gallinero Nacho",
+  "fase": "P45-P46",
+  "estado": "preliminar/amarillo",
+  "precio_promedio_actual_clp_bandeja": 6107,
+  "mix_actual": {
+    "segunda": 6,
+    "primera": 13,
+    "extra": 9
+  },
+  "precios_confirmados_clp": {
+    "segunda": 5000,
+    "primera": 6000,
+    "extra": 7000
+  },
+  "sensibilidades": {
+    "base": {
+      "bandejas_semana": 100,
+      "precio_promedio_clp": 6107,
+      "ingreso_semanal_clp": 610700,
+      "ingreso_mensual_clp": 2646367,
+      "observacion": "Meta comercial base: 100 bandejas/semana al mix/precio promedio actual."
+    },
+    "conservador_90": {
+      "bandejas_semana": 90,
+      "precio_promedio_clp": 6107,
+      "ingreso_semanal_clp": 549630,
+      "ingreso_mensual_clp": 2381730,
+      "observacion": "Sensibilidad conservadora: 90 bandejas/semana al mismo precio promedio."
+    },
+    "descuento_almacenes": {
+      "bandejas_semana": 100,
+      "precio_promedio_clp": 6107,
+      "descuento_sobre_bandejas_semana": 30,
+      "descuento_porcentaje": 10,
+      "ingreso_semanal_clp": 592379,
+      "ingreso_mensual_clp": 2566976,
+      "observacion": "Sensibilidad, aunque Nacho informa que almacenes pagarían igual."
+    },
+    "alto_104_1": {
+      "bandejas_semana": 104.1,
+      "precio_promedio_clp": 6107,
+      "ingreso_semanal_clp": 635739,
+      "ingreso_mensual_clp": 2754868,
+      "observacion": "Sensibilidad alta: venta de toda la producción técnica estimada para 500 aves."
+    }
+  },
+  "nota": "Todas las ventas se modelan al contado. 100 bandejas/semana es venta segura o casi segura según dato informado."
+}

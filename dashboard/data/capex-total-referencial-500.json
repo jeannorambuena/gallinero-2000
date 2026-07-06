@@ -1,169 +1,16 @@
 {
   "proyecto": "Gallinero Nacho",
-  "fase": "P0 — Diagnóstico real / P45-P46",
-  "estado": "referencial_preliminar; requiere cotización final",
-  "objetivo_aves": 500,
-  "descripcion": "CAPEX equipamiento avícola referencial bajo/base/alto para 500 aves, con fuentes web cuando existieron y estimaciones internas explícitas cuando no se recuperó precio.",
-  "nota": "No inventar precios: usar cantidades preliminares para cotizar y cargar solo cotizaciones reales cuando existan.",
-  "items": [
-    {
-      "id": "comederos",
-      "item": "comederos",
-      "estado": "valorizado_referencial",
-      "requerimiento": "22-24 comederos tipo plato/tolva o lineal equivalente",
-      "bajo_clp": 260000,
-      "base_clp": 500000,
-      "alto_clp": 960000,
-      "observacion": "estimación interna, requiere cotización"
-    },
-    {
-      "id": "bebederos",
-      "item": "bebederos",
-      "estado": "valorizado_referencial",
-      "requerimiento": "60 nipples + líneas + llaves + regulador/depósito",
-      "bajo_clp": 168000,
-      "base_clp": 322000,
-      "alto_clp": 600000,
-      "observacion": "estimación interna, requiere cotización"
-    },
-    {
-      "id": "nidos_ponederos",
-      "item": "nidos ponederos",
-      "estado": "valorizado_referencial",
-      "requerimiento": "72 nidos fabricados o ponedero comunitario mejorado",
-      "bajo_clp": 350000,
-      "base_clp": 900000,
-      "alto_clp": 2000000,
-      "observacion": "estimación interna, requiere cotización"
-    },
-    {
-      "id": "perchas",
-      "item": "perchas",
-      "estado": "valorizado_referencial",
-      "requerimiento": "75 m lineales con soportes firmes",
-      "bajo_clp": 250000,
-      "base_clp": 350000,
-      "alto_clp": 550000,
-      "observacion": "polines Sodimac + fijaciones y merma"
-    },
-    {
-      "id": "mallas_interiores",
-      "item": "mallas interiores",
-      "estado": "valorizado_referencial",
-      "requerimiento": "divisiones funcionales principales",
-      "bajo_clp": 125000,
-      "base_clp": 260000,
-      "alto_clp": 550000,
-      "observacion": "malla 1,2x50 + soportes/fijaciones"
-    },
-    {
-      "id": "almacenamiento_semanal",
-      "item": "almacenamiento semanal",
-      "estado": "valorizado_referencial",
-      "requerimiento": "2 racks/tarimas + protección contra humedad/roedores",
-      "bajo_clp": 120000,
-      "base_clp": 300000,
-      "alto_clp": 600000,
-      "observacion": "racks Sodimac + estimación interna de protección"
-    },
-    {
-      "id": "componentes_energia",
-      "item": "componentes energia",
-      "estado": "valorizado_referencial",
-      "requerimiento": "cables, canalización, conectores, protecciones, luces básicas e instalación",
-      "bajo_clp": 180000,
-      "base_clp": 420000,
-      "alto_clp": 750000,
-      "observacion": "estimación interna, requiere cotización; no incluye panel ni bomba"
-    },
-    {
-      "id": "distribucion_agua",
-      "item": "distribucion agua",
-      "estado": "valorizado_referencial",
-      "requerimiento": "manguera/tubería/fittings/llaves/regulador",
-      "bajo_clp": 120000,
-      "base_clp": 220000,
-      "alto_clp": 400000,
-      "observacion": "referencias Sodimac + estimación instalación"
-    },
-    {
-      "id": "logistica_contingencia",
-      "item": "logistica contingencia",
-      "estado": "valorizado_referencial",
-      "requerimiento": "acopio/traslado adicional/ripio menor imprevisto",
-      "bajo_clp": 150000,
-      "base_clp": 300000,
-      "alto_clp": 600000,
-      "observacion": "referencial por invierno"
-    }
-  ],
-  "resumen": {
-    "capex_equipamiento_avicola_clp": null,
-    "capex_total_proyecto_clp": null,
-    "estado_capex_total": "referencial preliminar P45-P46; no habilita inversión",
-    "requerimientos_archivo": "dashboard/data/requerimientos-equipamiento-avicola.json",
-    "comederos": "40-50 m lineales o 22-24 unidades",
-    "bebederos": "60 nipples aprox.",
-    "nidos": "72 nidos individuales o 5 m² comunitario",
-    "perchas": "75 m lineales",
-    "bodega_alimento": "19 sacos/semana o 38 sacos/2 semanas",
-    "capex_equipamiento_bajo_clp": 1723000,
-    "capex_equipamiento_base_clp": 3572000,
-    "capex_equipamiento_alto_clp": 7010000
+  "fase": "P45-P46",
+  "estado": "referencial_preliminar/amarillo",
+  "capex_conocido": {
+    "galpon_clp": 5547765,
+    "pollonas_faltantes_clp": 4224000,
+    "subtotal_conocido_clp": 9771765,
+    "capacidad_inversion_propia_clp": 10000000
   },
-  "fuentes": [
-    {
-      "id": "sodimac_malla_gallinero_busqueda",
-      "proveedor": "Sodimac Chile",
-      "url": "https://www.sodimac.cl/sodimac-cl/search?Ntt=malla%20gallinero",
-      "fecha_revision": "2026-07-06",
-      "observacion": "Búsqueda pública Sodimac; precios extraídos desde __NEXT_DATA__."
-    },
-    {
-      "id": "sodimac_polin_impregnado_busqueda",
-      "proveedor": "Sodimac Chile",
-      "url": "https://www.sodimac.cl/sodimac-cl/search?Ntt=polin%20impregnado%202x2",
-      "fecha_revision": "2026-07-06",
-      "observacion": "Referencia para perchas, soportes y sectorización interior."
-    },
-    {
-      "id": "sodimac_estante_rimax",
-      "proveedor": "Sodimac Chile",
-      "url": "https://www.sodimac.cl/sodimac-cl/articulo/116341305/Estante-Repisa-Rack-plastico-4-Niveles-91x45x145cm-Rimax/116341308",
-      "fecha_revision": "2026-07-06",
-      "observacion": "Página con oferta JSON-LD: precio normal $55.990 CLP."
-    },
-    {
-      "id": "sodimac_agua_manguera_valvula",
-      "proveedor": "Sodimac Chile",
-      "url": "https://www.sodimac.cl/sodimac-cl/search?Ntt=manguera%20jardin%2025%20m",
-      "fecha_revision": "2026-07-06",
-      "observacion": "Referencia de mangueras y fittings; se complementa con búsqueda de válvula bola PVC 25 mm."
-    },
-    {
-      "id": "sodimac_electrico_conduit_protecciones",
-      "proveedor": "Sodimac Chile",
-      "url": "https://www.sodimac.cl/sodimac-cl/search?Ntt=tubo%20conduit%2020%20mm",
-      "fecha_revision": "2026-07-06",
-      "observacion": "Referencia para canalización, fijaciones y protecciones eléctricas menores."
-    },
-    {
-      "id": "mercadolibre_ponedero_copele",
-      "proveedor": "MercadoLibre Chile",
-      "url": "https://articulo.mercadolibre.cl/MLC-1379188913-ponedero-galvanizado-copele-12m-capacidad-100-gallinas-_JM",
-      "fecha_revision": "2026-07-06",
-      "observacion": "Referencia de producto avícola; precio no recuperable por verificación anti-bot, por lo que escenarios usan estimación interna."
-    },
-    {
-      "id": "mercadolibre_nipple_b11",
-      "proveedor": "MercadoLibre Chile",
-      "url": "https://articulo.mercadolibre.cl/MLC-1778401396-pack-x10-bebedero-goteo-nipple-b-11-para-gallina-amarillo-_JM",
-      "fecha_revision": "2026-07-06",
-      "observacion": "Referencia de producto avícola; precio no recuperable por verificación anti-bot, por lo que escenarios usan estimación interna."
-    }
-  ],
-  "escenarios": {
+  "equipamiento_escenarios": {
     "bajo": {
+      "total_clp": 1723000,
       "descripcion": "Mínimo funcional, más fabricación en obra y productos económicos.",
       "items": {
         "comederos": {
@@ -220,10 +67,10 @@
           "confianza": "bajo",
           "observacion": "referencial por acceso invierno"
         }
-      },
-      "total_clp": 1723000
+      }
     },
     "base": {
+      "total_clp": 3572000,
       "descripcion": "Prudente, funcional y realista para operar 500 aves.",
       "items": {
         "comederos": {
@@ -280,10 +127,10 @@
           "confianza": "bajo",
           "observacion": "referencial por invierno"
         }
-      },
-      "total_clp": 3572000
+      }
     },
     "alto": {
+      "total_clp": 7010000,
       "descripcion": "Más holgura, mayor durabilidad y componentes más completos.",
       "items": {
         "comederos": {
@@ -340,8 +187,40 @@
           "confianza": "bajo",
           "observacion": "referencial"
         }
-      },
-      "total_clp": 7010000
+      }
     }
-  }
+  },
+  "capex_total_referencial": {
+    "bajo": {
+      "capex_conocido_clp": 9771765,
+      "equipamiento_clp": 1723000,
+      "capex_total_referencial_clp": 11494765,
+      "capacidad_inversion_propia_clp": 10000000,
+      "deficit_o_excedente_clp": -1494765,
+      "lectura": "déficit"
+    },
+    "base": {
+      "capex_conocido_clp": 9771765,
+      "equipamiento_clp": 3572000,
+      "capex_total_referencial_clp": 13343765,
+      "capacidad_inversion_propia_clp": 10000000,
+      "deficit_o_excedente_clp": -3343765,
+      "lectura": "déficit"
+    },
+    "alto": {
+      "capex_conocido_clp": 9771765,
+      "equipamiento_clp": 7010000,
+      "capex_total_referencial_clp": 16781765,
+      "capacidad_inversion_propia_clp": 10000000,
+      "deficit_o_excedente_clp": -6781765,
+      "lectura": "déficit"
+    }
+  },
+  "capital_trabajo_inicial": {
+    "un_mes_opex_con_mano_obra_clp": 1686750,
+    "dos_meses_opex_con_mano_obra_clp": 3373500,
+    "nota": "No confundir con CAPEX."
+  },
+  "texto_obligatorio": "El subtotal conocido de galpón + pollonas ya consume casi todo el máximo informado de $10.000.000; cualquier equipamiento, capital de trabajo o contingencia requiere financiamiento, aporte adicional o compra por etapas.",
+  "decision": "No desbloquea compra de aves, construcción ni inversión mayor."
 }

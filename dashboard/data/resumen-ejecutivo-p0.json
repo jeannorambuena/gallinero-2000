@@ -1,6 +1,6 @@
 {
   "proyecto": "Gallinero Nacho",
-  "fase": "P0 — Diagnóstico real / P44",
+  "fase": "P0 — Diagnóstico real / P45-P46",
   "estado_general": "amarillo",
   "avance_p0_estimado": 90,
   "escenario_base_actual": {
@@ -46,7 +46,11 @@
     "meta comercial 100 bandejas/semana usada como escenario base de análisis",
     "panel solar comprado por $300.000 considerado paquete completo informado",
     "estructura CAPEX equipamiento avícola creada para cotización",
-    "P44 estructura estimación proporcional 500: 75 sacos/mes, OPEX mínimo proporcional $1.060.750/mes y requerimientos técnicos para cotizar."
+    "P44 estructura estimación proporcional 500: 75 sacos/mes, OPEX mínimo proporcional $1.060.750/mes y requerimientos técnicos para cotizar.",
+    "P45-P46 calcula CAPEX equipamiento referencial bajo/base/alto.",
+    "OPEX proyectado 500 con mano de obra económica: $1.686.750/mes.",
+    "Ingreso mensual meta 100 bandejas: $2.646.367 aprox.",
+    "Flujo preliminar muestra margen positivo, pero requiere financiamiento y validación comercial."
   ],
   "riesgos_principales": [
     "CAPEX total incompleto por equipamiento avícola pendiente de cotización",
@@ -56,7 +60,9 @@
     "formalización tributaria/sanitaria pendiente de valorización",
     "logística de invierno pendiente",
     "flujo financiero completo pendiente",
-    "Confundir OPEX mínimo proporcional con OPEX total final."
+    "Confundir OPEX mínimo proporcional con OPEX total final.",
+    "El subtotal conocido de galpón + pollonas ya consume casi todo el máximo informado de $10.000.000.",
+    "Comprar 352 pollonas de una vez es amarillo/alto riesgo si no hay financiamiento completo y venta confirmada."
   ],
   "decisiones_bloqueadas": [
     "compra de pollonas",
@@ -85,7 +91,7 @@
     "valorizar formalización",
     "preparar flujo financiero preliminar sin ROI/VAN/TIR definitivos hasta cerrar datos"
   ],
-  "conclusion": "P44 deja una estimación proporcional preliminar para 500 aves y una lista técnica para cotizar equipamiento. Estado sigue amarillo: no se autoriza compra, construcción ni inversión mayor hasta cerrar CAPEX, OPEX total, capital de trabajo, formalización, logística y flujo.",
+  "conclusion": "P46 preliminar calculado con precios referenciales; requiere validación final antes de ejecutar. Estado sigue amarillo: no se autoriza compra de aves, construcción ni inversión mayor.",
   "interpretacion_estado_amarillo": "Amarillo no significa rechazo ni que el proyecto no sea viable; significa que falta información crítica para decidir con seguridad antes de comprar aves, construir o comprometer inversión mayor.",
   "lineas_paralelas": [
     {
@@ -159,5 +165,31 @@
     "estado": "actualizado P41",
     "total_indicadores": 31,
     "regla": "mostrar todos los indicadores; si falta dato suficiente, mostrar Pendiente"
+  },
+  "capex_total_referencial_p45_p46": {
+    "bajo": {
+      "capex_conocido_clp": 9771765,
+      "equipamiento_clp": 1723000,
+      "capex_total_referencial_clp": 11494765,
+      "capacidad_inversion_propia_clp": 10000000,
+      "deficit_o_excedente_clp": -1494765,
+      "lectura": "déficit"
+    },
+    "base": {
+      "capex_conocido_clp": 9771765,
+      "equipamiento_clp": 3572000,
+      "capex_total_referencial_clp": 13343765,
+      "capacidad_inversion_propia_clp": 10000000,
+      "deficit_o_excedente_clp": -3343765,
+      "lectura": "déficit"
+    },
+    "alto": {
+      "capex_conocido_clp": 9771765,
+      "equipamiento_clp": 7010000,
+      "capex_total_referencial_clp": 16781765,
+      "capacidad_inversion_propia_clp": 10000000,
+      "deficit_o_excedente_clp": -6781765,
+      "lectura": "déficit"
+    }
   }
 }

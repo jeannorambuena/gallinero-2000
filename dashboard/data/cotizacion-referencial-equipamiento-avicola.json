@@ -1,116 +1,9 @@
 {
   "proyecto": "Gallinero Nacho",
-  "fase": "P0 — Diagnóstico real / P45-P46",
-  "estado": "referencial_preliminar; requiere cotización final",
-  "objetivo_aves": 500,
-  "descripcion": "CAPEX equipamiento avícola referencial bajo/base/alto para 500 aves, con fuentes web cuando existieron y estimaciones internas explícitas cuando no se recuperó precio.",
-  "nota": "No inventar precios: usar cantidades preliminares para cotizar y cargar solo cotizaciones reales cuando existan.",
-  "items": [
-    {
-      "id": "comederos",
-      "item": "comederos",
-      "estado": "valorizado_referencial",
-      "requerimiento": "22-24 comederos tipo plato/tolva o lineal equivalente",
-      "bajo_clp": 260000,
-      "base_clp": 500000,
-      "alto_clp": 960000,
-      "observacion": "estimación interna, requiere cotización"
-    },
-    {
-      "id": "bebederos",
-      "item": "bebederos",
-      "estado": "valorizado_referencial",
-      "requerimiento": "60 nipples + líneas + llaves + regulador/depósito",
-      "bajo_clp": 168000,
-      "base_clp": 322000,
-      "alto_clp": 600000,
-      "observacion": "estimación interna, requiere cotización"
-    },
-    {
-      "id": "nidos_ponederos",
-      "item": "nidos ponederos",
-      "estado": "valorizado_referencial",
-      "requerimiento": "72 nidos fabricados o ponedero comunitario mejorado",
-      "bajo_clp": 350000,
-      "base_clp": 900000,
-      "alto_clp": 2000000,
-      "observacion": "estimación interna, requiere cotización"
-    },
-    {
-      "id": "perchas",
-      "item": "perchas",
-      "estado": "valorizado_referencial",
-      "requerimiento": "75 m lineales con soportes firmes",
-      "bajo_clp": 250000,
-      "base_clp": 350000,
-      "alto_clp": 550000,
-      "observacion": "polines Sodimac + fijaciones y merma"
-    },
-    {
-      "id": "mallas_interiores",
-      "item": "mallas interiores",
-      "estado": "valorizado_referencial",
-      "requerimiento": "divisiones funcionales principales",
-      "bajo_clp": 125000,
-      "base_clp": 260000,
-      "alto_clp": 550000,
-      "observacion": "malla 1,2x50 + soportes/fijaciones"
-    },
-    {
-      "id": "almacenamiento_semanal",
-      "item": "almacenamiento semanal",
-      "estado": "valorizado_referencial",
-      "requerimiento": "2 racks/tarimas + protección contra humedad/roedores",
-      "bajo_clp": 120000,
-      "base_clp": 300000,
-      "alto_clp": 600000,
-      "observacion": "racks Sodimac + estimación interna de protección"
-    },
-    {
-      "id": "componentes_energia",
-      "item": "componentes energia",
-      "estado": "valorizado_referencial",
-      "requerimiento": "cables, canalización, conectores, protecciones, luces básicas e instalación",
-      "bajo_clp": 180000,
-      "base_clp": 420000,
-      "alto_clp": 750000,
-      "observacion": "estimación interna, requiere cotización; no incluye panel ni bomba"
-    },
-    {
-      "id": "distribucion_agua",
-      "item": "distribucion agua",
-      "estado": "valorizado_referencial",
-      "requerimiento": "manguera/tubería/fittings/llaves/regulador",
-      "bajo_clp": 120000,
-      "base_clp": 220000,
-      "alto_clp": 400000,
-      "observacion": "referencias Sodimac + estimación instalación"
-    },
-    {
-      "id": "logistica_contingencia",
-      "item": "logistica contingencia",
-      "estado": "valorizado_referencial",
-      "requerimiento": "acopio/traslado adicional/ripio menor imprevisto",
-      "bajo_clp": 150000,
-      "base_clp": 300000,
-      "alto_clp": 600000,
-      "observacion": "referencial por invierno"
-    }
-  ],
-  "resumen": {
-    "capex_equipamiento_avicola_clp": null,
-    "capex_total_proyecto_clp": null,
-    "estado_capex_total": "referencial preliminar P45-P46; no habilita inversión",
-    "requerimientos_archivo": "dashboard/data/requerimientos-equipamiento-avicola.json",
-    "comederos": "40-50 m lineales o 22-24 unidades",
-    "bebederos": "60 nipples aprox.",
-    "nidos": "72 nidos individuales o 5 m² comunitario",
-    "perchas": "75 m lineales",
-    "bodega_alimento": "19 sacos/semana o 38 sacos/2 semanas",
-    "capex_equipamiento_bajo_clp": 1723000,
-    "capex_equipamiento_base_clp": 3572000,
-    "capex_equipamiento_alto_clp": 7010000
-  },
+  "fase": "P45-P46",
+  "estado": "referencial_preliminar",
+  "fecha_revision": "2026-07-06",
+  "advertencia": "Precios web referenciales y estimaciones internas cuando no se encontró precio fuente. No ejecutar compra sin cotización final.",
   "fuentes": [
     {
       "id": "sodimac_malla_gallinero_busqueda",
@@ -160,6 +53,138 @@
       "url": "https://articulo.mercadolibre.cl/MLC-1778401396-pack-x10-bebedero-goteo-nipple-b-11-para-gallina-amarillo-_JM",
       "fecha_revision": "2026-07-06",
       "observacion": "Referencia de producto avícola; precio no recuperable por verificación anti-bot, por lo que escenarios usan estimación interna."
+    }
+  ],
+  "cotizaciones": [
+    {
+      "item": "mallas_interiores",
+      "producto": "0.60x25 m malla 3/4 hexagonal galvanizada",
+      "proveedor": "Sodimac Chile",
+      "url": "https://www.sodimac.cl/sodimac-cl/search?Ntt=malla%20gallinero",
+      "fecha_revision": "2026-07-06",
+      "precio_unitario_clp": 36562,
+      "unidad_compra": "rollo 0,6 x 25 m",
+      "cantidad_usada": 2,
+      "subtotal_clp": 73124,
+      "nivel_confianza": "alto",
+      "observacion": "SKU 292699; precio fuente trazable"
+    },
+    {
+      "item": "mallas_interiores",
+      "producto": "1.2x50 m malla 3/4 hexagonal galvanizada",
+      "proveedor": "Sodimac Chile",
+      "url": "https://www.sodimac.cl/sodimac-cl/search?Ntt=malla%20gallinero",
+      "fecha_revision": "2026-07-06",
+      "precio_unitario_clp": 124738,
+      "unidad_compra": "rollo 1,2 x 50 m",
+      "cantidad_usada": 1,
+      "subtotal_clp": 124738,
+      "nivel_confianza": "alto",
+      "observacion": "SKU 706523; precio fuente trazable"
+    },
+    {
+      "item": "perchas_mallas",
+      "producto": "Polín impregnado 75-100 mm x 2,44 m",
+      "proveedor": "Sodimac Chile",
+      "url": "https://www.sodimac.cl/sodimac-cl/search?Ntt=polin%20impregnado%202x2",
+      "fecha_revision": "2026-07-06",
+      "precio_unitario_clp": 4990,
+      "unidad_compra": "unidad",
+      "cantidad_usada": 31,
+      "subtotal_clp": 154690,
+      "nivel_confianza": "alto",
+      "observacion": "SKU 75577X; 31 unidades cubren aprox. 75 m lineales"
+    },
+    {
+      "item": "almacenamiento",
+      "producto": "Estante Repisa Rack plástico 4 niveles Rimax",
+      "proveedor": "Sodimac Chile",
+      "url": "https://www.sodimac.cl/sodimac-cl/articulo/116341305/Estante-Repisa-Rack-plastico-4-Niveles-91x45x145cm-Rimax/116341308",
+      "fecha_revision": "2026-07-06",
+      "precio_unitario_clp": 55990,
+      "unidad_compra": "unidad",
+      "cantidad_usada": 2,
+      "subtotal_clp": 111980,
+      "nivel_confianza": "alto",
+      "observacion": "Precio JSON-LD; se agregan protección/roedores en escenario base"
+    },
+    {
+      "item": "agua",
+      "producto": "Manguera 25 m Tramontina",
+      "proveedor": "Sodimac Chile",
+      "url": "https://www.sodimac.cl/sodimac-cl/search?Ntt=manguera%20jardin%2025%20m",
+      "fecha_revision": "2026-07-06",
+      "precio_unitario_clp": 43990,
+      "unidad_compra": "rollo 25 m",
+      "cantidad_usada": 1,
+      "subtotal_clp": 43990,
+      "nivel_confianza": "medio",
+      "observacion": "Referencia de distribución flexible"
+    },
+    {
+      "item": "agua",
+      "producto": "Válvula bola 25 mm PVC",
+      "proveedor": "Sodimac Chile",
+      "url": "https://www.sodimac.cl/sodimac-cl/search?Ntt=valvula%20bola%20pvc%2025%20mm",
+      "fecha_revision": "2026-07-06",
+      "precio_unitario_clp": 6590,
+      "unidad_compra": "unidad",
+      "cantidad_usada": 4,
+      "subtotal_clp": 26360,
+      "nivel_confianza": "alto",
+      "observacion": "SKU 122610; referencia fittings"
+    },
+    {
+      "item": "energia",
+      "producto": "Interruptor automático 10 A Lexo",
+      "proveedor": "Sodimac Chile",
+      "url": "https://www.sodimac.cl/sodimac-cl/search?Ntt=interruptor%20automatico%2010a",
+      "fecha_revision": "2026-07-06",
+      "precio_unitario_clp": 2290,
+      "unidad_compra": "unidad",
+      "cantidad_usada": 2,
+      "subtotal_clp": 4580,
+      "nivel_confianza": "medio",
+      "observacion": "Referencia protección eléctrica menor"
+    },
+    {
+      "item": "energia",
+      "producto": "Pack 15 abrazaderas conduit 20 mm",
+      "proveedor": "Sodimac Chile",
+      "url": "https://www.sodimac.cl/sodimac-cl/search?Ntt=tubo%20conduit%2020%20mm",
+      "fecha_revision": "2026-07-06",
+      "precio_unitario_clp": 1287,
+      "unidad_compra": "pack 15",
+      "cantidad_usada": 3,
+      "subtotal_clp": 3861,
+      "nivel_confianza": "medio",
+      "observacion": "Referencia canalización/fijaciones"
+    },
+    {
+      "item": "bebederos",
+      "producto": "Pack x10 bebedero nipple B-11",
+      "proveedor": "MercadoLibre Chile",
+      "url": "https://articulo.mercadolibre.cl/MLC-1778401396-pack-x10-bebedero-goteo-nipple-b-11-para-gallina-amarillo-_JM",
+      "fecha_revision": "2026-07-06",
+      "precio_unitario_clp": null,
+      "unidad_compra": "pack x10",
+      "cantidad_usada": 6,
+      "subtotal_clp": null,
+      "nivel_confianza": "bajo",
+      "observacion": "Precio no recuperable; usar estimación interna, requiere cotización"
+    },
+    {
+      "item": "nidos_ponederos",
+      "producto": "Ponedero galvanizado Copele 1,2 m cap. 100 gallinas",
+      "proveedor": "MercadoLibre Chile",
+      "url": "https://articulo.mercadolibre.cl/MLC-1379188913-ponedero-galvanizado-copele-12m-capacidad-100-gallinas-_JM",
+      "fecha_revision": "2026-07-06",
+      "precio_unitario_clp": null,
+      "unidad_compra": "unidad",
+      "cantidad_usada": 5,
+      "subtotal_clp": null,
+      "nivel_confianza": "bajo",
+      "observacion": "Precio no recuperable; usar estimación interna, requiere cotización"
     }
   ],
   "escenarios": {

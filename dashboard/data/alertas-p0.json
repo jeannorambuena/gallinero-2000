@@ -1,6 +1,6 @@
 {
   "proyecto": "Gallinero Nacho",
-  "fase": "P0 — Diagnóstico real / P44",
+  "fase": "P0 — Diagnóstico real / P45-P46",
   "estado": "preliminar",
   "alertas": [
     {
@@ -187,9 +187,33 @@
       "dimension": "capex",
       "descripcion": "Cotizar comederos 40-50 m o 22-24 unidades, 60 nipples, 72 nidos o 5 m² comunitario, 75 m lineales de perchas, bodega para 19 a 38 sacos, bomba si no está incluida/lista, mallas e instalaciones internas.",
       "estado": "abierta"
+    },
+    {
+      "id": "A22",
+      "titulo": "CAPEX total referencial supera capacidad propia",
+      "severidad": "alta",
+      "dimension": "financiera",
+      "descripcion": "El subtotal conocido de galpón + pollonas ya consume casi todo el máximo informado de $10.000.000; cualquier equipamiento, capital de trabajo o contingencia requiere financiamiento, aporte adicional o compra por etapas.",
+      "estado": "bloqueante"
+    },
+    {
+      "id": "A23",
+      "titulo": "OPEX 500 actualizado sigue preliminar",
+      "severidad": "alta",
+      "dimension": "financiera",
+      "descripcion": "OPEX proyectado preliminar; falta validar sanidad de escala, mantenciones, reposición por mortalidad, costos tributarios/sanitarios efectivos y variaciones de alimento.",
+      "estado": "abierta"
+    },
+    {
+      "id": "A24",
+      "titulo": "Compra 352 pollonas de una vez requiere financiamiento cerrado",
+      "severidad": "alta",
+      "dimension": "decision",
+      "descripcion": "Comprar todas puede ser viable solo si se asegura financiamiento suficiente para equipamiento, alimento inicial y contingencia, y si la venta de 100 bandejas está realmente confirmada al contado.",
+      "estado": "bloqueante"
     }
   ],
-  "nota": "Alertas P44: escenario proporcional 500 incorporado; OPEX mínimo es parcial y equipamiento avícola sigue pendiente de cotización.",
+  "nota": "Alertas P45-P46: CAPEX/OPEX/flujo referenciales calculados; estado amarillo y decisiones mayores bloqueadas.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",

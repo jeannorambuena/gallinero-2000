@@ -1,0 +1,4 @@
+escenario,ingreso_mensual_base_clp,opex_sin_mano_obra_clp,opex_con_mano_obra_clp,margen_sin_mano_obra_clp,margen_con_mano_obra_clp,payback_sin_mano_obra_meses,payback_con_mano_obra_meses,pe_sin_mano_obra_bandejas_semana,pe_con_mano_obra_bandejas_semana
+bajo,2646367,1086750,1686750,1559617,959617,7.37,11.98,41.1,63.7
+base,2646367,1086750,1686750,1559617,959617,8.56,13.91,41.1,63.7
+alto,2646367,1086750,1686750,1559617,959617,10.76,17.49,41.1,63.7

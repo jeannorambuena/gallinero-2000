@@ -1,7 +1,7 @@
 {
   "proyecto": "Gallinero Nacho",
-  "fase": "P0 — Diagnóstico real / P44",
-  "estado": "parcial/amarillo",
+  "fase": "P0 — Diagnóstico real / P45-P46",
+  "estado": "referencial_preliminar/amarillo",
   "escenario_base": "500 aves totales",
   "capex_conocido": {
     "pollonas": {
@@ -103,7 +103,7 @@
     "valorizar formalización tributaria/sanitaria",
     "validar flujo 500 antes de autorizar compra, construcción o inversión mayor"
   ],
-  "conclusion": "CAPEX parcial P44: galpón $5.547.765 + pollonas faltantes $4.224.000 + panel solar comprado $300.000 como paquete completo informado. CAPEX total sigue pendiente por equipamiento avícola con requerimientos preliminares para cotizar, capital de trabajo, formalización, logística y otros costos.",
+  "conclusion": "P45-P46 calcula CAPEX total referencial bajo/base/alto para 500 aves. El subtotal conocido de galpón + pollonas ya consume casi todo el máximo informado de $10.000.000; cualquier equipamiento, capital de trabajo o contingencia requiere financiamiento, aporte adicional o compra por etapas. No se autoriza compra de aves, construcción ni inversión mayor.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",
@@ -188,10 +188,10 @@
     {
       "id": "capex_total_proyecto",
       "nombre": "CAPEX total proyecto",
-      "valor": null,
+      "valor": 13343765,
       "unidad": "CLP",
-      "estado": "pendiente",
-      "descripcion_corta": "Inversión total necesaria para dejar operativo el proyecto.",
+      "estado": "referencial_preliminar",
+      "descripcion_corta": "CAPEX total referencial base: galpón + pollonas + equipamiento base.",
       "estado_analisis": "Pendiente porque falta sumar agua, energía, equipamiento, logística, capital de trabajo, imprevistos y otros costos.",
       "formula": "CAPEX conocido + partidas pendientes",
       "fuente": "pendiente",
@@ -200,10 +200,10 @@
     {
       "id": "capital_trabajo_inicial",
       "nombre": "Capital de trabajo inicial",
-      "valor": null,
+      "valor": 1686750,
       "unidad": "CLP",
-      "estado": "pendiente",
-      "descripcion_corta": "Caja inicial necesaria para operar antes de recuperar ventas.",
+      "estado": "separado_de_capex",
+      "descripcion_corta": "Capital de trabajo inicial mínimo: 1 mes de OPEX con mano de obra; no es CAPEX.",
       "estado_analisis": "Pendiente porque falta definir inventarios, alimento, caja operativa, reposición y plazo de cobro.",
       "formula": "costos operativos iniciales + caja de seguridad",
       "fuente": "pendiente",
@@ -224,14 +224,240 @@
     {
       "id": "capex_equipamiento_avicola",
       "nombre": "CAPEX equipamiento avícola",
-      "valor": null,
+      "valor": 3572000,
       "unidad": "CLP",
-      "estado": "pendiente_cotizacion",
-      "descripcion_corta": "Comederos, bebederos, ponederos, bomba, mallas y bodega interna pendientes.",
+      "estado": "referencial_preliminar",
+      "descripcion_corta": "CAPEX equipamiento avícola escenario base P45-P46.",
       "estado_analisis": "Bloquea CAPEX total: faltan cotizaciones reales de equipamiento avícola e instalaciones internas para 500 aves.",
       "formula": "sumatoria de cotizaciones reales pendientes",
       "fuente": "estructura P43 pendiente de cotización",
       "escenario": "500 aves"
     }
-  ]
+  ],
+  "capex_referencial_500_p45_p46": {
+    "proyecto": "Gallinero Nacho",
+    "fase": "P45-P46",
+    "estado": "referencial_preliminar/amarillo",
+    "capex_conocido": {
+      "galpon_clp": 5547765,
+      "pollonas_faltantes_clp": 4224000,
+      "subtotal_conocido_clp": 9771765,
+      "capacidad_inversion_propia_clp": 10000000
+    },
+    "equipamiento_escenarios": {
+      "bajo": {
+        "total_clp": 1723000,
+        "descripcion": "Mínimo funcional, más fabricación en obra y productos económicos.",
+        "items": {
+          "comederos": {
+            "subtotal_clp": 260000,
+            "cantidad": "40-50 m lineales fabricados",
+            "confianza": "bajo",
+            "observacion": "estimación interna, requiere cotización; canaletas/tolvas simples + soportes"
+          },
+          "bebederos": {
+            "subtotal_clp": 168000,
+            "cantidad": "60 nipples + tubería básica",
+            "confianza": "bajo",
+            "observacion": "estimación interna, requiere cotización; referencia ML no entregó precio"
+          },
+          "nidos_ponederos": {
+            "subtotal_clp": 350000,
+            "cantidad": "5 m² ponedero comunitario fabricado",
+            "confianza": "bajo",
+            "observacion": "estimación interna, requiere cotización; madera/OSB/fijaciones"
+          },
+          "perchas": {
+            "subtotal_clp": 250000,
+            "cantidad": "75 m lineales",
+            "confianza": "medio",
+            "observacion": "basado en polines Sodimac + fijaciones"
+          },
+          "mallas_interiores": {
+            "subtotal_clp": 125000,
+            "cantidad": "división mínima",
+            "confianza": "medio",
+            "observacion": "malla gallinero Sodimac + pocos soportes"
+          },
+          "almacenamiento_semanal": {
+            "subtotal_clp": 120000,
+            "cantidad": "tarima/pallet + cierre/protección básica",
+            "confianza": "bajo",
+            "observacion": "estimación interna, requiere cotización"
+          },
+          "componentes_energia": {
+            "subtotal_clp": 180000,
+            "cantidad": "cableado/canalización/protección mínima",
+            "confianza": "bajo",
+            "observacion": "estimación interna, requiere cotización; no incluye panel ni bomba"
+          },
+          "distribucion_agua": {
+            "subtotal_clp": 120000,
+            "cantidad": "manguera/tubería/fittings mínimos",
+            "confianza": "medio",
+            "observacion": "referencias Sodimac de manguera y válvulas"
+          },
+          "logistica_contingencia": {
+            "subtotal_clp": 150000,
+            "cantidad": "traslado/acopio/imprevistos mínimos",
+            "confianza": "bajo",
+            "observacion": "referencial por acceso invierno"
+          }
+        }
+      },
+      "base": {
+        "total_clp": 3572000,
+        "descripcion": "Prudente, funcional y realista para operar 500 aves.",
+        "items": {
+          "comederos": {
+            "subtotal_clp": 500000,
+            "cantidad": "22-24 comederos tipo plato/tolva o lineal equivalente",
+            "confianza": "bajo",
+            "observacion": "estimación interna, requiere cotización"
+          },
+          "bebederos": {
+            "subtotal_clp": 322000,
+            "cantidad": "60 nipples + líneas + llaves + regulador/depósito",
+            "confianza": "bajo",
+            "observacion": "estimación interna, requiere cotización"
+          },
+          "nidos_ponederos": {
+            "subtotal_clp": 900000,
+            "cantidad": "72 nidos fabricados o ponedero comunitario mejorado",
+            "confianza": "bajo",
+            "observacion": "estimación interna, requiere cotización"
+          },
+          "perchas": {
+            "subtotal_clp": 350000,
+            "cantidad": "75 m lineales con soportes firmes",
+            "confianza": "medio",
+            "observacion": "polines Sodimac + fijaciones y merma"
+          },
+          "mallas_interiores": {
+            "subtotal_clp": 260000,
+            "cantidad": "divisiones funcionales principales",
+            "confianza": "medio",
+            "observacion": "malla 1,2x50 + soportes/fijaciones"
+          },
+          "almacenamiento_semanal": {
+            "subtotal_clp": 300000,
+            "cantidad": "2 racks/tarimas + protección contra humedad/roedores",
+            "confianza": "medio",
+            "observacion": "racks Sodimac + estimación interna de protección"
+          },
+          "componentes_energia": {
+            "subtotal_clp": 420000,
+            "cantidad": "cables, canalización, conectores, protecciones, luces básicas e instalación",
+            "confianza": "bajo",
+            "observacion": "estimación interna, requiere cotización; no incluye panel ni bomba"
+          },
+          "distribucion_agua": {
+            "subtotal_clp": 220000,
+            "cantidad": "manguera/tubería/fittings/llaves/regulador",
+            "confianza": "medio",
+            "observacion": "referencias Sodimac + estimación instalación"
+          },
+          "logistica_contingencia": {
+            "subtotal_clp": 300000,
+            "cantidad": "acopio/traslado adicional/ripio menor imprevisto",
+            "confianza": "bajo",
+            "observacion": "referencial por invierno"
+          }
+        }
+      },
+      "alto": {
+        "total_clp": 7010000,
+        "descripcion": "Más holgura, mayor durabilidad y componentes más completos.",
+        "items": {
+          "comederos": {
+            "subtotal_clp": 960000,
+            "cantidad": "24 unidades mejor calidad/mayor capacidad",
+            "confianza": "bajo",
+            "observacion": "estimación interna, requiere cotización"
+          },
+          "bebederos": {
+            "subtotal_clp": 600000,
+            "cantidad": "sistema automático con mayor holgura/filtros/repuestos",
+            "confianza": "bajo",
+            "observacion": "estimación interna, requiere cotización"
+          },
+          "nidos_ponederos": {
+            "subtotal_clp": 2000000,
+            "cantidad": "módulos comerciales o fabricación reforzada",
+            "confianza": "bajo",
+            "observacion": "estimación interna, requiere cotización; referencia Copele sin precio recuperable"
+          },
+          "perchas": {
+            "subtotal_clp": 550000,
+            "cantidad": "75 m lineales reforzados",
+            "confianza": "medio",
+            "observacion": "polines/perfiles/fijaciones con mayor holgura"
+          },
+          "mallas_interiores": {
+            "subtotal_clp": 550000,
+            "cantidad": "mayor sectorización",
+            "confianza": "medio",
+            "observacion": "más rollos/soportes/perfiles/fijaciones"
+          },
+          "almacenamiento_semanal": {
+            "subtotal_clp": 600000,
+            "cantidad": "racks/contención/protección superior",
+            "confianza": "bajo",
+            "observacion": "estimación interna, requiere cotización"
+          },
+          "componentes_energia": {
+            "subtotal_clp": 750000,
+            "cantidad": "instalación más completa para bomba, luces y cámaras",
+            "confianza": "bajo",
+            "observacion": "estimación interna, requiere cotización; no incluye panel ni bomba"
+          },
+          "distribucion_agua": {
+            "subtotal_clp": 400000,
+            "cantidad": "red interna con llaves, regulador, flotador y repuestos",
+            "confianza": "medio",
+            "observacion": "referencias Sodimac + estimación instalación"
+          },
+          "logistica_contingencia": {
+            "subtotal_clp": 600000,
+            "cantidad": "mayor contingencia por invierno/acceso",
+            "confianza": "bajo",
+            "observacion": "referencial"
+          }
+        }
+      }
+    },
+    "capex_total_referencial": {
+      "bajo": {
+        "capex_conocido_clp": 9771765,
+        "equipamiento_clp": 1723000,
+        "capex_total_referencial_clp": 11494765,
+        "capacidad_inversion_propia_clp": 10000000,
+        "deficit_o_excedente_clp": -1494765,
+        "lectura": "déficit"
+      },
+      "base": {
+        "capex_conocido_clp": 9771765,
+        "equipamiento_clp": 3572000,
+        "capex_total_referencial_clp": 13343765,
+        "capacidad_inversion_propia_clp": 10000000,
+        "deficit_o_excedente_clp": -3343765,
+        "lectura": "déficit"
+      },
+      "alto": {
+        "capex_conocido_clp": 9771765,
+        "equipamiento_clp": 7010000,
+        "capex_total_referencial_clp": 16781765,
+        "capacidad_inversion_propia_clp": 10000000,
+        "deficit_o_excedente_clp": -6781765,
+        "lectura": "déficit"
+      }
+    },
+    "capital_trabajo_inicial": {
+      "un_mes_opex_con_mano_obra_clp": 1686750,
+      "dos_meses_opex_con_mano_obra_clp": 3373500,
+      "nota": "No confundir con CAPEX."
+    },
+    "texto_obligatorio": "El subtotal conocido de galpón + pollonas ya consume casi todo el máximo informado de $10.000.000; cualquier equipamiento, capital de trabajo o contingencia requiere financiamiento, aporte adicional o compra por etapas.",
+    "decision": "No desbloquea compra de aves, construcción ni inversión mayor."
+  }
 }

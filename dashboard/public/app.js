@@ -16,7 +16,13 @@ const DATA_FILES = {
   alertas: new URL('alertas-p0.json', DATA_BASE).href,
   capexEquipamiento: new URL('capex-equipamiento-avicola.json', DATA_BASE).href,
   escenarioProporcional: new URL('escenario-proporcional-500.json', DATA_BASE).href,
-  requerimientosEquipamiento: new URL('requerimientos-equipamiento-avicola.json', DATA_BASE).href
+  requerimientosEquipamiento: new URL('requerimientos-equipamiento-avicola.json', DATA_BASE).href,
+  cotizacionEquipamiento: new URL('cotizacion-referencial-equipamiento-avicola.json', DATA_BASE).href,
+  capexTotal500: new URL('capex-total-referencial-500.json', DATA_BASE).href,
+  opex500: new URL('opex-proyectado-500.json', DATA_BASE).href,
+  ingresos500: new URL('ingresos-proyectados-500.json', DATA_BASE).href,
+  flujo500: new URL('flujo-financiero-preliminar-500.json', DATA_BASE).href,
+  estrategiaPollonas: new URL('estrategia-compra-pollonas.json', DATA_BASE).href
 };
 
 const FALLBACKS = {
@@ -201,6 +207,26 @@ function renderList(containerId, items, className = '') {
   });
 }
 
+function renderCompactRows(containerId, rows) {
+  const container = $(containerId);
+  if (!container) return;
+  container.innerHTML = '';
+  rows.forEach((row) => {
+    const card = document.createElement('article');
+    card.className = `financial-card ${row.tone ?? ''}`.trim();
+    card.innerHTML = `
+      <div class="financial-card-head">
+        <span>${row.kicker ?? 'P45-P46'}</span>
+        <strong>${row.title}</strong>
+      </div>
+      <div class="financial-value">${row.value}</div>
+      ${row.detail ? `<p>${row.detail}</p>` : ''}
+      ${row.small ? `<small>${row.small}</small>` : ''}
+    `;
+    container.appendChild(card);
+  });
+}
+
 function renderDecisionState({ resumen, estado, criteriosP1, semaforo }) {
   const escenarioBase = resumen?.escenario_base_actual?.aves ?? estado?.escenario_base_actual ?? 500;
   const estadoGeneral = resumen?.estado_general ?? semaforo?.semaforo_general ?? estado?.semaforo_general ?? 'amarillo';
@@ -275,7 +301,7 @@ function renderEscenario500({ validacionComercial, comerciales, flujoCaja, galpo
     { label: 'Agua estimada', value: base.agua },
     { label: 'Galpón 500 base cotizado', value: formatCurrency(galpon500.costo_total ?? base.costoGalponEscenario), detail: `${galpon500.superficie_util_m2 ?? referenciaV8.superficie_m2 ?? base.superficie} m² · ${formatCurrency(galpon500.costo_m2 ?? referenciaV8.costo_m2_aprox_clp ?? base.costoM2Galpon)}/m²`, tone: 'pending' },
     { label: 'Densidad galpón 500', value: `${galpon500.densidad_aprox_aves_m2 ?? base.densidadGalpon} gallinas/m² aprox.`, detail: '500 gallinas / 72 m²', tone: 'pending' },
-    { label: 'CAPEX equipamiento avícola', value: 'Pendiente', detail: `${capexEquipamiento?.items?.length ?? 8} ítems por cotizar`, tone: 'risk' },
+    { label: 'CAPEX equipamiento avícola', value: formatCurrency(capexEquipamiento?.resumen?.capex_equipamiento_base_clp) ?? 'Referencial', detail: 'escenario base P45-P46 · requiere cotización final', tone: 'risk' },
     { label: 'Panel solar', value: formatCurrency(300000), detail: 'paquete completo informado · verificar operación', tone: 'pending' }
   ];
 
@@ -308,6 +334,87 @@ function renderEscenarioProporcional({ escenarioProporcional, requerimientosEqui
   ];
 
   renderMetrics('escenario-proporcional-metricas', metrics);
+}
+
+function renderCapexP45P46({ capexTotal500, capexEquipamiento }) {
+  const totals = capexTotal500?.capex_total_referencial ?? {};
+  const equipment = capexTotal500?.equipamiento_escenarios ?? capexEquipamiento?.escenarios ?? {};
+  const known = capexTotal500?.capex_conocido ?? {};
+  const metrics = [
+    { label: 'Conocido galpón + pollonas', value: formatCurrency(known.subtotal_conocido_clp ?? 9771765), detail: 'ya consume casi todo el máximo propio', tone: 'risk' },
+    { label: 'Equipamiento bajo', value: formatCurrency(equipment.bajo?.total_clp), detail: equipment.bajo?.descripcion ?? 'mínimo funcional' },
+    { label: 'Equipamiento base', value: formatCurrency(equipment.base?.total_clp), detail: equipment.base?.descripcion ?? 'prudente realista', tone: 'pending' },
+    { label: 'Equipamiento alto', value: formatCurrency(equipment.alto?.total_clp), detail: equipment.alto?.descripcion ?? 'mayor holgura' },
+    { label: 'Total bajo', value: formatCurrency(totals.bajo?.capex_total_referencial_clp), detail: `déficit vs $10M: ${formatCurrency(Math.abs(totals.bajo?.deficit_o_excedente_clp ?? 0))}`, tone: 'risk' },
+    { label: 'Total base', value: formatCurrency(totals.base?.capex_total_referencial_clp), detail: `déficit vs $10M: ${formatCurrency(Math.abs(totals.base?.deficit_o_excedente_clp ?? 0))}`, tone: 'risk' },
+    { label: 'Total alto', value: formatCurrency(totals.alto?.capex_total_referencial_clp), detail: `déficit vs $10M: ${formatCurrency(Math.abs(totals.alto?.deficit_o_excedente_clp ?? 0))}`, tone: 'risk' },
+    { label: 'Capital trabajo mínimo', value: formatCurrency(capexTotal500?.capital_trabajo_inicial?.un_mes_opex_con_mano_obra_clp), detail: '1 mes OPEX con mano de obra · separado de CAPEX', tone: 'pending' }
+  ];
+  renderMetrics('capex-referencial-metricas', metrics);
+  renderCompactRows('capex-equipamiento-detalle', Object.entries(equipment).map(([key, value]) => ({
+    kicker: `Escenario ${key}`,
+    title: `CAPEX equipamiento ${key}`,
+    value: formatCurrency(value?.total_clp),
+    detail: Object.entries(value?.items ?? {}).map(([item, data]) => `${item.replaceAll('_', ' ')}: ${formatCurrency(data.subtotal_clp)}`).join(' · '),
+    small: key === 'base' ? 'Escenario recomendado para lectura financiera preliminar.' : 'Referencial; requiere cotización final.'
+  })));
+}
+
+function renderOpexP45P46({ opex500 }) {
+  const imp = opex500?.imprevistos_operativos ?? {};
+  const metrics = [
+    { label: 'OPEX sin mano de obra', value: formatCurrency(opex500?.subtotal_sin_mano_obra_clp_mes), detail: 'alimento + envases + viruta + reparto + vitaminas + agua' },
+    { label: 'Mano de obra económica', value: formatCurrency(opex500?.mano_obra_economica?.subtotal_clp_mes), detail: '$20.000 diarios x 30' },
+    { label: 'OPEX con mano de obra', value: formatCurrency(opex500?.subtotal_con_mano_obra_clp_mes), detail: 'base para capital de trabajo', tone: 'pending' },
+    { label: 'Imprevistos 5%', value: formatCurrency(imp.cinco_por_ciento_sobre_opex_sin_mano_obra_clp), detail: `total con MO + 5%: ${formatCurrency(imp.total_con_mano_obra_mas_5_clp)}` },
+    { label: 'Imprevistos 10%', value: formatCurrency(imp.diez_por_ciento_sobre_opex_sin_mano_obra_clp), detail: `total con MO + 10%: ${formatCurrency(imp.total_con_mano_obra_mas_10_clp)}` }
+  ];
+  renderMetrics('opex-proyectado-metricas', metrics);
+}
+
+function renderIngresosP45P46({ ingresos500 }) {
+  const sens = ingresos500?.sensibilidades ?? {};
+  const metrics = [
+    { label: 'Precio promedio', value: formatCurrency(ingresos500?.precio_promedio_actual_clp_bandeja ?? 6107), detail: 'mix actual segunda/primera/extra' },
+    { label: 'Base 100 bandejas', value: formatCurrency(sens.base?.ingreso_mensual_clp), detail: `${formatCurrency(sens.base?.ingreso_semanal_clp)}/semana`, tone: 'accent' },
+    { label: 'Conservador 90', value: formatCurrency(sens.conservador_90?.ingreso_mensual_clp), detail: 'misma mezcla de precios' },
+    { label: 'Descuento almacenes', value: formatCurrency(sens.descuento_almacenes?.ingreso_mensual_clp), detail: '10% solo sobre 30 bandejas/semana' },
+    { label: 'Alto 104,1', value: formatCurrency(sens.alto_104_1?.ingreso_mensual_clp), detail: 'vende toda la producción técnica estimada' }
+  ];
+  renderMetrics('ingresos-proyectados-metricas', metrics);
+}
+
+function renderFlujoP45P46({ flujo500 }) {
+  const margins = flujo500?.margenes ?? {};
+  const pe = flujo500?.punto_equilibrio ?? {};
+  const payback = flujo500?.payback_simple ?? {};
+  const metrics = [
+    { label: 'Margen sin mano obra', value: formatCurrency(margins.sin_mano_obra_clp_mes), detail: 'ingreso mensual base - OPEX sin MO', tone: 'accent' },
+    { label: 'Margen con mano obra', value: formatCurrency(margins.con_mano_obra_clp_mes), detail: 'ingreso mensual base - OPEX con MO', tone: 'pending' },
+    { label: 'Equilibrio sin MO', value: `${pe.sin_mano_obra_bandejas_semana ?? '—'} bandejas/sem`, detail: `${pe.sin_mano_obra_bandejas_mes ?? '—'} bandejas/mes` },
+    { label: 'Equilibrio con MO', value: `${pe.con_mano_obra_bandejas_semana ?? '—'} bandejas/sem`, detail: `${pe.con_mano_obra_bandejas_mes ?? '—'} bandejas/mes`, tone: 'pending' }
+  ];
+  renderMetrics('flujo-preliminar-metricas', metrics);
+  renderCompactRows('flujo-payback-detalle', Object.entries(payback).map(([key, value]) => ({
+    kicker: `CAPEX ${key}`,
+    title: `Payback simple ${key}`,
+    value: `${value.payback_simple_sin_mano_obra_meses} / ${value.payback_simple_con_mano_obra_meses} meses`,
+    detail: 'sin mano de obra / con mano de obra económica',
+    small: `CAPEX: ${formatCurrency(value.capex_total_referencial_clp)}`
+  })));
+}
+
+function renderEstrategiaPollonas({ estrategiaPollonas }) {
+  const estrategias = estrategiaPollonas?.estrategias ?? {};
+  const rows = Object.entries(estrategias).map(([key, value]) => ({
+    kicker: value.semaforo ?? 'estrategia',
+    title: key.replaceAll('_', ' '),
+    value: formatCurrency(value.capex_pollonas_clp),
+    detail: value.lectura,
+    small: `${value.pollonas} pollonas x ${formatCurrency(estrategiaPollonas?.precio_pollona_clp ?? 12000)}`
+  }));
+  renderCompactRows('estrategia-pollonas-detalle', rows);
+  setText('estrategia-pollonas-recomendacion', estrategiaPollonas?.recomendacion_preliminar ?? 'Compra por etapas reduce riesgo financiero; comprar todas solo con financiamiento y venta confirmada.');
 }
 
 function renderEscalas(galpones) {
@@ -379,7 +486,7 @@ function renderAlerts(alertas) {
   if (!container) return;
   container.innerHTML = '';
 
-  const items = (alertas?.alertas ?? []).filter((alert) => ['A12', 'A13', 'A14', 'A15', 'A16', 'A17', 'A18', 'A19', 'A20', 'A21'].includes(alert.id));
+  const items = (alertas?.alertas ?? []).filter((alert) => ['A12', 'A13', 'A15', 'A20', 'A21', 'A22', 'A23', 'A24'].includes(alert.id));
   items.forEach((alert) => {
     const card = document.createElement('article');
     card.className = `alert-card severity-${normalizeStatus(alert.severidad)}`;
@@ -565,6 +672,11 @@ async function init() {
   renderOperacion(data);
   renderEscenario500(data);
   renderEscenarioProporcional(data);
+  renderCapexP45P46(data);
+  renderOpexP45P46(data);
+  renderIngresosP45P46(data);
+  renderFlujoP45P46(data);
+  renderEstrategiaPollonas(data);
   renderEscalas(data.galpones);
   renderFinancialIndicators(data);
   renderAlerts(data.alertas);

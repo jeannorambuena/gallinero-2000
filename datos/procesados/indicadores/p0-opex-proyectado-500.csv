@@ -1,0 +1,6 @@
+indicador,valor_clp_mes,observacion
+opex_sin_mano_obra,1086750,subtotal mensual proyectado 500 aves
+mano_obra_economica,600000,Nacho solo: $20.000 diarios x 30
+opex_con_mano_obra,1686750,subtotal con mano de obra económica
+imprevistos_5,54338,5% sobre OPEX sin mano de obra
+imprevistos_10,108675,10% sobre OPEX sin mano de obra

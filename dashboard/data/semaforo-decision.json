@@ -1,6 +1,6 @@
 {
   "proyecto": "Gallinero Nacho",
-  "fase": "P0 — Diagnóstico real / P44",
+  "fase": "P0 — Diagnóstico real / P45-P46",
   "estado": "amarillo",
   "semaforo_general": "amarillo",
   "avance_p0_estimado": 90,
@@ -16,8 +16,8 @@
       "nota": "meta 100 bandejas/semana usada como escenario comercial base; faltan precios netos, forma de pago y estabilidad por canal"
     },
     "financiera": {
-      "estado": "parcial",
-      "nota": "ingresos actuales, OPEX parcial y panel solar paquete completo informados; faltan CAPEX equipamiento avícola, OPEX total, capital de trabajo y flujo completo"
+      "estado": "amarillo/preliminar_referencial",
+      "nota": "CAPEX/OPEX/flujo preliminares calculados; falta cotización final, capital de trabajo y validación comercial/legal."
     },
     "constructiva": {
       "estado": "amarillo/parcial"
@@ -53,15 +53,13 @@
     "decision_final_disponible": false
   },
   "condiciones_para_avanzar": [
-    "cotizar CAPEX equipamiento avícola",
-    "completar OPEX total",
-    "definir capital de trabajo inicial",
-    "validar precios netos, forma de pago y estabilidad por canal",
-    "valorizar formalización tributaria/sanitaria",
-    "cerrar logística de invierno",
-    "modelar flujo financiero completo"
+    "cotizaciones finales de equipamiento e instalaciones",
+    "financiamiento definido para CAPEX + capital de trabajo",
+    "ventas 100 bandejas/semana confirmadas al contado",
+    "validación legal/sanitaria/tributaria",
+    "plan de compra por etapas o justificación financiera para comprar 352 de una vez"
   ],
-  "conclusion": "Estado amarillo: P44 incorpora escenario proporcional 500 y requerimientos de equipamiento para cotizar. No se habilita inversión porque faltan CAPEX equipamiento avícola, OPEX total final, capital de trabajo, formalización, logística, agua/bomba y flujo financiero.",
+  "conclusion": "P45-P46 entrega cálculo referencial, pero no desbloquea inversión. Comprar todas las pollonas queda amarillo/alto riesgo sin financiamiento y venta confirmada; compra por etapas reduce riesgo.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",

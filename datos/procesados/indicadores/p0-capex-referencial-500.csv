@@ -1,0 +1,4 @@
+escenario,capex_conocido_clp,equipamiento_clp,capex_total_referencial_clp,capacidad_inversion_propia_clp,deficit_o_excedente_clp,lectura
+bajo,9771765,1723000,11494765,10000000,-1494765,déficit
+base,9771765,3572000,13343765,10000000,-3343765,déficit
+alto,9771765,7010000,16781765,10000000,-6781765,déficit

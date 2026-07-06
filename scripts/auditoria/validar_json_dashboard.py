@@ -93,6 +93,24 @@ SPECS = {
         "required": ["proyecto", "fase", "estado", "objetivo_aves", "advertencia", "resumen"],
         "non_empty_lists": ["requerimientos"],
     },
+    "dashboard/data/cotizacion-referencial-equipamiento-avicola.json": {
+        "required": ["proyecto", "fase", "estado", "fecha_revision", "advertencia", "fuentes", "cotizaciones", "escenarios"],
+    },
+    "dashboard/data/capex-total-referencial-500.json": {
+        "required": ["proyecto", "fase", "estado", "capex_conocido", "equipamiento_escenarios", "capex_total_referencial", "capital_trabajo_inicial", "texto_obligatorio", "decision"],
+    },
+    "dashboard/data/opex-proyectado-500.json": {
+        "required": ["proyecto", "fase", "estado", "objetivo_aves", "componentes_sin_mano_obra", "subtotal_sin_mano_obra_clp_mes", "mano_obra_economica", "subtotal_con_mano_obra_clp_mes", "imprevistos_operativos", "advertencia"],
+    },
+    "dashboard/data/ingresos-proyectados-500.json": {
+        "required": ["proyecto", "fase", "estado", "precio_promedio_actual_clp_bandeja", "mix_actual", "precios_confirmados_clp", "sensibilidades", "nota"],
+    },
+    "dashboard/data/flujo-financiero-preliminar-500.json": {
+        "required": ["proyecto", "fase", "estado", "base_calculo", "margenes", "payback_simple", "punto_equilibrio", "flujo_12_meses", "van_tir", "advertencia"],
+    },
+    "dashboard/data/estrategia-compra-pollonas.json": {
+        "required": ["proyecto", "fase", "estado", "precio_pollona_clp", "pollonas_faltantes", "estrategias", "comparacion", "recomendacion_preliminar"],
+    },
     "dashboard/data/flujo-caja-preliminar.json": {
         "required": ["proyecto", "fase", "estado", "ingresos_actuales", "costos_actuales", "mano_obra_referencial", "margenes_actuales", "escenario_500", "escenario_648", "conclusion"],
         "non_empty_lists": ["datos_faltantes", "riesgos", "criterios_para_avanzar", "indicadores_bloqueados"],

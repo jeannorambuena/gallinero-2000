@@ -12,16 +12,13 @@
   "construccion_autorizada": false,
   "inversion_mayor_autorizada": false,
   "proximos_pasos": [
-    "cotizar CAPEX equipamiento avícola",
-    "cerrar OPEX total",
-    "definir capital de trabajo inicial",
-    "validar precios netos/cobranza/estabilidad por canal",
-    "valorizar formalización tributaria/sanitaria",
-    "cerrar logística de invierno",
-    "preparar flujo financiero completo",
-    "Responder batería final de 10 preguntas P44 con Nacho."
+    "validar cotizaciones finales de equipamiento",
+    "confirmar financiamiento para déficit y capital de trabajo",
+    "validar venta real de 100 bandejas/semana al contado",
+    "validar obligaciones legales/sanitarias/tributarias",
+    "definir compra por etapas vs 352 de una vez con financiamiento cerrado"
   ],
-  "decision_actual": "P0 amarillo; P44 incorpora escenario proporcional preliminar 500 y requerimientos de equipamiento, pero no habilita P1 ni inversión.",
+  "decision_actual": "P45-P46 calcula CAPEX/OPEX/flujo y estrategia pollonas en forma preliminar. No habilita P1, compra, construcción ni inversión mayor.",
   "interpretacion_semaforo": "Amarillo no significa no viable; significa información crítica pendiente para decidir con seguridad.",
   "lineas_de_trabajo": [
     "Línea comercial: venta actual directa confirmada con mix 6/13/9; meta 100 requiere validación.",
@@ -39,5 +36,5 @@
     "costo_gallina_instalada_galpon_aprox_clp": 11096,
     "advertencia": "referencial; no autoriza construcción"
   },
-  "fase": "P0 — Diagnóstico real / P44"
+  "fase": "P0 — Diagnóstico real / P45-P46"
 }

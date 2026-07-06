@@ -1,7 +1,7 @@
 {
   "proyecto": "Gallinero Nacho",
-  "fase": "P0 — Diagnóstico real / P44",
-  "estado": "parcial",
+  "fase": "P0 — Diagnóstico real / P45-P46",
+  "estado": "preliminar_referencial",
   "indicadores": [
     {
       "indicador": "ingreso_mensual_estimado",
@@ -416,6 +416,60 @@
       "fuente": "P44 estimación proporcional",
       "estado": "parcial_preliminar",
       "observacion": "OPEX mínimo proporcional preliminar: incluye alimento, envases, viruta y bencina base. No equivale a OPEX total final porque falta sanidad de escala, mantenciones, mano de obra, mortalidad, reposición, agua definitiva e imprevistos."
+    },
+    {
+      "indicador": "opex_proyectado_500_sin_mano_obra",
+      "valor": 1086750,
+      "unidad": "CLP/mes",
+      "formula": "OPEX proyectado 500 sin mano de obra",
+      "fuente": "P45-P46",
+      "estado": "preliminar_referencial",
+      "observacion": "OPEX proyectado 500 sin mano de obra"
+    },
+    {
+      "indicador": "opex_proyectado_500_con_mano_obra",
+      "valor": 1686750,
+      "unidad": "CLP/mes",
+      "formula": "OPEX proyectado 500 con mano de obra económica",
+      "fuente": "P45-P46",
+      "estado": "preliminar_referencial",
+      "observacion": "OPEX proyectado 500 con mano de obra económica"
+    },
+    {
+      "indicador": "ingreso_mensual_meta_100_bandejas",
+      "valor": 2646367,
+      "unidad": "CLP/mes",
+      "formula": "100 bandejas/semana x $6.107 x 52/12",
+      "fuente": "P45-P46",
+      "estado": "preliminar_referencial",
+      "observacion": "100 bandejas/semana x $6.107 x 52/12"
+    },
+    {
+      "indicador": "margen_500_sin_mano_obra",
+      "valor": 1559617,
+      "unidad": "CLP/mes",
+      "formula": "ingreso mensual base - OPEX sin mano de obra",
+      "fuente": "P45-P46",
+      "estado": "preliminar_referencial",
+      "observacion": "ingreso mensual base - OPEX sin mano de obra"
+    },
+    {
+      "indicador": "margen_500_con_mano_obra",
+      "valor": 959617,
+      "unidad": "CLP/mes",
+      "formula": "ingreso mensual base - OPEX con mano de obra",
+      "fuente": "P45-P46",
+      "estado": "preliminar_referencial",
+      "observacion": "ingreso mensual base - OPEX con mano de obra"
+    },
+    {
+      "indicador": "capex_total_referencial_base_500",
+      "valor": 13343765,
+      "unidad": "CLP",
+      "formula": "galpón + pollonas + equipamiento base",
+      "fuente": "P45-P46",
+      "estado": "preliminar_referencial",
+      "observacion": "galpón + pollonas + equipamiento base"
     }
   ],
   "resumen": {
@@ -938,5 +992,133 @@
     "bloqueado_por_datos",
     "no_aplica_aun"
   ],
-  "resumen_catalogo_indicadores": "Catálogo financiero normalizado P39-A: todos los indicadores se muestran; valores sin dato suficiente quedan como Pendiente."
+  "resumen_catalogo_indicadores": "Catálogo financiero normalizado P39-A: todos los indicadores se muestran; valores sin dato suficiente quedan como Pendiente.",
+  "resumen_p45_p46": {
+    "capex_total_referencial": {
+      "bajo": {
+        "capex_conocido_clp": 9771765,
+        "equipamiento_clp": 1723000,
+        "capex_total_referencial_clp": 11494765,
+        "capacidad_inversion_propia_clp": 10000000,
+        "deficit_o_excedente_clp": -1494765,
+        "lectura": "déficit"
+      },
+      "base": {
+        "capex_conocido_clp": 9771765,
+        "equipamiento_clp": 3572000,
+        "capex_total_referencial_clp": 13343765,
+        "capacidad_inversion_propia_clp": 10000000,
+        "deficit_o_excedente_clp": -3343765,
+        "lectura": "déficit"
+      },
+      "alto": {
+        "capex_conocido_clp": 9771765,
+        "equipamiento_clp": 7010000,
+        "capex_total_referencial_clp": 16781765,
+        "capacidad_inversion_propia_clp": 10000000,
+        "deficit_o_excedente_clp": -6781765,
+        "lectura": "déficit"
+      }
+    },
+    "opex": {
+      "proyecto": "Gallinero Nacho",
+      "fase": "P45-P46",
+      "estado": "preliminar/amarillo",
+      "objetivo_aves": 500,
+      "componentes_sin_mano_obra": {
+        "alimento_clp_mes": 971250,
+        "envases_clp_mes": 45500,
+        "viruta_clp_mes": 34000,
+        "bencina_reparto_clp_mes": 10000,
+        "vitaminas_clp_mes": 20000,
+        "agua_clp_mes": 6000,
+        "medicamentos_limpieza_adicional_clp_mes": 0
+      },
+      "subtotal_sin_mano_obra_clp_mes": 1086750,
+      "mano_obra_economica": {
+        "horas_diarias": 3,
+        "costo_diario_referencial_clp": 20000,
+        "dias_mes": 30,
+        "subtotal_clp_mes": 600000
+      },
+      "subtotal_con_mano_obra_clp_mes": 1686750,
+      "imprevistos_operativos": {
+        "cinco_por_ciento_sobre_opex_sin_mano_obra_clp": 54338,
+        "diez_por_ciento_sobre_opex_sin_mano_obra_clp": 108675,
+        "total_sin_mano_obra_mas_5_clp": 1141088,
+        "total_sin_mano_obra_mas_10_clp": 1195425,
+        "total_con_mano_obra_mas_5_clp": 1741088,
+        "total_con_mano_obra_mas_10_clp": 1795425
+      },
+      "advertencia": "OPEX proyectado preliminar; falta validar sanidad de escala, mantenciones, reposición por mortalidad, costos tributarios/sanitarios efectivos y variaciones de alimento."
+    },
+    "ingresos": {
+      "base": {
+        "bandejas_semana": 100,
+        "precio_promedio_clp": 6107,
+        "ingreso_semanal_clp": 610700,
+        "ingreso_mensual_clp": 2646367,
+        "observacion": "Meta comercial base: 100 bandejas/semana al mix/precio promedio actual."
+      },
+      "conservador_90": {
+        "bandejas_semana": 90,
+        "precio_promedio_clp": 6107,
+        "ingreso_semanal_clp": 549630,
+        "ingreso_mensual_clp": 2381730,
+        "observacion": "Sensibilidad conservadora: 90 bandejas/semana al mismo precio promedio."
+      },
+      "descuento_almacenes": {
+        "bandejas_semana": 100,
+        "precio_promedio_clp": 6107,
+        "descuento_sobre_bandejas_semana": 30,
+        "descuento_porcentaje": 10,
+        "ingreso_semanal_clp": 592379,
+        "ingreso_mensual_clp": 2566976,
+        "observacion": "Sensibilidad, aunque Nacho informa que almacenes pagarían igual."
+      },
+      "alto_104_1": {
+        "bandejas_semana": 104.1,
+        "precio_promedio_clp": 6107,
+        "ingreso_semanal_clp": 635739,
+        "ingreso_mensual_clp": 2754868,
+        "observacion": "Sensibilidad alta: venta de toda la producción técnica estimada para 500 aves."
+      }
+    },
+    "flujo": {
+      "margenes": {
+        "sin_mano_obra_clp_mes": 1559617,
+        "con_mano_obra_clp_mes": 959617
+      },
+      "payback_simple": {
+        "bajo": {
+          "capex_total_referencial_clp": 11494765,
+          "margen_mensual_sin_mano_obra_clp": 1559617,
+          "payback_simple_sin_mano_obra_meses": 7.37,
+          "margen_mensual_con_mano_obra_clp": 959617,
+          "payback_simple_con_mano_obra_meses": 11.98
+        },
+        "base": {
+          "capex_total_referencial_clp": 13343765,
+          "margen_mensual_sin_mano_obra_clp": 1559617,
+          "payback_simple_sin_mano_obra_meses": 8.56,
+          "margen_mensual_con_mano_obra_clp": 959617,
+          "payback_simple_con_mano_obra_meses": 13.91
+        },
+        "alto": {
+          "capex_total_referencial_clp": 16781765,
+          "margen_mensual_sin_mano_obra_clp": 1559617,
+          "payback_simple_sin_mano_obra_meses": 10.76,
+          "margen_mensual_con_mano_obra_clp": 959617,
+          "payback_simple_con_mano_obra_meses": 17.49
+        }
+      },
+      "punto_equilibrio": {
+        "sin_mano_obra_bandejas_mes": 178.0,
+        "sin_mano_obra_bandejas_semana": 41.1,
+        "con_mano_obra_bandejas_mes": 276.2,
+        "con_mano_obra_bandejas_semana": 63.7
+      }
+    }
+  },
+  "conclusion": "P45-P46 agrega flujo financiero preliminar referencial, payback simple y punto de equilibrio, sin VAN/TIR definitivos. Estado sigue amarillo."
 }

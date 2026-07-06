@@ -1,0 +1,32 @@
+{
+  "proyecto": "Gallinero Nacho",
+  "fase": "P45-P46",
+  "estado": "preliminar/amarillo",
+  "objetivo_aves": 500,
+  "componentes_sin_mano_obra": {
+    "alimento_clp_mes": 971250,
+    "envases_clp_mes": 45500,
+    "viruta_clp_mes": 34000,
+    "bencina_reparto_clp_mes": 10000,
+    "vitaminas_clp_mes": 20000,
+    "agua_clp_mes": 6000,
+    "medicamentos_limpieza_adicional_clp_mes": 0
+  },
+  "subtotal_sin_mano_obra_clp_mes": 1086750,
+  "mano_obra_economica": {
+    "horas_diarias": 3,
+    "costo_diario_referencial_clp": 20000,
+    "dias_mes": 30,
+    "subtotal_clp_mes": 600000
+  },
+  "subtotal_con_mano_obra_clp_mes": 1686750,
+  "imprevistos_operativos": {
+    "cinco_por_ciento_sobre_opex_sin_mano_obra_clp": 54338,
+    "diez_por_ciento_sobre_opex_sin_mano_obra_clp": 108675,
+    "total_sin_mano_obra_mas_5_clp": 1141088,
+    "total_sin_mano_obra_mas_10_clp": 1195425,
+    "total_con_mano_obra_mas_5_clp": 1741088,
+    "total_con_mano_obra_mas_10_clp": 1795425
+  },
+  "advertencia": "OPEX proyectado preliminar; falta validar sanidad de escala, mantenciones, reposición por mortalidad, costos tributarios/sanitarios efectivos y variaciones de alimento."
+}

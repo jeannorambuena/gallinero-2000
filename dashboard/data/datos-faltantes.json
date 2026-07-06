@@ -1,79 +1,49 @@
 {
   "proyecto": "Gallinero Nacho",
-  "fase": "P0 — Diagnóstico real / P44",
-  "estado": "preliminar",
+  "fase": "P0 — Diagnóstico real / P45-P46",
+  "estado": "preliminar_referencial",
   "grupos": [
     {
-      "grupo": "CAPEX equipamiento avícola",
+      "grupo": "cotizaciones finales",
       "prioridad": "alta",
       "items": [
-        "Comederos para 500 aves",
-        "Bebederos para 500 aves",
-        "Nidos/ponederos para 500 aves",
-        "Bomba de agua",
-        "Mallas interiores",
-        "Ampliación o bodega interna de alimento",
-        "Instalación o distribución interna de agua si aplica",
-        "Instalación o distribución interna eléctrica si aplica"
+        "confirmar precios reales de comederos, bebederos y ponederos",
+        "cotizar instalación eléctrica/energía con visita",
+        "cotizar distribución interna de agua",
+        "validar costos logísticos de invierno"
       ]
     },
     {
-      "grupo": "OPEX proporcional 500",
+      "grupo": "validación comercial",
       "prioridad": "alta",
       "items": [
-        "Validar 75 sacos/mes de alimento y $971.250/mes.",
-        "Validar envases meta $45.500/mes.",
-        "Validar viruta proyectada $34.000/mes.",
-        "No usar $1.060.750/mes como OPEX total final.",
-        "Faltan sanidad de escala, mantenciones, mano de obra, mortalidad, reposición, agua definitiva e imprevistos."
+        "confirmar compradores para 100 bandejas/semana",
+        "precios netos por canal",
+        "forma de pago al contado por canal",
+        "capacidad de vender 104,1 bandejas si se ocupa producción completa"
       ]
     },
     {
-      "grupo": "financieros",
+      "grupo": "formalización",
       "prioridad": "alta",
       "items": [
-        "OPEX total de escala 500",
-        "capital de trabajo inicial",
-        "flujo financiero completo",
-        "no calcular EBITDA, Payback, ROI, VAN ni TIR hasta completar CAPEX/OPEX/flujo"
+        "validar si 500 aves requiere patente/permiso/resolución sanitaria",
+        "validar factura/boleta y costos tributarios reales",
+        "definir trazabilidad mínima"
       ]
     },
     {
-      "grupo": "comerciales",
-      "prioridad": "media",
-      "items": [
-        "precios netos por canal para 100 bandejas/semana",
-        "forma de pago y cobranza por canal",
-        "estabilidad semanal por canal"
-      ]
-    },
-    {
-      "grupo": "energía",
-      "prioridad": "baja",
-      "items": [
-        "Panel solar comprado por $300.000, considerado como paquete completo informado por Nacho para alimentar bomba, luces y cámaras. Pendiente solo verificación operativa en terreno.",
-        "verificar funcionamiento real del sistema solar antes de operar a escala"
-      ]
-    },
-    {
-      "grupo": "legales/contables",
-      "prioridad": "media",
-      "items": [
-        "formalización tributaria/sanitaria valorizada",
-        "sistema mínimo de trazabilidad y registro"
-      ]
-    },
-    {
-      "grupo": "logística",
+      "grupo": "ejecución financiera",
       "prioridad": "alta",
       "items": [
-        "logística de invierno",
-        "plan de descarga y acopio",
-        "costos logísticos adicionales"
+        "financiamiento para déficit CAPEX",
+        "capital de trabajo 1-2 meses",
+        "calendario de compra por etapas",
+        "tasa y vida útil para VAN/TIR si se requiere"
       ]
     }
   ],
-  "nota": "P44: se incorpora escenario proporcional preliminar 500; los faltantes críticos siguen siendo CAPEX equipamiento avícola cotizado, OPEX total final, capital de trabajo, formalización, logística, agua/bomba validada y flujo.",
+  "nota": "P45-P46 reduce incertidumbre financiera con referencias y estimaciones explícitas, pero faltan cotizaciones formales finales, validación legal/sanitaria/tributaria, confirmación comercial por canal y calendario real de inversión.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",
