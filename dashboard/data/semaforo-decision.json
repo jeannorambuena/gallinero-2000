@@ -1,6 +1,6 @@
 {
   "proyecto": "Gallinero Nacho",
-  "fase": "P0 — Diagnóstico real",
+  "fase": "P0 — Diagnóstico real / P44",
   "estado": "amarillo",
   "semaforo_general": "amarillo",
   "avance_p0_estimado": 90,
@@ -61,7 +61,7 @@
     "cerrar logística de invierno",
     "modelar flujo financiero completo"
   ],
-  "conclusion": "Estado amarillo: P43 usa 100 bandejas/semana como escenario comercial base y considera panel solar comprado como paquete completo. No se habilita inversión porque faltan CAPEX equipamiento avícola, OPEX total, capital de trabajo, formalización, logística y flujo financiero.",
+  "conclusion": "Estado amarillo: P44 incorpora escenario proporcional 500 y requerimientos de equipamiento para cotizar. No se habilita inversión porque faltan CAPEX equipamiento avícola, OPEX total final, capital de trabajo, formalización, logística, agua/bomba y flujo financiero.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",

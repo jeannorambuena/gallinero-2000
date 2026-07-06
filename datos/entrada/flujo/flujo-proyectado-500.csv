@@ -13,3 +13,6 @@ mes,concepto,tipo,monto_clp,estado,observacion
 1,capex pollonas faltantes,capex,4224000,conocido,352 x 12000
 1,subtotal galpon + pollonas,capex,9771765,parcial,no es CAPEX total cerrado
 1,imprevistos,costo,,pendiente,mantenciones/sanitización/contingencia
+1,alimento proyectado 500,costo,971250,parcial_preliminar,75 sacos/mes x 12950
+1,viruta proyectada 500,costo,34000,parcial_preliminar,validar con Nacho
+1,OPEX mínimo proporcional 500,subtotal,1060750,parcial_preliminar,no equivale a OPEX total final

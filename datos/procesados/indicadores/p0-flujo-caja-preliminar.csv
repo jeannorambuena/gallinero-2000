@@ -19,3 +19,7 @@ VAN,indicador,,bloqueado,requiere flujo completo
 TIR,indicador,,bloqueado,requiere flujo completo
 ROI,indicador,,bloqueado,requiere CAPEX total y flujo completo
 Payback,indicador,,bloqueado,requiere CAPEX total y flujo completo
+alimento proyectado 500,costo,971250,parcial_preliminar,75 sacos/mes x 12950; validar operación real
+envases meta 100,costo,45500,parcial_preliminar,100 bandejas/semana x 105 x 52/12
+viruta proyectada 500,costo,34000,parcial_preliminar,10000 x 500/148 redondeado
+OPEX mínimo proporcional 500,subtotal,1060750,parcial_preliminar,no es OPEX total final

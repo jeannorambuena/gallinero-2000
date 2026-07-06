@@ -1,61 +1,74 @@
-# Flujo de caja preliminar — base 500 aves
+# Flujo de caja preliminar — P44
 
-## Objetivo
+## Estado
 
-Preparar flujo preliminar del escenario base 500 gallinas totales sin calcular VAN, TIR, ROI ni Payback definitivo.
+El flujo sigue **incompleto**. P44 agrega una estimación proporcional mínima para 500 aves, pero no habilita EBITDA, Payback, ROI, VAN, TIR ni punto de equilibrio.
 
-## Datos actuales conocidos P42
-
-### Ingresos
+## Datos actuales mantenidos
 
 - Venta actual: **28 bandejas/semana**.
-- Mix actual: **6 segunda, 13 primera, 9 extra**.
-- Precios usados desde el repo: segunda **$5.000**, primera **$6.000**, extra **$7.000**.
+- Mix: segunda **6**, primera **13**, extra **9**.
+- Precios usados: segunda **$5.000**, primera **$6.000**, extra **$7.000**.
 - Ingreso semanal actual: **$171.000**.
-- Precio promedio actual aproximado: **$6.107/bandeja**.
-- Ingreso mensual estimado actual: **$741.000** usando 52/12.
+- Ingreso mensual actual: **$741.000**.
+- OPEX parcial actual: **$343.640/mes**.
 
-La meta de **100 bandejas/semana** se usa como escenario comercial base; falta validar operación, precios netos y cobranza por canal.
+## Escenario proporcional preliminar 500 aves
 
-### OPEX parcial conocido actualizado
+Factor de escala: **500 / 148 = 3,378378**.
 
-- Alimento: **$284.900/mes**.
-- Agua: **$6.000/mes**.
-- Vitaminas: **$20.000/mes**.
-- Envases actuales: **$12.740/mes aprox.**
-- Viruta: **$10.000/mes**.
-- Bencina/reparto: **$10.000/mes**.
-- Medicamentos y limpieza adicional fuera de vitaminas: **$0 informado**.
+### Alimento
 
-OPEX parcial conocido actualizado: **$343.640/mes**.
+- Consumo actual: **124 g/gallina/día**.
+- 500 aves x 124 g/día = **62 kg/día**.
+- 62 kg/día x 30 = **1.860 kg/mes**.
+- 1.860 / 25 = **74,4 sacos/mes**.
+- Redondeo: **75 sacos/mes**.
+- Precio saco: **$12.950**.
+- Costo alimento proyectado: **$971.250/mes**.
 
-Esto no elimina riesgo sanitario ni cierra el OPEX total. Faltan mano de obra operacional definitiva, mantenciones, sanitización, imprevistos, costos de escala 500 y costos tributarios/sanitarios si formaliza.
+### Envases
 
-### Márgenes parciales
+- Meta: **100 bandejas/semana**.
+- Costo envase: **$105/bandeja**.
+- Costo mensual: **$45.500/mes**.
 
-- Margen parcial sin mano de obra: **$397.360/mes**.
-- Mano de obra referencial: **$182.000/mes**.
-- Margen parcial con mano de obra referencial: **$215.360/mes**.
+### Viruta
 
-Estos márgenes son parciales y no deben usarse como rentabilidad definitiva.
+- Actual: **$10.000/mes** para 148 aves.
+- Proyección: $10.000 x 500 / 148 = $33.784.
+- Redondeo: **$34.000/mes**.
 
-## Escenario base 500
+### Agua
 
-- Bandejas estimadas: **104,1/semana**.
-- Meta comercial declarada: **100 bandejas/semana**.
-- Plan por validar: trabajo 20, vecinos 30, almacenes 30, Facebook 20.
-- Diferencia técnica producción/meta: **4,1 bandejas/semana**.
-- Flujo proyectado: pendiente.
-- CAPEX total: pendiente.
+- Actual: **34 L/día**.
+- Proporcional: **115 L/día** mínimo.
+- Mantener rango operativo: **115 a 154 L/día**.
+- No cerrar costo definitivo sin tarifa/configuración real.
 
-## CAPEX parcial relacionado
+## OPEX mínimo proporcional preliminar
 
-- Galpón COT-GN-0035: **$5.547.765**.
-- Pollonas faltantes: **352 x $12.000 = $4.224.000**.
-- Subtotal conocido corregido: **$9.771.765**.
+Componentes:
 
-Este subtotal no es CAPEX total cerrado.
+- Alimento proyectado: **$971.250**.
+- Envases meta: **$45.500**.
+- Viruta proyectada: **$34.000**.
+- Bencina/reparto base: **$10.000**.
 
-## Conclusión
+Total: **$1.060.750/mes**.
 
-El flujo 500 sigue bloqueado para decisión de inversión. Hay más datos reales, pero faltan validaciones operativas comerciales, CAPEX total, OPEX total, formalización, agua/energía dimensionada y flujo estacional.
+Texto obligatorio:
+
+> OPEX mínimo proporcional preliminar: incluye alimento, envases, viruta y bencina base. No equivale a OPEX total final porque falta sanidad de escala, mantenciones, mano de obra, mortalidad, reposición, agua definitiva e imprevistos.
+
+## Pendientes
+
+- Mano de obra operación 500.
+- Sanidad y medicamentos de escala.
+- Mantenciones.
+- Mortalidad y reposición.
+- Agua definitiva.
+- Imprevistos.
+- Capital de trabajo.
+- CAPEX total.
+- Formalización y logística.

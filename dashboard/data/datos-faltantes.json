@@ -1,6 +1,6 @@
 {
   "proyecto": "Gallinero Nacho",
-  "fase": "P0 — Diagnóstico real",
+  "fase": "P0 — Diagnóstico real / P44",
   "estado": "preliminar",
   "grupos": [
     {
@@ -15,6 +15,17 @@
         "Ampliación o bodega interna de alimento",
         "Instalación o distribución interna de agua si aplica",
         "Instalación o distribución interna eléctrica si aplica"
+      ]
+    },
+    {
+      "grupo": "OPEX proporcional 500",
+      "prioridad": "alta",
+      "items": [
+        "Validar 75 sacos/mes de alimento y $971.250/mes.",
+        "Validar envases meta $45.500/mes.",
+        "Validar viruta proyectada $34.000/mes.",
+        "No usar $1.060.750/mes como OPEX total final.",
+        "Faltan sanidad de escala, mantenciones, mano de obra, mortalidad, reposición, agua definitiva e imprevistos."
       ]
     },
     {
@@ -62,7 +73,7 @@
       ]
     }
   ],
-  "nota": "P43: la validación de volumen base queda cerrada para hipótesis base 100 bandejas/semana; los faltantes críticos pasan a CAPEX equipamiento avícola, OPEX total, capital de trabajo, formalización, logística y flujo.",
+  "nota": "P44: se incorpora escenario proporcional preliminar 500; los faltantes críticos siguen siendo CAPEX equipamiento avícola cotizado, OPEX total final, capital de trabajo, formalización, logística, agua/bomba validada y flujo.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",
@@ -126,5 +137,17 @@
       "logística de invierno",
       "flujo financiero completo"
     ]
-  }
+  },
+  "preguntas_finales_nacho_p44": [
+    "¿Confirmas que para el análisis usamos estos precios: segunda $5.000, primera $6.000 y extra $7.000?",
+    "Para 100 bandejas/semana, ¿los almacenes pagarían esos mismos precios o pedirían descuento?",
+    "¿Las 100 bandejas semanales se venderían al contado o habría venta fiada/semanal/mensual?",
+    "Para 500 gallinas, usaremos 75 sacos de alimento al mes. ¿Te parece razonable o sería más/menos?",
+    "Para 500 gallinas, usaremos $34.000 mensuales de viruta. ¿Te parece razonable o sería más?",
+    "Para 500 gallinas, falta cotizar comederos, bebederos, ponederos, perchas, bomba, mallas interiores y bodega/ampliación. ¿Tienes precio o cotización de alguno?",
+    "¿El estanque actual alcanza para 115 a 154 litros diarios?",
+    "El panel solar de $300.000, ¿está listo para operar bomba, luces y cámaras sin comprar nada adicional?",
+    "Con 500 gallinas, ¿la operación diaria tendrá costo mensual de mano de obra o será trabajo familiar sin sueldo al inicio?",
+    "¿Comprarías las 352 pollonas faltantes de una vez o por etapas?"
+  ]
 }

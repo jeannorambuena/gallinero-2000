@@ -1,6 +1,6 @@
 {
   "proyecto": "Gallinero Nacho",
-  "fase": "P0 — Diagnóstico real",
+  "fase": "P0 — Diagnóstico real / P44",
   "estado": "parcial/amarillo",
   "escenario_base": "500 aves totales",
   "capex_conocido": {
@@ -13,7 +13,7 @@
       "costo_historico_faltantes_clp": 2992000,
       "monto_clp": 4224000,
       "incremento_por_actualizacion_precio_clp": 1232000,
-      "nota": "Escenario principal: completar desde 148 hasta 500 gallinas totales; no comprar 500 pollonas como escenario principal. Valor unitario histórico $8.500 queda como antecedente."
+      "nota": "Escenario principal: completar desde 148 hasta 500 gallinas totales; no adquirir 500 pollonas adicionales como escenario principal. Valor unitario histórico $8.500 queda como antecedente."
     },
     "monto_total_conocido_clp": 9771765,
     "galpon_referencial_formal": {
@@ -58,20 +58,25 @@
       "logística de invierno",
       "formalización tributaria/sanitaria",
       "eventuales permisos/costos sanitarios",
-      "capital de trabajo"
+      "capital de trabajo",
+      "perchas para 500 aves",
+      "bodega alimento para 19 a 38 sacos",
+      "sistema de bebederos 60 nipples aprox."
     ],
     "equipamiento_avicola_estado": "pendiente_cotizacion",
     "equipamiento_avicola_archivo": "dashboard/data/capex-equipamiento-avicola.json",
     "equipamiento_avicola_items": [
-      "Comederos para 500 aves",
-      "Bebederos para 500 aves",
-      "Nidos/ponederos para 500 aves",
-      "Bomba de agua",
-      "Mallas interiores",
-      "Ampliación o bodega interna de alimento",
-      "Instalación o distribución interna de agua si aplica",
-      "Instalación o distribución interna eléctrica si aplica"
-    ]
+      "Comederos para 500 aves: 40-50 m lineales o 22-24 unidades tipo plato/tolva",
+      "Bebederos para 500 aves: 60 nipples o sistema equivalente",
+      "Nidos/ponederos para 500 aves: 72 nidos individuales o 5 m² comunitario",
+      "Perchas para 500 aves: 75 m lineales ajustables según diseño final",
+      "Bomba de agua: cotizar si no está expresamente incluida/lista en sistema solar",
+      "Mallas interiores: metraje pendiente de croquis",
+      "Ampliación o bodega interna de alimento: capacidad 19 sacos/semana o 38 sacos/2 semanas",
+      "Instalación o distribución interna de agua si aplica: para 115 a 154 L/día; validar estanque actual",
+      "Instalación o distribución interna eléctrica si aplica: distribución para bomba, luces y cámaras si aplica"
+    ],
+    "requerimientos_equipamiento_archivo": "dashboard/data/requerimientos-equipamiento-avicola.json"
   },
   "categorias": [
     "pollonas/reposición",
@@ -98,7 +103,7 @@
     "valorizar formalización tributaria/sanitaria",
     "validar flujo 500 antes de autorizar compra, construcción o inversión mayor"
   ],
-  "conclusion": "CAPEX parcial P43: galpón $5.547.765 + pollonas faltantes $4.224.000 + panel solar comprado $300.000 como paquete completo informado. El CAPEX total sigue pendiente por equipamiento avícola, capital de trabajo, formalización, logística y otros costos.",
+  "conclusion": "CAPEX parcial P44: galpón $5.547.765 + pollonas faltantes $4.224.000 + panel solar comprado $300.000 como paquete completo informado. CAPEX total sigue pendiente por equipamiento avícola con requerimientos preliminares para cotizar, capital de trabajo, formalización, logística y otros costos.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",

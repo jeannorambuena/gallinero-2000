@@ -3,11 +3,12 @@ pollonas,352 pollonas faltantes,conocido,4224000,precio vigente unitario 12000; 
 galpon,COT-GN-0035 12 x 6 m,cotizado_referencial,5547765,72 m2; materiales 4347765; mano de obra 1200000
 energia,panel solar paquete completo informado,comprado/informado,300000,pendiente solo verificación operativa en terreno
 subtotal,galpon + pollonas faltantes,parcial,9771765,no es CAPEX total cerrado
-equipamiento_avicola,Comederos para 500 aves,pendiente_cotizacion,,bloquea CAPEX total
-equipamiento_avicola,Bebederos para 500 aves,pendiente_cotizacion,,bloquea CAPEX total
-equipamiento_avicola,Nidos/ponederos para 500 aves,pendiente_cotizacion,,bloquea CAPEX total
-equipamiento_avicola,Bomba de agua,pendiente_cotizacion,,bloquea CAPEX total
-equipamiento_avicola,Mallas interiores,pendiente_cotizacion,,bloquea CAPEX total
-equipamiento_avicola,Ampliación o bodega interna de alimento,pendiente_cotizacion,,bloquea CAPEX total
-equipamiento_avicola,Instalación o distribución interna de agua si aplica,pendiente_cotizacion,,bloquea CAPEX total
-equipamiento_avicola,Instalación o distribución interna eléctrica si aplica,pendiente_cotizacion,,bloquea CAPEX total
+equipamiento_avicola,Comederos para 500 aves,pendiente_cotizacion,,40-50 m lineales o 22-24 unidades tipo plato/tolva
+equipamiento_avicola,Bebederos para 500 aves,pendiente_cotizacion,,60 nipples o sistema equivalente
+equipamiento_avicola,Nidos/ponederos para 500 aves,pendiente_cotizacion,,72 nidos individuales o 5 m² comunitario
+equipamiento_avicola,Perchas para 500 aves,pendiente_cotizacion,,75 m lineales ajustables según diseño final
+equipamiento_avicola,Bomba de agua,pendiente_cotizacion,,cotizar si no está expresamente incluida/lista en sistema solar
+equipamiento_avicola,Mallas interiores,pendiente_cotizacion,,metraje pendiente de croquis
+equipamiento_avicola,Ampliación o bodega interna de alimento,pendiente_cotizacion,,capacidad 19 sacos/semana o 38 sacos/2 semanas
+equipamiento_avicola,Instalación o distribución interna de agua si aplica,pendiente_cotizacion,,para 115 a 154 L/día; validar estanque actual
+equipamiento_avicola,Instalación o distribución interna eléctrica si aplica,pendiente_cotizacion,,"distribución para bomba, luces y cámaras si aplica"

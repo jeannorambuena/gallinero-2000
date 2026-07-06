@@ -1,6 +1,6 @@
 {
   "proyecto": "Gallinero Nacho",
-  "fase": "P0 — Diagnóstico real",
+  "fase": "P0 — Diagnóstico real / P44",
   "estado": "preliminar",
   "alertas": [
     {
@@ -179,9 +179,17 @@
       "dimension": "financiera",
       "descripcion": "Faltan cotizaciones de comederos, bebederos, nidos/ponederos, bomba, mallas interiores, bodega interna/ampliación e instalaciones internas. Bloquea CAPEX total.",
       "estado": "bloqueante"
+    },
+    {
+      "id": "A21",
+      "titulo": "Requerimientos equipamiento avícola para cotizar",
+      "severidad": "alta",
+      "dimension": "capex",
+      "descripcion": "Cotizar comederos 40-50 m o 22-24 unidades, 60 nipples, 72 nidos o 5 m² comunitario, 75 m lineales de perchas, bodega para 19 a 38 sacos, bomba si no está incluida/lista, mallas e instalaciones internas.",
+      "estado": "abierta"
     }
   ],
-  "nota": "Alertas P43: comercial base 100 corregido; panel solar considerado paquete completo; bloqueo principal pasa a CAPEX equipamiento avícola, OPEX total, capital de trabajo y flujo.",
+  "nota": "Alertas P44: escenario proporcional 500 incorporado; OPEX mínimo es parcial y equipamiento avícola sigue pendiente de cotización.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",

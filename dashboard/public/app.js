@@ -14,7 +14,9 @@ const DATA_FILES = {
   criteriosP1: new URL('criterios-p1.json', DATA_BASE).href,
   galpones: new URL('estimacion-galpones.json', DATA_BASE).href,
   alertas: new URL('alertas-p0.json', DATA_BASE).href,
-  capexEquipamiento: new URL('capex-equipamiento-avicola.json', DATA_BASE).href
+  capexEquipamiento: new URL('capex-equipamiento-avicola.json', DATA_BASE).href,
+  escenarioProporcional: new URL('escenario-proporcional-500.json', DATA_BASE).href,
+  requerimientosEquipamiento: new URL('requerimientos-equipamiento-avicola.json', DATA_BASE).href
 };
 
 const FALLBACKS = {
@@ -280,6 +282,34 @@ function renderEscenario500({ validacionComercial, comerciales, flujoCaja, galpo
   renderMetrics('escenario-500-metricas', metrics);
 }
 
+function renderEscenarioProporcional({ escenarioProporcional, requerimientosEquipamiento }) {
+  const escenario = escenarioProporcional ?? {};
+  const alimento = escenario.alimento ?? {};
+  const envases = escenario.envases_meta ?? {};
+  const viruta = escenario.viruta ?? {};
+  const agua = escenario.agua ?? {};
+  const densidad = escenario.densidad ?? {};
+  const opex = escenario.opex_minimo_proporcional ?? {};
+  const req = requerimientosEquipamiento?.resumen ?? {};
+
+  const metrics = [
+    { label: 'Densidad', value: formatValue(densidad.aves_m2 ?? 6.94, 'aves/m²'), detail: densidad.mostrar ?? 'aprox. 7 aves/m²', tone: 'accent' },
+    { label: 'Alimento proyectado', value: formatValue(alimento.proyeccion_sacos_mes_redondeada ?? 75, 'sacos/mes'), detail: `${alimento.proyeccion_kg_mes ?? 1860} kg/mes` },
+    { label: 'Costo alimento proyectado', value: formatCurrency(alimento.costo_proyectado_clp_mes ?? 971250), detail: '75 sacos x $12.950', tone: 'pending' },
+    { label: 'Envases meta', value: formatCurrency(envases.costo_mensual_clp ?? 45500), detail: '100 bandejas/semana x $105' },
+    { label: 'Viruta proyectada', value: formatCurrency(viruta.proyeccion_redondeada_clp_mes ?? 34000), detail: 'proporcional desde $10.000/mes' },
+    { label: 'Agua estimada', value: agua.rango_litros_dia ?? '115 a 154 L/día', detail: 'validar estanque y bomba', tone: 'pending' },
+    { label: 'OPEX mínimo proporcional', value: formatCurrency(opex.total_clp_mes ?? 1060750), detail: 'parcial · no OPEX total', tone: 'risk' },
+    { label: 'Comederos', value: req.comederos ?? '40-50 m lineales o 22-24 unidades', detail: 'según producto a cotizar' },
+    { label: 'Bebederos', value: req.bebederos ?? '60 nipples aprox.', detail: 'o sistema equivalente' },
+    { label: 'Nidos', value: req.nidos ?? '72 individuales o 5 m² comunitario', detail: 'dos alternativas para cotizar' },
+    { label: 'Perchas', value: req.perchas ?? '75 m lineales', detail: 'ajustable según diseño final' },
+    { label: 'Bodega alimento', value: req.bodega_alimento ?? '19 sacos/semana o 38 sacos/2 semanas', detail: 'capacidad mínima recomendada' }
+  ];
+
+  renderMetrics('escenario-proporcional-metricas', metrics);
+}
+
 function renderEscalas(galpones) {
   const container = $('comparativo-escalas');
   if (!container) return;
@@ -349,7 +379,7 @@ function renderAlerts(alertas) {
   if (!container) return;
   container.innerHTML = '';
 
-  const items = (alertas?.alertas ?? []).filter((alert) => ['A12', 'A13', 'A14', 'A15', 'A16', 'A17', 'A18', 'A19'].includes(alert.id));
+  const items = (alertas?.alertas ?? []).filter((alert) => ['A12', 'A13', 'A14', 'A15', 'A16', 'A17', 'A18', 'A19', 'A20', 'A21'].includes(alert.id));
   items.forEach((alert) => {
     const card = document.createElement('article');
     card.className = `alert-card severity-${normalizeStatus(alert.severidad)}`;
@@ -534,6 +564,7 @@ async function init() {
   renderDecisionState(data);
   renderOperacion(data);
   renderEscenario500(data);
+  renderEscenarioProporcional(data);
   renderEscalas(data.galpones);
   renderFinancialIndicators(data);
   renderAlerts(data.alertas);

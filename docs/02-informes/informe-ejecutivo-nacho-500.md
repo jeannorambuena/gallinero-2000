@@ -1,106 +1,70 @@
-# Informe ejecutivo — Gallinero Nacho, escenario 500 aves
+# Informe ejecutivo — Gallinero Nacho, P44
 
 Estado actual: **amarillo**  
-Escenario base vigente: **500 gallinas totales**
+Escenario base vigente: **500 aves totales**
 
-## 1. Lectura ejecutiva P43
+## Resumen ejecutivo
 
-P43 ajusta la lectura visual del dashboard después de revisión de Jean.
+P44 incorpora una estimación proporcional preliminar para operar 500 aves y deja estructurados los requerimientos técnicos de equipamiento para cotizar.
 
-Cambios clave:
+No cambia la decisión: **no invertir todavía**.
 
-- La meta de **100 bandejas/semana** se usa como escenario comercial base de análisis.
-- La producción estimada para 500 aves es **104,1 bandejas/semana**.
-- La diferencia técnica producción/meta es **4,1 bandejas/semana**, manejable como merma, autoconsumo, stock o venta adicional.
-- El panel solar comprado por **$300.000** se considera paquete completo informado por Nacho para alimentar bomba, luces y cámaras; queda solo verificación operativa en terreno.
-- Se estructura el **CAPEX equipamiento avícola pendiente de cotización**.
+## Valores actuales mantenidos
 
-El proyecto sigue amarillo porque CAPEX total, OPEX total, capital de trabajo, formalización, logística y flujo financiero siguen incompletos.
+- 148 gallinas actuales.
+- 352 pollonas faltantes.
+- Pollona vigente: **$12.000**.
+- CAPEX pollonas faltantes: **$4.224.000**.
+- Galpón 12 x 6 m / 72 m²: **$5.547.765**.
+- Subtotal conocido galpón + pollonas: **$9.771.765**.
+- Venta actual: **28 bandejas/semana**.
+- Ingreso actual: **$171.000/semana** y **$741.000/mes**.
+- Meta comercial base: **100 bandejas/semana**.
+- Panel solar comprado: **$300.000**, paquete completo informado.
 
-## 2. Datos comerciales
+## Escenario proporcional preliminar 500 aves
 
-Venta actual:
+- Densidad: **6,94 aves/m²**.
+- Alimento proyectado: **75 sacos/mes**.
+- Costo alimento proyectado: **$971.250/mes**.
+- Envases meta: **$45.500/mes**.
+- Viruta proyectada: **$34.000/mes**.
+- Agua estimada: **115 a 154 L/día**.
+- OPEX mínimo proporcional parcial: **$1.060.750/mes**.
 
-- 28 bandejas/semana.
-- Mix: 6 segunda, 13 primera, 9 extra.
-- Ingreso semanal actual: **$171.000**.
-- Ingreso mensual estimado: **$741.000**.
-- Precio promedio actual: **$6.107/bandeja aprox.**
+Este valor no es OPEX total final.
 
-Escenario comercial base:
+## Equipamiento pendiente de cotización
 
-- Trabajo: 20 bandejas/semana.
-- Vecinos: 30 bandejas/semana.
-- Almacenes: 30 bandejas/semana.
-- Facebook: 20 bandejas/semana.
-- Total: **100 bandejas/semana**.
+- Comederos: **40-50 m lineales** o **22-24 unidades**.
+- Bebederos: **60 nipples** aprox.
+- Nidos: **72 nidos** individuales o **5 m² comunitario**.
+- Perchas: **75 m lineales**.
+- Bodega alimento: **19 sacos/semana** o **38 sacos/2 semanas**.
+- Bomba: cotizar si no está confirmada como incluida/lista en sistema solar.
+- Mallas interiores e instalaciones internas.
 
-Pendiente comercial:
+## Preguntas finales para Nacho
 
-- Precios netos por canal.
-- Forma de pago y cobranza.
-- Estabilidad semanal por canal.
-- Requisitos de boleta/factura.
+1. ¿Confirmas que para el análisis usamos estos precios: segunda $5.000, primera $6.000 y extra $7.000?
+2. Para 100 bandejas/semana, ¿los almacenes pagarían esos mismos precios o pedirían descuento?
+3. ¿Las 100 bandejas semanales se venderían al contado o habría venta fiada/semanal/mensual?
+4. Para 500 gallinas, usaremos 75 sacos de alimento al mes. ¿Te parece razonable o sería más/menos?
+5. Para 500 gallinas, usaremos $34.000 mensuales de viruta. ¿Te parece razonable o sería más?
+6. Para 500 gallinas, falta cotizar comederos, bebederos, ponederos, perchas, bomba, mallas interiores y bodega/ampliación. ¿Tienes precio o cotización de alguno?
+7. ¿El estanque actual alcanza para 115 a 154 litros diarios?
+8. El panel solar de $300.000, ¿está listo para operar bomba, luces y cámaras sin comprar nada adicional?
+9. Con 500 gallinas, ¿la operación diaria tendrá costo mensual de mano de obra o será trabajo familiar sin sueldo al inicio?
+10. ¿Comprarías las 352 pollonas faltantes de una vez o por etapas?
 
-## 3. OPEX parcial actualizado
+## Pendientes que bloquean inversión
 
-- Alimento: **$284.900/mes**.
-- Agua: **$6.000/mes**.
-- Vitaminas: **$20.000/mes**.
-- Envases actuales: **$12.740/mes aprox.**
-- Viruta: **$10.000/mes**.
-- Bencina/reparto: **$10.000/mes**.
-- Medicamentos y limpieza adicional fuera de vitaminas: **$0 informado**.
-
-OPEX parcial actualizado: **$343.640/mes**.
-
-No es OPEX total.
-
-## 4. CAPEX conocido y faltante
-
-CAPEX conocido:
-
-- Galpón COT-GN-0035: **$5.547.765**.
-- Pollonas faltantes: **$4.224.000**.
-- Panel solar paquete completo informado: **$300.000**.
-
-Subtotal conocido galpón + pollonas: **$9.771.765**.
-
-El costo **$11.096** debe leerse como **costo galpón por ave objetivo**. No incluye pollona, comederos, bebederos, ponederos, bomba, mallas, bodega, alimento inicial ni capital de trabajo.
-
-## 5. CAPEX equipamiento avícola pendiente
-
-Archivo creado: `dashboard/data/capex-equipamiento-avicola.json`.
-
-Pendiente cotizar:
-
-- Comederos para 500 aves.
-- Bebederos para 500 aves.
-- Nidos/ponederos para 500 aves.
-- Bomba de agua.
-- Mallas interiores.
-- Ampliación o bodega interna de alimento.
-- Instalación o distribución interna de agua si aplica.
-- Instalación o distribución interna eléctrica si aplica.
-
-No se inventan precios. Todo queda como **Pendiente** hasta contar con cotizaciones reales.
-
-## 6. Decisión
-
-Se mantiene:
-
-- Estado general: **amarillo**.
-- P1 preliminar: **no habilitado**.
-- Compra de aves: **bloqueada**.
-- Construcción: **no autorizada**.
-- Inversión mayor: **bloqueada**.
-
-Razón del amarillo P43:
-
-- CAPEX total incompleto por equipamiento avícola.
-- OPEX total incompleto.
-- Capital de trabajo inicial pendiente.
-- Validación de precios netos/cobranza/estabilidad por canal pendiente.
-- Formalización tributaria/sanitaria pendiente de valorización.
-- Logística de invierno pendiente.
-- Flujo financiero completo pendiente.
+- CAPEX total.
+- OPEX total final.
+- Mano de obra.
+- Sanidad, mantenciones, mortalidad, reposición e imprevistos.
+- Agua/bomba definitiva.
+- Capital de trabajo.
+- Formalización tributaria/sanitaria.
+- Logística de invierno.
+- Flujo financiero completo.

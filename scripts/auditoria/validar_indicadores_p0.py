@@ -98,6 +98,10 @@ def main() -> int:
         alertas = load_json("dashboard/data/alertas-p0.json")
         datos_faltantes = load_json("dashboard/data/datos-faltantes.json")
         subproyectos = load_json("dashboard/data/subproyectos-criticos.json")
+        escenario_proporcional = load_json("dashboard/data/escenario-proporcional-500.json")
+        requerimientos_equipamiento = load_json("dashboard/data/requerimientos-equipamiento-avicola.json")
+        finanzas_data = load_json("dashboard/data/finanzas-preliminares.json")
+        finanzas = index_indicators(finanzas_data)
     except Exception as exc:  # noqa: BLE001 - auditoría debe capturar y reportar claro
         print("ERROR Indicadores P0")
         print(f"- no se pudieron cargar datos: {exc}")
@@ -168,6 +172,28 @@ def main() -> int:
         assert_equal(errors, "CAPEX equipamiento objetivo aves", equipamiento.get("objetivo_aves"), 500)
         if len(equipamiento.get("items", [])) < 8:
             errors.append("CAPEX equipamiento avícola: debe tener al menos 8 ítems pendientes")
+        assert_equal(errors, "P44 objetivo proporcional", escenario_proporcional.get("objetivo_aves"), 500)
+        assert_equal(errors, "P44 base actual aves", escenario_proporcional.get("base_actual_aves"), 148)
+        assert_close(errors, "P44 factor escala", escenario_proporcional.get("factor_escala"), 3.378378, 0.0005)
+        assert_close(errors, "P44 densidad aves/m2", escenario_proporcional.get("densidad", {}).get("aves_m2"), 6.94, 0.02)
+        assert_equal(errors, "P44 alimento sacos", escenario_proporcional.get("alimento", {}).get("proyeccion_sacos_mes_redondeada"), 75)
+        assert_equal(errors, "P44 alimento costo", escenario_proporcional.get("alimento", {}).get("costo_proyectado_clp_mes"), 971250)
+        assert_equal(errors, "P44 envases meta", escenario_proporcional.get("envases_meta", {}).get("costo_mensual_clp"), 45500)
+        assert_equal(errors, "P44 viruta proyectada", escenario_proporcional.get("viruta", {}).get("proyeccion_redondeada_clp_mes"), 34000)
+        assert_equal(errors, "P44 OPEX mínimo proporcional", escenario_proporcional.get("opex_minimo_proporcional", {}).get("total_clp_mes"), 1060750)
+        assert_equal(errors, "indicador P44 alimento sacos", value(finanzas, "alimento_proyectado_500_sacos_mes"), 75)
+        assert_equal(errors, "indicador P44 alimento costo", value(finanzas, "alimento_proyectado_500_clp_mes"), 971250)
+        assert_equal(errors, "indicador P44 envases", value(finanzas, "envases_meta_100_bandejas_clp_mes"), 45500)
+        assert_equal(errors, "indicador P44 viruta", value(finanzas, "viruta_proyectada_500_clp_mes"), 34000)
+        assert_equal(errors, "indicador P44 OPEX mínimo", value(finanzas, "opex_minimo_proporcional_500_clp"), 1060750)
+        req_resumen = requerimientos_equipamiento.get("resumen", {})
+        for label, expected in {
+            "comederos": "40-50 m lineales o 22-24 unidades",
+            "bebederos": "60 nipples aprox.",
+            "nidos": "72 nidos individuales o 5 m² comunitario",
+            "perchas": "75 m lineales",
+        }.items():
+            assert_equal(errors, f"P44 requerimiento {label}", req_resumen.get(label), expected)
         capex_total = capex.get("capex_pendiente", {}).get("monto_total_pendiente")
         if capex_total not in (None, "pendiente"):
             errors.append(f"CAPEX total pendiente: esperado None o 'pendiente', encontrado {capex_total!r}")

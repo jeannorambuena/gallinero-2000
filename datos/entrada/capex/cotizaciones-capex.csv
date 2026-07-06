@@ -2,11 +2,12 @@ categoria,item,proveedor,fecha,cantidad,unidad,precio_unitario_clp,total_clp,est
 pollonas,pollonas faltantes para completar 500,,,352,aves,12000,4224000,precio vigente informado,valor histórico unitario 8500 solo antecedente
 galpon,COT-GN-0035 galpon 12 x 6 m,Nexus Consultores,2026-06-30,72,m2,77052,5547765,cotizado referencial,no autoriza construcción
 energia,panel solar paquete completo informado,,,1,paquete,300000,300000,comprado/informado,pendiente solo verificación operativa en terreno
-equipamiento_avicola,Comederos para 500 aves,,,pendiente,,,,pendiente_cotizacion,bloquea CAPEX total
-equipamiento_avicola,Bebederos para 500 aves,,,pendiente,,,,pendiente_cotizacion,bloquea CAPEX total
-equipamiento_avicola,Nidos/ponederos para 500 aves,,,pendiente,,,,pendiente_cotizacion,bloquea CAPEX total
-equipamiento_avicola,Bomba de agua,,,pendiente,,,,pendiente_cotizacion,bloquea CAPEX total
-equipamiento_avicola,Mallas interiores,,,pendiente,,,,pendiente_cotizacion,bloquea CAPEX total
-equipamiento_avicola,Ampliación o bodega interna de alimento,,,pendiente,,,,pendiente_cotizacion,bloquea CAPEX total
-equipamiento_avicola,Instalación o distribución interna de agua si aplica,,,pendiente,,,,pendiente_cotizacion,bloquea CAPEX total
-equipamiento_avicola,Instalación o distribución interna eléctrica si aplica,,,pendiente,,,,pendiente_cotizacion,bloquea CAPEX total
+equipamiento_avicola,Comederos para 500 aves,,,40-50 m lineales o 22-24 unidades tipo plato/tolva,pendiente,,,pendiente_cotizacion,P44 requerimiento preliminar; no inventar precio
+equipamiento_avicola,Bebederos para 500 aves,,,60 nipples o sistema equivalente,pendiente,,,pendiente_cotizacion,P44 requerimiento preliminar; no inventar precio
+equipamiento_avicola,Nidos/ponederos para 500 aves,,,72 nidos individuales o 5 m² comunitario,pendiente,,,pendiente_cotizacion,P44 requerimiento preliminar; no inventar precio
+equipamiento_avicola,Perchas para 500 aves,,,75 m lineales ajustables según diseño final,pendiente,,,pendiente_cotizacion,P44 requerimiento preliminar; no inventar precio
+equipamiento_avicola,Bomba de agua,,,cotizar si no está expresamente incluida/lista en sistema solar,pendiente,,,pendiente_cotizacion,P44 requerimiento preliminar; no inventar precio
+equipamiento_avicola,Mallas interiores,,,metraje pendiente de croquis,pendiente,,,pendiente_cotizacion,P44 requerimiento preliminar; no inventar precio
+equipamiento_avicola,Ampliación o bodega interna de alimento,,,capacidad 19 sacos/semana o 38 sacos/2 semanas,pendiente,,,pendiente_cotizacion,P44 requerimiento preliminar; no inventar precio
+equipamiento_avicola,Instalación o distribución interna de agua si aplica,,,para 115 a 154 L/día; validar estanque actual,pendiente,,,pendiente_cotizacion,P44 requerimiento preliminar; no inventar precio
+equipamiento_avicola,Instalación o distribución interna eléctrica si aplica,,,"distribución para bomba, luces y cámaras si aplica",pendiente,,,pendiente_cotizacion,P44 requerimiento preliminar; no inventar precio

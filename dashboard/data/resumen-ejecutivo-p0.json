@@ -1,6 +1,6 @@
 {
   "proyecto": "Gallinero Nacho",
-  "fase": "P0 — Diagnóstico real",
+  "fase": "P0 — Diagnóstico real / P44",
   "estado_general": "amarillo",
   "avance_p0_estimado": 90,
   "escenario_base_actual": {
@@ -45,7 +45,8 @@
     "si escala a 500, intención confirmada de emitir boleta y factura",
     "meta comercial 100 bandejas/semana usada como escenario base de análisis",
     "panel solar comprado por $300.000 considerado paquete completo informado",
-    "estructura CAPEX equipamiento avícola creada para cotización"
+    "estructura CAPEX equipamiento avícola creada para cotización",
+    "P44 estructura estimación proporcional 500: 75 sacos/mes, OPEX mínimo proporcional $1.060.750/mes y requerimientos técnicos para cotizar."
   ],
   "riesgos_principales": [
     "CAPEX total incompleto por equipamiento avícola pendiente de cotización",
@@ -54,7 +55,8 @@
     "faltan precios netos, forma de pago y estabilidad por canal para 100 bandejas/semana",
     "formalización tributaria/sanitaria pendiente de valorización",
     "logística de invierno pendiente",
-    "flujo financiero completo pendiente"
+    "flujo financiero completo pendiente",
+    "Confundir OPEX mínimo proporcional con OPEX total final."
   ],
   "decisiones_bloqueadas": [
     "compra de pollonas",
@@ -72,7 +74,8 @@
     "validar precios netos/cobranza/estabilidad por canal",
     "valorizar formalización tributaria/sanitaria",
     "cerrar logística de invierno",
-    "preparar flujo financiero completo"
+    "preparar flujo financiero completo",
+    "Validar preguntas finales P44 con Nacho y cotizar equipamiento avícola."
   ],
   "acciones_recomendadas": [
     "levantar cotizaciones de equipamiento avícola",
@@ -82,7 +85,7 @@
     "valorizar formalización",
     "preparar flujo financiero preliminar sin ROI/VAN/TIR definitivos hasta cerrar datos"
   ],
-  "conclusion": "P43 corrige la lectura visual: la meta 100 bandejas/semana se usa como escenario comercial base y el panel solar de $300.000 se considera paquete completo informado. El proyecto sigue amarillo por CAPEX equipamiento avícola, OPEX total, capital de trabajo, formalización, logística y flujo financiero incompletos.",
+  "conclusion": "P44 deja una estimación proporcional preliminar para 500 aves y una lista técnica para cotizar equipamiento. Estado sigue amarillo: no se autoriza compra, construcción ni inversión mayor hasta cerrar CAPEX, OPEX total, capital de trabajo, formalización, logística y flujo.",
   "interpretacion_estado_amarillo": "Amarillo no significa rechazo ni que el proyecto no sea viable; significa que falta información crítica para decidir con seguridad antes de comprar aves, construir o comprometer inversión mayor.",
   "lineas_paralelas": [
     {

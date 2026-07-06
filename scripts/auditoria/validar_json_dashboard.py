@@ -86,6 +86,13 @@ SPECS = {
         "required": ["proyecto", "fase", "estado", "objetivo_aves", "descripcion", "resumen"],
         "non_empty_lists": ["items"],
     },
+    "dashboard/data/escenario-proporcional-500.json": {
+        "required": ["proyecto", "fase", "estado", "objetivo_aves", "base_actual_aves", "factor_escala", "densidad", "alimento", "envases_meta", "viruta", "agua", "opex_minimo_proporcional"],
+    },
+    "dashboard/data/requerimientos-equipamiento-avicola.json": {
+        "required": ["proyecto", "fase", "estado", "objetivo_aves", "advertencia", "resumen"],
+        "non_empty_lists": ["requerimientos"],
+    },
     "dashboard/data/flujo-caja-preliminar.json": {
         "required": ["proyecto", "fase", "estado", "ingresos_actuales", "costos_actuales", "mano_obra_referencial", "margenes_actuales", "escenario_500", "escenario_648", "conclusion"],
         "non_empty_lists": ["datos_faltantes", "riesgos", "criterios_para_avanzar", "indicadores_bloqueados"],

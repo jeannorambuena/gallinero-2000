@@ -11,3 +11,8 @@ ROI,pendiente,n/a,pendiente,P43,bloqueado,no calcular
 VAN,pendiente,n/a,pendiente,P43,bloqueado,no calcular
 TIR,pendiente,n/a,pendiente,P43,bloqueado,no calcular
 Payback,pendiente,n/a,pendiente,P43,bloqueado,no calcular
+alimento_proyectado_500_sacos_mes,75,sacos/mes,1860 kg / 25 kg redondeado,P44 estimación proporcional,parcial_preliminar,validar operación real
+alimento_proyectado_500_clp_mes,971250,CLP/mes,75 * 12950,P44 estimación proporcional,parcial_preliminar,no es OPEX total
+envases_meta_100_bandejas_clp_mes,45500,CLP/mes,100 * 105 * 52 / 12,P44,parcial_preliminar,meta 100 bandejas semana
+viruta_proyectada_500_clp_mes,34000,CLP/mes,10000 * 500 / 148 redondeado,P44 estimación proporcional,parcial_preliminar,validar con Nacho
+opex_minimo_proporcional_500_clp,1060750,CLP/mes,971250 + 45500 + 34000 + 10000,P44 estimación proporcional,parcial_preliminar,no equivale a OPEX total final

@@ -1,16 +1,16 @@
 {
   "proyecto": "Gallinero Nacho",
-  "fase": "P0 — Diagnóstico real / P43",
+  "fase": "P0 — Diagnóstico real / P44",
   "estado": "pendiente_cotizacion",
   "objetivo_aves": 500,
-  "descripcion": "CAPEX equipamiento avícola pendiente de cotización",
-  "nota": "No inventar precios: cargar solo cotizaciones reales cuando existan.",
+  "descripcion": "CAPEX equipamiento avícola pendiente de cotización, con requerimientos técnicos preliminares P44",
+  "nota": "No inventar precios: usar cantidades preliminares para cotizar y cargar solo cotizaciones reales cuando existan.",
   "items": [
     {
       "id": "comederos",
       "item": "Comederos para 500 aves",
       "estado": "pendiente_cotizacion",
-      "cantidad_requerida": "pendiente",
+      "cantidad_requerida": "40-50 m lineales o 22-24 unidades tipo plato/tolva",
       "precio_unitario_clp": null,
       "subtotal_clp": null,
       "impacto": "bloquea CAPEX total"
@@ -19,7 +19,7 @@
       "id": "bebederos",
       "item": "Bebederos para 500 aves",
       "estado": "pendiente_cotizacion",
-      "cantidad_requerida": "pendiente",
+      "cantidad_requerida": "60 nipples o sistema equivalente",
       "precio_unitario_clp": null,
       "subtotal_clp": null,
       "impacto": "bloquea CAPEX total"
@@ -28,7 +28,16 @@
       "id": "nidos_ponederos",
       "item": "Nidos/ponederos para 500 aves",
       "estado": "pendiente_cotizacion",
-      "cantidad_requerida": "pendiente",
+      "cantidad_requerida": "72 nidos individuales o 5 m² comunitario",
+      "precio_unitario_clp": null,
+      "subtotal_clp": null,
+      "impacto": "bloquea CAPEX total"
+    },
+    {
+      "id": "perchas",
+      "item": "Perchas para 500 aves",
+      "estado": "pendiente_cotizacion",
+      "cantidad_requerida": "75 m lineales ajustables según diseño final",
       "precio_unitario_clp": null,
       "subtotal_clp": null,
       "impacto": "bloquea CAPEX total"
@@ -37,7 +46,7 @@
       "id": "bomba_agua",
       "item": "Bomba de agua",
       "estado": "pendiente_cotizacion",
-      "cantidad_requerida": "pendiente",
+      "cantidad_requerida": "cotizar si no está expresamente incluida/lista en sistema solar",
       "precio_unitario_clp": null,
       "subtotal_clp": null,
       "impacto": "bloquea CAPEX total"
@@ -46,7 +55,7 @@
       "id": "mallas_interiores",
       "item": "Mallas interiores",
       "estado": "pendiente_cotizacion",
-      "cantidad_requerida": "pendiente",
+      "cantidad_requerida": "metraje pendiente de croquis",
       "precio_unitario_clp": null,
       "subtotal_clp": null,
       "impacto": "bloquea CAPEX total"
@@ -55,7 +64,7 @@
       "id": "bodega_interna_alimento",
       "item": "Ampliación o bodega interna de alimento",
       "estado": "pendiente_cotizacion",
-      "cantidad_requerida": "pendiente",
+      "cantidad_requerida": "capacidad 19 sacos/semana o 38 sacos/2 semanas",
       "precio_unitario_clp": null,
       "subtotal_clp": null,
       "impacto": "bloquea CAPEX total"
@@ -64,7 +73,7 @@
       "id": "distribucion_interna_agua",
       "item": "Instalación o distribución interna de agua si aplica",
       "estado": "pendiente_cotizacion",
-      "cantidad_requerida": "pendiente",
+      "cantidad_requerida": "para 115 a 154 L/día; validar estanque actual",
       "precio_unitario_clp": null,
       "subtotal_clp": null,
       "impacto": "bloquea CAPEX total"
@@ -73,7 +82,7 @@
       "id": "distribucion_interna_electrica",
       "item": "Instalación o distribución interna eléctrica si aplica",
       "estado": "pendiente_cotizacion",
-      "cantidad_requerida": "pendiente",
+      "cantidad_requerida": "distribución para bomba, luces y cámaras si aplica",
       "precio_unitario_clp": null,
       "subtotal_clp": null,
       "impacto": "bloquea CAPEX total"
@@ -82,6 +91,12 @@
   "resumen": {
     "capex_equipamiento_avicola_clp": null,
     "capex_total_proyecto_clp": null,
-    "estado_capex_total": "pendiente por cotizaciones de equipamiento avícola, OPEX total, formalización y capital de trabajo"
+    "estado_capex_total": "pendiente por cotizaciones de equipamiento avícola, OPEX total, formalización y capital de trabajo",
+    "requerimientos_archivo": "dashboard/data/requerimientos-equipamiento-avicola.json",
+    "comederos": "40-50 m lineales o 22-24 unidades",
+    "bebederos": "60 nipples aprox.",
+    "nidos": "72 nidos individuales o 5 m² comunitario",
+    "perchas": "75 m lineales",
+    "bodega_alimento": "19 sacos/semana o 38 sacos/2 semanas"
   }
 }

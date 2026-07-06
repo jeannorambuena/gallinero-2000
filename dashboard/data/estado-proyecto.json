@@ -18,9 +18,10 @@
     "validar precios netos/cobranza/estabilidad por canal",
     "valorizar formalización tributaria/sanitaria",
     "cerrar logística de invierno",
-    "preparar flujo financiero completo"
+    "preparar flujo financiero completo",
+    "Responder batería final de 10 preguntas P44 con Nacho."
   ],
-  "decision_actual": "P0 amarillo; P43 cierra la validación de volumen base como hipótesis base 100 bandejas, pero P1 preliminar no está habilitado por CAPEX/OPEX/flujo incompletos. Compra de aves, construcción e inversión mayor siguen bloqueadas.",
+  "decision_actual": "P0 amarillo; P44 incorpora escenario proporcional preliminar 500 y requerimientos de equipamiento, pero no habilita P1 ni inversión.",
   "interpretacion_semaforo": "Amarillo no significa no viable; significa información crítica pendiente para decidir con seguridad.",
   "lineas_de_trabajo": [
     "Línea comercial: venta actual directa confirmada con mix 6/13/9; meta 100 requiere validación.",
@@ -37,5 +38,6 @@
     "densidad_500_aprox_aves_m2": 7,
     "costo_gallina_instalada_galpon_aprox_clp": 11096,
     "advertencia": "referencial; no autoriza construcción"
-  }
+  },
+  "fase": "P0 — Diagnóstico real / P44"
 }

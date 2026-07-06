@@ -1,6 +1,6 @@
 {
   "proyecto": "Gallinero Nacho",
-  "fase": "P0 — Diagnóstico real",
+  "fase": "P0 — Diagnóstico real / P44",
   "estado": "parcial",
   "indicadores": [
     {
@@ -362,6 +362,60 @@
       "fuente": "P43",
       "estado": "margen_tecnico",
       "observacion": "no es bloqueo comercial principal"
+    },
+    {
+      "indicador": "densidad_500_aves_m2",
+      "valor": 6.94,
+      "unidad": "aves/m²",
+      "formula": "500 / 72",
+      "fuente": "P44 estimación proporcional",
+      "estado": "parcial_preliminar",
+      "observacion": "aprox. 7 aves/m² en galpón 72 m²"
+    },
+    {
+      "indicador": "alimento_proyectado_500_sacos_mes",
+      "valor": 75,
+      "unidad": "sacos/mes",
+      "formula": "1.860 kg/mes / 25 kg; redondeado",
+      "fuente": "P44 estimación proporcional",
+      "estado": "parcial_preliminar",
+      "observacion": "estimación proporcional preliminar; validar operación real"
+    },
+    {
+      "indicador": "alimento_proyectado_500_clp_mes",
+      "valor": 971250,
+      "unidad": "CLP/mes",
+      "formula": "75 x 12.950",
+      "fuente": "P44 estimación proporcional",
+      "estado": "parcial_preliminar",
+      "observacion": "no es OPEX total final"
+    },
+    {
+      "indicador": "envases_meta_100_bandejas_clp_mes",
+      "valor": 45500,
+      "unidad": "CLP/mes",
+      "formula": "100 x 105 x 52 / 12",
+      "fuente": "P44 estimación proporcional",
+      "estado": "parcial_preliminar",
+      "observacion": "meta 100 bandejas/semana"
+    },
+    {
+      "indicador": "viruta_proyectada_500_clp_mes",
+      "valor": 34000,
+      "unidad": "CLP/mes",
+      "formula": "10.000 x 500 / 148, redondeado",
+      "fuente": "P44 estimación proporcional",
+      "estado": "parcial_preliminar",
+      "observacion": "estimación proporcional preliminar"
+    },
+    {
+      "indicador": "opex_minimo_proporcional_500_clp",
+      "valor": 1060750,
+      "unidad": "CLP/mes",
+      "formula": "971250 + 45500 + 34000 + 10000",
+      "fuente": "P44 estimación proporcional",
+      "estado": "parcial_preliminar",
+      "observacion": "OPEX mínimo proporcional preliminar: incluye alimento, envases, viruta y bencina base. No equivale a OPEX total final porque falta sanidad de escala, mantenciones, mano de obra, mortalidad, reposición, agua definitiva e imprevistos."
     }
   ],
   "resumen": {
@@ -392,7 +446,14 @@
     "panel_solar_estado": "paquete completo informado; verificación operativa en terreno pendiente",
     "capex_equipamiento_avicola": "Pendiente",
     "meta_comercial_base_bandejas_semana": 100,
-    "diferencia_tecnica_produccion_meta_bandejas_semana": 4.1
+    "diferencia_tecnica_produccion_meta_bandejas_semana": 4.1,
+    "fase_p44": "escenario proporcional preliminar 500 aves",
+    "alimento_proyectado_500_sacos_mes": 75,
+    "alimento_proyectado_500_clp_mes": 971250,
+    "envases_meta_100_bandejas_clp_mes": 45500,
+    "viruta_proyectada_500_clp_mes": 34000,
+    "opex_minimo_proporcional_500_clp": 1060750,
+    "opex_minimo_proporcional_advertencia": "OPEX mínimo proporcional preliminar: incluye alimento, envases, viruta y bencina base. No equivale a OPEX total final porque falta sanidad de escala, mantenciones, mano de obra, mortalidad, reposición, agua definitiva e imprevistos."
   },
   "indicadores_bloqueados": [
     {
@@ -436,7 +497,7 @@
       "observacion": "faltan flujos completos por período"
     }
   ],
-  "nota": "P42: ingresos actuales calculados, OPEX parcial conocido actualizado y CAPEX de pollonas corregido a 352 faltantes. Indicadores definitivos siguen bloqueados.",
+  "nota": "P44: incorpora escenario proporcional preliminar 500 y requerimientos de equipamiento para cotizar. Indicadores definitivos siguen bloqueados.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",
@@ -686,6 +747,42 @@
       "estado_analisis": "Bloquea CAPEX total: faltan cotizaciones reales de equipamiento avícola e instalaciones internas para 500 aves.",
       "formula": "sumatoria de cotizaciones reales pendientes",
       "fuente": "estructura P43 pendiente de cotización",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "alimento_proyectado_500",
+      "nombre": "Alimento proyectado 500 aves",
+      "valor": 971250,
+      "unidad": "CLP/mes",
+      "estado": "parcial_preliminar",
+      "descripcion_corta": "75 sacos/mes x $12.950.",
+      "estado_analisis": "Estimación proporcional preliminar: 500 aves x 124 g/día = 62 kg/día; 75 sacos/mes. Validar con operación real al escalar.",
+      "formula": "75 x $12.950",
+      "fuente": "P44 estimación proporcional",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "opex_minimo_proporcional_500",
+      "nombre": "OPEX mínimo proporcional 500",
+      "valor": 1060750,
+      "unidad": "CLP/mes",
+      "estado": "parcial_preliminar",
+      "descripcion_corta": "Alimento, envases, viruta y bencina base.",
+      "estado_analisis": "OPEX mínimo proporcional preliminar: incluye alimento, envases, viruta y bencina base. No equivale a OPEX total final porque falta sanidad de escala, mantenciones, mano de obra, mortalidad, reposición, agua definitiva e imprevistos.",
+      "formula": "$971.250 + $45.500 + $34.000 + $10.000",
+      "fuente": "P44 estimación proporcional",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "capex_requerimientos_equipamiento_avicola",
+      "nombre": "Requerimientos equipamiento avícola",
+      "valor": null,
+      "unidad": "CLP",
+      "estado": "pendiente_cotizacion",
+      "descripcion_corta": "Comederos, bebederos, nidos, perchas, bomba, mallas y bodega.",
+      "estado_analisis": "Cantidades preliminares para cotizar: 40-50 m comederos o 22-24 unidades, 60 nipples, 72 nidos o 5 m² comunitario, 75 m perchas. No inventar precios.",
+      "formula": "cotizaciones reales pendientes",
+      "fuente": "dashboard/data/requerimientos-equipamiento-avicola.json",
       "escenario": "500 aves"
     },
     {

@@ -1,0 +1,90 @@
+{
+  "proyecto": "Gallinero Nacho",
+  "fase": "P0 — Diagnóstico real / P44",
+  "estado": "requerimientos_preliminares_para_cotizar",
+  "objetivo_aves": 500,
+  "advertencia": "No inventar precios. Cantidades preliminares para solicitar cotizaciones reales.",
+  "requerimientos": [
+    {
+      "id": "comederos",
+      "categoria": "Comederos",
+      "criterio": "8 a 10 cm lineales por ave",
+      "requerimiento": "40 a 50 m lineales",
+      "alternativa": "22 a 25 aves por unidad tipo plato/tolva",
+      "para_cotizar": "40-50 m lineales o 22-24 unidades tipo plato/tolva, según producto",
+      "precio_unitario_clp": null,
+      "subtotal_clp": null,
+      "estado": "pendiente_cotizacion"
+    },
+    {
+      "id": "bebederos",
+      "categoria": "Bebederos",
+      "criterio": "8 a 10 aves por nipple/tetina",
+      "requerimiento": "50 a 63 nipples",
+      "para_cotizar": "60 nipples o sistema equivalente",
+      "precio_unitario_clp": null,
+      "subtotal_clp": null,
+      "estado": "pendiente_cotizacion"
+    },
+    {
+      "id": "nidos_ponederos",
+      "categoria": "Nidos / ponederos",
+      "criterio": "1 nido individual cada 7 aves",
+      "requerimiento": "72 nidos individuales aprox.",
+      "alternativa": "5 m² aprox. de ponedero comunitario",
+      "para_cotizar": "72 bocas/nidos individuales o 5 m² de ponedero comunitario",
+      "precio_unitario_clp": null,
+      "subtotal_clp": null,
+      "estado": "pendiente_cotizacion"
+    },
+    {
+      "id": "perchas",
+      "categoria": "Perchas",
+      "criterio": "15 cm por ave",
+      "requerimiento": "75 m lineales",
+      "para_cotizar": "75 m lineales, ajustable según diseño final",
+      "precio_unitario_clp": null,
+      "subtotal_clp": null,
+      "estado": "pendiente_cotizacion"
+    },
+    {
+      "id": "bodega_alimento",
+      "categoria": "Bodega alimento",
+      "criterio": "75 sacos/mes = 18,75 sacos/semana",
+      "requerimiento": "capacidad mínima 19 sacos para 1 semana o 38 sacos para 2 semanas",
+      "para_cotizar": "ampliación/bodega para 19 a 38 sacos según autonomía deseada",
+      "precio_unitario_clp": null,
+      "subtotal_clp": null,
+      "estado": "pendiente_cotizacion"
+    },
+    {
+      "id": "agua_bomba",
+      "categoria": "Agua y bomba",
+      "criterio": "consumo estimado 115 a 154 L/día",
+      "requerimiento": "verificar estanque actual y bomba para 115 a 154 L/día",
+      "para_cotizar": "bomba de agua si no está expresamente incluida/lista en sistema solar",
+      "precio_unitario_clp": null,
+      "subtotal_clp": null,
+      "estado": "pendiente_cotizacion"
+    },
+    {
+      "id": "mallas_interiores",
+      "categoria": "Mallas interiores",
+      "criterio": "separación/protección interna según diseño final",
+      "requerimiento": "metraje pendiente de croquis",
+      "para_cotizar": "mallas interiores según croquis",
+      "precio_unitario_clp": null,
+      "subtotal_clp": null,
+      "estado": "pendiente_cotizacion"
+    }
+  ],
+  "resumen": {
+    "comederos": "40-50 m lineales o 22-24 unidades",
+    "bebederos": "60 nipples aprox.",
+    "nidos": "72 nidos individuales o 5 m² comunitario",
+    "perchas": "75 m lineales",
+    "bodega_alimento": "19 sacos/semana o 38 sacos/2 semanas",
+    "agua": "115 a 154 L/día; verificar estanque y bomba",
+    "panel_solar": "No generar CAPEX adicional por panel solar; P43 lo dejó como paquete completo informado."
+  }
+}
