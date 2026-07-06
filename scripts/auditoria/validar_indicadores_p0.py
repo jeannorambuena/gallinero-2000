@@ -107,6 +107,10 @@ def main() -> int:
         ingresos_500 = load_json("dashboard/data/ingresos-proyectados-500.json")
         flujo_500 = load_json("dashboard/data/flujo-financiero-preliminar-500.json")
         estrategia_pollonas = load_json("dashboard/data/estrategia-compra-pollonas.json")
+        decision_p47 = load_json("dashboard/data/decision-ejecutiva-p47.json")
+        alternativas_p47 = load_json("dashboard/data/alternativas-crecimiento-p47.json")
+        plan_p47 = load_json("dashboard/data/plan-implementacion-6-meses.json")
+        reglas_p47 = load_json("dashboard/data/reglas-decision-semaforo-p47.json")
     except Exception as exc:  # noqa: BLE001 - auditoría debe capturar y reportar claro
         print("ERROR Indicadores P0")
         print(f"- no se pudieron cargar datos: {exc}")
@@ -221,6 +225,35 @@ def main() -> int:
         assert_equal(errors, "P45 estrategia 100", estrategia_pollonas.get("estrategias", {}).get("100_primero", {}).get("capex_pollonas_clp"), 1200000)
         if capex_total_500.get("capex_total_referencial", {}).get("base", {}).get("deficit_o_excedente_clp", 0) >= 0:
             errors.append("P45 CAPEX base debe mostrar déficit frente a $10.000.000")
+
+        # P47: decisión ejecutiva y plan por etapas
+        assert_equal(errors, "P47 estado", decision_p47.get("estado_general"), "AMARILLO")
+        assert_equal(errors, "P47 alternativa recomendada", decision_p47.get("alternativa_recomendada"), "mas_150_pollonas")
+        assert_equal(errors, "P47 capital trabajo mínimo", decision_p47.get("capital_trabajo", {}).get("minimo_1_mes_clp"), 1686750)
+        assert_equal(errors, "P47 capital trabajo prudente", decision_p47.get("capital_trabajo", {}).get("prudente_2_meses_clp"), 3373500)
+        assert_equal(errors, "P47 deficit base 1m CT", decision_p47.get("respuestas_clave", {}).get("dinero_faltante_escenario_base", {}).get("deficit_base_con_1_mes_ct_vs_10m_clp"), -5030515)
+        assert_equal(errors, "P47 deficit base 2m CT", decision_p47.get("respuestas_clave", {}).get("dinero_faltante_escenario_base", {}).get("deficit_base_con_2_meses_ct_vs_10m_clp"), -6717265)
+        p47_alts = {item.get("pollonas_a_comprar"): item for item in alternativas_p47.get("alternativas", []) if isinstance(item, dict)}
+        if set(p47_alts) != {100, 150, 200, 352}:
+            errors.append(f"P47 alternativas: esperado {{100, 150, 200, 352}}, encontrado {set(p47_alts)!r}")
+        assert_equal(errors, "P47 +100 plantel", p47_alts.get(100, {}).get("plantel_total_aves"), 248)
+        assert_close(errors, "P47 +100 bandejas", p47_alts.get(100, {}).get("bandejas_semana_estimadas"), 49.6, 0.05)
+        assert_equal(errors, "P47 +150 plantel", p47_alts.get(150, {}).get("plantel_total_aves"), 298)
+        assert_close(errors, "P47 +150 bandejas", p47_alts.get(150, {}).get("bandejas_semana_estimadas"), 59.6, 0.05)
+        assert_equal(errors, "P47 +200 plantel", p47_alts.get(200, {}).get("plantel_total_aves"), 348)
+        assert_close(errors, "P47 +200 bandejas", p47_alts.get(200, {}).get("bandejas_semana_estimadas"), 69.6, 0.05)
+        assert_equal(errors, "P47 +352 plantel", p47_alts.get(352, {}).get("plantel_total_aves"), 500)
+        assert_equal(errors, "P47 +352 requerimiento 1m", p47_alts.get(352, {}).get("lectura_con_galpon_completo_desde_inicio", {}).get("requerimiento_total_inicial_1_mes_ct_clp"), 15030515)
+        assert_equal(errors, "P47 semaforo 100", p47_alts.get(100, {}).get("semaforo"), "AMARILLO BAJO")
+        assert_equal(errors, "P47 semaforo 150", p47_alts.get(150, {}).get("semaforo"), "AMARILLO MEDIO")
+        assert_equal(errors, "P47 semaforo 352", p47_alts.get(352, {}).get("semaforo"), "AMARILLO ALTO")
+        assert_equal(errors, "P47 plan 6 meses", plan_p47.get("horizonte_meses"), 6)
+        if len(plan_p47.get("fases", [])) != 6:
+            errors.append("P47 plan debe tener 6 fases")
+        if len(reglas_p47.get("verde_solo_si", [])) < 7:
+            errors.append("P47 reglas verde: faltan condiciones")
+        if "compra de aves" not in decision_p47.get("decisiones_no_autorizadas", []):
+            errors.append("P47 debe mantener compra de aves no autorizada")
 
         # Criterios P1 / inversión
         assert_equal(errors, "estado_p1_preliminar", criterios.get("estado_p1_preliminar"), "no habilitado")

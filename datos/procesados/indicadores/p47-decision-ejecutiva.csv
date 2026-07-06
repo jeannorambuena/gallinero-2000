@@ -1,0 +1,7 @@
+indicador,valor,unidad,estado,observacion
+estado_general_p47,AMARILLO,semaforo,vigente,"No desbloquea inversión, compra ni construcción"
+alternativa_recomendada,+150 pollonas,texto,preliminar,Base prudente si no hay financiamiento completo
+deficit_base_1m_ct,5030515,CLP,pendiente_financiamiento,Escala completa inmediata con 1 mes de capital de trabajo
+deficit_base_2m_ct,6717265,CLP,pendiente_financiamiento,Escala completa inmediata con 2 meses de capital de trabajo
+capital_trabajo_minimo,1686750,CLP,prudente,1 mes OPEX con mano de obra
+capital_trabajo_prudente,3373500,CLP,prudente,2 meses OPEX con mano de obra

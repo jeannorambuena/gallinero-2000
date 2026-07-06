@@ -21,6 +21,8 @@ CSV_INDICADORES = [
     "datos/procesados/indicadores/p0-capex-referencial-500.csv",
     "datos/procesados/indicadores/p0-opex-proyectado-500.csv",
     "datos/procesados/indicadores/p0-flujo-financiero-preliminar-500.csv",
+    "datos/procesados/indicadores/p47-alternativas-crecimiento.csv",
+    "datos/procesados/indicadores/p47-decision-ejecutiva.csv",
 ]
 
 CSV_ENTRADA = [

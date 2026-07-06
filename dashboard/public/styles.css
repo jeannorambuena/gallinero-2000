@@ -589,6 +589,26 @@ a {
   background: #f8fafc;
 }
 
+.financial-card.pending {
+  border-color: #f7d66b;
+  background: linear-gradient(150deg, var(--yellow-soft), #ffffff 76%);
+}
+
+.financial-card.risk {
+  border-color: #fca5a5;
+  background: linear-gradient(150deg, var(--red-soft), #ffffff 76%);
+}
+
+.compact-heading {
+  margin-top: 18px;
+}
+
+.compact-heading h3 {
+  margin: 4px 0 0;
+  font-size: 1.25rem;
+  letter-spacing: -0.035em;
+}
+
 .alert-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));

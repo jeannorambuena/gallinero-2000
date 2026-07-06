@@ -1,6 +1,6 @@
 {
   "proyecto": "Gallinero Nacho",
-  "fase": "P0 — Diagnóstico real / P45-P46",
+  "fase": "P0 — Diagnóstico real / P47",
   "estado": "amarillo",
   "semaforo_general": "amarillo",
   "avance_p0_estimado": 90,
@@ -53,13 +53,15 @@
     "decision_final_disponible": false
   },
   "condiciones_para_avanzar": [
-    "cotizaciones finales de equipamiento e instalaciones",
-    "financiamiento definido para CAPEX + capital de trabajo",
-    "ventas 100 bandejas/semana confirmadas al contado",
-    "validación legal/sanitaria/tributaria",
-    "plan de compra por etapas o justificación financiera para comprar 352 de una vez"
+    "existen cotizaciones formales finales",
+    "financiamiento total está cubierto",
+    "capital de trabajo mínimo está cubierto",
+    "venta de al menos punto de equilibrio con mano de obra está confirmada",
+    "validación legal/sanitaria/tributaria está cerrada",
+    "plan logístico invierno definido",
+    "calendario de ejecución real aprobado"
   ],
-  "conclusion": "P45-P46 entrega cálculo referencial, pero no desbloquea inversión. Comprar todas las pollonas queda amarillo/alto riesgo sin financiamiento y venta confirmada; compra por etapas reduce riesgo.",
+  "conclusion": "P47 mantiene AMARILLO: flujo preliminar positivo, pero faltan cotizaciones, financiamiento, capital de trabajo, validación comercial/legal y plan logístico.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",
@@ -69,5 +71,39 @@
     "densidad_500_aprox_aves_m2": 7,
     "costo_gallina_instalada_galpon_aprox_clp": 11096,
     "advertencia": "referencial; no autoriza construcción"
+  },
+  "reglas_p47": {
+    "proyecto": "Gallinero Nacho",
+    "fase": "P47",
+    "estado": "AMARILLO",
+    "regla_general": "P47 no aprueba inversión; solo ordena decisión ejecutiva y condiciones para pasar de amarillo a verde.",
+    "verde_solo_si": [
+      "existen cotizaciones formales finales",
+      "financiamiento total está cubierto",
+      "capital de trabajo mínimo está cubierto",
+      "venta de al menos punto de equilibrio con mano de obra está confirmada",
+      "validación legal/sanitaria/tributaria está cerrada",
+      "plan logístico invierno definido",
+      "calendario de ejecución real aprobado"
+    ],
+    "amarillo_si": [
+      "flujo es positivo pero falta financiamiento o cotización formal",
+      "venta está estimada pero no documentada por canal",
+      "permisos/formalización no validados",
+      "infraestructura actual no confirmada para etapa"
+    ],
+    "rojo_si": [
+      "no se alcanza punto de equilibrio",
+      "no hay financiamiento para déficit",
+      "no hay capacidad de vender la producción",
+      "no hay agua/equipamiento mínimo",
+      "se intenta comprar 352 pollonas sin equipamiento ni capital de trabajo"
+    ]
+  },
+  "alternativas_p47": {
+    "mas_100_pollonas": "AMARILLO BAJO",
+    "mas_150_pollonas": "AMARILLO MEDIO",
+    "mas_200_pollonas": "AMARILLO ALTO",
+    "mas_352_pollonas": "AMARILLO ALTO"
   }
 }

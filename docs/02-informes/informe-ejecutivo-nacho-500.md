@@ -1,85 +1,159 @@
-# P45-P46 — CAPEX, OPEX, flujo preliminar y estrategia de pollonas
+# P47 — Decisión ejecutiva y plan por etapas
 
-Estado general: **AMARILLO**. No se desbloquea compra de aves, construcción ni inversión mayor.
+Estado general: **AMARILLO**. P47 **no aprueba inversión**, no desbloquea compra de aves y no autoriza construcción.
 
-## Fuentes principales usadas
+## Recomendación ejecutiva
 
-- Sodimac Chile: mallas gallinero, polines impregnados, racks/estantes, mangueras, válvulas, conduit y protecciones menores.
-- MercadoLibre Chile: referencias de productos avícolas (bebedero nipple y ponedero Copele), pero el sitio redirigió a verificación y no entregó precio; esos montos quedan como **estimación interna, requiere cotización**.
+Conviene seguir avanzando solo como P0/P47 amarillo: levantar cotizaciones, validar permisos, cerrar compradores y preparar una primera etapa. No conviene comprar las 352 pollonas de una vez salvo que exista financiamiento cerrado para CAPEX base + capital de trabajo y venta de 100 bandejas/semana confirmada al contado. La alternativa preliminar preferida es +150 pollonas; +100 es la opción más conservadora si se quiere reducir riesgo; +200 requiere venta y caja más confirmadas.
 
-## CAPEX conocido
+## Respuestas clave
 
-- Galpón COT-GN-0035: **$5.547.765**.
-- Pollonas faltantes: **352 x $12.000 = $4.224.000**.
-- Subtotal conocido: **$9.771.765**.
+1. **¿Conviene avanzar?** Sí, pero solo por etapas y con control de riesgo. El negocio muestra margen positivo si se venden 100 bandejas/semana.
+2. **¿Conviene comprar las 352 pollonas de una vez?** No como recomendación base. Solo con financiamiento cerrado, equipamiento, capital de trabajo y venta confirmada.
+3. **¿Cuál etapa inicial es más prudente?** +150 pollonas como base prudente; +100 si se prioriza máxima reducción de riesgo.
+4. **¿Cuánto falta en escenario base?** CAPEX base + 1 mes CT requiere **$15.030.515**, déficit **$5.030.515**. Con 2 meses CT requiere **$16.717.265**, déficit **$6.717.265**.
+5. **Antes de invertir:** cotizaciones formales, financiamiento, capital de trabajo, ventas por canal, validación legal/sanitaria/tributaria, logística invierno y calendario real.
 
-El subtotal conocido de galpón + pollonas ya consume casi todo el máximo informado de $10.000.000; cualquier equipamiento, capital de trabajo o contingencia requiere financiamiento, aporte adicional o compra por etapas.
+## Capital de trabajo considerado
 
-## CAPEX equipamiento referencial
+- Mínimo 1 mes: **$1.686.750**.
+- Prudente 2 meses: **$3.373.500**.
 
-- Bajo: **$1.723.000**.
-- Base: **$3.572.000**.
-- Alto: **$7.010.000**.
+## Matriz de alternativas
 
-## CAPEX total referencial 500 aves
+### Alternativa 1: crecimiento mínimo controlado
 
-- Bajo: equipamiento $1.723.000 / total $11.494.765 / déficit vs $10.000.000: **$1.494.765**.
-- Base: equipamiento $3.572.000 / total $13.343.765 / déficit vs $10.000.000: **$3.343.765**.
-- Alto: equipamiento $7.010.000 / total $16.781.765 / déficit vs $10.000.000: **$6.781.765**.
+- Pollonas: **100 pollonas**; plantel total: **248 aves**.
+- Producción estimada: **49.6 bandejas/semana**.
+- Ingreso mensual estimado: **$1.312.598**.
+- OPEX con mano de obra: **$839.028**.
+- Margen con mano de obra: **$473.570**.
+- Lectura parcial sin galpón completo: inversión **$2.214.773**, requerimiento inicial con CT **$3.053.801**, excedente/déficit vs $10M **$6.946.199**.
+- Lectura con galpón completo: inversión **$8.519.477**, requerimiento inicial 1 mes CT **$9.358.505**, excedente/déficit vs $10M **$641.495**.
+- Semáforo: **AMARILLO BAJO**.
+- Uso: Prueba comercial y operacional.
+- Condición: Ejecutar solo si infraestructura actual alcanza y están listos comederos/bebederos/nidos mínimos.
 
-## Capital de trabajo inicial separado de CAPEX
+### Alternativa 2: crecimiento intermedio prudente
 
-- 1 mes OPEX con mano de obra: **$1.686.750**.
-- 2 meses OPEX con mano de obra: **$3.373.500**.
+- Pollonas: **150 pollonas**; plantel total: **298 aves**.
+- Producción estimada: **59.6 bandejas/semana**.
+- Ingreso mensual estimado: **$1.577.235**.
+- OPEX con mano de obra: **$1.047.703**.
+- Margen con mano de obra: **$529.532**.
+- Lectura parcial sin galpón completo: inversión **$3.322.159**, requerimiento inicial con CT **$4.369.862**, excedente/déficit vs $10M **$5.630.138**.
+- Lectura con galpón completo: inversión **$9.476.677**, requerimiento inicial 1 mes CT **$10.524.380**, excedente/déficit vs $10M **$-524.380**.
+- Semáforo: **AMARILLO MEDIO**.
+- Uso: Recomendación preliminar si no hay financiamiento completo.
+- Condición: Ejecutar solo con infraestructura actual validada, compradores para al menos el punto de equilibrio y caja para capital de trabajo.
 
-## OPEX proyectado 500 aves
+### Alternativa 3: crecimiento acelerado moderado
 
-- Sin mano de obra: **$1.086.750/mes**.
-- Mano de obra económica Nacho: **$600.000/mes**.
-- Con mano de obra: **$1.686.750/mes**.
-- Imprevistos 5% sobre OPEX sin mano de obra: **$54.338**.
-- Imprevistos 10% sobre OPEX sin mano de obra: **$108.675**.
+- Pollonas: **200 pollonas**; plantel total: **348 aves**.
+- Producción estimada: **69.6 bandejas/semana**.
+- Ingreso mensual estimado: **$1.841.871**.
+- OPEX con mano de obra: **$1.256.378**.
+- Margen con mano de obra: **$585.493**.
+- Lectura parcial sin galpón completo: inversión **$4.429.545**, requerimiento inicial con CT **$5.685.923**, excedente/déficit vs $10M **$4.314.077**.
+- Lectura con galpón completo: inversión **$10.433.877**, requerimiento inicial 1 mes CT **$11.690.255**, excedente/déficit vs $10M **$-1.690.255**.
+- Semáforo: **AMARILLO ALTO**.
+- Uso: Viable solo con compradores más confirmados y caja adicional.
+- Condición: Ejecutar solo con venta adicional documentada, caja adicional y equipamiento proporcional cerrado.
 
-> OPEX proyectado preliminar; falta validar sanidad de escala, mantenciones, reposición por mortalidad, costos tributarios/sanitarios efectivos y variaciones de alimento.
+### Alternativa 4: escala completa inmediata
 
-## Ingresos proyectados
+- Pollonas: **352 pollonas**; plantel total: **500 aves**.
+- Producción estimada: **100.0 bandejas/semana**.
+- Ingreso mensual estimado: **$2.646.367**.
+- OPEX con mano de obra: **$1.686.750**.
+- Margen con mano de obra: **$959.617**.
+- Lectura parcial sin galpón completo: inversión **pendiente**, requerimiento inicial con CT **pendiente**, excedente/déficit vs $10M **pendiente**.
+- Lectura con galpón completo: inversión **$13.343.765**, requerimiento inicial 1 mes CT **$15.030.515**, excedente/déficit vs $10M **$-5.030.515**.
+- Semáforo: **AMARILLO ALTO**.
+- Uso: Solo con financiamiento cerrado y venta confirmada.
+- Condición: No ejecutar sin financiamiento cerrado para CAPEX total, equipamiento, capital de trabajo y venta de 100 bandejas/semana confirmada al contado.
 
-- Base 100 bandejas/semana a $6.107: **$2.646.367/mes**.
-- Conservador 90 bandejas/semana: **$2.381.730/mes**.
-- Descuento almacenes 10% sobre 30 bandejas/semana: **$2.566.976/mes**.
-- Alto 104,1 bandejas/semana: **$2.754.868/mes**.
 
-## Flujo financiero preliminar
+## Reglas de decisión
 
-- Margen mensual sin mano de obra: **$1.559.617**.
-- Margen mensual con mano de obra: **$959.617**.
-- Punto equilibrio sin mano de obra: **178,0 bandejas/mes** / **41,1 bandejas/semana**.
-- Punto equilibrio con mano de obra: **276,2 bandejas/mes** / **63,7 bandejas/semana**.
+### VERDE solo si
 
-### Payback simple
+- existen cotizaciones formales finales
+- financiamiento total está cubierto
+- capital de trabajo mínimo está cubierto
+- venta de al menos punto de equilibrio con mano de obra está confirmada
+- validación legal/sanitaria/tributaria está cerrada
+- plan logístico invierno definido
+- calendario de ejecución real aprobado
 
-- Bajo: 7,37 meses sin mano de obra / 11,98 meses con mano de obra.
-- Base: 8,56 meses sin mano de obra / 13,91 meses con mano de obra.
-- Alto: 10,76 meses sin mano de obra / 17,49 meses con mano de obra.
+### AMARILLO si
 
-VAN/TIR: **no calculado** por falta de tasa, vida útil y calendario definitivo.
+- flujo es positivo pero falta financiamiento o cotización formal
+- venta está estimada pero no documentada por canal
+- permisos/formalización no validados
+- infraestructura actual no confirmada para etapa
 
-## Estrategia de compra de pollonas
+### ROJO si
 
-- 100 primero: **$1.200.000**.
-- 150 primero: **$1.800.000**.
-- 200 primero: **$2.400.000**.
-- 352 de una vez: **$4.224.000**.
+- no se alcanza punto de equilibrio
+- no hay financiamiento para déficit
+- no hay capacidad de vender la producción
+- no hay agua/equipamiento mínimo
+- se intenta comprar 352 pollonas sin equipamiento ni capital de trabajo
 
-Comprar todas puede ser viable solo si se asegura financiamiento suficiente para equipamiento, alimento inicial y contingencia, y si la venta de 100 bandejas está realmente confirmada al contado.
+## Plan de implementación 6 meses
 
-**Recomendación técnica preliminar:** no comprar automáticamente las 352 de una vez. Con los números actuales, el CAPEX total base + capital de trabajo supera el máximo propio de $10.000.000. Conviene compra por etapas (100-150 primero; 200 solo con compradores más confirmados), salvo financiamiento cerrado y venta confirmada.
+### Fase 0 — cierre de decisión (semana 1-2)
 
-## Pendientes para pasar a verde
+  - revisar dashboard con Nacho
+  - confirmar monto disponible real
+  - validar permisos/formalización
+  - pedir cotizaciones formales
+  - confirmar compradores por canal
 
-- Cotizaciones finales de equipamiento avícola, agua, energía e instalación.
-- Confirmar venta real de 100 bandejas/semana al contado y por canal.
-- Validación legal/sanitaria/tributaria: informado por Nacho, pendiente de validación.
-- Financiamiento para déficit CAPEX + capital de trabajo.
-- Plan logístico de invierno.
-- Calendario real de inversión y compra de aves.
+### Fase 1 — preparación mínima (mes 1)
+
+  - cotizar equipamiento final
+  - revisar infraestructura actual
+  - revisar capacidad de bodega semanal
+  - resolver agua/energía faltante
+  - plan invierno/acceso
+
+### Fase 2 — primera compra (mes 2)
+
+  - ejecutar alternativa 100-150 pollonas solo si están listos comederos/bebederos/nidos mínimos
+  - registrar producción
+  - registrar consumo
+  - registrar ventas
+
+### Fase 3 — medición 30-60 días (mes 3-4)
+
+  - medir ventas reales
+  - medir mortalidad
+  - medir consumo alimento
+  - medir horas de trabajo
+  - medir margen real
+  - levantar problemas sanitarios/logísticos
+
+### Fase 4 — segunda expansión (mes 4-5)
+
+  - si ventas y margen cumplen, subir a 200 o avanzar hacia 500
+  - si no cumplen, mantener escala y corregir
+
+### Fase 5 — escala completa (mes 6)
+
+  - llegar a 500 solo con flujo real validado
+  - equipamiento completo
+  - financiamiento cerrado
+  - compradores estables
+  - formalización validada
+
+
+## Pendientes críticos
+
+- Cotizaciones formales finales.
+- Validación legal/sanitaria/tributaria.
+- Confirmación comercial por canal.
+- Financiamiento para déficit + capital de trabajo.
+- Plan logístico invierno.
+- Calendario real de compra/inversión.

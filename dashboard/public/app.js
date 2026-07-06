@@ -22,7 +22,11 @@ const DATA_FILES = {
   opex500: new URL('opex-proyectado-500.json', DATA_BASE).href,
   ingresos500: new URL('ingresos-proyectados-500.json', DATA_BASE).href,
   flujo500: new URL('flujo-financiero-preliminar-500.json', DATA_BASE).href,
-  estrategiaPollonas: new URL('estrategia-compra-pollonas.json', DATA_BASE).href
+  estrategiaPollonas: new URL('estrategia-compra-pollonas.json', DATA_BASE).href,
+  decisionP47: new URL('decision-ejecutiva-p47.json', DATA_BASE).href,
+  alternativasP47: new URL('alternativas-crecimiento-p47.json', DATA_BASE).href,
+  planP47: new URL('plan-implementacion-6-meses.json', DATA_BASE).href,
+  reglasP47: new URL('reglas-decision-semaforo-p47.json', DATA_BASE).href
 };
 
 const FALLBACKS = {
@@ -417,6 +421,48 @@ function renderEstrategiaPollonas({ estrategiaPollonas }) {
   setText('estrategia-pollonas-recomendacion', estrategiaPollonas?.recomendacion_preliminar ?? 'Compra por etapas reduce riesgo financiero; comprar todas solo con financiamiento y venta confirmada.');
 }
 
+function renderDecisionP47({ decisionP47, alternativasP47, planP47 }) {
+  const decision = decisionP47 ?? {};
+  const alternatives = alternativasP47?.alternativas ?? [];
+  const capital = decision.capital_trabajo ?? {};
+
+  setText('p47-recomendacion-principal', decision.recomendacion_ejecutiva ?? 'Mantener AMARILLO y avanzar solo por etapas.');
+  setText('p47-alternativa-recomendada', decision.respuestas_clave?.etapa_inicial_mas_prudente ?? '+150 pollonas como base prudente.');
+
+  renderMetrics('p47-decision-metricas', [
+    { label: 'Estado P47', value: decision.estado_general ?? 'AMARILLO', detail: 'no aprueba inversión', tone: 'risk' },
+    { label: 'Alternativa base prudente', value: '+150 pollonas', detail: 'AMARILLO MEDIO' },
+    { label: 'Alternativa conservadora', value: '+100 pollonas', detail: 'AMARILLO BAJO' },
+    { label: 'Escala completa', value: '+352 pollonas', detail: 'AMARILLO ALTO · solo con financiamiento cerrado', tone: 'risk' },
+    { label: 'Capital trabajo mínimo', value: formatCurrency(capital.minimo_1_mes_clp), detail: '1 mes OPEX con mano de obra' },
+    { label: 'Capital trabajo prudente', value: formatCurrency(capital.prudente_2_meses_clp), detail: '2 meses OPEX con mano de obra' }
+  ]);
+
+  renderCompactRows('p47-alternativas-detalle', alternatives.map((alt) => {
+    const partial = alt.lectura_parcial_infraestructura_actual ?? {};
+    const full = alt.lectura_con_galpon_completo_desde_inicio ?? {};
+    const primaryRequirement = partial.aplica ? partial.requerimiento_total_inicial_clp : full.requerimiento_total_inicial_1_mes_ct_clp;
+    const primaryDelta = partial.aplica ? partial.deficit_o_excedente_vs_10m_clp : full.deficit_o_excedente_vs_10m_1_mes_ct_clp;
+    const deltaLabel = Number(primaryDelta) >= 0 ? 'excedente' : 'déficit';
+    return {
+      kicker: alt.semaforo,
+      title: `${alt.pollonas_a_comprar} pollonas · ${alt.plantel_total_aves} aves`,
+      value: formatCurrency(primaryRequirement),
+      detail: `${alt.bandejas_semana_estimadas} bandejas/sem · ingreso ${formatCurrency(alt.ingreso_mensual_estimado_clp)} · margen c/MO ${formatCurrency(alt.margen_mensual_con_mano_obra_clp)}`,
+      small: `${deltaLabel} vs $10M: ${formatCurrency(Math.abs(primaryDelta ?? 0))}. Condición: ${alt.condicion_para_ejecutar}`,
+      tone: alt.semaforo?.includes('ALTO') ? 'risk' : 'pending'
+    };
+  }));
+
+  renderCompactRows('p47-plan-6m', (planP47?.fases ?? []).map((phase) => ({
+    kicker: phase.periodo,
+    title: `${phase.fase} · ${phase.nombre}`,
+    value: `${(phase.acciones ?? []).length} acciones`,
+    detail: (phase.acciones ?? []).join(' · '),
+    small: 'Plan por etapas; no habilita inversión por sí solo.'
+  })));
+}
+
 function renderEscalas(galpones) {
   const container = $('comparativo-escalas');
   if (!container) return;
@@ -486,7 +532,7 @@ function renderAlerts(alertas) {
   if (!container) return;
   container.innerHTML = '';
 
-  const items = (alertas?.alertas ?? []).filter((alert) => ['A12', 'A13', 'A15', 'A20', 'A21', 'A22', 'A23', 'A24'].includes(alert.id));
+  const items = (alertas?.alertas ?? []).filter((alert) => ['A12', 'A13', 'A15', 'A20', 'A21', 'A22', 'A23', 'A24', 'A25', 'A26', 'A27'].includes(alert.id));
   items.forEach((alert) => {
     const card = document.createElement('article');
     card.className = `alert-card severity-${normalizeStatus(alert.severidad)}`;
@@ -677,6 +723,7 @@ async function init() {
   renderIngresosP45P46(data);
   renderFlujoP45P46(data);
   renderEstrategiaPollonas(data);
+  renderDecisionP47(data);
   renderEscalas(data.galpones);
   renderFinancialIndicators(data);
   renderAlerts(data.alertas);

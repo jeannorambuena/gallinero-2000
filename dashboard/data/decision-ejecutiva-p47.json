@@ -1,0 +1,53 @@
+{
+  "proyecto": "Gallinero Nacho",
+  "fase": "P47",
+  "estado_general": "AMARILLO",
+  "decision": "Avanzar solo en preparación y primera etapa controlada; no aprobar compra completa, construcción ni inversión mayor.",
+  "recomendacion_ejecutiva": "Conviene seguir avanzando solo como P0/P47 amarillo: levantar cotizaciones, validar permisos, cerrar compradores y preparar una primera etapa. No conviene comprar las 352 pollonas de una vez salvo que exista financiamiento cerrado para CAPEX base + capital de trabajo y venta de 100 bandejas/semana confirmada al contado. La alternativa preliminar preferida es +150 pollonas; +100 es la opción más conservadora si se quiere reducir riesgo; +200 requiere venta y caja más confirmadas.",
+  "respuestas_clave": {
+    "conviene_avanzar": "Sí, pero solo por etapas y con control de riesgo; el negocio muestra margen positivo si se venden 100 bandejas/semana.",
+    "conviene_comprar_352_de_una_vez": "No como recomendación base; solo sería viable con financiamiento cerrado y venta de 100 bandejas/semana confirmada al contado.",
+    "etapa_inicial_mas_prudente": "+150 pollonas como recomendación base prudente; +100 si se prioriza máxima reducción de riesgo.",
+    "dinero_faltante_escenario_base": {
+      "capex_base_sin_ct_clp": 13343765,
+      "deficit_capex_base_vs_10m_clp": -3343765,
+      "requerimiento_base_con_1_mes_ct_clp": 15030515,
+      "deficit_base_con_1_mes_ct_vs_10m_clp": -5030515,
+      "requerimiento_base_con_2_meses_ct_clp": 16717265,
+      "deficit_base_con_2_meses_ct_vs_10m_clp": -6717265
+    },
+    "antes_de_invertir": [
+      "existen cotizaciones formales finales",
+      "financiamiento total está cubierto",
+      "capital de trabajo mínimo está cubierto",
+      "venta de al menos punto de equilibrio con mano de obra está confirmada",
+      "validación legal/sanitaria/tributaria está cerrada",
+      "plan logístico invierno definido",
+      "calendario de ejecución real aprobado"
+    ],
+    "plan_6_meses": "Fase 0 cierre de decisión, Fase 1 preparación mínima, Fase 2 primera compra 100-150, Fase 3 medición 30-60 días, Fase 4 segunda expansión, Fase 5 escala completa condicionada."
+  },
+  "alternativa_recomendada": "mas_150_pollonas",
+  "alternativa_conservadora": "mas_100_pollonas",
+  "alternativa_no_recomendada_sin_financiamiento": "mas_352_pollonas",
+  "capital_trabajo": {
+    "minimo_1_mes_clp": 1686750,
+    "prudente_2_meses_clp": 3373500,
+    "criterio": "Usar OPEX con mano de obra como escenario prudente."
+  },
+  "condiciones_para_pasar_a_verde": [
+    "existen cotizaciones formales finales",
+    "financiamiento total está cubierto",
+    "capital de trabajo mínimo está cubierto",
+    "venta de al menos punto de equilibrio con mano de obra está confirmada",
+    "validación legal/sanitaria/tributaria está cerrada",
+    "plan logístico invierno definido",
+    "calendario de ejecución real aprobado"
+  ],
+  "decisiones_no_autorizadas": [
+    "compra de aves",
+    "construcción",
+    "inversión mayor",
+    "P1 definitivo"
+  ]
+}

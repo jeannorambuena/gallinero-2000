@@ -1,53 +1,19 @@
 {
   "proyecto": "Gallinero Nacho",
-  "fase": "P45-P46",
-  "estado": "recomendacion_preliminar/amarillo/P47",
-  "precio_pollona_clp": 12000,
-  "pollonas_faltantes": 352,
-  "estrategias": {
-    "comprar_352_de_una_vez": {
-      "pollonas": 352,
-      "capex_pollonas_clp": 4224000,
-      "semaforo": "amarillo/alto riesgo si falta financiamiento",
-      "ventajas": [
-        "llega más rápido a 500 aves",
-        "captura antes ingreso meta",
-        "simplifica planificación"
-      ],
-      "riesgos": [
-        "exige más capital inicial",
-        "aumenta presión comercial inmediata",
-        "requiere equipamiento completo desde el inicio",
-        "mayor riesgo sanitario/logístico/de venta",
-        "supera probablemente los $10 millones disponibles al agregar equipamiento y capital de trabajo"
-      ],
-      "lectura": "Puede ser viable solo si se asegura financiamiento suficiente para equipamiento, alimento inicial y contingencia, y si la venta de 100 bandejas está realmente confirmada al contado."
-    },
-    "100_primero": {
-      "pollonas": 100,
-      "capex_pollonas_clp": 1200000,
-      "semaforo": "menor riesgo financiero",
-      "lectura": "Permite validar mercado, operación y equipamiento proporcional con menor presión de caja; crecimiento más lento."
-    },
-    "150_primero": {
-      "pollonas": 150,
-      "capex_pollonas_clp": 1800000,
-      "semaforo": "riesgo intermedio",
-      "lectura": "Compromiso balanceado: más avance que 100, todavía bajo la compra total; exige plan de equipamiento por etapas."
-    },
-    "200_primero": {
-      "pollonas": 200,
-      "capex_pollonas_clp": 2400000,
-      "semaforo": "riesgo medio/alto",
-      "lectura": "Acelera crecimiento, pero aumenta OPEX, equipamiento y venta requerida; usar solo con compradores más confirmados."
-    }
+  "fase": "P47",
+  "estado": "AMARILLO",
+  "supuestos": {
+    "precios_p45_p46": "referenciales, no cotización formal",
+    "escenario_base_bandejas_semana": 100,
+    "precio_promedio_bandeja_clp": 6107,
+    "opex_base_prudente": "OPEX con mano de obra",
+    "capital_trabajo_minimo_1_mes_clp": 1686750,
+    "capital_trabajo_prudente_2_meses_clp": 3373500,
+    "horizonte_implementacion_meses": 6,
+    "produccion_proporcional": "500 aves = 100 bandejas/semana",
+    "nota_equipamiento": "El equipamiento proporcional es aproximado; no escala perfectamente lineal."
   },
-  "comparacion": {
-    "comprar_todas": "amarillo/alto riesgo si falta financiamiento; exige equipamiento completo, OPEX y capital de trabajo desde el inicio.",
-    "comprar_por_etapas": "menor riesgo financiero y comercial, crecimiento más lento, permite validar ventas y operación."
-  },
-  "recomendacion_preliminar": "Conviene seguir avanzando solo como P0/P47 amarillo: levantar cotizaciones, validar permisos, cerrar compradores y preparar una primera etapa. No conviene comprar las 352 pollonas de una vez salvo que exista financiamiento cerrado para CAPEX base + capital de trabajo y venta de 100 bandejas/semana confirmada al contado. La alternativa preliminar preferida es +150 pollonas; +100 es la opción más conservadora si se quiere reducir riesgo; +200 requiere venta y caja más confirmadas.",
-  "p47_alternativas_detalladas": [
+  "alternativas": [
     {
       "id": "mas_100_pollonas",
       "nombre": "Alternativa 1: crecimiento mínimo controlado",

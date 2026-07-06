@@ -1,6 +1,6 @@
 {
   "proyecto": "Gallinero Nacho",
-  "fase": "P0 — Diagnóstico real / P45-P46",
+  "fase": "P0 — Diagnóstico real / P47",
   "estado": "preliminar",
   "alertas": [
     {
@@ -210,6 +210,30 @@
       "severidad": "alta",
       "dimension": "decision",
       "descripcion": "Comprar todas puede ser viable solo si se asegura financiamiento suficiente para equipamiento, alimento inicial y contingencia, y si la venta de 100 bandejas está realmente confirmada al contado.",
+      "estado": "bloqueante"
+    },
+    {
+      "id": "A25",
+      "titulo": "P47 no aprueba inversión",
+      "severidad": "alta",
+      "dimension": "decision",
+      "descripcion": "P47 entrega recomendación ejecutiva y plan por etapas, pero mantiene estado AMARILLO y no autoriza compra, construcción ni inversión mayor.",
+      "estado": "bloqueante"
+    },
+    {
+      "id": "A26",
+      "titulo": "Escala completa inmediata requiere financiamiento adicional",
+      "severidad": "alta",
+      "dimension": "financiera",
+      "descripcion": "Escala completa base con 1 mes de capital de trabajo requiere $15.030.515; faltan $5.030.515 vs $10.000.000.",
+      "estado": "abierta"
+    },
+    {
+      "id": "A27",
+      "titulo": "Compra 352 pollonas es AMARILLO ALTO",
+      "severidad": "alta",
+      "dimension": "operacional",
+      "descripcion": "No ejecutar compra de 352 pollonas sin equipamiento, capital de trabajo, financiamiento cerrado y venta confirmada al contado.",
       "estado": "bloqueante"
     }
   ],

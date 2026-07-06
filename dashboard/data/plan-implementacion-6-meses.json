@@ -1,0 +1,78 @@
+{
+  "proyecto": "Gallinero Nacho",
+  "fase": "P47",
+  "estado": "AMARILLO",
+  "horizonte_meses": 6,
+  "objetivo": "Implementar crecimiento por etapas sin aprobar inversión mayor hasta cerrar evidencia crítica.",
+  "fases": [
+    {
+      "fase": "Fase 0",
+      "nombre": "cierre de decisión",
+      "periodo": "semana 1-2",
+      "acciones": [
+        "revisar dashboard con Nacho",
+        "confirmar monto disponible real",
+        "validar permisos/formalización",
+        "pedir cotizaciones formales",
+        "confirmar compradores por canal"
+      ]
+    },
+    {
+      "fase": "Fase 1",
+      "nombre": "preparación mínima",
+      "periodo": "mes 1",
+      "acciones": [
+        "cotizar equipamiento final",
+        "revisar infraestructura actual",
+        "revisar capacidad de bodega semanal",
+        "resolver agua/energía faltante",
+        "plan invierno/acceso"
+      ]
+    },
+    {
+      "fase": "Fase 2",
+      "nombre": "primera compra",
+      "periodo": "mes 2",
+      "acciones": [
+        "ejecutar alternativa 100-150 pollonas solo si están listos comederos/bebederos/nidos mínimos",
+        "registrar producción",
+        "registrar consumo",
+        "registrar ventas"
+      ]
+    },
+    {
+      "fase": "Fase 3",
+      "nombre": "medición 30-60 días",
+      "periodo": "mes 3-4",
+      "acciones": [
+        "medir ventas reales",
+        "medir mortalidad",
+        "medir consumo alimento",
+        "medir horas de trabajo",
+        "medir margen real",
+        "levantar problemas sanitarios/logísticos"
+      ]
+    },
+    {
+      "fase": "Fase 4",
+      "nombre": "segunda expansión",
+      "periodo": "mes 4-5",
+      "acciones": [
+        "si ventas y margen cumplen, subir a 200 o avanzar hacia 500",
+        "si no cumplen, mantener escala y corregir"
+      ]
+    },
+    {
+      "fase": "Fase 5",
+      "nombre": "escala completa",
+      "periodo": "mes 6",
+      "acciones": [
+        "llegar a 500 solo con flujo real validado",
+        "equipamiento completo",
+        "financiamiento cerrado",
+        "compradores estables",
+        "formalización validada"
+      ]
+    }
+  ]
+}

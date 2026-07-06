@@ -111,6 +111,21 @@ SPECS = {
     "dashboard/data/estrategia-compra-pollonas.json": {
         "required": ["proyecto", "fase", "estado", "precio_pollona_clp", "pollonas_faltantes", "estrategias", "comparacion", "recomendacion_preliminar"],
     },
+    "dashboard/data/decision-ejecutiva-p47.json": {
+        "required": ["proyecto", "fase", "estado_general", "decision", "recomendacion_ejecutiva", "respuestas_clave", "alternativa_recomendada", "capital_trabajo", "condiciones_para_pasar_a_verde"],
+        "non_empty_lists": ["decisiones_no_autorizadas"],
+    },
+    "dashboard/data/alternativas-crecimiento-p47.json": {
+        "required": ["proyecto", "fase", "estado", "supuestos", "alternativas"],
+    },
+    "dashboard/data/plan-implementacion-6-meses.json": {
+        "required": ["proyecto", "fase", "estado", "horizonte_meses", "objetivo"],
+        "non_empty_lists": ["fases"],
+    },
+    "dashboard/data/reglas-decision-semaforo-p47.json": {
+        "required": ["proyecto", "fase", "estado", "regla_general"],
+        "non_empty_lists": ["verde_solo_si", "amarillo_si", "rojo_si"],
+    },
     "dashboard/data/flujo-caja-preliminar.json": {
         "required": ["proyecto", "fase", "estado", "ingresos_actuales", "costos_actuales", "mano_obra_referencial", "margenes_actuales", "escenario_500", "escenario_648", "conclusion"],
         "non_empty_lists": ["datos_faltantes", "riesgos", "criterios_para_avanzar", "indicadores_bloqueados"],
