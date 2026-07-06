@@ -1,11 +1,12 @@
 categoria,item,proveedor,fecha,cantidad,unidad,precio_unitario_clp,total_clp,estado,observacion
 pollonas,pollonas faltantes para completar 500,,,352,aves,12000,4224000,precio vigente informado,valor histórico unitario 8500 solo antecedente
 galpon,COT-GN-0035 galpon 12 x 6 m,Nexus Consultores,2026-06-30,72,m2,77052,5547765,cotizado referencial,no autoriza construcción
-equipamiento,comederos,,,,,,,pendiente,cotizar
-equipamiento,bebederos,,,,,,,pendiente,cotizar
-equipamiento,nidos/ponederos,,,,,,,pendiente,cotizar
-agua,bomba/lineas,,,,,,,pendiente,dimensionar y cotizar
-energia,panel solar comprado,,,1,sistema,300000,300000,comprado; pendiente dimensionamiento,validar baterías/inversor/autonomía/capacidad
-bodega,ampliacion bodega alimento,,,,,,,pendiente,cotizar
-logistica,transporte materiales/pollonas faltantes,,,,,,,pendiente,incluye invierno
-formalizacion,ruta tributaria/sanitaria,,,,,,,pendiente,boleta/factura intención confirmada
+energia,panel solar paquete completo informado,,,1,paquete,300000,300000,comprado/informado,pendiente solo verificación operativa en terreno
+equipamiento_avicola,Comederos para 500 aves,,,pendiente,,,,pendiente_cotizacion,bloquea CAPEX total
+equipamiento_avicola,Bebederos para 500 aves,,,pendiente,,,,pendiente_cotizacion,bloquea CAPEX total
+equipamiento_avicola,Nidos/ponederos para 500 aves,,,pendiente,,,,pendiente_cotizacion,bloquea CAPEX total
+equipamiento_avicola,Bomba de agua,,,pendiente,,,,pendiente_cotizacion,bloquea CAPEX total
+equipamiento_avicola,Mallas interiores,,,pendiente,,,,pendiente_cotizacion,bloquea CAPEX total
+equipamiento_avicola,Ampliación o bodega interna de alimento,,,pendiente,,,,pendiente_cotizacion,bloquea CAPEX total
+equipamiento_avicola,Instalación o distribución interna de agua si aplica,,,pendiente,,,,pendiente_cotizacion,bloquea CAPEX total
+equipamiento_avicola,Instalación o distribución interna eléctrica si aplica,,,pendiente,,,,pendiente_cotizacion,bloquea CAPEX total

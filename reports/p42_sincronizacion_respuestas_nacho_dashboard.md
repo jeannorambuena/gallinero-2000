@@ -39,7 +39,7 @@ El estado del proyecto se mantiene **amarillo**: no se autoriza compra de aves, 
 - Almacenes: 30.
 - Facebook: 20.
 
-Marcada como **plan comercial por validar**, no venta comprometida.
+Marcada como **plan comercial por validar**, escenario base; validar operación, precios netos y cobranza.
 
 ### OPEX parcial actualizado
 
@@ -137,7 +137,7 @@ Patrones antiguos críticos de CAPEX pollonas y precio histórico usado como vig
 - Costo mallas interiores.
 - Costo ampliación bodega.
 - Alimento inicial para escala.
-- Dimensionamiento real panel solar.
+- Verificación operativa del panel solar comprado.
 - Agua/bomba.
 - Formalización tributaria/sanitaria.
 - Capital de trabajo.

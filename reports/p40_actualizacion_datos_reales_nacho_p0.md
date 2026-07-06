@@ -26,17 +26,17 @@
 - Kilos de alimento mensual: 22 x 25 = 550 kg/mes.
 - Costo mensual alimento: 22 x $12.950 = $284.900.
 - Alimento por gallina al día: 550 kg / 30 días / 148 gallinas = 0,124 kg/día = 124 g/gallina/día.
-- OPEX parcial confirmado: $284.900 + $6.000 + $20.000 = $310.900/mes.
+- OPEX parcial actualizado a P43: $343.640/mes, incorporando alimento, agua, vitaminas, envases, viruta, bencina/reparto y medicamentos adicionales informados.
 - Superficie gallinero actual: 9 x 3 = 27 m².
 - Superficie terreno disponible: 7 x 19 = 133 m².
 
 ## Datos pendientes
 
-- Distribución semanal de las 28 bandejas por categoría: segunda, primera y extra.
-- Precio promedio real por bandeja.
-- Ingresos semanales y mensuales reales.
-- OPEX total: transporte, envases/bandejas, cama/viruta, medicamentos, energía estable, mano de obra, mantenciones, sanitización e imprevistos.
-- Panel solar / sistema eléctrico estable.
+- Distribución semanal confirmada a P42/P43: segunda 6, primera 13, extra 9.
+- Precio promedio actual calculado: $6.107/bandeja aprox.
+- Ingresos actuales calculados: $171.000/semana y $741.000/mes aprox.
+- OPEX total: mano de obra operacional definitiva, mantenciones, sanitización, imprevistos y costos de escala.
+- Panel solar comprado por $300.000 como paquete completo informado; queda verificación operativa en terreno.
 - Equipamiento interior avícola.
 - Capital de trabajo.
 - Formalización comercial/legal/contable.
@@ -45,8 +45,8 @@
 ## Impacto en dashboard
 
 - La operación actual queda como parcialmente confirmada / alto avance.
-- Comercial queda parcial: precios por categoría confirmados, pero distribución pendiente.
-- Finanzas queda parcial: OPEX parcial confirmado de $310.900/mes, ingresos pendientes.
+- Comercial queda como escenario base P43: meta 100 bandejas/semana; faltan precios netos, cobranza y estabilidad por canal.
+- Finanzas queda parcial: OPEX parcial actualizado de $343.640/mes e ingresos actuales calculados; faltan OPEX total, CAPEX total y flujo.
 - Las alertas visibles incorporan distribución comercial pendiente, OPEX parcial, energía inestable y bloqueo de ROI/VAN/TIR/Payback.
 - Las rutas de datos siguen usando `DATA_BASE = new URL('../data/', window.location.href)`.
 

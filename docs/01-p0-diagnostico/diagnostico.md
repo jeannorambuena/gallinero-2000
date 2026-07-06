@@ -32,11 +32,11 @@ La dimensión productiva se lee preliminarmente como favorable, aunque debe mant
 
 La venta actual es de **28 bandejas/semana**. Para el **escenario base vigente de 500 aves totales**, se estima una venta requerida de **104.1 bandejas/semana**.
 
-Esto genera una brecha comercial relevante:
+Esto genera una validación operativa comercial relevante:
 
 - Venta actual: 28 bandejas/semana
 - Venta estimada para 500 aves: 104.1 bandejas/semana
-- Brecha estimada para 500 aves: 76.1 bandejas/semana
+- Brecha estimada para 500 aves: 4.1 bandejas/semana
 - Crecimiento requerido estimado: 3.72 veces
 
 El escenario de 648 aves queda solo como referencia histórica/anterior del P0 original, no como meta vigente.
@@ -120,7 +120,7 @@ Estos factores deben corregirse o mitigarse antes de escalar, porque afectan bie
 
 ## Conclusión P0 preliminar
 
-El proyecto tiene una base productiva atractiva, pero el salto vigente a **500 aves totales** todavía no está validado. La principal tensión está en la brecha comercial, el margen financiero ajustado al valorizar mano de obra, el CAPEX total pendiente y los riesgos logísticos, constructivos, sanitarios, de agua y energía. El escenario de **648 aves** queda como antecedente histórico/referencial, no como objetivo central vigente.
+El proyecto tiene una base productiva atractiva, pero el salto vigente a **500 aves totales** todavía no está validado. La principal tensión está en la validación operativa comercial, el margen financiero ajustado al valorizar mano de obra, el CAPEX total pendiente y los riesgos logísticos, constructivos, sanitarios, de agua y energía. El escenario de **648 aves** queda como antecedente histórico/referencial, no como objetivo central vigente.
 
 **Estado:** amarillo, P0 abierto.
 

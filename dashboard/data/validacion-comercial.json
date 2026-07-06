@@ -1,21 +1,20 @@
 {
   "proyecto": "Gallinero Nacho",
   "fase": "P0 — Diagnóstico real",
-  "estado": "parcial; venta actual y mix confirmados, meta 100 como plan por validar",
+  "estado": "parcial; meta 100 bandejas/semana usada como escenario comercial base P43",
   "escenario_base": "500 aves totales",
   "venta_actual_bandejas_semana": 28,
   "venta_requerida_500_bandejas_semana": 104.1,
   "venta_requerida_648_bandejas_semana": 135,
-  "brecha_bandejas_semana": 76.1,
-  "brecha_bandejas_semana_648_historica": 107,
   "crecimiento_requerido_veces": 3.72,
   "escenario_500": {
     "aves": 500,
     "postura_referencia": 89.2,
     "huevos_dia_estimados": 446,
     "bandejas_semana_estimadas": 104.1,
-    "brecha_bandejas_semana": 76.1,
-    "estado": "pendiente de validación"
+    "estado": "base comercial P43 para análisis preliminar",
+    "meta_comercial_base_bandejas_semana": 100,
+    "diferencia_tecnica_bandejas_semana": 4.1
   },
   "escenario_648": {
     "aves": 648,
@@ -37,30 +36,24 @@
     "reparto semanal ampliado"
   ],
   "riesgos": [
-    "meta 100 bandejas/semana es plan comercial por validar; no hay 100 bandejas comprometidas",
-    "faltan compromisos reales por cliente/canal para trabajo, vecinos, almacenes y Facebook",
-    "precio actual promedio calculado no reemplaza validación de precio real por canal/cliente para meta 100",
-    "canales formales o grandes compradores no validados",
+    "faltan precios netos, forma de pago y estabilidad por canal para las 100 bandejas/semana",
+    "ventas objetivo deben validarse operativamente por canal aunque son suficientes como hipótesis base para análisis financiero preliminar",
+    "canales formales o grandes compradores deben confirmar requisitos de boleta/factura",
     "formalización: intención de boleta/factura confirmada si escala, pero ruta y costos siguen pendientes"
   ],
   "plan_validacion": [
-    "respaldar clientes y frecuencia para meta 100 bandejas/semana",
-    "validar 20 bandejas/semana en trabajo",
-    "validar 30 bandejas/semana en vecinos",
-    "validar 30 bandejas/semana en almacenes",
-    "validar 20 bandejas/semana vía Facebook",
-    "confirmar precios reales por canal/cliente y requisitos de boleta/factura"
+    "validar precio neto por canal para trabajo, vecinos, almacenes y Facebook",
+    "validar forma de pago y cobranza por canal",
+    "validar estabilidad semanal de las 100 bandejas objetivo",
+    "confirmar requisitos de boleta/factura por canal"
   ],
   "criterios_para_avanzar": [
-    "distribución por categoría confirmada",
-    "clientes suficientes para 100 bandejas/semana respaldados",
-    "precios por canal y categoría validados",
-    "frecuencia de compra definida",
-    "forma de pago clara y mantenida sin fiado o con política de cobranza",
-    "boleta/factura/formalización definida si escala",
-    "brecha hacia 100/104.1 bandejas reducida con evidencia"
+    "precios netos por canal validados para 100 bandejas/semana",
+    "forma de pago y cobranza definida por canal",
+    "estabilidad semanal de demanda validada operativamente",
+    "boleta/factura/formalización valorizada si escala"
   ],
-  "conclusion": "P42 confirma el mix actual 6/13/9 y permite calcular ingreso semanal actual de $171.000 e ingreso mensual aproximado de $741.000. La meta de 100 bandejas/semana queda como plan comercial por validar, no como venta comprometida.",
+  "conclusion": "P43 usa 100 bandejas/semana como escenario comercial base. Frente a producción estimada de 104,1 bandejas/semana, queda una diferencia técnica de 4,1 bandejas/semana para merma, autoconsumo, stock o venta adicional. El bloqueo comercial crítico pasa a precios netos, cobranza y estabilidad por canal; inversión sigue bloqueada por CAPEX/OPEX/flujo incompletos.",
   "urgencia_comercial": {
     "objetivo_tentativo": "enero 2027",
     "fecha_contexto": "junio 2026",
@@ -92,10 +85,9 @@
     "ingreso_mensual_estimado_clp": 741000
   },
   "meta_comercial_bandejas_semana": 100,
-  "meta_comercial_estado": "aspiracional / requiere validación comercial",
-  "bandejas_comprometidas_semana": null,
+  "meta_comercial_estado": "escenario base / requiere validación operativa por canal",
   "pierde_ventas_por_falta_huevos": false,
-  "advertencia_meta_100": "100 bandejas/semana no es venta segura, demanda comprometida ni contrato",
+  "advertencia_meta_100": "100 bandejas/semana se usa como escenario comercial base; faltan precios netos, forma de pago, cobranza y estabilidad por canal.",
   "forma_pago_actual": {
     "contado": true,
     "transferencia": true,
@@ -128,12 +120,19 @@
     "vecinos": 30,
     "almacenes": 30,
     "facebook": 20,
-    "estado": "no comprometido"
+    "estado": "escenario_base_validacion_operativa"
   },
   "formalizacion_si_escala": {
     "boleta": true,
     "factura": true,
     "clientes_podrian_pedir_documento": true,
     "pendiente": "ruta y costos legales, tributarios y sanitarios específicos"
-  }
+  },
+  "meta_comercial_base_bandejas_semana": 100,
+  "diferencia_tecnica_produccion_meta_bandejas_semana": 4.1,
+  "criterio_p43": "Ventas objetivo por validar operativamente por canal, pero suficientes como hipótesis base para análisis financiero preliminar.",
+  "bandejas_objetivo_base_semana": 100,
+  "diferencia_tecnica_bandejas_semana": 4.1,
+  "diferencia_tecnica_bandejas_semana_648_historica": 107,
+  "validacion_volumen_base": "cerrada_para_hipotesis_base"
 }

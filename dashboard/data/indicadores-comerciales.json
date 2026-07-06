@@ -1,7 +1,7 @@
 {
   "proyecto": "Gallinero Nacho",
   "fase": "P0 — Diagnóstico real",
-  "estado": "parcial; venta actual y mix 6/13/9 confirmados, meta 100 aspiracional por validar",
+  "estado": "parcial; venta actual y mix 6/13/9 confirmados; meta 100 usada como escenario comercial base P43",
   "indicadores": [
     {
       "indicador": "venta_actual_bandejas_semana",
@@ -85,13 +85,13 @@
       "observacion": "indicador principal vigente para escenario base 500 aves"
     },
     {
-      "indicador": "brecha_bandejas_semana_para_500",
-      "valor": 76.1,
+      "indicador": "diferencia_tecnica_bandejas_semana_para_500",
+      "valor": 4.1,
       "unidad": "bandejas/semana",
-      "formula": "104.1 - 28",
-      "fuente": "replanteo P0 base 500 aves",
-      "estado": "riesgo_comercial",
-      "observacion": "brecha principal vigente para escenario base 500 aves"
+      "formula": "104.1 - 100",
+      "fuente": "P43",
+      "estado": "cerrada_hipotesis_base",
+      "observacion": "diferencia técnica producción/meta; no es bloqueador comercial principal"
     },
     {
       "indicador": "bandejas_semana_proyectadas_648_aves",
@@ -157,13 +157,13 @@
       "observacion": "valor monetario redondeado"
     },
     {
-      "indicador": "brecha_bandejas_semana_para_648",
+      "indicador": "diferencia_tecnica_bandejas_semana_para_648",
       "valor": 107,
       "unidad": "bandejas/semana",
       "formula": "135 - 28",
       "fuente": "dato declarado por Nacho / cálculo P0",
       "estado": "historico/referencial",
-      "observacion": "brecha 648 aves histórica/referencial, no vigente"
+      "observacion": "diferencia histórica/referencial 648 aves, no vigente"
     },
     {
       "indicador": "venta_potencial_actual_con_adicional",
@@ -175,13 +175,13 @@
       "observacion": "considera capacidad adicional declarada"
     },
     {
-      "indicador": "brecha_restante_con_adicional",
+      "indicador": "diferencia_tecnica_restante_con_adicional",
       "valor": 68.1,
       "unidad": "bandejas/semana",
       "formula": "104.1 - 36",
       "fuente": "dato declarado por Nacho / cálculo P0",
       "estado": "riesgo_comercial",
-      "observacion": "brecha comercial preliminar con capacidad adicional para escenario base 500 aves"
+      "observacion": "diferencia técnica preliminar con capacidad adicional para escenario base 500 aves"
     },
     {
       "indicador": "crecimiento_requerido_veces",
@@ -205,19 +205,19 @@
       "indicador": "meta_comercial_bandejas_semana",
       "valor": 100,
       "unidad": "bandejas/semana",
-      "formula": "dato declarado como meta/aspiración comercial",
-      "fuente": "respuesta Jean/Nacho P41",
-      "estado": "aspiracional / requiere validación comercial",
-      "observacion": "meta comercial; no es venta segura, demanda comprometida ni contrato"
+      "formula": "20 trabajo + 30 vecinos + 30 almacenes + 20 Facebook",
+      "fuente": "aclaración Jean P43",
+      "estado": "escenario_base",
+      "observacion": "Ventas objetivo por validar operativamente por canal, pero suficientes como hipótesis base para análisis financiero preliminar."
     },
     {
-      "indicador": "bandejas_comprometidas_semana",
-      "valor": null,
+      "indicador": "bandejas_objetivo_base_semana",
+      "valor": 100,
       "unidad": "bandejas/semana",
-      "formula": "pendiente",
-      "fuente": "pendiente",
-      "estado": "no_confirmado",
-      "observacion": "no existen 100 bandejas comprometidas; falta respaldo de clientes"
+      "formula": "20 trabajo + 30 vecinos + 30 almacenes + 20 facebook",
+      "fuente": "P43 criterio Jean",
+      "estado": "escenario_base_validacion_operativa",
+      "observacion": "ventas objetivo por validar operativamente por canal; suficientes como hipótesis base para análisis financiero preliminar"
     },
     {
       "indicador": "pierde_ventas_por_falta_huevos",
@@ -388,7 +388,7 @@
       "formula": "plan comercial por validar",
       "fuente": "respuesta Nacho P42",
       "estado": "plan_por_validar",
-      "observacion": "no es venta comprometida"
+      "observacion": "escenario base; validar operación/precios/cobranza"
     },
     {
       "indicador": "meta_vecinos_bandejas_semana",
@@ -397,7 +397,7 @@
       "formula": "plan comercial por validar",
       "fuente": "respuesta Nacho P42",
       "estado": "plan_por_validar",
-      "observacion": "no es venta comprometida"
+      "observacion": "escenario base; validar operación/precios/cobranza"
     },
     {
       "indicador": "meta_almacenes_bandejas_semana",
@@ -406,7 +406,7 @@
       "formula": "plan comercial por validar",
       "fuente": "respuesta Nacho P42",
       "estado": "plan_por_validar",
-      "observacion": "no es venta comprometida"
+      "observacion": "escenario base; validar operación/precios/cobranza"
     },
     {
       "indicador": "meta_facebook_bandejas_semana",
@@ -415,7 +415,7 @@
       "formula": "plan comercial por validar",
       "fuente": "respuesta Nacho P42",
       "estado": "plan_por_validar",
-      "observacion": "no es venta comprometida"
+      "observacion": "escenario base; validar operación/precios/cobranza"
     },
     {
       "indicador": "huevos_quebrados_semana",
@@ -434,6 +434,33 @@
       "fuente": "respuesta Nacho P42",
       "estado": "confirmado_calculado",
       "observacion": "huevos chicos/no vendibles informados: 0"
+    },
+    {
+      "indicador": "diferencia_tecnica_produccion_meta_bandejas_semana",
+      "valor": 4.1,
+      "unidad": "bandejas/semana",
+      "formula": "104.1 - 100",
+      "fuente": "P43",
+      "estado": "margen_tecnico",
+      "observacion": "margen para merma, autoconsumo, stock o venta adicional"
+    },
+    {
+      "indicador": "diferencia_tecnica_bandejas_semana_para_500_p43",
+      "valor": 4.1,
+      "unidad": "bandejas/semana",
+      "formula": "104.1 - 100",
+      "fuente": "P43",
+      "estado": "cerrada_hipotesis_base",
+      "observacion": "diferencia técnica producción/meta; no es bloqueo comercial principal"
+    },
+    {
+      "indicador": "ventas_objetivo_validacion_operativa",
+      "valor": 100,
+      "unidad": "bandejas/semana",
+      "formula": "canales objetivo P43",
+      "fuente": "aclaración Jean P43",
+      "estado": "por_validar_operativamente",
+      "observacion": "faltan precios netos, forma de pago y estabilidad por canal"
     }
   ],
   "resumen": {
@@ -448,9 +475,12 @@
     "ingreso_mensual_estimado_clp": 741000,
     "precio_promedio_bandeja_aprox_clp": 6107,
     "meta_comercial_bandejas_semana": 100,
-    "meta_comercial_estado": "plan comercial por validar; no venta comprometida"
+    "meta_comercial_estado": "escenario comercial base para análisis financiero preliminar",
+    "produccion_estimada_500_bandejas_semana": 104.1,
+    "diferencia_tecnica_produccion_meta_bandejas_semana": 4.1,
+    "validacion_volumen_base": "cerrada para hipótesis base; faltan precios netos, cobranza y estabilidad por canal"
   },
-  "nota": "P41: venta actual 28 bandejas/semana; meta 100 bandejas/semana aspiracional por validar. No calcular precio promedio ni ingresos hasta levantar distribución por categoría.",
+  "nota": "P43: distribución confirmada segunda 6, primera 13, extra 9; meta 100 bandejas/semana usada como escenario comercial base; faltan precios netos, forma de pago y estabilidad por canal.",
   "canales_actuales": {
     "vecinos": true,
     "reparto_a_domicilio": true,
@@ -483,6 +513,6 @@
     "vecinos": 30,
     "almacenes": 30,
     "facebook": 20,
-    "estado": "plan comercial por validar; no venta comprometida"
+    "estado": "escenario comercial base; validar operación, precios netos, cobranza y estabilidad"
   }
 }

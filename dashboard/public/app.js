@@ -13,7 +13,8 @@ const DATA_FILES = {
   semaforo: new URL('semaforo-decision.json', DATA_BASE).href,
   criteriosP1: new URL('criterios-p1.json', DATA_BASE).href,
   galpones: new URL('estimacion-galpones.json', DATA_BASE).href,
-  alertas: new URL('alertas-p0.json', DATA_BASE).href
+  alertas: new URL('alertas-p0.json', DATA_BASE).href,
+  capexEquipamiento: new URL('capex-equipamiento-avicola.json', DATA_BASE).href
 };
 
 const FALLBACKS = {
@@ -32,7 +33,7 @@ const FALLBACKS = {
     huevosDia: 446,
     bandejasSemana: 104.1,
     ventaActual: 28,
-    brecha: 76.1,
+    brecha: 4.1,
     agua: '115.7–154.3 L/día',
     superficie: 72,
     densidadGalpon: 7,
@@ -47,13 +48,13 @@ const FALLBACKS = {
 };
 
 const RISK_COPY = {
-  comercial: 'Mercado actual directo/vecinal confirmado; meta 100 bandejas/semana es aspiracional y requiere validación.',
+  comercial: 'Meta 100 bandejas/semana usada como escenario comercial base; faltan precios netos, forma de pago y estabilidad por canal.',
   productiva: 'Base actual parcialmente confirmada y con alto avance: 148 gallinas, 132 huevos/día y postura aprox. 89,2%.',
   financiera: 'Ingreso actual calculado ($171.000/semana; $741.000/mes) y OPEX parcial conocido actualizado ($343.640/mes); OPEX total, CAPEX total y flujo siguen incompletos.',
   logistica: 'Acceso rural e invierno afectan materiales y operación; reparto actual 6 veces/mes con $10.000 de bencina.',
   sanitaria: 'Humedad, calor y manejo de agua aún requieren mejoras; $0 informado en medicamentos adicionales no elimina riesgo sanitario.',
   agua: 'Falta dimensionamiento definitivo de caudal, presión, bomba y respaldo.',
-  energia: 'Panel solar comprado por $300.000; falta validar dimensionamiento, instalación, autonomía y capacidad para bomba/luces/cámaras.',
+  energia: 'Panel solar comprado por $300.000, considerado paquete completo informado para bomba, luces y cámaras; pendiente solo verificación operativa en terreno.',
   legal: 'Intención de boleta/factura confirmada si escala; ruta, costos y trazabilidad siguen pendientes.',
   contable: 'Registro, impuestos y operación formal siguen pendientes.'
 };
@@ -84,15 +85,15 @@ const TRAFFIC_RULES = [
 
 const BLOCKERS = [
   'Amarillo no significa no viable; significa información crítica pendiente',
-  'Mercado no validado para 104.1 bandejas/semana',
-  'Faltan cerca de 76.1 bandejas/semana adicionales validadas',
-  'CAPEX referencial del galpón disponible, pero CAPEX total del proyecto sigue incompleto',
+  'Faltan precios netos, forma de pago y estabilidad por canal para las 100 bandejas/semana',
+  'Diferencia técnica producción/meta: 4,1 bandejas/semana para merma, autoconsumo, stock o venta adicional',
+  'CAPEX referencial del galpón disponible, pero CAPEX total del proyecto sigue incompleto por equipamiento avícola',
   'Flujo proyectado incompleto',
-  'Mix actual confirmado: segunda 6, primera 13, extra 9; falta validar meta 100 con compromisos reales',
-  'Meta 100 bandejas/semana es aspiracional, no venta comprometida',
+  'Mix actual confirmado: segunda 6, primera 13, extra 9',
+  'Meta 100 bandejas/semana usada como escenario comercial base',
   'OPEX parcial confirmado no equivale a OPEX total',
-  'Agua sin dimensionamiento definitivo',
-  'Panel solar comprado por $300.000; falta dimensionamiento/instalación/capacidad/autonomía',
+  'Agua/bomba e instalaciones internas pendientes de cotización o verificación',
+  'Panel solar comprado por $300.000 como paquete completo; verificar operación en terreno',
   'Logística rural/invierno pendiente',
   'Legal/contable pendiente',
   'P1 preliminar no habilitado'
@@ -100,9 +101,9 @@ const BLOCKERS = [
 
 const ALLOWED_ACTIONS = [
   'Levantar cotizaciones',
-  'Línea comercial: Nacho valida ventas, clientes y canales',
+  'Línea comercial: Nacho valida precios netos, forma de pago y estabilidad por canal',
   'Línea constructiva: Jean debe validar la cotización formal V8 y ajustar su aplicabilidad al escenario 500 aves, sin autorizar construcción.',
-  'Medir agua y energía',
+  'Cotizar equipamiento avícola y verificar agua/energía en terreno',
   'Preparar croquis',
   'Avanzar en CAPEX',
   'Mejorar dashboard y trazabilidad'
@@ -251,7 +252,7 @@ function renderOperacion({ productivos, comerciales, finanzas }) {
   renderMetrics('operacion-metricas', metrics);
 }
 
-function renderEscenario500({ validacionComercial, comerciales, flujoCaja, galpones }) {
+function renderEscenario500({ validacionComercial, comerciales, flujoCaja, galpones, capexEquipamiento }) {
   const escenario = validacionComercial?.escenario_500 ?? flujoCaja?.escenario_500 ?? {};
   const galpon500 = (galpones?.escenarios || []).find((item) => Number(item?.aves) === 500) ?? {};
   const base = FALLBACKS.escenario500;
@@ -262,16 +263,18 @@ function renderEscenario500({ validacionComercial, comerciales, flujoCaja, galpo
     { label: 'Producción estimada', value: formatValue(escenario.huevos_dia_estimados ?? base.huevosDia, 'huevos/día') },
     { label: 'Bandejas estimadas', value: formatValue(escenario.bandejas_semana_estimadas ?? findIndicator(comerciales, 'bandejas_semana_estimadas_500_aves') ?? base.bandejasSemana, 'bandejas/semana') },
     { label: 'Venta actual', value: formatValue(validacionComercial?.venta_actual_bandejas_semana ?? findIndicator(comerciales, 'venta_actual_bandejas_semana') ?? base.ventaActual, 'bandejas/semana') },
-    { label: 'Meta comercial', value: formatValue(validacionComercial?.meta_comercial_bandejas_semana ?? findIndicator(comerciales, 'meta_comercial_bandejas_semana') ?? 100, 'bandejas/semana'), detail: 'aspiracional · requiere validación', tone: 'pending' },
-    { label: 'Venta comprometida', value: 'Pendiente', detail: '100 no es contrato ni demanda segura', tone: 'risk' },
+    { label: 'Meta comercial base', value: formatValue(validacionComercial?.meta_comercial_base_bandejas_semana ?? findIndicator(comerciales, 'meta_comercial_bandejas_semana') ?? 100, 'bandejas/semana'), detail: 'escenario base de análisis P43', tone: 'accent' },
+    { label: 'Validación por canal', value: 'Pendiente', detail: 'precios netos · cobranza · estabilidad', tone: 'pending' },
     { label: 'Pierde ventas por falta de huevos', value: 'No', detail: 'debe desarrollar mercado activamente' },
     { label: 'Canales actuales', value: 'Vecinos · reparto · familiares', detail: 'sin almacenes, feria ni restaurantes' },
     { label: 'Pago actual', value: 'Contado / transferencia', detail: 'semanal · sin fiado' },
     { label: 'Formalización', value: 'Boleta/factura si escala', detail: 'ruta y costos pendientes', tone: 'pending' },
-    { label: 'Brecha comercial', value: formatValue(escenario.brecha_bandejas_semana ?? findIndicator(comerciales, 'brecha_bandejas_semana_para_500') ?? base.brecha, 'bandejas/semana'), tone: 'risk' },
+    { label: 'Diferencia técnica', value: formatValue(escenario.diferencia_tecnica_bandejas_semana ?? escenario.brecha_bandejas_semana ?? findIndicator(comerciales, 'diferencia_tecnica_produccion_meta_bandejas_semana') ?? base.brecha, 'bandejas/semana'), detail: 'merma · autoconsumo · stock · venta adicional', tone: 'pending' },
     { label: 'Agua estimada', value: base.agua },
     { label: 'Galpón 500 base cotizado', value: formatCurrency(galpon500.costo_total ?? base.costoGalponEscenario), detail: `${galpon500.superficie_util_m2 ?? referenciaV8.superficie_m2 ?? base.superficie} m² · ${formatCurrency(galpon500.costo_m2 ?? referenciaV8.costo_m2_aprox_clp ?? base.costoM2Galpon)}/m²`, tone: 'pending' },
-    { label: 'Densidad galpón 500', value: `${galpon500.densidad_aprox_aves_m2 ?? base.densidadGalpon} gallinas/m² aprox.`, detail: '500 gallinas / 72 m²', tone: 'pending' }
+    { label: 'Densidad galpón 500', value: `${galpon500.densidad_aprox_aves_m2 ?? base.densidadGalpon} gallinas/m² aprox.`, detail: '500 gallinas / 72 m²', tone: 'pending' },
+    { label: 'CAPEX equipamiento avícola', value: 'Pendiente', detail: `${capexEquipamiento?.items?.length ?? 8} ítems por cotizar`, tone: 'risk' },
+    { label: 'Panel solar', value: formatCurrency(300000), detail: 'paquete completo informado · verificar operación', tone: 'pending' }
   ];
 
   renderMetrics('escenario-500-metricas', metrics);

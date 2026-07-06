@@ -3,7 +3,7 @@
   "fase": "P0 — Diagnóstico real",
   "estado": "amarillo",
   "semaforo_general": "amarillo",
-  "avance_p0_estimado": 88,
+  "avance_p0_estimado": 90,
   "p1_preliminar_habilitado": false,
   "p1_definitivo_habilitado": false,
   "escenario_base_actual": 500,
@@ -12,12 +12,12 @@
       "estado": "parcial_alto"
     },
     "comercial": {
-      "estado": "parcial",
-      "nota": "mercado actual directo confirmado; meta 100 aspiracional sin venta comprometida"
+      "estado": "base_analisis",
+      "nota": "meta 100 bandejas/semana usada como escenario comercial base; faltan precios netos, forma de pago y estabilidad por canal"
     },
     "financiera": {
       "estado": "parcial",
-      "nota": "ingresos actuales y OPEX parcial calculados; OPEX total y CAPEX total pendientes"
+      "nota": "ingresos actuales, OPEX parcial y panel solar paquete completo informados; faltan CAPEX equipamiento avícola, OPEX total, capital de trabajo y flujo completo"
     },
     "constructiva": {
       "estado": "amarillo/parcial"
@@ -29,7 +29,8 @@
       "estado": "pendiente/amarillo"
     },
     "energia": {
-      "estado": "parcial/amarillo"
+      "estado": "parcial/amarillo",
+      "nota": "Panel solar comprado por $300.000, considerado como paquete completo informado por Nacho para alimentar bomba, luces y cámaras. Pendiente solo verificación operativa en terreno."
     },
     "sanitaria": {
       "estado": "amarillo"
@@ -52,17 +53,15 @@
     "decision_final_disponible": false
   },
   "condiciones_para_avanzar": [
-    "validar meta comercial de 100 bandejas/semana con clientes/respaldo; no tratarla como venta comprometida",
-    "confirmar precio real por canal/cliente y compromisos reales",
-    "completar OPEX total y CAPEX total 500",
-    "cotizar equipamiento interior, bomba, mallas y ampliación bodega",
-    "modelar flujo estacional: octubre-abril bueno y mayo-septiembre bajo",
-    "dimensionar/instalar panel solar comprado y sistema de agua/bomba",
-    "resolver logística, formalización comercial, legal/contable y sanitaria",
-    "validar técnicamente módulo 500",
-    "alcanzar condiciones verdes antes de inversión mayor"
+    "cotizar CAPEX equipamiento avícola",
+    "completar OPEX total",
+    "definir capital de trabajo inicial",
+    "validar precios netos, forma de pago y estabilidad por canal",
+    "valorizar formalización tributaria/sanitaria",
+    "cerrar logística de invierno",
+    "modelar flujo financiero completo"
   ],
-  "conclusion": "Estado amarillo: P42 corrige datos reales, pero la meta 100 sigue por validar y faltan OPEX total, CAPEX total, energía/agua dimensionada, equipamiento, formalización y flujo estacional. Decisión final no disponible.",
+  "conclusion": "Estado amarillo: P43 usa 100 bandejas/semana como escenario comercial base y considera panel solar comprado como paquete completo. No se habilita inversión porque faltan CAPEX equipamiento avícola, OPEX total, capital de trabajo, formalización, logística y flujo financiero.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",

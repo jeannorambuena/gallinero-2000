@@ -1,70 +1,58 @@
 # Datos faltantes P0 — Proyecto Gallinero Nacho
 
-Listado actualizado P42 de información pendiente para cerrar P0 y preparar, si corresponde, una etapa P1 preliminar.
+Listado actualizado P43 de información pendiente para cerrar análisis financiero y evaluar un eventual P1 preliminar.
 
-## Datos ya respondidos por Nacho en P42
+## Datos ya incorporados
 
 - Mix actual de ventas: **6 segunda, 13 primera, 9 extra**.
-- Envases: **$105 por bandeja**.
-- Viruta: **$10.000/mes**.
-- Reparto/bencina: **6 repartos al mes**, **$10.000/mes**, generalmente retiran.
-- Medicamentos y limpieza adicional fuera de vitaminas: **$0 informado**.
-- Panel solar: comprado por **$300.000**.
+- Venta actual: **28 bandejas/semana**.
+- Ingreso actual: **$171.000/semana** y **$741.000/mes aprox.**
+- Meta comercial base de análisis: **100 bandejas/semana**.
+- Producción estimada 500 aves: **104,1 bandejas/semana**.
+- Diferencia técnica producción/meta: **4,1 bandejas/semana** para merma, autoconsumo, stock o venta adicional.
+- OPEX parcial actualizado: **$343.640/mes**.
+- Panel solar comprado por **$300.000**, considerado paquete completo informado para bomba, luces y cámaras; falta solo verificación operativa en terreno.
 - Formalización si escala a 500: daría **boleta** y **factura**.
-- Terreno inmediato: **7 x 19 m = 133 m²**, usable, sin pendiente, no se inunda, entra vehículo con materiales, acceso invierno regular, orientación norte-sur.
 
-## Comerciales pendientes
+## CAPEX equipamiento avícola pendiente de cotización
 
-- Precio real confirmado por canal/cliente.
-- Compromisos reales de compra.
-- Validar meta comercial de 100 bandejas/semana:
-  - trabajo: 20;
-  - vecinos: 30;
-  - almacenes: 30;
-  - Facebook: 20.
-- Requisitos de boleta/factura por canal.
-- Frecuencia y forma de pago para clientes nuevos.
+Archivo estructurado: `dashboard/data/capex-equipamiento-avicola.json`.
+
+Pendiente cotizar:
+
+- Comederos para 500 aves.
+- Bebederos para 500 aves.
+- Nidos/ponederos para 500 aves.
+- Bomba de agua.
+- Mallas interiores.
+- Ampliación o bodega interna de alimento.
+- Instalación o distribución interna de agua si aplica.
+- Instalación o distribución interna eléctrica si aplica.
 
 ## Financieros pendientes
 
 - CAPEX total del proyecto ampliado.
 - OPEX total de escala 500.
-- Flujo de caja estacional.
-- Capital de trabajo.
-- Sensibilidad por precio, mortalidad, postura y alimento.
+- Capital de trabajo inicial.
+- Flujo financiero completo y estacional.
+- Sensibilidad por precio, postura, mortalidad, alimento y estacionalidad.
 - EBITDA, Payback, ROI, VAN y TIR siguen bloqueados.
 
-## Equipamiento pendiente para 500 gallinas
+## Comerciales pendientes
 
-Tiene:
+La validación de volumen base se considera cerrada como hipótesis usando **100 bandejas/semana**. Lo pendiente ya no es cerrar volumen base, sino validar operación comercial:
 
-- Estanque de agua.
-- Luz/panel solar comprado.
-- Bodega de alimento, pero requiere ampliación.
+- Precio neto por canal.
+- Forma de pago y cobranza por canal.
+- Estabilidad semanal de demanda.
+- Requisitos de boleta/factura por canal.
 
-Falta:
+Canales objetivo:
 
-- Comederos.
-- Bebederos.
-- Nidos/ponederos.
-- Bomba de agua.
-- Mallas interiores.
-- Ampliación de bodega de alimento.
-
-## Agua y energía pendientes
-
-- Dimensionamiento real de agua y bomba.
-- Capacidad y autonomía del panel solar comprado.
-- Baterías/inversor si aplica.
-- Validar capacidad para bomba, luces y cámaras.
-
-## Logística pendiente
-
-- Logística de invierno.
-- Plan de descarga y acopio.
-- Transporte de materiales.
-- Transporte de pollonas faltantes.
-- Costos logísticos adicionales.
+- Trabajo: 20 bandejas/semana.
+- Vecinos: 30 bandejas/semana.
+- Almacenes: 30 bandejas/semana.
+- Facebook: 20 bandejas/semana.
 
 ## Legales/contables pendientes
 
@@ -73,9 +61,13 @@ Falta:
 - Permisos o exigencias aplicables.
 - Trazabilidad y registro mínimo.
 
-## Decisión de escalamiento
+## Logística pendiente
 
-- Mantener 500 gallinas totales como escenario base vigente.
-- No usar compra masiva como supuesto principal.
-- Definir condición mínima para habilitar P1 preliminar.
-- Mantener bloqueadas compra, construcción e inversión mayor mientras falten datos críticos.
+- Logística de invierno.
+- Plan de descarga y acopio.
+- Transporte de materiales y pollonas faltantes.
+- Costos logísticos adicionales.
+
+## Decisión
+
+El estado sigue **amarillo**. No se autoriza compra de aves, construcción ni inversión mayor hasta cerrar CAPEX, OPEX, capital de trabajo, formalización, logística y flujo financiero.

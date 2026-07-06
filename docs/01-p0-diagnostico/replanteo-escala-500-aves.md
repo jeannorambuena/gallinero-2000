@@ -34,7 +34,7 @@ Con postura actual referencial de 89,2%:
 - 500 aves: **446 huevos/día estimados**.
 - 500 aves: **104,1 bandejas/semana estimadas**.
 - Venta actual: **28 bandejas/semana**.
-- Brecha estimada para 500 aves: **76,1 bandejas/semana**.
+- Diferencia técnica producción/meta: **4,1 bandejas/semana**.
 
 P42 confirma el mix actual:
 
@@ -44,7 +44,7 @@ P42 confirma el mix actual:
 - Ingreso actual: **$171.000/semana**.
 - Ingreso mensual estimado: **$741.000**.
 
-La meta de 100 bandejas/semana sigue siendo plan comercial por validar, no venta comprometida.
+Ventas objetivo por validar operativamente por canal, pero suficientes como hipótesis base para análisis financiero preliminar.
 
 ## Impacto en agua, energía y terreno
 

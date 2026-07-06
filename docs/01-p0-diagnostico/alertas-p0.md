@@ -4,8 +4,8 @@ Estas alertas resumen los riesgos críticos detectados durante el diagnóstico P
 
 ## Alertas críticas
 
-1. **Brecha comercial alta para 500 aves.** La venta actual es de 28 bandejas/semana; el objetivo estimado para 500 aves es 104,1 bandejas/semana, con brecha estimada de 76,1 bandejas/semana.
-2. **Meta 100 bandejas es plan comercial por validar.** Trabajo 20, vecinos 30, almacenes 30 y Facebook 20 no son venta comprometida.
+1. **Meta comercial base 100 bandejas.** La producción estimada 500 aves es 104,1 bandejas/semana y deja diferencia técnica de 4,1 bandejas/semana.
+2. **Meta 100 bandejas como escenario base.** Trabajo 20, vecinos 30, almacenes 30 y Facebook 20 se usan como hipótesis base; falta validar precios netos, forma de pago y estabilidad por canal.
 3. **Indicadores financieros definitivos bloqueados.** Hay ingreso actual calculado, pero faltan OPEX total, CAPEX total y flujo estacional para EBITDA, ROI, VAN, TIR y Payback.
 4. **CAPEX total pendiente.** Subtotal conocido corregido: galpón $5.547.765 + pollonas faltantes $4.224.000 = $9.771.765. No es CAPEX total cerrado.
 5. **Equipamiento interior faltante.** Faltan comederos, bebederos, nidos/ponederos, bomba, mallas interiores y ampliación de bodega.

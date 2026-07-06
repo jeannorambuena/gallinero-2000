@@ -1,23 +1,13 @@
 indicador,valor,unidad,formula,fuente,estado,observacion
 ingreso_semanal_actual,171000,CLP/semana,6*5000 + 13*6000 + 9*7000,precios repo + respuesta Nacho P42,confirmado_calculado,mix 6/13/9
 ingreso_mensual_estimado,741000,CLP/mes,171000 * 52 / 12,precios repo + respuesta Nacho P42,estimado,ingreso mensual actual
-alimento_mensual,284900,CLP/mes,dato declarado,P0,declarado,costo conocido mensual
-agua_mensual,6000,CLP/mes,dato declarado,P0,declarado,costo conocido mensual
-vitaminas_mensual,20000,CLP/mes,dato declarado,P0,declarado,costo conocido mensual
-envases_mensual,12740,CLP/mes,28 * 105 * 52 / 12,respuesta Nacho P42,estimado,costo actual aprox.; meta 100: 45500
-combustible_mensual,10000,CLP/mes,dato declarado,respuesta Nacho P42,declarado,6 repartos/mes
-cama_viruta_mensual,10000,CLP/mes,dato declarado,respuesta Nacho P42,declarado,usa viruta
-medicamentos_adicionales_mensual,0,CLP/mes,dato declarado,respuesta Nacho P42,informado,no elimina riesgo sanitario
-costos_conocidos_mensuales,343640,CLP/mes,284900 + 6000 + 20000 + 12740 + 10000 + 10000 + 0,respuesta Nacho P42 / cálculo P0,parcial,OPEX parcial conocido actualizado; no total
-margen_preliminar_sin_mano_obra,397360,CLP/mes,741000 - 343640,cálculo P42,parcial,no definitivo
-mano_obra_valorizada_mensual,182000,CLP/mes,45.5 * 4000,referencia P0,referencia,no cierra OPEX total
-margen_preliminar_con_mano_obra,215360,CLP/mes,397360 - 182000,cálculo P42,parcial,no definitivo
+costos_conocidos_mensuales,343640,CLP/mes,284900 + 6000 + 20000 + 12740 + 10000 + 10000 + 0,respuesta Nacho P42 / cálculo P0,parcial,OPEX parcial actualizado; no total
+panel_solar_comprado,300000,CLP,dato informado P43,aclaración Jean/Nacho P43,confirmado_paquete_completo,pendiente solo verificación operativa en terreno
 pollonas_faltantes,352,aves,500 - 148,respuesta Nacho P42,confirmado_calculado,objetivo 500 gallinas totales
-precio_vigente_pollona,12000,CLP/pollona,dato declarado,respuesta Nacho P42,confirmado,valor histórico unitario 8500 no vigente
 capex_pollonas_faltantes,4224000,CLP,352 * 12000,respuesta Nacho P42 / cálculo P0,conocido,CAPEX principal para completar 500
-incremento_capex_pollonas,1232000,CLP,352 * 3500,cálculo P42,conocido,diferencia precio actual vs histórico
+capex_equipamiento_avicola,pendiente,CLP,cotizaciones pendientes,P43,pendiente_cotizacion,bloquea CAPEX total
 subtotal_conocido_galpon_mas_pollonas,9771765,CLP,5547765 + 4224000,COT-GN-0035 + P42,parcial,no es CAPEX total cerrado
-ROI,pendiente,n/a,pendiente,P42,bloqueado,no calcular
-VAN,pendiente,n/a,pendiente,P42,bloqueado,no calcular
-TIR,pendiente,n/a,pendiente,P42,bloqueado,no calcular
-Payback,pendiente,n/a,pendiente,P42,bloqueado,no calcular
+ROI,pendiente,n/a,pendiente,P43,bloqueado,no calcular
+VAN,pendiente,n/a,pendiente,P43,bloqueado,no calcular
+TIR,pendiente,n/a,pendiente,P43,bloqueado,no calcular
+Payback,pendiente,n/a,pendiente,P43,bloqueado,no calcular

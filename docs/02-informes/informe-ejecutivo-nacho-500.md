@@ -1,53 +1,48 @@
 # Informe ejecutivo — Gallinero Nacho, escenario 500 aves
 
-Fecha de contexto: julio 2026
-Estado actual: **amarillo**
+Estado actual: **amarillo**  
 Escenario base vigente: **500 gallinas totales**
 
-## 1. Lectura ejecutiva
+## 1. Lectura ejecutiva P43
 
-El proyecto Gallinero Nacho sigue siendo evaluable, pero aún no cuenta con evidencia suficiente para autorizar decisiones irreversibles o de alto monto.
+P43 ajusta la lectura visual del dashboard después de revisión de Jean.
 
-P42 sincroniza el dashboard con respuestas reales de Nacho: mix de venta actual, envases, viruta, reparto, panel solar comprado, formalización esperada y corrección de pollonas faltantes.
+Cambios clave:
 
-Mientras el proyecto siga amarillo:
+- La meta de **100 bandejas/semana** se usa como escenario comercial base de análisis.
+- La producción estimada para 500 aves es **104,1 bandejas/semana**.
+- La diferencia técnica producción/meta es **4,1 bandejas/semana**, manejable como merma, autoconsumo, stock o venta adicional.
+- El panel solar comprado por **$300.000** se considera paquete completo informado por Nacho para alimentar bomba, luces y cámaras; queda solo verificación operativa en terreno.
+- Se estructura el **CAPEX equipamiento avícola pendiente de cotización**.
 
-- la compra de aves sigue **bloqueada**;
-- la construcción sigue **no autorizada**;
-- la inversión mayor sigue **no autorizada**;
-- solo corresponde levantar datos, cotizar, validar mercado y mejorar trazabilidad de decisión.
+El proyecto sigue amarillo porque CAPEX total, OPEX total, capital de trabajo, formalización, logística y flujo financiero siguen incompletos.
 
-## 2. Datos comerciales actuales
+## 2. Datos comerciales
 
-- Venta actual: **28 bandejas/semana**.
-- Mix actual: **6 segunda, 13 primera, 9 extra**.
-- Precios usados desde el repo: segunda **$5.000**, primera **$6.000**, extra **$7.000**.
+Venta actual:
+
+- 28 bandejas/semana.
+- Mix: 6 segunda, 13 primera, 9 extra.
 - Ingreso semanal actual: **$171.000**.
 - Ingreso mensual estimado: **$741.000**.
 - Precio promedio actual: **$6.107/bandeja aprox.**
 
-Meta comercial declarada como plan por validar:
+Escenario comercial base:
 
 - Trabajo: 20 bandejas/semana.
 - Vecinos: 30 bandejas/semana.
 - Almacenes: 30 bandejas/semana.
 - Facebook: 20 bandejas/semana.
+- Total: **100 bandejas/semana**.
 
-Esta meta no es venta comprometida.
+Pendiente comercial:
 
-## 3. Por qué el proyecto sigue amarillo
+- Precios netos por canal.
+- Forma de pago y cobranza.
+- Estabilidad semanal por canal.
+- Requisitos de boleta/factura.
 
-- El escenario 500 estima **104,1 bandejas/semana**; hoy vende **28**.
-- Falta validar cerca de **76,1 bandejas/semana** adicionales contra producción estimada.
-- La meta de 100 bandejas/semana aún no tiene compromisos reales.
-- OPEX total sigue incompleto.
-- CAPEX total sigue incompleto.
-- Falta dimensionar agua/bomba y panel solar comprado.
-- Falta cotizar equipamiento interior y ampliación de bodega.
-- Falta ruta tributaria/sanitaria de formalización.
-- Falta flujo estacional.
-
-## 4. OPEX parcial conocido actualizado
+## 3. OPEX parcial actualizado
 
 - Alimento: **$284.900/mes**.
 - Agua: **$6.000/mes**.
@@ -57,83 +52,55 @@ Esta meta no es venta comprometida.
 - Bencina/reparto: **$10.000/mes**.
 - Medicamentos y limpieza adicional fuera de vitaminas: **$0 informado**.
 
-OPEX parcial conocido actualizado: **$343.640/mes**.
+OPEX parcial actualizado: **$343.640/mes**.
 
-No es OPEX total. Que no informe gasto adicional en medicamentos no elimina el riesgo sanitario.
+No es OPEX total.
 
-## 5. Corrección de pollonas y CAPEX parcial
+## 4. CAPEX conocido y faltante
 
-- Gallinas actuales: **148**.
-- Objetivo operativo: **500 gallinas totales**.
-- Pollonas/gallinas faltantes: **352**.
-- Valor histórico unitario: **$8.500**.
-- Precio vigente unitario: **$12.000**.
-- CAPEX pollonas faltantes: **$4.224.000**.
-- Incremento por actualización de precio: **$1.232.000**.
+CAPEX conocido:
 
-Galpón COT-GN-0035:
-
-- 12 x 6 m = **72 m²**.
-- Materiales: **$4.347.765**.
-- Mano de obra: **$1.200.000**.
-- Total: **$5.547.765**.
-- Costo aproximado: **$77.052/m²**.
-
-Subtotal conocido corregido:
-
-- Galpón: **$5.547.765**.
+- Galpón COT-GN-0035: **$5.547.765**.
 - Pollonas faltantes: **$4.224.000**.
-- Total parcial: **$9.771.765**.
+- Panel solar paquete completo informado: **$300.000**.
 
-Este subtotal no es CAPEX total cerrado.
+Subtotal conocido galpón + pollonas: **$9.771.765**.
 
-## 6. Equipamiento, terreno, energía y formalización
+El costo **$11.096** debe leerse como **costo galpón por ave objetivo**. No incluye pollona, comederos, bebederos, ponederos, bomba, mallas, bodega, alimento inicial ni capital de trabajo.
 
-Terreno:
+## 5. CAPEX equipamiento avícola pendiente
 
-- 7 x 19 m = **133 m²**.
-- Usable, sin pendiente, no se inunda.
-- Entra vehículo con materiales.
-- Acceso invierno regular.
-- Orientación galpón norte-sur.
+Archivo creado: `dashboard/data/capex-equipamiento-avicola.json`.
 
-Equipamiento:
+Pendiente cotizar:
 
-- Tiene estanque de agua.
-- Tiene luz/panel solar comprado.
-- Tiene bodega de alimento, pero requiere ampliación.
-- Faltan comederos, bebederos, nidos/ponederos, bomba, mallas interiores y ampliación de bodega.
+- Comederos para 500 aves.
+- Bebederos para 500 aves.
+- Nidos/ponederos para 500 aves.
+- Bomba de agua.
+- Mallas interiores.
+- Ampliación o bodega interna de alimento.
+- Instalación o distribución interna de agua si aplica.
+- Instalación o distribución interna eléctrica si aplica.
 
-Energía:
+No se inventan precios. Todo queda como **Pendiente** hasta contar con cotizaciones reales.
 
-- Panel solar comprado por **$300.000**.
-- Falta validar dimensionamiento, instalación, autonomía, baterías/inversor si aplica y capacidad para bomba, luces y cámaras.
+## 6. Decisión
 
-Formalización:
+Se mantiene:
 
-- Si escala a 500, no seguiría informal.
-- Daría boleta: sí.
-- Daría factura: sí.
-- Clientes podrían pedir boleta/factura: sí.
-- Siguen pendientes ruta y costos tributarios/sanitarios.
+- Estado general: **amarillo**.
+- P1 preliminar: **no habilitado**.
+- Compra de aves: **bloqueada**.
+- Construcción: **no autorizada**.
+- Inversión mayor: **bloqueada**.
 
-## 7. Pendientes críticos para P1
+Razón del amarillo P43:
 
-- Precio real confirmado por canal/cliente.
-- Compromisos reales de compra.
-- Costo comederos.
-- Costo bebederos.
-- Costo ponederos.
-- Costo bomba.
-- Costo mallas interiores.
-- Costo ampliación bodega.
-- Alimento inicial para escala.
-- Dimensionamiento real panel solar.
-- Agua/bomba.
-- Formalización tributaria/sanitaria.
-- Capital de trabajo.
-- Logística de invierno.
-
-## 8. Conclusión
-
-El proyecto sigue en **amarillo**. P42 mejora la trazabilidad y corrige datos críticos, pero no desbloquea compra, construcción ni inversión mayor. La próxima decisión requiere evidencia comercial real, CAPEX total, OPEX total, energía/agua dimensionada, formalización y flujo estacional.
+- CAPEX total incompleto por equipamiento avícola.
+- OPEX total incompleto.
+- Capital de trabajo inicial pendiente.
+- Validación de precios netos/cobranza/estabilidad por canal pendiente.
+- Formalización tributaria/sanitaria pendiente de valorización.
+- Logística de invierno pendiente.
+- Flujo financiero completo pendiente.

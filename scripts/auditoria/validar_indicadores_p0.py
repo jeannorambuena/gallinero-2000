@@ -120,8 +120,11 @@ def main() -> int:
         assert_equal(errors, "indicador venta actual", value(comerciales, "venta_actual_bandejas_semana"), 28)
         assert_close(errors, "venta requerida 500", validacion.get("venta_requerida_500_bandejas_semana"), 104.1, 0.05)
         assert_close(errors, "indicador venta requerida 500", value(comerciales, "bandejas_semana_estimadas_500_aves"), 104.1, 0.05)
-        assert_close(errors, "brecha comercial 500", validacion.get("brecha_bandejas_semana"), 76.1, 0.05)
-        assert_close(errors, "indicador brecha comercial 500", value(comerciales, "brecha_bandejas_semana_para_500"), 76.1, 0.05)
+        assert_equal(errors, "meta comercial base 500", validacion.get("meta_comercial_base_bandejas_semana"), 100)
+        assert_close(errors, "diferencia técnica producción/meta", validacion.get("diferencia_tecnica_produccion_meta_bandejas_semana"), 4.1, 0.05)
+        assert_close(errors, "indicador diferencia técnica", value(comerciales, "diferencia_tecnica_produccion_meta_bandejas_semana"), 4.1, 0.05)
+        assert_close(errors, "diferencia técnica 500 P43", validacion.get("diferencia_tecnica_bandejas_semana"), 4.1, 0.05)
+        assert_close(errors, "indicador diferencia técnica 500 P43", value(comerciales, "diferencia_tecnica_bandejas_semana_para_500_p43"), 4.1, 0.05)
         assert_equal(
             errors,
             "indicador 648 histórico/referencial",
@@ -154,6 +157,17 @@ def main() -> int:
         assert_equal(errors, "CAPEX pollonas faltantes", capex.get("capex_conocido", {}).get("pollonas", {}).get("monto_clp"), 4224000)
         assert_equal(errors, "incremento CAPEX pollonas", capex.get("capex_conocido", {}).get("pollonas", {}).get("incremento_por_actualizacion_precio_clp"), 1232000)
         assert_equal(errors, "subtotal galpón + pollonas", capex.get("capex_conocido", {}).get("monto_total_conocido_clp"), 9771765)
+        assert_equal(errors, "panel solar comprado", capex.get("capex_conocido", {}).get("panel_solar", {}).get("monto_clp"), 300000)
+        assert_equal(errors, "CAPEX equipamiento avícola estado", capex.get("capex_pendiente", {}).get("equipamiento_avicola_estado"), "pendiente_cotizacion")
+        equip_path = ROOT / "dashboard/data/capex-equipamiento-avicola.json"
+        try:
+            equipamiento = load_json("dashboard/data/capex-equipamiento-avicola.json")
+        except Exception as exc:  # noqa: BLE001
+            errors.append(f"CAPEX equipamiento avícola: no se pudo cargar: {exc}")
+            equipamiento = {}
+        assert_equal(errors, "CAPEX equipamiento objetivo aves", equipamiento.get("objetivo_aves"), 500)
+        if len(equipamiento.get("items", [])) < 8:
+            errors.append("CAPEX equipamiento avícola: debe tener al menos 8 ítems pendientes")
         capex_total = capex.get("capex_pendiente", {}).get("monto_total_pendiente")
         if capex_total not in (None, "pendiente"):
             errors.append(f"CAPEX total pendiente: esperado None o 'pendiente', encontrado {capex_total!r}")

@@ -1,8 +1,8 @@
 mes,concepto,tipo,monto_clp,estado,observacion
-1,ingresos actuales,ingreso,741000,calculado,mix 6/13/9; meta 100 requiere validación
+1,ingresos actuales,ingreso,741000,calculado,meta 100 bandejas/semana como escenario base; validar precios netos/cobranza/estabilidad
 1,alimento,costo,284900,conocido,operación actual
 1,agua,costo,6000,conocido,operación actual; agua/bomba escala pendiente
-1,energia/panel solar,costo,300000,comprado; dimensionamiento pendiente,validar instalación/autonomía/capacidad
+1,energia/panel solar,costo,300000,comprado/informado,panel solar $300.000 paquete completo informado; verificar operación en terreno
 1,envases actuales,costo,12740,conocido,28 bandejas/semana x $105 x 52/12
 1,envases meta 100,costo,45500,estimado,100 bandejas/semana x $105 x 52/12
 1,medicamentos adicionales,costo,0,informado,fuera de vitaminas; no elimina riesgo sanitario

@@ -16,7 +16,7 @@
 |---|---|---|
 | Datos productivos actuales | completo preliminar | 148 aves, 132 huevos/día, postura 89.2% |
 | Replanteo 500 aves | creado | reemplaza foco decisional 648 |
-| Validación comercial 500 | pendiente | brecha estimada 76.1 bandejas/semana |
+| Validación comercial 500 | pendiente | diferencia técnica 4.1 bandejas/semana |
 | Agua 500 | pendiente | estimación 115.7–154.3 L/día |
 | Energía | pendiente | faltan watts y dimensionamiento |
 | Galpón 500 | parcial | cotización COT-GN-0035: 72 m², $5.547.765; no autoriza construcción |

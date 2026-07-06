@@ -2,7 +2,7 @@
   "proyecto": "Gallinero Nacho",
   "fase": "P0 — Diagnóstico real",
   "estado_general": "amarillo",
-  "avance_p0_estimado": 88,
+  "avance_p0_estimado": 90,
   "escenario_base_actual": {
     "aves": 500,
     "descripcion": "nuevo objetivo base de operación total"
@@ -27,13 +27,13 @@
     "venta actual confirmada de 28 bandejas/semana",
     "precios por categoría confirmados: segunda $5.000, primera $6.000, extra $7.000",
     "alimento confirmado: 22 sacos/mes de 25 kg; $284.900/mes",
-    "OPEX parcial confirmado de $310.900/mes (alimento + agua + vitaminas)",
+    "OPEX parcial actualizado: $343.640/mes.",
     "gallinero actual 9 x 3 x 2,3 m; 27 m²",
     "terreno disponible nuevo 7 x 19 m; 133 m²",
     "CAPEX referencial formal del galpón disponible: COT-GN-0035 por $5.547.765",
     "canales actuales confirmados: vecinos, reparto a domicilio y familiares",
     "forma de pago actual favorable: contado/transferencia semanal, sin fiado",
-    "meta comercial aclarada: 100 bandejas/semana aspiracional por validar",
+    "meta comercial aclarada: 100 bandejas/semana escenario base de análisis P43",
     "costo parcial estimado: $78,5/huevo y $2.355/bandeja, no costo total real",
     "estacionalidad confirmada: temporada buena octubre-abril y baja mayo-septiembre",
     "mix de venta actual confirmado: segunda 6, primera 13, extra 9 bandejas/semana",
@@ -42,17 +42,19 @@
     "viruta informada: $10.000/mes",
     "reparto informado: 6 veces/mes y $10.000 de bencina",
     "panel solar comprado por $300.000",
-    "si escala a 500, intención confirmada de emitir boleta y factura"
+    "si escala a 500, intención confirmada de emitir boleta y factura",
+    "meta comercial 100 bandejas/semana usada como escenario base de análisis",
+    "panel solar comprado por $300.000 considerado paquete completo informado",
+    "estructura CAPEX equipamiento avícola creada para cotización"
   ],
   "riesgos_principales": [
-    "meta 100 bandejas/semana es plan comercial por validar; no hay venta comprometida ni contrato",
-    "precio promedio actual calculado no reemplaza validación de precio real por canal/cliente",
-    "OPEX parcial conocido actualizado no es OPEX total",
-    "CAPEX subtotal galpón + pollonas faltantes no es CAPEX total cerrado",
-    "panel solar comprado requiere dimensionamiento, instalación, autonomía y capacidad para bomba/luces/cámaras",
-    "faltan comederos, bebederos, ponederos, bomba, mallas interiores y ampliación bodega",
-    "formalización: intención de boleta/factura confirmada, pero ruta y costos siguen pendientes",
-    "flujo proyectado 500 incompleto; EBITDA/VAN/TIR/ROI/Payback bloqueados"
+    "CAPEX total incompleto por equipamiento avícola pendiente de cotización",
+    "OPEX total incompleto",
+    "capital de trabajo inicial pendiente",
+    "faltan precios netos, forma de pago y estabilidad por canal para 100 bandejas/semana",
+    "formalización tributaria/sanitaria pendiente de valorización",
+    "logística de invierno pendiente",
+    "flujo financiero completo pendiente"
   ],
   "decisiones_bloqueadas": [
     "compra de pollonas",
@@ -63,36 +65,30 @@
     "VAN, TIR, ROI y Payback definitivo"
   ],
   "faltantes_para_p1_preliminar": [
-    "precio real confirmado por canal/cliente",
-    "compromisos reales de compra",
-    "costo comederos",
-    "costo bebederos",
-    "costo ponederos",
-    "costo bomba",
-    "costo mallas interiores",
-    "costo ampliación bodega",
-    "alimento inicial para escala",
-    "dimensionamiento real panel solar",
-    "agua/bomba",
-    "formalización tributaria/sanitaria",
-    "capital de trabajo",
-    "logística de invierno",
-    "OPEX total y CAPEX total cerrados"
+    "cotizar comederos, bebederos y nidos/ponederos",
+    "cotizar bomba de agua, mallas interiores, bodega interna/ampliación e instalaciones internas",
+    "cerrar OPEX total",
+    "definir capital de trabajo inicial",
+    "validar precios netos/cobranza/estabilidad por canal",
+    "valorizar formalización tributaria/sanitaria",
+    "cerrar logística de invierno",
+    "preparar flujo financiero completo"
   ],
   "acciones_recomendadas": [
-    "validar compromisos reales para meta 100 por canal",
-    "cotizar equipamiento interior faltante",
-    "dimensionar panel solar comprado y sistema de agua/bomba",
-    "cerrar ruta tributaria/sanitaria de formalización",
-    "preparar flujo estacional sin calcular ROI/VAN/TIR/Payback definitivo hasta tener datos completos"
+    "levantar cotizaciones de equipamiento avícola",
+    "mantener 100 bandejas/semana como escenario comercial base",
+    "validar precios netos y cobranza por canal",
+    "cerrar OPEX total y capital de trabajo",
+    "valorizar formalización",
+    "preparar flujo financiero preliminar sin ROI/VAN/TIR definitivos hasta cerrar datos"
   ],
-  "conclusion": "P42 actualiza el dashboard con respuestas reales: mix 6/13/9, ingreso actual $171.000/semana, OPEX parcial $343.640/mes y pollonas faltantes 352 a precio vigente $12.000. El proyecto sigue amarillo: no se autoriza compra, construcción ni inversión mayor.",
+  "conclusion": "P43 corrige la lectura visual: la meta 100 bandejas/semana se usa como escenario comercial base y el panel solar de $300.000 se considera paquete completo informado. El proyecto sigue amarillo por CAPEX equipamiento avícola, OPEX total, capital de trabajo, formalización, logística y flujo financiero incompletos.",
   "interpretacion_estado_amarillo": "Amarillo no significa rechazo ni que el proyecto no sea viable; significa que falta información crítica para decidir con seguridad antes de comprar aves, construir o comprometer inversión mayor.",
   "lineas_paralelas": [
     {
       "linea": "comercial",
       "responsable": "Nacho",
-      "objetivo": "validar que la meta aspiracional de 100 bandejas/semana pueda sostenerse con clientes, canales, precios y formalización",
+      "objetivo": "validar que la meta base de 100 bandejas/semana pueda sostenerse con clientes, canales, precios y formalización",
       "evidencia_requerida": [
         "Distribución confirmada: segunda 6, primera 13, extra 9 bandejas/semana.",
         "Listado o respaldo de clientes necesarios para llegar a 100 bandejas/semana.",
@@ -128,11 +124,12 @@
     "advertencia": "Facturas externas anonimizadas; no son evidencia de ventas, compras ni clientes de Nacho."
   },
   "criterios_para_pasar_a_verde": [
-    "validación comercial documentada para cubrir aproximadamente 104.1 bandejas/semana",
-    "brecha de 76.1 bandejas/semana cubierta con clientes/canales verificables",
-    "precios, frecuencia de compra, forma de pago y boleta/factura definidos",
-    "diseño/cubicación/cotización de galpón suficientemente respaldados",
-    "CAPEX, flujo, agua, energía, logística y legal/contable cerrados con evidencia suficiente",
+    "CAPEX equipamiento avícola cotizado",
+    "OPEX total y capital de trabajo definidos",
+    "precios netos, frecuencia, forma de pago y boleta/factura definidos para 100 bandejas/semana",
+    "formalización tributaria/sanitaria valorizada",
+    "logística de invierno cerrada",
+    "flujo financiero completo preparado",
     "compra de aves, construcción e inversión mayor aprobadas explícitamente después de validar ambas líneas"
   ],
   "referencia_capex_galpon": {

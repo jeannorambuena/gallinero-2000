@@ -1,7 +1,7 @@
 {
   "proyecto": "Gallinero Nacho",
   "fase_actual": "P0 — Diagnóstico real",
-  "avance_p0_estimado": 88,
+  "avance_p0_estimado": 90,
   "semaforo_general": "amarillo",
   "escenario_base_actual": 500,
   "escenario_anterior_referencial": 648,
@@ -12,21 +12,20 @@
   "construccion_autorizada": false,
   "inversion_mayor_autorizada": false,
   "proximos_pasos": [
-    "Nacho: respaldar clientes y estrategia para meta aspiracional de 100 bandejas/semana",
-    "confirmar precio real por canal/cliente",
-    "confirmar compromisos reales de compra",
-    "cotizar comederos, bebederos, ponederos, bomba, mallas interiores y ampliación bodega",
-    "dimensionar panel solar comprado por $300.000 para bomba/luces/cámaras",
-    "modelar flujo estacional octubre-abril / mayo-septiembre",
-    "definir ruta y costos de formalización tributaria/sanitaria",
-    "completar CAPEX y validar técnicamente módulo 500"
+    "cotizar CAPEX equipamiento avícola",
+    "cerrar OPEX total",
+    "definir capital de trabajo inicial",
+    "validar precios netos/cobranza/estabilidad por canal",
+    "valorizar formalización tributaria/sanitaria",
+    "cerrar logística de invierno",
+    "preparar flujo financiero completo"
   ],
-  "decision_actual": "P0 amarillo; P42 corrige datos reales, pero P1 preliminar no está habilitado; compra de aves, construcción e inversión mayor siguen bloqueadas.",
+  "decision_actual": "P0 amarillo; P43 cierra la validación de volumen base como hipótesis base 100 bandejas, pero P1 preliminar no está habilitado por CAPEX/OPEX/flujo incompletos. Compra de aves, construcción e inversión mayor siguen bloqueadas.",
   "interpretacion_semaforo": "Amarillo no significa no viable; significa información crítica pendiente para decidir con seguridad.",
   "lineas_de_trabajo": [
     "Línea comercial: venta actual directa confirmada con mix 6/13/9; meta 100 requiere validación.",
     "Línea financiera: ingresos actuales y OPEX parcial calculados; OPEX total, CAPEX total y flujo siguen pendientes.",
-    "Línea energía: panel solar comprado por $300.000; falta dimensionamiento/instalación/capacidad/autonomía.",
+    "Línea energía: panel solar comprado por $300.000 como paquete completo informado; verificar operación en terreno.",
     "Línea constructiva: validar técnicamente módulo 500 sin autorizar construcción."
   ],
   "capex_galpon_referencial": {

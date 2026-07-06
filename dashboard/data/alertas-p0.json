@@ -5,12 +5,12 @@
   "alertas": [
     {
       "id": "A01",
-      "titulo": "Brecha comercial alta para 500 aves",
-      "severidad": "alta",
+      "titulo": "Meta comercial base 100; validar precios y estabilidad",
+      "severidad": "media",
       "dimension": "comercial",
-      "descripcion": "Venta actual confirmada: 28 bandejas/semana. Meta comercial aclarada: 100 bandejas/semana aspiracional por validar; escenario productivo 500 estima 104.1 bandejas/semana. No hay 100 bandejas comprometidas.",
+      "descripcion": "P43 usa 100 bandejas/semana como escenario comercial base. Producción estimada 500: 104,1 bandejas/semana; diferencia técnica 4,1 bandejas. Falta validar precios netos, forma de pago y estabilidad por canal.",
       "estado": "abierta",
-      "referencia_historica": "El escenario anterior/referencial de 648 aves requería 135 bandejas/semana y una brecha de 107 bandejas/semana; no es meta vigente."
+      "referencia_historica": "El escenario anterior/referencial de 648 aves requería 135 bandejas/semana y una diferencia histórica de 107 bandejas/semana; no es meta vigente."
     },
     {
       "id": "A02",
@@ -25,7 +25,7 @@
       "titulo": "CAPEX total parcialmente identificado; faltantes críticos",
       "severidad": "alta",
       "dimension": "financiera",
-      "descripcion": "Existe CAPEX referencial formal de galpón por $5.547.765 y CAPEX de pollonas faltantes por $4.224.000. Subtotal conocido corregido: $9.771.765. Faltan equipamiento, agua/bomba, mallas, bodega, alimento inicial, logística, capital de trabajo, formalización y posibles costos sanitarios.",
+      "descripcion": "Existe CAPEX referencial formal de galpón por $5.547.765, CAPEX de pollonas faltantes por $4.224.000 y panel solar comprado por $300.000 como paquete completo informado. Faltan cotizaciones de equipamiento avícola, capital de trabajo, formalización, logística y posibles costos sanitarios.",
       "estado": "abierta",
       "referencia_capex_galpon": {
         "fuente": "galpon-nacho@b100ae0",
@@ -54,10 +54,10 @@
     },
     {
       "id": "A06",
-      "titulo": "Panel solar comprado, no dimensionado",
+      "titulo": "Panel solar comprado; verificar operación",
       "severidad": "media",
       "dimension": "energia",
-      "descripcion": "Panel solar comprado por $300.000; falta validar dimensionamiento, instalación, autonomía, baterías/inversor si aplica y capacidad para bomba, luces y cámaras.",
+      "descripcion": "Panel solar comprado por $300.000, considerado como paquete completo informado por Nacho para alimentar bomba, luces y cámaras. Pendiente solo verificación operativa en terreno.",
       "estado": "abierta"
     },
     {
@@ -110,10 +110,10 @@
     },
     {
       "id": "A12",
-      "titulo": "Mix actual confirmado; meta 100 no validada",
+      "titulo": "Mix actual confirmado y meta 100 como base",
       "severidad": "alta",
       "dimension": "comercial",
-      "descripcion": "Mix actual confirmado: segunda 6, primera 13, extra 9 bandejas/semana. Ingreso actual $171.000/semana. El bloqueo comercial pasa a validar compromisos reales para la meta de 100 bandejas/semana.",
+      "descripcion": "Mix actual confirmado: segunda 6, primera 13, extra 9. P43 usa meta 100 bandejas/semana como escenario base; queda diferencia técnica 4,1 bandejas/semana frente a producción estimada 500.",
       "estado": "bloqueante"
     },
     {
@@ -126,10 +126,10 @@
     },
     {
       "id": "A14",
-      "titulo": "Sistema eléctrico actual no estable",
-      "severidad": "alta",
+      "titulo": "Panel solar comprado; verificar operación",
+      "severidad": "media",
       "dimension": "energia",
-      "descripcion": "Panel solar comprado por $300.000, pero falta validar dimensionamiento, instalación, autonomía y capacidad para bomba, luces y cámaras.",
+      "descripcion": "Panel solar comprado por $300.000, considerado como paquete completo informado por Nacho para alimentar bomba, luces y cámaras. Pendiente solo verificación operativa en terreno.",
       "estado": "abierta"
     },
     {
@@ -142,10 +142,10 @@
     },
     {
       "id": "A16",
-      "titulo": "Meta 100 bandejas es aspiracional",
+      "titulo": "Meta 100 bandejas es escenario base",
       "severidad": "alta",
       "dimension": "comercial",
-      "descripcion": "La meta de 100 bandejas/semana requiere validación comercial; no es venta segura, demanda comprometida ni contrato. Nacho no pierde ventas actualmente por falta de huevos.",
+      "descripcion": "La meta de 100 bandejas/semana se usa como escenario comercial base. Falta validar precios netos, forma de pago, cobranza y estabilidad por canal. Nacho no pierde ventas actualmente por falta de huevos.",
       "estado": "abierta"
     },
     {
@@ -171,9 +171,17 @@
       "dimension": "legal/comercial",
       "descripcion": "Venta actual informal; si escala a 500, Nacho daría boleta y factura. Siguen pendientes ruta y costos tributarios/sanitarios.",
       "estado": "abierta"
+    },
+    {
+      "id": "A20",
+      "titulo": "CAPEX equipamiento avícola pendiente",
+      "severidad": "alta",
+      "dimension": "financiera",
+      "descripcion": "Faltan cotizaciones de comederos, bebederos, nidos/ponederos, bomba, mallas interiores, bodega interna/ampliación e instalaciones internas. Bloquea CAPEX total.",
+      "estado": "bloqueante"
     }
   ],
-  "nota": "Alertas críticas P42: mix e ingresos actuales corregidos, OPEX parcial actualizado y pollonas faltantes corregidas. No se habilita inversión.",
+  "nota": "Alertas P43: comercial base 100 corregido; panel solar considerado paquete completo; bloqueo principal pasa a CAPEX equipamiento avícola, OPEX total, capital de trabajo y flujo.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",

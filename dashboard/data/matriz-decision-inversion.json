@@ -56,7 +56,7 @@
   "inversion_mayor_autorizada": false,
   "compra_aves_autorizada": false,
   "construccion_autorizada": false,
-  "conclusion": "No hay evidencia suficiente para verde. El galpón cuenta con CAPEX referencial formal, pero compra, construcción e inversión mayor siguen bloqueadas.",
+  "conclusion": "Decisión actual sigue bloqueada: P43 cierra validación de volumen base como hipótesis base 100, pero no cierra CAPEX/OPEX/flujo.",
   "referencia_capex_galpon": {
     "fuente": "galpon-nacho@b100ae0",
     "documento": "cotización formal V8",

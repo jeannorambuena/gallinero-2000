@@ -12,13 +12,13 @@
 
 ## Corrección meta 100 bandejas
 
-La meta comercial de 100 bandejas/semana queda registrada como aspiracional y requiere validación comercial. No es venta segura, demanda comprometida ni contrato.
+La meta comercial de 100 bandejas/semana queda registrada como escenario base y requiere validación comercial. Se usa como escenario base; falta validar operación, precios netos y cobranza.
 
 Campos de criterio:
 
 - `meta_comercial_bandejas_semana = 100`
-- `estado = aspiracional / requiere validación comercial`
-- `bandejas_comprometidas_semana = null`
+- `estado = escenario base / requiere validación comercial`
+- `bandejas_objetivo_base_semana = 100`
 - `pierde_ventas_por_falta_huevos = no`
 
 ## Costo parcial por huevo y bandeja
@@ -26,11 +26,11 @@ Campos de criterio:
 Con producción promedio de 132 huevos/día:
 
 - Producción mensual estimada: 132 x 30 = 3.960 huevos/mes.
-- OPEX parcial confirmado: $310.900/mes.
-- Costo parcial por huevo producido: $310.900 / 3.960 = $78,5 CLP/huevo aprox.
-- Costo parcial por bandeja de 30 huevos: $78,5 x 30 = $2.355 CLP/bandeja aprox.
+- OPEX parcial confirmado: $343.640/mes.
+- Costo parcial por huevo producido actualizado: $343.640 / 3.960 = $86,8 CLP/huevo aprox.
+- Costo parcial por bandeja de 30 huevos: $86,8 x 30 = $2.604 CLP/bandeja aprox.
 
-Advertencia: este no es costo total real. Falta incluir envases/bandejas, cama/viruta/material de piso, medicamentos/sanidad, transporte/reparto, energía estable/panel solar, mano de obra, mantenciones, sanitización e imprevistos.
+Advertencia: este no es costo total real. Falta incluir mano de obra operacional definitiva, mantenciones, sanitización, imprevistos y costos de escala. Panel solar está comprado por $300.000 como paquete completo informado; queda verificación operativa en terreno.
 
 ## Pendientes para Ignacio
 
@@ -67,4 +67,4 @@ El semáforo se mantiene amarillo. P1 preliminar no habilitado, compra de aves b
 
 ## Por qué sigue bloqueada la inversión
 
-Aunque hay más información comercial y operativa, la meta de 100 bandejas/semana aún no está validada como venta comprometida. Falta distribución por categoría, precio promedio real, ingresos mensuales definitivos, OPEX total, energía estable, CAPEX total, formalización y flujo estacional. Por eso no se calcula EBITDA, Payback, ROI, VAN ni TIR.
+Aunque hay más información comercial y operativa, la meta de 100 bandejas/semana se usa como escenario base y falta validar precios netos, forma de pago y estabilidad. Distribución confirmada: segunda 6, primera 13, extra 9, precio promedio real, ingresos mensuales definitivos, OPEX total, energía estable, CAPEX total, formalización y flujo estacional. Por eso no se calcula EBITDA, Payback, ROI, VAN ni TIR.

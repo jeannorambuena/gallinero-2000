@@ -15,13 +15,13 @@ P0 queda cerrado preliminarmente como diagnóstico funcional, no como autorizaci
 
 ## Lectura ejecutiva
 
-La operación actual muestra buena base productiva, pero el negocio todavía tiene brechas comerciales, financieras, constructivas, logísticas, de agua, energía y legal/contable. El escenario 500 reduce el salto frente al escenario 648, pero no elimina los bloqueos.
+La operación actual muestra buena base productiva, pero el negocio todavía tiene validaciones comerciales operativas, financieras, constructivas, logísticas, de agua, energía y legal/contable. El escenario 500 reduce el salto frente al escenario 648, pero no elimina los bloqueos.
 
-## Brecha comercial base 500
+## Diferencia técnica y validación operativa base 500
 
 - Venta actual: 28 bandejas/semana.
 - Venta estimada 500 aves: 104.1 bandejas/semana.
-- Brecha estimada: 76.1 bandejas/semana.
+- Diferencia técnica producción/meta: 4.1 bandejas/semana.
 
 ## Conclusión
 

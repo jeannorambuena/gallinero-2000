@@ -1,73 +1,70 @@
-# Plan de validación comercial operativo — P0
+# Plan de validación comercial operativo — P43
 
 ## Objetivo
 
-Transformar la brecha comercial en un plan de levantamiento concreto, sin inventar clientes ni compromisos.
+Validar operativamente el escenario comercial base de **100 bandejas/semana**, sin tratarlo como autorización de inversión ni como flujo financiero definitivo.
 
-## Datos de partida P42
+## Datos de partida P43
 
 - Venta actual: **28 bandejas/semana**.
 - Mix actual: **6 segunda, 13 primera, 9 extra**.
 - Ingreso actual: **$171.000/semana**.
 - Ingreso mensual estimado: **$741.000**.
 - Precio promedio actual aproximado: **$6.107/bandeja**.
-- Objetivo estimado para 500 aves: **104,1 bandejas/semana**.
-- Brecha estimada para 500 aves: **76,1 bandejas/semana**.
+- Meta comercial base: **100 bandejas/semana**.
+- Producción estimada para 500 aves: **104,1 bandejas/semana**.
+- Diferencia técnica producción/meta: **4,1 bandejas/semana**.
 
-## Meta comercial por validar
+La diferencia técnica puede absorber merma, autoconsumo, stock o venta adicional. No se mantiene como validación operativa comercial principal.
 
-La meta declarada es **100 bandejas/semana**, distribuida como plan:
+## Canales objetivo del escenario base
 
 - Trabajo: 20 bandejas/semana.
 - Vecinos: 30 bandejas/semana.
 - Almacenes: 30 bandejas/semana.
 - Facebook: 20 bandejas/semana.
 
-Esta meta no es venta comprometida, contrato ni demanda segura.
+Total: **100 bandejas/semana**.
 
-## Metodología para validar clientes
+## Qué falta validar por canal
 
-1. Registrar clientes actuales.
-2. Registrar clientes potenciales por canal.
-3. Separar canal: trabajo, vecinos, almacenes, Facebook u otro.
-4. Registrar cantidad semanal, precio, frecuencia y forma de pago.
-5. Diferenciar interés de compromiso.
-6. Registrar si requiere boleta/factura.
-7. Validar precio real por canal/cliente.
-8. Identificar meses de baja de precio o demanda.
+1. Precio neto real.
+2. Forma de pago.
+3. Plazo de cobranza.
+4. Estabilidad semanal.
+5. Requisito de boleta o factura.
+6. Costos logísticos asociados.
+7. Meses de baja de precio o demanda.
 
-## Cómo contar bandejas comprometidas
+## Registro sugerido por canal
 
-- Contar solo bandejas semanales explícitamente declaradas.
-- Separar volumen actual, estimado y comprometido.
-- No sumar interés genérico como venta validada.
-- Registrar condiciones de precio, frecuencia y pago.
-- Registrar si exige boleta o factura.
+Para cada canal registrar:
 
-## Niveles de compromiso
-
-| Nivel | Descripción | Uso en decisión |
-|---|---|---|
-| Interés | Persona o negocio dice que podría comprar | No cuenta como validado |
-| Compromiso débil | Indica cantidad aproximada sin frecuencia clara | Cuenta solo como señal |
-| Compromiso fuerte | Indica cantidad, frecuencia, precio y forma de pago | Puede contar como validación preliminar |
+- Bandejas objetivo por semana.
+- Precio bruto y precio neto.
+- Descuento o condición comercial si aplica.
+- Forma de pago.
+- Días de cobranza.
+- Frecuencia esperada.
+- Necesidad de boleta/factura.
+- Riesgo principal.
 
 ## Criterios mínimos sugeridos para avanzar
 
-- Clientes actuales ordenados.
-- Clientes potenciales listados.
-- Bandejas semanales por canal respaldadas.
-- Precio mínimo por canal validado.
-- Requerimiento de boleta/factura identificado.
-- Compromisos fuertes suficientes para reducir brecha.
+- Precios netos por canal definidos.
+- Forma de pago y cobranza por canal definida.
+- Estabilidad semanal razonable para el volumen objetivo.
+- Requisitos de boleta/factura identificados.
+- Costos de reparto o entrega estimados.
+- Escenario financiero actualizado con CAPEX/OPEX completos.
 
 ## Criterios de no avance comercial
 
-- No aparece demanda suficiente para acercarse a 100–104 bandejas/semana.
-- Los precios por volumen destruyen el margen.
-- Los canales requieren formalización que no está resuelta.
-- La venta depende de interés informal sin compromiso fuerte.
+- Precios por volumen destruyen margen.
+- Cobranza o plazos generan capital de trabajo no financiado.
+- Canales requieren formalización no valorizada.
+- Estabilidad semanal insuficiente para sostener el escenario base.
 
 ## Conclusión
 
-La brecha comercial sigue siendo bloqueante hasta validar demanda real. No se deben comprar aves ni comprometer inversión mayor sin evidencia comercial suficiente.
+P43 considera **100 bandejas/semana** como escenario comercial base. El bloqueo principal ya no es cerrar volumen base, sino validar precios netos, cobranza y estabilidad por canal. La inversión sigue bloqueada por CAPEX equipamiento avícola, OPEX total, capital de trabajo, formalización, logística y flujo financiero completo.

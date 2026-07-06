@@ -1,0 +1,87 @@
+{
+  "proyecto": "Gallinero Nacho",
+  "fase": "P0 — Diagnóstico real / P43",
+  "estado": "pendiente_cotizacion",
+  "objetivo_aves": 500,
+  "descripcion": "CAPEX equipamiento avícola pendiente de cotización",
+  "nota": "No inventar precios: cargar solo cotizaciones reales cuando existan.",
+  "items": [
+    {
+      "id": "comederos",
+      "item": "Comederos para 500 aves",
+      "estado": "pendiente_cotizacion",
+      "cantidad_requerida": "pendiente",
+      "precio_unitario_clp": null,
+      "subtotal_clp": null,
+      "impacto": "bloquea CAPEX total"
+    },
+    {
+      "id": "bebederos",
+      "item": "Bebederos para 500 aves",
+      "estado": "pendiente_cotizacion",
+      "cantidad_requerida": "pendiente",
+      "precio_unitario_clp": null,
+      "subtotal_clp": null,
+      "impacto": "bloquea CAPEX total"
+    },
+    {
+      "id": "nidos_ponederos",
+      "item": "Nidos/ponederos para 500 aves",
+      "estado": "pendiente_cotizacion",
+      "cantidad_requerida": "pendiente",
+      "precio_unitario_clp": null,
+      "subtotal_clp": null,
+      "impacto": "bloquea CAPEX total"
+    },
+    {
+      "id": "bomba_agua",
+      "item": "Bomba de agua",
+      "estado": "pendiente_cotizacion",
+      "cantidad_requerida": "pendiente",
+      "precio_unitario_clp": null,
+      "subtotal_clp": null,
+      "impacto": "bloquea CAPEX total"
+    },
+    {
+      "id": "mallas_interiores",
+      "item": "Mallas interiores",
+      "estado": "pendiente_cotizacion",
+      "cantidad_requerida": "pendiente",
+      "precio_unitario_clp": null,
+      "subtotal_clp": null,
+      "impacto": "bloquea CAPEX total"
+    },
+    {
+      "id": "bodega_interna_alimento",
+      "item": "Ampliación o bodega interna de alimento",
+      "estado": "pendiente_cotizacion",
+      "cantidad_requerida": "pendiente",
+      "precio_unitario_clp": null,
+      "subtotal_clp": null,
+      "impacto": "bloquea CAPEX total"
+    },
+    {
+      "id": "distribucion_interna_agua",
+      "item": "Instalación o distribución interna de agua si aplica",
+      "estado": "pendiente_cotizacion",
+      "cantidad_requerida": "pendiente",
+      "precio_unitario_clp": null,
+      "subtotal_clp": null,
+      "impacto": "bloquea CAPEX total"
+    },
+    {
+      "id": "distribucion_interna_electrica",
+      "item": "Instalación o distribución interna eléctrica si aplica",
+      "estado": "pendiente_cotizacion",
+      "cantidad_requerida": "pendiente",
+      "precio_unitario_clp": null,
+      "subtotal_clp": null,
+      "impacto": "bloquea CAPEX total"
+    }
+  ],
+  "resumen": {
+    "capex_equipamiento_avicola_clp": null,
+    "capex_total_proyecto_clp": null,
+    "estado_capex_total": "pendiente por cotizaciones de equipamiento avícola, OPEX total, formalización y capital de trabajo"
+  }
+}

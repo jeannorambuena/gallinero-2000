@@ -24,7 +24,7 @@ Esta es una referencia financiera preliminar. No es autorización de construcci�
 ```text
 500 gallinas totales = 72 m²
 densidad_aprox = 500 / 72 = 6,94 ≈ 7 gallinas/m²
-costo_gallina_instalada_galpon = $5.547.765 / 500 ≈ $11.096
+costo_galpon_por_ave_objetivo = $5.547.765 / 500 ≈ $11.096
 ```
 
 Esta referencia no reemplaza norma, diseño técnico ni revisión sanitaria/constructiva.

@@ -9,7 +9,7 @@
     {
       "dimension": "comercial",
       "estado": "pendiente",
-      "tarea": "validar brecha 76.1 bandejas/semana"
+      "tarea": "validar precios netos, forma de pago y estabilidad para 100 bandejas/semana"
     },
     {
       "dimension": "galpon",
@@ -80,7 +80,7 @@
     "VAN/TIR/ROI/Payback bloqueados"
   ],
   "proximo_paso_recomendado": "Completar validación comercial 500, dimensionamiento agua/energía y evaluación financiera 500/1000/2000 usando el CAPEX referencial formal del galpón.",
-  "conclusion": "El paquete habilita levantamiento y reevaluación, no ejecución. El bloqueo constructivo queda parcialmente resuelto por referencia formal V8, pero P1 preliminar sigue no habilitado.",
+  "conclusion": "P43 mantiene P1 preliminar no habilitado: meta 100 se usa como escenario base, pero faltan CAPEX equipamiento avícola, OPEX total, capital de trabajo, formalización, logística y flujo.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",

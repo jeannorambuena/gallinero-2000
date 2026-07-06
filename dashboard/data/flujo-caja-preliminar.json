@@ -7,8 +7,11 @@
     "aves": 500,
     "huevos_dia_estimados": 446,
     "bandejas_semana_estimadas": 104.1,
-    "brecha_bandejas_semana": 76.1,
-    "flujo_proyectado": "pendiente"
+    "brecha_bandejas_semana": 4.1,
+    "flujo_proyectado": "pendiente por CAPEX/OPEX/flujo completo",
+    "meta_comercial_base_bandejas_semana": 100,
+    "diferencia_tecnica_bandejas_semana": 4.1,
+    "brecha_comercial_principal": "cerrada para hipótesis base P43"
   },
   "escenario_648": {
     "aves": 648,
@@ -31,23 +34,25 @@
     "ingreso_mensual_estimado_clp": 741000,
     "nota": "Ingreso actual calculado con mix confirmado 6/13/9 y precios por categoría ya definidos en repo.",
     "meta_comercial_bandejas_semana": 100,
-    "meta_comercial_estado": "aspiracional / requiere validación comercial",
-    "bandejas_comprometidas_semana": null,
+    "meta_comercial_estado": "escenario base P43",
     "pierde_ventas_por_falta_huevos": false,
-    "advertencia_meta_100": "100 bandejas/semana no es venta segura, demanda comprometida ni contrato",
+    "advertencia_meta_100": "100 bandejas/semana se usa como escenario comercial base; faltan precios netos, forma de pago, cobranza y estabilidad por canal.",
     "meta_comercial_plan_por_validar": {
       "trabajo": 20,
       "vecinos": 30,
       "almacenes": 30,
       "facebook": 20
-    }
+    },
+    "diferencia_tecnica_produccion_meta_bandejas_semana": 4.1,
+    "criterio_p43": "Ventas objetivo por validar operativamente por canal, pero suficientes como hipótesis base para análisis financiero preliminar.",
+    "bandejas_objetivo_base_semana": 100
   },
   "costos_actuales": {
     "alimento_mensual_clp": 284900,
     "agua_mensual_clp": 6000,
     "vitaminas_mensual_clp": 20000,
     "luz_mensual_actual_clp": 0,
-    "luz_mensual_actual_observacion": "costo actual $0; panel solar comprado por $300.000, falta validar dimensionamiento, instalación, autonomía y capacidad para bomba/luces/cámaras",
+    "luz_mensual_actual_observacion": "costo actual $0; panel solar comprado por $300.000, pendiente solo verificación operativa en terreno",
     "opex_parcial_confirmado_clp": 343640,
     "opex_total_proyecto_clp": "Pendiente",
     "faltantes_opex": [
@@ -73,7 +78,9 @@
     "generalmente_clientes_retiran": true,
     "medicamentos_limpieza_adicional_mensual_clp": 0,
     "medicamentos_advertencia": "$0 informado fuera de vitaminas; no elimina riesgo sanitario.",
-    "total_costos_conocidos_clp": 343640
+    "total_costos_conocidos_clp": 343640,
+    "panel_solar_comprado_clp": 300000,
+    "panel_solar_estado": "paquete completo informado; verificación operativa en terreno pendiente"
   },
   "mano_obra_referencial": {
     "monto_clp": 182000,
@@ -102,33 +109,36 @@
     "costo_historico_pollonas_faltantes_clp": 2992000,
     "capex_pollonas_faltantes_clp": 4224000,
     "incremento_capex_pollonas_clp": 1232000,
-    "subtotal_conocido_galpon_mas_pollonas_clp": 9771765
+    "subtotal_conocido_galpon_mas_pollonas_clp": 9771765,
+    "panel_solar_paquete_completo_clp": 300000,
+    "capex_equipamiento_avicola_estado": "pendiente_cotizacion",
+    "capex_equipamiento_avicola_clp": null
   },
   "datos_faltantes": [
-    "Precio real confirmado por canal/cliente para meta 100.",
-    "Compromisos reales de compra.",
-    "Costo comederos, bebederos, ponederos, bomba de agua, mallas interiores y ampliación de bodega.",
-    "Alimento inicial para escala y capital de trabajo.",
-    "Dimensionamiento real del panel solar comprado, agua/bomba y autonomía.",
-    "Ruta y costos de formalización tributaria/sanitaria.",
+    "CAPEX equipamiento avícola: comederos, bebederos, nidos/ponederos, bomba, mallas interiores, bodega interna/ampliación e instalaciones internas.",
+    "OPEX total de escala 500.",
+    "Capital de trabajo inicial.",
+    "Precios netos, forma de pago y estabilidad por canal para 100 bandejas/semana.",
+    "Formalización tributaria/sanitaria valorizada.",
     "Logística de invierno.",
-    "Mano de obra operacional definitiva, mantenciones, sanitización e imprevistos."
+    "Flujo financiero completo y estacional."
   ],
   "riesgos": [
-    "meta 100 bandejas/semana es plan comercial por validar y no venta comprometida",
+    "CAPEX total incompleto por equipamiento avícola pendiente de cotización",
     "OPEX parcial conocido actualizado no equivale a OPEX total",
-    "CAPEX subtotal galpón + pollonas faltantes no equivale a CAPEX total cerrado",
+    "capital de trabajo inicial pendiente",
+    "precios netos, forma de pago y estabilidad por canal pendientes para 100 bandejas/semana",
+    "formalización tributaria/sanitaria pendiente de valorización",
     "flujo futuro no debe modelarse plano: temporada buena octubre-abril y baja mayo-septiembre",
-    "panel solar comprado requiere dimensionamiento/instalación/capacidad/autonomía",
-    "no comprar 500 pollonas; escenario principal es completar 352 faltantes desde 148 a 500"
+    "panel solar comprado como paquete completo; verificar funcionamiento real en terreno antes de operar a escala"
   ],
   "criterios_para_avanzar": [
-    "flujo mensual completo",
-    "CAPEX completo",
-    "OPEX por escala completo",
-    "mercado validado",
-    "EBITDA, payback y punto de equilibrio calculados",
-    "riesgos críticos resueltos"
+    "CAPEX equipamiento avícola cotizado",
+    "OPEX total por escala completo",
+    "capital de trabajo inicial definido",
+    "precios netos/cobranza/estabilidad por canal validados",
+    "formalización valorizada",
+    "flujo financiero completo"
   ],
   "indicadores_bloqueados": [
     {
@@ -156,7 +166,7 @@
       "estado": "bloqueado"
     }
   ],
-  "conclusion": "P42 sincroniza respuestas reales: ingresos actuales calculados en $171.000/semana y $741.000/mes; OPEX parcial conocido actualizado a $343.640/mes; pollonas faltantes corregidas a 352 con precio vigente $12.000. Flujo, EBITDA, Payback, ROI, VAN y TIR siguen bloqueados porque OPEX total, CAPEX total, compromisos comerciales y formalización no están cerrados.",
+  "conclusion": "P43 considera 100 bandejas/semana como escenario comercial base y deja diferencia técnica de 4,1 bandejas/semana frente a producción 500. El amarillo se explica ahora por CAPEX equipamiento avícola pendiente, OPEX total, capital de trabajo, formalización, logística de invierno y flujo completo.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",
@@ -329,14 +339,14 @@
       "id": "opex_vitaminas_actual"
     },
     {
-      "nombre": "Energía / panel solar",
+      "nombre": "Panel solar comprado",
       "valor": 300000,
       "unidad": "CLP",
-      "estado": "parcial",
-      "descripcion_corta": "Panel solar comprado; falta validar solución completa.",
-      "estado_analisis": "Panel solar comprado por $300.000; falta dimensionamiento, instalación, autonomía, baterías/inversor si aplica y capacidad para bomba, luces y cámaras.",
-      "formula": "dato informado P42",
-      "fuente": "pendiente",
+      "estado": "confirmado_paquete_completo",
+      "descripcion_corta": "Panel solar comprado por $300.000 como paquete completo informado.",
+      "estado_analisis": "Panel solar comprado por $300.000, considerado como paquete completo informado por Nacho para alimentar bomba, luces y cámaras. Pendiente solo verificación operativa en terreno.",
+      "formula": "dato informado P43",
+      "fuente": "aclaración Jean/Nacho P43",
       "escenario": "500 aves",
       "id": "energia_estable"
     },
@@ -371,7 +381,7 @@
       "unidad": "CLP/mes",
       "estado": "confirmado_calculado",
       "descripcion_corta": "Ingreso actual con mix real de bandejas 6/13/9.",
-      "estado_analisis": "Calculado desde venta actual: segunda 6, primera 13, extra 9 bandejas/semana. No implica venta comprometida para meta 100.",
+      "estado_analisis": "Calculado desde venta actual: segunda 6, primera 13, extra 9 bandejas/semana. Meta 100 usada como escenario base; falta validar precios netos, cobranza y estabilidad por canal.",
       "formula": "$171.000 x 52 / 12",
       "fuente": "precios repo + respuesta Nacho P42",
       "escenario": "500 aves"
@@ -410,6 +420,18 @@
       "estado_analisis": "Margen parcial antes de mano de obra, calculado con ingreso actual y OPEX parcial conocido actualizado. No es margen definitivo.",
       "formula": "$741.000 - $343.640",
       "fuente": "pendiente",
+      "escenario": "500 aves"
+    },
+    {
+      "id": "capex_equipamiento_avicola",
+      "nombre": "CAPEX equipamiento avícola",
+      "valor": null,
+      "unidad": "CLP",
+      "estado": "pendiente_cotizacion",
+      "descripcion_corta": "Comederos, bebederos, ponederos, bomba, mallas y bodega interna pendientes.",
+      "estado_analisis": "Bloquea CAPEX total: faltan cotizaciones reales de equipamiento avícola e instalaciones internas para 500 aves.",
+      "formula": "sumatoria de cotizaciones reales pendientes",
+      "fuente": "estructura P43 pendiente de cotización",
       "escenario": "500 aves"
     },
     {
@@ -510,7 +532,7 @@
     },
     {
       "id": "costo_gallina_instalada",
-      "nombre": "Costo por gallina instalada",
+      "nombre": "Costo galpón por ave objetivo",
       "valor": 11096,
       "unidad": "CLP/gallina",
       "estado": "cotizado_final_referencial",

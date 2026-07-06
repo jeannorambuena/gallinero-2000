@@ -22,7 +22,7 @@ El escenario 648 queda como referencia histórica. Este plan no autoriza compra 
 
 | Dimensión | Tarea | Evidencia esperada |
 |---|---|---|
-| Comercial | Validar brecha 76.1 bandejas/semana para 500 aves | clientes/canales/precios/compromisos |
+| Comercial | Validar precios netos, forma de pago y estabilidad para 100 bandejas/semana | clientes/canales/precios/validaciones operativas |
 | Terreno | Croquis 19 x 7 m | medidas, acceso, pendiente, barro, acopio |
 | Agua | Dimensionar 115.7–154.3 L/día aprox. | caudal, presión, estanque, bomba, respaldo |
 | Energía | Dimensionar luces/cámara/respaldo | watts, Wh/día, batería, paneles, protecciones |

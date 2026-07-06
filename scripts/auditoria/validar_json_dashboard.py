@@ -82,6 +82,10 @@ SPECS = {
         "required": ["proyecto", "fase", "estado", "capex_conocido", "capex_pendiente", "conclusion"],
         "non_empty_lists": ["categorias", "riesgos", "criterios_para_avanzar"],
     },
+    "dashboard/data/capex-equipamiento-avicola.json": {
+        "required": ["proyecto", "fase", "estado", "objetivo_aves", "descripcion", "resumen"],
+        "non_empty_lists": ["items"],
+    },
     "dashboard/data/flujo-caja-preliminar.json": {
         "required": ["proyecto", "fase", "estado", "ingresos_actuales", "costos_actuales", "mano_obra_referencial", "margenes_actuales", "escenario_500", "escenario_648", "conclusion"],
         "non_empty_lists": ["datos_faltantes", "riesgos", "criterios_para_avanzar", "indicadores_bloqueados"],

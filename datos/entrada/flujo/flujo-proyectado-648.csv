@@ -1,8 +1,8 @@
 mes,concepto,tipo,monto_clp,estado,observacion
-1,ingresos,ingreso,,historico/referencial,escenario 648 no vigente; no usar para decisión principal
+1,ingresos,ingreso,,historico/referencial,meta 100 bandejas/semana como escenario base; validar precios netos/cobranza/estabilidad
 1,alimento,costo,284900,referencia actual,base actual informada; no extrapolar directo a 648
 1,agua,costo,6000,referencia actual,base actual informada; no extrapolar directo a 648
-1,energia/panel solar,costo,300000,comprado; dimensionamiento pendiente,panel solar comprado; falta validar capacidad/autonomía
+1,energia/panel solar,costo,300000,comprado/informado,panel solar $300.000 paquete completo informado; verificar operación en terreno
 1,envases actuales,costo,12740,referencia actual,28 bandejas/semana x $105 x 52/12
 1,medicamentos adicionales,costo,0,informado,$0 fuera de vitaminas; no elimina riesgo sanitario
 1,viruta,costo,10000,referencia actual,base actual informada; no extrapolar directo a 648

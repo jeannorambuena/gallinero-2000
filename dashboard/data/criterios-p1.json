@@ -9,11 +9,11 @@
   "criterios_minimos": [
     {
       "id": "P1-01",
-      "criterio": "validación comercial para base 500 aves",
+      "criterio": "validación operativa comercial para base 100 bandejas/semana",
       "dimension": "comercial",
-      "estado": "bloqueante",
-      "evidencia": "venta actual 28; requerida estimada 104.1; brecha 76.1 bandejas/semana",
-      "accion_requerida": "validar clientes, canales, precios y compromisos"
+      "estado": "parcial",
+      "evidencia": "meta 100 bandejas/semana usada como escenario base; producción estimada 104.1; diferencia técnica 4.1 bandejas/semana",
+      "accion_requerida": "validar precios netos, forma de pago, cobranza y estabilidad por canal"
     },
     {
       "id": "P1-02",
@@ -21,7 +21,7 @@
       "dimension": "capex",
       "estado": "parcial",
       "evidencia": "CAPEX referencial formal de galpón disponible: $5.547.765 para 72 m² ($77.052/m²) desde galpon-nacho@b100ae0; CAPEX total 500 aún incompleto.",
-      "accion_requerida": "completar agua, energía, equipamiento, logística, capital de trabajo y flujo operativo"
+      "accion_requerida": "completar equipamiento avícola, OPEX total, logística, formalización, capital de trabajo y flujo operativo"
     },
     {
       "id": "P1-03",
@@ -92,11 +92,11 @@
     "VAN/TIR/ROI/Payback bloqueados"
   ],
   "bloqueos_compra_pollonas": [
-    "estrategia para llegar a 500 aves no definida",
-    "brecha comercial 76.1 bandejas/semana",
+    "CAPEX equipamiento avícola pendiente",
     "CAPEX total del proyecto no disponible",
+    "OPEX total y capital de trabajo pendientes",
     "flujo 500 incompleto",
-    "agua/energía/equipamiento/logística sin cierre",
+    "agua/equipamiento/logística sin cierre",
     "legal/contable pendiente"
   ],
   "decision_actual": {

@@ -14,7 +14,7 @@ Dashboard ejecutivo P0 en HTML/CSS/JS puro. Su propósito es entregar a Nacho un
 
 1. **Resumen ejecutivo:** estado general, P1 preliminar, compra, construcción e inversión mayor.
 2. **Operación actual:** gallinas, producción, venta, postura, mortalidad, agua, edad y raza.
-3. **Escenario base 500 aves:** producción estimada, bandejas requeridas, brecha comercial, agua, superficie y costo pendiente.
+3. **Escenario base 500 aves:** producción estimada, bandejas requeridas, validación operativa comercial, agua, superficie y costo pendiente.
 4. **Comparativo de escalas:** 500, 1000 y 2000 aves como referencia visual; 1000 y 2000 son comparativos futuros.
 5. **Semáforo de inversión:** rojo, amarillo y verde con regla de decisión.
 6. **Bloqueadores principales:** mercado, CAPEX, flujo, agua, energía, logística, legal/contable y P1 preliminar.

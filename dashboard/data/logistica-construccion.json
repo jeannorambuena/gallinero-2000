@@ -31,7 +31,15 @@
       "orientación, ventilación, sombra y drenaje",
       "ajuste del diseño V8 si cambia escala o alcance",
       "transporte y acopio de materiales",
-      "validación estructural/profesional si se ejecuta"
+      "validación estructural/profesional si se ejecuta",
+      "Comederos para 500 aves",
+      "Bebederos para 500 aves",
+      "Nidos/ponederos para 500 aves",
+      "Bomba de agua",
+      "Mallas interiores",
+      "Ampliación o bodega interna de alimento",
+      "Instalación o distribución interna de agua si aplica",
+      "Instalación o distribución interna eléctrica si aplica"
     ],
     "condicion_para_avanzar": "Usar V8 como base referencial formal, validar aplicabilidad a 500 aves, completar logística/transporte, agua, energía, equipamiento y evaluación financiera antes de P1 preliminar. Esto no autoriza construir.",
     "responsable_estudio": "Jean",
@@ -132,5 +140,18 @@
       "mallas interiores",
       "ampliación bodega alimento"
     ]
+  },
+  "equipamiento_500_p43": {
+    "pendiente_cotizacion": [
+      "Comederos para 500 aves",
+      "Bebederos para 500 aves",
+      "Nidos/ponederos para 500 aves",
+      "Bomba de agua",
+      "Mallas interiores",
+      "Ampliación o bodega interna de alimento",
+      "Instalación o distribución interna de agua si aplica",
+      "Instalación o distribución interna eléctrica si aplica"
+    ],
+    "archivo": "dashboard/data/capex-equipamiento-avicola.json"
   }
 }

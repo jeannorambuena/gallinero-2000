@@ -9,7 +9,7 @@ Si cualquier dimensión crítica está en rojo, no se invierte. Si todas las dim
 | Dimensión | Rojo | Amarillo | Verde |
 |---|---|---|---|
 | General | riesgo crítico o datos insuficientes para decidir | diagnóstico útil pero incompleto | evidencia suficiente para evaluar inversión |
-| Comercial | no hay demanda validada o brecha imposible | hay señales, faltan compromisos fuertes | mercado validado por canal, precio y volumen |
+| Comercial | no hay validación operativa por canal o brecha imposible | hay señales, faltan precios netos/cobranza/estabilidad | precios netos, cobranza, estabilidad y volumen base validados por canal |
 | Financiero | flujo negativo/incompleto crítico | flujo preliminar incompleto o ajustado | flujo completo y revisado |
 | CAPEX | categorías críticas sin cotizar | cotizaciones parciales | CAPEX completo por categoría |
 | Agua | sin caudal/presión/respaldo | solución conceptual | sistema dimensionado y cotizado |

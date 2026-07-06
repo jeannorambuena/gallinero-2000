@@ -15,7 +15,7 @@ Construir un flujo mensual preliminar para el escenario base de 500 aves, sin ca
 - Escenario anterior/referencial: 648 aves.
 - Venta actual: 28 bandejas/semana.
 - Venta estimada para 500 aves: 104.1 bandejas/semana.
-- Brecha estimada: 76.1 bandejas/semana.
+- Diferencia técnica producción/meta: 4.1 bandejas/semana.
 
 ## Ingresos
 

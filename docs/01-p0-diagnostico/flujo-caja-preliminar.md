@@ -15,7 +15,7 @@ Preparar flujo preliminar del escenario base 500 gallinas totales sin calcular V
 - Precio promedio actual aproximado: **$6.107/bandeja**.
 - Ingreso mensual estimado actual: **$741.000** usando 52/12.
 
-La meta de **100 bandejas/semana** es un plan comercial por validar, no venta comprometida.
+La meta de **100 bandejas/semana** se usa como escenario comercial base; falta validar operación, precios netos y cobranza por canal.
 
 ### OPEX parcial conocido actualizado
 
@@ -44,7 +44,7 @@ Estos márgenes son parciales y no deben usarse como rentabilidad definitiva.
 - Bandejas estimadas: **104,1/semana**.
 - Meta comercial declarada: **100 bandejas/semana**.
 - Plan por validar: trabajo 20, vecinos 30, almacenes 30, Facebook 20.
-- Brecha comercial contra producción estimada: **76,1 bandejas/semana**.
+- Diferencia técnica producción/meta: **4,1 bandejas/semana**.
 - Flujo proyectado: pendiente.
 - CAPEX total: pendiente.
 
@@ -58,4 +58,4 @@ Este subtotal no es CAPEX total cerrado.
 
 ## Conclusión
 
-El flujo 500 sigue bloqueado para decisión de inversión. Hay más datos reales, pero faltan compromisos comerciales, CAPEX total, OPEX total, formalización, agua/energía dimensionada y flujo estacional.
+El flujo 500 sigue bloqueado para decisión de inversión. Hay más datos reales, pero faltan validaciones operativas comerciales, CAPEX total, OPEX total, formalización, agua/energía dimensionada y flujo estacional.

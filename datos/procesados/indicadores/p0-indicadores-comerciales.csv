@@ -1,18 +1,12 @@
 indicador,valor,unidad,formula,fuente,estado,observacion
 venta_actual_bandejas_semana,28,bandejas/semana,dato declarado,respuesta Nacho P42,confirmado,dato base confirmado
 bandejas_segunda_semana,6,bandejas/semana,dato declarado,respuesta Nacho P42,confirmado,mix actual confirmado
-precio_bandeja_segunda,5000,CLP/bandeja,dato declarado,repo P0,confirmado,precio por categoría confirmado
 bandejas_primera_semana,13,bandejas/semana,dato declarado,respuesta Nacho P42,confirmado,mix actual confirmado
-precio_bandeja_primera,6000,CLP/bandeja,dato declarado,repo P0,confirmado,precio por categoría confirmado
 bandejas_extra_semana,9,bandejas/semana,dato declarado,respuesta Nacho P42,confirmado,mix actual confirmado
-precio_bandeja_extra,7000,CLP/bandeja,dato declarado,repo P0,confirmado,precio por categoría confirmado
-huevos_por_bandeja,30,huevos/bandeja,dato declarado,P0,confirmado,dato base confirmado
-bandejas_semana_estimadas_500_aves,104.1,bandejas/semana,estimación proporcional,replanteo P0 base 500 aves,estimado,indicador principal vigente
-brecha_bandejas_semana_para_500,76.1,bandejas/semana,104.1 - 28,replanteo P0 base 500 aves,riesgo_comercial,brecha principal vigente
 ingreso_semanal_actual,171000,CLP/semana,6*5000 + 13*6000 + 9*7000,precios repo + respuesta Nacho P42,confirmado_calculado,valor monetario redondeado a entero
-ingreso_mensual_estimado,741000,CLP/mes,ingreso_semanal_actual * 52 / 12,precios repo + respuesta Nacho P42,estimado,valor monetario redondeado a entero
-precio_promedio_por_bandeja,6107,CLP/bandeja,ingreso_semanal_actual / 28,precios repo + respuesta Nacho P42,confirmado_calculado,aproximado
-precio_promedio_por_huevo,204,CLP/huevo,ingreso_semanal_actual / 840,precios repo + respuesta Nacho P42,confirmado_calculado,redondeado
-huevos_quebrados_semana,25,huevos/semana,dato declarado P42,respuesta Nacho P42,confirmado,0 huevos chicos/no vendibles
-bandejas_perdidas_semana,0.83,bandejas/semana,25 / 30,respuesta Nacho P42,confirmado_calculado,bandejas perdidas por huevos quebrados
-meta_comercial_bandejas_semana,100,bandejas/semana,20 trabajo + 30 vecinos + 30 almacenes + 20 Facebook,respuesta Nacho P42,plan_por_validar,no es venta comprometida
+ingreso_mensual_estimado,741000,CLP/mes,171000 * 52 / 12,precios repo + respuesta Nacho P42,estimado,valor monetario redondeado a entero
+precio_promedio_por_bandeja,6107,CLP/bandeja,171000 / 28,precios repo + respuesta Nacho P42,confirmado_calculado,aproximado
+bandejas_semana_estimadas_500_aves,104.1,bandejas/semana,estimación proporcional,replanteo P0 base 500 aves,estimado,producción estimada
+meta_comercial_bandejas_semana,100,bandejas/semana,20+30+30+20,aclaración Jean P43,escenario_base,escenario comercial base
+diferencia_tecnica_produccion_meta_bandejas_semana,4.1,bandejas/semana,104.1 - 100,P43,margen_tecnico,merma/autoconsumo/stock/venta adicional
+diferencia_tecnica_bandejas_semana_para_500_p43,4.1,bandejas/semana,104.1 - 100,P43,cerrada_hipotesis_base,no es bloqueo comercial principal
