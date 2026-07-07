@@ -111,6 +111,7 @@ def main() -> int:
         alternativas_p47 = load_json("dashboard/data/alternativas-crecimiento-p47.json")
         plan_p47 = load_json("dashboard/data/plan-implementacion-6-meses.json")
         reglas_p47 = load_json("dashboard/data/reglas-decision-semaforo-p47.json")
+        vista_ignacio = load_json("dashboard/data/vista-ignacio-resumen-ejecutivo.json")
     except Exception as exc:  # noqa: BLE001 - auditoría debe capturar y reportar claro
         print("ERROR Indicadores P0")
         print(f"- no se pudieron cargar datos: {exc}")
@@ -254,6 +255,23 @@ def main() -> int:
             errors.append("P47 reglas verde: faltan condiciones")
         if "compra de aves" not in decision_p47.get("decisiones_no_autorizadas", []):
             errors.append("P47 debe mantener compra de aves no autorizada")
+
+        # Vista ejecutiva para Ignacio: mismos números, lenguaje simple
+        assert_equal(errors, "Ignacio estado visible", vista_ignacio.get("estado_visible"), "ANALIZAR CON CAUTELA")
+        assert_equal(errors, "Ignacio gallinas actuales", vista_ignacio.get("situacion_actual", {}).get("gallinas_actuales"), 148)
+        assert_equal(errors, "Ignacio inversión base", vista_ignacio.get("inversion_necesaria", {}).get("inversion_total_estimada_base_clp"), 13343765)
+        assert_equal(errors, "Ignacio caja mínima", vista_ignacio.get("inversion_necesaria", {}).get("caja_minima_primer_mes_clp"), 1686750)
+        assert_equal(errors, "Ignacio total base con caja", vista_ignacio.get("inversion_necesaria", {}).get("total_base_con_un_mes_operacion_clp"), 15030515)
+        assert_equal(errors, "Ignacio diferencia faltante", vista_ignacio.get("inversion_necesaria", {}).get("diferencia_faltante_clp"), 5030515)
+        assert_equal(errors, "Ignacio ingreso mensual", vista_ignacio.get("ventas_resultado", {}).get("ingreso_mensual_estimado_clp"), 2646367)
+        assert_equal(errors, "Ignacio costo con trabajo", vista_ignacio.get("ventas_resultado", {}).get("costo_mensual_total_con_trabajo_clp"), 1686750)
+        assert_equal(errors, "Ignacio resultado preliminar", vista_ignacio.get("ventas_resultado", {}).get("resultado_mensual_preliminar_con_trabajo_clp"), 959617)
+        assert_close(errors, "Ignacio venta mínima", vista_ignacio.get("ventas_resultado", {}).get("venta_minima_no_perder_bandejas_semana"), 63.7, 0.05)
+        ign_alts = {item.get("titulo"): item for item in vista_ignacio.get("alternativas_crecimiento", []) if isinstance(item, dict)}
+        assert_equal(errors, "Ignacio +100 inversión", ign_alts.get("+100 pollonas", {}).get("inversion_inicial_con_caja_clp"), 3053801)
+        assert_equal(errors, "Ignacio +150 inversión", ign_alts.get("+150 pollonas", {}).get("inversion_inicial_con_caja_clp"), 4369862)
+        assert_equal(errors, "Ignacio +200 inversión", ign_alts.get("+200 pollonas", {}).get("inversion_inicial_con_caja_clp"), 5685923)
+        assert_equal(errors, "Ignacio +352 inversión", ign_alts.get("+352 pollonas", {}).get("inversion_inicial_con_caja_clp"), 15030515)
 
         # Criterios P1 / inversión
         assert_equal(errors, "estado_p1_preliminar", criterios.get("estado_p1_preliminar"), "no habilitado")

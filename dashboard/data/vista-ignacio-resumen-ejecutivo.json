@@ -1,0 +1,150 @@
+{
+  "proyecto": "Evaluación del proyecto avícola de Ignacio Moraga",
+  "subtitulo": "Análisis preliminar para decidir si conviene crecer desde 148 gallinas hacia 500 gallinas.",
+  "estado_visible": "ANALIZAR CON CAUTELA",
+  "estado_interno": "amarillo",
+  "mensaje_estado": "El proyecto muestra potencial, pero todavía no está listo para una inversión grande. La recomendación actual es avanzar por etapas, validar ventas y costos reales, y no comprar todas las pollonas de una vez sin financiamiento, equipamiento y compradores confirmados.",
+  "recomendacion_principal": "La recomendación actual no es llegar inmediatamente a 500 gallinas. La alternativa más prudente es comenzar con +150 pollonas, medir ventas, consumo, costos y trabajo real durante 30 a 60 días, y luego decidir si conviene seguir creciendo.",
+  "atencion_ignacio": "Atención Ignacio: no se recomienda comprar las 352 pollonas de una vez todavía. Para llegar directo a 500 gallinas se necesita más dinero que los $10.000.000 informados, además de equipamiento, caja para operar y compradores confirmados.",
+  "resumen_decision": [
+    {
+      "titulo": "Estado",
+      "valor": "Analizar con cautela",
+      "detalle": "Puede ser interesante, pero faltan confirmaciones."
+    },
+    {
+      "titulo": "Recomendación",
+      "valor": "Avanzar por etapas",
+      "detalle": "Medir ventas, costos y trabajo real antes de crecer completo."
+    },
+    {
+      "titulo": "Alternativa recomendada",
+      "valor": "+150 pollonas",
+      "detalle": "Equilibra crecimiento y riesgo."
+    },
+    {
+      "titulo": "Opción conservadora",
+      "valor": "+100 pollonas",
+      "detalle": "Menor presión de caja."
+    },
+    {
+      "titulo": "No recomendado ahora",
+      "valor": "+352 pollonas de una vez",
+      "detalle": "Solo con financiamiento cerrado."
+    },
+    {
+      "titulo": "Condición para llegar a 500",
+      "valor": "Cerrar financiamiento y ventas",
+      "detalle": "Equipamiento, compradores y validación formal listos."
+    }
+  ],
+  "situacion_actual": {
+    "gallinas_actuales": 148,
+    "produccion_promedio_huevos_dia": 132,
+    "rango_junio_huevos_dia": "120–142",
+    "produccion_semanal_huevos": 924,
+    "bandejas_producidas_semana": 30.8,
+    "venta_actual_bandejas_semana": 28,
+    "precio_promedio_bandeja_clp": 6107,
+    "precios_categoria_clp": {
+      "segunda": 5000,
+      "primera": 6000,
+      "extra": 7000
+    },
+    "ingreso_actual_semana_clp": 171000,
+    "ingreso_actual_mes_clp": 741000,
+    "postura_promedio_porcentaje": 89.2,
+    "mortalidad_acumulada_porcentaje": 1.3,
+    "alimento_mensual_kg": 550,
+    "alimento_gallina_g_dia": 124,
+    "costo_mensual_parcial_actual_clp": 343640,
+    "resultado_parcial_actual_clp": 397360,
+    "agua_actual_litros_dia": 34,
+    "gallinero_actual_m2": 27,
+    "terreno_disponible_m2": 133
+  },
+  "objetivo_evaluado": {
+    "objetivo_gallinas_totales": 500,
+    "pollonas_faltantes": 352,
+    "produccion_estimada_huevos_dia": 446,
+    "bandejas_estimadas_semana": 104.1,
+    "meta_venta_bandejas_semana": 100,
+    "diferencia_tecnica_bandejas_semana": 4.1,
+    "agua_estimada_litros_dia": "115 a 154,3",
+    "galpon_considerado_m2": 72,
+    "densidad_gallinas_m2": 7,
+    "nota_meta": "La meta de 100 bandejas por semana fue usada como base de cálculo porque Ignacio indicó que sería una venta segura o casi segura y al contado."
+  },
+  "inversion_necesaria": {
+    "galpon_mas_pollonas_faltantes_clp": 9771765,
+    "equipamiento_estimado_base_clp": 3572000,
+    "inversion_total_estimada_base_clp": 13343765,
+    "caja_minima_primer_mes_clp": 1686750,
+    "total_base_con_un_mes_operacion_clp": 15030515,
+    "maximo_informado_ignacio_clp": 10000000,
+    "diferencia_faltante_clp": 5030515
+  },
+  "ventas_resultado": {
+    "ingreso_mensual_estimado_clp": 2646367,
+    "costo_mensual_sin_valorar_trabajo_clp": 1086750,
+    "trabajo_ignacio_valorizado_clp": 600000,
+    "costo_mensual_total_con_trabajo_clp": 1686750,
+    "resultado_mensual_preliminar_con_trabajo_clp": 959617,
+    "venta_minima_no_perder_bandejas_semana": 63.7,
+    "tiempo_recuperar_inversion_base_meses": 13.91
+  },
+  "alternativas_crecimiento": [
+    {
+      "id": "mas_100",
+      "titulo": "+100 pollonas",
+      "texto": "Reduce riesgo y presión de caja.",
+      "inversion_inicial_con_caja_clp": 3053801,
+      "resultado_mensual_estimado_clp": 473570,
+      "nivel_cautela": "bajo",
+      "condicion": "Usar solo si la infraestructura actual alcanza.",
+      "titulo_visible": "+100 pollonas: opción más conservadora"
+    },
+    {
+      "id": "mas_150",
+      "titulo": "+150 pollonas",
+      "texto": "Permite crecer, medir y mantener caja disponible.",
+      "inversion_inicial_con_caja_clp": 4369862,
+      "resultado_mensual_estimado_clp": 529532,
+      "nivel_cautela": "medio",
+      "condicion": "Validar infraestructura, comederos, bebederos y compradores.",
+      "titulo_visible": "+150 pollonas: alternativa recomendada"
+    },
+    {
+      "id": "mas_200",
+      "titulo": "+200 pollonas",
+      "texto": "Acelera el crecimiento, pero aumenta la presión financiera y operativa.",
+      "inversion_inicial_con_caja_clp": 5685923,
+      "resultado_mensual_estimado_clp": 585493,
+      "nivel_cautela": "alto",
+      "condicion": "Avanzar solo con compradores y caja más confirmados.",
+      "titulo_visible": "+200 pollonas: crecimiento más rápido"
+    },
+    {
+      "id": "mas_352",
+      "titulo": "+352 pollonas",
+      "texto": "No se recomienda todavía sin financiamiento cerrado.",
+      "inversion_inicial_con_caja_clp": 15030515,
+      "resultado_mensual_estimado_clp": 959617,
+      "nivel_cautela": "alto",
+      "condicion": "Ejecutar solo con financiamiento cerrado, equipamiento listo y venta confirmada.",
+      "titulo_visible": "+352 pollonas: llegar directo a 500 gallinas"
+    }
+  ],
+  "conclusion_alternativas": "La alternativa recomendada es +150 pollonas porque permite crecer, medir resultados reales y mantener caja disponible. +100 es más conservadora. +352 no debe ejecutarse todavía sin financiamiento cerrado.",
+  "estado_visible_texto": "Estado: analizar con cautela",
+  "proximos_pasos": [
+    "Revisar estos números con Ignacio.",
+    "Confirmar dinero disponible real.",
+    "Pedir cotizaciones finales de equipamiento.",
+    "Confirmar compradores por canal.",
+    "Validar situación legal, sanitaria y tributaria.",
+    "Revisar infraestructura actual para +100 o +150 pollonas.",
+    "Definir fecha de primera compra.",
+    "Partir por +150 pollonas solo si lo anterior está resuelto."
+  ]
+}

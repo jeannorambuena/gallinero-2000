@@ -1,0 +1,40 @@
+{
+  "proyecto": "Evaluación del proyecto avícola de Ignacio Moraga",
+  "uso": "Alertas importantes para Ignacio antes de invertir.",
+  "grupos": [
+    {
+      "titulo": "Dinero",
+      "etiqueta": "ALTA ATENCIÓN",
+      "items": [
+        "El proyecto completo base supera los $10.000.000 disponibles.",
+        "Falta financiar inversión, equipamiento y caja inicial.",
+        "No comprar todas las pollonas si no está cerrado el dinero total."
+      ]
+    },
+    {
+      "titulo": "Ventas",
+      "etiqueta": "VALIDAR ANTES DE INVERTIR",
+      "items": [
+        "La meta de 100 bandejas/semana debe confirmarse por canal.",
+        "Aunque se informó venta segura, conviene respaldarla con compradores concretos.",
+        "La venta mínima para no perder considerando trabajo es 63,7 bandejas/semana."
+      ]
+    },
+    {
+      "titulo": "Operación",
+      "etiqueta": "VALIDAR ANTES DE INVERTIR",
+      "items": [
+        "Confirmar que la infraestructura actual soporta +100 o +150 pollonas.",
+        "Confirmar comederos, bebederos, nidos, agua, energía y bodega.",
+        "Medir 30 a 60 días antes de una segunda expansión."
+      ]
+    },
+    {
+      "titulo": "Legal / sanitario / tributario",
+      "etiqueta": "VALIDAR ANTES DE INVERTIR",
+      "items": [
+        "Aunque Ignacio tenga inicio de actividades, falta validar si corresponde patente, permiso, resolución, factura, boleta u otra exigencia para vender formalmente."
+      ]
+    }
+  ]
+}

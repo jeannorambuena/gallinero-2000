@@ -1,7 +1,7 @@
 {
   "proyecto": "Gallinero Nacho",
-  "fase": "P0 — Diagnóstico real / P47 R1",
-  "estado": "amarillo",
+  "fase": "Evaluación ejecutiva para Ignacio",
+  "estado": "analizar con cautela",
   "semaforo_general": "amarillo",
   "avance_p0_estimado": 90,
   "p1_preliminar_habilitado": false,
@@ -61,7 +61,7 @@
     "plan logístico invierno definido",
     "calendario de ejecución real aprobado"
   ],
-  "conclusion": "AMARILLO: la vista ejecutiva queda ordenada por decisión, datos reales, escenario 500, resumen financiero, alternativas, bloqueos y plan. No habilita inversión.",
+  "conclusion": "Analizar con cautela: no comprar aves todavía, no construir todavía y no hacer inversión grande hasta cerrar financiamiento, equipamiento, compradores y validación formal.",
   "referencia_capex_galpon": {
     "cotizacion_comercial": "COT-GN-0035",
     "version_tecnica_repo": "Galpón Nacho V8 / COT-GN-V8-001",

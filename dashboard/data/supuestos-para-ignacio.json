@@ -1,0 +1,41 @@
+{
+  "proyecto": "Evaluación del proyecto avícola de Ignacio Moraga",
+  "uso": "Supuestos simples usados para explicar el análisis a Ignacio.",
+  "supuestos": [
+    {
+      "titulo": "Precios de venta usados",
+      "estado": "Confirmado por Ignacio",
+      "detalle": "Segunda $5.000, primera $6.000 y extra $7.000 por bandeja."
+    },
+    {
+      "titulo": "Venta usada para el cálculo",
+      "estado": "Confirmado por Ignacio",
+      "detalle": "100 bandejas por semana, con pago al contado."
+    },
+    {
+      "titulo": "Alimento",
+      "estado": "Estimado para el análisis / validado como razonable por Ignacio",
+      "detalle": "75 sacos por mes para 500 gallinas, a $12.950 por saco."
+    },
+    {
+      "titulo": "Trabajo de Ignacio",
+      "estado": "Confirmado por Ignacio / estimado económico",
+      "detalle": "Ignacio trabajaría solo. Se valoró su trabajo en $20.000 diarios, equivalente a $600.000 mensuales."
+    },
+    {
+      "titulo": "Caja mínima para partir",
+      "estado": "Estimado para el análisis",
+      "detalle": "Se considera al menos 1 mes de costos como caja mínima para partir."
+    },
+    {
+      "titulo": "Equipamiento",
+      "estado": "Pendiente de validar",
+      "detalle": "Los precios son referenciales. Faltan cotizaciones finales."
+    },
+    {
+      "titulo": "Situación legal, sanitaria y tributaria",
+      "estado": "Pendiente de validar",
+      "detalle": "Ignacio informa que tiene inicio de actividades. Aun así, falta validar permisos, venta con boleta/factura y exigencias sanitarias antes de invertir fuerte."
+    }
+  ]
+}

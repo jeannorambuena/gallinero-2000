@@ -126,6 +126,22 @@ SPECS = {
         "required": ["proyecto", "fase", "estado", "regla_general"],
         "non_empty_lists": ["verde_solo_si", "amarillo_si", "rojo_si"],
     },
+    "dashboard/data/vista-ignacio-resumen-ejecutivo.json": {
+        "required": ["proyecto", "subtitulo", "estado_visible", "estado_interno", "mensaje_estado", "recomendacion_principal", "atencion_ignacio", "situacion_actual", "objetivo_evaluado", "inversion_necesaria", "ventas_resultado", "conclusion_alternativas"],
+        "non_empty_lists": ["resumen_decision", "alternativas_crecimiento", "proximos_pasos"],
+    },
+    "dashboard/data/supuestos-para-ignacio.json": {
+        "required": ["proyecto", "uso"],
+        "non_empty_lists": ["supuestos"],
+    },
+    "dashboard/data/alertas-para-ignacio.json": {
+        "required": ["proyecto", "uso"],
+        "non_empty_lists": ["grupos"],
+    },
+    "dashboard/data/proximos-pasos-ignacio.json": {
+        "required": ["proyecto", "uso"],
+        "non_empty_lists": ["pasos"],
+    },
     "dashboard/data/flujo-caja-preliminar.json": {
         "required": ["proyecto", "fase", "estado", "ingresos_actuales", "costos_actuales", "mano_obra_referencial", "margenes_actuales", "escenario_500", "escenario_648", "conclusion"],
         "non_empty_lists": ["datos_faltantes", "riesgos", "criterios_para_avanzar", "indicadores_bloqueados"],
