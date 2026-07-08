@@ -1,0 +1,492 @@
+{
+  "proyecto": "Evaluación avícola Ignacio - checklist de decisión",
+  "fecha": "2026-07-08",
+  "local_storage_key": "gallinero_ignacio_checklist_decision_v1",
+  "estado_inicial": "ANALIZAR CON CAUTELA",
+  "recomendacion_vigente": {
+    "principal": "Avanzar por etapas.",
+    "alternativa_recomendada": "+150 pollonas.",
+    "alternativa_conservadora": "+100 pollonas.",
+    "advertencia": "No comprar +352 pollonas de una vez todavía.",
+    "estado_general": "analizar con cautela."
+  },
+  "limitaciones": [
+    "El avance se guarda solo en este navegador.",
+    "No hay base de datos ni backend.",
+    "Si se borra caché o se cambia de dispositivo, las marcas pueden no estar.",
+    "Completar el checklist no aprueba automáticamente la inversión.",
+    "La decisión final debe revisarla Ignacio con cotizaciones, compradores y dinero real."
+  ],
+  "grupos": [
+    {
+      "id": "dinero-financiamiento",
+      "short": "Dinero",
+      "title": "A. Dinero y financiamiento",
+      "items": [
+        {
+          "id": "chk-dinero-financiamiento-critico-1-confirmar-dinero-disponible-real-de-ignacio",
+          "tipo": "critico",
+          "texto": "Confirmar dinero disponible real de Ignacio.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-dinero-financiamiento-critico-2-confirmar-si-existe-credito-prestamo-o-apoyo-externo",
+          "tipo": "critico",
+          "texto": "Confirmar si existe crédito, préstamo o apoyo externo.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-dinero-financiamiento-critico-3-confirmar-que-se-puede-cubrir-la-primera-etapa-elegida",
+          "tipo": "critico",
+          "texto": "Confirmar que se puede cubrir la primera etapa elegida.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-dinero-financiamiento-critico-4-confirmar-caja-minima-para-operar-el-primer-mes",
+          "tipo": "critico",
+          "texto": "Confirmar caja mínima para operar el primer mes.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-dinero-financiamiento-critico-5-confirmar-que-no-se-comprara-352-pollonas-sin-financiamiento-cerrado",
+          "tipo": "critico",
+          "texto": "Confirmar que no se comprará +352 pollonas sin financiamiento cerrado.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-dinero-financiamiento-apoyo-1-definir-monto-maximo-de-inversion-inicial",
+          "tipo": "apoyo",
+          "texto": "Definir monto máximo de inversión inicial.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-dinero-financiamiento-apoyo-2-definir-reserva-para-imprevistos",
+          "tipo": "apoyo",
+          "texto": "Definir reserva para imprevistos.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-dinero-financiamiento-apoyo-3-definir-si-se-partira-con-100-o-150-pollonas",
+          "tipo": "apoyo",
+          "texto": "Definir si se partirá con +100 o +150 pollonas.",
+          "estado_inicial": false
+        }
+      ]
+    },
+    {
+      "id": "compradores-ventas",
+      "short": "Ventas",
+      "title": "B. Compradores y ventas",
+      "items": [
+        {
+          "id": "chk-compradores-ventas-critico-1-confirmar-compradores-concretos-para-la-produccion-adicional",
+          "tipo": "critico",
+          "texto": "Confirmar compradores concretos para la producción adicional.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-compradores-ventas-critico-2-confirmar-venta-minima-necesaria-para-no-perder",
+          "tipo": "critico",
+          "texto": "Confirmar venta mínima necesaria para no perder.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-compradores-ventas-critico-3-confirmar-forma-de-pago-al-contado",
+          "tipo": "critico",
+          "texto": "Confirmar forma de pago al contado.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-compradores-ventas-critico-4-confirmar-si-almacenes-mantendran-precios-indicados",
+          "tipo": "critico",
+          "texto": "Confirmar si almacenes mantendrán precios indicados.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-compradores-ventas-critico-5-confirmar-que-la-meta-de-100-bandejas-semana-no-depende-de-un-solo-compr",
+          "tipo": "critico",
+          "texto": "Confirmar que la meta de 100 bandejas/semana no depende de un solo comprador.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-compradores-ventas-apoyo-1-separar-compradores-por-canal-trabajo-vecinos-almacenes-facebook",
+          "tipo": "apoyo",
+          "texto": "Separar compradores por canal: trabajo, vecinos, almacenes, Facebook.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-compradores-ventas-apoyo-2-definir-registro-simple-de-ventas-semanales",
+          "tipo": "apoyo",
+          "texto": "Definir registro simple de ventas semanales.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-compradores-ventas-apoyo-3-definir-que-hacer-con-excedentes-stock-o-huevos-regalados",
+          "tipo": "apoyo",
+          "texto": "Definir qué hacer con excedentes, stock o huevos regalados.",
+          "estado_inicial": false
+        }
+      ]
+    },
+    {
+      "id": "cotizaciones-equipamiento",
+      "short": "Cotizaciones",
+      "title": "C. Cotizaciones y equipamiento",
+      "items": [
+        {
+          "id": "chk-cotizaciones-equipamiento-critico-1-cotizar-comederos-finales",
+          "tipo": "critico",
+          "texto": "Cotizar comederos finales.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-cotizaciones-equipamiento-critico-2-cotizar-bebederos-finales",
+          "tipo": "critico",
+          "texto": "Cotizar bebederos finales.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-cotizaciones-equipamiento-critico-3-cotizar-ponederos-nidos-finales",
+          "tipo": "critico",
+          "texto": "Cotizar ponederos/nidos finales.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-cotizaciones-equipamiento-critico-4-cotizar-mallas-interiores-y-divisiones",
+          "tipo": "critico",
+          "texto": "Cotizar mallas interiores y divisiones.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-cotizaciones-equipamiento-critico-5-confirmar-componentes-faltantes-del-sistema-solar-energia",
+          "tipo": "critico",
+          "texto": "Confirmar componentes faltantes del sistema solar/energía.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-cotizaciones-equipamiento-critico-6-confirmar-distribucion-interna-de-agua",
+          "tipo": "critico",
+          "texto": "Confirmar distribución interna de agua.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-cotizaciones-equipamiento-critico-7-confirmar-que-el-equipamiento-alcanza-para-la-etapa-inicial-elegida",
+          "tipo": "critico",
+          "texto": "Confirmar que el equipamiento alcanza para la etapa inicial elegida.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-cotizaciones-equipamiento-apoyo-1-comparar-proveedor-bajo-base-alto",
+          "tipo": "apoyo",
+          "texto": "Comparar proveedor bajo/base/alto.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-cotizaciones-equipamiento-apoyo-2-definir-si-parte-con-equipamiento-fabricado-o-comprado",
+          "tipo": "apoyo",
+          "texto": "Definir si parte con equipamiento fabricado o comprado.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-cotizaciones-equipamiento-apoyo-3-registrar-precios-finales-en-el-sistema",
+          "tipo": "apoyo",
+          "texto": "Registrar precios finales en el sistema.",
+          "estado_inicial": false
+        }
+      ]
+    },
+    {
+      "id": "infraestructura-operacion",
+      "short": "Infraestructura",
+      "title": "D. Infraestructura y operación",
+      "items": [
+        {
+          "id": "chk-infraestructura-operacion-critico-1-validar-que-la-infraestructura-actual-soporta-100-o-150-pollonas",
+          "tipo": "critico",
+          "texto": "Validar que la infraestructura actual soporta +100 o +150 pollonas.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-infraestructura-operacion-critico-2-confirmar-capacidad-de-agua",
+          "tipo": "critico",
+          "texto": "Confirmar capacidad de agua.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-infraestructura-operacion-critico-3-confirmar-capacidad-de-bodega-para-alimento-semanal",
+          "tipo": "critico",
+          "texto": "Confirmar capacidad de bodega para alimento semanal.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-infraestructura-operacion-critico-4-confirmar-comederos-bebederos-y-nidos-minimos-antes-de-comprar-aves",
+          "tipo": "critico",
+          "texto": "Confirmar comederos, bebederos y nidos mínimos antes de comprar aves.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-infraestructura-operacion-critico-5-confirmar-horas-reales-de-trabajo-diario",
+          "tipo": "critico",
+          "texto": "Confirmar horas reales de trabajo diario.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-infraestructura-operacion-critico-6-confirmar-plan-de-limpieza-y-manejo-sanitario-basico",
+          "tipo": "critico",
+          "texto": "Confirmar plan de limpieza y manejo sanitario básico.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-infraestructura-operacion-apoyo-1-definir-responsable-diario",
+          "tipo": "apoyo",
+          "texto": "Definir responsable diario.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-infraestructura-operacion-apoyo-2-definir-registro-de-produccion-diaria",
+          "tipo": "apoyo",
+          "texto": "Definir registro de producción diaria.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-infraestructura-operacion-apoyo-3-definir-registro-de-consumo-de-alimento",
+          "tipo": "apoyo",
+          "texto": "Definir registro de consumo de alimento.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-infraestructura-operacion-apoyo-4-definir-medicion-de-mortalidad",
+          "tipo": "apoyo",
+          "texto": "Definir medición de mortalidad.",
+          "estado_inicial": false
+        }
+      ]
+    },
+    {
+      "id": "legal-sanitario-tributario",
+      "short": "Legal",
+      "title": "E. Legal, sanitario y tributario",
+      "items": [
+        {
+          "id": "chk-legal-sanitario-tributario-critico-1-validar-inicio-de-actividades",
+          "tipo": "critico",
+          "texto": "Validar inicio de actividades.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-legal-sanitario-tributario-critico-2-validar-si-corresponde-patente-municipal",
+          "tipo": "critico",
+          "texto": "Validar si corresponde patente municipal.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-legal-sanitario-tributario-critico-3-validar-si-corresponde-resolucion-o-permiso-sanitario",
+          "tipo": "critico",
+          "texto": "Validar si corresponde resolución o permiso sanitario.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-legal-sanitario-tributario-critico-4-validar-forma-correcta-de-emitir-boleta-o-factura",
+          "tipo": "critico",
+          "texto": "Validar forma correcta de emitir boleta o factura.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-legal-sanitario-tributario-critico-5-confirmar-exigencias-de-clientes-que-pidan-factura",
+          "tipo": "critico",
+          "texto": "Confirmar exigencias de clientes que pidan factura.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-legal-sanitario-tributario-apoyo-1-guardar-respaldo-de-consultas-realizadas",
+          "tipo": "apoyo",
+          "texto": "Guardar respaldo de consultas realizadas.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-legal-sanitario-tributario-apoyo-2-definir-si-necesitara-apoyo-contable-eventual",
+          "tipo": "apoyo",
+          "texto": "Definir si necesitará apoyo contable eventual.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-legal-sanitario-tributario-apoyo-3-revisar-obligaciones-si-aumenta-escala",
+          "tipo": "apoyo",
+          "texto": "Revisar obligaciones si aumenta escala.",
+          "estado_inicial": false
+        }
+      ]
+    },
+    {
+      "id": "logistica-invierno",
+      "short": "Logística",
+      "title": "F. Logística e invierno",
+      "items": [
+        {
+          "id": "chk-logistica-invierno-critico-1-revisar-acceso-en-invierno",
+          "tipo": "critico",
+          "texto": "Revisar acceso en invierno.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-logistica-invierno-critico-2-definir-como-ingresara-alimento",
+          "tipo": "critico",
+          "texto": "Definir cómo ingresará alimento.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-logistica-invierno-critico-3-definir-como-ingresaran-pollonas-y-materiales",
+          "tipo": "critico",
+          "texto": "Definir cómo ingresarán pollonas y materiales.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-logistica-invierno-critico-4-confirmar-si-se-necesita-mejora-minima-de-camino-o-acopio",
+          "tipo": "critico",
+          "texto": "Confirmar si se necesita mejora mínima de camino o acopio.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-logistica-invierno-apoyo-1-definir-proveedor-con-despacho",
+          "tipo": "apoyo",
+          "texto": "Definir proveedor con despacho.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-logistica-invierno-apoyo-2-definir-lugar-seco-para-acopio",
+          "tipo": "apoyo",
+          "texto": "Definir lugar seco para acopio.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-logistica-invierno-apoyo-3-definir-plan-alternativo-si-hay-lluvia",
+          "tipo": "apoyo",
+          "texto": "Definir plan alternativo si hay lluvia.",
+          "estado_inicial": false
+        }
+      ]
+    },
+    {
+      "id": "decision-primera-compra",
+      "short": "Primera compra",
+      "title": "G. Decisión de primera compra",
+      "items": [
+        {
+          "id": "chk-decision-primera-compra-critico-1-elegir-alternativa-inicial-100-o-150-pollonas",
+          "tipo": "critico",
+          "texto": "Elegir alternativa inicial: +100 o +150 pollonas.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-decision-primera-compra-critico-2-confirmar-fecha-tentativa-de-compra",
+          "tipo": "critico",
+          "texto": "Confirmar fecha tentativa de compra.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-decision-primera-compra-critico-3-confirmar-que-equipamiento-minimo-estara-listo-antes-de-recibir-aves",
+          "tipo": "critico",
+          "texto": "Confirmar que equipamiento mínimo estará listo antes de recibir aves.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-decision-primera-compra-critico-4-confirmar-que-caja-minima-estara-disponible",
+          "tipo": "critico",
+          "texto": "Confirmar que caja mínima estará disponible.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-decision-primera-compra-critico-5-confirmar-que-no-se-comprara-352-de-una-vez-sin-cumplir-condiciones",
+          "tipo": "critico",
+          "texto": "Confirmar que no se comprará +352 de una vez sin cumplir condiciones.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-decision-primera-compra-apoyo-1-definir-calendario-de-seguimiento-30-a-60-dias",
+          "tipo": "apoyo",
+          "texto": "Definir calendario de seguimiento 30 a 60 días.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-decision-primera-compra-apoyo-2-definir-quien-anotara-datos-reales",
+          "tipo": "apoyo",
+          "texto": "Definir quién anotará datos reales.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-decision-primera-compra-apoyo-3-definir-fecha-de-segunda-revision",
+          "tipo": "apoyo",
+          "texto": "Definir fecha de segunda revisión.",
+          "estado_inicial": false
+        }
+      ]
+    },
+    {
+      "id": "medicion-primera-etapa",
+      "short": "Medición",
+      "title": "H. Medición de la primera etapa",
+      "items": [
+        {
+          "id": "chk-medicion-primera-etapa-critico-1-registrar-produccion-diaria",
+          "tipo": "critico",
+          "texto": "Registrar producción diaria.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-medicion-primera-etapa-critico-2-registrar-ventas-semanales",
+          "tipo": "critico",
+          "texto": "Registrar ventas semanales.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-medicion-primera-etapa-critico-3-registrar-alimento-consumido",
+          "tipo": "critico",
+          "texto": "Registrar alimento consumido.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-medicion-primera-etapa-critico-4-registrar-mortalidad",
+          "tipo": "critico",
+          "texto": "Registrar mortalidad.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-medicion-primera-etapa-critico-5-registrar-horas-reales-de-trabajo",
+          "tipo": "critico",
+          "texto": "Registrar horas reales de trabajo.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-medicion-primera-etapa-critico-6-comparar-margen-real-contra-margen-estimado",
+          "tipo": "critico",
+          "texto": "Comparar margen real contra margen estimado.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-medicion-primera-etapa-apoyo-1-registrar-problemas-sanitarios",
+          "tipo": "apoyo",
+          "texto": "Registrar problemas sanitarios.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-medicion-primera-etapa-apoyo-2-registrar-problemas-de-acceso",
+          "tipo": "apoyo",
+          "texto": "Registrar problemas de acceso.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-medicion-primera-etapa-apoyo-3-registrar-comentarios-de-compradores",
+          "tipo": "apoyo",
+          "texto": "Registrar comentarios de compradores.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-medicion-primera-etapa-apoyo-4-revisar-si-conviene-segunda-expansion",
+          "tipo": "apoyo",
+          "texto": "Revisar si conviene segunda expansión.",
+          "estado_inicial": false
+        }
+      ]
+    }
+  ]
+}

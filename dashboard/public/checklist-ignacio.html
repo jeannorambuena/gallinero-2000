@@ -3,27 +3,876 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Checklist reunión Ignacio</title>
+    <title>Checklist interactivo de decisión Ignacio</title>
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./informe-print.css" />
   </head>
-  <body class="visual-body">
-
-    <main class="visual-shell">
-      <header class="visual-header">
-        <p class="eyebrow">Checklist de reunión · versión 2026-07-07</p>
-        <h1>Checklist para reunión con Ignacio</h1>
-        <p>Este checklist no aprueba la inversión. Sirve para revisar qué falta antes de comprar aves o construir.</p>
-      <div class="visual-actions no-print">
-        <a class="back-link" href="./index.html#informe-final">Volver al dashboard</a>
-        <a class="visual-button" href="./informe-ignacio.html">Informe completo</a>
-        <a class="visual-button" href="./resumen-ignacio.html">Resumen corto</a>
-        <a class="visual-button" href="./checklist-ignacio.html">Checklist reunión</a>
-        <a class="visual-button" href="./anexo-calculos-ignacio.html">Anexo de cálculos</a>
-        <button class="print-button primary" type="button" onclick="window.print()">Imprimir / guardar como PDF</button>
-      </div>
+  <body class="visual-body checklist-decision-body">
+    <main class="visual-shell checklist-decision-shell">
+      <header class="visual-header checklist-hero">
+        <p class="eyebrow">Checklist de decisión · P50 · versión 2026-07-08</p>
+        <h1>Checklist interactivo para decidir con Ignacio</h1>
+        <p>Guía de reunión para marcar avances, revisar pendientes críticos y preparar una decisión responsable antes de comprar aves, construir o hacer inversión mayor.</p>
+        <div class="visual-actions no-print">
+          <a class="back-link" href="./index.html#informe-final">Volver al dashboard</a>
+          <a class="visual-button" href="./informe-ignacio.html">Informe completo</a>
+          <a class="visual-button" href="./resumen-ignacio.html">Resumen corto</a>
+          <a class="visual-button" href="./anexo-calculos-ignacio.html">Anexo de cálculos</a>
+          <button id="save-progress" class="print-button primary" type="button">Guardar avance</button>
+          <button id="copy-pending" class="copy-button primary" type="button">Copiar resumen de pendientes</button>
+          <button id="print-checklist" class="print-button" type="button">Imprimir / guardar como PDF</button>
+          <button id="clear-checklist" class="visual-button danger" type="button">Limpiar checklist</button>
+        </div>
+        <p id="checklist-message" class="checklist-message" role="status" aria-live="polite"></p>
       </header>
-      <section class="visual-section"><h2>Dinero disponible</h2><div class="checklist-group"><label class="check-item"><input type="checkbox" /> <span>Confirmar dinero disponible real sin endeudarse demasiado.</span></label><label class="check-item"><input type="checkbox" /> <span>Confirmar si habrá crédito, préstamo o apoyo externo.</span></label><label class="check-item"><input type="checkbox" /> <span>Confirmar cuánto se puede reservar como caja mínima para operar.</span></label><label class="check-item"><input type="checkbox" /> <span>Revisar diferencia faltante para partir directo a 500 gallinas.</span></label></div></section><section class="visual-section"><h2>Compradores</h2><div class="checklist-group"><label class="check-item"><input type="checkbox" /> <span>Confirmar compradores actuales por canal.</span></label><label class="check-item"><input type="checkbox" /> <span>Confirmar compradores necesarios para llegar a 100 bandejas/semana.</span></label><label class="check-item"><input type="checkbox" /> <span>Confirmar si todos pagan al contado.</span></label><label class="check-item"><input type="checkbox" /> <span>Confirmar si almacenes mantienen precios: segunda $5.000, primera $6.000, extra $7.000.</span></label><label class="check-item"><input type="checkbox" /> <span>Confirmar si algún cliente exigirá factura.</span></label></div></section><section class="visual-section"><h2>Cotizaciones</h2><div class="checklist-group"><label class="check-item"><input type="checkbox" /> <span>Confirmar cotización de comederos.</span></label><label class="check-item"><input type="checkbox" /> <span>Confirmar cotización de bebederos.</span></label><label class="check-item"><input type="checkbox" /> <span>Confirmar cotización de nidos/ponederos.</span></label><label class="check-item"><input type="checkbox" /> <span>Confirmar cotización de mallas interiores.</span></label><label class="check-item"><input type="checkbox" /> <span>Confirmar cotización de bodega o ampliación para alimento.</span></label><label class="check-item"><input type="checkbox" /> <span>Confirmar distribución interna de agua.</span></label><label class="check-item"><input type="checkbox" /> <span>Confirmar qué falta comprar para sistema solar, bomba, luces o cámaras.</span></label></div></section><section class="visual-section"><h2>Infraestructura</h2><div class="checklist-group"><label class="check-item"><input type="checkbox" /> <span>Revisar si el gallinero actual soporta +100 pollonas.</span></label><label class="check-item"><input type="checkbox" /> <span>Revisar si el gallinero actual soporta +150 pollonas.</span></label><label class="check-item"><input type="checkbox" /> <span>Confirmar espacio, ventilación, cama, agua y alimentación.</span></label><label class="check-item"><input type="checkbox" /> <span>Confirmar solución para almacenamiento de alimento.</span></label><label class="check-item"><input type="checkbox" /> <span>Confirmar plan de invierno/acceso.</span></label></div></section><section class="visual-section"><h2>Legal / sanitario / tributario</h2><div class="checklist-group"><label class="check-item"><input type="checkbox" /> <span>Confirmar inicio de actividades.</span></label><label class="check-item"><input type="checkbox" /> <span>Revisar si corresponde patente.</span></label><label class="check-item"><input type="checkbox" /> <span>Revisar si corresponde resolución sanitaria u otro permiso.</span></label><label class="check-item"><input type="checkbox" /> <span>Confirmar boleta/factura para ventas formales.</span></label><label class="check-item"><input type="checkbox" /> <span>Confirmar si habrá costo de contador o asesoría.</span></label></div></section><section class="visual-section"><h2>Decisión de primera compra</h2><div class="checklist-group"><label class="check-item"><input type="checkbox" /> <span>Elegir +100 pollonas si se prioriza menor riesgo.</span></label><label class="check-item"><input type="checkbox" /> <span>Elegir +150 pollonas si se acepta la recomendación preliminar.</span></label><label class="check-item"><input type="checkbox" /> <span>Dejar +200 solo si hay mejores confirmaciones.</span></label><label class="check-item"><input type="checkbox" /> <span>Dejar +352 solo si existe financiamiento cerrado y venta confirmada.</span></label><label class="check-item"><input type="checkbox" /> <span>Definir fecha tentativa de compra.</span></label></div></section><section class="visual-section"><h2>Medición de la primera etapa</h2><div class="checklist-group"><label class="check-item"><input type="checkbox" /> <span>Registrar producción diaria.</span></label><label class="check-item"><input type="checkbox" /> <span>Registrar consumo de alimento.</span></label><label class="check-item"><input type="checkbox" /> <span>Registrar ventas por canal.</span></label><label class="check-item"><input type="checkbox" /> <span>Registrar mortalidad.</span></label><label class="check-item"><input type="checkbox" /> <span>Registrar horas diarias de trabajo.</span></label><label class="check-item"><input type="checkbox" /> <span>Registrar costos reales.</span></label><label class="check-item"><input type="checkbox" /> <span>Revisar resultados después de 30 a 60 días.</span></label></div></section>
+
+      <section class="visual-section recommendation-card" aria-labelledby="recomendacion-vigente">
+        <h2 id="recomendacion-vigente">Recomendación vigente</h2>
+        <div class="recommendation-grid">
+          <article><span>Principal</span><strong>Avanzar por etapas</strong></article>
+          <article><span>Alternativa recomendada</span><strong>+150 pollonas</strong></article>
+          <article><span>Alternativa conservadora</span><strong>+100 pollonas</strong></article>
+          <article class="danger"><span>No hacer todavía</span><strong>No comprar +352 pollonas de una vez</strong></article>
+          <article class="warning"><span>Estado general</span><strong>Analizar con cautela</strong></article>
+        </div>
+        <p class="visual-alert danger">Este checklist no aprueba compra de aves, construcción ni inversión mayor. La decisión final debe revisarla Ignacio con cotizaciones, compradores confirmados, dinero disponible y condiciones reales.</p>
+      </section>
+
+      <section class="decision-dashboard" aria-label="Panel de avance y decisión">
+        <article id="decision-state-card" class="visual-section decision-state-card">
+          <p class="eyebrow">Estado de decisión</p>
+          <h2 id="decision-state">ANALIZAR CON CAUTELA</h2>
+          <p id="decision-state-text">Todavía no conviene comprar aves, construir ni hacer inversión mayor. Faltan puntos críticos por confirmar.</p>
+        </article>
+
+        <article class="visual-section progress-card" aria-labelledby="avance-preparacion">
+          <p class="eyebrow">Avance de preparación para decidir</p>
+          <h2 id="avance-preparacion">Avance general: <span id="overall-percent">0%</span></h2>
+          <div class="progress-row">
+            <div class="progress-label"><span>Progreso general</span><strong id="overall-count">0 de 0</strong></div>
+            <div class="progress-track" aria-hidden="true"><span id="overall-bar" style="width: 0%"></span></div>
+          </div>
+          <div class="progress-row critical-progress">
+            <div class="progress-label"><span>Pendientes críticos cerrados</span><strong id="critical-count">0 de 0</strong></div>
+            <div class="progress-track" aria-hidden="true"><span id="critical-bar" style="width: 0%"></span></div>
+          </div>
+          <div class="progress-stats">
+            <span>Puntos completados: <strong id="completed-total">0 de 0</strong></span>
+            <span>Pendientes críticos cerrados: <strong id="completed-critical">0 de 0</strong></span>
+            <span>Apoyos completados: <strong id="completed-support">0 de 0</strong></span>
+          </div>
+        </article>
+      </section>
+
+      <section id="missing-green-card" class="visual-section missing-green-card" aria-labelledby="faltante-verde">
+        <p class="eyebrow">Resumen dinámico</p>
+        <h2 id="faltante-verde">Qué falta para pasar a verde</h2>
+        <p id="missing-green-intro" class="missing-intro">Para pasar a verde todavía falta:</p>
+        <div id="missing-critical-list" class="pending-list"></div>
+        <div id="missing-support-wrap" class="support-pending-wrap">
+          <h3>También quedan pendientes de apoyo</h3>
+          <div id="missing-support-list" class="pending-list support"></div>
+        </div>
+      </section>
+
+      <section class="visual-section privacy-note" aria-labelledby="privacidad-alcance">
+        <h2 id="privacidad-alcance">Privacidad y alcance</h2>
+        <p>Las marcas de este checklist se guardan solo en este navegador. No se envían a una base de datos. Si se abre desde otro celular o computador, puede aparecer vacío.</p>
+        <ul>
+          <li>No hay base de datos ni backend.</li>
+          <li>Si se borra caché o datos del sitio, las marcas pueden desaparecer.</li>
+          <li>Completar el checklist no aprueba automáticamente la inversión.</li>
+          <li>La decisión final debe revisarla Ignacio con cotizaciones, compradores y dinero real.</li>
+        </ul>
+      </section>
+
+      <section id="checklist-groups" class="checklist-decision-groups" aria-label="Checklist por grupo"></section>
     </main>
+
+    <script id="checklist-data" type="application/json">
+{
+  "proyecto": "Evaluación avícola Ignacio - checklist de decisión",
+  "fecha": "2026-07-08",
+  "local_storage_key": "gallinero_ignacio_checklist_decision_v1",
+  "estado_inicial": "ANALIZAR CON CAUTELA",
+  "recomendacion_vigente": {
+    "principal": "Avanzar por etapas.",
+    "alternativa_recomendada": "+150 pollonas.",
+    "alternativa_conservadora": "+100 pollonas.",
+    "advertencia": "No comprar +352 pollonas de una vez todavía.",
+    "estado_general": "analizar con cautela."
+  },
+  "limitaciones": [
+    "El avance se guarda solo en este navegador.",
+    "No hay base de datos ni backend.",
+    "Si se borra caché o se cambia de dispositivo, las marcas pueden no estar.",
+    "Completar el checklist no aprueba automáticamente la inversión.",
+    "La decisión final debe revisarla Ignacio con cotizaciones, compradores y dinero real."
+  ],
+  "grupos": [
+    {
+      "id": "dinero-financiamiento",
+      "short": "Dinero",
+      "title": "A. Dinero y financiamiento",
+      "items": [
+        {
+          "id": "chk-dinero-financiamiento-critico-1-confirmar-dinero-disponible-real-de-ignacio",
+          "tipo": "critico",
+          "texto": "Confirmar dinero disponible real de Ignacio.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-dinero-financiamiento-critico-2-confirmar-si-existe-credito-prestamo-o-apoyo-externo",
+          "tipo": "critico",
+          "texto": "Confirmar si existe crédito, préstamo o apoyo externo.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-dinero-financiamiento-critico-3-confirmar-que-se-puede-cubrir-la-primera-etapa-elegida",
+          "tipo": "critico",
+          "texto": "Confirmar que se puede cubrir la primera etapa elegida.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-dinero-financiamiento-critico-4-confirmar-caja-minima-para-operar-el-primer-mes",
+          "tipo": "critico",
+          "texto": "Confirmar caja mínima para operar el primer mes.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-dinero-financiamiento-critico-5-confirmar-que-no-se-comprara-352-pollonas-sin-financiamiento-cerrado",
+          "tipo": "critico",
+          "texto": "Confirmar que no se comprará +352 pollonas sin financiamiento cerrado.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-dinero-financiamiento-apoyo-1-definir-monto-maximo-de-inversion-inicial",
+          "tipo": "apoyo",
+          "texto": "Definir monto máximo de inversión inicial.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-dinero-financiamiento-apoyo-2-definir-reserva-para-imprevistos",
+          "tipo": "apoyo",
+          "texto": "Definir reserva para imprevistos.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-dinero-financiamiento-apoyo-3-definir-si-se-partira-con-100-o-150-pollonas",
+          "tipo": "apoyo",
+          "texto": "Definir si se partirá con +100 o +150 pollonas.",
+          "estado_inicial": false
+        }
+      ]
+    },
+    {
+      "id": "compradores-ventas",
+      "short": "Ventas",
+      "title": "B. Compradores y ventas",
+      "items": [
+        {
+          "id": "chk-compradores-ventas-critico-1-confirmar-compradores-concretos-para-la-produccion-adicional",
+          "tipo": "critico",
+          "texto": "Confirmar compradores concretos para la producción adicional.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-compradores-ventas-critico-2-confirmar-venta-minima-necesaria-para-no-perder",
+          "tipo": "critico",
+          "texto": "Confirmar venta mínima necesaria para no perder.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-compradores-ventas-critico-3-confirmar-forma-de-pago-al-contado",
+          "tipo": "critico",
+          "texto": "Confirmar forma de pago al contado.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-compradores-ventas-critico-4-confirmar-si-almacenes-mantendran-precios-indicados",
+          "tipo": "critico",
+          "texto": "Confirmar si almacenes mantendrán precios indicados.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-compradores-ventas-critico-5-confirmar-que-la-meta-de-100-bandejas-semana-no-depende-de-un-solo-compr",
+          "tipo": "critico",
+          "texto": "Confirmar que la meta de 100 bandejas/semana no depende de un solo comprador.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-compradores-ventas-apoyo-1-separar-compradores-por-canal-trabajo-vecinos-almacenes-facebook",
+          "tipo": "apoyo",
+          "texto": "Separar compradores por canal: trabajo, vecinos, almacenes, Facebook.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-compradores-ventas-apoyo-2-definir-registro-simple-de-ventas-semanales",
+          "tipo": "apoyo",
+          "texto": "Definir registro simple de ventas semanales.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-compradores-ventas-apoyo-3-definir-que-hacer-con-excedentes-stock-o-huevos-regalados",
+          "tipo": "apoyo",
+          "texto": "Definir qué hacer con excedentes, stock o huevos regalados.",
+          "estado_inicial": false
+        }
+      ]
+    },
+    {
+      "id": "cotizaciones-equipamiento",
+      "short": "Cotizaciones",
+      "title": "C. Cotizaciones y equipamiento",
+      "items": [
+        {
+          "id": "chk-cotizaciones-equipamiento-critico-1-cotizar-comederos-finales",
+          "tipo": "critico",
+          "texto": "Cotizar comederos finales.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-cotizaciones-equipamiento-critico-2-cotizar-bebederos-finales",
+          "tipo": "critico",
+          "texto": "Cotizar bebederos finales.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-cotizaciones-equipamiento-critico-3-cotizar-ponederos-nidos-finales",
+          "tipo": "critico",
+          "texto": "Cotizar ponederos/nidos finales.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-cotizaciones-equipamiento-critico-4-cotizar-mallas-interiores-y-divisiones",
+          "tipo": "critico",
+          "texto": "Cotizar mallas interiores y divisiones.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-cotizaciones-equipamiento-critico-5-confirmar-componentes-faltantes-del-sistema-solar-energia",
+          "tipo": "critico",
+          "texto": "Confirmar componentes faltantes del sistema solar/energía.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-cotizaciones-equipamiento-critico-6-confirmar-distribucion-interna-de-agua",
+          "tipo": "critico",
+          "texto": "Confirmar distribución interna de agua.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-cotizaciones-equipamiento-critico-7-confirmar-que-el-equipamiento-alcanza-para-la-etapa-inicial-elegida",
+          "tipo": "critico",
+          "texto": "Confirmar que el equipamiento alcanza para la etapa inicial elegida.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-cotizaciones-equipamiento-apoyo-1-comparar-proveedor-bajo-base-alto",
+          "tipo": "apoyo",
+          "texto": "Comparar proveedor bajo/base/alto.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-cotizaciones-equipamiento-apoyo-2-definir-si-parte-con-equipamiento-fabricado-o-comprado",
+          "tipo": "apoyo",
+          "texto": "Definir si parte con equipamiento fabricado o comprado.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-cotizaciones-equipamiento-apoyo-3-registrar-precios-finales-en-el-sistema",
+          "tipo": "apoyo",
+          "texto": "Registrar precios finales en el sistema.",
+          "estado_inicial": false
+        }
+      ]
+    },
+    {
+      "id": "infraestructura-operacion",
+      "short": "Infraestructura",
+      "title": "D. Infraestructura y operación",
+      "items": [
+        {
+          "id": "chk-infraestructura-operacion-critico-1-validar-que-la-infraestructura-actual-soporta-100-o-150-pollonas",
+          "tipo": "critico",
+          "texto": "Validar que la infraestructura actual soporta +100 o +150 pollonas.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-infraestructura-operacion-critico-2-confirmar-capacidad-de-agua",
+          "tipo": "critico",
+          "texto": "Confirmar capacidad de agua.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-infraestructura-operacion-critico-3-confirmar-capacidad-de-bodega-para-alimento-semanal",
+          "tipo": "critico",
+          "texto": "Confirmar capacidad de bodega para alimento semanal.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-infraestructura-operacion-critico-4-confirmar-comederos-bebederos-y-nidos-minimos-antes-de-comprar-aves",
+          "tipo": "critico",
+          "texto": "Confirmar comederos, bebederos y nidos mínimos antes de comprar aves.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-infraestructura-operacion-critico-5-confirmar-horas-reales-de-trabajo-diario",
+          "tipo": "critico",
+          "texto": "Confirmar horas reales de trabajo diario.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-infraestructura-operacion-critico-6-confirmar-plan-de-limpieza-y-manejo-sanitario-basico",
+          "tipo": "critico",
+          "texto": "Confirmar plan de limpieza y manejo sanitario básico.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-infraestructura-operacion-apoyo-1-definir-responsable-diario",
+          "tipo": "apoyo",
+          "texto": "Definir responsable diario.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-infraestructura-operacion-apoyo-2-definir-registro-de-produccion-diaria",
+          "tipo": "apoyo",
+          "texto": "Definir registro de producción diaria.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-infraestructura-operacion-apoyo-3-definir-registro-de-consumo-de-alimento",
+          "tipo": "apoyo",
+          "texto": "Definir registro de consumo de alimento.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-infraestructura-operacion-apoyo-4-definir-medicion-de-mortalidad",
+          "tipo": "apoyo",
+          "texto": "Definir medición de mortalidad.",
+          "estado_inicial": false
+        }
+      ]
+    },
+    {
+      "id": "legal-sanitario-tributario",
+      "short": "Legal",
+      "title": "E. Legal, sanitario y tributario",
+      "items": [
+        {
+          "id": "chk-legal-sanitario-tributario-critico-1-validar-inicio-de-actividades",
+          "tipo": "critico",
+          "texto": "Validar inicio de actividades.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-legal-sanitario-tributario-critico-2-validar-si-corresponde-patente-municipal",
+          "tipo": "critico",
+          "texto": "Validar si corresponde patente municipal.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-legal-sanitario-tributario-critico-3-validar-si-corresponde-resolucion-o-permiso-sanitario",
+          "tipo": "critico",
+          "texto": "Validar si corresponde resolución o permiso sanitario.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-legal-sanitario-tributario-critico-4-validar-forma-correcta-de-emitir-boleta-o-factura",
+          "tipo": "critico",
+          "texto": "Validar forma correcta de emitir boleta o factura.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-legal-sanitario-tributario-critico-5-confirmar-exigencias-de-clientes-que-pidan-factura",
+          "tipo": "critico",
+          "texto": "Confirmar exigencias de clientes que pidan factura.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-legal-sanitario-tributario-apoyo-1-guardar-respaldo-de-consultas-realizadas",
+          "tipo": "apoyo",
+          "texto": "Guardar respaldo de consultas realizadas.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-legal-sanitario-tributario-apoyo-2-definir-si-necesitara-apoyo-contable-eventual",
+          "tipo": "apoyo",
+          "texto": "Definir si necesitará apoyo contable eventual.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-legal-sanitario-tributario-apoyo-3-revisar-obligaciones-si-aumenta-escala",
+          "tipo": "apoyo",
+          "texto": "Revisar obligaciones si aumenta escala.",
+          "estado_inicial": false
+        }
+      ]
+    },
+    {
+      "id": "logistica-invierno",
+      "short": "Logística",
+      "title": "F. Logística e invierno",
+      "items": [
+        {
+          "id": "chk-logistica-invierno-critico-1-revisar-acceso-en-invierno",
+          "tipo": "critico",
+          "texto": "Revisar acceso en invierno.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-logistica-invierno-critico-2-definir-como-ingresara-alimento",
+          "tipo": "critico",
+          "texto": "Definir cómo ingresará alimento.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-logistica-invierno-critico-3-definir-como-ingresaran-pollonas-y-materiales",
+          "tipo": "critico",
+          "texto": "Definir cómo ingresarán pollonas y materiales.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-logistica-invierno-critico-4-confirmar-si-se-necesita-mejora-minima-de-camino-o-acopio",
+          "tipo": "critico",
+          "texto": "Confirmar si se necesita mejora mínima de camino o acopio.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-logistica-invierno-apoyo-1-definir-proveedor-con-despacho",
+          "tipo": "apoyo",
+          "texto": "Definir proveedor con despacho.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-logistica-invierno-apoyo-2-definir-lugar-seco-para-acopio",
+          "tipo": "apoyo",
+          "texto": "Definir lugar seco para acopio.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-logistica-invierno-apoyo-3-definir-plan-alternativo-si-hay-lluvia",
+          "tipo": "apoyo",
+          "texto": "Definir plan alternativo si hay lluvia.",
+          "estado_inicial": false
+        }
+      ]
+    },
+    {
+      "id": "decision-primera-compra",
+      "short": "Primera compra",
+      "title": "G. Decisión de primera compra",
+      "items": [
+        {
+          "id": "chk-decision-primera-compra-critico-1-elegir-alternativa-inicial-100-o-150-pollonas",
+          "tipo": "critico",
+          "texto": "Elegir alternativa inicial: +100 o +150 pollonas.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-decision-primera-compra-critico-2-confirmar-fecha-tentativa-de-compra",
+          "tipo": "critico",
+          "texto": "Confirmar fecha tentativa de compra.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-decision-primera-compra-critico-3-confirmar-que-equipamiento-minimo-estara-listo-antes-de-recibir-aves",
+          "tipo": "critico",
+          "texto": "Confirmar que equipamiento mínimo estará listo antes de recibir aves.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-decision-primera-compra-critico-4-confirmar-que-caja-minima-estara-disponible",
+          "tipo": "critico",
+          "texto": "Confirmar que caja mínima estará disponible.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-decision-primera-compra-critico-5-confirmar-que-no-se-comprara-352-de-una-vez-sin-cumplir-condiciones",
+          "tipo": "critico",
+          "texto": "Confirmar que no se comprará +352 de una vez sin cumplir condiciones.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-decision-primera-compra-apoyo-1-definir-calendario-de-seguimiento-30-a-60-dias",
+          "tipo": "apoyo",
+          "texto": "Definir calendario de seguimiento 30 a 60 días.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-decision-primera-compra-apoyo-2-definir-quien-anotara-datos-reales",
+          "tipo": "apoyo",
+          "texto": "Definir quién anotará datos reales.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-decision-primera-compra-apoyo-3-definir-fecha-de-segunda-revision",
+          "tipo": "apoyo",
+          "texto": "Definir fecha de segunda revisión.",
+          "estado_inicial": false
+        }
+      ]
+    },
+    {
+      "id": "medicion-primera-etapa",
+      "short": "Medición",
+      "title": "H. Medición de la primera etapa",
+      "items": [
+        {
+          "id": "chk-medicion-primera-etapa-critico-1-registrar-produccion-diaria",
+          "tipo": "critico",
+          "texto": "Registrar producción diaria.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-medicion-primera-etapa-critico-2-registrar-ventas-semanales",
+          "tipo": "critico",
+          "texto": "Registrar ventas semanales.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-medicion-primera-etapa-critico-3-registrar-alimento-consumido",
+          "tipo": "critico",
+          "texto": "Registrar alimento consumido.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-medicion-primera-etapa-critico-4-registrar-mortalidad",
+          "tipo": "critico",
+          "texto": "Registrar mortalidad.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-medicion-primera-etapa-critico-5-registrar-horas-reales-de-trabajo",
+          "tipo": "critico",
+          "texto": "Registrar horas reales de trabajo.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-medicion-primera-etapa-critico-6-comparar-margen-real-contra-margen-estimado",
+          "tipo": "critico",
+          "texto": "Comparar margen real contra margen estimado.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-medicion-primera-etapa-apoyo-1-registrar-problemas-sanitarios",
+          "tipo": "apoyo",
+          "texto": "Registrar problemas sanitarios.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-medicion-primera-etapa-apoyo-2-registrar-problemas-de-acceso",
+          "tipo": "apoyo",
+          "texto": "Registrar problemas de acceso.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-medicion-primera-etapa-apoyo-3-registrar-comentarios-de-compradores",
+          "tipo": "apoyo",
+          "texto": "Registrar comentarios de compradores.",
+          "estado_inicial": false
+        },
+        {
+          "id": "chk-medicion-primera-etapa-apoyo-4-revisar-si-conviene-segunda-expansion",
+          "tipo": "apoyo",
+          "texto": "Revisar si conviene segunda expansión.",
+          "estado_inicial": false
+        }
+      ]
+    }
+  ]
+}
+    </script>
+    <script>
+      (() => {
+        'use strict';
+
+        const STORAGE_KEY = 'gallinero_ignacio_checklist_decision_v1';
+        const data = JSON.parse(document.getElementById('checklist-data').textContent);
+        const groups = data.grupos || [];
+        const allItems = groups.flatMap((group) => group.items.map((item) => ({ ...item, groupTitle: group.title, groupShort: group.short })));
+
+        const nodes = {
+          groups: document.getElementById('checklist-groups'),
+          message: document.getElementById('checklist-message'),
+          decisionCard: document.getElementById('decision-state-card'),
+          decisionState: document.getElementById('decision-state'),
+          decisionText: document.getElementById('decision-state-text'),
+          overallPercent: document.getElementById('overall-percent'),
+          overallCount: document.getElementById('overall-count'),
+          overallBar: document.getElementById('overall-bar'),
+          criticalCount: document.getElementById('critical-count'),
+          criticalBar: document.getElementById('critical-bar'),
+          completedTotal: document.getElementById('completed-total'),
+          completedCritical: document.getElementById('completed-critical'),
+          completedSupport: document.getElementById('completed-support'),
+          missingIntro: document.getElementById('missing-green-intro'),
+          missingCriticalList: document.getElementById('missing-critical-list'),
+          missingSupportWrap: document.getElementById('missing-support-wrap'),
+          missingSupportList: document.getElementById('missing-support-list'),
+          save: document.getElementById('save-progress'),
+          clear: document.getElementById('clear-checklist'),
+          print: document.getElementById('print-checklist'),
+          copy: document.getElementById('copy-pending'),
+        };
+
+        function escapeHtml(value) {
+          return String(value)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+        }
+
+        function readState() {
+          try {
+            return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+          } catch (error) {
+            console.warn('No se pudo leer el checklist guardado:', error);
+            return {};
+          }
+        }
+
+        function writeState(state) {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        }
+
+        function collectState() {
+          return Object.fromEntries(
+            allItems.map((item) => [item.id, Boolean(document.getElementById(item.id)?.checked)])
+          );
+        }
+
+        function percent(done, total) {
+          return total ? Math.round((done / total) * 100) : 0;
+        }
+
+        function setMessage(text) {
+          nodes.message.textContent = text;
+          if (!text) return;
+          window.clearTimeout(setMessage.timer);
+          setMessage.timer = window.setTimeout(() => {
+            nodes.message.textContent = '';
+          }, 3200);
+        }
+
+        function renderChecklist(savedState) {
+          nodes.groups.innerHTML = groups.map((group) => {
+            const criticalTotal = group.items.filter((item) => item.tipo === 'critico').length;
+            const supportTotal = group.items.filter((item) => item.tipo === 'apoyo').length;
+            const items = group.items.map((item) => {
+              const checked = Boolean(savedState[item.id]);
+              const typeLabel = item.tipo === 'critico' ? 'CRÍTICO' : 'APOYO';
+              return `
+                <label class="check-item decision-check-item ${item.tipo}" for="${escapeHtml(item.id)}">
+                  <input id="${escapeHtml(item.id)}" type="checkbox" data-kind="${escapeHtml(item.tipo)}" data-group="${escapeHtml(group.short)}" ${checked ? 'checked' : ''} />
+                  <span class="check-item-main">
+                    <span class="check-item-meta"><strong class="type-badge ${item.tipo}">${typeLabel}</strong></span>
+                    <span class="check-item-text">${escapeHtml(item.texto)}</span>
+                  </span>
+                </label>
+              `;
+            }).join('');
+
+            return `
+              <section class="visual-section checklist-decision-group" aria-labelledby="${escapeHtml(group.id)}-title">
+                <div class="group-head">
+                  <div>
+                    <p class="eyebrow">${escapeHtml(group.short)}</p>
+                    <h2 id="${escapeHtml(group.id)}-title">${escapeHtml(group.title)}</h2>
+                  </div>
+                  <div class="group-counts">
+                    <span>${criticalTotal} críticos</span>
+                    <span>${supportTotal} apoyos</span>
+                  </div>
+                </div>
+                <div class="checklist-group">${items}</div>
+              </section>
+            `;
+          }).join('');
+        }
+
+        function getSummary() {
+          const state = collectState();
+          const completed = allItems.filter((item) => state[item.id]);
+          const critical = allItems.filter((item) => item.tipo === 'critico');
+          const support = allItems.filter((item) => item.tipo === 'apoyo');
+          const completedCritical = critical.filter((item) => state[item.id]);
+          const completedSupport = support.filter((item) => state[item.id]);
+          const pendingCritical = critical.filter((item) => !state[item.id]);
+          const pendingSupport = support.filter((item) => !state[item.id]);
+          const overallPercent = percent(completed.length, allItems.length);
+          const criticalPercent = percent(completedCritical.length, critical.length);
+
+          let stateLabel = 'ANALIZAR CON CAUTELA';
+          let stateText = 'Todavía no conviene comprar aves, construir ni hacer inversión mayor. Faltan puntos críticos por confirmar.';
+          let stateClass = 'caution';
+
+          if (pendingCritical.length === 0 && pendingSupport.length > 0) {
+            stateLabel = 'CASI LISTO PARA DECIDIR';
+            stateText = 'Los puntos críticos están completos, pero conviene revisar los pendientes de apoyo antes de ejecutar.';
+            stateClass = 'almost';
+          }
+
+          if (pendingCritical.length === 0 && pendingSupport.length === 0) {
+            stateLabel = 'LISTO PARA REVISIÓN FINAL';
+            stateText = 'El checklist está completo. Aun así, la decisión final debe aprobarla Ignacio revisando cotizaciones, dinero disponible y condiciones reales.';
+            stateClass = 'final-review';
+          }
+
+          return {
+            state,
+            completed,
+            critical,
+            support,
+            completedCritical,
+            completedSupport,
+            pendingCritical,
+            pendingSupport,
+            overallPercent,
+            criticalPercent,
+            stateLabel,
+            stateText,
+            stateClass,
+          };
+        }
+
+        function renderPendingList(container, items) {
+          if (!items.length) {
+            container.innerHTML = '<p class="empty-pending">Sin pendientes.</p>';
+            return;
+          }
+          const byGroup = items.reduce((acc, item) => {
+            if (!acc[item.groupShort]) acc[item.groupShort] = [];
+            acc[item.groupShort].push(item);
+            return acc;
+          }, {});
+          container.innerHTML = Object.entries(byGroup).map(([group, groupItems]) => `
+            <article class="pending-group">
+              <h3>${escapeHtml(group)}</h3>
+              <ul>${groupItems.map((item) => `<li>${escapeHtml(item.texto)}</li>`).join('')}</ul>
+            </article>
+          `).join('');
+        }
+
+        function updateSummary() {
+          const summary = getSummary();
+          writeState(summary.state);
+
+          nodes.decisionCard.classList.remove('caution', 'almost', 'final-review');
+          nodes.decisionCard.classList.add(summary.stateClass);
+          nodes.decisionState.textContent = summary.stateLabel;
+          nodes.decisionText.textContent = summary.stateText;
+
+          nodes.overallPercent.textContent = `${summary.overallPercent}%`;
+          nodes.overallCount.textContent = `${summary.completed.length} de ${allItems.length}`;
+          nodes.overallBar.style.width = `${summary.overallPercent}%`;
+          nodes.criticalCount.textContent = `${summary.completedCritical.length} de ${summary.critical.length}`;
+          nodes.criticalBar.style.width = `${summary.criticalPercent}%`;
+          nodes.completedTotal.textContent = `${summary.completed.length} de ${allItems.length}`;
+          nodes.completedCritical.textContent = `${summary.completedCritical.length} de ${summary.critical.length}`;
+          nodes.completedSupport.textContent = `${summary.completedSupport.length} de ${summary.support.length}`;
+
+          if (summary.pendingCritical.length > 0) {
+            nodes.missingIntro.textContent = `Todavía no está listo para pasar a verde. Faltan ${summary.pendingCritical.length} puntos críticos. Para pasar a verde todavía falta:`;
+          } else if (summary.pendingSupport.length > 0) {
+            nodes.missingIntro.textContent = 'Los pendientes críticos están completos. Antes de ejecutar, revisar pendientes de apoyo y confirmar decisión final con Ignacio. El proyecto puede pasar a revisión final, pero todavía no significa inversión aprobada.';
+          } else {
+            nodes.missingIntro.textContent = 'Checklist completo. Reunir cotizaciones, respaldos y decisión final de Ignacio antes de ejecutar.';
+          }
+
+          renderPendingList(nodes.missingCriticalList, summary.pendingCritical);
+          nodes.missingSupportWrap.hidden = summary.pendingSupport.length === 0;
+          renderPendingList(nodes.missingSupportList, summary.pendingSupport);
+        }
+
+        function buildClipboardText() {
+          const summary = getSummary();
+          const criticalLines = summary.pendingCritical.length
+            ? summary.pendingCritical.map((item) => `- ${item.groupShort}: ${item.texto}`).join('\n')
+            : '- Sin pendientes críticos.';
+          const supportLines = summary.pendingSupport.length
+            ? summary.pendingSupport.map((item) => `- ${item.groupShort}: ${item.texto}`).join('\n')
+            : '- Sin pendientes de apoyo.';
+
+          return `Evaluación avícola Ignacio - checklist de decisión
+
+Estado: ${summary.stateLabel}
+Avance general: ${summary.overallPercent}%
+Puntos completados: ${summary.completed.length} de ${allItems.length}
+Críticos completados: ${summary.completedCritical.length} de ${summary.critical.length}
+Apoyos completados: ${summary.completedSupport.length} de ${summary.support.length}
+
+Pendientes críticos:
+${criticalLines}
+
+Pendientes de apoyo:
+${supportLines}
+
+Recomendación vigente:
+Avanzar por etapas. Alternativa recomendada +150 pollonas. Alternativa conservadora +100 pollonas. No comprar +352 pollonas de una vez sin financiamiento cerrado, equipamiento listo y venta confirmada.
+
+Importante: completar el checklist no aprueba compra de aves, construcción ni inversión mayor. La decisión final debe revisarla Ignacio.`;
+        }
+
+        async function copyText(text) {
+          if (navigator.clipboard?.writeText) {
+            await navigator.clipboard.writeText(text);
+            return;
+          }
+          const textarea = document.createElement('textarea');
+          textarea.value = text;
+          textarea.setAttribute('readonly', '');
+          textarea.style.position = 'fixed';
+          textarea.style.left = '-9999px';
+          document.body.appendChild(textarea);
+          textarea.select();
+          const ok = document.execCommand('copy');
+          textarea.remove();
+          if (!ok) throw new Error('No se pudo copiar con el método alternativo.');
+        }
+
+        function bindEvents() {
+          nodes.groups.addEventListener('change', (event) => {
+            if (event.target.matches('input[type="checkbox"]')) {
+              updateSummary();
+            }
+          });
+
+          nodes.save.addEventListener('click', () => {
+            writeState(collectState());
+            setMessage('avance guardado en este navegador');
+          });
+
+          nodes.clear.addEventListener('click', () => {
+            const confirmed = window.confirm('Esto borrará las marcas guardadas en este navegador. ¿Continuar?');
+            if (!confirmed) return;
+            localStorage.removeItem(STORAGE_KEY);
+            document.querySelectorAll('.decision-check-item input[type="checkbox"]').forEach((input) => {
+              input.checked = false;
+            });
+            updateSummary();
+            setMessage('Checklist limpio en este navegador.');
+          });
+
+          nodes.print.addEventListener('click', () => window.print());
+
+          nodes.copy.addEventListener('click', async () => {
+            try {
+              await copyText(buildClipboardText());
+              setMessage('Resumen de pendientes copiado al portapapeles.');
+            } catch (error) {
+              console.error(error);
+              setMessage('No se pudo copiar automáticamente. Selecciona el resumen desde la página impresa o intenta otra vez.');
+            }
+          });
+        }
+
+        renderChecklist(readState());
+        bindEvents();
+        updateSummary();
+      })();
+    </script>
   </body>
 </html>

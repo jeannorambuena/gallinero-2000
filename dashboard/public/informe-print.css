@@ -26,10 +26,37 @@
   .report-card,
   .visual-card,
   .print-card,
+  .checklist-decision-group,
+  .decision-state-card,
+  .progress-card,
+  .pending-group,
   table {
     break-inside: avoid;
     page-break-inside: avoid;
     box-shadow: none !important;
+  }
+
+  .decision-check-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  input[type="checkbox"] {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .progress-track,
+  .progress-track span,
+  .type-badge,
+  .missing-intro,
+  .visual-alert {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .checklist-message:empty {
+    display: none !important;
   }
 
   a {
