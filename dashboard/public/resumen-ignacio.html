@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resumen ejecutivo Ignacio</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./informe-print.css" />
+  </head>
+  <body class="visual-body">
+
+    <main class="visual-shell">
+      <header class="visual-header">
+        <p class="eyebrow">Resumen corto · versión 2026-07-07</p>
+        <h1>Resumen ejecutivo para Ignacio</h1>
+        <p>Lectura rápida para decidir próximos pasos del proyecto avícola.</p>
+      <div class="visual-actions no-print">
+        <a class="back-link" href="./index.html#informe-final">Volver al dashboard</a>
+        <a class="visual-button" href="./informe-ignacio.html">Informe completo</a>
+        <a class="visual-button" href="./resumen-ignacio.html">Resumen corto</a>
+        <a class="visual-button" href="./checklist-ignacio.html">Checklist reunión</a>
+        <a class="visual-button" href="./anexo-calculos-ignacio.html">Anexo de cálculos</a>
+        <button class="print-button primary" type="button" onclick="window.print()">Imprimir / guardar como PDF</button>
+      </div>
+      </header>
+
+      <section class="visual-section">
+        <h2>Lectura rápida</h2>
+        <div class="visual-grid four">
+          <article class="visual-card warning"><span>Estado</span><strong>analizar con cautela</strong></article>
+          <article class="visual-card ok"><span>Recomendación</span><strong>avanzar por etapas</strong></article>
+          <article class="visual-card ok"><span>Alternativa recomendada</span><strong>+150 pollonas</strong></article>
+          <article class="visual-card"><span>Opción conservadora</span><strong>+100 pollonas</strong></article>
+          <article class="visual-card danger"><span>No recomendado ahora</span><strong>+352 pollonas</strong><small>No comprar de una vez todavía.</small></article>
+          <article class="visual-card danger"><span>Total base con 1 mes</span><strong>$15.030.515</strong></article>
+          <article class="visual-card danger"><span>Diferencia faltante</span><strong>$5.030.515</strong><small>Contra $10.000.000.</small></article>
+          <article class="visual-card warning"><span>Resultado preliminar</span><strong>$959.617</strong><small>No es utilidad final.</small></article>
+        </div>
+        <div class="visual-alert">Venta mínima necesaria para no perder considerando trabajo: <strong>63,7 bandejas/semana</strong>. Tiempo estimado para recuperar inversión base: <strong>13,91 meses</strong>.</div>
+      </section>
+
+      <section class="visual-section">
+        <h2>Próximos pasos</h2>
+        <ol>
+          <li>Revisar estos números con Ignacio.</li>
+          <li>Confirmar dinero disponible real.</li>
+          <li>Pedir cotizaciones finales de equipamiento.</li>
+          <li>Confirmar compradores por canal.</li>
+          <li>Validar situación legal, sanitaria y tributaria.</li>
+          <li>Revisar infraestructura actual para +100 o +150 pollonas.</li>
+          <li>Elegir si la primera etapa será +100 o +150 pollonas.</li>
+          <li>Partir solo si lo anterior está resuelto.</li>
+        </ol>
+      </section>
+
+      <section class="visual-section">
+        <h2>Texto para WhatsApp</h2>
+        <div class="print-actions no-print">
+          <button class="copy-button primary" type="button" onclick="copyWhatsapp()">Copiar resumen WhatsApp</button>
+          <span id="copy-status" class="report-footnote"></span>
+        </div>
+        <pre class="whatsapp-box" id="whatsapp-text">Informe Ignacio — decisión avícola
+
+El proyecto puede ser interesante: con 500 gallinas y venta cercana a 100 bandejas/semana, los números muestran potencial.
+
+Pero no conviene partir directo a 500 gallinas todavía.
+
+Para llegar de una vez se necesitarían aprox. $15.030.515 con 1 mes de operación, y el máximo informado es $10.000.000.
+Faltan aprox. $5.030.515 en el escenario base.
+
+Recomendación: avanzar por etapas.
+La mejor alternativa preliminar es +150 pollonas.
+Si se quiere reducir más el riesgo, partir con +100.
++200 solo con compradores y caja más confirmados.
++352 de una vez solo con financiamiento cerrado, equipamiento listo y venta confirmada.
+
+Antes de comprar hay que confirmar:
+- dinero disponible real;
+- compradores por canal;
+- cotizaciones finales;
+- infraestructura para +100 o +150;
+- permisos/formalización;
+- agua, energía, comederos, bebederos, nidos y bodega.
+
+Estado recomendado: analizar con cautela.</pre>
+      </section>
+    </main>
+    <script>
+      async function copyWhatsapp() {
+        const text = document.getElementById('whatsapp-text').innerText;
+        const status = document.getElementById('copy-status');
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(text);
+          } else {
+            const area = document.createElement('textarea');
+            area.value = text;
+            document.body.appendChild(area);
+            area.select();
+            document.execCommand('copy');
+            area.remove();
+          }
+          status.textContent = 'Resumen copiado.';
+        } catch (error) {
+          status.textContent = 'No se pudo copiar automáticamente. Selecciona el texto y cópialo manualmente.';
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -196,27 +196,34 @@ function renderPasos(pasos = {}, vista = {}) {
 function renderInformeFinal(informe = {}) {
   const container = $('informe-final-links');
   if (!container) return;
-  const files = informe.archivos_generados ?? {};
+  const pages = informe.paginas_visuales ?? {};
   const items = [
-    { label: 'Informe final', path: files.informe_final, detail: 'Documento principal para revisar con Ignacio.' },
-    { label: 'Resumen WhatsApp', path: files.resumen_whatsapp, detail: 'Versión breve y copiable.' },
-    { label: 'Checklist reunión', path: files.checklist_reunion, detail: 'Preguntas y casillas para decidir.' },
-    { label: 'Anexo de cálculos', path: files.anexo_calculos, detail: 'Tablas de respaldo y supuestos.' }
+    { label: 'Ver informe completo', href: pages.informe_completo ?? 'informe-ignacio.html', detail: 'Informe visual completo para leer o guardar como PDF.' },
+    { label: 'Ver resumen corto', href: pages.resumen_corto ?? 'resumen-ignacio.html', detail: 'Lectura rápida con texto para WhatsApp.' },
+    { label: 'Ver checklist de reunión', href: pages.checklist_reunion ?? 'checklist-ignacio.html', detail: 'Casillas para revisar antes de decidir.' },
+    { label: 'Ver anexo de cálculos', href: pages.anexo_calculos ?? 'anexo-calculos-ignacio.html', detail: 'Tablas de respaldo y supuestos.' },
+    { label: 'Imprimir / guardar como PDF', href: pages.informe_completo ?? 'informe-ignacio.html', detail: 'Abre el informe y usa el botón de impresión.' },
+    { label: 'Copiar resumen WhatsApp', href: pages.resumen_corto ?? 'resumen-ignacio.html', detail: 'Abre el resumen y usa el botón copiar.' }
   ];
   container.innerHTML = '';
-  items.forEach((item) => {
+  items.forEach((item, index) => {
     const card = document.createElement('article');
-    card.className = 'report-card';
+    card.className = 'report-card action-card';
     card.innerHTML = `
-      <span>${item.label}</span>
-      <strong>${item.path ?? 'pendiente'}</strong>
+      <span>${index + 1}</span>
+      <strong>${item.label}</strong>
       <p>${item.detail}</p>
+      <a class="visual-button ${index === 0 ? 'primary' : ''}" href="${item.href}">Abrir</a>
     `;
     container.appendChild(card);
   });
   if (informe.advertencia_principal) {
-    setText('informe-final-texto', `Se preparó un informe final de evaluación para revisar con Ignacio antes de decidir inversión. ${informe.advertencia_principal}`);
+    setText('informe-final-texto', `Se preparó un informe visual para revisar con Ignacio antes de decidir inversión. ${informe.advertencia_principal}`);
   }
+  const footnote = document.createElement('p');
+  footnote.className = 'report-footnote';
+  footnote.textContent = informe.respaldo_markdown ?? 'Los archivos Markdown quedan como respaldo técnico en la carpeta reports.';
+  container.insertAdjacentElement('afterend', footnote);
 }
 
 function renderDetalle({ detalleFinanciero, detalleInversion }) {

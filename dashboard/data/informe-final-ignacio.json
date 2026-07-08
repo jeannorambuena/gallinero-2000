@@ -35,5 +35,14 @@
     "compra total de aves",
     "construcción",
     "inversión grande"
-  ]
+  ],
+  "paginas_visuales": {
+    "informe_completo": "informe-ignacio.html",
+    "resumen_corto": "resumen-ignacio.html",
+    "checklist_reunion": "checklist-ignacio.html",
+    "anexo_calculos": "anexo-calculos-ignacio.html"
+  },
+  "accion_pdf": "Usar el botón Imprimir / guardar como PDF en cada página visual.",
+  "accion_whatsapp": "Usar el botón Copiar resumen WhatsApp en resumen-ignacio.html.",
+  "respaldo_markdown": "Los archivos Markdown quedan como respaldo técnico en reports."
 }
