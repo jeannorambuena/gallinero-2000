@@ -142,6 +142,10 @@ SPECS = {
         "required": ["proyecto", "uso"],
         "non_empty_lists": ["pasos"],
     },
+    "dashboard/data/informe-final-ignacio.json": {
+        "required": ["proyecto", "fecha", "estado", "recomendacion_final", "advertencia_principal", "archivos_generados", "numeros_clave"],
+        "non_empty_lists": ["pendientes_criticos", "decisiones_no_aprobadas"],
+    },
     "dashboard/data/flujo-caja-preliminar.json": {
         "required": ["proyecto", "fase", "estado", "ingresos_actuales", "costos_actuales", "mano_obra_referencial", "margenes_actuales", "escenario_500", "escenario_648", "conclusion"],
         "non_empty_lists": ["datos_faltantes", "riesgos", "criterios_para_avanzar", "indicadores_bloqueados"],

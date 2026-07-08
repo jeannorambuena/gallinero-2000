@@ -5,6 +5,7 @@ const DATA_FILES = {
   supuestos: new URL('supuestos-para-ignacio.json', DATA_BASE).href,
   alertas: new URL('alertas-para-ignacio.json', DATA_BASE).href,
   pasos: new URL('proximos-pasos-ignacio.json', DATA_BASE).href,
+  informeFinal: new URL('informe-final-ignacio.json', DATA_BASE).href,
   detalleFinanciero: new URL('flujo-financiero-preliminar-500.json', DATA_BASE).href,
   detalleInversion: new URL('capex-total-referencial-500.json', DATA_BASE).href
 };
@@ -191,6 +192,33 @@ function renderPasos(pasos = {}, vista = {}) {
   });
 }
 
+
+function renderInformeFinal(informe = {}) {
+  const container = $('informe-final-links');
+  if (!container) return;
+  const files = informe.archivos_generados ?? {};
+  const items = [
+    { label: 'Informe final', path: files.informe_final, detail: 'Documento principal para revisar con Ignacio.' },
+    { label: 'Resumen WhatsApp', path: files.resumen_whatsapp, detail: 'Versión breve y copiable.' },
+    { label: 'Checklist reunión', path: files.checklist_reunion, detail: 'Preguntas y casillas para decidir.' },
+    { label: 'Anexo de cálculos', path: files.anexo_calculos, detail: 'Tablas de respaldo y supuestos.' }
+  ];
+  container.innerHTML = '';
+  items.forEach((item) => {
+    const card = document.createElement('article');
+    card.className = 'report-card';
+    card.innerHTML = `
+      <span>${item.label}</span>
+      <strong>${item.path ?? 'pendiente'}</strong>
+      <p>${item.detail}</p>
+    `;
+    container.appendChild(card);
+  });
+  if (informe.advertencia_principal) {
+    setText('informe-final-texto', `Se preparó un informe final de evaluación para revisar con Ignacio antes de decidir inversión. ${informe.advertencia_principal}`);
+  }
+}
+
 function renderDetalle({ detalleFinanciero, detalleInversion }) {
   renderRows('detalle-tecnico', [
     {
@@ -247,6 +275,7 @@ async function init() {
   renderAlternativas(vista);
   renderAlertas(data.alertas);
   renderPasos(data.pasos, vista);
+  renderInformeFinal(data.informeFinal);
   renderDetalle(data);
 }
 

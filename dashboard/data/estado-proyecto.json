@@ -12,6 +12,7 @@
   "construccion_autorizada": false,
   "inversion_mayor_autorizada": false,
   "proximos_pasos": [
+    "revisar informe final con Ignacio",
     "revisar P47 con Nacho",
     "confirmar capital disponible real",
     "cerrar cotizaciones formales",
@@ -20,7 +21,7 @@
     "validar legal/sanitario/tributario",
     "definir calendario de 6 meses"
   ],
-  "decision_actual": "Analizar con cautela: avanzar por etapas, con +150 pollonas como alternativa recomendada y +352 solo con financiamiento cerrado.",
+  "decision_actual": "Analizar con cautela: revisar informe final, avanzar por etapas y mantener +150 pollonas como alternativa recomendada solo si se validan condiciones.",
   "interpretacion_semaforo": "Amarillo no significa no viable; significa información crítica pendiente para decidir con seguridad.",
   "lineas_de_trabajo": [
     "Línea comercial: venta actual directa confirmada con mix 6/13/9; meta 100 requiere validación.",

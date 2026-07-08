@@ -1,0 +1,39 @@
+{
+  "proyecto": "Evaluación del proyecto avícola de Ignacio Moraga",
+  "fecha": "2026-07-07",
+  "estado": "analizar con cautela",
+  "recomendacion_final": "Avanzar por etapas; alternativa recomendada +150 pollonas, con +100 como opción conservadora.",
+  "advertencia_principal": "No comprar las 352 pollonas de una vez todavía sin financiamiento cerrado, equipamiento listo y venta confirmada.",
+  "archivos_generados": {
+    "informe_final": "reports/informe_final_ignacio_decision_avicola.md",
+    "resumen_whatsapp": "reports/resumen_whatsapp_ignacio_decision_avicola.md",
+    "checklist_reunion": "reports/checklist_reunion_ignacio_decision_avicola.md",
+    "anexo_calculos": "reports/anexo_calculos_ignacio_decision_avicola.md"
+  },
+  "numeros_clave": {
+    "total_base_con_1_mes_operacion_clp": 15030515,
+    "diferencia_contra_10m_clp": 5030515,
+    "resultado_mensual_500_con_trabajo_clp": 959617,
+    "venta_minima_con_trabajo_bandejas_semana": 63.7,
+    "tiempo_recuperacion_base_con_trabajo_meses": 13.91,
+    "mas_150_inversion_clp": 4369862,
+    "mas_150_resultado_mensual_clp": 529532
+  },
+  "pendientes_criticos": [
+    "cotizaciones finales",
+    "financiamiento completo",
+    "caja mínima cubierta",
+    "compradores confirmados por canal",
+    "infraestructura validada",
+    "equipamiento definido",
+    "validación legal, sanitaria y tributaria",
+    "plan de invierno",
+    "calendario real",
+    "decisión aprobada por Ignacio"
+  ],
+  "decisiones_no_aprobadas": [
+    "compra total de aves",
+    "construcción",
+    "inversión grande"
+  ]
+}
